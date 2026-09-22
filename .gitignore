@@ -28,8 +28,10 @@ outputs/
 results/
 checkpoints/
 weights/
+!model/zero_dce_pp/weights/
 *.pt
 *.pth
+!model/zero_dce_pp/weights/Epoch99.pth
 *.ckpt
 *.onnx
 *.safetensors
