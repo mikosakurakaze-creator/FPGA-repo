@@ -1,6 +1,6 @@
 """Traceable decomposition of the official Zero-DCE++ forward pass."""
 
-from typing import Tuple
+from typing import List, Tuple
 
 import torch
 import torch.nn.functional as F
@@ -13,8 +13,23 @@ ENHANCEMENT_ITERATIONS = 8
 
 
 def _validate_image_tensor(image: Tensor) -> None:
-    if image.ndim != 4 or image.shape[1] != 3:
+    if image.dim() != 4 or image.shape[1] != 3:
         raise ValueError("expected an NCHW tensor with exactly three channels")
+
+
+def downsample_input(
+    network: enhance_net_nopool,
+    image: Tensor,
+) -> Tensor:
+    """Apply the input scaling operation used by the upstream forward."""
+    _validate_image_tensor(image)
+    if network.scale_factor == 1:
+        return image
+    return F.interpolate(
+        image,
+        scale_factor=1 / network.scale_factor,
+        mode="bilinear",
+    )
 
 
 def predict_parameters(
@@ -28,15 +43,7 @@ def predict_parameters(
     is still at the network's reduced spatial resolution.
     """
     _validate_image_tensor(image)
-
-    if network.scale_factor == 1:
-        image_down = image
-    else:
-        image_down = F.interpolate(
-            image,
-            scale_factor=1 / network.scale_factor,
-            mode="bilinear",
-        )
+    image_down = downsample_input(network, image)
 
     feature_1 = network.relu(network.e_conv1(image_down))
     feature_2 = network.relu(network.e_conv2(feature_1))
@@ -72,18 +79,25 @@ def resize_parameters(
     return resized
 
 
-def apply_enhancement(image: Tensor, parameters: Tensor) -> Tensor:
-    """Apply the upstream curve update eight times without output clipping."""
+def enhancement_steps(image: Tensor, parameters: Tensor) -> List[Tensor]:
+    """Return all eight upstream curve-update results in operation order."""
     _validate_image_tensor(image)
     if image.shape != parameters.shape:
         raise ValueError("image and parameter tensors must have equal shapes")
 
     enhanced = image
+    steps = []
     for _ in range(ENHANCEMENT_ITERATIONS):
         enhanced = enhanced + parameters * (
             torch.pow(enhanced, 2) - enhanced
         )
-    return enhanced
+        steps.append(enhanced)
+    return steps
+
+
+def apply_enhancement(image: Tensor, parameters: Tensor) -> Tensor:
+    """Apply the upstream curve update eight times without output clipping."""
+    return enhancement_steps(image, parameters)[-1]
 
 
 def enhance_image(

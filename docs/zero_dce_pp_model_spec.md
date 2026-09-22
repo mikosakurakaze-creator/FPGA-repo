@@ -1,6 +1,6 @@
 # Zero-DCE++ V1 软件模型规格
 
-本文档基于 Zero-DCE++ 官方仓库提交 `09f202b690f82da939b8e6ec8535960ae97ad8bd` 中的实际源码整理。当前未执行推理或数值对比；凡涉及运行时版本行为或硬件取舍的内容均明确标记为待验证或 TBD。
+本文档基于 Zero-DCE++ 官方仓库提交 `09f202b690f82da939b8e6ec8535960ae97ad8bd` 中的实际源码整理。软件推理、一致性验证和参考数据导出工具已经编写，但当前未执行推理或数值对比；凡涉及运行时版本行为或硬件取舍的内容均明确标记为待验证或 TBD。
 
 ## 1. 输入与输出
 
@@ -156,3 +156,46 @@ Zero-DCE++/snapshots_Zero_DCE++/Epoch99.pth
 - CPU/GPU 可重复性和推理性能。
 
 在完成上述验证前，不应将本适配层描述为已验证等价或可部署。
+
+## 9. 软件验证工具
+
+本项目提供三个可从仓库根目录运行的模块：
+
+- `model.zero_dce_pp.inference`：保存原图、模型实际输入、增强结果、参数图和运行元数据；
+- `model.zero_dce_pp.validate_consistency`：对相同网络实例、输入和权重分别执行官方 `forward` 与拆分后的 `enhance_image`；
+- `model.zero_dce_pp.export_reference`：导出当前 FPGA 对接所需的 FP32 参考数组。
+
+一致性验证直接对 FP32 Tensor 计算：
+
+```text
+maximum absolute error = max(abs(reference - candidate))
+mean absolute error    = mean(abs(reference - candidate))
+passed                 = maximum absolute error <= atol
+```
+
+PNG 预览不参与比较。默认绝对容差为 `1e-6`，该默认值只是工具参数，最终验收容差仍需在实际环境运行后确定。
+
+## 10. 当前参考数据文件契约
+
+参考导出目录预期包含：
+
+```text
+model_input.npy
+input_downsampled.npy
+parameters_lowres.npy
+parameters_fullres.npy
+enhancement_iter_01.npy
+enhancement_iter_02.npy
+enhancement_iter_03.npy
+enhancement_iter_04.npy
+enhancement_iter_05.npy
+enhancement_iter_06.npy
+enhancement_iter_07.npy
+enhancement_iter_08.npy
+enhanced.npy
+metadata.json
+```
+
+所有 `.npy` 均保存未经裁剪、未经量化的原始 Tensor 数值，布局为 NCHW。每个数组的实际 shape 和 dtype 写入 `metadata.json`。增强结果与 `enhancement_iter_08.npy` 数值相同，但保留独立文件名作为最终输出契约。
+
+卷积层、ReLU 和拼接节点的逐层导出明确推迟到下一阶段。软件工具已编写，但上述文件尚未实际生成或核验。

@@ -6,9 +6,9 @@
 
 ## 当前阶段
 
-当前处于 **V1 工程初始化阶段**。V1 聚焦单模型低照度增强，目标是逐步建立从纯软件参考模型、上板前准备、FPGA 实现、板端控制到测试评估的单张图像处理流程。
+当前处于 **V1 单模型低照度增强软件 Baseline 阶段**。工程脚手架和 Zero-DCE++ 官方源码集成已完成，软件推理、一致性验证和参考数据导出工具已编写，但尚未实际运行验证。FPGA 实现尚未开始。
 
-本次提交仅建立工程骨架和协作文档，尚未实现模型、训练流程、推理程序或 FPGA 加速器，也不表示本地已安装完整 FPGA 工具链。
+当前仓库已包含 Zero-DCE++ 官方模型、官方预训练权重及本项目适配工具。工具存在不代表其已在本机环境验证可用，也不表示本地已安装完整深度学习或 FPGA 工具链。
 
 暂定硬件平台为 PYNQ-Z2（Zynq-7000 XC7Z020），暂定工具包括 Python、PyTorch、C++、Vitis HLS、Vivado 和 PYNQ。
 
@@ -33,3 +33,15 @@ docs/           项目范围、接口、路线图和协作规范
 4. 经代码和文档检查后再合并到 `main`。
 
 详细约定见 [V1 范围](docs/v1_scope.md)、[模块接口](docs/interfaces.md) 和 [团队工作流](docs/team_workflow.md)。
+
+## Zero-DCE++ 软件工具
+
+从项目根目录运行，输入图片由开发者自行提供：
+
+```text
+python -m model.zero_dce_pp.inference --input path/to/image.png --device cpu --scale-factor 12
+python -m model.zero_dce_pp.validate_consistency --input path/to/image.png --device cpu --scale-factor 12 --atol 1e-6
+python -m model.zero_dce_pp.export_reference --input path/to/image.png --device cpu --scale-factor 12
+```
+
+默认权重为 `model/zero_dce_pp/weights/Epoch99.pth`，默认生成内容位于已被 Git 忽略的 `outputs/zero_dce_pp/`。详细说明见 [Zero-DCE++ Baseline](model/zero_dce_pp/README.md) 和 [模型规格](docs/zero_dce_pp_model_spec.md)。上述工具尚未实际运行验证。

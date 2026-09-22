@@ -1,6 +1,6 @@
 # Zero-DCE++ 软件 Baseline
 
-本目录集成 Zero-DCE++ 官方 PyTorch 实现，作为 V1 的第一个低照度增强软件 Baseline。当前工作仅完成源码、权重和可拆分接口的集成；未运行推理、训练、测试或兼容性验证。
+本目录集成 Zero-DCE++ 官方 PyTorch 实现，作为 V1 的第一个低照度增强软件 Baseline。官方源码、权重和可拆分接口已集成，单图推理、一致性验证及参考数据导出工具已编写；按照当前阶段限制，尚未运行推理、测试或兼容性验证。
 
 ## 官方来源
 
@@ -93,3 +93,50 @@ enhanced, parameter_map = enhance_file(
 - 最终增强图，以及软件参考误差容限。
 
 量化位宽、定点格式、张量布局、舍入和饱和规则均为 TBD。
+
+## 推理、验证与参考导出命令
+
+以下命令均从项目根目录执行。将 `path/to/image.png` 替换为本地测试图片；本项目不提供或下载数据集。
+
+单张图片推理：
+
+```text
+python -m model.zero_dce_pp.inference --input path/to/image.png --weights model/zero_dce_pp/weights/Epoch99.pth --output-dir outputs/zero_dce_pp/inference --device cpu --scale-factor 12
+```
+
+官方 forward 与拆分接口的 FP32 一致性验证：
+
+```text
+python -m model.zero_dce_pp.validate_consistency --input path/to/image.png --weights model/zero_dce_pp/weights/Epoch99.pth --report outputs/zero_dce_pp/consistency_report.json --device cpu --scale-factor 12 --atol 1e-6
+```
+
+FPGA 参考数据导出：
+
+```text
+python -m model.zero_dce_pp.export_reference --input path/to/image.png --weights model/zero_dce_pp/weights/Epoch99.pth --output-dir outputs/zero_dce_pp/reference --device cpu --scale-factor 12
+```
+
+CUDA 可用且环境正确时，可把 `--device cpu` 改为 `--device cuda` 或 `cuda:0`。这些命令尚未在本仓库实际运行。
+
+### 推理输出
+
+`inference.py` 将生成：
+
+- `original_input.png`：Pillow 解码并转为 RGB 的原始尺寸图像；
+- `model_input.npy`：实际送入网络的 FP32 NCHW 张量；
+- `model_input.png`：模型输入预览；
+- `enhanced.npy`：未裁剪的 FP32 增强结果；
+- `enhanced.png`：将增强结果裁到 [0,1] 后量化为 uint8 的预览；
+- `parameter_map.npy`：未修改的 FP32 全分辨率参数图；
+- `parameter_map.png`：把 [-1,1] 映射到 [0,1] 后生成的参数图预览；
+- `metadata.json`：尺寸、设备、PyTorch 版本、权重校验值和 PNG 转换策略。
+
+数值比较和 FPGA golden data 必须使用 `.npy`，不得使用 PNG。
+
+### 一致性报告
+
+`validate_consistency.py` 直接比较两条路径的 FP32 tensor，分别报告增强图和全分辨率参数图的最大绝对误差、平均绝对误差及是否满足 `--atol`。报告同时记录 PyTorch 版本、设备、输入尺寸和 `scale_factor`。
+
+### 参考数据输出
+
+`export_reference.py` 输出预处理输入、下采样输入、低/全分辨率参数图、八次增强迭代结果、最终增强图和 `metadata.json`。本阶段不导出各卷积层中间值。
