@@ -1,0 +1,101 @@
+# Python cache and tooling
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE and OS metadata
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Local datasets, generated results, and large model weights
+# Local datasets: only commit the fixed V1 test image
+data/*
+!data/test/
+data/test/*
+!data/test/night_01.jpg
+
+datasets/
+
+# Generated outputs: only commit reviewed V1 reference data
+outputs/*
+!outputs/zero_dce_pp/
+
+outputs/zero_dce_pp/*
+!outputs/zero_dce_pp/consistency_report.json
+!outputs/zero_dce_pp/reference/
+!outputs/zero_dce_pp/inference/
+
+# Reference tensors and metadata are tracked
+# Other generated outputs remain ignored
+
+# Inference previews: avoid duplicate tensors and unrelated resources
+outputs/zero_dce_pp/inference/*
+!outputs/zero_dce_pp/inference/enhanced.png
+!outputs/zero_dce_pp/inference/model_input.png
+!outputs/zero_dce_pp/inference/original_input.png
+!outputs/zero_dce_pp/inference/parameter_map.png
+!outputs/zero_dce_pp/inference/metadata.json
+results/
+checkpoints/
+weights/
+!model/zero_dce_pp/weights/
+*.pt
+*.pth
+!model/zero_dce_pp/weights/Epoch99.pth
+*.ckpt
+*.onnx
+*.safetensors
+
+# Logs and temporary files
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Vitis HLS generated projects and reports
+.Xil/
+*.jou
+*.str
+*.wdb
+*.wcfg
+*.xsim
+*.xpr
+*.runs/
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.srcs/sources_1/ip/
+solution*/
+.autopilot/
+
+# Vivado/Vitis exported and generated artifacts
+*.bit
+*.bin
+*.hwh
+*.ltx
+*.dcp
+*.xsa
+*.xo
+*.xclbin
+*.log.xml
+
+# Keep source and project configuration files versioned:
+# Python, C/C++, Verilog/SystemVerilog/VHDL, Tcl, YAML, JSON, and TOML.

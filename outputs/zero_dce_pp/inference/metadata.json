@@ -1,0 +1,32 @@
+{
+  "channel_order": "RGB",
+  "device": "cpu",
+  "input_file_name": "night_01.jpg",
+  "model_input_size_nchw": [
+    1,
+    3,
+    720,
+    1272
+  ],
+  "original_image_size_hw": [
+    720,
+    1280
+  ],
+  "parameter_map_size_nchw": [
+    1,
+    3,
+    720,
+    1272
+  ],
+  "png_policy": {
+    "enhanced": "clip [0,1], round to uint8",
+    "model_input": "clip [0,1], round to uint8",
+    "parameter_map": "map [-1,1] to [0,1], clip, round to uint8"
+  },
+  "pytorch_version": "2.14.0+cpu",
+  "scale_factor": 12,
+  "tensor_dtype": "torch.float32",
+  "tensor_format": "NCHW",
+  "weight_file_name": "Epoch99.pth",
+  "weight_sha256": "CA8855B90DF9A80FA4195A831F33D3476B1964F787EB70602797C773067F3B84"
+}
