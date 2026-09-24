@@ -83,6 +83,9 @@ temp/
 *.ip_user_files/
 *.sim/
 *.srcs/sources_1/ip/
+fpga/vivado/**/bd/**/ip/
+fpga/vivado/**/bd/**/ui/
+*.bda
 solution*/
 .autopilot/
 
