@@ -19,6 +19,6 @@
   "frame_size_bytes": 38160,
   "v1_transfer": "CNN writes complete A_low to DDR, then Bilinear reads same-frame buffer",
   "golden_payload": "outputs/zero_dce_pp/quantization/integer/night_01_a_low_q14_nchw_le.bin",
-  "implementation_status": "CNN HLS source has an m_axi DDR output pointer; native C++ matches software golden; Vitis HLS simulation, synthesis and board integration remain unverified",
+  "implementation_status": "CNN HLS source has an m_axi DDR output pointer; native C++ and Vitis 2025.2 C simulation match software golden; HLS synthesis completed but missed the 10 ns target; RTL co-simulation and board integration remain unverified",
   "open_hardware_details": ["physical buffer base address", "generated AXI-Lite register offsets", "Vivado AXI routing", "PS cache synchronization on board", "Vitis HLS rounding and timing"]
 }

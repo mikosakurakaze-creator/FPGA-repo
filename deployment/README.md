@@ -6,4 +6,4 @@
 
 候选位宽和舍入规则见 `docs/zero_dce_pp_integer_quantization_report.md`。脚本将 CNN 输出 `A_low` 转成 Q14，按 `configs/zero_dce_pp_a_low_interface.json` 导出小端 NCHW DDR 测试数据。
 
-`export_hls_cnn_package.py` 将量化权重、偏置、逐通道小数位和 Tanh LUT 打成 HLS top 使用的无头小端数组。HLS CNN top 的指针、工作区、控制和缓存所有权见 `configs/zero_dce_pp_hls_interface.json`；实际物理 DDR 基地址由 Vivado/PS 集成分配。HLS 仿真、综合和板端验收仍未执行。
+`export_hls_cnn_package.py` 将量化权重、偏置、逐通道小数位和 Tanh LUT 打成 HLS top 使用的无头小端数组。HLS CNN top 的指针、工作区、控制和缓存所有权见 `configs/zero_dce_pp_hls_interface.json`；实际物理 DDR 基地址由 Vivado/PS 集成分配。Vitis 2025.2 C 仿真和 HLS 综合已运行，综合估计未达到 10 ns 时钟目标；板端验收仍未执行。

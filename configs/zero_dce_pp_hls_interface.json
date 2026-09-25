@@ -60,7 +60,7 @@
     "m_axi_ddr_output_in_source": true,
     "axi_stream_output": false,
     "synthesized_ip": false,
-    "rtl_or_hls_simulation": "not run in this repository",
-    "synthesis_timing_resources": "not run in this repository"
+    "rtl_or_hls_simulation": "Vitis 2025.2 C simulation passed: 19080 A_low values matched the software golden; RTL co-simulation not run",
+    "synthesis_timing_resources": "Vitis 2025.2 HLS synthesis completed for xc7z020clg400-1; estimated 40.443 ns versus 10 ns target, 4 BRAM18K, 11 DSP, 7439 FF, 16720 LUT; Vivado timing not run"
   }
 }

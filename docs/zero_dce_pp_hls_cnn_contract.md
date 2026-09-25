@@ -58,18 +58,21 @@ generated AXI-Lite register offsets are assigned during system integration.
 
 The source pipelines simple copies, activation, and output loops. Convolution
 MACs use a serial correctness-first schedule with a signed INT32 accumulator.
-No claim is made about II, latency, BRAM/DSP use, timing closure, or board
-operation until Vitis HLS C simulation, synthesis, and Vivado integration are
-run with the team's toolchain.
+HLS synthesis reports unmet loop II constraints and a 40.443 ns clock estimate
+for the 10 ns target. Vivado timing closure and board performance remain to be
+measured.
 
 ## Verification status
 
 The Python integer prototype and its seven tests validate the packed numerical
 rules, including Q14 `A_low` conversion. A native g++ testbench using an
 `ap_int` width shim compared all 19,080 output scalars against the Python
-golden, with zero mismatches. This check does not run Vitis HLS. Vitis HLS C
-simulation, synthesis, RTL co-simulation, and hardware timing have not been
-run in this repository.
+golden, with zero mismatches. Vitis 2025.2 C simulation also compared all
+19,080 values with zero mismatches. Vitis 2025.2 HLS synthesis completed for
+`xc7z020clg400-1`, estimating 40.443 ns against a 10 ns target and 4 BRAM18K,
+11 DSP, 7,439 FF, and 16,720 LUT. The tool reported unmet loop II constraints.
+These estimates do not establish Vivado timing closure or board performance;
+RTL co-simulation and hardware timing have not been run.
 
 To reproduce the native numerical check from the repository root after
 generating the integer artifacts, run:
@@ -81,8 +84,11 @@ outputs/zero_dce_pp/quantization/hls_cnn/native_cnn_test outputs/zero_dce_pp/qua
 ```
 
 `evaluation/hls_native/ap_int.h` is only the native check's type shim. The
-Vitis HLS project must use the vendor `ap_int.h`. With Vitis HLS installed,
-`fpga/hls/run_hls.tcl` provides a 10 ns C simulation and synthesis attempt
-for `xc7z020clg400-1`; it has not been executed here. The first hardware
-check should compare the DDR `a_low_q14` payload byte-for-byte against the
-existing Q14 golden payload.
+Vitis HLS project uses the vendor `ap_int.h`. With Vitis 2025.2 installed,
+run `vitis-run --mode hls --tcl fpga/hls/run_hls.tcl` from the repository root.
+The script stages inputs under a whitespace-free temporary path, runs 10 ns C
+simulation, then attempts synthesis for `xc7z020clg400-1`. Set
+`ZERO_DCE_HLS_BUILD_ROOT` to choose a writable staging root without spaces, or
+`ZERO_DCE_HLS_CSIM_ONLY=1` to run only C simulation. The first hardware check
+should compare the DDR `a_low_q14` payload byte-for-byte against the existing
+Q14 golden payload.

@@ -18,12 +18,26 @@ Run `python deployment/export_hls_cnn_package.py` in the configured Python
 environment to pack the downsampled input, generated integer arrays, and
 golden output for C simulation or a PS loader. The generated package stays
 under ignored `outputs/`. `tb_zero_dce_cnn.cpp` compares every `A_low` scalar
-with the golden; `run_hls.tcl` is the Vitis HLS C simulation and synthesis
-entry point. `evaluation/hls_native/ap_int.h` is used only for the native
-g++ numerical check.
+with the golden; `run_hls.tcl` is the Vitis 2025.2 C simulation and synthesis
+entry point. From the repository root on Windows, run:
 
-The native C++ testbench matched all 19,080 output scalars. This repository
-does not contain Vitis HLS C-simulation, synthesis, RTL co-simulation,
-Vivado timing, or board results yet. The source has no AXI4
+```powershell
+& "D:\vivado\2025.2\Vitis\bin\vitis-run.bat" --mode hls --tcl fpga/hls/run_hls.tcl
+```
+
+The script stages source and generated test data in a unique directory under
+`TEMP`, because Vitis HLS rejects source paths containing spaces. Set
+`ZERO_DCE_HLS_BUILD_ROOT` to another writable path without spaces if needed.
+Set `ZERO_DCE_HLS_CSIM_ONLY=1` to stop after C simulation; otherwise synthesis
+starts only after C simulation passes. The script prints the build directory,
+which contains the component and reports. `evaluation/hls_native/ap_int.h` is
+used only for the native g++ numerical check.
+
+The native C++ testbench and Vitis 2025.2 C simulation matched all 19,080
+output scalars with zero raw error. HLS synthesis completed for
+`xc7z020clg400-1`: estimated 40.443 ns against a 10 ns target, with 4 BRAM18K,
+11 DSP, 7,439 FF, and 16,720 LUT estimated. Loop II constraints were not all
+met. These are HLS estimates; RTL co-simulation, Vivado timing, and board
+results remain unverified. The source has no AXI4
 Stream output; the canonical V1 transport is m_axi DDR write. A stream adapter
 can be added at integration time without changing the Q14 tensor contract.

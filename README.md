@@ -6,7 +6,7 @@
 
 ## 当前阶段
 
-当前处于 **V1 单模型低照度增强软件 Baseline、候选量化与 CNN HLS top 阶段**。工程脚手架和 Zero-DCE++ 官方源码集成已完成；单图推理、官方 forward 一致性验证、参考数据导出及端到端整数软件原型已在本地 CPU 环境实际运行。CNN HLS top 和 Q14 DDR 输出合同已经写入 `fpga/hls/` 与 `configs/`，但 HLS 仿真、综合、Vivado 集成和板端验收尚未执行。
+当前处于 **V1 单模型低照度增强软件 Baseline、候选量化与 CNN HLS top 阶段**。工程脚手架和 Zero-DCE++ 官方源码集成已完成；单图推理、官方 forward 一致性验证、参考数据导出及端到端整数软件原型已在本地 CPU 环境实际运行。CNN HLS top 和 Q14 DDR 输出合同已经写入 `fpga/hls/` 与 `configs/`。Vitis 2025.2 C 仿真及 HLS 综合已运行；综合估计时钟为 40.443 ns，未达到 10 ns 目标。RTL 协同仿真、Vivado 集成和板端验收尚未执行。
 
 当前仓库已包含 Zero-DCE++ 官方模型、官方预训练权重及本项目适配工具。本地一次验证使用 PyTorch 2.14.0+cpu、CPU、`scale_factor=12`，拆分实现与官方 forward 的增强结果和参数图最大/平均绝对误差均为 0.0；该结果只代表记录的环境和输入，不代表其他平台已验证，也不表示本地已安装完整 FPGA 工具链。
 
@@ -50,4 +50,4 @@ python -m model.zero_dce_pp.export_reference --input path/to/image.png --device 
 
 当前候选规则为 CNN INT8 权重、INT16 激活、INT32 偏置/累加；CNN 输出的 `A_low` 和参数插值使用 Q14，曲线图像计算使用 Q15。实现位于 [deployment/zero_dce_integer_ptq.py](deployment/zero_dce_integer_ptq.py)，逐层参数位于 [configs/zero_dce_pp_integer_rules.json](configs/zero_dce_pp_integer_rules.json)，CNN→Bilinear 接口见 [configs/zero_dce_pp_a_low_interface.json](configs/zero_dce_pp_a_low_interface.json)，过程、误差及复现方法见 [量化实验报告](docs/zero_dce_pp_integer_quantization_report.md)。早期 CNN-only 试验见 [初步 PTQ 记录](docs/zero_dce_pp_cnn_ptq_initial.md)。生成的权重、逐层测试向量、效果图和 HLS 打包数组保存在受 Git 忽略的 `outputs/zero_dce_pp/quantization/`；软件端需运行脚本生成这些文件。该方案尚缺独立真实图片评估和硬件验证。
 
-CNN HLS top、m_axi DDR `A_low` 输出、工作区和 `ap_done` 时序合同见 [HLS CNN contract](docs/zero_dce_pp_hls_cnn_contract.md)。HLS 仿真、综合、Vivado 集成和板端验收尚未执行。
+CNN HLS top、m_axi DDR `A_low` 输出、工作区和 `ap_done` 时序合同见 [HLS CNN contract](docs/zero_dce_pp_hls_cnn_contract.md)。Vitis 2025.2 C 仿真与 HLS 综合结果见 [HLS 运行说明](fpga/hls/README.md)；Vivado 集成和板端验收尚未执行。
