@@ -34,13 +34,13 @@
 | 八轮增强 | 原图 Q14 转 Q15；插值后的参数 Q14 转 Q15，同一参数图每轮复用。每轮 `square=round_even(I²/2^15)`，`delta=round_even(A×(square-I)/2^15)`，`I=clip(I+delta,0,2^15)`，重复八次。公式的符号严格对齐官方 `I+A(I²-I)`。 |
 | 输出 | `round_even(I×255/2^15)`，钳到 `[0,255]` 后保存 RGB PNG。 |
 
-以上规则使用**对称二进制定点**，所以没有仿射量化的 `zero_point`。`round_even` 是“四舍六入、五看偶数”；正负数处理对称。配置 JSON 中每个卷积都有 `input_frac`、`output_frac`、各输出通道 `weight_frac`、权重尺寸、padding、组数和 INT32 累加上界。`outputs/zero_dce_pp/quantization/integer/integer_weights.npz` 含实际 INT8 权重与 INT32 偏置。`A_low` 的 DDR 测试数据字节序与平面排列见下一节；CNN IP 的 AXI 接口、地址和缓存同步仍未实现。
+以上规则使用**对称二进制定点**，所以没有仿射量化的 `zero_point`。`round_even` 是“四舍六入、五看偶数”；正负数处理对称。配置 JSON 中每个卷积都有 `input_frac`、`output_frac`、各输出通道 `weight_frac`、权重尺寸、padding、组数和 INT32 累加上界。`outputs/zero_dce_pp/quantization/integer/integer_weights.npz` 含实际 INT8 权重与 INT32 偏置。`A_low` 的 DDR 测试数据字节序与平面排列见下一节；CNN HLS top 的 m_axi 指针合同见 `docs/zero_dce_pp_hls_cnn_contract.md`。物理地址与 Vivado 地址映射仍由集成侧确定。
 
 ### 3.1 CNN→Bilinear 的 Q14 接口
 
 V1 固定输入图经裁剪后为 `[1,3,720,1272]`，CNN 输出 `A_low` 为 `[1,3,60,106]`。三个通道依次对应原图 R、G、B，NCHW 平面连续排列，先放完 R 的 `60×106` 个标量，再放 G、B。每个标量为二进制补码有符号 INT16 Q14，实值 `raw/16384`；这与 `ap_fixed<16,2>` 的小数位数一致。每通道 12,720 字节，整帧 38,160 字节，字节偏移为 `2×((c×60+y)×106+x)`。
 
-软件导出的 `night_01_a_low_q14_nchw_le.bin` 是无行填充的小端字节流；`night_01_a_low_q14_manifest.json` 包含尺寸、通道、长度和 SHA-256。二者在 `outputs/zero_dce_pp/quantization/integer/`，受 Git 忽略。固定接口定义在 `configs/zero_dce_pp_a_low_interface.json`。V1 传输次序约定为 CNN 生成完整同帧 `A_low` 到 DDR，再由 Bilinear 读取；缓冲区基地址、AXI 端口、完成信号和缓存同步仍需硬件集成。
+软件导出的 `night_01_a_low_q14_nchw_le.bin` 是无行填充的小端字节流；`night_01_a_low_q14_manifest.json` 包含尺寸、通道、长度和 SHA-256。二者在 `outputs/zero_dce_pp/quantization/integer/`，受 Git 忽略。固定接口定义在 `configs/zero_dce_pp_a_low_interface.json`。V1 传输次序约定为 CNN 生成完整同帧 `A_low` 到 DDR，再由 Bilinear 读取；HLS top 已声明输出 m_axi 端口及 ap_ctrl_hs 完成信号。缓冲区物理基地址、Vivado AXI 路由和板端缓存同步仍需集成。
 
 旧版实验曾生成 `night_01_parameters_integer_q15.npy`；该文件若仍留在本地输出目录，属于过期数据。以 `night_01_parameters_integer_q14.npy` 和本节的 Q14 二进制文件为准。
 
@@ -136,12 +136,12 @@ python .\deployment\zero_dce_integer_ptq.py
 python -m pytest -q .\evaluation\test_zero_dce_integer_ptq.py
 ```
 
-改为 Q14 接口后实际运行了完整脚本及 7 个测试（含 Q15→Q14 正负中点、DDR 二进制重载、14 层逐层输入对正确输出复算），**7/7 通过**。没有运行 HLS C 仿真、综合、Vivado 或上板测量，也没有宣称速度、功耗或 FPGA 资源收益。
+改为 Q14 接口后实际运行了完整脚本及 7 个测试（含 Q15→Q14 正负中点、DDR 二进制重载、14 层逐层输入对正确输出复算），**7/7 通过**。其后新增的 CNN HLS 源码经本机 g++ 数值检查：19,080 个 Q14 输出标量与同图软件 golden 逐个一致，最大原码误差 0。该检查使用本机 `ap_int` 类型替身，不能替代 Vitis HLS C 仿真；尚未运行 Vitis HLS C 仿真、综合、Vivado 或上板测量，也没有宣称速度、功耗或 FPGA 资源收益。
 
 ## 6. 下一步验收门槛
 
 1. 收集真实且独立的夜景、局部强光、噪声、正常曝光等图片；分开校准集和测试集。当前合成变体只能做算术压力检查，不能支撑画质结论。
 2. 设定允许的参数图/最终图误差和主观画质标准，复测色偏、噪声放大及亮部损伤；根据新数据调整各层小数位或混合精度。
-3. 与 FPGA 队友冻结张量布局、权重字节序、定点舍入、帧缓存和接口。先在 HLS C 仿真逐层对齐 `outputs/zero_dce_pp/quantization/integer/night_01_layer_io.npz`，再讨论综合和板端表现。
+3. 与 FPGA 队友确认已写入 `configs/zero_dce_pp_hls_interface.json` 的张量布局、权重字节序、定点舍入、帧缓存和接口，在 Vitis HLS C 仿真逐项核对 `A_low` golden；再讨论综合和板端表现。
 
 因此，本次“完全量化”指**全计算链已有明确且实际运行的整数软件规则**；项目书要求的多场景量化验收和 FPGA 闭环仍未完成。

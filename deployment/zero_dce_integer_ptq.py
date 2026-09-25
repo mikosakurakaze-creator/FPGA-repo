@@ -393,7 +393,7 @@ def evaluate(name, image, rgb_uint8, network, arrays, config, lookup, functions,
                 "binary_file": parameter_file,
                 "byte_count": len(parameter_bytes),
                 "sha256": hashlib.sha256(parameter_bytes).hexdigest(),
-                "notes": "Golden DDR payload only; CNN HLS memory port and addresses are not implemented.",
+                "notes": "Golden DDR payload; CNN HLS source exposes m_axi output. Physical DDR addresses and generated control registers are assigned during integration.",
             }, indent=2) + "\n", encoding="utf-8")
         np.save(output_dir / (name + "_enhanced_integer_q15.npy"),
                 integer_nodes["enhanced"][0].numpy(), allow_pickle=False)
@@ -528,8 +528,8 @@ def main():
         "limitations": [
             "The original evaluation image shares a source with all calibration variants.",
             "The image collection is insufficient for a production quality decision.",
-            "This is a CPU integer simulation; HLS C simulation, synthesis, board output and timing remain undone.",
-            "Weight/config export is experimental and does not define an AXI/DDR layout or binary endianness.",
+            "This is a CPU integer simulation; HLS source has a native C++ golden check, while Vitis HLS simulation, synthesis, board output and timing remain undone.",
+            "The separate HLS package exporter defines raw little-endian model arrays and the m_axi pointer contract; physical DDR address mapping remains an integration task.",
         ],
     }
     (output_dir / "results.json").write_text(

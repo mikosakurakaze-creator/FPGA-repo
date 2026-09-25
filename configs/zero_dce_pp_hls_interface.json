@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "top_function": "zero_dce_cnn_top",
+  "control": {
+    "protocol": "AXI4-Lite ap_ctrl_hs",
+    "start": "write ap_start through the generated control register",
+    "completion": "ap_done; output is valid after ap_done and remains stable until the next start",
+    "idle_ready": "ap_idle/ap_ready follow the standard Vitis HLS ap_ctrl_hs contract",
+    "invocation": "one complete 14-convolution CNN inference per start"
+  },
+  "input": {
+    "name": "input_q14",
+    "shape_nchw": [1, 3, 60, 106],
+    "layout": "C-contiguous planar NCHW, R then G then B",
+    "dtype": "signed int16 two's complement",
+    "fractional_bits": 14,
+    "real_value": "raw / 16384",
+    "elements": 19080,
+    "bytes": 38160,
+    "precondition": "already downsampled from the cropped [1,3,720,1272] full-resolution input using the frozen integer_downsample Q14 rule; CNN top does not perform image resize"
+  },
+  "weights": {
+    "weights_int8": {"dtype": "signed int8", "elements": 10075, "layout": "concatenated per-layer OIHW"},
+    "bias_int32": {"dtype": "signed int32", "elements": 486, "layout": "concatenated per-layer output-channel order"},
+    "weight_frac": {"dtype": "signed int8", "elements": 486, "layout": "one fractional-bit value per output channel"},
+    "tanh_lut_q15": {"dtype": "signed int16", "elements": 4097, "index": "q8 value + 2048 for q8 in [-2048, 2048]", "fractional_bits": 15}
+  },
+  "output": {
+    "name": "a_low_q14",
+    "shape_nchw": [1, 3, 60, 106],
+    "layout": "C-contiguous planar NCHW, R then G then B",
+    "dtype": "signed int16 two's complement",
+    "fractional_bits": 14,
+    "real_value": "raw / 16384",
+    "elements": 19080,
+    "bytes": 38160,
+    "transport": "m_axi DDR write",
+    "row_padding_bytes": 0,
+    "byte_order": "little-endian"
+  },
+  "workspace": {
+    "name": "workspace_int16",
+    "dtype": "signed int16",
+    "elements": 2035200,
+    "bytes": 4070400,
+    "transport": "m_axi DDR read/write",
+    "layout": "two 64-channel working slots followed by six 32-channel skip slots; stored fractional bits vary by layer",
+    "reuse_rule": "must remain owned by this invocation until ap_done"
+  },
+  "memory_map": {
+    "weight_offset_unit": "elements of the declared pointer dtype",
+    "bias_offset_unit": "elements of int32",
+    "weight_frac_offset_unit": "elements of int8",
+    "output_address": "byte address supplied in the a_low_q14 AXI-Lite pointer register",
+    "cache_rule": "flush input/weights/bias/frac/LUT before start; invalidate A_low after ap_done; invalidate workspace only if PS reads it",
+    "alias_rule": "input, model arrays, output, and workspace must occupy disjoint DDR regions"
+  },
+  "implementation_status": {
+    "cnn_hls_source": "fpga/hls/zero_dce_cnn_top.cpp",
+    "m_axi_ddr_output_in_source": true,
+    "axi_stream_output": false,
+    "synthesized_ip": false,
+    "rtl_or_hls_simulation": "not run in this repository",
+    "synthesis_timing_resources": "not run in this repository"
+  }
+}
