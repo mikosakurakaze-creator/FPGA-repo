@@ -1,0 +1,22 @@
+name: lowlight-fpga
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cpu
+      - torch==2.14.0+cpu
+      - torchvision==0.29.0+cpu
+      - numpy==2.2.6
+      - opencv-python==5.0.0.93
+      - Pillow==12.3.0
+      - PyYAML==6.0.3
+      - pandas==2.3.3
+      - matplotlib==3.10.9
+      - scikit-image==0.25.2
+      - scipy==1.15.3
+      - pytest==9.1.1
+      - onnx==1.23.0
+      - onnxruntime==1.23.2
+      - tqdm==4.70.1

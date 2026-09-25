@@ -6,7 +6,7 @@
 
 ## 当前阶段
 
-当前处于 **V1 单模型低照度增强软件 Baseline 阶段**。工程脚手架和 Zero-DCE++ 官方源码集成已完成；单图推理、官方 forward 一致性验证和参考数据导出已在本地 CPU 环境实际运行。FPGA 实现尚未开始。
+当前处于 **V1 单模型低照度增强软件 Baseline 与候选量化阶段**。工程脚手架和 Zero-DCE++ 官方源码集成已完成；单图推理、官方 forward 一致性验证、参考数据导出及端到端整数软件原型已在本地 CPU 环境实际运行。FPGA 实现尚未开始。
 
 当前仓库已包含 Zero-DCE++ 官方模型、官方预训练权重及本项目适配工具。本地一次验证使用 PyTorch 2.14.0+cpu、CPU、`scale_factor=12`，拆分实现与官方 forward 的增强结果和参数图最大/平均绝对误差均为 0.0；该结果只代表记录的环境和输入，不代表其他平台已验证，也不表示本地已安装完整 FPGA 工具链。
 
@@ -32,7 +32,7 @@ docs/           项目范围、接口、路线图和协作规范
 3. 修改完成后先展示差异并等待人工审核；只有获得当次明确授权后才能提交、推送或创建 Pull Request。
 4. 经代码和文档检查后再由团队决定是否合并到 `main`。
 
-详细约定见 [V1 范围](docs/v1_scope.md)、[模块接口](docs/interfaces.md) 和 [团队工作流](docs/team_workflow.md)。
+协作约定见 [AGENTS.md](AGENTS.md)；量化实验的当前范围与限制见 [量化实验报告](docs/zero_dce_pp_integer_quantization_report.md)。
 
 ## Zero-DCE++ 软件工具
 
@@ -44,4 +44,8 @@ python -m model.zero_dce_pp.validate_consistency --input path/to/image.png --dev
 python -m model.zero_dce_pp.export_reference --input path/to/image.png --device cpu --scale-factor 12
 ```
 
-默认权重为 `model/zero_dce_pp/weights/Epoch99.pth`，默认生成内容位于已被 Git 忽略的 `outputs/zero_dce_pp/`。详细说明见 [Zero-DCE++ Baseline](model/zero_dce_pp/README.md) 和 [模型规格](docs/zero_dce_pp_model_spec.md)。本地 CPU 验证记录见对应文档；CUDA、其他 PyTorch 版本和 FPGA 结果仍待验证。
+默认权重为 `model/zero_dce_pp/weights/Epoch99.pth`，量化运行结果位于被 Git 忽略的 `outputs/zero_dce_pp/quantization/`。模型细节及本地 CPU 验证记录见 [Zero-DCE++ Baseline](model/zero_dce_pp/README.md)；CUDA、其他 PyTorch 版本和 FPGA 结果仍待验证。
+
+## 候选整数化实验
+
+当前候选规则为 CNN INT8 权重、INT16 激活、INT32 偏置/累加；CNN 输出的 `A_low` 和参数插值使用 Q14，曲线图像计算使用 Q15。实现位于 [deployment/zero_dce_integer_ptq.py](deployment/zero_dce_integer_ptq.py)，逐层参数位于 [configs/zero_dce_pp_integer_rules.json](configs/zero_dce_pp_integer_rules.json)，CNN→Bilinear 接口见 [configs/zero_dce_pp_a_low_interface.json](configs/zero_dce_pp_a_low_interface.json)，过程、误差及复现方法见 [量化实验报告](docs/zero_dce_pp_integer_quantization_report.md)。早期 CNN-only 试验见 [初步 PTQ 记录](docs/zero_dce_pp_cnn_ptq_initial.md)。生成的权重、逐层测试向量和效果图保存在受 Git 忽略的 `outputs/zero_dce_pp/quantization/`；软件端需运行脚本生成这些文件。该方案尚缺独立真实图片评估和硬件验证。
