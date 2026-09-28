@@ -65,160 +65,211 @@ static inline int feature_index(int channel, int row, int column) {
     return (channel * ZERO_DCE_HEIGHT + row) * ZERO_DCE_WIDTH + column;
 }
 
-static void rescale_buffer(
-    zero_dce_q16_t *buffer, int channels, int old_frac, int new_frac) {
-#pragma HLS INLINE
-    if (old_frac == new_frac) {
-        return;
-    }
-    for (int channel = 0; channel < channels; ++channel) {
-        for (int row = 0; row < ZERO_DCE_HEIGHT; ++row) {
-            for (int column = 0; column < ZERO_DCE_WIDTH; ++column) {
-#pragma HLS PIPELINE II=1
-                const int index = feature_index(channel, row, column);
-                buffer[index] = rescale_q16(buffer[index], old_frac, new_frac);
-            }
-        }
-    }
-}
-
-static void copy_input(
-    const zero_dce_q16_t *input_q14, zero_dce_q16_t *workspace) {
-    for (int index = 0; index < ZERO_DCE_INPUT_ELEMENTS; ++index) {
-#pragma HLS PIPELINE II=1
-        workspace[index] = input_q14[index];
-    }
-}
-
-static void copy_skip(
-    const zero_dce_q16_t *source, zero_dce_q16_t *workspace, int skip_index) {
-    const int destination_offset = ZERO_DCE_SKIP0_OFFSET +
-                                   skip_index * ZERO_DCE_SKIP_STRIDE;
-    for (int index = 0; index < ZERO_DCE_SKIP_ELEMENTS; ++index) {
-#pragma HLS PIPELINE II=1
-        workspace[destination_offset + index] = source[index];
-    }
-}
-
-static void concat_skip(
-    zero_dce_q16_t *destination,
-    const zero_dce_q16_t *workspace,
-    int left_skip,
-    int right_skip,
-    int destination_frac,
-    int left_frac,
-    int right_frac) {
-    const int left_offset = ZERO_DCE_SKIP0_OFFSET + left_skip * ZERO_DCE_SKIP_STRIDE;
-    const int right_offset = ZERO_DCE_SKIP0_OFFSET + right_skip * ZERO_DCE_SKIP_STRIDE;
-    for (int channel = 0; channel < 32; ++channel) {
-        for (int row = 0; row < ZERO_DCE_HEIGHT; ++row) {
-            for (int column = 0; column < ZERO_DCE_WIDTH; ++column) {
-#pragma HLS PIPELINE II=1
-                const int index = feature_index(channel, row, column);
-                destination[index] = rescale_q16(
-                    workspace[left_offset + index], left_frac, destination_frac);
-                destination[ZERO_DCE_SKIP_ELEMENTS + index] = rescale_q16(
-                    workspace[right_offset + index], right_frac, destination_frac);
-            }
-        }
-    }
-}
-
-static void convolution(
-    const zero_dce_q16_t *source,
-    zero_dce_q16_t *destination,
+// Model arrays are copied once per invocation. No convolution MAC reads DDR.
+static void load_model(
     const zero_dce_q8_t *weights_int8,
     const zero_dce_q32_t *bias_int32,
     const zero_dce_q8_t *weight_frac,
-    const zero_dce_layer_spec_t &layer) {
-    const int input_per_group = layer.input_channels / layer.groups;
-    const int output_per_group = layer.output_channels / layer.groups;
-    const int kernel_elements = layer.kernel_h * layer.kernel_w;
+    const zero_dce_q16_t *tanh_lut_q15,
+    zero_dce_q8_t local_weights[ZERO_DCE_WEIGHT_ELEMENTS],
+    zero_dce_q32_t local_bias[ZERO_DCE_BIAS_ELEMENTS],
+    zero_dce_q8_t local_frac[ZERO_DCE_WEIGHT_FRAC_ELEMENTS],
+    zero_dce_q16_t local_lut[ZERO_DCE_TANH_LUT_ELEMENTS]) {
+    for (int index = 0; index < ZERO_DCE_WEIGHT_ELEMENTS; ++index) {
+#pragma HLS PIPELINE II=1
+        local_weights[index] = weights_int8[index];
+    }
+    for (int index = 0; index < ZERO_DCE_BIAS_ELEMENTS; ++index) {
+#pragma HLS PIPELINE II=1
+        local_bias[index] = bias_int32[index];
+    }
+    for (int index = 0; index < ZERO_DCE_WEIGHT_FRAC_ELEMENTS; ++index) {
+#pragma HLS PIPELINE II=1
+        local_frac[index] = weight_frac[index];
+    }
+    for (int index = 0; index < ZERO_DCE_TANH_LUT_ELEMENTS; ++index) {
+#pragma HLS PIPELINE II=1
+        local_lut[index] = tanh_lut_q15[index];
+    }
+}
 
-    for (int output_channel = 0; output_channel < layer.output_channels;
-         ++output_channel) {
-        const int group = output_channel / output_per_group;
-        const int input_group_offset = group * input_per_group;
-        const int weight_channel_offset =
-            layer.weight_offset + output_channel * input_per_group * kernel_elements;
-        const int weight_frac_value =
-            (int)weight_frac[layer.weight_frac_offset + output_channel];
-        const int rescale_shift =
-            layer.input_frac + weight_frac_value - layer.output_frac;
-        for (int row = 0; row < ZERO_DCE_HEIGHT; ++row) {
-            for (int column = 0; column < ZERO_DCE_WIDTH; ++column) {
+// Read one tile plus its one-pixel halo. Concatenation and its required
+// per-skip requantization happen here, before the depthwise convolution.
+static void load_source_tile(
+    const zero_dce_q16_t *input_q14,
+    const zero_dce_q16_t *workspace_int16,
+    int block, int tile_row, int tile_column, int channels, int input_frac,
+    zero_dce_q16_t source_tile[ZERO_DCE_MAX_FEATURE_CHANNELS]
+                               [ZERO_DCE_TILE_HEIGHT + 2]
+                               [ZERO_DCE_TILE_WIDTH + 2]) {
+    const int left_skip = block == 5 ? 2 : (block == 6 ? 1 : 0);
+    const int right_skip = block == 5 ? 3 : (block == 6 ? 4 : 5);
+    for (int channel = 0; channel < channels; ++channel) {
+        const zero_dce_q16_t *source = block == 1 ? input_q14 : workspace_int16;
+        int source_channel = channel;
+        int source_frac = 14;
+        int slot = 0;
+        if (block >= 5) {
+            const bool right_half = channel >= 32;
+            slot = right_half ? right_skip : left_skip;
+            source_channel = right_half ? channel - 32 : channel;
+            source_frac = kSkipFrac[slot];
+        } else if (block > 1) {
+            slot = block - 2;
+            source_frac = kSkipFrac[slot];
+        }
+        const int base = block == 1
+                             ? source_channel * ZERO_DCE_SPATIAL
+                             : ZERO_DCE_SKIP0_OFFSET +
+                                   slot * ZERO_DCE_SKIP_STRIDE +
+                                   source_channel * ZERO_DCE_SPATIAL;
+        for (int local_row = 0; local_row < ZERO_DCE_TILE_HEIGHT + 2;
+             ++local_row) {
+            const int global_row = tile_row + local_row - 1;
+            for (int local_column = 0;
+                 local_column < ZERO_DCE_TILE_WIDTH + 2; ++local_column) {
+#pragma HLS PIPELINE II=1
+                source_tile[channel][local_row][local_column] = 0;
+            }
+            if (global_row >= 0 && global_row < ZERO_DCE_HEIGHT) {
+                const int first_column = tile_column == 0 ? 1 : 0;
+                const int end_column =
+                    tile_column + ZERO_DCE_TILE_WIDTH + 1 < ZERO_DCE_WIDTH
+                        ? ZERO_DCE_TILE_WIDTH + 2
+                        : ZERO_DCE_WIDTH - tile_column + 1;
+                const int row_base = base + global_row * ZERO_DCE_WIDTH +
+                                     tile_column - 1;
+                for (int local_column = first_column;
+                     local_column < end_column; ++local_column) {
+#pragma HLS PIPELINE II=1
+                    const zero_dce_q16_t value = source[row_base + local_column];
+                    source_tile[channel][local_row][local_column] =
+                        rescale_q16(value, source_frac, input_frac);
+                }
+            }
+        }
+    }
+}
+
+static void compute_depth_tile(
+    const zero_dce_q16_t source_tile[ZERO_DCE_MAX_FEATURE_CHANNELS]
+                                      [ZERO_DCE_TILE_HEIGHT + 2]
+                                      [ZERO_DCE_TILE_WIDTH + 2],
+    zero_dce_q16_t middle_tile[ZERO_DCE_MAX_FEATURE_CHANNELS]
+                                  [ZERO_DCE_TILE_HEIGHT]
+                                  [ZERO_DCE_TILE_WIDTH],
+    const zero_dce_q8_t local_weights[ZERO_DCE_WEIGHT_ELEMENTS],
+    const zero_dce_q32_t local_bias[ZERO_DCE_BIAS_ELEMENTS],
+    const zero_dce_q8_t local_frac[ZERO_DCE_WEIGHT_FRAC_ELEMENTS],
+    const zero_dce_layer_spec_t &depth,
+    const zero_dce_layer_spec_t &point,
+    int tile_height, int tile_width) {
+    for (int channel = 0; channel < depth.output_channels; ++channel) {
+        const int weight_base = depth.weight_offset + 9 * channel;
+        const int shift = depth.input_frac +
+                          (int)local_frac[depth.weight_frac_offset + channel] -
+                          depth.output_frac;
+        for (int row = 0; row < tile_height; ++row) {
+            for (int column = 0; column < tile_width; ++column) {
                 zero_dce_q32_t accumulator =
-                    bias_int32[layer.bias_offset + output_channel];
-                for (int input_channel = 0; input_channel < input_per_group;
-                     ++input_channel) {
-                    for (int kernel_row = 0; kernel_row < layer.kernel_h;
-                         ++kernel_row) {
-                        for (int kernel_column = 0; kernel_column < layer.kernel_w;
-                             ++kernel_column) {
-                            const int source_row = row + kernel_row - layer.pad_h;
-                            const int source_column =
-                                column + kernel_column - layer.pad_w;
-                            if (source_row >= 0 && source_row < ZERO_DCE_HEIGHT &&
-                                source_column >= 0 &&
-                                source_column < ZERO_DCE_WIDTH) {
-                                const int source_index = feature_index(
-                                    input_group_offset + input_channel,
-                                    source_row, source_column);
-                                const int weight_index =
-                                    weight_channel_offset +
-                                    (input_channel * kernel_elements) +
-                                    kernel_row * layer.kernel_w + kernel_column;
-                                accumulator +=
-                                    (zero_dce_q32_t)source[source_index] *
-                                    (zero_dce_q32_t)weights_int8[weight_index];
-                            }
-                        }
+                    local_bias[depth.bias_offset + channel];
+                for (int kernel_row = 0; kernel_row < 3; ++kernel_row) {
+                    for (int kernel_column = 0; kernel_column < 3;
+                         ++kernel_column) {
+#pragma HLS PIPELINE II=1
+                        accumulator +=
+                            (zero_dce_q32_t)source_tile[channel]
+                                                        [row + kernel_row]
+                                                        [column + kernel_column] *
+                            (zero_dce_q32_t)local_weights[
+                                weight_base + 3 * kernel_row + kernel_column];
                     }
                 }
-                // The frozen quantization rules bound every accumulation
-                // within signed INT32 for a signed INT16 input.
-                const long long requantized =
-                    round_shift_even((long long)accumulator, rescale_shift);
-                destination[feature_index(output_channel, row, column)] =
-                    clamp_q16(requantized);
+                const zero_dce_q16_t depth_value = clamp_q16(
+                    round_shift_even((long long)accumulator, shift));
+                middle_tile[channel][row][column] = rescale_q16(
+                    depth_value, depth.output_frac, point.input_frac);
             }
         }
     }
 }
 
-static void apply_relu(zero_dce_q16_t *buffer, int channels) {
+static void compute_point_tile(
+    const zero_dce_q16_t middle_tile[ZERO_DCE_MAX_FEATURE_CHANNELS]
+                                      [ZERO_DCE_TILE_HEIGHT]
+                                      [ZERO_DCE_TILE_WIDTH],
+    zero_dce_q16_t output_tile[32]
+                                  [ZERO_DCE_TILE_HEIGHT]
+                                  [ZERO_DCE_TILE_WIDTH],
+    const zero_dce_q8_t local_weights[ZERO_DCE_WEIGHT_ELEMENTS],
+    const zero_dce_q32_t local_bias[ZERO_DCE_BIAS_ELEMENTS],
+    const zero_dce_q8_t local_frac[ZERO_DCE_WEIGHT_FRAC_ELEMENTS],
+    const zero_dce_q16_t local_lut[ZERO_DCE_TANH_LUT_ELEMENTS],
+    const zero_dce_layer_spec_t &point,
+    int block, int tile_height, int tile_width) {
+    for (int output_channel = 0; output_channel < point.output_channels;
+         ++output_channel) {
+        const int weight_base =
+            point.weight_offset + output_channel * point.input_channels;
+        const int shift = point.input_frac +
+                          (int)local_frac[point.weight_frac_offset +
+                                          output_channel] -
+                          point.output_frac;
+        for (int row = 0; row < tile_height; ++row) {
+            for (int column = 0; column < tile_width; ++column) {
+                zero_dce_q32_t accumulator =
+                    local_bias[point.bias_offset + output_channel];
+                for (int input_channel = 0;
+                     input_channel < point.input_channels; ++input_channel) {
+#pragma HLS PIPELINE II=1
+                    accumulator +=
+                        (zero_dce_q32_t)middle_tile[input_channel][row][column] *
+                        (zero_dce_q32_t)local_weights[
+                            weight_base + input_channel];
+                }
+                zero_dce_q16_t value =
+                    clamp_q16(round_shift_even((long long)accumulator, shift));
+                if (block < 7) {
+                    if (value < 0) {
+                        value = 0;
+                    }
+                } else {
+                    int q8_index = (int)round_shift_even((long long)value, 8);
+                    if (q8_index < -2048) {
+                        q8_index = -2048;
+                    }
+                    if (q8_index > 2048) {
+                        q8_index = 2048;
+                    }
+                    value = clamp_q16(round_shift_even(
+                        (long long)local_lut[q8_index + 2048], 1));
+                }
+                output_tile[output_channel][row][column] = value;
+            }
+        }
+    }
+}
+
+static void store_output_tile(
+    const zero_dce_q16_t output_tile[32]
+                                      [ZERO_DCE_TILE_HEIGHT]
+                                      [ZERO_DCE_TILE_WIDTH],
+    zero_dce_q16_t *a_low_q14, zero_dce_q16_t *workspace_int16,
+    int block, int tile_row, int tile_column, int channels,
+    int tile_height, int tile_width) {
+    zero_dce_q16_t *destination =
+        block == 7 ? a_low_q14 : workspace_int16;
+    const int slot_base =
+        block == 7 ? 0 : ZERO_DCE_SKIP0_OFFSET +
+                               (block - 1) * ZERO_DCE_SKIP_STRIDE;
     for (int channel = 0; channel < channels; ++channel) {
-        for (int row = 0; row < ZERO_DCE_HEIGHT; ++row) {
-            for (int column = 0; column < ZERO_DCE_WIDTH; ++column) {
+        const int base = slot_base + channel * ZERO_DCE_SPATIAL;
+        for (int row = 0; row < tile_height; ++row) {
+            for (int column = 0; column < tile_width; ++column) {
 #pragma HLS PIPELINE II=1
-                const int index = feature_index(channel, row, column);
-                if (buffer[index] < 0) {
-                    buffer[index] = 0;
-                }
-            }
-        }
-    }
-}
-
-static void emit_a_low(
-    const zero_dce_q16_t *features,
-    const zero_dce_q16_t *tanh_lut_q15,
-    zero_dce_q16_t *a_low_q14) {
-    for (int channel = 0; channel < ZERO_DCE_OUTPUT_CHANNELS; ++channel) {
-        for (int row = 0; row < ZERO_DCE_HEIGHT; ++row) {
-            for (int column = 0; column < ZERO_DCE_WIDTH; ++column) {
-#pragma HLS PIPELINE II=1
-                const int index = feature_index(channel, row, column);
-                int q8_index = (int)round_shift_even((long long)features[index], 8);
-                if (q8_index < -2048) {
-                    q8_index = -2048;
-                }
-                if (q8_index > 2048) {
-                    q8_index = 2048;
-                }
-                const int lut_index = q8_index + 2048;
-                const long long tanh_q15 = tanh_lut_q15[lut_index];
-                a_low_q14[index] = clamp_q16(round_shift_even(tanh_q15, 1));
+                destination[base + (tile_row + row) * ZERO_DCE_WIDTH +
+                            tile_column + column] =
+                    output_tile[channel][row][column];
             }
         }
     }
@@ -234,13 +285,13 @@ extern "C" void zero_dce_cnn_top(
     const zero_dce_q16_t *tanh_lut_q15,
     zero_dce_q16_t *a_low_q14,
     zero_dce_q16_t *workspace_int16) {
-#pragma HLS INTERFACE m_axi port=input_q14 offset=slave bundle=gmem depth=19080 max_read_burst_length=64
-#pragma HLS INTERFACE m_axi port=weights_int8 offset=slave bundle=gmem depth=10075 max_read_burst_length=64
-#pragma HLS INTERFACE m_axi port=bias_int32 offset=slave bundle=gmem depth=486 max_read_burst_length=64
-#pragma HLS INTERFACE m_axi port=weight_frac offset=slave bundle=gmem depth=486 max_read_burst_length=64
-#pragma HLS INTERFACE m_axi port=tanh_lut_q15 offset=slave bundle=gmem depth=4097 max_read_burst_length=64
-#pragma HLS INTERFACE m_axi port=a_low_q14 offset=slave bundle=gmem depth=19080 max_write_burst_length=64
-#pragma HLS INTERFACE m_axi port=workspace_int16 offset=slave bundle=gmem depth=2035200 max_read_burst_length=64 max_write_burst_length=64
+#pragma HLS INTERFACE m_axi port=input_q14 offset=slave bundle=gmem_input depth=19080 max_read_burst_length=64
+#pragma HLS INTERFACE m_axi port=weights_int8 offset=slave bundle=gmem8 depth=10075 max_read_burst_length=64
+#pragma HLS INTERFACE m_axi port=bias_int32 offset=slave bundle=gmem32 depth=486 max_read_burst_length=64
+#pragma HLS INTERFACE m_axi port=weight_frac offset=slave bundle=gmem8 depth=486 max_read_burst_length=64
+#pragma HLS INTERFACE m_axi port=tanh_lut_q15 offset=slave bundle=gmem_lut depth=4097 max_read_burst_length=64
+#pragma HLS INTERFACE m_axi port=a_low_q14 offset=slave bundle=gmem_output depth=19080 max_write_burst_length=64
+#pragma HLS INTERFACE m_axi port=workspace_int16 offset=slave bundle=gmem_workspace depth=1221120 max_read_burst_length=64 max_write_burst_length=64
 #pragma HLS INTERFACE s_axilite port=input_q14 bundle=control
 #pragma HLS INTERFACE s_axilite port=weights_int8 bundle=control
 #pragma HLS INTERFACE s_axilite port=bias_int32 bundle=control
@@ -250,50 +301,54 @@ extern "C" void zero_dce_cnn_top(
 #pragma HLS INTERFACE s_axilite port=workspace_int16 bundle=control
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 
-    zero_dce_q16_t *buffer0 =
-        workspace_int16 + ZERO_DCE_WORK_BUFFER0_OFFSET;
-    zero_dce_q16_t *buffer1 =
-        workspace_int16 + ZERO_DCE_WORK_BUFFER1_OFFSET;
+    zero_dce_q8_t local_weights[ZERO_DCE_WEIGHT_ELEMENTS];
+    zero_dce_q32_t local_bias[ZERO_DCE_BIAS_ELEMENTS];
+    zero_dce_q8_t local_frac[ZERO_DCE_WEIGHT_FRAC_ELEMENTS];
+    zero_dce_q16_t local_lut[ZERO_DCE_TANH_LUT_ELEMENTS];
+    zero_dce_q16_t source_tile[ZERO_DCE_MAX_FEATURE_CHANNELS]
+                               [ZERO_DCE_TILE_HEIGHT + 2]
+                               [ZERO_DCE_TILE_WIDTH + 2];
+    zero_dce_q16_t middle_tile[ZERO_DCE_MAX_FEATURE_CHANNELS]
+                               [ZERO_DCE_TILE_HEIGHT]
+                               [ZERO_DCE_TILE_WIDTH];
+    zero_dce_q16_t output_tile[32][ZERO_DCE_TILE_HEIGHT]
+                               [ZERO_DCE_TILE_WIDTH];
+#pragma HLS BIND_STORAGE variable=local_weights type=ram_2p impl=bram
+#pragma HLS BIND_STORAGE variable=local_bias type=ram_2p impl=bram
+#pragma HLS BIND_STORAGE variable=local_frac type=ram_2p impl=bram
+#pragma HLS BIND_STORAGE variable=local_lut type=ram_2p impl=bram
+#pragma HLS BIND_STORAGE variable=source_tile type=ram_2p impl=bram
+#pragma HLS BIND_STORAGE variable=middle_tile type=ram_2p impl=bram
+#pragma HLS BIND_STORAGE variable=output_tile type=ram_2p impl=bram
 
-    copy_input(input_q14, buffer0);
-    int current_frac = 14;
-    int current_channels = 3;
-
+    load_model(weights_int8, bias_int32, weight_frac, tanh_lut_q15,
+               local_weights, local_bias, local_frac, local_lut);
     for (int block = 1; block <= 7; ++block) {
-        const int depth_layer_index = 2 * (block - 1);
-        const int point_layer_index = depth_layer_index + 1;
-        const zero_dce_layer_spec_t &depth =
-            kZeroDceLayers[depth_layer_index];
-        const zero_dce_layer_spec_t &point =
-            kZeroDceLayers[point_layer_index];
-
-        if (block >= 5) {
-            const int left = block == 5 ? 2 : (block == 6 ? 1 : 0);
-            const int right = block == 5 ? 3 : (block == 6 ? 4 : 5);
-            concat_skip(buffer0, workspace_int16, left, right,
-                        depth.input_frac, kSkipFrac[left], kSkipFrac[right]);
-            current_channels = 64;
-            current_frac = depth.input_frac;
-        }
-
-        rescale_buffer(buffer0, current_channels, current_frac,
-                       depth.input_frac);
-        convolution(buffer0, buffer1, weights_int8, bias_int32, weight_frac,
-                    depth);
-        rescale_buffer(buffer1, depth.output_channels, depth.output_frac,
-                       point.input_frac);
-        convolution(buffer1, buffer0, weights_int8, bias_int32, weight_frac,
-                    point);
-        current_channels = point.output_channels;
-        current_frac = point.output_frac;
-
-        if (block < 7) {
-            apply_relu(buffer0, current_channels);
-            copy_skip(buffer0, workspace_int16, block - 1);
+        const zero_dce_layer_spec_t &depth = kZeroDceLayers[2 * (block - 1)];
+        const zero_dce_layer_spec_t &point = kZeroDceLayers[2 * (block - 1) + 1];
+        for (int tile_row = 0; tile_row < ZERO_DCE_HEIGHT;
+             tile_row += ZERO_DCE_TILE_HEIGHT) {
+            const int tile_height =
+                tile_row + ZERO_DCE_TILE_HEIGHT <= ZERO_DCE_HEIGHT
+                    ? ZERO_DCE_TILE_HEIGHT : ZERO_DCE_HEIGHT - tile_row;
+            for (int tile_column = 0; tile_column < ZERO_DCE_WIDTH;
+                 tile_column += ZERO_DCE_TILE_WIDTH) {
+                const int tile_width =
+                    tile_column + ZERO_DCE_TILE_WIDTH <= ZERO_DCE_WIDTH
+                        ? ZERO_DCE_TILE_WIDTH : ZERO_DCE_WIDTH - tile_column;
+                load_source_tile(input_q14, workspace_int16, block, tile_row,
+                                 tile_column, depth.input_channels,
+                                 depth.input_frac, source_tile);
+                compute_depth_tile(source_tile, middle_tile, local_weights,
+                                   local_bias, local_frac, depth, point,
+                                   tile_height, tile_width);
+                compute_point_tile(middle_tile, output_tile, local_weights,
+                                   local_bias, local_frac, local_lut, point,
+                                   block, tile_height, tile_width);
+                store_output_tile(output_tile, a_low_q14, workspace_int16,
+                                  block, tile_row, tile_column,
+                                  point.output_channels, tile_height, tile_width);
+            }
         }
     }
-
-    // The final pointwise layer is Q16. Tanh LUT lookup is Q8-indexed and
-    // returns Q15; the public CNN-to-Bilinear boundary is signed Q14.
-    emit_a_low(buffer0, tanh_lut_q15, a_low_q14);
 }

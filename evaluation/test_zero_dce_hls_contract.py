@@ -39,16 +39,29 @@ def test_hls_source_declares_ddr_top_and_workspace_size():
     assert 'extern "C" void zero_dce_cnn_top' in header
     assert "port=a_low_q14" in source
     assert "port=workspace_int16" in source
-    assert "depth=2035200" in source
-    assert "emit_a_low" in source
+    assert "depth=1221120" in source
+    assert "load_source_tile" in source
+    assert "compute_depth_tile" in source
+    assert "compute_point_tile" in source
+    assert "store_output_tile" in source
     assert "round_shift_even" in source
+    interface = json.loads(
+        (ROOT / "configs" / "zero_dce_pp_hls_interface.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    for bundle, ports in interface["memory_map"]["axi_bundles"].items():
+        for port in ports:
+            assert re.search(
+                rf"#pragma HLS INTERFACE m_axi port={port} .* bundle={bundle} ",
+                source,
+            )
 
 
-def test_hls_workspace_layout_is_sufficient_for_two_work_and_six_skip_slots():
+def test_hls_workspace_layout_contains_six_skip_slots():
     spatial = 60 * 106
-    max_feature = 64 * spatial
     skip = 32 * spatial
-    expected = 2 * max_feature + 6 * skip
+    expected = 6 * skip
     hls = json.loads(
         (ROOT / "configs" / "zero_dce_pp_hls_interface.json").read_text(
             encoding="utf-8"

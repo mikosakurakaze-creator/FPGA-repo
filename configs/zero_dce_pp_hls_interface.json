@@ -41,13 +41,14 @@
   "workspace": {
     "name": "workspace_int16",
     "dtype": "signed int16",
-    "elements": 2035200,
-    "bytes": 4070400,
+    "elements": 1221120,
+    "bytes": 2442240,
     "transport": "m_axi DDR read/write",
-    "layout": "two 64-channel working slots followed by six 32-channel skip slots; stored fractional bits vary by layer",
+    "layout": "six consecutive 32-channel ReLU skip slots, blocks 1..6; stored fractional bits vary by layer",
     "reuse_rule": "must remain owned by this invocation until ap_done"
   },
   "memory_map": {
+    "axi_bundles": {"gmem8": ["weights_int8", "weight_frac"], "gmem32": ["bias_int32"], "gmem_input": ["input_q14"], "gmem_lut": ["tanh_lut_q15"], "gmem_output": ["a_low_q14"], "gmem_workspace": ["workspace_int16"]},
     "weight_offset_unit": "elements of the declared pointer dtype",
     "bias_offset_unit": "elements of int32",
     "weight_frac_offset_unit": "elements of int8",
@@ -61,6 +62,6 @@
     "axi_stream_output": false,
     "synthesized_ip": false,
     "rtl_or_hls_simulation": "Vitis 2025.2 C simulation passed: 19080 A_low values matched the software golden; RTL co-simulation not run",
-    "synthesis_timing_resources": "Vitis 2025.2 HLS synthesis completed for xc7z020clg400-1; estimated 40.443 ns versus 10 ns target, 4 BRAM18K, 11 DSP, 7439 FF, 16720 LUT; Vivado timing not run"
+    "synthesis_timing_resources": "Vitis 2025.2 HLS synthesis of the tiled implementation on xc7z020clg400-1 estimated 8.313 ns versus a 10 ns target, with 58 BRAM18K, 16 DSP, 11187 FF, and 16495 LUT; all loop constraints satisfied. This is not Vivado implementation timing."
   }
 }

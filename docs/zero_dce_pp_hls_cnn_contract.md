@@ -1,6 +1,6 @@
 # Zero-DCE++ CNN HLS contract
 
-The repository now contains a correctness-first V1 HLS top at
+The repository contains a tiled V1 HLS top at
 `fpga/hls/zero_dce_cnn_top.cpp`. It implements the seven Zero-DCE++ encoder
 blocks (14 convolutions), the three concatenations, ReLU placement, the Q15
 Tanh LUT lookup, and the final Q15-to-Q14 conversion at the `A_low` boundary.
@@ -48,7 +48,8 @@ loader, not repository source artifacts.
 One AXI-Lite start launches one complete CNN evaluation. The caller must keep
 the input, model, LUT, output, and workspace allocations owned by the IP until
 `ap_done`; none of these regions may overlap. `workspace_int16` is a scratch
-array of 2,035,200 signed INT16 elements (4,070,400 bytes). Values in it use
+array of 1,221,120 signed INT16 elements (2,442,240 bytes), containing the
+six 32-channel ReLU skip tensors from blocks 1 through 6. Values in it use
 different fractional-bit counts at different layers, so the workspace name
 does not imply a fixed Q14 scale. The `a_low_q14` DDR buffer is valid after
 `ap_done` and must be invalidated in the PS cache before reading it. Flush
@@ -56,23 +57,42 @@ input and model arrays from the PS cache before asserting start. No overlap
 between invocations is assumed in V1. Physical DDR addresses and the
 generated AXI-Lite register offsets are assigned during system integration.
 
-The source pipelines simple copies, activation, and output loops. Convolution
-MACs use a serial correctness-first schedule with a signed INT32 accumulator.
-HLS synthesis reports unmet loop II constraints and a 40.443 ns clock estimate
-for the 10 ns target. Vivado timing closure and board performance remain to be
-measured.
+At each start, the top copies the packed weights, biases, per-channel scales,
+and Tanh LUT into on-chip memories. It reads an 8x16 output tile and its
+one-pixel halo into a local source tile, performs depthwise and pointwise
+convolution on local tiles, then writes the completed output tile to the
+appropriate skip slot or the final A_low DDR buffer. Skip concatenation and
+its required Q-format conversion happen during tile loading. DDR access is
+therefore outside the MAC loops. The rightmost and bottom tiles are clipped to
+the 106x60 image, and out-of-image halo samples are zero. All seven blocks
+remain sequential, so a skip slot is complete before a later block reads it.
+
+This schedule reduces the external workspace by 1,628,160 bytes. It preserves
+the AXI pointer list and A_low format. Six generated AXI masters are used:
+`gmem8` for weights and scales, `gmem32` for biases, and one each for the
+input, LUT, output, and workspace. Integration must connect all six masters
+to accessible DDR. Vitis HLS inferred bursts for the model arrays and the
+contiguous tile rows. It did not infer a single burst across noncontiguous
+rows or conditional halo handling; bursts may be split to the configured
+maximum of 64 beats.
+
+The old direct-DDR implementation estimated 40.443 ns for a 10 ns target.
+Vitis 2025.2 HLS synthesis of the tiled implementation estimated 8.313 ns
+(120.30 MHz) for the same target on `xc7z020clg400-1`, with all loop
+constraints satisfied. It estimated 58 BRAM18K, 16 DSP, 11,187 FF, and
+16,495 LUT. These are HLS estimates. Vivado placement and routing, DDR
+integration, actual frame latency, and board performance still need checking.
 
 ## Verification status
 
 The Python integer prototype and its seven tests validate the packed numerical
-rules, including Q14 `A_low` conversion. A native g++ testbench using an
-`ap_int` width shim compared all 19,080 output scalars against the Python
-golden, with zero mismatches. Vitis 2025.2 C simulation also compared all
-19,080 values with zero mismatches. Vitis 2025.2 HLS synthesis completed for
-`xc7z020clg400-1`, estimating 40.443 ns against a 10 ns target and 4 BRAM18K,
-11 DSP, 7,439 FF, and 16,720 LUT. The tool reported unmet loop II constraints.
-These estimates do not establish Vivado timing closure or board performance;
-RTL co-simulation and hardware timing have not been run.
+rules, including Q14 `A_low` conversion. The tiled implementation matched all
+19,080 output scalars against the existing golden in native C++ and Vitis
+2025.2 C simulation, with zero mismatches. The previous direct-DDR
+implementation estimated 40.443 ns and 4 BRAM18K, 11 DSP, 7,439 FF, and
+16,720 LUT. The tiled implementation estimated 8.313 ns and 58 BRAM18K,
+16 DSP, 11,187 FF, and 16,495 LUT. RTL co-simulation and hardware timing
+have not been run.
 
 To reproduce the native numerical check from the repository root after
 generating the integer artifacts, run:

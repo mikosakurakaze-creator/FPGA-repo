@@ -22,21 +22,17 @@ static const int ZERO_DCE_MAX_FEATURE_CHANNELS = 64;
 static const int ZERO_DCE_MAX_FEATURE_ELEMENTS =
     ZERO_DCE_MAX_FEATURE_CHANNELS * ZERO_DCE_SPATIAL;
 static const int ZERO_DCE_SKIP_ELEMENTS = 32 * ZERO_DCE_SPATIAL;
-static const int ZERO_DCE_WORKSPACE_ELEMENTS =
-    2 * ZERO_DCE_MAX_FEATURE_ELEMENTS + 6 * ZERO_DCE_SKIP_ELEMENTS;
+static const int ZERO_DCE_WORKSPACE_ELEMENTS = 6 * ZERO_DCE_SKIP_ELEMENTS;
+static const int ZERO_DCE_TILE_HEIGHT = 8;
+static const int ZERO_DCE_TILE_WIDTH = 16;
 static const int ZERO_DCE_WEIGHT_ELEMENTS = 10075;
 static const int ZERO_DCE_BIAS_ELEMENTS = 486;
 static const int ZERO_DCE_WEIGHT_FRAC_ELEMENTS = 486;
 static const int ZERO_DCE_TANH_LUT_ELEMENTS = 4097;
 
-// The workspace is external DDR scratch. Slots 0 and 1 are the two working
-// feature buffers. Slots 2..7 hold ReLU outputs of blocks 1..6 for the three
-// U-Net-style concatenations in blocks 5..7.
-static const int ZERO_DCE_WORK_BUFFER0_OFFSET = 0;
-static const int ZERO_DCE_WORK_BUFFER1_OFFSET =
-    ZERO_DCE_MAX_FEATURE_ELEMENTS;
-static const int ZERO_DCE_SKIP0_OFFSET =
-    2 * ZERO_DCE_MAX_FEATURE_ELEMENTS;
+// The workspace contains only the six 32-channel ReLU skip tensors. The
+// convolution working tiles and model arrays are held on chip during a run.
+static const int ZERO_DCE_SKIP0_OFFSET = 0;
 static const int ZERO_DCE_SKIP_STRIDE = ZERO_DCE_SKIP_ELEMENTS;
 
 struct zero_dce_layer_spec_t {
