@@ -99,6 +99,7 @@ solution*/
 *.xo
 *.xclbin
 *.log.xml
+dfx_runtime.txt
 
 # Keep source and project configuration files versioned:
 # Python, C/C++, Verilog/SystemVerilog/VHDL, Tcl, YAML, JSON, and TOML.
