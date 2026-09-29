@@ -1,0 +1,289 @@
+{
+  "board": "xilinx.com:kv260_som:part0:1.4",
+  "part": "xck26-sfvc784-2LV-c",
+  "vivado_version": "2025.2",
+  "cnn_source_commit": "72b21138ce87a16eb3d3d6163675936b82ceadbc",
+  "xsa_sha256": "00aa1fbb240b348ea01dbaf5ddd72921ba6e2e12d57009c6c5434e54d59c5fb1",
+  "argument_register_access_note": "XSA system.hwh marks pointer and scalar data words write-only; HLS driver headers/RTL expose readback. PS scheduling requires writes only.",
+  "ap_ctrl_hs": {
+    "ap_start": {
+      "bit": 0,
+      "access": "read-write",
+      "clear": "clear-on-handshake"
+    },
+    "ap_done": {
+      "bit": 1,
+      "access": "read",
+      "clear": "clear-on-read"
+    },
+    "ap_idle": {
+      "bit": 2,
+      "access": "read"
+    },
+    "ap_ready": {
+      "bit": 3,
+      "access": "read",
+      "clear": "clear-on-read"
+    },
+    "auto_restart": {
+      "bit": 7,
+      "access": "read-write"
+    },
+    "interrupt": {
+      "bit": 9,
+      "access": "read"
+    }
+  },
+  "interrupt_register_bits": {
+    "GIE": {
+      "global_enable": {
+        "bit": 0,
+        "access": "read-write"
+      }
+    },
+    "IER": {
+      "ap_done_enable": {
+        "bit": 0,
+        "access": "read-write"
+      },
+      "ap_ready_enable": {
+        "bit": 1,
+        "access": "read-write"
+      }
+    },
+    "ISR": {
+      "ap_done_status": {
+        "bit": 0,
+        "access": "read",
+        "clear": "toggle-on-write"
+      },
+      "ap_ready_status": {
+        "bit": 1,
+        "access": "read",
+        "clear": "toggle-on-write"
+      }
+    }
+  },
+  "ips": {
+    "bilinear": {
+      "instance": "bilinear_fixed16_buffered_0",
+      "vlnv": "xilinx.com:hls:bilinear_fixed16_buffered:1.0",
+      "base_address": "0xA0000000",
+      "range_bytes": 65536,
+      "control_registers": {
+        "ap_ctrl": {
+          "offset": 0,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "GIE": {
+          "offset": 4,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "IER": {
+          "offset": 8,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "ISR": {
+          "offset": 12,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        }
+      },
+      "pointer_registers": {
+        "parameters_lowres": {
+          "offset_low": 16,
+          "offset_high": 20,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "parameters_fullres": {
+          "offset_low": 28,
+          "offset_high": 32,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        }
+      },
+      "scalar_registers": {
+        "input_height": {
+          "offset": 40,
+          "width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "input_width": {
+          "offset": 48,
+          "width_bits": 32,
+          "hwh_access": "write-only"
+        }
+      },
+      "xsa_driver_header_sha256": "8eee503594c8e381c1fd361e2014ddd9314d158dbb96d0e7aea2ab68ebf065a3"
+    },
+    "curve": {
+      "instance": "curve_image_fixed16_0",
+      "vlnv": "xilinx.com:hls:curve_image_fixed16:1.0",
+      "base_address": "0xA0010000",
+      "range_bytes": 65536,
+      "control_registers": {
+        "ap_ctrl": {
+          "offset": 0,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "GIE": {
+          "offset": 4,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "IER": {
+          "offset": 8,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "ISR": {
+          "offset": 12,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        }
+      },
+      "pointer_registers": {
+        "input_r": {
+          "offset_low": 16,
+          "offset_high": 20,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "parameter_r": {
+          "offset_low": 28,
+          "offset_high": 32,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "output_r": {
+          "offset_low": 40,
+          "offset_high": 44,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        }
+      },
+      "scalar_registers": {
+        "count": {
+          "offset": 52,
+          "width_bits": 32,
+          "hwh_access": "write-only"
+        }
+      },
+      "xsa_driver_header_sha256": "8c145a90188f440acd751744ee562d1537e609d3f03d82779c9ca721a409660c"
+    },
+    "cnn": {
+      "instance": "zero_dce_cnn_top_0",
+      "vlnv": "xilinx.com:hls:zero_dce_cnn_top:1.0",
+      "base_address": "0xA0020000",
+      "range_bytes": 65536,
+      "control_registers": {
+        "ap_ctrl": {
+          "offset": 0,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "GIE": {
+          "offset": 4,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "IER": {
+          "offset": 8,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "ISR": {
+          "offset": 12,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        }
+      },
+      "pointer_registers": {
+        "input_q14": {
+          "offset_low": 16,
+          "offset_high": 20,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "weights_int8": {
+          "offset_low": 28,
+          "offset_high": 32,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "bias_int32": {
+          "offset_low": 40,
+          "offset_high": 44,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "weight_frac": {
+          "offset_low": 52,
+          "offset_high": 56,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "tanh_lut_q15": {
+          "offset_low": 64,
+          "offset_high": 68,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "a_low_q14": {
+          "offset_low": 76,
+          "offset_high": 80,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "workspace_int16": {
+          "offset_low": 88,
+          "offset_high": 92,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        }
+      },
+      "scalar_registers": {},
+      "xsa_driver_header_sha256": "3a5b88eea559abf69c213b8456fee35945db0f21acc9d5cd1ad267638a716362"
+    }
+  },
+  "constants": {
+    "batch": 1,
+    "channels": 3,
+    "cnn_height": 60,
+    "cnn_width": 106,
+    "full_height": 720,
+    "full_width": 1272,
+    "scale_factor": 12,
+    "curve_count": 2747520
+  },
+  "buffer_sizes_bytes": {
+    "cnn_input_q14": 38160,
+    "weights_int8": 10075,
+    "bias_int32": 1944,
+    "weight_frac": 486,
+    "tanh_lut_q15": 8194,
+    "workspace_int16": 2442240,
+    "a_low_q14": 38160,
+    "a_full_fixed16": 5495040,
+    "model_input_fixed16": 5495040,
+    "enhanced_fixed16": 5495040
+  },
+  "distinct_payload_total_bytes": 19024379
+}
