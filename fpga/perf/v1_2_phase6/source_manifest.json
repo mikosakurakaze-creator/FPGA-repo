@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "scope": "Executed Phase6 Python/Tcl source only; runtime evidence remains external",
+  "recorded_date": "2026-10-03 Asia/Shanghai",
+  "files": [
+    {
+      "file": "prepare.py",
+      "original_path": "E:/HLS/kv260_three_module_v1_2_phase4/phase6/bitstream_xsa_01/prepare.py",
+      "bytes": 8104,
+      "sha256": "09f1338b17d33980c6349b49d5cd3cb578d4ec99481fd2abcbc44a192ad3bca1"
+    },
+    {
+      "file": "run_vivado.py",
+      "original_path": "E:/HLS/kv260_three_module_v1_2_phase4/phase6/bitstream_xsa_01/run_vivado.py",
+      "bytes": 1488,
+      "sha256": "bc49c22990171adea1142fdb2755cd98460f731a723ed9570782804a4525681b"
+    },
+    {
+      "file": "bitstream.tcl",
+      "original_path": "E:/HLS/kv260_three_module_v1_2_phase4/phase6/bitstream_xsa_01/bitstream.tcl",
+      "bytes": 9394,
+      "sha256": "bb5066be4b4bebcb29cb97dd4af6ecfd40c0d2d00315d42470ede86966afb38a"
+    },
+    {
+      "file": "export_xsa.tcl",
+      "original_path": "E:/HLS/kv260_three_module_v1_2_phase4/phase6/bitstream_xsa_01/export_xsa.tcl",
+      "bytes": 827,
+      "sha256": "fc2cf29c5f34c22b9a8c119b8109e8f91344b2c96db58ec230f15e8647c93e99"
+    },
+    {
+      "file": "audit_bitstream.py",
+      "original_path": "E:/HLS/kv260_three_module_v1_2_phase4/phase6/bitstream_xsa_01/audit_bitstream.py",
+      "bytes": 5106,
+      "sha256": "8b59d6d156ceafae4a5ea419560a8104250db42d83cd17f4dab7d3f4f9754feb"
+    },
+    {
+      "file": "audit_xsa.py",
+      "original_path": "E:/HLS/kv260_three_module_v1_2_phase4/phase6/bitstream_xsa_01/audit_xsa.py",
+      "bytes": 7740,
+      "sha256": "5772850f84228025e8fe10c0944792d7cf3bacf7bf43b1d58a4e259d42838d32"
+    },
+    {
+      "file": "finalize_docs.py",
+      "original_path": "E:/HLS/kv260_three_module_v1_2_phase4/phase6/bitstream_xsa_01/finalize_docs.py",
+      "bytes": 27511,
+      "sha256": "a9df6c4ae295175f709d2835a058bde9b26a6f2338925728a60121e3faed4127"
+    },
+    {
+      "file": "audit_handoff.py",
+      "original_path": "E:/HLS/kv260_three_module_v1_2_phase4/phase6/bitstream_xsa_01/audit_handoff.py",
+      "bytes": 5043,
+      "sha256": "48d099236bb594f1acdbba744bdadc191e8a082adcd3c3796195da71637bbbd1"
+    }
+  ]
+}
