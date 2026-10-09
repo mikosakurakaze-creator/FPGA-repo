@@ -1,6 +1,8 @@
 # KV260 V1.2 仓库使用说明
 
-2026-10-09 更新：**CNN → DDR → Bilinear → DDR → Curve 真实单帧已通过**，三个完整输出 bit-exact、60 次 guard 检查通过。实跑使用额外观察逻辑的诊断 bit；正式 release bit 没有独立重演此次真板功能链。**连续多帧和 BOARD_30FPS = NOT_TESTED**。
+2026-10-09 更新：历史 **CNN → DDR → Bilinear → DDR → Curve 真实单帧已通过**，三个完整输出 bit-exact、60 次 guard 检查通过；最新 A→B 不同输入 S1 双帧也已通过，六份输出共 11,028,240 个 INT16 标量零差异、120/120 guard。`BOARD_MULTI_FRAME=S1_TWO_DIFFERENT_FRAME_PASS`；超过两帧的持续运行和 `BOARD_30FPS=NOT_TESTED`。实跑使用额外观察逻辑的诊断 bit；正式 release bit 没有独立重演此次真板功能链。
+
+当前软件交接从 [START HERE](kv260_v12_START_HERE.md) 开始；[权威板测摘要](../reports/kv260_v12_board_validation.md) 列出最新 S1 和 `p7cold_resume_1009_02` 冷恢复证据。下列正式 release 导航继续保留。
 
 LZM 软件开发从 [最新软件接口交接](kv260_v12_software_handoff.md) 开始，再看 [单帧复用包](../bringup/kv260_v12/README.md) 和 [连续运行及性能验收](kv260_v12_acceptance_plan.md)。下列正式 release 导航继续保留。
 
@@ -74,12 +76,12 @@ Git 不提交 `.bit`、`.xsa`、`.dcp` 或 Vivado build outputs；正式产物�
 
 ## 当前下一步
 
-控制恢复和诊断 bit 的真实单帧已经完成，无新证据时无需重查底层问题。下一步：
+控制恢复、诊断 bit 的真实单帧及不同输入 A→B 的 S1 双帧已经完成，无新证据时无需重查底层问题。当前开始软件交接，不把完成 Linux 或真实 30 FPS 当作交接前置条件：
 
-1. 按最新交接实现 PS buffer 所有权、缓存同步和驱动。
-2. 另行批准两帧重复启动，再验证不同输入 A→B→A 和长批次。
-3. 使用板端可靠计时验证稳态 FPS、完整输出正确性与错误数量。
-4. 按 [交板清单](kv260_v12_delivery_checklist.md) 交付匹配的 artifact 与环境。
+1. 从 [START HERE](kv260_v12_START_HERE.md) 阅读已验证 ABI、数据格式、当前状态与职责。
+2. 按 [交板清单](kv260_v12_delivery_checklist.md) 安排匹配 artifact、A/B 数据及 Golden 的独立交接；Git 克隆本身不包含这些大文件。
+3. lzm 牵头启动环境、PS buffer 所有权、缓存同步和实际驱动集成，硬件端提供接口、身份及支持。
+4. 后续双方冻结精确范围、另行批准长时运行与真实 FPS 验收，使用板端可靠计时、完整输出校验和错误记录；本次不继续性能开发或新增板端运行。
 
 **BOARD_30FPS = NOT_TESTED**。RTL 30FPS、100MHz 时序收敛和 bitstream/XSA 完成，均不能替代真板验收。
 
@@ -87,4 +89,4 @@ Git 不提交 `.bit`、`.xsa`、`.dcp` 或 Vivado build outputs；正式产物�
 
 1. 三模块 RTL 流水已在 8 帧测试中验证约 **30.24 FPS**。
 2. Vivado **100MHz route/timing、bitstream、XSA** 都已经完成。
-3. 诊断 bit 的真板单帧已通过；下一步是 **连续运行和真实 FPS 验收**，生产软件尚需实现。
+3. 诊断 bit 的真板单帧与不同输入 S1 双帧已通过；**现在开始软件交接**，生产驱动、长时运行与真实 FPS 由双方后续集成验收。

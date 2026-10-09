@@ -1,14 +1,22 @@
 # KV260 V1.2 软件联调交接
 
-更新：2026-10-09。先读本文，再读 [公共复现材料](../bringup/kv260_v12/README.md)。本文是已验证接口和后续开发边界，不是本次新增板端操作授权。
+更新：2026-10-09。Master已决定开始向lzm软件端交接。先读 [START_HERE](kv260_v12_START_HERE.md)，再按本文查接口；不需要重读全部诊断日志。
+
+本次仅整理、审核和选择性Git提交/正常Push，不开发新的FPS框架，不执行板端操作。真实单帧与S1双帧已经PASS，真实30 FPS尚未测量；性能验收不是开始软件集成或整理交付的前置条件。旧U-Boot go性能方案因运行契约和DDR所有权未证明而停止，不能作为推荐执行步骤，也不能沿用历史批准运行新程序。
+
+最新状态与证据索引见 [真实板测摘要](../reports/kv260_v12_board_validation.md)。已准备的Linux计时接口、原生校验源码和构建说明见 [Linux代码入口](../tools/kv260_v12_linux_perf/README.md)；这些是集成材料，实际DMA/MMIO驱动、目标装载与完整启动环境尚未完成。
 
 ## 1. 已验证结果与证据身份
 
-`BOARD_CONTROL_ACCESS=PASS`，`BOARD_BRINGUP_BASE=PASS`，`BOARD_30FPS=NOT_TESTED`。
+`BOARD_CONTROL_ACCESS=PASS`，`BOARD_BRINGUP_BASE=PASS`，`BOARD_MULTI_FRAME=S1_TWO_DIFFERENT_FRAME_PASS`，`BOARD_30FPS=NOT_TESTED`。
 
-真板 `night_01` 单帧按 CNN → Bilinear → Curve 串行执行，三模块各启动一次；三份完整输出共 5,514,120 个 INT16 原码逐位一致，60 次 guard 检查通过。此前冷启动恢复也真实完成；不是仅依据 CSim 或 RTL 仿真宣布板测通过。单帧证据 ID：`p7single_frame_1009_01/attempt02`；冷启动证据 ID：`p7cold_resume_1009_01/recovery01`。原始记录由 Master 保管，公共摘要和输入身份见复现目录。
+最新真板 S1 按 A=`night_01` → B=`night_01_numeric_complement_B` 顺序执行 CNN → Bilinear → Curve，三模块各真实启动两次；六份完整输出共 11,028,240 个 INT16 原码全量零差异，120/120 guard 检查通过。两帧输入和三组输出均实际不同，第一帧完整保存并校验后才覆盖第二帧；每次均捕获本次新的 done/idle。S1 未重新 program、写 PMU/GPIO/clock、reset、运行 psu_init 或重试。
 
-尚未实测：同一 IP 连续重复启动、不同输入连续帧、长批次稳定性、真实 30 FPS、板端精确执行计时、生产 Cache 一致性、Linux 驱动和自动开机加载。历史 RTL 八帧约 30.236 FPS 是仿真结果。单帧 Host 观察的 68/60/80 ms 含 Windows/JTAG 开销，不能当作三个 IP 的计算时间。
+最新证据 ID：`p7s1_prepare_1009_02`，完整摘要 `actual_s1_evidence.json`，独立范围/数据审核 `runner_candidate/actual_scope_audit.json`、`runner_candidate/actual_data_audit.json`，原始文件身份 `actual_raw_manifest.json`。此前单帧 ID `p7single_frame_1009_01/attempt02` 及最近冷恢复 ID `p7cold_resume_1009_02` 作为历史保留。原始记录与 B 独立数据包由 Master 保管，不随 Git 克隆自动分发。
+
+尚未实测：超过两帧的持续运行、真实 30 FPS、板端精确执行计时、生产 Cache 一致性、完整 Linux 驱动和自动开机加载。S1 的两次顺序启动不证明 auto_restart、并行流水或异常恢复。历史 RTL 八帧约 30.236 FPS 是仿真结果；单帧 Host 观察的 68/60/80 ms 和 S1 约 715.841 秒的调试会话均含 Windows/JTAG 开销，不能当作三个 IP 的计算时间或端到端 FPS。
+
+当前工作重心为交接现有成果，不再扩展性能框架或安排S2小帧数预实验。后续由双方共同完成真实性能验收，具体范围须另行批准。Linux未完成项见第9节与[后端审阅](kv260_v12_linux_backend_review.md)。
 
 上次退出时 D-Cache 最后确认 **OFF**；MMU 状态 **NOT_ASSESSED**；UART/JTAG 和本轮服务器已关闭。这个运行状态可能变化，不能替代下次的新鲜检查。
 
@@ -23,7 +31,7 @@
 | 正式 Phase6 bit，独立保留 | `formal/system_wrapper.bit` | 7,797,826 | `8a6c315b50799fb22cb8bfb6f376e3e6992ac41da0abe9c87a8ffc9ced85c915` |
 | 正式 Phase6 XSA | `formal/kv260_three_module_v1_2_writecredit.xsa` | 3,068,574 | `09661c4822f05b8c54b000d2fc13893fac3356a970acb4c70a8ca89fb2693ead` |
 
-诊断 bit 在 V1.2 三模块设计上加入无功能反馈的 EMIO 观察器：PL0 活动、独立 CFGMCLK 活动、EOS、VCC 和两路 canonical reset。它与正式 bit **不是同一个文件**；本次单帧 PASS 只覆盖上述诊断 bit。正式 bit/XSA 没有被它替换，也没有因接口相同自动获得相同的板测结论。正式 XSA 可用于核对三模块 ABI，不能冒充诊断 bit 的已导出 XSA。使用 Vivado 2025.2，器件 `xck26-sfvc784-2LV-c`，设计名义 PL0 100 MHz；活动观察不是板级频率测量。
+诊断 bit 在 V1.2 三模块设计上加入无功能反馈的 EMIO 观察器：PL0 活动、独立 CFGMCLK 活动、EOS、VCC 和两路 canonical reset。它与正式 bit **不是同一个文件**；单帧及最新 S1 双帧 PASS 只覆盖上述诊断 bit。正式 bit/XSA 没有被它替换，也没有因接口相同自动获得相同的板测结论。**当前包没有诊断 bit 的配套 XSA**；正式 XSA 可用于核对三模块 ABI，不能作为诊断 image 的 BSP/启动配置保证。正式 XSA 内嵌 bit 的 SHA 与表中正式 bit 相同，换用正式 image 仍需单独真实验证。使用 Vivado 2025.2，器件 `xck26-sfvc784-2LV-c`，设计名义 PL0 100 MHz；活动观察不是板级频率测量。身份与独立传输边界见 [大文件交接说明](kv260_v12_large_artifacts.md)。
 
 正式 CNN 是 write-credit RTL 调度版本，VLNV `xilinx.com:hls:zero_dce_cnn_top:1.0`、revision `2114810448`。源码/封装关系见 [release recipe](../ip/cnn_v1_2_writecredit/README.md)；仅重新综合 r4 C++ 不能保证重建这份 post-export writer 调度。
 
@@ -80,9 +88,9 @@
 | Curve | `output_r` | `0x28 / 0x2C` | enhanced 输出；C++ 名称 `output` |
 | Curve | `count` | `0x34` | INT16 元素数，2,747,520；不是字节数或二维像素数 |
 
-启动协议：等前一次完成且 idle、start=0、auto_restart=0；准备并同步本帧所有输入/输出所有权；配置参数；必要的 MMIO/内存排序完成后仅写 AP_CTRL=`1` 一次；有界轮询保留每次完整读值，捕获 done=1 同时要求 idle=1/start=0/auto_restart=0；验证输出后才启动 consumer。实际单帧状态为 `0x1 → 0xE`；读到 `0xE` 后 done/ready sticky 会被该次读清除。不要依赖第二次读取还能得到 done，不使用循环写 start、auto_restart 或 reset 来消除超时。
+启动协议：等前一次完成且 idle、start=0、auto_restart=0；准备并同步本帧所有输入/输出所有权；配置参数；必要的 MMIO/内存排序完成后仅写 AP_CTRL=`1` 一次；有界轮询保留每次完整读值，捕获 done=1 同时要求 idle=1/start=0/auto_restart=0；完成同步后移交 consumer。单帧/S1诊断在各阶段全量验输出后才启动consumer；Linux候选ring采用独立校验者，完整验证前不得复用槽；这是尚未上板的候选方案，不能与已停止的全archive/go方案混为已验证流程。实际单帧状态为 `0x1 → 0xE`；读到 `0xE` 后 done/ready sticky 会被该次读清除。不要依赖第二次读取还能得到 done，不使用循环写 start、auto_restart 或 reset 来消除超时。
 
-标准 `ap_ctrl_hs` 完成后可再次提交；正常重启不要求每帧 reset。指针变化就重新写完整参数对，buffer 内容变化就重新移交所有权。同一帧参数可保留的结论来自 RTL，**真板重复启动仍待验证**。单帧库只允许一次运行，不可清除 once 标志冒充已审核多帧工具。
+标准 `ap_ctrl_hs` 完成后可再次提交；正常重复提交不要求每帧 reset。指针变化就重新写完整参数对，buffer 内容变化就重新移交所有权。S1 真板已验证两次顺序启动：各帧重新 staging/配置，初始 AP_CTRL=`0x4`，单次写 `1`，观察 `0x1 → 0xE`，保存并校验输出后移交 buffer；帧间无 reset。S1 不证明省略重新配置、auto_restart 或并行调度。既有单帧库仍只允许一次运行，不可清除 once 标志冒充已审核多帧工具。
 
 ## 5. 数据格式、输入 producer 和长度
 
@@ -140,19 +148,28 @@ python fpga/bringup/kv260_v12/verify_outputs.py --data-root <artifact-data-dir> 
 
 独立数据包共有 9 份 bin：`input_q14.bin`、`weights_int8.bin`、`bias_int32.bin`、`weight_frac.bin`、`tanh_lut_q15.bin`、`model_input_q14.bin`、`expected_a_low_q14.bin`、`expected_a_full_q14.bin`、`expected_enhanced_q14.bin`。小型输入/参数/A_low golden 的 hex 可在 Git 中复原；full frame 和两份 full golden 另行分发，以公共 manifest 的 byte size/SHA 为准。克隆仓库本身不具备完整板测数据。
 
-三个真实输出 SHA：
+最新 S1 六个真实输出 SHA：
 
-| 输出 | Bytes | SHA256（与冻结 golden 一致） |
+| 帧 / 输出 | Bytes | SHA256（与对应冻结 golden 一致） |
 | --- | ---: | --- |
-| A_low | 38,160 | `31abdd23520d32efe75928ef394017bd2f515b2805144a85735eebc9481dddd1` |
-| A_full | 5,495,040 | `ebfa58eafb70385af39b92b6c9ed2b81c3319ca63662ce002d1219051f8b2067` |
-| Enhanced | 5,495,040 | `869e62a41010e047c3760aa6a614f0ff883566d52c3fbee273cf2a865f7eb951` |
+| A / A_low | 38,160 | `31abdd23520d32efe75928ef394017bd2f515b2805144a85735eebc9481dddd1` |
+| A / A_full | 5,495,040 | `ebfa58eafb70385af39b92b6c9ed2b81c3319ca63662ce002d1219051f8b2067` |
+| A / Enhanced | 5,495,040 | `869e62a41010e047c3760aa6a614f0ff883566d52c3fbee273cf2a865f7eb951` |
+| B / A_low | 38,160 | `25d5edde5b1964e7b39f4680faeb367e159fd94d152be238eb3241758b10181f` |
+| B / A_full | 5,495,040 | `b9d274241c1ed20cecedb6e1d16760f5d784532ed04c057a9ad2e7d3f8804112` |
+| B / Enhanced | 5,495,040 | `d8cca1a727474bd59008dfb66ebcf5636bbbb829152e774669eca8da066b74da` |
+
+A/B输入、模型、Golden及九份真实单/双帧输出通过独立大文件包交付，Git只包含格式、身份、源码和摘要。包内文件以逐项SHA256 manifest核验，渠道由Master安排；当前未向lzm外发。B为数值张量 `B_Q14=16384-A_Q14`，不是照片解码或相机输入；低分辨率19,074/19,080元素、全分辨率2,747,520/2,747,520元素与A不同，四份模型参数与A相同。见[大文件清单](kv260_v12_large_artifacts.md)。
 
 ## 9. Linux / 正式启动仍需完成的工作
 
-没有已实现的 Linux 驱动、device-tree overlay、自动 bit 加载、自动 PMU/reset 初始化或相机输入流水线。需按目标系统实际固件/FPGA manager 驱动接入加载和电源/reset 生命周期，防止与 U-Boot/JTAG 初始化重复；不能把这些诊断地址写直接复制成开机服务。
+正式 XSA 带 HLS 生成的 MMIO helper 和 Linux UIO 映射样例，但没有本项目完整 Linux 驱动、device-tree overlay、生产 DMA 分配/Cache 同步、自动 bit 加载、自动 PMU/reset 初始化或相机输入流水线。需按目标系统实际固件/FPGA manager 驱动接入加载和电源/reset 生命周期，防止与 U-Boot/JTAG 初始化重复；不能把这些诊断地址写直接复制成开机服务。
 
-软件联调先实现 MMIO 资源占用、DMA buffer、同步/超时、三段串行调用和原码导出；验证同帧输入关系后，再做多帧所有权、板端计时及端到端图像提交/取回路径。改为正式 bit 后需重新验证对应 image，不将本次诊断结论自动迁移。单 IP/串行链/DDR 开销/真实端到端 FPS 应分别计量；Windows/JTAG 下载和回读不能用于证明 PL 30 FPS。
+向lzm交付已核验的硬件身份、ABI/数据/所有权合同、A/B Golden与现有Host-only性能准备代码，真实性能结果后续共同验收归档。接收方需实现 MMIO 资源占用、DMA buffer、同步/超时、串行调用、帧所有权及提交/取回路径。改为正式 bit 后需重新验证对应 image，不将本次诊断结论自动迁移。
+
+优先复用 PS 架构计数器并保持诊断 bit；正式 XSA 的 timestamp 配方为 IOPLL/10、名义 100 MHz，实际配置记录约 99.999 MHz，`psu_init.c` 的频率 ID 为 99,999,000 ticks/s。它只是离线配方，不证明当前 U-Boot 的 CNTFRQ、计数器使能或访问权限。现有 PL 无可读完整计时器，EMIO 活动位不可用于性能测量，三 IP 中断未连通。板端程序必须先审核 CPU/异常级、所有内存占用、固件/U-Boot 运行时所有权、返回约定和 Cache/MMU；不能直接 `go` 或执行 psu_init 来初始化计时源。
+
+验收区分每 IP 的板端执行区间、实际串行链/吞吐量、PS/DDR/Cache/控制开销和当前可实现的端到端边界，正确性检查额外耗时单列。当前没有摄像头或完整采集显示链，内存输入至 DDR 输出的结果不得声称覆盖最终作品。Windows/JTAG 下载、逐笔 DDR 搬运和 Host 轮询只可做准备/窗外验证，不能用于证明 PL 或生产端到端 30 FPS。
 
 ## 10. 异常和停止规则
 
@@ -162,4 +179,13 @@ python fpga/bringup/kv260_v12/verify_outputs.py --data-root <artifact-data-dir> 
 
 AP_CTRL 没有本项目定义的数值错误/DDR AXI 错误字段；done 是握手完成，不能代替数据和 guard 校验。通用 HLS 控制原则可查 [AMD UG1399](https://docs.amd.com/r/2024.1-English/ug1399-vitis-hls/Controlling-Hardware)，具体行为以这里核对的 2025.2 实际生成 RTL 为准。
 
-来源核对：实际正式三 driver header 与正式 XSA 内 header 逐 byte 相同，CNN/Bilinear/Curve SHA 分别为 `3a5b88eea559abf69c213b8456fee35945db0f21acc9d5cd1ad267638a716362`、`8eee503594c8e381c1fd361e2014ddd9314d158dbb96d0e7aea2ab68ebf065a3`、`8c145a90188f440acd751744ee562d1537e609d3f03d82779c9ca721a409660c`；实际 control RTL、[保存的 BD](../vivado/three_module_integration_v1_2/three_module_integration_v1_2.srcs/sources_1/bd/system/system.bd)、[机器寄存器 map](v1_2_hw_register_map.json)、HLS C++/header 与两份真实证据交叉核对。原 map 的旧状态/本机路径属于其历史元数据，当前状态以本文及三权威报告最新顶部为准。
+来源核对：实际正式三 driver header 与正式 XSA 内 header 逐 byte 相同，CNN/Bilinear/Curve SHA 分别为 `3a5b88eea559abf69c213b8456fee35945db0f21acc9d5cd1ad267638a716362`、`8eee503594c8e381c1fd361e2014ddd9314d158dbb96d0e7aea2ab68ebf065a3`、`8c145a90188f440acd751744ee562d1537e609d3f03d82779c9ca721a409660c`；实际 control RTL、[保存的 BD](../vivado/three_module_integration_v1_2/three_module_integration_v1_2.srcs/sources_1/bd/system/system.bd)、[便携机器寄存器 map](kv260_v12_register_map.json)、HLS C++/header 与真实证据交叉核对。本次 Host-only 复核重新计算全部 13 个交付文件、XSA 内嵌 bit/三 header 和六份保存 S1 输出的 SHA，全部符合对应清单/Golden；没有重新访问板卡。旧正式map保留历史字节；新增便携map移除本机路径，当前板测状态以本文与真实板测摘要为准。
+
+
+## 11. 职责与立即可开始的工作
+
+硬件端提供已验证设计、正式release/诊断bit与XSA区别、寄存器/数据格式、正确性证据及必要硬件问题支持。lzm软件端负责或牵头确认完整Linux启动环境、驱动集成、DMA buffer管理、Cache一致性、调用程序和端到端联调。30 FPS由双方共同完成真实板端验收，不因缺测预先归咎任一方。
+
+lzm可立即阅读ABI、审核启动/DT材料、设计资源驱动与buffer生命周期、在开发机运行Host测试。尚未完成：真实30 FPS与长期连续运行、Linux DMA/MMIO装载执行、现场匹配的完整Linux启动环境、11路master/4HP的地址域和DMA所有权、正式Cache/生产缓冲区管理、自动开机加载及相机到显示链路。
+
+实体交接记录应包括bit身份、启动介质/供电/线缆、最后一次可信运行状态和现有日志。最后D-Cache OFF、MMU未评估只是历史记录；本次未重新连接确认当前idle/电源/存储状态，不能据此宣称现在可安全断电。未知在途事务不自动reset、重烧、重启或释放buffer。

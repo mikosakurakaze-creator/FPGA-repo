@@ -1,13 +1,13 @@
 # KV260 V1.2 已验证诊断与单帧复用包
 
-从 [软件交接](../../docs/kv260_v12_software_handoff.md) 开始。
+从 [START_HERE](../../docs/kv260_v12_START_HERE.md) 与 [软件交接](../../docs/kv260_v12_software_handoff.md) 开始。
 本目录保留实际成功批次使用的四个 Tcl 操作库、TCF transport、诊断观察器
 RTL/XDC 的原始字节，并以 `manifest.json` 锁定 SHA256。正式 CNN/Bilinear/Curve
 源码、正式 BD、bit/XSA 构建 recipe 继续使用现有 release，未替换。
 
 `single_frame_evidence.json` 是 2026-10-09 历史真板成功结果的公共摘要。
 三个完整输出 bit-exact、每个 IP 一次 START、60 次 guard 检查通过。
-多帧与 BOARD_30FPS 尚未实测。原始日志另行保管，不能把此摘要作为当前板态证明。
+随后不同输入S1双帧已PASS，见新增 [双帧公共摘要](s1_two_frame_evidence.json)；超过两帧的持续运行与BOARD_30FPS仍未实测。原始日志另行保管，不能把此摘要作为当前板态证明。
 
 ## Host-only 最简复现准备
 

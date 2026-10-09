@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "status": "PASS_S1_TWO_DIFFERENT_FRAMES_INDEPENDENTLY_AUDITED",
+  "test_date": "2026-10-09",
+  "source_id": "p7s1_prepare_1009_02",
+  "source_summary_sha256": "9491bbf18fc51e18bd7bbd0cad7f8fa5599cb2daadb34be8b7f746ebde5fb253",
+  "BOARD_BRINGUP_BASE": "PASS",
+  "BOARD_MULTI_FRAME": "S1_TWO_DIFFERENT_FRAME_PASS",
+  "BOARD_30FPS": "NOT_TESTED",
+  "diagnostic_bit": {
+    "file": "diagnostic_v12_independent_clock.bit",
+    "bytes": 7797826,
+    "sha256": "347f49477fcbed2ebd1d8418e599a213fc56c3b99d43d6b8e022b0e199c96d86"
+  },
+  "input_sequence": [
+    "night_01",
+    "night_01_numeric_complement_B"
+  ],
+  "starts": {
+    "cnn": 2,
+    "bilinear": 2,
+    "curve": 2
+  },
+  "complete_outputs": 6,
+  "INT16_comparisons": 11028240,
+  "INT16_mismatches": 0,
+  "guard_checks_passed": 120,
+  "outputs": [
+    {
+      "frame": 0,
+      "input_id": "night_01",
+      "ip": "cnn",
+      "bytes": 38160,
+      "sha256": "31abdd23520d32efe75928ef394017bd2f515b2805144a85735eebc9481dddd1",
+      "bit_exact": true,
+      "fresh_done": true
+    },
+    {
+      "frame": 0,
+      "input_id": "night_01",
+      "ip": "bilinear",
+      "bytes": 5495040,
+      "sha256": "ebfa58eafb70385af39b92b6c9ed2b81c3319ca63662ce002d1219051f8b2067",
+      "bit_exact": true,
+      "fresh_done": true
+    },
+    {
+      "frame": 0,
+      "input_id": "night_01",
+      "ip": "curve",
+      "bytes": 5495040,
+      "sha256": "869e62a41010e047c3760aa6a614f0ff883566d52c3fbee273cf2a865f7eb951",
+      "bit_exact": true,
+      "fresh_done": true
+    },
+    {
+      "frame": 1,
+      "input_id": "night_01_numeric_complement_B",
+      "ip": "cnn",
+      "bytes": 38160,
+      "sha256": "25d5edde5b1964e7b39f4680faeb367e159fd94d152be238eb3241758b10181f",
+      "bit_exact": true,
+      "fresh_done": true
+    },
+    {
+      "frame": 1,
+      "input_id": "night_01_numeric_complement_B",
+      "ip": "bilinear",
+      "bytes": 5495040,
+      "sha256": "b9d274241c1ed20cecedb6e1d16760f5d784532ed04c057a9ad2e7d3f8804112",
+      "bit_exact": true,
+      "fresh_done": true
+    },
+    {
+      "frame": 1,
+      "input_id": "night_01_numeric_complement_B",
+      "ip": "curve",
+      "bytes": 5495040,
+      "sha256": "d8cca1a727474bd59008dfb66ebcf5636bbbb829152e774669eca8da066b74da",
+      "bit_exact": true,
+      "fresh_done": true
+    }
+  ],
+  "input_evidence": {
+    "construction": "B_Q14=16384-A_Q14",
+    "low_different_elements": 19074,
+    "low_elements": 19080,
+    "full_different_elements": 2747520,
+    "full_elements": 2747520,
+    "all_three_output_pairs_different": true
+  },
+  "runtime_boundary": "Historical guarded JTAG/U-Boot diagnostic; not Linux execution or reliable compute FPS",
+  "last_cache_state": "OFF",
+  "MMU": "NOT_ASSESSED",
+  "cold_and_single_frame": {
+    "S1": {
+      "id": "p7s1_prepare_1009_02",
+      "input": "A then numeric complement B",
+      "starts_each_ip": 2,
+      "complete_outputs": 6,
+      "INT16_comparisons": 11028240,
+      "INT16_mismatches": 0,
+      "guard_checks": 120,
+      "different_input_and_output": true,
+      "new_program_PMU_GPIO_clock_reset_psu_init_retry": 0,
+      "DCache_last_confirmed": "OFF",
+      "MMU": "NOT_ASSESSED",
+      "Host_JTAG_session_seconds_not_FPS": 715.841
+    },
+    "single_frame": {
+      "id": "p7single_frame_1009_01/attempt02",
+      "starts_each_ip": 1,
+      "INT16_comparisons": 5514120,
+      "guard_checks": 60,
+      "outputs_bit_exact": true,
+      "no_extra_program_PMU_GPIO_clock_reset_retry": true
+    },
+    "cold02": {
+      "id": "p7cold_resume_1009_02",
+      "program": 1,
+      "GPIO_mode_SET": 2,
+      "PMU_service_SET": 2,
+      "GPIO_release_SET": 1,
+      "GET": 82,
+      "PS_including_FDT_GET": 79,
+      "PL_GET": 3,
+      "AP_CTRL_each": "0x00000004",
+      "DDR_write_or_IP_start": 0,
+      "cache_last_confirmed": "ON",
+      "MMU": "NOT_ASSESSED",
+      "clock_activity_only_no_frequency": true
+    },
+    "cold01": "Earlier genuine evidence retained unchanged; latest02 is separately linked, no historical NOT_TESTED context upgraded."
+  },
+  "historical_source_identities": [
+    {
+      "id": "p7s1_prepare_1009_02/S1_handoff.md",
+      "bytes": 5176,
+      "sha256": "16d0cefe2eab8215437888192032f46a7ecc5324b9e08a62fe66e80bbc6acfbc"
+    },
+    {
+      "id": "p7s1_prepare_1009_02/actual_s1_evidence.json",
+      "bytes": 6048,
+      "sha256": "9491bbf18fc51e18bd7bbd0cad7f8fa5599cb2daadb34be8b7f746ebde5fb253"
+    },
+    {
+      "id": "p7s1_prepare_1009_02/runner_candidate/actual_scope_audit.json",
+      "bytes": 4053,
+      "sha256": "532b536fc6e80fa9fdc11a4d029305371138b4f7e5b4f17f15c328057ba2dc4e"
+    },
+    {
+      "id": "p7s1_prepare_1009_02/runner_candidate/actual_data_audit.json",
+      "bytes": 37142,
+      "sha256": "49dd38e61f17209d9a1b22e05090d5bae87cc4db53616c1805f597a657bf5656"
+    },
+    {
+      "id": "p7single_frame_1009_01/attempt02/actual_evidence.json",
+      "bytes": 6526,
+      "sha256": "15871215a8fc5568f15e9a69ef3ce6dd0ff61d150a093663d161dfacf2ab4c6b"
+    },
+    {
+      "id": "p7single_frame_1009_01/attempt02/actual_scope_audit.json",
+      "bytes": 13010,
+      "sha256": "2d06e122417f77ef0a34dce953ca841aa5f4f02d56f9f050d9a3aa0ff15d9186"
+    },
+    {
+      "id": "p7cold_resume_1009_01/cold_recovery_evidence.json",
+      "bytes": 5337,
+      "sha256": "8e535d6641923abf798043a93ff5f6ecae0f4b2fdaef5abf7e0575c46229b7ef"
+    },
+    {
+      "id": "p7cold_resume_1009_02/cold_recovery_evidence.json",
+      "bytes": 4503,
+      "sha256": "88a0906048623f8c3881d499dab9d80b5c8ccd6366a5d510cc05c5f70186e060"
+    },
+    {
+      "id": "p7cold_resume_1009_02/recovery01/actual_scope_audit.json",
+      "bytes": 3472,
+      "sha256": "465bf4f276b33ee045386070269afff512a47cc15c452a262647db8096d9c1ac"
+    }
+  ],
+  "current_preparation_board_operations": 0,
+  "source_note": "This public summary selects non-private facts from existing evidence. Original source files, raw logs and previous release artifacts remain unchanged; saved output identity alone is not proof of new board execution."
+}

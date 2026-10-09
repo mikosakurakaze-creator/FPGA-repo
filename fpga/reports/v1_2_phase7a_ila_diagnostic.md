@@ -2,11 +2,13 @@
 
 更新：2026-10-09，交付审核版。完整历史正文、原始交易和 Host 日志仍由 Master 离线保管；共享版只保留已核验结果与证据身份，不上传重复日志、机器专用配置或板卡序列号。
 
+当前软件交接从 [START HERE](../docs/kv260_v12_START_HERE.md) 开始；最新 [权威板测摘要](kv260_v12_board_validation.md) 记录 A→B 不同输入 S1 双帧 PASS，以及 `p7cold_resume_1009_02` 冷恢复。本页下方单帧和 cold01 证据保留为历史；超过两帧的持续运行和真实 30 FPS 尚未验证。
+
 | 真板状态 | 结果 |
 | --- | --- |
 | BOARD_CONTROL_ACCESS | PASS |
 | BOARD_BRINGUP_BASE | PASS（真实单帧） |
-| BOARD_MULTI_FRAME | NOT_TESTED |
+| BOARD_MULTI_FRAME | S1_TWO_DIFFERENT_FRAME_PASS |
 | BOARD_30FPS | NOT_TESTED |
 
 真板证据 ID：`p7single_frame_1009_01/attempt02`，`actual_evidence.json` SHA256 `15871215a8fc5568f15e9a69ef3ce6dd0ff61d150a093663d161dfacf2ab4c6b`；独立原始对账 `actual_scope_audit.json` SHA256 `2d06e122417f77ef0a34dce953ca841aa5f4f02d56f9f050d9a3aa0ff15d9186`。冷启动控制恢复证据 ID：`p7cold_resume_1009_01/recovery01`，根目录 `cold_recovery_evidence.json` SHA256 `8e535d6641923abf798043a93ff5f6ecae0f4b2fdaef5abf7e0575c46229b7ef`。
