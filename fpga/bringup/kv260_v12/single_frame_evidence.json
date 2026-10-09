@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "evidence_id": "p7single_frame_1009_01/attempt02",
+  "source_evidence_sha256": "15871215a8fc5568f15e9a69ef3ce6dd0ff61d150a093663d161dfacf2ab4c6b",
+  "raw_scope_audit_sha256": "2d06e122417f77ef0a34dce953ca841aa5f4f02d56f9f050d9a3aa0ff15d9186",
+  "state": {
+    "BOARD_CONTROL_ACCESS": "PASS",
+    "BOARD_BRINGUP_BASE": "PASS",
+    "BOARD_30FPS": "NOT_TESTED"
+  },
+  "starts": {
+    "cnn": 1,
+    "bilinear": 1,
+    "curve": 1
+  },
+  "guard_checks": 60,
+  "outputs": {
+    "cnn": {
+      "bytes": 38160,
+      "sha256": "31abdd23520d32efe75928ef394017bd2f515b2805144a85735eebc9481dddd1",
+      "bit_exact": "PASS",
+      "guards": "PASS"
+    },
+    "bilinear": {
+      "bytes": 5495040,
+      "sha256": "ebfa58eafb70385af39b92b6c9ed2b81c3319ca63662ce002d1219051f8b2067",
+      "bit_exact": "PASS",
+      "guards": "PASS"
+    },
+    "curve": {
+      "bytes": 5495040,
+      "sha256": "869e62a41010e047c3760aa6a614f0ff883566d52c3fbee273cf2a865f7eb951",
+      "bit_exact": "PASS",
+      "guards": "PASS"
+    }
+  },
+  "measured_fps": null,
+  "cache_last_confirmed": "OFF",
+  "MMU": "NOT_ASSESSED",
+  "physical_retry": 0,
+  "closed": true,
+  "protected_unchanged_files": 481,
+  "category_raw": "netlist",
+  "category_note": "Raw category is retained unchanged; functional PASS is independently derived from all stage outputs/guards and transport evidence, not this label"
+}

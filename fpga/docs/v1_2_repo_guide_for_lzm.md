@@ -1,6 +1,8 @@
 # KV260 V1.2 仓库使用说明
 
-当前正式版本已完成 **CNN → DDR → Bilinear → DDR → Curve** 的 RTL 级 30FPS 验证、正式 CNN IP 固化、100MHz post-route 和 bitstream/XSA 交付；**真实 KV260 板测尚未完成，BOARD_30FPS = NOT_TESTED**。
+2026-10-09 更新：**CNN → DDR → Bilinear → DDR → Curve 真实单帧已通过**，三个完整输出 bit-exact、60 次 guard 检查通过。实跑使用额外观察逻辑的诊断 bit；正式 release bit 没有独立重演此次真板功能链。**连续多帧和 BOARD_30FPS = NOT_TESTED**。
+
+LZM 软件开发从 [最新软件接口交接](kv260_v12_software_handoff.md) 开始，再看 [单帧复用包](../bringup/kv260_v12/README.md) 和 [连续运行及性能验收](kv260_v12_acceptance_plan.md)。下列正式 release 导航继续保留。
 
 这份导航供 LZM、WZH 和其他队友使用，对应 `codex/curve-fp32-baseline` 分支。先读下面的入口，普通接续工作不需要先运行验证或构建脚本。
 
@@ -72,17 +74,12 @@ Git 不提交 `.bit`、`.xsa`、`.dcp` 或 Vivado build outputs；正式产物�
 
 ## 当前下一步
 
-PC 侧 FPGA 开发已经基本结束。等真实 KV260 到手并安排板测后，按下面顺序接续：
+控制恢复和诊断 bit 的真实单帧已经完成，无新证据时无需重查底层问题。下一步：
 
-1. 上电，检查 JTAG 和串口。
-2. 下载正式 bitstream。
-3. 做 PS AXI-Lite smoke test。
-4. 分配真实 DDR buffer；仿真 BFM 地址不能直接作为板端分配地址。
-5. 处理 cache flush/invalidate。
-6. 跑 CNN → Bilinear → Curve 单帧，检查各阶段数值。
-7. 跑 100+ frame，检查连续运行。
-8. 测量真实稳态 FPS，验收 BOARD_30FPS。
-9. 检查最终图像。
+1. 按最新交接实现 PS buffer 所有权、缓存同步和驱动。
+2. 另行批准两帧重复启动，再验证不同输入 A→B→A 和长批次。
+3. 使用板端可靠计时验证稳态 FPS、完整输出正确性与错误数量。
+4. 按 [交板清单](kv260_v12_delivery_checklist.md) 交付匹配的 artifact 与环境。
 
 **BOARD_30FPS = NOT_TESTED**。RTL 30FPS、100MHz 时序收敛和 bitstream/XSA 完成，均不能替代真板验收。
 
@@ -90,4 +87,4 @@ PC 侧 FPGA 开发已经基本结束。等真实 KV260 到手并安排板测后�
 
 1. 三模块 RTL 流水已在 8 帧测试中验证约 **30.24 FPS**。
 2. Vivado **100MHz route/timing、bitstream、XSA** 都已经完成。
-3. 仓库现在主要用于复现和板测接续；下一步是 **KV260 真板验证**，当前不需要继续改 PL 算法。
+3. 诊断 bit 的真板单帧已通过；下一步是 **连续运行和真实 FPS 验收**，生产软件尚需实现。

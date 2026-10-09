@@ -1,6 +1,10 @@
 # KV260 三模块 V1.2 当前进度
 
-更新：2026-10-03。供 Master、LZM、WZH、老登和其他队友快速了解当前交付状态。
+更新：2026-10-09。软件开发先读 [最新交接](kv260_v12_software_handoff.md)。
+
+真实 KV260 已完成最小冷启动控制恢复，以及诊断 bit 的 CNN→Bilinear→Curve 单帧：三个完整输出 bit-exact、每个 IP 一次 START、60 次 guard 检查通过。`BOARD_CONTROL_ACCESS=PASS`、`BOARD_BRINGUP_BASE=PASS`；连续多帧与 `BOARD_30FPS=NOT_TESTED`。正式 release bit 未独立重演本次链路，保持其原始身份。
+
+上次 D-cache 最后确认 OFF、MMU 未独立评估，连接已关闭；不把历史板态当作当前证明。下文保留正式 RTL/implementation 结果。
 
 ## 现在做到了什么
 
@@ -32,21 +36,21 @@ XSA 内含的 bitstream 与外部 bitstream 大小和 SHA-256 一致。
 
 ## 现在还缺什么
 
-**BOARD_30FPS = NOT_TESTED**：还没有在真实 KV260 上测试。
+**BOARD_30FPS = NOT_TESTED**：尚未进行真实连续多帧性能测量；真板单帧已通过。
 RTL 仿真、时序收敛和 bitstream 生成均不等于真板 30FPS 验收。
 
-板到后、Master 另行安排的下一阶段需要：
+Master 另行批准的下一阶段需要：
 
 1. 完成 PS 软件与真实 DDR buffer 分配。
-2. 处理 cache flush / invalidate 并下载 bitstream。
-3. 验证 CNN → Bilinear → Curve 单帧数值。
-4. 测量 100+ 帧的真实稳态 FPS，并检查最终夜景图像输出。
+2. 实现生产 cache clean/invalidate 或正确非缓存映射，不能沿用诊断 dcache off 当生产方案。
+3. 从两帧重复启动逐级验证不同输入和较长连续批次。
+4. 使用板端可靠计时测量真实稳态 FPS，并检查输出数值；见 [验收计划](kv260_v12_acceptance_plan.md)。
 
 ## 当前一句话结论
 
 目前 V1.2 已完成三模块 RTL 级 30FPS 验证、正式 CNN IP 固化、100 MHz
 布局布线及时序收敛，并已生成 bitstream / XSA。PC 侧 FPGA 硬件开发基本完成，
-下一阶段是 KV260 真板 bring-up 和真实 30FPS 验收；最终产品尚未完成。
+诊断 bit 的真板单帧已完成，下一阶段是生产软件、连续运行和真实 30FPS 验收；最终产品尚未完成。
 
 | 当前状态 | 结果 |
 | --- | --- |
@@ -55,6 +59,9 @@ RTL 仿真、时序收敛和 bitstream 生成均不等于真板 30FPS 验收。
 | IMPLEMENTABLE_CNN_IP | PASS |
 | POST_ROUTE_100MHZ | PASS |
 | BITSTREAM_XSA | PASS |
+| BOARD_CONTROL_ACCESS | PASS |
+| BOARD_BRINGUP_BASE | PASS（诊断 bit 单帧） |
+| BOARD_MULTI_FRAME | NOT_TESTED |
 | BOARD_30FPS | NOT_TESTED |
 
 正式证据入口：[当前 checkpoint](../reports/v1_2_phase4_checkpoint.md)、
