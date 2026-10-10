@@ -1,0 +1,1282 @@
+{
+  "schema_version": 1,
+  "status": "HOST_PREPARED_NOT_AUTHORIZED_NOT_EXECUTED",
+  "scope": "TWO_SERIAL_REPEAT_FRAMES_ONLY",
+  "frames": [
+    {
+      "frame_index": 0,
+      "input_id": "night_01",
+      "regions": [
+        {
+          "name": "INPUT_Q14_before",
+          "address": 536936384,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "INPUT_Q14",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "INPUT_Q14_data",
+          "address": 536936448,
+          "bytes": 38160,
+          "sha256": "f23dd361f7fbc510df065c88ea39fa108154b3f20b68858eabdd0e7935aa5c25",
+          "kind": "data",
+          "slot": "INPUT_Q14",
+          "asset": "input_q14.bin"
+        },
+        {
+          "name": "INPUT_Q14_after",
+          "address": 536974608,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "INPUT_Q14",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "WEIGHTS_INT8_before",
+          "address": 537001920,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "WEIGHTS_INT8",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "WEIGHTS_INT8_data",
+          "address": 537001984,
+          "bytes": 10075,
+          "sha256": "e2940c098a3680890e792e88d1007398d352550218b957fa1aafcfac14e9c905",
+          "kind": "data",
+          "slot": "WEIGHTS_INT8",
+          "asset": "weights_int8.bin"
+        },
+        {
+          "name": "WEIGHTS_INT8_after",
+          "address": 537012059,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "WEIGHTS_INT8",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "BIAS_INT32_before",
+          "address": 537067456,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "BIAS_INT32",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "BIAS_INT32_data",
+          "address": 537067520,
+          "bytes": 1944,
+          "sha256": "337ff15ebdd3c984fd85be6667bb2cdebae776eada7fbd0fea322265af586d98",
+          "kind": "data",
+          "slot": "BIAS_INT32",
+          "asset": "bias_int32.bin"
+        },
+        {
+          "name": "BIAS_INT32_after",
+          "address": 537069464,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "BIAS_INT32",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "WEIGHT_FRAC_before",
+          "address": 537132992,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "WEIGHT_FRAC",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "WEIGHT_FRAC_data",
+          "address": 537133056,
+          "bytes": 486,
+          "sha256": "54a14af94229aee7c9ac574b6f024b11a340ac07146657b4209366d070cf045d",
+          "kind": "data",
+          "slot": "WEIGHT_FRAC",
+          "asset": "weight_frac.bin"
+        },
+        {
+          "name": "WEIGHT_FRAC_after",
+          "address": 537133542,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "WEIGHT_FRAC",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "TANH_LUT_Q15_before",
+          "address": 537198528,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "TANH_LUT_Q15",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "TANH_LUT_Q15_data",
+          "address": 537198592,
+          "bytes": 8194,
+          "sha256": "7ce74d8f0cae9df9cf6a6c6a7cf93c5de614bdcd62791f9a4eed5f741edf3b06",
+          "kind": "data",
+          "slot": "TANH_LUT_Q15",
+          "asset": "tanh_lut_q15.bin"
+        },
+        {
+          "name": "TANH_LUT_Q15_after",
+          "address": 537206786,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "TANH_LUT_Q15",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "A_LOW_Q14_before",
+          "address": 537264064,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "A_LOW_Q14",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "A_LOW_Q14_data",
+          "address": 537264128,
+          "bytes": 38160,
+          "sha256": "a2645696742b7171b2b4f32aa7e5fd3ed6a95b8b11c03f1bbb031c36ad7d3e2b",
+          "kind": "data",
+          "slot": "A_LOW_Q14",
+          "generated_byte": "0xa5"
+        },
+        {
+          "name": "A_LOW_Q14_after",
+          "address": 537302288,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "A_LOW_Q14",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "WORKSPACE_INT16_before",
+          "address": 537329600,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "WORKSPACE_INT16",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "WORKSPACE_INT16_data",
+          "address": 537329664,
+          "bytes": 2442240,
+          "sha256": "5c550f855fcb6286bf1913309f291a7f755d0a0819b520446320dd0505f4ed90",
+          "kind": "data",
+          "slot": "WORKSPACE_INT16",
+          "generated_byte": "0xa5"
+        },
+        {
+          "name": "WORKSPACE_INT16_after",
+          "address": 539771904,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "WORKSPACE_INT16",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "A_FULL_Q14_before",
+          "address": 539819968,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "A_FULL_Q14",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "A_FULL_Q14_data",
+          "address": 539820032,
+          "bytes": 5495040,
+          "sha256": "d749c73bb3a0cdc355e85898dc61610e817d84dde73f668338a45f67fff14708",
+          "kind": "data",
+          "slot": "A_FULL_Q14",
+          "generated_byte": "0xa5"
+        },
+        {
+          "name": "A_FULL_Q14_after",
+          "address": 545315072,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "A_FULL_Q14",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "MODEL_INPUT_Q14_before",
+          "address": 545324992,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "MODEL_INPUT_Q14",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "MODEL_INPUT_Q14_data",
+          "address": 545325056,
+          "bytes": 5495040,
+          "sha256": "7dbbd69b59de49b751c4b684a9d4fc7083e20d841a9a1e19897256badb7ffe56",
+          "kind": "data",
+          "slot": "MODEL_INPUT_Q14",
+          "asset": "model_input_q14.bin"
+        },
+        {
+          "name": "MODEL_INPUT_Q14_after",
+          "address": 550820096,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "MODEL_INPUT_Q14",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "ENHANCED_Q14_before",
+          "address": 550830016,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "ENHANCED_Q14",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "ENHANCED_Q14_data",
+          "address": 550830080,
+          "bytes": 5495040,
+          "sha256": "d749c73bb3a0cdc355e85898dc61610e817d84dde73f668338a45f67fff14708",
+          "kind": "data",
+          "slot": "ENHANCED_Q14",
+          "generated_byte": "0xa5"
+        },
+        {
+          "name": "ENHANCED_Q14_after",
+          "address": 556325120,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "ENHANCED_Q14",
+          "generated_byte": "0xe7"
+        }
+      ],
+      "schedule": [
+        {
+          "ip": "cnn",
+          "AP_CTRL": "0xA0020000",
+          "precondition": "fresh AP_CTRL idle/start0/auto_restart0 and GIE=0; source/Host/identity/CONFIG/reset/signature/PL0 gates maintained",
+          "argument_writes": [
+            {
+              "address": "0xA0020010",
+              "value": "0x20010000",
+              "argument": "input_q14"
+            },
+            {
+              "address": "0xA0020014",
+              "value": "0x00000000",
+              "argument": "input_q14"
+            },
+            {
+              "address": "0xA002001C",
+              "value": "0x20020000",
+              "argument": "weights_int8"
+            },
+            {
+              "address": "0xA0020020",
+              "value": "0x00000000",
+              "argument": "weights_int8"
+            },
+            {
+              "address": "0xA0020028",
+              "value": "0x20030000",
+              "argument": "bias_int32"
+            },
+            {
+              "address": "0xA002002C",
+              "value": "0x00000000",
+              "argument": "bias_int32"
+            },
+            {
+              "address": "0xA0020034",
+              "value": "0x20040000",
+              "argument": "weight_frac"
+            },
+            {
+              "address": "0xA0020038",
+              "value": "0x00000000",
+              "argument": "weight_frac"
+            },
+            {
+              "address": "0xA0020040",
+              "value": "0x20050000",
+              "argument": "tanh_lut_q15"
+            },
+            {
+              "address": "0xA0020044",
+              "value": "0x00000000",
+              "argument": "tanh_lut_q15"
+            },
+            {
+              "address": "0xA002004C",
+              "value": "0x20060000",
+              "argument": "a_low_q14"
+            },
+            {
+              "address": "0xA0020050",
+              "value": "0x00000000",
+              "argument": "a_low_q14"
+            },
+            {
+              "address": "0xA0020058",
+              "value": "0x20070000",
+              "argument": "workspace_int16"
+            },
+            {
+              "address": "0xA002005C",
+              "value": "0x00000000",
+              "argument": "workspace_int16"
+            }
+          ],
+          "start": {
+            "address": "0xA0020000",
+            "value": "0x00000001",
+            "attempts": 1
+          },
+          "poll": {
+            "register": "0xA0020000",
+            "max_reads": 100,
+            "nominal_deadline_ms": 5000,
+            "done_bit": 1,
+            "retry": 0
+          },
+          "output": "A_LOW_Q14",
+          "before_next_stage": "read full output and compare bit-exact with frozen golden; verify guards; stop mismatch/timeout/transport error"
+        },
+        {
+          "ip": "bilinear",
+          "AP_CTRL": "0xA0000000",
+          "precondition": "fresh AP_CTRL idle/start0/auto_restart0 and GIE=0; source/Host/identity/CONFIG/reset/signature/PL0 gates maintained",
+          "argument_writes": [
+            {
+              "address": "0xA0000010",
+              "value": "0x20060000",
+              "argument": "parameters_lowres"
+            },
+            {
+              "address": "0xA0000014",
+              "value": "0x00000000",
+              "argument": "parameters_lowres"
+            },
+            {
+              "address": "0xA000001C",
+              "value": "0x202D0000",
+              "argument": "parameters_fullres"
+            },
+            {
+              "address": "0xA0000020",
+              "value": "0x00000000",
+              "argument": "parameters_fullres"
+            },
+            {
+              "address": "0xA0000028",
+              "value": "0x0000003C",
+              "argument": "input_height"
+            },
+            {
+              "address": "0xA0000030",
+              "value": "0x0000006A",
+              "argument": "input_width"
+            }
+          ],
+          "start": {
+            "address": "0xA0000000",
+            "value": "0x00000001",
+            "attempts": 1
+          },
+          "poll": {
+            "register": "0xA0000000",
+            "max_reads": 100,
+            "nominal_deadline_ms": 5000,
+            "done_bit": 1,
+            "retry": 0
+          },
+          "output": "A_FULL_Q14",
+          "before_next_stage": "read full output and compare bit-exact with frozen golden; verify guards; stop mismatch/timeout/transport error"
+        },
+        {
+          "ip": "curve",
+          "AP_CTRL": "0xA0010000",
+          "precondition": "fresh AP_CTRL idle/start0/auto_restart0 and GIE=0; source/Host/identity/CONFIG/reset/signature/PL0 gates maintained",
+          "argument_writes": [
+            {
+              "address": "0xA0010010",
+              "value": "0x20810000",
+              "argument": "input_r"
+            },
+            {
+              "address": "0xA0010014",
+              "value": "0x00000000",
+              "argument": "input_r"
+            },
+            {
+              "address": "0xA001001C",
+              "value": "0x202D0000",
+              "argument": "parameter_r"
+            },
+            {
+              "address": "0xA0010020",
+              "value": "0x00000000",
+              "argument": "parameter_r"
+            },
+            {
+              "address": "0xA0010028",
+              "value": "0x20D50000",
+              "argument": "output_r"
+            },
+            {
+              "address": "0xA001002C",
+              "value": "0x00000000",
+              "argument": "output_r"
+            },
+            {
+              "address": "0xA0010034",
+              "value": "0x0029EC80",
+              "argument": "count"
+            }
+          ],
+          "start": {
+            "address": "0xA0010000",
+            "value": "0x00000001",
+            "attempts": 1
+          },
+          "poll": {
+            "register": "0xA0010000",
+            "max_reads": 100,
+            "nominal_deadline_ms": 5000,
+            "done_bit": 1,
+            "retry": 0
+          },
+          "output": "ENHANCED_Q14",
+          "before_next_stage": "read full output and compare bit-exact with frozen golden; verify guards; stop mismatch/timeout/transport error"
+        }
+      ],
+      "goldens": [
+        {
+          "slot": "A_LOW_Q14",
+          "role": "golden",
+          "bytes": 38160,
+          "sha256": "31abdd23520d32efe75928ef394017bd2f515b2805144a85735eebc9481dddd1",
+          "asset": "expected_a_low_q14.bin"
+        },
+        {
+          "slot": "A_FULL_Q14",
+          "role": "golden",
+          "bytes": 5495040,
+          "sha256": "ebfa58eafb70385af39b92b6c9ed2b81c3319ca63662ce002d1219051f8b2067",
+          "asset": "expected_a_full_q14.bin"
+        },
+        {
+          "slot": "ENHANCED_Q14",
+          "role": "golden",
+          "bytes": 5495040,
+          "sha256": "869e62a41010e047c3760aa6a614f0ff883566d52c3fbee273cf2a865f7eb951",
+          "asset": "expected_enhanced_q14.bin"
+        }
+      ]
+    },
+    {
+      "frame_index": 1,
+      "input_id": "night_01",
+      "regions": [
+        {
+          "name": "INPUT_Q14_before",
+          "address": 536936384,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "INPUT_Q14",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "INPUT_Q14_data",
+          "address": 536936448,
+          "bytes": 38160,
+          "sha256": "f23dd361f7fbc510df065c88ea39fa108154b3f20b68858eabdd0e7935aa5c25",
+          "kind": "data",
+          "slot": "INPUT_Q14",
+          "asset": "input_q14.bin"
+        },
+        {
+          "name": "INPUT_Q14_after",
+          "address": 536974608,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "INPUT_Q14",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "WEIGHTS_INT8_before",
+          "address": 537001920,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "WEIGHTS_INT8",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "WEIGHTS_INT8_data",
+          "address": 537001984,
+          "bytes": 10075,
+          "sha256": "e2940c098a3680890e792e88d1007398d352550218b957fa1aafcfac14e9c905",
+          "kind": "data",
+          "slot": "WEIGHTS_INT8",
+          "asset": "weights_int8.bin"
+        },
+        {
+          "name": "WEIGHTS_INT8_after",
+          "address": 537012059,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "WEIGHTS_INT8",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "BIAS_INT32_before",
+          "address": 537067456,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "BIAS_INT32",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "BIAS_INT32_data",
+          "address": 537067520,
+          "bytes": 1944,
+          "sha256": "337ff15ebdd3c984fd85be6667bb2cdebae776eada7fbd0fea322265af586d98",
+          "kind": "data",
+          "slot": "BIAS_INT32",
+          "asset": "bias_int32.bin"
+        },
+        {
+          "name": "BIAS_INT32_after",
+          "address": 537069464,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "BIAS_INT32",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "WEIGHT_FRAC_before",
+          "address": 537132992,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "WEIGHT_FRAC",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "WEIGHT_FRAC_data",
+          "address": 537133056,
+          "bytes": 486,
+          "sha256": "54a14af94229aee7c9ac574b6f024b11a340ac07146657b4209366d070cf045d",
+          "kind": "data",
+          "slot": "WEIGHT_FRAC",
+          "asset": "weight_frac.bin"
+        },
+        {
+          "name": "WEIGHT_FRAC_after",
+          "address": 537133542,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "WEIGHT_FRAC",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "TANH_LUT_Q15_before",
+          "address": 537198528,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "TANH_LUT_Q15",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "TANH_LUT_Q15_data",
+          "address": 537198592,
+          "bytes": 8194,
+          "sha256": "7ce74d8f0cae9df9cf6a6c6a7cf93c5de614bdcd62791f9a4eed5f741edf3b06",
+          "kind": "data",
+          "slot": "TANH_LUT_Q15",
+          "asset": "tanh_lut_q15.bin"
+        },
+        {
+          "name": "TANH_LUT_Q15_after",
+          "address": 537206786,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "TANH_LUT_Q15",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "A_LOW_Q14_before",
+          "address": 537264064,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "A_LOW_Q14",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "A_LOW_Q14_data",
+          "address": 537264128,
+          "bytes": 38160,
+          "sha256": "c79070240578ea197f54de8e6b723c90a693c3c2d875972e29f7411906cc10a4",
+          "kind": "data",
+          "slot": "A_LOW_Q14",
+          "generated_byte": "0x5a"
+        },
+        {
+          "name": "A_LOW_Q14_after",
+          "address": 537302288,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "A_LOW_Q14",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "WORKSPACE_INT16_before",
+          "address": 537329600,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "WORKSPACE_INT16",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "WORKSPACE_INT16_data",
+          "address": 537329664,
+          "bytes": 2442240,
+          "sha256": "b7cc84608962484ba7ddc33f83fc1c03c11ee7bc256bc0ae75be4597b21dcfd7",
+          "kind": "data",
+          "slot": "WORKSPACE_INT16",
+          "generated_byte": "0x5a"
+        },
+        {
+          "name": "WORKSPACE_INT16_after",
+          "address": 539771904,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "WORKSPACE_INT16",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "A_FULL_Q14_before",
+          "address": 539819968,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "A_FULL_Q14",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "A_FULL_Q14_data",
+          "address": 539820032,
+          "bytes": 5495040,
+          "sha256": "a504cbbba0d0fa4b977c6b63f462180d9e2d3a5506f2d39cbe06abd8ecc765d6",
+          "kind": "data",
+          "slot": "A_FULL_Q14",
+          "generated_byte": "0x5a"
+        },
+        {
+          "name": "A_FULL_Q14_after",
+          "address": 545315072,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "A_FULL_Q14",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "MODEL_INPUT_Q14_before",
+          "address": 545324992,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "MODEL_INPUT_Q14",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "MODEL_INPUT_Q14_data",
+          "address": 545325056,
+          "bytes": 5495040,
+          "sha256": "7dbbd69b59de49b751c4b684a9d4fc7083e20d841a9a1e19897256badb7ffe56",
+          "kind": "data",
+          "slot": "MODEL_INPUT_Q14",
+          "asset": "model_input_q14.bin"
+        },
+        {
+          "name": "MODEL_INPUT_Q14_after",
+          "address": 550820096,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "MODEL_INPUT_Q14",
+          "generated_byte": "0xe7"
+        },
+        {
+          "name": "ENHANCED_Q14_before",
+          "address": 550830016,
+          "bytes": 64,
+          "sha256": "d735ed81236607879946811174f55a8365de50c1924af6508466c4fe1fd1f5db",
+          "kind": "before",
+          "slot": "ENHANCED_Q14",
+          "generated_byte": "0xd3"
+        },
+        {
+          "name": "ENHANCED_Q14_data",
+          "address": 550830080,
+          "bytes": 5495040,
+          "sha256": "a504cbbba0d0fa4b977c6b63f462180d9e2d3a5506f2d39cbe06abd8ecc765d6",
+          "kind": "data",
+          "slot": "ENHANCED_Q14",
+          "generated_byte": "0x5a"
+        },
+        {
+          "name": "ENHANCED_Q14_after",
+          "address": 556325120,
+          "bytes": 64,
+          "sha256": "43528622f8a5bd582b1be2fb2a64f128a4bf886f4c25f6048d55a940f2ee72c8",
+          "kind": "after",
+          "slot": "ENHANCED_Q14",
+          "generated_byte": "0xe7"
+        }
+      ],
+      "schedule": [
+        {
+          "ip": "cnn",
+          "AP_CTRL": "0xA0020000",
+          "precondition": "fresh AP_CTRL idle/start0/auto_restart0 and GIE=0; source/Host/identity/CONFIG/reset/signature/PL0 gates maintained",
+          "argument_writes": [
+            {
+              "address": "0xA0020010",
+              "value": "0x20010000",
+              "argument": "input_q14"
+            },
+            {
+              "address": "0xA0020014",
+              "value": "0x00000000",
+              "argument": "input_q14"
+            },
+            {
+              "address": "0xA002001C",
+              "value": "0x20020000",
+              "argument": "weights_int8"
+            },
+            {
+              "address": "0xA0020020",
+              "value": "0x00000000",
+              "argument": "weights_int8"
+            },
+            {
+              "address": "0xA0020028",
+              "value": "0x20030000",
+              "argument": "bias_int32"
+            },
+            {
+              "address": "0xA002002C",
+              "value": "0x00000000",
+              "argument": "bias_int32"
+            },
+            {
+              "address": "0xA0020034",
+              "value": "0x20040000",
+              "argument": "weight_frac"
+            },
+            {
+              "address": "0xA0020038",
+              "value": "0x00000000",
+              "argument": "weight_frac"
+            },
+            {
+              "address": "0xA0020040",
+              "value": "0x20050000",
+              "argument": "tanh_lut_q15"
+            },
+            {
+              "address": "0xA0020044",
+              "value": "0x00000000",
+              "argument": "tanh_lut_q15"
+            },
+            {
+              "address": "0xA002004C",
+              "value": "0x20060000",
+              "argument": "a_low_q14"
+            },
+            {
+              "address": "0xA0020050",
+              "value": "0x00000000",
+              "argument": "a_low_q14"
+            },
+            {
+              "address": "0xA0020058",
+              "value": "0x20070000",
+              "argument": "workspace_int16"
+            },
+            {
+              "address": "0xA002005C",
+              "value": "0x00000000",
+              "argument": "workspace_int16"
+            }
+          ],
+          "start": {
+            "address": "0xA0020000",
+            "value": "0x00000001",
+            "attempts": 1
+          },
+          "poll": {
+            "register": "0xA0020000",
+            "max_reads": 100,
+            "nominal_deadline_ms": 5000,
+            "done_bit": 1,
+            "retry": 0
+          },
+          "output": "A_LOW_Q14",
+          "before_next_stage": "read full output and compare bit-exact with frozen golden; verify guards; stop mismatch/timeout/transport error"
+        },
+        {
+          "ip": "bilinear",
+          "AP_CTRL": "0xA0000000",
+          "precondition": "fresh AP_CTRL idle/start0/auto_restart0 and GIE=0; source/Host/identity/CONFIG/reset/signature/PL0 gates maintained",
+          "argument_writes": [
+            {
+              "address": "0xA0000010",
+              "value": "0x20060000",
+              "argument": "parameters_lowres"
+            },
+            {
+              "address": "0xA0000014",
+              "value": "0x00000000",
+              "argument": "parameters_lowres"
+            },
+            {
+              "address": "0xA000001C",
+              "value": "0x202D0000",
+              "argument": "parameters_fullres"
+            },
+            {
+              "address": "0xA0000020",
+              "value": "0x00000000",
+              "argument": "parameters_fullres"
+            },
+            {
+              "address": "0xA0000028",
+              "value": "0x0000003C",
+              "argument": "input_height"
+            },
+            {
+              "address": "0xA0000030",
+              "value": "0x0000006A",
+              "argument": "input_width"
+            }
+          ],
+          "start": {
+            "address": "0xA0000000",
+            "value": "0x00000001",
+            "attempts": 1
+          },
+          "poll": {
+            "register": "0xA0000000",
+            "max_reads": 100,
+            "nominal_deadline_ms": 5000,
+            "done_bit": 1,
+            "retry": 0
+          },
+          "output": "A_FULL_Q14",
+          "before_next_stage": "read full output and compare bit-exact with frozen golden; verify guards; stop mismatch/timeout/transport error"
+        },
+        {
+          "ip": "curve",
+          "AP_CTRL": "0xA0010000",
+          "precondition": "fresh AP_CTRL idle/start0/auto_restart0 and GIE=0; source/Host/identity/CONFIG/reset/signature/PL0 gates maintained",
+          "argument_writes": [
+            {
+              "address": "0xA0010010",
+              "value": "0x20810000",
+              "argument": "input_r"
+            },
+            {
+              "address": "0xA0010014",
+              "value": "0x00000000",
+              "argument": "input_r"
+            },
+            {
+              "address": "0xA001001C",
+              "value": "0x202D0000",
+              "argument": "parameter_r"
+            },
+            {
+              "address": "0xA0010020",
+              "value": "0x00000000",
+              "argument": "parameter_r"
+            },
+            {
+              "address": "0xA0010028",
+              "value": "0x20D50000",
+              "argument": "output_r"
+            },
+            {
+              "address": "0xA001002C",
+              "value": "0x00000000",
+              "argument": "output_r"
+            },
+            {
+              "address": "0xA0010034",
+              "value": "0x0029EC80",
+              "argument": "count"
+            }
+          ],
+          "start": {
+            "address": "0xA0010000",
+            "value": "0x00000001",
+            "attempts": 1
+          },
+          "poll": {
+            "register": "0xA0010000",
+            "max_reads": 100,
+            "nominal_deadline_ms": 5000,
+            "done_bit": 1,
+            "retry": 0
+          },
+          "output": "ENHANCED_Q14",
+          "before_next_stage": "read full output and compare bit-exact with frozen golden; verify guards; stop mismatch/timeout/transport error"
+        }
+      ],
+      "goldens": [
+        {
+          "slot": "A_LOW_Q14",
+          "role": "golden",
+          "bytes": 38160,
+          "sha256": "31abdd23520d32efe75928ef394017bd2f515b2805144a85735eebc9481dddd1",
+          "asset": "expected_a_low_q14.bin"
+        },
+        {
+          "slot": "A_FULL_Q14",
+          "role": "golden",
+          "bytes": 5495040,
+          "sha256": "ebfa58eafb70385af39b92b6c9ed2b81c3319ca63662ce002d1219051f8b2067",
+          "asset": "expected_a_full_q14.bin"
+        },
+        {
+          "slot": "ENHANCED_Q14",
+          "role": "golden",
+          "bytes": 5495040,
+          "sha256": "869e62a41010e047c3760aa6a614f0ff883566d52c3fbee273cf2a865f7eb951",
+          "asset": "expected_enhanced_q14.bin"
+        }
+      ]
+    }
+  ],
+  "frame_poison_bytes": [
+    "0xA5",
+    "0x5A"
+  ],
+  "source_plan_sha256": "38f02c1894034db5012d89680a60f7e551996fc5341a7e120a3b00289224966f",
+  "shared_manifest_sha256": "4b0317d745a7b984e0df31a37ad2eb2ad3c228c739957f97ec2be584e3148f5c",
+  "scope_identity_sha256": "12c318bf3add448c1e57704fdc67c8d1784d6850823b5b79e804fe802ce397c8",
+  "historical_single_frame_plan_sha256": "ab7ec6409049a90e4e0b0decc3a82915536f839adbf0df66d15933f4a22f159f",
+  "historical_register_map_sha256": "6a5d709c0372b6891490dc520979fe6bcfcd1dcc2ad8bcc0bcd97a8b37a5c9b8",
+  "scratch": {
+    "start": "0x20000000",
+    "end_exclusive": "0x24000000",
+    "ownership": "REQUIRES_NEW_EXPLICIT_DEDICATION_AND_OVERWRITE_PERMISSION",
+    "regions": [
+      {
+        "start": "0x2000ffc0",
+        "end_exclusive": "0x20010000",
+        "slot": "INPUT_Q14"
+      },
+      {
+        "start": "0x20010000",
+        "end_exclusive": "0x20019510",
+        "slot": "INPUT_Q14"
+      },
+      {
+        "start": "0x20019510",
+        "end_exclusive": "0x20019550",
+        "slot": "INPUT_Q14"
+      },
+      {
+        "start": "0x2001ffc0",
+        "end_exclusive": "0x20020000",
+        "slot": "WEIGHTS_INT8"
+      },
+      {
+        "start": "0x20020000",
+        "end_exclusive": "0x2002275b",
+        "slot": "WEIGHTS_INT8"
+      },
+      {
+        "start": "0x2002275b",
+        "end_exclusive": "0x2002279b",
+        "slot": "WEIGHTS_INT8"
+      },
+      {
+        "start": "0x2002ffc0",
+        "end_exclusive": "0x20030000",
+        "slot": "BIAS_INT32"
+      },
+      {
+        "start": "0x20030000",
+        "end_exclusive": "0x20030798",
+        "slot": "BIAS_INT32"
+      },
+      {
+        "start": "0x20030798",
+        "end_exclusive": "0x200307d8",
+        "slot": "BIAS_INT32"
+      },
+      {
+        "start": "0x2003ffc0",
+        "end_exclusive": "0x20040000",
+        "slot": "WEIGHT_FRAC"
+      },
+      {
+        "start": "0x20040000",
+        "end_exclusive": "0x200401e6",
+        "slot": "WEIGHT_FRAC"
+      },
+      {
+        "start": "0x200401e6",
+        "end_exclusive": "0x20040226",
+        "slot": "WEIGHT_FRAC"
+      },
+      {
+        "start": "0x2004ffc0",
+        "end_exclusive": "0x20050000",
+        "slot": "TANH_LUT_Q15"
+      },
+      {
+        "start": "0x20050000",
+        "end_exclusive": "0x20052002",
+        "slot": "TANH_LUT_Q15"
+      },
+      {
+        "start": "0x20052002",
+        "end_exclusive": "0x20052042",
+        "slot": "TANH_LUT_Q15"
+      },
+      {
+        "start": "0x2005ffc0",
+        "end_exclusive": "0x20060000",
+        "slot": "A_LOW_Q14"
+      },
+      {
+        "start": "0x20060000",
+        "end_exclusive": "0x20069510",
+        "slot": "A_LOW_Q14"
+      },
+      {
+        "start": "0x20069510",
+        "end_exclusive": "0x20069550",
+        "slot": "A_LOW_Q14"
+      },
+      {
+        "start": "0x2006ffc0",
+        "end_exclusive": "0x20070000",
+        "slot": "WORKSPACE_INT16"
+      },
+      {
+        "start": "0x20070000",
+        "end_exclusive": "0x202c4400",
+        "slot": "WORKSPACE_INT16"
+      },
+      {
+        "start": "0x202c4400",
+        "end_exclusive": "0x202c4440",
+        "slot": "WORKSPACE_INT16"
+      },
+      {
+        "start": "0x202cffc0",
+        "end_exclusive": "0x202d0000",
+        "slot": "A_FULL_Q14"
+      },
+      {
+        "start": "0x202d0000",
+        "end_exclusive": "0x2080d900",
+        "slot": "A_FULL_Q14"
+      },
+      {
+        "start": "0x2080d900",
+        "end_exclusive": "0x2080d940",
+        "slot": "A_FULL_Q14"
+      },
+      {
+        "start": "0x2080ffc0",
+        "end_exclusive": "0x20810000",
+        "slot": "MODEL_INPUT_Q14"
+      },
+      {
+        "start": "0x20810000",
+        "end_exclusive": "0x20d4d900",
+        "slot": "MODEL_INPUT_Q14"
+      },
+      {
+        "start": "0x20d4d900",
+        "end_exclusive": "0x20d4d940",
+        "slot": "MODEL_INPUT_Q14"
+      },
+      {
+        "start": "0x20d4ffc0",
+        "end_exclusive": "0x20d50000",
+        "slot": "ENHANCED_Q14"
+      },
+      {
+        "start": "0x20d50000",
+        "end_exclusive": "0x2128d900",
+        "slot": "ENHANCED_Q14"
+      },
+      {
+        "start": "0x2128d900",
+        "end_exclusive": "0x2128d940",
+        "slot": "ENHANCED_Q14"
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "slot": "INPUT_Q14",
+      "role": "source",
+      "bytes": 38160,
+      "sha256": "f23dd361f7fbc510df065c88ea39fa108154b3f20b68858eabdd0e7935aa5c25",
+      "asset": "input_q14.bin"
+    },
+    {
+      "slot": "WEIGHTS_INT8",
+      "role": "source",
+      "bytes": 10075,
+      "sha256": "e2940c098a3680890e792e88d1007398d352550218b957fa1aafcfac14e9c905",
+      "asset": "weights_int8.bin"
+    },
+    {
+      "slot": "BIAS_INT32",
+      "role": "source",
+      "bytes": 1944,
+      "sha256": "337ff15ebdd3c984fd85be6667bb2cdebae776eada7fbd0fea322265af586d98",
+      "asset": "bias_int32.bin"
+    },
+    {
+      "slot": "WEIGHT_FRAC",
+      "role": "source",
+      "bytes": 486,
+      "sha256": "54a14af94229aee7c9ac574b6f024b11a340ac07146657b4209366d070cf045d",
+      "asset": "weight_frac.bin"
+    },
+    {
+      "slot": "TANH_LUT_Q15",
+      "role": "source",
+      "bytes": 8194,
+      "sha256": "7ce74d8f0cae9df9cf6a6c6a7cf93c5de614bdcd62791f9a4eed5f741edf3b06",
+      "asset": "tanh_lut_q15.bin"
+    },
+    {
+      "slot": "A_LOW_Q14",
+      "role": "golden",
+      "bytes": 38160,
+      "sha256": "31abdd23520d32efe75928ef394017bd2f515b2805144a85735eebc9481dddd1",
+      "asset": "expected_a_low_q14.bin"
+    },
+    {
+      "slot": "A_FULL_Q14",
+      "role": "golden",
+      "bytes": 5495040,
+      "sha256": "ebfa58eafb70385af39b92b6c9ed2b81c3319ca63662ce002d1219051f8b2067",
+      "asset": "expected_a_full_q14.bin"
+    },
+    {
+      "slot": "MODEL_INPUT_Q14",
+      "role": "source",
+      "bytes": 5495040,
+      "sha256": "7dbbd69b59de49b751c4b684a9d4fc7083e20d841a9a1e19897256badb7ffe56",
+      "asset": "model_input_q14.bin"
+    },
+    {
+      "slot": "ENHANCED_Q14",
+      "role": "golden",
+      "bytes": 5495040,
+      "sha256": "869e62a41010e047c3760aa6a614f0ff883566d52c3fbee273cf2a865f7eb951",
+      "asset": "expected_enhanced_q14.bin"
+    }
+  ],
+  "budgets": {
+    "DDR_SET_bytes": 38051318,
+    "DDR_SET_chunks": 632,
+    "parameter_SET": 54,
+    "AP_START_by_ip": {
+      "cnn": 2,
+      "bilinear": 2,
+      "curve": 2
+    },
+    "CSR_SET_bytes": 240,
+    "total_SET": 692,
+    "core_GET_cap": 1768,
+    "PS_GET_cap": 354,
+    "CONFIG_read_cap": 16,
+    "poll_reads_per_start": 100,
+    "deadline_ms_per_start": 5000,
+    "complete_output_comparisons": 6,
+    "stage_guard_comparisons": 120,
+    "initial_guard_readbacks": 40,
+    "UART_dcache_read_only_commands": 1
+  },
+  "cache": {
+    "required_fresh_state": "OFF",
+    "writes": 0,
+    "MMU": "NOT_ASSESSED"
+  },
+  "forbidden": [
+    "program",
+    "reset",
+    "psu_init",
+    "GPIO_WRITE",
+    "PMU_WRITE",
+    "clock_write",
+    "isolation_write",
+    "cache_write",
+    "MMU_write",
+    "storage_write",
+    "auto_restart",
+    "retry",
+    "rollback"
+  ],
+  "frame_barrier": "All three full bit-exact outputs and all guards must pass before restaging",
+  "runner": "NEW_BOUNDED_ADAPTER_REQUIRES_HOST_OFFLINE_REVIEW; spent execute_once is never replayed",
+  "BOARD_MULTI_FRAME": "NOT_TESTED",
+  "BOARD_30FPS": "NOT_TESTED",
+  "board_operations_this_tool": 0
+}

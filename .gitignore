@@ -83,6 +83,9 @@ temp/
 *.ip_user_files/
 *.sim/
 *.srcs/sources_1/ip/
+fpga/vivado/**/bd/**/ip/
+fpga/vivado/**/bd/**/ui/
+*.bda
 solution*/
 .autopilot/
 
@@ -96,6 +99,7 @@ solution*/
 *.xo
 *.xclbin
 *.log.xml
+dfx_runtime.txt
 
 # Keep source and project configuration files versioned:
 # Python, C/C++, Verilog/SystemVerilog/VHDL, Tcl, YAML, JSON, and TOML.

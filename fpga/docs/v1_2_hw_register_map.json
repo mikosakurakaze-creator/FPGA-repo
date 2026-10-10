@@ -1,0 +1,654 @@
+{
+  "schema_version": 1,
+  "status": "V1_2_HW_HANDOFF_READY",
+  "generated_at": "2026-10-03T13:55:35.131604+08:00",
+  "state": {
+    "CNN_RTL_30FPS": "PASS",
+    "SHORT_MULTI_FRAME_30FPS": "PASS",
+    "IMPLEMENTABLE_CNN_IP": "PASS",
+    "POST_ROUTE_100MHZ": "PASS",
+    "BITSTREAM_XSA": "PASS",
+    "BOARD_30FPS": "NOT_TESTED"
+  },
+  "board": "xilinx.com:kv260_som:part0:1.4",
+  "part": "xck26-sfvc784-2LV-c",
+  "vivado_version": "2025.2",
+  "project": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/integration_01/project/v12_wc.xpr",
+  "clock": {
+    "name": "clk_pl_0",
+    "source": "PS/pl_clk0",
+    "nominal_frequency_hz": 100000000,
+    "period_ns": 10.0,
+    "hwh_frequency_hz": 99999001,
+    "note": "Nominal BD configuration/post-route constraint is 100MHz; protected HWH reports 99999001 Hz. No board clock measurement performed."
+  },
+  "reset": {
+    "instance": "rst_ps_100m",
+    "source": "PS/pl_resetn0",
+    "external_active_high": false,
+    "accelerators": "peripheral_aresetn",
+    "smartconnects": "interconnect_aresetn"
+  },
+  "artifacts": {
+    "bitstream": {
+      "path": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/integration_01/project/v12_wc.runs/impl_1/system_wrapper.bit",
+      "bytes": 7797826,
+      "sha256": "8a6c315b50799fb22cb8bfb6f376e3e6992ac41da0abe9c87a8ffc9ced85c915",
+      "generated_at": "2026-10-03T13:40:28.338031+08:00"
+    },
+    "xsa": {
+      "path": "E:/HLS/kv260_three_module_v1_2_phase4/phase6/bitstream_xsa_01/kv260_three_module_v1_2_writecredit.xsa",
+      "bytes": 3068574,
+      "sha256": "09661c4822f05b8c54b000d2fc13893fac3356a970acb4c70a8ca89fb2693ead",
+      "generated_at": "2026-10-03T13:52:48.034775+08:00"
+    },
+    "embedded_bitstream": {
+      "entry": "kv260_three_module_v1_2_writecredit.bit",
+      "bytes": 7797826,
+      "sha256": "8a6c315b50799fb22cb8bfb6f376e3e6992ac41da0abe9c87a8ffc9ced85c915",
+      "identical_to_external_bitstream": true
+    }
+  },
+  "cnn_release": {
+    "revision": 2114810448,
+    "vlnv": "xilinx.com:hls:zero_dce_cnn_top:1.0",
+    "identity_sha256": "a64d16faa3c102790eae873031da99cd775b6858f673ff8d4d8f7c92d17572e9",
+    "component": {
+      "path": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/ip_primary_05/component.xml",
+      "bytes": 552093,
+      "sha256": "7e046bd557997e8a8b55b466ee9a76b8c3c321f1435df2879a8bf92a45f54ecd"
+    },
+    "source_manifest": {
+      "path": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/ip_primary_05/source_manifest.json",
+      "bytes": 77797,
+      "sha256": "8bb4fc1ee4786b4e89f4ff37b867b529dcfd97ff10970ac405ffecafe4cead3c"
+    },
+    "build_manifest": {
+      "path": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/ip_primary_05/build_manifest.json",
+      "bytes": 2268,
+      "sha256": "ee1890a5f493779618b2105b476fc9e8adfec04211a4748d6cd29f801b5cf6bd"
+    },
+    "abi_canonical_sha256": "95077dfd344f411d4bbf8004acee92e369f2e2bf46ae942ba391b41e6ff71598",
+    "frozen_sources": [
+      {
+        "path": "E:/github/-/fpga/hls/zero_dce_cnn_v1_2_30fps/candidate_b_rowstream_r4/zero_dce_cnn_top.h",
+        "bytes": 2852,
+        "sha256": "bdb1228c76d941b695d703154a9f2f24a0c3007a18edbc028be74b57d22c9f33"
+      },
+      {
+        "path": "E:/github/-/fpga/hls/zero_dce_cnn_v1_2_30fps/candidate_b_rowstream_r4/zero_dce_cnn_top.cpp",
+        "bytes": 19506,
+        "sha256": "277da2ec0c922f33b654942f61cc22ddc45060e5ac242c23df4e68fd7f74f11a"
+      }
+    ]
+  },
+  "argument_register_access_note": "XSA system.hwh marks pointer and scalar data words write-only; HLS driver headers/RTL expose readback. PS scheduling requires writes only.",
+  "ap_ctrl_hs": {
+    "ap_start": {
+      "bit": 0,
+      "access": "read-write",
+      "clear": "clear-on-handshake"
+    },
+    "ap_done": {
+      "bit": 1,
+      "access": "read",
+      "clear": "clear-on-read"
+    },
+    "ap_idle": {
+      "bit": 2,
+      "access": "read"
+    },
+    "ap_ready": {
+      "bit": 3,
+      "access": "read",
+      "clear": "clear-on-read"
+    },
+    "auto_restart": {
+      "bit": 7,
+      "access": "read-write"
+    },
+    "interrupt": {
+      "bit": 9,
+      "access": "read"
+    }
+  },
+  "interrupt_register_bits": {
+    "GIE": {
+      "global_enable": {
+        "bit": 0,
+        "access": "read-write"
+      }
+    },
+    "IER": {
+      "ap_done_enable": {
+        "bit": 0,
+        "access": "read-write"
+      },
+      "ap_ready_enable": {
+        "bit": 1,
+        "access": "read-write"
+      }
+    },
+    "ISR": {
+      "ap_done_status": {
+        "bit": 0,
+        "access": "read",
+        "clear": "toggle-on-write"
+      },
+      "ap_ready_status": {
+        "bit": 1,
+        "access": "read",
+        "clear": "toggle-on-write"
+      }
+    }
+  },
+  "ips": {
+    "bilinear": {
+      "instance": "bilinear_fixed16_buffered_0",
+      "vlnv": "xilinx.com:hls:bilinear_fixed16_buffered:1.0",
+      "base_address": "0xA0000000",
+      "range_bytes": 65536,
+      "control_registers": {
+        "ap_ctrl": {
+          "offset": 0,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "GIE": {
+          "offset": 4,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "IER": {
+          "offset": 8,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "ISR": {
+          "offset": 12,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        }
+      },
+      "pointer_registers": {
+        "parameters_lowres": {
+          "offset_low": 16,
+          "offset_high": 20,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "parameters_fullres": {
+          "offset_low": 28,
+          "offset_high": 32,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        }
+      },
+      "scalar_registers": {
+        "input_height": {
+          "offset": 40,
+          "width_bits": 32,
+          "hwh_access": "write-only",
+          "handoff_value": 60
+        },
+        "input_width": {
+          "offset": 48,
+          "width_bits": 32,
+          "hwh_access": "write-only",
+          "handoff_value": 106
+        }
+      },
+      "xsa_driver_header_sha256": "8eee503594c8e381c1fd361e2014ddd9314d158dbb96d0e7aea2ab68ebf065a3",
+      "driver_header": {
+        "path": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/integration_01/stable_ip_repo/bilinear/drivers/bilinear_fixed16_buffered_v1_0/src/xbilinear_fixed16_buffered_hw.h",
+        "bytes": 2881,
+        "sha256": "8eee503594c8e381c1fd361e2014ddd9314d158dbb96d0e7aea2ab68ebf065a3"
+      }
+    },
+    "curve": {
+      "instance": "curve_image_fixed16_0",
+      "vlnv": "xilinx.com:hls:curve_image_fixed16:1.0",
+      "base_address": "0xA0010000",
+      "range_bytes": 65536,
+      "control_registers": {
+        "ap_ctrl": {
+          "offset": 0,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "GIE": {
+          "offset": 4,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "IER": {
+          "offset": 8,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "ISR": {
+          "offset": 12,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        }
+      },
+      "pointer_registers": {
+        "input_r": {
+          "offset_low": 16,
+          "offset_high": 20,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "parameter_r": {
+          "offset_low": 28,
+          "offset_high": 32,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "output_r": {
+          "offset_low": 40,
+          "offset_high": 44,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        }
+      },
+      "scalar_registers": {
+        "count": {
+          "offset": 52,
+          "width_bits": 32,
+          "hwh_access": "write-only",
+          "handoff_value": 2747520
+        }
+      },
+      "xsa_driver_header_sha256": "8c145a90188f440acd751744ee562d1537e609d3f03d82779c9ca721a409660c",
+      "driver_header": {
+        "path": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/integration_01/stable_ip_repo/curve/drivers/curve_image_fixed16_v1_0/src/xcurve_image_fixed16_hw.h",
+        "bytes": 2723,
+        "sha256": "8c145a90188f440acd751744ee562d1537e609d3f03d82779c9ca721a409660c"
+      }
+    },
+    "cnn": {
+      "instance": "zero_dce_cnn_top_0",
+      "vlnv": "xilinx.com:hls:zero_dce_cnn_top:1.0",
+      "base_address": "0xA0020000",
+      "range_bytes": 65536,
+      "control_registers": {
+        "ap_ctrl": {
+          "offset": 0,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "GIE": {
+          "offset": 4,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "IER": {
+          "offset": 8,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        },
+        "ISR": {
+          "offset": 12,
+          "width_bits": 32,
+          "hwh_access": "read-write"
+        }
+      },
+      "pointer_registers": {
+        "input_q14": {
+          "offset_low": 16,
+          "offset_high": 20,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "weights_int8": {
+          "offset_low": 28,
+          "offset_high": 32,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "bias_int32": {
+          "offset_low": 40,
+          "offset_high": 44,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "weight_frac": {
+          "offset_low": 52,
+          "offset_high": 56,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "tanh_lut_q15": {
+          "offset_low": 64,
+          "offset_high": 68,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "a_low_q14": {
+          "offset_low": 76,
+          "offset_high": 80,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        },
+        "workspace_int16": {
+          "offset_low": 88,
+          "offset_high": 92,
+          "width_bits": 64,
+          "word_width_bits": 32,
+          "hwh_access": "write-only"
+        }
+      },
+      "scalar_registers": {},
+      "xsa_driver_header_sha256": "3a5b88eea559abf69c213b8456fee35945db0f21acc9d5cd1ad267638a716362",
+      "driver_header": {
+        "path": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/ip_primary_05/drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top_hw.h",
+        "bytes": 3870,
+        "sha256": "3a5b88eea559abf69c213b8456fee35945db0f21acc9d5cd1ad267638a716362"
+      },
+      "core_revision": 2114810448,
+      "formal_package": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/ip_primary_05",
+      "release_identity_sha256": "a64d16faa3c102790eae873031da99cd775b6858f673ff8d4d8f7c92d17572e9",
+      "axi_masters": [
+        "gmem_input",
+        "gmem_output",
+        "gmem_workspace",
+        "gmem8",
+        "gmem32",
+        "gmem_lut"
+      ]
+    }
+  },
+  "ddr_connectivity": {
+    "control": "PS M_AXI_HPM0_FPD -> axi_control; M00=CNN, M01=Bilinear, M02=Curve",
+    "HP0": {
+      "smartconnect": "cnn_data_sc",
+      "masters": [
+        "CNN/gmem_input",
+        "CNN/gmem_output",
+        "CNN/gmem_workspace"
+      ]
+    },
+    "HP1": {
+      "smartconnect": "cnn_model_sc",
+      "masters": [
+        "CNN/gmem8",
+        "CNN/gmem32",
+        "CNN/gmem_lut"
+      ]
+    },
+    "HP2": {
+      "smartconnect": "bilinear_ddr_sc",
+      "masters": [
+        "Bilinear/gmem_input",
+        "Bilinear/gmem_output"
+      ]
+    },
+    "HP3": {
+      "smartconnect": "curve_ddr_sc",
+      "masters": [
+        "Curve/gmem_input",
+        "Curve/gmem_parameter",
+        "Curve/gmem_output"
+      ]
+    }
+  },
+  "ddr": {
+    "byte_order": "little_endian",
+    "image_tensor_order": "RGB NCHW, C-contiguous planar",
+    "image_byte_offset": "2*((c*H+y)*W+x)",
+    "row_padding_bytes": 0,
+    "base_alignment_bytes_from_rtl_validation": 16,
+    "board_physical_allocation": "NOT_ASSIGNED; buffer_map.json physical addresses are BFM-only",
+    "workspace_slots": 1,
+    "image_and_intermediate_slots": 2,
+    "buffers": {
+      "INPUT_Q14": {
+        "elements": 19080,
+        "bytes": 38160,
+        "dtype": "signed int16",
+        "fractional_bits": 14,
+        "shape": [
+          1,
+          3,
+          60,
+          106
+        ],
+        "axi": "gmem_input",
+        "access": "read"
+      },
+      "WEIGHTS_INT8": {
+        "elements": 10075,
+        "bytes": 10075,
+        "dtype": "signed int8",
+        "layout": "packed OIHW in kZeroDceLayers[14] order",
+        "axi": "gmem8",
+        "access": "read",
+        "payload": {
+          "path": "E:/HLS/kv260_three_module_v1_2_phase4/data/weights_int8.bin",
+          "bytes": 10075,
+          "sha256": "e2940c098a3680890e792e88d1007398d352550218b957fa1aafcfac14e9c905"
+        }
+      },
+      "BIAS_INT32": {
+        "elements": 486,
+        "bytes": 1944,
+        "dtype": "signed int32",
+        "layout": "one per output channel in layer order; fraction follows frozen quantization protocol",
+        "axi": "gmem32",
+        "access": "read",
+        "payload": {
+          "path": "E:/HLS/kv260_three_module_v1_2_phase4/data/bias_int32.bin",
+          "bytes": 1944,
+          "sha256": "337ff15ebdd3c984fd85be6667bb2cdebae776eada7fbd0fea322265af586d98"
+        }
+      },
+      "WEIGHT_FRAC": {
+        "elements": 486,
+        "bytes": 486,
+        "dtype": "signed int8",
+        "layout": "one fractional-bit value per output channel in layer order",
+        "axi": "gmem8",
+        "access": "read",
+        "payload": {
+          "path": "E:/HLS/kv260_three_module_v1_2_phase4/data/weight_frac.bin",
+          "bytes": 486,
+          "sha256": "54a14af94229aee7c9ac574b6f024b11a340ac07146657b4209366d070cf045d"
+        }
+      },
+      "TANH_LUT_Q15": {
+        "elements": 4097,
+        "bytes": 8194,
+        "dtype": "signed int16",
+        "fractional_bits": 15,
+        "layout": "Q8 indices -2048 through +2048",
+        "axi": "gmem_lut",
+        "access": "read",
+        "payload": {
+          "path": "E:/HLS/kv260_three_module_v1_2_phase4/data/tanh_lut_q15.bin",
+          "bytes": 8194,
+          "sha256": "7ce74d8f0cae9df9cf6a6c6a7cf93c5de614bdcd62791f9a4eed5f741edf3b06"
+        }
+      },
+      "A_LOW_Q14": {
+        "elements": 19080,
+        "bytes": 38160,
+        "dtype": "signed int16",
+        "fractional_bits": 14,
+        "shape": [
+          1,
+          3,
+          60,
+          106
+        ],
+        "axi": "gmem_output",
+        "access": "write"
+      },
+      "WORKSPACE_INT16": {
+        "elements": 1221120,
+        "bytes": 2442240,
+        "dtype": "signed int16",
+        "layout": "six ReLU skip tensors only; convolution working tiles are on chip",
+        "shape": [
+          6,
+          32,
+          60,
+          106
+        ],
+        "slot_elements": 203520,
+        "slot_bytes": 407040,
+        "slot_byte_offsets": [
+          0,
+          407040,
+          814080,
+          1221120,
+          1628160,
+          2035200
+        ],
+        "slot_fractional_bits": [
+          14,
+          14,
+          14,
+          12,
+          13,
+          14
+        ],
+        "axi": "gmem_workspace",
+        "access": "read-write"
+      },
+      "A_FULL_Q14": {
+        "elements": 2747520,
+        "bytes": 5495040,
+        "dtype": "signed int16",
+        "fractional_bits": 14,
+        "shape": [
+          1,
+          3,
+          720,
+          1272
+        ]
+      },
+      "MODEL_INPUT_Q14": {
+        "elements": 2747520,
+        "bytes": 5495040,
+        "dtype": "signed int16",
+        "fractional_bits": 14,
+        "shape": [
+          1,
+          3,
+          720,
+          1272
+        ]
+      },
+      "ENHANCED_Q14": {
+        "elements": 2747520,
+        "bytes": 5495040,
+        "dtype": "signed int16",
+        "fractional_bits": 14,
+        "shape": [
+          1,
+          3,
+          720,
+          1272
+        ]
+      }
+    },
+    "simulation_map": {
+      "path": "E:/HLS/kv260_three_module_v1_2_phase4/buffer_map.json",
+      "bytes": 4139,
+      "sha256": "bb016784b790a03417b8d813ccf1784238e25415d0277da5664b8bd609221c1a"
+    },
+    "buffer_lifetimes": {
+      "cnn_input": "host prepare through CNN done",
+      "a_low": "CNN start through Bilinear done",
+      "a_full": "Bilinear start through Curve done",
+      "model_input": "host prepare through Curve done",
+      "enhanced": "Curve start through host check/release",
+      "workspace": "one serialized CNN start through done"
+    }
+  },
+  "fixed_point_protocol": {
+    "references": [
+      {
+        "path": "E:/github/-/fpga/docs/v1_fixed_point_protocol.md",
+        "bytes": 20011,
+        "sha256": "546bf4967a1324a5547eae1f26e47e6ad4291ac1efe412be25a42fcb34d209bc"
+      },
+      {
+        "path": "E:/github/-/fpga/docs/v1_fixed_point_protocol.json",
+        "bytes": 78637,
+        "sha256": "7aa21bbce8972c9eafa4058a5135b4d1a8164f83dc0345d2ecd12ecd08b279bf"
+      }
+    ],
+    "v1_2_override": "Preserve numeric arithmetic. Original protocol single CNN m_axi topology and 4,070,400-byte workspace are superseded by current six m_axi and 2,442,240-byte six-skip layout here; workspace fractions vary by slot."
+  },
+  "evidence": {
+    "phase4f": {
+      "report": {
+        "path": "E:/github/-/fpga/reports/v1_2_phase4f_short_multiframe.md",
+        "bytes": 20766,
+        "sha256": "16e6b0ead5ef18e62babce2b59dd26df4ee313ea7ba8611e06562c75ad31cdf6"
+      },
+      "analysis": {
+        "path": "E:/HLS/kv260_three_module_v1_2_phase4/phase4f_system_02/analysis.json",
+        "bytes": 414602,
+        "sha256": "50f286b3ade6359947f484cacd8517b8acc8c44823f27428f800acab5341dfb4"
+      },
+      "frames": 8,
+      "clock_MHz": 100,
+      "max_steady_output_interval_cycles": 3307317,
+      "raw_comparisons": 44112960,
+      "raw_mismatch": 0,
+      "guard": 0,
+      "hazard": 0,
+      "scope": "RTL system with verified Phase4E scheduling overlay; later Phase4G packages the identical three writer bytes; no claim Phase4F used packaged revision 2114810448"
+    },
+    "phase5": {
+      "report": {
+        "path": "E:/github/-/fpga/reports/vivado_three_module_v1_2_implementation.md",
+        "bytes": 24159,
+        "sha256": "a9cd4a8a2f539e921c2bfd62fc861a3779e0664df1435c857da6f609f7388e93"
+      },
+      "gate": {
+        "path": "E:/HLS/kv260_three_module_v1_2_phase4/phase5/implementation_01/implementation_gate.json",
+        "bytes": 260776,
+        "sha256": "d2773ed4f21cd3dd99abf3b83e06d63618974448ba13601ed773ef8f51866c57"
+      },
+      "routed_dcp": {
+        "path": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/integration_01/project/v12_wc.runs/impl_1/system_wrapper_routed.dcp",
+        "bytes": 40519754,
+        "sha256": "d2cf0ba7105da8cd1c51b0def1a64985232fbfea0c6b5119f817a9f8acd8e78d"
+      },
+      "timing": {
+        "WNS_ns": 0.636,
+        "TNS_ns": 0.0,
+        "setup_failing_endpoints": 0,
+        "setup_total_endpoints": 170914,
+        "WHS_ns": 0.01,
+        "THS_ns": 0.0,
+        "hold_failing_endpoints": 0,
+        "hold_total_endpoints": 170914,
+        "WPWS_ns": 3.5,
+        "TPWS_ns": 0.0,
+        "pulse_failing_endpoints": 0,
+        "pulse_total_endpoints": 54198,
+        "tool_timing_clean": true,
+        "clock_period_ns": 10.0,
+        "clock_MHz": 100.0
+      }
+    },
+    "phase6_gate": "E:/HLS/kv260_three_module_v1_2_phase4/phase6/bitstream_xsa_01/handoff_gate.json"
+  },
+  "next_step": "WAIT MASTER. Only after physical KV260 arrival and separate authorization: PS software, real DDR/cache handling, actual 100+ frames, real FPS and final image."
+}

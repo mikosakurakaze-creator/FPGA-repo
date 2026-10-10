@@ -1,0 +1,261 @@
+`timescale 1ns/1ps
+module phase4_system_tb;
+  // Generated declarations connect the unchanged PL network to one BFM and
+  // four HP ports of one physically shared, bandwidth-limited DDR model.
+  @DECLARATIONS@
+  reg ap_clk=0, ap_rst_n=0;
+  always #5 ap_clk=~ap_clk;
+  phase4_pl dut(@DUT_CONNECTIONS@);
+  @DDR_CONNECTIONS@
+  @BUFFER_CONSTANTS@
+  reg [15:0] golden_low[0:19079];
+  reg [15:0] golden_full[0:2747519];
+  reg [15:0] golden_enhanced[0:2747519];
+  integer frames=1, completed[0:2], next_frame[0:2], active_frame[0:2];
+  integer poll_period=128;
+  integer running[0:2], armed[0:2], monitoring[0:2], irq_seen[0:2];
+  integer low_owner[0:1],full_owner[0:1],input_owner[0:1],model_owner[0:1],enh_owner[0:1];
+  integer frame_done[0:2][0:99];
+  longint stage_start[0:2][0:99],stage_done[0:2][0:99],host_release[0:99];
+  longint cycle=0, first_latency, interval_sum, interval_min, interval_max, interval;
+  longint mismatch_total=0,guard_errors=0,hazard_errors=0,frames_checked=0;
+  integer event_file, progress_file, m,f,slot,j,region,lane;
+  reg [31:0] value;
+  string output_dir=".";
+  wire [2:0] core_start,core_done,core_irq;
+  assign core_start={dut.curve_image_fixed16_0.inst.ap_start,dut.bilinear_fixed16_buffered_0.inst.ap_start,dut.zero_dce_cnn_top_0.inst.ap_start};
+  assign core_done={dut.curve_image_fixed16_0.inst.ap_done,dut.bilinear_fixed16_buffered_0.inst.ap_done,dut.zero_dce_cnn_top_0.inst.ap_done};
+  assign core_irq={dut.curve_image_fixed16_0.inst.interrupt,dut.bilinear_fixed16_buffered_0.inst.interrupt,dut.zero_dce_cnn_top_0.inst.interrupt};
+  always @(posedge ap_clk) begin
+    cycle<=cycle+1;
+    if(ap_rst_n) begin
+      for(integer t=0;t<3;t=t+1) begin
+        if(armed[t] && core_start[t]) begin
+          stage_start[t][active_frame[t]]=cycle;armed[t]=0;monitoring[t]=1;
+          $fdisplay(event_file,"START,%0d,%0d,%0d",t,active_frame[t],cycle);
+        end
+        if(monitoring[t] && core_done[t]) begin
+          stage_done[t][active_frame[t]]=cycle;monitoring[t]=0;
+          $fdisplay(event_file,"DONE,%0d,%0d,%0d",t,active_frame[t],cycle);
+        end
+        if(running[t] && core_irq[t]) irq_seen[t]=1;
+        if(monitoring[t] && cycle-stage_start[t][active_frame[t]]>20000000)
+          $fatal(1,"stage completion watchdog stage=%0d frame=%0d",t,active_frame[t]);
+      end
+      if(cycle%1000000==0) begin
+        $display("SYSTEM_PROGRESS CYCLE=%0d CNN_DONE=%0d BILINEAR_DONE=%0d CURVE_DONE=%0d",cycle,completed[0],completed[1],completed[2]);
+        $fdisplay(progress_file,"%0d,%0d,%0d,%0d",cycle,completed[0],completed[1],completed[2]);
+        $fflush(progress_file);
+      end
+    end
+  end
+
+  function automatic [31:0] control_base(input integer stage);
+    control_base=stage==0?32'hA0020000:stage==1?32'hA0000000:32'hA0010000;
+  endfunction
+  task csr_write(input [31:0] address,input [31:0] data);
+    begin
+      @(negedge ap_clk);ctrl_AWADDR=address;ctrl_AWVALID=1;
+      do @(posedge ap_clk); while(!ctrl_AWREADY);
+      @(negedge ap_clk);ctrl_AWVALID=0;ctrl_WDATA=0;ctrl_WSTRB=0;
+      ctrl_WDATA[32*((address%16)/4)+:32]=data;ctrl_WSTRB[4*((address%16)/4)+:4]=4'hf;ctrl_WVALID=1;
+      do @(posedge ap_clk); while(!ctrl_WREADY);
+      @(negedge ap_clk);ctrl_WVALID=0;ctrl_BREADY=1;
+      do @(posedge ap_clk); while(!ctrl_BVALID);
+      if(ctrl_BRESP!==0) $fatal(1,"AXI control write error");
+      @(negedge ap_clk);ctrl_BREADY=0;
+    end
+  endtask
+  task csr_read(input [31:0] address,output [31:0] data);
+    begin
+      @(negedge ap_clk);ctrl_ARADDR=address;ctrl_ARVALID=1;
+      do @(posedge ap_clk); while(!ctrl_ARREADY);
+      @(negedge ap_clk);ctrl_ARVALID=0;ctrl_RREADY=1;
+      do @(posedge ap_clk); while(!ctrl_RVALID);
+      if(ctrl_RRESP!==0 || ctrl_RLAST!==1) $fatal(1,"AXI control read error");
+      data=ctrl_RDATA[32*((address%16)/4)+:32];
+      @(negedge ap_clk);ctrl_RREADY=0;
+    end
+  endtask
+  task pointer_write(input integer stage,input integer offset,input longint address);
+    begin csr_write(control_base(stage)+offset,address[31:0]);csr_write(control_base(stage)+offset+4,address[63:32]);end
+  endtask
+  function automatic [15:0] raw16(input longint address);
+    raw16=ddr.mem[(address-DDR_BASE)>>4][8*((address-DDR_BASE)%16)+:16];
+  endfunction
+  function automatic [7:0] raw8(input longint address);
+    raw8=ddr.mem[(address-DDR_BASE)>>4][8*((address-DDR_BASE)%16)+:8];
+  endfunction
+  function automatic [7:0] guard8(input longint address);
+    guard8=(address-DDR_BASE)%2==0?8'h39:8'h30;
+  endfunction
+  function automatic integer find_region(input longint address);
+    begin
+      find_region=-1;
+      for(integer r=0;r<REGION_COUNT;r=r+1)
+        if(address>=region_base[r]-16 && address<region_base[r]+region_bytes[r]+16) find_region=r;
+    end
+  endfunction
+  task access_check(input integer hp,input longint address,input bit writing_access);
+    integer r,t,n,s;
+    bit allowed;
+    begin
+      r=find_region(address);t=hp<=1?0:hp-1;n=active_frame[t];s=n%2;allowed=0;
+      if(r<0 || !running[t]) begin hazard_errors=hazard_errors+1;$fatal(1,"DDR access outside active frame HP=%0d addr=%0h",hp,address);end
+      if(writing_access && (address<region_base[r] || address>=region_base[r]+region_bytes[r]))
+        begin guard_errors=guard_errors+1;$fatal(1,"strobed write into guard");end
+      if(hp==0) begin
+        if(r==R_WORKSPACE) allowed=1;
+        if(writing_access && r==R_A_LOW[s] && low_owner[s]==n) allowed=1;
+        if(!writing_access && r==R_CNN_INPUT[s] && input_owner[s]==n) allowed=1;
+      end
+      if(hp==1 && !writing_access && r>=0 && r<=R_LUT) allowed=1;
+      if(hp==2) begin
+        if(!writing_access && r==R_A_LOW[s] && low_owner[s]==n && frame_done[0][n]) allowed=1;
+        if(writing_access && r==R_A_FULL[s] && full_owner[s]==n) allowed=1;
+      end
+      if(hp==3) begin
+        if(!writing_access && r==R_A_FULL[s] && full_owner[s]==n && frame_done[1][n]) allowed=1;
+        if(!writing_access && r==R_MODEL_INPUT[s] && model_owner[s]==n) allowed=1;
+        if(writing_access && r==R_ENHANCED[s] && enh_owner[s]==n) allowed=1;
+      end
+      if(!allowed) begin hazard_errors=hazard_errors+1;$fatal(1,"RAW/WAR/WAW access violation HP=%0d region=%0d frame=%0d write=%0d",hp,r,n,writing_access);end
+    end
+  endtask
+  always @(posedge ap_clk) if(ap_rst_n) begin
+    for(integer h=0;h<4;h=h+1) begin
+      if(ddr_arvalid[h] && ddr_arready[h]) access_check(h,ddr_araddr[h],0);
+      if(ddr_wvalid[h] && ddr_wready[h])
+        for(integer b=0;b<16;b=b+1)
+          if(ddr_wstrb[h][b]) access_check(h,(ddr.write_address[h]&~49'd15)+b,1);
+    end
+  end
+  task numerical_check(input integer stage,input integer frame);
+    integer count,r,errors;
+    reg [15:0] expected,observed;
+    begin
+      count=stage==0?19080:2747520;
+      r=stage==0?R_A_LOW[frame%2]:stage==1?R_A_FULL[frame%2]:R_ENHANCED[frame%2];errors=0;
+      for(integer q=0;q<count;q=q+1) begin
+        expected=stage==0?golden_low[q]:stage==1?golden_full[q]:golden_enhanced[q];
+        observed=raw16(region_base[r]+2*q);
+        if(observed!==expected) begin
+          errors=errors+1;
+          if(errors<=4) $display("RAW_ERROR STAGE=%0d FRAME=%0d INDEX=%0d EXPECTED=%0h ACTUAL=%0h",stage,frame,q,expected,observed);
+        end
+      end
+      mismatch_total=mismatch_total+errors;
+      $display("STAGE_FRAME STAGE=%0d FRAME=%0d START=%0d DONE=%0d CYCLES=%0d SCALARS=%0d MISMATCHES=%0d",stage,frame,stage_start[stage][frame],stage_done[stage][frame],stage_done[stage][frame]-stage_start[stage][frame],count,errors);
+      if(errors!=0) $fatal(1,"stage numerical mismatch");
+      for(integer g=0;g<REGION_COUNT;g=g+1) begin
+        for(integer q=0;q<256;q=q+1) begin
+          if(raw8(region_base[g]-256+q)!==guard8(region_base[g]-256+q) ||
+             raw8(region_base[g]+region_bytes[g]+q)!==guard8(region_base[g]+region_bytes[g]+q))
+            begin guard_errors=guard_errors+1;$fatal(1,"DDR guard changed region=%0d",g);end
+        end
+      end
+    end
+  endtask
+  task start_stage(input integer stage,input integer frame);
+    integer s;
+    begin
+      s=frame%2;active_frame[stage]=frame;irq_seen[stage]=0;
+      if(stage==0) begin
+        if(low_owner[s]!=-1 || input_owner[s]!=-1) $fatal(1,"CNN slot reuse hazard");
+        low_owner[s]=frame;input_owner[s]=frame;
+        pointer_write(0,16,region_base[R_CNN_INPUT[s]]);
+        pointer_write(0,28,region_base[R_WEIGHTS]);pointer_write(0,40,region_base[R_BIAS]);
+        pointer_write(0,52,region_base[R_FRAC]);pointer_write(0,64,region_base[R_LUT]);
+        pointer_write(0,76,region_base[R_A_LOW[s]]);pointer_write(0,88,region_base[R_WORKSPACE]);
+      end
+      if(stage==1) begin
+        if(!frame_done[0][frame] || low_owner[s]!=frame || full_owner[s]!=-1) $fatal(1,"Bilinear dependency/slot hazard");
+        full_owner[s]=frame;
+        pointer_write(1,16,region_base[R_A_LOW[s]]);pointer_write(1,28,region_base[R_A_FULL[s]]);
+        csr_write(control_base(1)+40,60);csr_write(control_base(1)+48,106);
+      end
+      if(stage==2) begin
+        if(!frame_done[1][frame] || full_owner[s]!=frame || model_owner[s]!=-1 || enh_owner[s]!=-1) $fatal(1,"Curve dependency/slot hazard");
+        model_owner[s]=frame;enh_owner[s]=frame;
+        pointer_write(2,16,region_base[R_MODEL_INPUT[s]]);pointer_write(2,28,region_base[R_A_FULL[s]]);
+        pointer_write(2,40,region_base[R_ENHANCED[s]]);csr_write(control_base(2)+52,2747520);
+      end
+      running[stage]=1;armed[stage]=1;
+      csr_write(control_base(stage),1);
+      next_frame[stage]=frame+1;
+    end
+  endtask
+  initial begin
+    @REGION_INIT@
+    @CONTROL_INIT@
+    if(!$value$plusargs("FRAMES=%d",frames)) frames=1;
+    if(frames<1 || frames>100) $fatal(1,"FRAMES must be 1..100");
+    if(!$value$plusargs("POLL_PERIOD=%d",poll_period)) poll_period=128;
+    if(poll_period<1) $fatal(1,"POLL_PERIOD must be positive");
+    if(!$value$plusargs("OUTPUT_DIR=%s",output_dir)) output_dir=".";
+    event_file=$fopen({output_dir,"/stage_events.csv"},"w");$fdisplay(event_file,"event,stage,frame,cycle");
+    progress_file=$fopen({output_dir,"/progress.csv"},"w");$fdisplay(progress_file,"cycle,cnn_done,bilinear_done,curve_done");
+    $readmemh("golden_low.hex",golden_low);$readmemh("golden_full.hex",golden_full);$readmemh("golden_enhanced.hex",golden_enhanced);
+    for(integer t=0;t<3;t=t+1) begin
+      completed[t]=0;next_frame[t]=0;active_frame[t]=-1;running[t]=0;armed[t]=0;monitoring[t]=0;irq_seen[t]=0;
+      for(integer n=0;n<100;n=n+1) begin frame_done[t][n]=0;stage_start[t][n]=-1;stage_done[t][n]=-1;host_release[n]=-1;end
+    end
+    for(integer s=0;s<2;s=s+1) begin low_owner[s]=-1;full_owner[s]=-1;input_owner[s]=-1;model_owner[s]=-1;enh_owner[s]=-1;end
+    repeat(30) @(posedge ap_clk);@(negedge ap_clk);ap_rst_n=1;repeat(100) @(posedge ap_clk);
+    for(integer t=0;t<3;t=t+1) begin csr_write(control_base(t)+4,1);csr_write(control_base(t)+8,1);end
+    while(completed[2]<frames) begin
+      for(m=0;m<3;m=m+1) begin
+        if(running[m]) begin
+          csr_read(control_base(m),value);
+          if(value[1]) begin
+            f=active_frame[m];slot=f%2;
+            if(stage_start[m][f]<0 || stage_done[m][f]<0) $fatal(1,"missing true RTL timing event");
+            numerical_check(m,f);
+            csr_read(control_base(m)+12,value);
+            if(!value[0] || !irq_seen[m]) $fatal(1,"HLS interrupt status not asserted");
+            csr_write(control_base(m)+12,1);
+            frame_done[m][f]=1;running[m]=0;completed[m]=completed[m]+1;
+            if(m==0) input_owner[slot]=-1;
+            if(m==1) low_owner[slot]=-1;
+            if(m==2) begin
+              full_owner[slot]=-1;model_owner[slot]=-1;enh_owner[slot]=-1;host_release[f]=cycle;frames_checked=frames_checked+1;
+              $fdisplay(event_file,"HOST_RELEASE,2,%0d,%0d",f,cycle);
+            end
+          end
+        end
+        f=next_frame[m];slot=f%2;
+        if(!running[m] && f<frames) begin
+          if(m==0 && low_owner[slot]==-1 && input_owner[slot]==-1) start_stage(m,f);
+          if(m==1 && frame_done[0][f] && full_owner[slot]==-1) start_stage(m,f);
+          if(m==2 && frame_done[1][f] && enh_owner[slot]==-1 && model_owner[slot]==-1) start_stage(m,f);
+        end
+      end
+      repeat(poll_period) @(posedge ap_clk);
+    end
+    repeat(10) @(posedge ap_clk);
+    first_latency=stage_done[2][0]-stage_start[0][0];
+    $display("FIRST_FRAME CYCLES=%0d",first_latency);
+    interval_sum=0;interval_min=64'h7fffffffffffffff;interval_max=0;
+    for(integer n=1;n<frames;n=n+1) begin
+      interval=stage_done[2][n]-stage_done[2][n-1];
+      if(n>=frames/2) begin
+        interval_sum=interval_sum+interval;
+        if(interval<interval_min) interval_min=interval;
+        if(interval>interval_max) interval_max=interval;
+      end
+    end
+    ddr.print_stats();
+    $display("SYSTEM_FINAL FRAMES=%0d RAW_MISMATCHES=%0d GUARD_ERRORS=%0d HAZARD_ERRORS=%0d CHECKED=%0d",frames,mismatch_total,guard_errors,hazard_errors,frames_checked);
+    if(frames_checked!=frames || mismatch_total || guard_errors || hazard_errors) $fatal(1,"system final checks failed");
+    if(frames>=100) begin
+      $display("STEADY_STATE SAMPLES=%0d INTERVAL_MIN=%0d INTERVAL_MAX=%0d INTERVAL_SUM=%0d",frames-frames/2,interval_min,interval_max,interval_sum);
+      if(interval_max<=3333333) $display("SYSTEM_TB_30FPS_PASS"); else $display("SYSTEM_TB_30FPS_FAIL");
+    end
+    $display("FULL_THREE_MODULE_NUMERICAL_PASS");
+    $fclose(event_file);$fclose(progress_file);$finish;
+  end
+  initial begin
+    repeat(1201000000) @(posedge ap_clk);
+    $fatal(1,"System watchdog: no verified completion");
+  end
+endmodule

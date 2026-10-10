@@ -1,0 +1,385 @@
+{
+  "status": "HISTORICAL_SINGLE_FRAME_PASS_REPRODUCTION_TEMPLATE_NOT_CURRENT_AUTHORIZATION",
+  "frame": "night_01",
+  "Master_scratch_ownership": "REQUIRED_EXPLICIT_DEDICATION_AND_PERMISSION_TO_OVERWRITE_EXISTING_CONTENT",
+  "scratch_candidate": {
+    "start": "0x20000000",
+    "end_exclusive": "0x24000000",
+    "bytes": 67108864,
+    "not_allocated_by_LMB_query": true,
+    "actual_used_end": "0x2128d940",
+    "initial_DDR_staging_bytes": 19025659
+  },
+  "cache": {
+    "historical_before": "ON",
+    "last_confirmed": "OFF",
+    "MMU": "NOT_ASSESSED",
+    "production": "Use owned DMA/coherent buffers or explicit clean/invalidate; never treat dcache off as production setup"
+  },
+  "sources": {
+    "register_map": {
+      "sha256": "6a5d709c0372b6891490dc520979fe6bcfcd1dcc2ad8bcc0bcd97a8b37a5c9b8",
+      "evidence_id": "v1_2_hw_register_map.json"
+    },
+    "golden_manifest": {
+      "sha256": "154d79b6a1921013e86ddd9a8d916d7d88af477d0f6f3ac17515634a62d1edc4",
+      "evidence_id": "golden_manifest.json"
+    },
+    "runtime_evidence": {
+      "sha256": "144b2abfea3d0f5fecbe7f687a23e42cac970dccc8d544f70daa1bd3475ba3c6",
+      "evidence_id": "p7ddr_inventory_1009_01/actual_evidence.json",
+      "scope": "Historical DDR/cache inventory before single-frame execution"
+    }
+  },
+  "slots": {
+    "INPUT_Q14": {
+      "address": "0x20010000",
+      "bytes": 38160,
+      "guard_before": "0x2000FFC0",
+      "guard_after": "0x20019510",
+      "guard_bytes": 64,
+      "source": {
+        "bytes": 38160,
+        "sha256": "f23dd361f7fbc510df065c88ea39fa108154b3f20b68858eabdd0e7935aa5c25",
+        "asset": "input_q14.bin"
+      },
+      "golden": null,
+      "initialization": "SOURCE"
+    },
+    "WEIGHTS_INT8": {
+      "address": "0x20020000",
+      "bytes": 10075,
+      "guard_before": "0x2001FFC0",
+      "guard_after": "0x2002275B",
+      "guard_bytes": 64,
+      "source": {
+        "bytes": 10075,
+        "sha256": "e2940c098a3680890e792e88d1007398d352550218b957fa1aafcfac14e9c905",
+        "asset": "weights_int8.bin"
+      },
+      "golden": null,
+      "initialization": "SOURCE"
+    },
+    "BIAS_INT32": {
+      "address": "0x20030000",
+      "bytes": 1944,
+      "guard_before": "0x2002FFC0",
+      "guard_after": "0x20030798",
+      "guard_bytes": 64,
+      "source": {
+        "bytes": 1944,
+        "sha256": "337ff15ebdd3c984fd85be6667bb2cdebae776eada7fbd0fea322265af586d98",
+        "asset": "bias_int32.bin"
+      },
+      "golden": null,
+      "initialization": "SOURCE"
+    },
+    "WEIGHT_FRAC": {
+      "address": "0x20040000",
+      "bytes": 486,
+      "guard_before": "0x2003FFC0",
+      "guard_after": "0x200401E6",
+      "guard_bytes": 64,
+      "source": {
+        "bytes": 486,
+        "sha256": "54a14af94229aee7c9ac574b6f024b11a340ac07146657b4209366d070cf045d",
+        "asset": "weight_frac.bin"
+      },
+      "golden": null,
+      "initialization": "SOURCE"
+    },
+    "TANH_LUT_Q15": {
+      "address": "0x20050000",
+      "bytes": 8194,
+      "guard_before": "0x2004FFC0",
+      "guard_after": "0x20052002",
+      "guard_bytes": 64,
+      "source": {
+        "bytes": 8194,
+        "sha256": "7ce74d8f0cae9df9cf6a6c6a7cf93c5de614bdcd62791f9a4eed5f741edf3b06",
+        "asset": "tanh_lut_q15.bin"
+      },
+      "golden": null,
+      "initialization": "SOURCE"
+    },
+    "A_LOW_Q14": {
+      "address": "0x20060000",
+      "bytes": 38160,
+      "guard_before": "0x2005FFC0",
+      "guard_after": "0x20069510",
+      "guard_bytes": 64,
+      "source": null,
+      "golden": {
+        "bytes": 38160,
+        "sha256": "31abdd23520d32efe75928ef394017bd2f515b2805144a85735eebc9481dddd1",
+        "asset": "expected_a_low_q14.bin"
+      },
+      "initialization": "POISON_0xA5"
+    },
+    "WORKSPACE_INT16": {
+      "address": "0x20070000",
+      "bytes": 2442240,
+      "guard_before": "0x2006FFC0",
+      "guard_after": "0x202C4400",
+      "guard_bytes": 64,
+      "source": null,
+      "golden": null,
+      "initialization": "POISON_0xA5"
+    },
+    "A_FULL_Q14": {
+      "address": "0x202D0000",
+      "bytes": 5495040,
+      "guard_before": "0x202CFFC0",
+      "guard_after": "0x2080D900",
+      "guard_bytes": 64,
+      "source": null,
+      "golden": {
+        "bytes": 5495040,
+        "sha256": "ebfa58eafb70385af39b92b6c9ed2b81c3319ca63662ce002d1219051f8b2067",
+        "asset": "expected_a_full_q14.bin"
+      },
+      "initialization": "POISON_0xA5"
+    },
+    "MODEL_INPUT_Q14": {
+      "address": "0x20810000",
+      "bytes": 5495040,
+      "guard_before": "0x2080FFC0",
+      "guard_after": "0x20D4D900",
+      "guard_bytes": 64,
+      "source": {
+        "bytes": 5495040,
+        "sha256": "7dbbd69b59de49b751c4b684a9d4fc7083e20d841a9a1e19897256badb7ffe56",
+        "asset": "model_input_q14.bin"
+      },
+      "golden": null,
+      "initialization": "SOURCE"
+    },
+    "ENHANCED_Q14": {
+      "address": "0x20D50000",
+      "bytes": 5495040,
+      "guard_before": "0x20D4FFC0",
+      "guard_after": "0x2128D900",
+      "guard_bytes": 64,
+      "source": null,
+      "golden": {
+        "bytes": 5495040,
+        "sha256": "869e62a41010e047c3760aa6a614f0ff883566d52c3fbee273cf2a865f7eb951",
+        "asset": "expected_enhanced_q14.bin"
+      },
+      "initialization": "POISON_0xA5"
+    }
+  },
+  "schedule": [
+    {
+      "ip": "cnn",
+      "AP_CTRL": "0xA0020000",
+      "precondition": "fresh AP_CTRL idle/start0/auto_restart0 and GIE=0; source/Host/identity/CONFIG/reset/signature/PL0 gates maintained",
+      "argument_writes": [
+        {
+          "address": "0xA0020010",
+          "value": "0x20010000",
+          "argument": "input_q14"
+        },
+        {
+          "address": "0xA0020014",
+          "value": "0x00000000",
+          "argument": "input_q14"
+        },
+        {
+          "address": "0xA002001C",
+          "value": "0x20020000",
+          "argument": "weights_int8"
+        },
+        {
+          "address": "0xA0020020",
+          "value": "0x00000000",
+          "argument": "weights_int8"
+        },
+        {
+          "address": "0xA0020028",
+          "value": "0x20030000",
+          "argument": "bias_int32"
+        },
+        {
+          "address": "0xA002002C",
+          "value": "0x00000000",
+          "argument": "bias_int32"
+        },
+        {
+          "address": "0xA0020034",
+          "value": "0x20040000",
+          "argument": "weight_frac"
+        },
+        {
+          "address": "0xA0020038",
+          "value": "0x00000000",
+          "argument": "weight_frac"
+        },
+        {
+          "address": "0xA0020040",
+          "value": "0x20050000",
+          "argument": "tanh_lut_q15"
+        },
+        {
+          "address": "0xA0020044",
+          "value": "0x00000000",
+          "argument": "tanh_lut_q15"
+        },
+        {
+          "address": "0xA002004C",
+          "value": "0x20060000",
+          "argument": "a_low_q14"
+        },
+        {
+          "address": "0xA0020050",
+          "value": "0x00000000",
+          "argument": "a_low_q14"
+        },
+        {
+          "address": "0xA0020058",
+          "value": "0x20070000",
+          "argument": "workspace_int16"
+        },
+        {
+          "address": "0xA002005C",
+          "value": "0x00000000",
+          "argument": "workspace_int16"
+        }
+      ],
+      "start": {
+        "address": "0xA0020000",
+        "value": "0x00000001",
+        "attempts": 1
+      },
+      "poll": {
+        "register": "0xA0020000",
+        "max_reads": 100,
+        "nominal_deadline_ms": 5000,
+        "done_bit": 1,
+        "retry": 0
+      },
+      "output": "A_LOW_Q14",
+      "before_next_stage": "read full output and compare bit-exact with frozen golden; verify guards; stop mismatch/timeout/transport error"
+    },
+    {
+      "ip": "bilinear",
+      "AP_CTRL": "0xA0000000",
+      "precondition": "fresh AP_CTRL idle/start0/auto_restart0 and GIE=0; source/Host/identity/CONFIG/reset/signature/PL0 gates maintained",
+      "argument_writes": [
+        {
+          "address": "0xA0000010",
+          "value": "0x20060000",
+          "argument": "parameters_lowres"
+        },
+        {
+          "address": "0xA0000014",
+          "value": "0x00000000",
+          "argument": "parameters_lowres"
+        },
+        {
+          "address": "0xA000001C",
+          "value": "0x202D0000",
+          "argument": "parameters_fullres"
+        },
+        {
+          "address": "0xA0000020",
+          "value": "0x00000000",
+          "argument": "parameters_fullres"
+        },
+        {
+          "address": "0xA0000028",
+          "value": "0x0000003C",
+          "argument": "input_height"
+        },
+        {
+          "address": "0xA0000030",
+          "value": "0x0000006A",
+          "argument": "input_width"
+        }
+      ],
+      "start": {
+        "address": "0xA0000000",
+        "value": "0x00000001",
+        "attempts": 1
+      },
+      "poll": {
+        "register": "0xA0000000",
+        "max_reads": 100,
+        "nominal_deadline_ms": 5000,
+        "done_bit": 1,
+        "retry": 0
+      },
+      "output": "A_FULL_Q14",
+      "before_next_stage": "read full output and compare bit-exact with frozen golden; verify guards; stop mismatch/timeout/transport error"
+    },
+    {
+      "ip": "curve",
+      "AP_CTRL": "0xA0010000",
+      "precondition": "fresh AP_CTRL idle/start0/auto_restart0 and GIE=0; source/Host/identity/CONFIG/reset/signature/PL0 gates maintained",
+      "argument_writes": [
+        {
+          "address": "0xA0010010",
+          "value": "0x20810000",
+          "argument": "input_r"
+        },
+        {
+          "address": "0xA0010014",
+          "value": "0x00000000",
+          "argument": "input_r"
+        },
+        {
+          "address": "0xA001001C",
+          "value": "0x202D0000",
+          "argument": "parameter_r"
+        },
+        {
+          "address": "0xA0010020",
+          "value": "0x00000000",
+          "argument": "parameter_r"
+        },
+        {
+          "address": "0xA0010028",
+          "value": "0x20D50000",
+          "argument": "output_r"
+        },
+        {
+          "address": "0xA001002C",
+          "value": "0x00000000",
+          "argument": "output_r"
+        },
+        {
+          "address": "0xA0010034",
+          "value": "0x0029EC80",
+          "argument": "count"
+        }
+      ],
+      "start": {
+        "address": "0xA0010000",
+        "value": "0x00000001",
+        "attempts": 1
+      },
+      "poll": {
+        "register": "0xA0010000",
+        "max_reads": 100,
+        "nominal_deadline_ms": 5000,
+        "done_bit": 1,
+        "retry": 0
+      },
+      "output": "ENHANCED_Q14",
+      "before_next_stage": "read full output and compare bit-exact with frozen golden; verify guards; stop mismatch/timeout/transport error"
+    }
+  ],
+  "DDR_transport": {
+    "context": "exact existing physical PSU",
+    "mode": 24,
+    "chunk_max_bytes": 65536,
+    "bytes_word_size": 1,
+    "verify_inputs_before_start": "each staged source readback SHA; output/workspace poison and all guards verified",
+    "retry": 0
+  },
+  "limits": "One complete raw frame comparison only, no 30FPS conclusion; LMB absence does not prove old loaded-image absence; dedicating scratch permits clobbering its existing content",
+  "board_operations_this_preparation": 0,
+  "scope": "Host-only template. Scratch addresses require fresh explicit ownership/overwrite approval; no board transport supplied.",
+  "historical_plan_sha256": "ab7ec6409049a90e4e0b0decc3a82915536f839adbf0df66d15933f4a22f159f",
+  "historical_approval_scope": "dedicate 64MiB scratch + one cache-off change + bounded DDR staging/readback + 27 argument SETs and exactly one AP_START per IP; no reset/reprogram/clock/isolation changes or continuous frames"
+}
