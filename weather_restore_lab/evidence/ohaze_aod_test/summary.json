@@ -1,0 +1,226 @@
+{
+  "model": "publisher AOD-Net Caffe",
+  "weights_sha256": "b1178b80567361a8f11ad8cce1437b5523d6aa4a536bb1ca088d06b15b2439bd",
+  "opencv": "4.14.0",
+  "scope": "paired local evaluation",
+  "hardware_deployable": "NOT_VERIFIED",
+  "preprocessing": "PIL RGB [0,1], aspect preserving resize <=800",
+  "results": [
+    {
+      "input": "D:\\FPGA\\weather_restore_lab\\data\\ohaze_custom_800\\06_outdoor_input.png",
+      "sha256": "78b8c6f5b90d7aee43b5ad552b8f223e5f79cc39fa4db9a8ffdfb60fa0d28460",
+      "shape": [
+        746,
+        800,
+        3
+      ],
+      "cpu_forward_seconds": 0.04787159996340051,
+      "ground_truth": true,
+      "input_psnr_db": 11.547054128037468,
+      "input_psnr_infinite": false,
+      "input_ssim": 0.4935927131651736,
+      "input_mae": 0.23205102457702567,
+      "restored_psnr_db": 17.757131612770593,
+      "restored_psnr_infinite": false,
+      "restored_ssim": 0.5545605070342826,
+      "restored_mae": 0.10717338671500225
+    },
+    {
+      "input": "D:\\FPGA\\weather_restore_lab\\data\\ohaze_custom_800\\35_outdoor_input.png",
+      "sha256": "91143906aa35603abf1a324fd54193b6148fe51464f2f7c25320af5f598a217f",
+      "shape": [
+        589,
+        800,
+        3
+      ],
+      "cpu_forward_seconds": 0.028729200013913214,
+      "ground_truth": true,
+      "input_psnr_db": 13.81662802156722,
+      "input_psnr_infinite": false,
+      "input_ssim": 0.6769575129216409,
+      "input_mae": 0.18026728383983362,
+      "restored_psnr_db": 20.509975969974,
+      "restored_psnr_infinite": false,
+      "restored_ssim": 0.8292995899921806,
+      "restored_mae": 0.07946499812931147
+    },
+    {
+      "input": "D:\\FPGA\\weather_restore_lab\\data\\ohaze_custom_800\\07_outdoor_input.png",
+      "sha256": "836db7e2e37681284eaac0cd47f8ef4816dfdd4898c890f5979e73eeab19ebe3",
+      "shape": [
+        523,
+        800,
+        3
+      ],
+      "cpu_forward_seconds": 0.027936399972531945,
+      "ground_truth": true,
+      "input_psnr_db": 17.30326696072469,
+      "input_psnr_infinite": false,
+      "input_ssim": 0.7805355613550199,
+      "input_mae": 0.1189065145861139,
+      "restored_psnr_db": 16.8743690509934,
+      "restored_psnr_infinite": false,
+      "restored_ssim": 0.5758334844974965,
+      "restored_mae": 0.12743636600025754
+    },
+    {
+      "input": "D:\\FPGA\\weather_restore_lab\\data\\ohaze_custom_800\\09_outdoor_input.png",
+      "sha256": "f8065167cc0fc31b5a84590e949620be01ad75d4987be55fe75c3a5b1b58946a",
+      "shape": [
+        645,
+        800,
+        3
+      ],
+      "cpu_forward_seconds": 0.03299360000528395,
+      "ground_truth": true,
+      "input_psnr_db": 11.470816501091104,
+      "input_psnr_infinite": false,
+      "input_ssim": 0.3347464014282582,
+      "input_mae": 0.22765178200156333,
+      "restored_psnr_db": 16.383030372639045,
+      "restored_psnr_infinite": false,
+      "restored_ssim": 0.41477184019166063,
+      "restored_mae": 0.12615432781945565
+    },
+    {
+      "input": "D:\\FPGA\\weather_restore_lab\\data\\ohaze_custom_800\\15_outdoor_input.png",
+      "sha256": "c11441e372ba760f2b274a74c7023add364a51049f87b13df2b7b6a41a652fc6",
+      "shape": [
+        565,
+        800,
+        3
+      ],
+      "cpu_forward_seconds": 0.02668509999057278,
+      "ground_truth": true,
+      "input_psnr_db": 10.610812463522947,
+      "input_psnr_infinite": false,
+      "input_ssim": 0.5374996970179221,
+      "input_mae": 0.25389665147408214,
+      "restored_psnr_db": 16.056816584283904,
+      "restored_psnr_infinite": false,
+      "restored_ssim": 0.6357082216851992,
+      "restored_mae": 0.12733214673580318
+    },
+    {
+      "input": "D:\\FPGA\\weather_restore_lab\\data\\ohaze_custom_800\\16_outdoor_input.png",
+      "sha256": "a9ac05a76efa38241609dfa1b313531c3510106e9ad5172fc840d03b50153e61",
+      "shape": [
+        674,
+        800,
+        3
+      ],
+      "cpu_forward_seconds": 0.03466679999837652,
+      "ground_truth": true,
+      "input_psnr_db": 10.458331650966983,
+      "input_psnr_infinite": false,
+      "input_ssim": 0.45327061392913165,
+      "input_mae": 0.24314686069016747,
+      "restored_psnr_db": 13.746894560701858,
+      "restored_psnr_infinite": false,
+      "restored_ssim": 0.4896840875299528,
+      "restored_mae": 0.17315770515985915
+    },
+    {
+      "input": "D:\\FPGA\\weather_restore_lab\\data\\ohaze_custom_800\\18_outdoor_input.png",
+      "sha256": "88bbc3ca9a515cfcbbedeae21174c0c0f71c3deb854e777ab58ced3308aba7f7",
+      "shape": [
+        555,
+        800,
+        3
+      ],
+      "cpu_forward_seconds": 0.02864840003894642,
+      "ground_truth": true,
+      "input_psnr_db": 14.421943315084288,
+      "input_psnr_infinite": false,
+      "input_ssim": 0.6588479989900041,
+      "input_mae": 0.1621153041261242,
+      "restored_psnr_db": 19.27362851536965,
+      "restored_psnr_infinite": false,
+      "restored_ssim": 0.5822922277041216,
+      "restored_mae": 0.09671320895251766
+    },
+    {
+      "input": "D:\\FPGA\\weather_restore_lab\\data\\ohaze_custom_800\\02_outdoor_input.png",
+      "sha256": "69aadd347ba0a825643f377e6abdee4a30e748ca9aac8de49c510b27033bda35",
+      "shape": [
+        800,
+        641,
+        3
+      ],
+      "cpu_forward_seconds": 0.03845330001786351,
+      "ground_truth": true,
+      "input_psnr_db": 15.474817989921965,
+      "input_psnr_infinite": false,
+      "input_ssim": 0.7434757826126465,
+      "input_mae": 0.1190647542777436,
+      "restored_psnr_db": 13.969310903158242,
+      "restored_psnr_infinite": false,
+      "restored_ssim": 0.5709858466479322,
+      "restored_mae": 0.1760757969128395
+    },
+    {
+      "input": "D:\\FPGA\\weather_restore_lab\\data\\ohaze_custom_800\\08_outdoor_input.png",
+      "sha256": "f8180969e906af0f658c82bd28e90950297d0052adeed751c6bbf23472ca225a",
+      "shape": [
+        800,
+        714,
+        3
+      ],
+      "cpu_forward_seconds": 0.04172219999600202,
+      "ground_truth": true,
+      "input_psnr_db": 11.197860375120882,
+      "input_psnr_infinite": false,
+      "input_ssim": 0.4640377213037162,
+      "input_mae": 0.2231819749079434,
+      "restored_psnr_db": 15.195502610442176,
+      "restored_psnr_infinite": false,
+      "restored_ssim": 0.45595305223953037,
+      "restored_mae": 0.14562832343792517
+    },
+    {
+      "input": "D:\\FPGA\\weather_restore_lab\\data\\ohaze_custom_800\\41_outdoor_input.png",
+      "sha256": "3b0cd40389f1f6996eacf164e78822aab0fbb9ac37478e97d8f1f4b0679539ee",
+      "shape": [
+        800,
+        660,
+        3
+      ],
+      "cpu_forward_seconds": 0.03629810002166778,
+      "ground_truth": true,
+      "input_psnr_db": 17.547633886760693,
+      "input_psnr_infinite": false,
+      "input_ssim": 0.77558967666531,
+      "input_mae": 0.10163059608339312,
+      "restored_psnr_db": 15.448430107568974,
+      "restored_psnr_infinite": false,
+      "restored_ssim": 0.7715696703820835,
+      "restored_mae": 0.15445013524936055
+    }
+  ],
+  "images": 10,
+  "split": "test",
+  "dataset_audit": {
+    "task": "dehaze",
+    "kind": "OHAZE_CUSTOM_30_5_10_SCENE_SPLIT_MAX800_NOT_OFFICIAL_CHALLENGE_SPLIT",
+    "split_counts": {
+      "train": 30,
+      "val": 5,
+      "test": 10
+    },
+    "unique_clean_sources": 45,
+    "split_audit": "PASS",
+    "manifest_sha256": "f14192e234afcfe6fdfc882ae11ce61f47be52e5643349bcf612731076706c51"
+  },
+  "input": {
+    "psnr_db": 13.384916529279826,
+    "ssim": 0.5918553679388823,
+    "mae": 0.18619127465639904,
+    "infinite_psnr_count": 0
+  },
+  "restored": {
+    "psnr_db": 16.521509028790184,
+    "ssim": 0.588065852790444,
+    "mae": 0.13135863951123322,
+    "infinite_psnr_count": 0
+  }
+}

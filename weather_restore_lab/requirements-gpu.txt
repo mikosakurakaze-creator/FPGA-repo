@@ -1,0 +1,3 @@
+# Official publisher SHA was read from https://download.pytorch.org/whl/cu126/torch/
+# Mirror bytes must match the publisher digest; no global Python installation.
+torch @ https://mirror.sjtu.edu.cn/pytorch-wheels/cu126/torch-2.7.1%2Bcu126-cp310-cp310-win_amd64.whl#sha256=30119a54e1b4ccefe20dfe5d4b13f6aef76c17ec605b40e26d39789db00906f2

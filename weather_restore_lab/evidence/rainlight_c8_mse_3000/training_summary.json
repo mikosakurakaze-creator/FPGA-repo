@@ -1,0 +1,8 @@
+{
+  "steps": 3000,
+  "seconds": 266.9429883999983,
+  "initial_validation_mse": 0.0035693836922291665,
+  "best_validation_mse": 0.001484848468680866,
+  "improved_validation": true,
+  "best_checkpoint_sha256": "f974093ac3cbc0f3c074f69953f795da54f2ea09d7a5118e6a4c6ff2960066e6"
+}

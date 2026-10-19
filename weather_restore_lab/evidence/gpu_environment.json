@@ -1,0 +1,15 @@
+{
+  "torch": "2.7.1+cu126",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "forward_backward": "PASS",
+  "finite_loss": true,
+  "loss": 0.003329166676849127,
+  "output_shape": [
+    2,
+    3,
+    64,
+    64
+  ]
+}

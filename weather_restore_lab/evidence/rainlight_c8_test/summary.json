@@ -1,0 +1,37 @@
+{
+  "task": "derain",
+  "data_kind": "RAINTRAINL_CUSTOM_180_20_VALIDATION_RAIN100L_TEST",
+  "split": "test",
+  "images": 100,
+  "checkpoint_sha256": "f974093ac3cbc0f3c074f69953f795da54f2ea09d7a5118e6a4c6ff2960066e6",
+  "checkpoint_step": 3000,
+  "identity_control": false,
+  "dataset_audit": {
+    "task": "derain",
+    "kind": "RAINTRAINL_CUSTOM_180_20_VALIDATION_RAIN100L_TEST",
+    "split_counts": {
+      "train": 180,
+      "val": 20,
+      "test": 100
+    },
+    "unique_clean_sources": 291,
+    "split_audit": "PASS",
+    "manifest_sha256": "89b7d4d41e318b969fb344a549b2c783b2a5658f074b8247851d7fc91dd68c15"
+  },
+  "input": {
+    "psnr_db": 25.521334759582743,
+    "ssim": 0.8139622910725002,
+    "mae": 0.022316251016447217,
+    "infinite_psnr_count": 0
+  },
+  "restored": {
+    "psnr_db": 29.523001105936157,
+    "ssim": 0.889714242912627,
+    "mae": 0.01779205871266612,
+    "infinite_psnr_count": 0
+  },
+  "metrics_protocol": "RGB [0,1], output clip, full image, no border crop, skimage SSIM default",
+  "device": "cpu",
+  "timing_scope": "PC inference only; no decode/encode; NOT FPGA FPS",
+  "hardware_deployable": "NOT_VERIFIED"
+}

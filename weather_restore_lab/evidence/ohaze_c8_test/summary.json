@@ -1,0 +1,38 @@
+{
+  "task": "dehaze",
+  "data_kind": "OHAZE_CUSTOM_30_5_10_SCENE_SPLIT_MAX800_NOT_OFFICIAL_CHALLENGE_SPLIT",
+  "split": "test",
+  "images": 10,
+  "input_type": "degraded_input",
+  "checkpoint_sha256": "9f659db6a879edf8430ec7142c0755c587462a9f8f38cff6d6fcf84737cd1b46",
+  "checkpoint_step": 3000,
+  "identity_control": false,
+  "dataset_audit": {
+    "task": "dehaze",
+    "kind": "OHAZE_CUSTOM_30_5_10_SCENE_SPLIT_MAX800_NOT_OFFICIAL_CHALLENGE_SPLIT",
+    "split_counts": {
+      "train": 30,
+      "val": 5,
+      "test": 10
+    },
+    "unique_clean_sources": 45,
+    "split_audit": "PASS",
+    "manifest_sha256": "f14192e234afcfe6fdfc882ae11ce61f47be52e5643349bcf612731076706c51"
+  },
+  "input": {
+    "psnr_db": 13.384916529279826,
+    "ssim": 0.5918553679388823,
+    "mae": 0.18619127465639904,
+    "infinite_psnr_count": 0
+  },
+  "restored": {
+    "psnr_db": 18.95770214218856,
+    "ssim": 0.6698296973326803,
+    "mae": 0.09512898373481413,
+    "infinite_psnr_count": 0
+  },
+  "metrics_protocol": "RGB [0,1], output clip, full image, no border crop, skimage SSIM default",
+  "device": "cuda",
+  "timing_scope": "PC inference only; no decode/encode; NOT FPGA FPS",
+  "hardware_deployable": "NOT_VERIFIED"
+}

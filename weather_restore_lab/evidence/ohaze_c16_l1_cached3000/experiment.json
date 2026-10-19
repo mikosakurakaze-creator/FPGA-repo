@@ -1,0 +1,31 @@
+{
+  "task": "dehaze",
+  "data_kind": "OHAZE_CUSTOM_30_5_10_SCENE_SPLIT_MAX800_NOT_OFFICIAL_CHALLENGE_SPLIT",
+  "config": {
+    "channels": 16,
+    "blocks": 5
+  },
+  "manifest_sha256": "f14192e234afcfe6fdfc882ae11ce61f47be52e5643349bcf612731076706c51",
+  "seed": 42,
+  "torch_version": "2.7.1+cu126",
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "initial_validation_mse": 0.047322392091155054,
+  "training_args": {
+    "command": "train",
+    "manifest": "data/ohaze_custom_800/manifest.json",
+    "output": "outputs/ohaze_c16_l1_cached3000",
+    "channels": 16,
+    "blocks": 5,
+    "steps": 3000,
+    "crop": 96,
+    "batch": 8,
+    "lr": 0.001,
+    "seed": 42,
+    "cache_data": true,
+    "loss": "l1",
+    "validate_every": 500,
+    "device": "cuda"
+  },
+  "status": "EXPERIMENTAL_NOT_HARDWARE_VALIDATED"
+}

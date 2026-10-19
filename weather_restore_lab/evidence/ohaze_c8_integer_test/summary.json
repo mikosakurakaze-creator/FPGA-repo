@@ -1,0 +1,31 @@
+{
+  "task": "dehaze",
+  "data_kind": "OHAZE_CUSTOM_30_5_10_SCENE_SPLIT_MAX800_NOT_OFFICIAL_CHALLENGE_SPLIT",
+  "images": 10,
+  "split": "test",
+  "available_split_images": 10,
+  "full_split": true,
+  "checkpoint_step": 3000,
+  "identity_control": false,
+  "input": {
+    "psnr_db": 13.384916529279826,
+    "ssim": 0.5918553679388823,
+    "mae": 0.18619127465639904,
+    "infinite_psnr_count": 0
+  },
+  "float": {
+    "psnr_db": 18.957700900299056,
+    "ssim": 0.6698271688337524,
+    "mae": 0.09512843881493352,
+    "infinite_psnr_count": 0
+  },
+  "integer": {
+    "psnr_db": 18.94232590700477,
+    "ssim": 0.6701582819735392,
+    "mae": 0.09545918744350468,
+    "infinite_psnr_count": 0
+  },
+  "max_fp32_integer_abs_error": 0.006631255149841309,
+  "saturations_including_overlap": 0,
+  "hardware_deployable": "NOT_VERIFIED"
+}

@@ -1,0 +1,626 @@
+{
+  "status": "CANDIDATE_NOT_FPGA_VALIDATED",
+  "files": [
+    {
+      "path": "derain/golden_layer_tensors.npz",
+      "bytes": 2530052,
+      "sha256": "ece799a7167e8850b40e100b8699942c34a777dfd3c40afc9266c3073f07e47f"
+    },
+    {
+      "path": "derain/golden_layers/blocks.0.add.bin",
+      "bytes": 147456,
+      "sha256": "b8e1026f875b1bb17a0ae8cb75fac1eb6b7bf45831ff203d3dce35d82e841e8a"
+    },
+    {
+      "path": "derain/golden_layers/blocks.0.depth.bin",
+      "bytes": 147456,
+      "sha256": "a412d83b61c92e929088e0d50ddfebd0e37dc851ed4924bba28ed770a72d11c9"
+    },
+    {
+      "path": "derain/golden_layers/blocks.0.point.bin",
+      "bytes": 147456,
+      "sha256": "632a112ce0b4dd33e6191c6ca7201af57197c3c4cb7715241ddfbd74ea14203f"
+    },
+    {
+      "path": "derain/golden_layers/blocks.1.add.bin",
+      "bytes": 147456,
+      "sha256": "f11c3ebc739dd9284dbfe7a65768f1ba595084926a6a4f6a4866ef9c399b3137"
+    },
+    {
+      "path": "derain/golden_layers/blocks.1.depth.bin",
+      "bytes": 147456,
+      "sha256": "5fda13f7bd1a3e1393b87665aa31190eb4654aed7cda69798733a4a8999f1184"
+    },
+    {
+      "path": "derain/golden_layers/blocks.1.point.bin",
+      "bytes": 147456,
+      "sha256": "f1acbf71a948b602bffa1def6cdace3389ee9f9728b054a79e934575a5575f42"
+    },
+    {
+      "path": "derain/golden_layers/blocks.2.add.bin",
+      "bytes": 147456,
+      "sha256": "4d5dfc61d3027d2cc9a556c5e272d219a8590168419638e66e4b9e43f764c8d7"
+    },
+    {
+      "path": "derain/golden_layers/blocks.2.depth.bin",
+      "bytes": 147456,
+      "sha256": "d639acd80f014ecf7e4b52d573fe93f7331b2ac4e2e1d586def7008352ef91bd"
+    },
+    {
+      "path": "derain/golden_layers/blocks.2.point.bin",
+      "bytes": 147456,
+      "sha256": "8f51998eaa6785fe73fcd322dccda51d9bb7a249db78796c2f264d8e5c081d46"
+    },
+    {
+      "path": "derain/golden_layers/blocks.3.add.bin",
+      "bytes": 147456,
+      "sha256": "b98ec9823a63195b3a6440d6b279252465227de308f1102748baa04c39473fbd"
+    },
+    {
+      "path": "derain/golden_layers/blocks.3.depth.bin",
+      "bytes": 147456,
+      "sha256": "b42dd412c0d04fa7004c94e831da751a0e8f05c895a65317a4147dbbcdf19dfe"
+    },
+    {
+      "path": "derain/golden_layers/blocks.3.point.bin",
+      "bytes": 147456,
+      "sha256": "d814f49b7c09bf4e01fb2aa156b024b6754179e6ceefa909bfceffdd4f27cfac"
+    },
+    {
+      "path": "derain/golden_layers/blocks.4.add.bin",
+      "bytes": 147456,
+      "sha256": "a6fdb600e0ccf6e449386851fc58e12449e2893bcd63d42b83e79ed4a33fddf5"
+    },
+    {
+      "path": "derain/golden_layers/blocks.4.depth.bin",
+      "bytes": 147456,
+      "sha256": "e65b97e38bf3f83400805e4d828a302ef2a878fed34e41d82b63e88b972d96e1"
+    },
+    {
+      "path": "derain/golden_layers/blocks.4.point.bin",
+      "bytes": 147456,
+      "sha256": "c79b9ccfacd9f4e028ff089460f01cc0805a286031efdd7769298ed65eef0d66"
+    },
+    {
+      "path": "derain/golden_layers/input.bin",
+      "bytes": 55296,
+      "sha256": "bad48552429e7c739e4405a2d3abf3a24a71902469c278213b3abf1bd1d6dc67"
+    },
+    {
+      "path": "derain/golden_layers/output.bin",
+      "bytes": 55296,
+      "sha256": "dd4e48093ed981d7a79ad2ff2878df4e2d6d7914ffc4c738d75051be85de9a5f"
+    },
+    {
+      "path": "derain/golden_layers/stem.bin",
+      "bytes": 147456,
+      "sha256": "27dbffb5ce1f87eba75839fb098db223b1da02a92e8d362dcafce7c7cae341ba"
+    },
+    {
+      "path": "derain/golden_layers/tail.bin",
+      "bytes": 55296,
+      "sha256": "66197b239e4f0cef37b37b5eec3865113bbde4c26c3aa81205d44eafbb20b65e"
+    },
+    {
+      "path": "derain/golden_layers.json",
+      "bytes": 7632,
+      "sha256": "bab6e640db1d3c28216a9bb872a272d2f801d9c42622682792826c0585028ae7"
+    },
+    {
+      "path": "derain/golden_manifest.json",
+      "bytes": 280,
+      "sha256": "ae50841cca13caa958a9e9a2baeeb8722b66e02e284ede741a42831d20cde20c"
+    },
+    {
+      "path": "derain/input_q14_nchw_le.bin",
+      "bytes": 55296,
+      "sha256": "bad48552429e7c739e4405a2d3abf3a24a71902469c278213b3abf1bd1d6dc67"
+    },
+    {
+      "path": "derain/integer_spec.json",
+      "bytes": 10314,
+      "sha256": "cf0c4609367031a0ecde647532a1d796bebd3cf697a39065f92510c6df8e6155"
+    },
+    {
+      "path": "derain/integer_weights.npz",
+      "bytes": 7754,
+      "sha256": "31bf18fec01c9767d383f75899a23d98b1195a990e9fc1fcabc78502a80c4743"
+    },
+    {
+      "path": "derain/layers/blocks.0.depth.bias.bin",
+      "bytes": 32,
+      "sha256": "b8676a8a0115a1783523455862ab906e2ec52c0ae76785344ec749ad4f34baf2"
+    },
+    {
+      "path": "derain/layers/blocks.0.depth.weight.bin",
+      "bytes": 72,
+      "sha256": "1f061ce7f71fef9965e0cf590b319305c207f7151c49ef212c3e4ac3b6ded387"
+    },
+    {
+      "path": "derain/layers/blocks.0.point.bias.bin",
+      "bytes": 32,
+      "sha256": "fcefd8c0154b6a8b0c66b560304f66169c37bf4624bcdb319c3fcc3f440b07dd"
+    },
+    {
+      "path": "derain/layers/blocks.0.point.weight.bin",
+      "bytes": 64,
+      "sha256": "3761a42172fde2ed546dc3a355e315ad04485ac2c4dd17daa8c9945d8fab6cad"
+    },
+    {
+      "path": "derain/layers/blocks.1.depth.bias.bin",
+      "bytes": 32,
+      "sha256": "0d11ab4fec93263b29eb4a0fca80f97b8b6873b58cc5f27dae70fc7d679f7df0"
+    },
+    {
+      "path": "derain/layers/blocks.1.depth.weight.bin",
+      "bytes": 72,
+      "sha256": "8f8ec259b61cba0e14bb4c6bebcad15dc33f3f89612ba93c1b1102804ffca079"
+    },
+    {
+      "path": "derain/layers/blocks.1.point.bias.bin",
+      "bytes": 32,
+      "sha256": "a94a24314de5fba4ff28272fecb7fce93324696635d3ae238b321c986ff1a40f"
+    },
+    {
+      "path": "derain/layers/blocks.1.point.weight.bin",
+      "bytes": 64,
+      "sha256": "98c843d86120cba71eb80cdec7d2433ac8e45dde7bd6c97f10e186778487f760"
+    },
+    {
+      "path": "derain/layers/blocks.2.depth.bias.bin",
+      "bytes": 32,
+      "sha256": "963d4d4182a20474ce9dabf758386286dfdeb36d948213f3925fe6f747fff733"
+    },
+    {
+      "path": "derain/layers/blocks.2.depth.weight.bin",
+      "bytes": 72,
+      "sha256": "8efd354cecf7a4103e19c05b15b33aa36105d3ef7a0d2e7da2059682d040e0b3"
+    },
+    {
+      "path": "derain/layers/blocks.2.point.bias.bin",
+      "bytes": 32,
+      "sha256": "85f996a7b28fa8def2525862137525e8526f7fa39ed298bb9e522318133d259c"
+    },
+    {
+      "path": "derain/layers/blocks.2.point.weight.bin",
+      "bytes": 64,
+      "sha256": "4f28f5bbf14842d20d9257e7bff2d4bc5cf6bfa74e475e1a9c81a3f2380557ef"
+    },
+    {
+      "path": "derain/layers/blocks.3.depth.bias.bin",
+      "bytes": 32,
+      "sha256": "fbd8cbf38947acf12fea9107af1267c8470cc4fc2c4d6761e6ab9844a574108c"
+    },
+    {
+      "path": "derain/layers/blocks.3.depth.weight.bin",
+      "bytes": 72,
+      "sha256": "fd79c6af866913ee4292ebfb458bf818a1f5e44ecb4374e473f67864eb58460b"
+    },
+    {
+      "path": "derain/layers/blocks.3.point.bias.bin",
+      "bytes": 32,
+      "sha256": "c9bab3b7f012856d2784c7ff395c78f3ef11c11856b709f7a7ef41bcae1d5946"
+    },
+    {
+      "path": "derain/layers/blocks.3.point.weight.bin",
+      "bytes": 64,
+      "sha256": "d733b3cbd83da8538ec96d919182dccfb05e7c9cfe119efdf6ff7f5fde3df682"
+    },
+    {
+      "path": "derain/layers/blocks.4.depth.bias.bin",
+      "bytes": 32,
+      "sha256": "ab19826ee760d36939f223d6de4e2290377eff8429d58a3b25030f5c8c2aaab5"
+    },
+    {
+      "path": "derain/layers/blocks.4.depth.weight.bin",
+      "bytes": 72,
+      "sha256": "393b6c04ca87d23dc99019c24bf8b39d8c1ca191214e67150f632777a26bcbcb"
+    },
+    {
+      "path": "derain/layers/blocks.4.point.bias.bin",
+      "bytes": 32,
+      "sha256": "41606625fd3143a734c8192bb87f9c54de9a28228a85d057827e56c3d485aae2"
+    },
+    {
+      "path": "derain/layers/blocks.4.point.weight.bin",
+      "bytes": 64,
+      "sha256": "f93c989fcdf2dbd501c6c5e9a3652d15ea8064e5d92466b8723848065effa911"
+    },
+    {
+      "path": "derain/layers/stem.bias.bin",
+      "bytes": 32,
+      "sha256": "3b2a3af19ec8c55390053a2b9e16fbf2b031091098320158857f643a7e5f4b20"
+    },
+    {
+      "path": "derain/layers/stem.weight.bin",
+      "bytes": 216,
+      "sha256": "433a515b51c587455fa3edc2b62e442351b1e8463866e98506d322618793d4a0"
+    },
+    {
+      "path": "derain/layers/tail.bias.bin",
+      "bytes": 12,
+      "sha256": "03131d7ea18e1031ddfe49e3c28260dae7a272832c71c5263717a3ad11dd30a4"
+    },
+    {
+      "path": "derain/layers/tail.weight.bin",
+      "bytes": 24,
+      "sha256": "c64b7a4e988bc30e27e9d3fefa011ea68f9f3663248bb1480fc441d2e4678ee5"
+    },
+    {
+      "path": "derain/output_q14_nchw_le.bin",
+      "bytes": 55296,
+      "sha256": "dd4e48093ed981d7a79ad2ff2878df4e2d6d7914ffc4c738d75051be85de9a5f"
+    },
+    {
+      "path": "derain/quantization_results.json",
+      "bytes": 1692,
+      "sha256": "3873ce29d62fd8ae78236ac65aa4cc237cd34d956f7e82ee025bc9351cf95c63"
+    },
+    {
+      "path": "derain/weight_binaries.json",
+      "bytes": 6788,
+      "sha256": "a06adc1d0c29f5dc2d034c345b549767b5469c8f24bd4004b85bd95d70c128a6"
+    },
+    {
+      "path": "derain/best.pth",
+      "bytes": 11649,
+      "sha256": "f974093ac3cbc0f3c074f69953f795da54f2ea09d7a5118e6a4c6ff2960066e6"
+    },
+    {
+      "path": "dehaze/golden_layer_tensors.npz",
+      "bytes": 2530052,
+      "sha256": "544ca48b6699af3a835fbde5091d6ecc4ccf3a20752a74a96990a775130e6a21"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.0.add.bin",
+      "bytes": 147456,
+      "sha256": "21269466f883473f9e5ecd9bc373245a9e5379dd6b1e9e044b6b0e667f533429"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.0.depth.bin",
+      "bytes": 147456,
+      "sha256": "1b6c42fdd4a88f49e44415ae557fbd7debf0d04bdc555d5af6c03d9bd6c33b1b"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.0.point.bin",
+      "bytes": 147456,
+      "sha256": "7959940d7d6fb8276c7a187ca46c11f6d1c625ff108fea76da6f2bb5c5f35233"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.1.add.bin",
+      "bytes": 147456,
+      "sha256": "1228c7a50162130ffa1b3062918c6c059f91db2db9eab2a6faa4eaadd8a40bb3"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.1.depth.bin",
+      "bytes": 147456,
+      "sha256": "7aadf837111907aaa792c476622c9ab08b305ce06f816a8edf0b8747969ef7b7"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.1.point.bin",
+      "bytes": 147456,
+      "sha256": "5899f4b7e7c045cf78905528176c6c89a2f37ee88635c6709a1e4e2ac8a14fd7"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.2.add.bin",
+      "bytes": 147456,
+      "sha256": "7b24c37822128272b651857391a7e8de9ec8ff65b4112269620fc8de4a74eee8"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.2.depth.bin",
+      "bytes": 147456,
+      "sha256": "3752101e367e25d4cd0028218f8fd8ecd9c31f8471831fb4f6efa33c4bb1cd58"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.2.point.bin",
+      "bytes": 147456,
+      "sha256": "822f83f2b3dba57575b8ae3a102bfad2d5656706fd79b4cadc492a5cee7f50f9"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.3.add.bin",
+      "bytes": 147456,
+      "sha256": "da2f3b66006dbd07ffd0c1f2664a969a52a183117b34e736f6a7e02f65586519"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.3.depth.bin",
+      "bytes": 147456,
+      "sha256": "62e870ea4273833dd59e75ff1102e38c5d8e0a0e62736183994b4ffc2a587292"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.3.point.bin",
+      "bytes": 147456,
+      "sha256": "23d21697c26aeed7f466dce16eb2450ecd410f5da91dea1b5bd202ba1e764332"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.4.add.bin",
+      "bytes": 147456,
+      "sha256": "96736a76ee2f4c8700f8077a603ccc086e121145621f91a411574d6f66b03c18"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.4.depth.bin",
+      "bytes": 147456,
+      "sha256": "c64f690efc1cf6cf57b0e2186e5207000831454b2d32b3179ff8198accc4b860"
+    },
+    {
+      "path": "dehaze/golden_layers/blocks.4.point.bin",
+      "bytes": 147456,
+      "sha256": "d35734d1446b01925d2e201db09917d1c3db23407ee9b07088ccfbffe4636cee"
+    },
+    {
+      "path": "dehaze/golden_layers/input.bin",
+      "bytes": 55296,
+      "sha256": "dc3aa5b076accda0e7ede0059f42f37edeeb795f61d6999c67d207ee8b40b078"
+    },
+    {
+      "path": "dehaze/golden_layers/output.bin",
+      "bytes": 55296,
+      "sha256": "801e86ea58f46ce5cfc4be7853181fc3fd2f0031cd3c3541d49c7d2943c9bbe0"
+    },
+    {
+      "path": "dehaze/golden_layers/stem.bin",
+      "bytes": 147456,
+      "sha256": "8cced4a026b96265ca172a318e2b89c8d5cdefc3d4d7718b94585fa5a768881a"
+    },
+    {
+      "path": "dehaze/golden_layers/tail.bin",
+      "bytes": 55296,
+      "sha256": "b43fc5f94648139c8d6ded43063b44d38055e9158c6f1854e8adcb102b8c90e2"
+    },
+    {
+      "path": "dehaze/golden_layers.json",
+      "bytes": 7632,
+      "sha256": "25cf4da2259ff6c7fa76c29c230c7f70ab316c799fff2ac3d1eb4e0ca11745f4"
+    },
+    {
+      "path": "dehaze/golden_manifest.json",
+      "bytes": 280,
+      "sha256": "082c3e8fc471eb0326282405bffe130bc4342707e8820b46d86738403f9d55d6"
+    },
+    {
+      "path": "dehaze/input_q14_nchw_le.bin",
+      "bytes": 55296,
+      "sha256": "dc3aa5b076accda0e7ede0059f42f37edeeb795f61d6999c67d207ee8b40b078"
+    },
+    {
+      "path": "dehaze/integer_spec.json",
+      "bytes": 10322,
+      "sha256": "ca5ae760a3cfba4e10a0443551cedac2a0a39fb3cfa64526498afcd19893b3f2"
+    },
+    {
+      "path": "dehaze/integer_weights.npz",
+      "bytes": 7754,
+      "sha256": "9a1377dfa1fb6d71da8035b14bb3f9fcb5e7880c6c5cf498563e9e9525a8022a"
+    },
+    {
+      "path": "dehaze/layers/blocks.0.depth.bias.bin",
+      "bytes": 32,
+      "sha256": "7b3f880d210ccca2eae1b5113957473f308e063bd1152187407d28ad45f3d5c9"
+    },
+    {
+      "path": "dehaze/layers/blocks.0.depth.weight.bin",
+      "bytes": 72,
+      "sha256": "9548f6ae07c26987f87caeb4df787278eb4ae45fc402df0b5d7be748fa3244a3"
+    },
+    {
+      "path": "dehaze/layers/blocks.0.point.bias.bin",
+      "bytes": 32,
+      "sha256": "66a39c0f11158b2560b4797409bc3b5dbfe023b73f6998759a739c9bf97c4c66"
+    },
+    {
+      "path": "dehaze/layers/blocks.0.point.weight.bin",
+      "bytes": 64,
+      "sha256": "ab7257ca4702b546975a755bfbb51ba9afeb9210e7caaaa6b307f6ce82110b54"
+    },
+    {
+      "path": "dehaze/layers/blocks.1.depth.bias.bin",
+      "bytes": 32,
+      "sha256": "3e878d99a57f79d73b40370e3d2ac69c0792212a62c5bc7eb4481bc57b0b73cc"
+    },
+    {
+      "path": "dehaze/layers/blocks.1.depth.weight.bin",
+      "bytes": 72,
+      "sha256": "769a57eb1903942b051b5de69a701e60f9fa96e1bfa063bd0b631add34b0ddf0"
+    },
+    {
+      "path": "dehaze/layers/blocks.1.point.bias.bin",
+      "bytes": 32,
+      "sha256": "9c4b9c99b9874da28e50cf0376a37c9794215da281e9bb638a1bb7f0ac6c2fc3"
+    },
+    {
+      "path": "dehaze/layers/blocks.1.point.weight.bin",
+      "bytes": 64,
+      "sha256": "911cec96e279bc8d06c471951d34fca2691651d10ce59070b516a532c37f9799"
+    },
+    {
+      "path": "dehaze/layers/blocks.2.depth.bias.bin",
+      "bytes": 32,
+      "sha256": "c2b561d8944d55964d7aae9b1eb814d1660fbd5ff8c6e82f10ab371ca1065e92"
+    },
+    {
+      "path": "dehaze/layers/blocks.2.depth.weight.bin",
+      "bytes": 72,
+      "sha256": "711cc93686b3336c3bef5d6e86ae9fc6e19ae311af246d4d0b7ab89f9546302f"
+    },
+    {
+      "path": "dehaze/layers/blocks.2.point.bias.bin",
+      "bytes": 32,
+      "sha256": "2333d3aa02fe5517d98fe4bdda850beee7e624ea7070b3c51ebb668d6315d96f"
+    },
+    {
+      "path": "dehaze/layers/blocks.2.point.weight.bin",
+      "bytes": 64,
+      "sha256": "d980e1ad768ffb2cae08b6325c98833194548bba2b17f25fe2e8a92c901a5b4b"
+    },
+    {
+      "path": "dehaze/layers/blocks.3.depth.bias.bin",
+      "bytes": 32,
+      "sha256": "9be38d7db95f15a56f18e43f790123104910f0cc1a9f2832aa3924e99461c6fc"
+    },
+    {
+      "path": "dehaze/layers/blocks.3.depth.weight.bin",
+      "bytes": 72,
+      "sha256": "4813038ac53bce629b731d9f5a307d008420e30991b781f6c212b39f9d483a91"
+    },
+    {
+      "path": "dehaze/layers/blocks.3.point.bias.bin",
+      "bytes": 32,
+      "sha256": "453cb02785d34fd0039a4769fb8f1151b744cd57cde247425d549ddd147a4f78"
+    },
+    {
+      "path": "dehaze/layers/blocks.3.point.weight.bin",
+      "bytes": 64,
+      "sha256": "c98260e5182e5c9d653b4ea3c7e9a3031f06a67f29526d7ec28c5568cc3eaed6"
+    },
+    {
+      "path": "dehaze/layers/blocks.4.depth.bias.bin",
+      "bytes": 32,
+      "sha256": "798cc7ed5491dc72a9a75c21ac20bd69c76d4275b792879ce37e767d2b0bc300"
+    },
+    {
+      "path": "dehaze/layers/blocks.4.depth.weight.bin",
+      "bytes": 72,
+      "sha256": "23244c9f63791eac048575a82ca711a3230656250f24982e16e4f69e6bcdc5f7"
+    },
+    {
+      "path": "dehaze/layers/blocks.4.point.bias.bin",
+      "bytes": 32,
+      "sha256": "82e8143d52c03150102d86d29adb81efb198c4340d5de8922cd8cb4437bd3279"
+    },
+    {
+      "path": "dehaze/layers/blocks.4.point.weight.bin",
+      "bytes": 64,
+      "sha256": "cb4041537eacd7b0a21274e0a026285294817817c0e5ae81c8938480ac37c2f1"
+    },
+    {
+      "path": "dehaze/layers/stem.bias.bin",
+      "bytes": 32,
+      "sha256": "f600fae5d002a89e1b2128ae6f97690ce4d2785e14693da02c307fa437665d45"
+    },
+    {
+      "path": "dehaze/layers/stem.weight.bin",
+      "bytes": 216,
+      "sha256": "9c03b4637510ee4fa30379bfcf941d3523ecbcba497aef44cad5aa81b209702f"
+    },
+    {
+      "path": "dehaze/layers/tail.bias.bin",
+      "bytes": 12,
+      "sha256": "007e80a899e8989c3fcec171d1f0606a25d38642ab5bc672d97d2da9532b4d90"
+    },
+    {
+      "path": "dehaze/layers/tail.weight.bin",
+      "bytes": 24,
+      "sha256": "b23a2486ae18049e3461b601b85851a841ec93c2612bb60a7686d91ddcb0ed2b"
+    },
+    {
+      "path": "dehaze/output_q14_nchw_le.bin",
+      "bytes": 55296,
+      "sha256": "801e86ea58f46ce5cfc4be7853181fc3fd2f0031cd3c3541d49c7d2943c9bbe0"
+    },
+    {
+      "path": "dehaze/quantization_results.json",
+      "bytes": 3100,
+      "sha256": "9a0b245a59f6acb264bdd8f5f65b9aa0921414ae5181ec7608f7869be8fd66ff"
+    },
+    {
+      "path": "dehaze/weight_binaries.json",
+      "bytes": 6788,
+      "sha256": "b079f3d3200ab950409b61557a412c8ed58bba525790508b8199dc9c3b480737"
+    },
+    {
+      "path": "dehaze/best.pth",
+      "bytes": 11713,
+      "sha256": "9f659db6a879edf8430ec7142c0755c587462a9f8f38cff6d6fcf84737cd1b46"
+    },
+    {
+      "path": "reference/model.py",
+      "bytes": 4269,
+      "sha256": "12f0a673c3f4f0ddea1a49a1ac073bb64a28d2360cbce8eb2d6bef869e8c85d3"
+    },
+    {
+      "path": "reference/integer.py",
+      "bytes": 13171,
+      "sha256": "1fc2fec3fa29d6f3478eef904d80a30df0c08e9e109065c201956de63f8fb261"
+    },
+    {
+      "path": "reference/test_pipeline.py",
+      "bytes": 3857,
+      "sha256": "eda58e6cad650c3cd344c0a3bf6d68d1bd226efbdc73bc57044614a915f9290f"
+    },
+    {
+      "path": "reference/data.py",
+      "bytes": 3964,
+      "sha256": "9286bae34558f60ea23e95915e9598a288605a41afc100126cb4ddb648c1f05f"
+    },
+    {
+      "path": "reference/run.py",
+      "bytes": 10926,
+      "sha256": "0ce01fd4a96fd5a8684be5e427c9a387199358f806340aa140b84fbf6a89262a"
+    },
+    {
+      "path": "reference/metrics.py",
+      "bytes": 840,
+      "sha256": "bcf9c3b1d4bb71358483a49b9d74a2c8ceeab1594ab3a105994087b3f27cefa7"
+    },
+    {
+      "path": "reference/evaluate_integer.py",
+      "bytes": 3714,
+      "sha256": "bb1980b801c756bf01cc0675fa9a6357262bc1e900e001185b417c1a96aceb9c"
+    },
+    {
+      "path": "reference/README.md",
+      "bytes": 5997,
+      "sha256": "ccb1fb8cb406c07b5d17500196b6b7a09187aea7ef48d3a7d69281e6537d93fb"
+    },
+    {
+      "path": "reference/RESULTS.md",
+      "bytes": 2528,
+      "sha256": "da93e899378d4b0c3743a837003dd604069cd617a4d029e2149ce79f70a47830"
+    },
+    {
+      "path": "reference/public_sources.json",
+      "bytes": 1498,
+      "sha256": "5b55c1fe054f8de1050a8428022b6e14ab73cf66ccdde59e1776b63bfc7d2c66"
+    },
+    {
+      "path": "reference/requirements.txt",
+      "bytes": 84,
+      "sha256": "f51a4f49e57260504de965b12a4b3f876d9f4d3e47582e59ad8d0e42cc3335af"
+    },
+    {
+      "path": "reference/requirements-gpu.txt",
+      "bytes": 338,
+      "sha256": "285fbb8f3589ba259a734c228aad7193091458c45dc40675259fd4dd64a98f5e"
+    },
+    {
+      "path": "reference/requirements-lock.txt",
+      "bytes": 534,
+      "sha256": "745fb7c075781ce817456183fb8a821296220817d16ff8746ef3d03ad0c91f48"
+    },
+    {
+      "path": "evidence/rainlight_c8_test.json",
+      "bytes": 1180,
+      "sha256": "d34560e14d2949237f41f9dc0550bb67d5a0533f84f84f817b83bc32fd4ef275"
+    },
+    {
+      "path": "evidence/rainlight_c8_integer_test_margin2.json",
+      "bytes": 838,
+      "sha256": "4ca7bd387b8d2c861b940738114e8d1d40309739afb55c252ceae607b5c745a3"
+    },
+    {
+      "path": "evidence/ohaze_c8_test.json",
+      "bytes": 1248,
+      "sha256": "3d0909a4207ca75b86b0858059d27426d3324b1a28807e7672ee919ec9e2aebf"
+    },
+    {
+      "path": "evidence/ohaze_c8_integer_test.json",
+      "bytes": 856,
+      "sha256": "77ac53375f087291dd0f67f1cd5fae206a627b455bdfd5d88a1a743d9be737da"
+    },
+    {
+      "path": "evidence/ohaze_c8_integer_val.json",
+      "bytes": 853,
+      "sha256": "d5b02f83edd9f80b20a556b80fa93a39b93390cd21b552f4af94a8e55362941c"
+    }
+  ],
+  "archive_sha256": "9330dbfa20fd4b4e7899d61ecce0d01b7e667c2e66120ce1a74a1e5a3eda0e88"
+}

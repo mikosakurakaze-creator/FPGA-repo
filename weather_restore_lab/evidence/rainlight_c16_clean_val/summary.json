@@ -1,0 +1,38 @@
+{
+  "task": "derain",
+  "data_kind": "RAINTRAINL_CUSTOM_180_20_VALIDATION_RAIN100L_TEST",
+  "split": "val",
+  "images": 20,
+  "input_type": "clean_target_identity_protection",
+  "checkpoint_sha256": "3f7bc143dc9d27144b3b398299881a6ff2ac1c26a64fd7a0f50549bcc23ad99c",
+  "checkpoint_step": 3000,
+  "identity_control": false,
+  "dataset_audit": {
+    "task": "derain",
+    "kind": "RAINTRAINL_CUSTOM_180_20_VALIDATION_RAIN100L_TEST",
+    "split_counts": {
+      "train": 180,
+      "val": 20,
+      "test": 100
+    },
+    "unique_clean_sources": 291,
+    "split_audit": "PASS",
+    "manifest_sha256": "89b7d4d41e318b969fb344a549b2c783b2a5658f074b8247851d7fc91dd68c15"
+  },
+  "input": {
+    "psnr_db": null,
+    "ssim": 1.0,
+    "mae": 0.0,
+    "infinite_psnr_count": 20
+  },
+  "restored": {
+    "psnr_db": 33.37773509322127,
+    "ssim": 0.9800243191064277,
+    "mae": 0.012541252735565323,
+    "infinite_psnr_count": 0
+  },
+  "metrics_protocol": "RGB [0,1], output clip, full image, no border crop, skimage SSIM default",
+  "device": "cuda",
+  "timing_scope": "PC inference only; no decode/encode; NOT FPGA FPS",
+  "hardware_deployable": "NOT_VERIFIED"
+}

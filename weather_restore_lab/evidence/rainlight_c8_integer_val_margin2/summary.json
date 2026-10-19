@@ -1,0 +1,31 @@
+{
+  "task": "derain",
+  "data_kind": "RAINTRAINL_CUSTOM_180_20_VALIDATION_RAIN100L_TEST",
+  "images": 20,
+  "split": "val",
+  "available_split_images": 20,
+  "full_split": true,
+  "checkpoint_step": 3000,
+  "identity_control": false,
+  "input": {
+    "psnr_db": 26.089010533719936,
+    "ssim": 0.8492143762423447,
+    "mae": 0.019850975737451308,
+    "infinite_psnr_count": 0
+  },
+  "float": {
+    "psnr_db": 29.761239044353164,
+    "ssim": 0.9094887672327049,
+    "mae": 0.01776067042970359,
+    "infinite_psnr_count": 0
+  },
+  "integer": {
+    "psnr_db": 29.764640470574545,
+    "ssim": 0.9100853249971115,
+    "mae": 0.01792201594233736,
+    "infinite_psnr_count": 0
+  },
+  "max_fp32_integer_abs_error": 0.015729010105133057,
+  "saturations_including_overlap": 0,
+  "hardware_deployable": "NOT_VERIFIED"
+}

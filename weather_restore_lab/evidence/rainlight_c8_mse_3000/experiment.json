@@ -1,0 +1,30 @@
+{
+  "task": "derain",
+  "data_kind": "RAINTRAINL_CUSTOM_180_20_VALIDATION_RAIN100L_TEST",
+  "config": {
+    "channels": 8,
+    "blocks": 5
+  },
+  "manifest_sha256": "89b7d4d41e318b969fb344a549b2c783b2a5658f074b8247851d7fc91dd68c15",
+  "seed": 42,
+  "torch_version": "2.14.0+cpu",
+  "device": "cpu",
+  "gpu": null,
+  "initial_validation_mse": 0.0035693836922291665,
+  "training_args": {
+    "command": "train",
+    "manifest": "data/rainlight_manifest.json",
+    "output": "outputs/rainlight_c8_mse_3000",
+    "channels": 8,
+    "blocks": 5,
+    "steps": 3000,
+    "crop": 96,
+    "batch": 8,
+    "lr": 0.001,
+    "seed": 42,
+    "loss": "mse",
+    "validate_every": 500,
+    "device": "cpu"
+  },
+  "status": "EXPERIMENTAL_NOT_HARDWARE_VALIDATED"
+}

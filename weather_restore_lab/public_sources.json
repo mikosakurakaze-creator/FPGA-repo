@@ -1,0 +1,29 @@
+{
+  "purpose": "Academic research; retain original dataset/model attribution and terms",
+  "rain12": {
+    "publisher_link": "https://yu-li.github.io/paper/li_cvpr16_rain.zip",
+    "reference": "https://github.com/csdwren/PReNet/blob/master/datasets/readme.txt",
+    "use": "12 held-out paired images, never used for training or calibration"
+  },
+  "rainlight": {
+    "original_reference": "https://github.com/csdwren/PReNet/blob/master/datasets/readme.txt",
+    "researcher_redistribution": "https://github.com/bupt-ai-cz/ANRN",
+    "folder": "https://drive.google.com/drive/folders/1sF_2hNvz-6yoNJCxq8aa5oN3yz0VvsjQ",
+    "train_file_id": "1NZ6JR8S8iEd4h2Dp-YrsAk5j6brEPDpG",
+    "test_file_id": "1LSokiOi-6vey6fcbQi5jbqr4n7BT_mXk",
+    "identity_note": "Researcher redistribution, not independently proven byte-identical to original authors' archive"
+  },
+  "ohaze": {
+    "publisher": "https://data.vision.ee.ethz.ch/cvl/vision2/ntire18/o-haze/",
+    "archive": "https://data.vision.ee.ethz.ch/cvl/vision2/ntire18/o-haze/O-HAZE.zip",
+    "use": "45 paired outdoor scenes; custom split explicitly differs from challenge benchmark"
+  },
+  "aod_reference": {
+    "publisher": "https://github.com/Boyiliee/AOD-Net",
+    "use": "Official Caffe weights and unpaired sample images; no FPGA performance claim"
+  },
+  "set12": {
+    "source": "https://github.com/cszn/KAIR/tree/master/testsets/set12",
+    "use": "Small generic mostly grayscale source images for synthetic engineering tests only"
+  }
+}
