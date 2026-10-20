@@ -99,3 +99,9 @@ solution*/
 
 # Keep source and project configuration files versioned:
 # Python, C/C++, Verilog/SystemVerilog/VHDL, Tcl, YAML, JSON, and TOML.
+
+# Local weather workspace: keep generated results and data out of commits
+work/
+build/
+outputs/
+data/

@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "source": {
+    "component_xml": [
+      "ip_repo/derain_top/component.xml",
+      "ip_repo/dehaze_top/component.xml"
+    ],
+    "driver_headers": [
+      "ip_repo/derain_top/drivers/derain_top_v1_0/src/xderain_top_hw.h",
+      "ip_repo/dehaze_top/drivers/dehaze_top_v1_0/src/xdehaze_top_hw.h"
+    ],
+    "tasks": ["derain_top", "dehaze_top"]
+  },
+  "control": {
+    "interface": "s_axi_CTRL",
+    "protocol": "AXI4LITE",
+    "data_width_bits": 32,
+    "address_width_bits": 7,
+    "registers": {
+      "0x00": {"name": "AP_CTRL", "access": "RW", "meaning": "ap_start bit0, ap_done bit1 (read/COR), ap_idle bit2, ap_ready bit3 (read/COR), auto_restart bit7"},
+      "0x04": {"name": "GIE", "access": "RW"},
+      "0x08": {"name": "IER", "access": "RW"},
+      "0x0c": {"name": "ISR", "access": "TOW"},
+      "0x10": {"name": "AP_RETURN", "access": "RO", "meaning": "0 success, 1 invalid dimensions"},
+      "0x18": {"name": "INPUT_R_LO", "access": "RW"},
+      "0x1c": {"name": "INPUT_R_HI", "access": "RW"},
+      "0x24": {"name": "OUTPUT_R_LO", "access": "RW"},
+      "0x28": {"name": "OUTPUT_R_HI", "access": "RW"},
+      "0x30": {"name": "SCRATCH_LO", "access": "RW"},
+      "0x34": {"name": "SCRATCH_HI", "access": "RW"},
+      "0x3c": {"name": "HEIGHT", "access": "RW", "range": "1..140"},
+      "0x44": {"name": "WIDTH", "access": "RW", "range": "1..140"}
+    }
+  },
+  "clock_reset_interrupt": {
+    "clock": "ap_clk",
+    "reset": "ap_rst_n active-low",
+    "interrupt": "interrupt"
+  },
+  "memory_masters": {
+    "common": {
+      "protocol": "AXI4",
+      "address_width_bits": 64,
+      "data_width_bits": 32,
+      "max_burst_length_metadata": 256,
+      "has_burst_metadata": 0,
+      "supports_narrow_burst": 0,
+      "max_read_burst_length": 64
+    },
+    "m_axi_gmem_in": {
+      "read_write_mode": "READ_ONLY",
+      "max_write_burst_length": 16,
+      "num_read_outstanding": 2,
+      "num_write_outstanding": 16
+    },
+    "m_axi_gmem_out": {
+      "read_write_mode": "READ_WRITE",
+      "max_write_burst_length": 64,
+      "num_read_outstanding": 2,
+      "num_write_outstanding": 2
+    },
+    "m_axi_gmem_work": {
+      "read_write_mode": "READ_WRITE",
+      "max_write_burst_length": 64,
+      "num_read_outstanding": 2,
+      "num_write_outstanding": 2
+    }
+  },
+  "warnings": [
+    "Tensor elements remain signed INT16 Q14 even though the AXI master data bus is 32 bits.",
+    "The HLS metadata reports no narrow-burst support and synthesis reports scalar 16-bit accesses; verify SmartConnect/DDR behavior in system simulation.",
+    "Vivado address assignment, physical DDR mapping, cache maintenance and DMA allocation are not fixed by this file."
+  ]
+}

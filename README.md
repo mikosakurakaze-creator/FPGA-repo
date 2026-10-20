@@ -1,47 +1,55 @@
-# 复杂环境道路监控视觉增强系统
+# 天气图像恢复 FPGA 集成项目
 
-> 仓库初始占位标识：`oiiaioiiai`
+当前验证结果和构建文件位置见 [流水版修正报告](docs/stream_revision_20261020.md)，更新日期为 2026-10-21。
 
-本项目面向夜间、雨天、雾天等复杂环境下的道路监控画面，研究轻量化深度学习视觉增强模型及其在 FPGA 平台上的高效部署。计划通过模型量化、并行计算、流水线设计和片上数据复用，提高嵌入式视觉增强的处理效率。
+本目录由 B 侧独立集成工作目录复制而来，已于 2026-10-21 绑定到 `https://github.com/mikosakurakaze-creator/FPGA-repo.git` 的 `weather_fpga_integration` 分支，跟踪 `origin/weather_fpga_integration`。绑定时保留了已有天气项目文件，并补齐远端基线文件；原 `competing/weather_fpga_integration` 仍独立保留。绑定操作没有暂存、提交或推送天气修改。此前报告中的 Git 状态指对应操作当时的状态，当前以 Git 记录为准，详见 [Git 绑定记录](docs/git_binding_20261021.md)。
 
-## 当前阶段
+## 当前实现
 
-当前处于 **V1 单模型低照度增强软件 Baseline 阶段**。工程脚手架和 Zero-DCE++ 官方源码集成已完成；单图推理、官方 forward 一致性验证和参考数据导出已在本地 CPU 环境实际运行。FPGA 实现尚未开始。
+- `experiments/stream_frame/src/weather_frame.cpp` 中的 `weather_frame_top` 包含两套固定 C8 模型：`task=0` 去雨，`task=1` 去雾。
+- 整帧输入输出采用 RGB NCHW、有符号 INT16 Q14，支持 `H<=720`、`W<=1280`，使用独立 DDR 缓冲区，无外部特征工作区或 AXI Stream 接口。
+- 整帧 DATAFLOW 让 stem、五个空间残差块和 tail 同时工作。每个空间阶段使用两行缓存和一个 3×3 窗口。按平面组织的行读写器每帧只读一次输入、写一次输出，无 tile halo 重复读取。
+- 组合系统沿用原低照度 CNN/Bilinear/Curve 和 PS 配置。天气核控制基址为 `0xA0030000`，输入共享 HP0、输出共享 HP3；首次上板采用串行、互斥的工作模式。
+- 天气核直接输出增强 RGB，不进入低照度 `A_low -> Bilinear -> Curve` 参数图路径。
 
-当前仓库已包含 Zero-DCE++ 官方模型、官方预训练权重及本项目适配工具。本地一次验证使用 PyTorch 2.14.0+cpu、CPU、`scale_factor=12`，拆分实现与官方 forward 的增强结果和参数图最大/平均绝对误差均为 0.0；该结果只代表记录的环境和输入，不代表其他平台已验证，也不表示本地已安装完整 FPGA 工具链。
+## 已实际完成的验证
 
-暂定硬件平台为 PYNQ-Z2（Zynq-7000 XC7Z020），暂定工具包括 Python、PyTorch、C++、Vitis HLS、Vivado 和 PYNQ。
+- `work/stream_host02`：两任务合计 60 个官方 Golden 节点、边界、负对照，以及 720x1272/720x1280 整帧主机比较全部通过。
+- `work/stream02`：两任务 Vitis 2025.2 CSim、HLS 综合、8x8 RTL 联合仿真和 IP 导出通过。两任务每次 8x8 vendor RTL 均为 1,343 拍，六个空间循环实际达到 II=1。
+- `work/stream_sequence01`：连续五次 vendor RTL 调用通过，包含任务和尺寸切换。
+- `work/stream_rtl01`：九次独立 AXI-Lite/DDR RTL 调用通过，包括七次带停顿的小图/尺寸切换和两张完整 720x1280 图像；能够正确拒绝被篡改 1 LSB 的 Golden。
+- 两任务完整 720p 在文档规定的独立 DDR 模型下均为 3,009,677 拍，按 100 MHz 折算为 30.09677 ms，低于 3,333,333 拍预算。该结果属于仿真周期证据，不是真板帧率。
+- `work/stream_driver01`：C11 控制器在模拟 MMIO/DMA 下调用真实新 C++ 核，验证通过。
+- `D:/weather_builds/stream_system01`：组合系统 Vivado 综合和布局布线通过。100 MHz 下 WNS +1.018 ns、WHS +0.010 ns、WPWS +3.500 ns；169,908 条需布线网络全部完成。布线后资源占用：LUT 63.49%、FF 33.96%、BRAM 50.00%、URAM 73.44%、DSP 77.00%。
+- 新 bitstream 和含 bit 的 XSA 已生成，最终 32 项接口/编译 RTL/ROM/XSA 核查全部通过。`evidence/stream_system_verification_20261021.json` 记录最终文件与源码、测试、构建证据的对应身份。布线后 DRC 没有 Error/Critical Warning，保留 832 条非阻断 Warning。
 
-## 目录结构
+当前硬件构建位于 `D:/weather_builds/stream_system01/`，本地副本为 `work/system_stream01/`，包含 bit/XSA、工程、布线后 DCP/报告、IP 输入和构建记录。按用户要求不另做交付 ZIP。Embedded 工具链和上板待办见 [上板联调说明](docs/board_bringup.md)。
 
-```text
-model/          纯软件模型复现与参考结果
-deployment/     量化、导出及上板前准备
-fpga/hls/       HLS 核设计
-fpga/vivado/    Vivado 工程与系统集成
-board/          PS 端控制与板端运行
-evaluation/     功能、性能及 Base 对比
-configs/        可版本管理的实验与部署配置
-docs/           项目范围、接口、路线图和协作规范
-```
+历史 `frame04/system02` 和 `build/weather_system_k26_v1_1/` 保存串行 tile/层调度功能基线及详细 HLS 报告。该基线在 100 MHz 下无法达到 720p30，其时序、bitstream 和报告不能替代新流水核的验证。
 
-## 参与开发
+更早的 `frame03/system01` 候选已因复现窄行 DDR 写回死锁而取消交付资格，详见 [故障与回归证据](docs/ddr_writeback_deadlock.md)。
 
-1. 软件侧统一在长期分支 `feat/software` 开发；FPGA 侧使用团队约定的独立分支。
-2. 在已分配分支完成职责明确的任务，避免提交数据集、非白名单权重和工具生成文件。
-3. 修改完成后先展示差异并等待人工审核；只有获得当次明确授权后才能提交、推送或创建 Pull Request。
-4. 经代码和文档检查后再由团队决定是否合并到 `main`。
+尚未进行真板、持续帧率、摄像头或显示测试。100 MHz 时序通过不等于已达到 720p30。A53 standalone 后端和最小测试源码已经提供，但本机只有 HLS/Vivado 环境，缺少 Embedded A53 编译器，因此尚未生成 ELF；Linux DMA 后端也未完成。
 
-详细约定见 [V1 范围](docs/v1_scope.md)、[模块接口](docs/interfaces.md) 和 [团队工作流](docs/team_workflow.md)。
+## 文档导航
 
-## Zero-DCE++ 软件工具
+- [当前报告与修改清单](docs/stream_revision_20261020.md)
+- [历史串行基线集成记录](docs/system_integration_20261020.md)
+- [整帧 ABI v2 接口合同](docs/weather_frame_v2_contract.md)
+- [上板联调说明](docs/board_bringup.md)
+- [待完成事项与验收条件](docs/open_items.md)
+- [PS 控制器与平台后端](deployment/README.md)
+- [当前整帧核源码与复现入口](experiments/stream_frame/README.md)
+- [Vitis 启动故障修复与桌面启动器](docs/vitis_windows_startup.md)
+- [A 组交付核查及证据范围](docs/a_compute_handoff.md)
+- [性能预算](docs/performance_optimization.md)
 
-从项目根目录运行，输入图片由开发者自行提供：
+## A 组原始输入
 
-```text
-python -m model.zero_dce_pp.inference --input path/to/image.png --device cpu --scale-factor 12
-python -m model.zero_dce_pp.validate_consistency --input path/to/image.png --device cpu --scale-factor 12 --atol 1e-6
-python -m model.zero_dce_pp.export_reference --input path/to/image.png --device cpu --scale-factor 12
-```
+A 组交付解压目录只读保存在 `C:/Users/wzh16/Desktop/competing/weather A/weather_A_C8_delivery/`。清单内 3,179 份文件的大小和 SHA-256 全部一致，143 项 A 组审查检查通过。最外层交付 ZIP 本机缺失，因此没有重新计算该归档的哈希。
 
-默认权重为 `model/zero_dce_pp/weights/Epoch99.pth`，默认生成内容位于已被 Git 忽略的 `outputs/zero_dce_pp/`。详细说明见 [Zero-DCE++ Baseline](model/zero_dce_pp/README.md) 和 [模型规格](docs/zero_dce_pp_model_spec.md)。本地 CPU 验证记录见对应文档；CUDA、其他 PyTorch 版本和 FPGA 结果仍待验证。
+`ip_archives/`、`ip_repo/derain_top` 和 `ip_repo/dehaze_top` 保存原始 A 组 ABI v1 tile IP。它们用于参考或回退，当前组合 v2 系统没有实例化这两个旧 IP。v1 使用 input/output/scratch，两个任务各有固定 IP，tile 最大为 140x140；`deployment/weather_tiled.c` 是经主机验证的 CPU 数据收集/裁剪回写路径。
+
+`work/`、`build/`、日志、缓存、数据和运行输出均为本地产物。厂商工具通过 `tools/run_windows_desktop.py` 启动，每次使用新的输出目录；这些产物和数据集不自动上传。
+
+当前副本位于 `C:/Users/wzh16/Desktop/github clone/weather_fpga_integration/`，没有复制历史 `build/` 交付包。历史验证日志中的绝对路径用于记录原执行位置，重新构建应使用新输出路径。`work/` 和硬件构建结果继续由 Git 忽略。

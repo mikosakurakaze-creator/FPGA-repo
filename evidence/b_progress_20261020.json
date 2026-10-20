@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-20",
+  "scope": "Portable host C11/C++ numerical and MMIO/DMA mock verification only. No new HLS/RTL/board pass.",
+  "host_pass": true,
+  "driver_mock_pass": true,
+  "a_manifest_pass": true,
+  "a_manifest_files": 3179,
+  "official_nodes_exact": 60,
+  "synthetic_30_node_cases": 12,
+  "synthetic_frame_cases": 20,
+  "invalid_argument_cases": 11,
+  "full_frame_host_cases": [
+    "derain_720x1272",
+    "derain_720x1280",
+    "dehaze_720x1272",
+    "dehaze_720x1280"
+  ],
+  "standalone_hls_tb_host_cases": [
+    "derain_hls_tb_host_96",
+    "derain_hls_tb_host_8",
+    "dehaze_hls_tb_host_96",
+    "dehaze_hls_tb_host_8"
+  ],
+  "negative_controls_rejected": 2,
+  "new_vendor_hls_pass": false,
+  "hls_completed_through": "prepare",
+  "hls_block": "RuntimeError('Vitis preflight failed: nonempty Vitis version banner absent')",
+  "source_sha256": {
+    "deployment/tests/test_weather_control.cpp": "78d137d5dbe2ef57440160e983ae813ec2ea2f173af14804fbdc332e544063a1",
+    "deployment/tests/verify_driver.py": "f7b333f2b6a74608f94dc52fa73d9015fcd5d25fd98a9c570b9019a1e806e9e7",
+    "deployment/weather_control.c": "1714234573a5c62f5f0d4a8c5334f4bd987f986bf263a088166baf8a94a403bb",
+    "deployment/weather_control.h": "15dcbb897f9edcdf751099b7c101f647e6ea00225acad52dd3cd192b79d5ef20",
+    "deployment/weather_tiled.c": "488eeed398ae5423a0e62df2e2c2c987d933c093527a1a662430dfaa2038e208",
+    "experiments/onchip_frame/hls/tb_weather_frame.cpp": "954ea9398471c147974cde3a59133b3fcf9b4098b1d5f7166f621ae8eae6d267",
+    "experiments/onchip_frame/scripts/run_hls.py": "d2d5aa38fa77166e668dbab38d82d766bf92550b931ca2c981d5aac95f69c26f",
+    "experiments/onchip_frame/scripts/verify_host.py": "615491a37bc89a694db8db9a3d620ac5ad384a5d91476602738b1a9c51fe6084",
+    "experiments/onchip_frame/src/params_dehaze.h": "19841d80f598738954d1b8efaa9288c203a14460312ca51e966a017322d0f186",
+    "experiments/onchip_frame/src/params_derain.h": "d980ec138fe9fed6b08e90465199bb381369472fb652c4ec2b85c597b8e578f6",
+    "experiments/onchip_frame/src/weather_frame.cpp": "1e795ba56f690cee0fda9cc7aaa429a9055b199893f1a337bcfd8727cf412a1b",
+    "experiments/onchip_frame/src/weather_frame.h": "12c503d69f90a6b013059f36789ed36f42f765d10fc3db1bcb7595c24c9be598",
+    "experiments/onchip_frame/src/weather_kernel.h": "a678c4616a189bd8f9d2ccc4dcb4b183be1ca92f98d69eeffef69bb23813a47f",
+    "experiments/onchip_frame/src/weather_kernel_reference.cpp": "eb48f45cd25e884ff12e1fc8ec0562814595ac62aa29fc289d2e7c254053b349",
+    "experiments/onchip_frame/tests/test_weather_frame.cpp": "e514cf2efd316d976caa627978c35077abe5c8aa2730b3deb61cff0ff909aa84"
+  },
+  "host_log_sha256": {
+    "compiler": "effc70f2ab2b4aaa9b7b5a29e5aee2e3e41a97263b35cc2bd30d54d4a0f57663",
+    "build": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "hls_tb_host_build": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "selftest": "b75c230cf491f19405d93adddc347c93399970468d0b5a6a8e200f9367282bcc",
+    "derain_official": "6e806cc247fed92d14e526486885b2ec93ee59910c7d1c2ecc461e0943118300",
+    "derain_hls_tb_host_96": "43b2d187a350844cf089dcafd5e74c5c0ddafde562c4ff4b108eb73ee6b1a44b",
+    "derain_hls_tb_host_8": "fe34b073bb6e76dac13b5d70969089545cb9361c519f49d2845d43dafd74a8be",
+    "derain_trace": "8c709c8e9d3fe08fdacfbd29bac38c6a3cc4a3efdaa12da0ccd53ae15024bc9b",
+    "derain_negative_control": "a399290a5fe615f79505767a1ea20d1655f6006098708221d04424276c03fa5e",
+    "derain_720x1272": "a64ed927c572976aded2adad2a52b27f56230801fa03c94f4c71da0d1cfca055",
+    "derain_720x1280": "82ab54399e5d36e363b212dd5bff7d1cb163b2a92ba6ac553f8c6c77b0f64901",
+    "dehaze_official": "9736c8bfbc6424810a2eb4ca6d54f94468f3b61564cacc6b55b375c5dea87cf5",
+    "dehaze_hls_tb_host_96": "20c92af81c908ff8aa997fc6cfe1923d836c83feafd38d7f2cb1af6ce48747ea",
+    "dehaze_hls_tb_host_8": "c64d067b1cc096105c0f7cb3af89b8252542c2511a7049cb0a0f062f0e302f52",
+    "dehaze_trace": "724298c8b48eba17d4080250bf31d197438669f6a875cee1ff5e5b0392db88c3",
+    "dehaze_negative_control": "9df0417c7552262c8e3335eda8e438b5be4129d8a76eeae571bbeb4f149a89df",
+    "dehaze_720x1272": "1cb465c7905d5d7fe493b4ab2be9411fce0945a5802f9af344bb6d123fcdebc0",
+    "dehaze_720x1280": "c541a0760ef37a20a89836707148ea6f0beacf03b095e3dafd47e4cc79f5ca86"
+  },
+  "driver_log_sha256": {
+    "compiler": "effc70f2ab2b4aaa9b7b5a29e5aee2e3e41a97263b35cc2bd30d54d4a0f57663",
+    "weather_control": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "weather_tiled": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "link": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "driver_suite": "fd01f9b5c085100c364884b0b1793e41e0034183a44328972867fc138ca67e8a"
+  },
+  "local_reports_sha256": {
+    "work/onchip_host_20261020_02/verification.json": "492e7a2a2ab472836fb9669a037aeb8af72834832b54d5752090425b3f1f8dd7",
+    "work/driver_host_20261020_02/verification.json": "c42d458a4fc48ac08fa57eb7b10cc350ba1884674acb4f2fc5f785a3202ad78b",
+    "work/onchip_hls_20261020_01/run.json": "803e6ce8a6e64d1ae5ec48fb047268620031e0f25b573ae0e9e175e88c567397",
+    "work/a_manifest_final_20261020.json": "3bee1ee016da157d7d6008ff9aebfe3bb01339baa51c09bba6e07a4a4fc83102",
+    "work/weather_budget_720x1272.json": "518646e8f4137cc753372da7bba11f60497b881187b9352773e4a059ca6cfd79"
+  },
+  "not_validated": [
+    "working Vitis CSim/synthesis",
+    "new RTL/co-simulation/IP export",
+    "generated v2 CSR layout",
+    "Vivado system implementation",
+    "real DMA/cache/MMIO/reset-drain backend",
+    "board execution and continuous video",
+    "weather routed timing and measured FPS"
+  ],
+  "git_actions_performed": false
+}

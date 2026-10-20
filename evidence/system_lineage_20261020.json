@@ -1,0 +1,141 @@
+{
+  "scope": "current frozen source/IP lineage and completed routed bit/XSA build; no board claims",
+  "reports": {
+    "weather_host": {
+      "path": "C:\\Users\\wzh16\\Desktop\\competing\\weather_fpga_integration\\work\\onchip_host_20261020_06\\verification.json",
+      "sha256": "70bda146f724066d99952ecf25dced562b53161175c1fe7c3cc4bd81c9276fb0",
+      "pass": true
+    },
+    "weather_hls": {
+      "path": "C:\\Users\\wzh16\\Desktop\\competing\\weather_fpga_integration\\work\\frame04\\run.json",
+      "sha256": "dcf2a235dfe5d1e9c2f65d2bd2edda711835e84350bb46f7c2d3758d0328903a",
+      "pass": true
+    },
+    "weather_vendor_sequence": {
+      "path": "C:\\Users\\wzh16\\Desktop\\competing\\weather_fpga_integration\\work\\sequence05\\run.json",
+      "sha256": "80748418f30ce723b398a592eabb83cfd648b0e08b8c6cf156278c79f6b7a160",
+      "pass": true
+    },
+    "weather_independent_axi": {
+      "path": "C:\\Users\\wzh16\\Desktop\\competing\\weather_fpga_integration\\work\\rtl_memory05\\run.json",
+      "sha256": "fbe1703e116e1e0acbdd62116d730978bffda0fcef100ff0f23f27f7e4111f9e",
+      "pass": true
+    },
+    "portable_driver": {
+      "path": "C:\\Users\\wzh16\\Desktop\\competing\\weather_fpga_integration\\work\\driver_host_20261020_04\\verification.json",
+      "sha256": "b7133ebb2a74b657352d05747876fdae680acb8a7e7ffb4d5c20eab538a1444c",
+      "pass": true
+    },
+    "lowlight_rebuild": {
+      "path": "D:\\weather_builds\\lowlight01\\run.json",
+      "sha256": "1e49f1a0237286e1c80a07ecf5b9f93bc5ea16ab93b6b9f022b6a6be5b89b077",
+      "pass": true
+    },
+    "writer_overlay_audit": {
+      "path": "D:\\weather_builds\\lowlight01\\cnn_writecredit_audit02\\overlay_audit.json",
+      "sha256": "a64135985e1caed53e59d429da92b84fb6eadd09d6a321dc9baa75d888d65968",
+      "pass": true
+    },
+    "system_interface": {
+      "path": "D:\\weather_builds\\system02\\interface_audit.json",
+      "sha256": "7e77e3933774e070d01ef50a2f1979d63e70ca6e2dc95cb430396b0442018bcf",
+      "pass": true
+    },
+    "system_final_interface": {
+      "path": "D:\\weather_builds\\system02\\interface_final_audit.json",
+      "sha256": "44d5720c253a6e3e0f6a123446b81c02f40c3fef031838bf5e35bfe640934756",
+      "pass": true
+    },
+    "system_build": {
+      "path": "D:\\weather_builds\\system02\\build.json",
+      "sha256": "1de0d92aa95507b7529ad9ca2dd090795a4075165754918b64d4002578cb4058",
+      "pass": true
+    }
+  },
+  "writer_overlay": {
+    "pass": true,
+    "base": "D:\\weather_builds\\lowlight01\\cnn\\component\\hls\\impl\\ip",
+    "overlay_manifest_sha256": "0d98d61cd09b4a216f891ae0115919d414dfaa59b662d8c0fff4865ace451c85",
+    "writers": [
+      {
+        "name": "zero_dce_cnn_top_row_axi_writer.v",
+        "frozen": "E:\\HLS\\cnn_v1_2_phase3b_r4\\cnn_component\\hls\\syn\\verilog\\zero_dce_cnn_top_row_axi_writer.v",
+        "frozen_sha256": "16df9195eb8c40234ea42241b8a22f7dfe70767ded33e5c6014c0fed7c35d01e",
+        "candidate_sha256": "4535bf94f686dc5e71f9a55dda9792c03aa8b57d998b902b1e596979dcb08611"
+      },
+      {
+        "name": "zero_dce_cnn_top_row_axi_writer_2.v",
+        "frozen": "E:\\HLS\\cnn_v1_2_phase3b_r4\\cnn_component\\hls\\syn\\verilog\\zero_dce_cnn_top_row_axi_writer_2.v",
+        "frozen_sha256": "d0286ebe5026c4e307aa899a37315c0679f22410350f0cfea70eac818e843862",
+        "candidate_sha256": "5fb901f88917777169a6327bb27eed4e2171df4e2e17d3b3cb435e17fc4ebf0d"
+      },
+      {
+        "name": "zero_dce_cnn_top_p_anonymous_namespace_output_writer.v",
+        "frozen": "E:\\HLS\\cnn_v1_2_phase3b_r4\\cnn_component\\hls\\syn\\verilog\\zero_dce_cnn_top_p_anonymous_namespace_output_writer.v",
+        "frozen_sha256": "9263f63adaae48237883bfeaf98a63946071742fd46108d2968a3366dd3ffe3f",
+        "candidate_sha256": "ed13125479a3892cfbfc2df20f5b4c010c6d2198503231afe7fbfca4ef543dc5"
+      }
+    ],
+    "metadata_requires_checksum_refresh": true,
+    "scope": "exact historical writer RTL restored over matching regenerated writer inputs",
+    "original_payload_compared": 305,
+    "original_payload_equal": 303,
+    "original_payload_differences": [
+      "component.xml",
+      "dfx_runtime.txt"
+    ]
+  },
+  "board_tested": false,
+  "standalone_elf_built": false,
+  "final_artifacts": {
+    "weather_system.bit": {
+      "path": "D:\\weather_builds\\system02\\weather_system.bit",
+      "bytes": 7797826,
+      "sha256": "cf1d7b02828d2e494cf6b5cffc182c4e33b4c1df1f5adfdaa3c72301dfe4100c"
+    },
+    "weather_system.xsa": {
+      "path": "D:\\weather_builds\\system02\\weather_system.xsa",
+      "bytes": 4189362,
+      "sha256": "7a7ead84cb1ddc6aae521d6e808a9fc02da0cfa4d18020a8e98cc4c2b89efade"
+    },
+    "system_routed.dcp": {
+      "path": "D:\\weather_builds\\system02\\system_routed.dcp",
+      "bytes": 65162371,
+      "sha256": "ad6bb5221fb9a5a16369c609adf4e6a21b80cfe19cec50af6202418830cad085"
+    },
+    "routed_timing.rpt": {
+      "path": "D:\\weather_builds\\system02\\routed_timing.rpt",
+      "bytes": 73099,
+      "sha256": "3e6aedd95a91d535d20ef56fb29bfb1190e393ce8e4b3ee32f0193d0022f975e"
+    },
+    "routed_utilization_summary.rpt": {
+      "path": "D:\\weather_builds\\system02\\routed_utilization_summary.rpt",
+      "bytes": 13223,
+      "sha256": "d9ad6023d7c2d8ef6bb32c6ce649a3d28c66f3d375d32f17368d80ca5e983a68"
+    },
+    "route_status.rpt": {
+      "path": "D:\\weather_builds\\system02\\route_status.rpt",
+      "bytes": 651,
+      "sha256": "d2eb23c3f7b90aa911953665ce2827f71cf0c5e27770d99fe6fa5e75080bb87a"
+    },
+    "routed_drc.rpt": {
+      "path": "D:\\weather_builds\\system02\\routed_drc.rpt",
+      "bytes": 205016,
+      "sha256": "ebd343b94b151a3cd261899ca2f85895bde5bd771661f5488b721cbe33da2d47"
+    }
+  },
+  "post_route": {
+    "clock_mhz": 100,
+    "setup_wns_ns": 0.088,
+    "hold_whs_ns": 0.01,
+    "pulse_width_wpws_ns": 3.5,
+    "timing_failing_endpoints": 0,
+    "fully_routed_nets": 128824,
+    "routable_nets": 128824,
+    "routing_errors": 0,
+    "final_interface_checks": 32,
+    "drc_warning_instances": 249,
+    "drc_errors": 0,
+    "drc_critical_warnings": 0
+  }
+}
