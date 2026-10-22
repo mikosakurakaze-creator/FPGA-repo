@@ -105,3 +105,10 @@ work/
 build/
 outputs/
 data/
+
+# User-authorized Vivado hardware handoff, bound to one routed design.
+!board/releases/k26_weather_v2_20261022/weather_system.bit
+!board/releases/k26_weather_v2_20261022/weather_system.xsa
+!board/releases/k26_weather_v2_20261022/weather_system.hwh
+!board/releases/k26_weather_v2_20261022/weather_system.bit.bin
+!board/releases/k26_weather_v2_20261022/drivers/**/data/

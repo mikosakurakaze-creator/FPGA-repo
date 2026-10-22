@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "release": "k26_weather_v2_20261022",
+  "export_date": "2026-10-22",
+  "hardware_source_commit": "c70e98318c7ad31c7bf0dd383c8bc70048fb8dfd",
+  "tool": "Vivado/Bootgen 2025.2",
+  "part": "xck26-sfvc784-2LV-c",
+  "clock_mhz": 100,
+  "method": "Reuse completed implementation bit; reopen routed run, regenerate reports and XSA; Bootgen BIN conversion",
+  "board_tested": false,
+  "elf_built": false,
+  "boot_bin_built": false,
+  "ltx_required": false,
+  "linux_device_tree_built": false,
+  "qualification": {
+    "pass": true,
+    "setup_wns_ns": 1.018,
+    "hold_whs_ns": 0.01,
+    "pulse_width_wpws_ns": 3.5,
+    "check_timing": {
+      "no_clock": "0",
+      "constant_clock": "0",
+      "pulse_width_clock": "0",
+      "unconstrained_internal_endpoints": "0",
+      "no_input_delay": "0",
+      "no_output_delay": "0",
+      "multiple_clock": "0",
+      "generated_clocks": "0",
+      "loops": "0",
+      "partial_input_delay": "0",
+      "partial_output_delay": "0",
+      "latch_loops": "0"
+    },
+    "route": {
+      "routable nets": 169908,
+      "fully routed nets": 169908,
+      "nets with routing errors": 0
+    },
+    "drc": [
+      {
+        "rule": "DPIP-2",
+        "severity": "Warning",
+        "description": "Input pipelining",
+        "count": 393
+      },
+      {
+        "rule": "DPOP-3",
+        "severity": "Warning",
+        "description": "PREG Output pipelining",
+        "count": 189
+      },
+      {
+        "rule": "DPOP-4",
+        "severity": "Warning",
+        "description": "MREG Output pipelining",
+        "count": 231
+      },
+      {
+        "rule": "DPREG-7",
+        "severity": "Warning",
+        "description": "DSP48E2_PregDynOpmodeZmuxP:",
+        "count": 18
+      },
+      {
+        "rule": "RTSTAT-10",
+        "severity": "Warning",
+        "description": "No routable loads",
+        "count": 1
+      }
+    ],
+    "interface_checks": 32
+  },
+  "weather_source_sha256": {
+    "hls/tb_weather_frame.cpp": "8c5e6744540ea59b9e255fafb2fd2c2130e89181feecb18faf45dcae13eec057",
+    "scripts/run_hls.py": "d2d5aa38fa77166e668dbab38d82d766bf92550b931ca2c981d5aac95f69c26f",
+    "scripts/verify_host.py": "3408179df891e59ec080d2fbdf30aae00dc493cc07b82858e2e875831fc0ee0c",
+    "src/params_dehaze.h": "19841d80f598738954d1b8efaa9288c203a14460312ca51e966a017322d0f186",
+    "src/params_derain.h": "d980ec138fe9fed6b08e90465199bb381369472fb652c4ec2b85c597b8e578f6",
+    "src/weather_frame.cpp": "10f97bace42f248062b628252c54631c0c53ad932a0937aa843e152e1a8fa772",
+    "src/weather_frame.h": "12c503d69f90a6b013059f36789ed36f42f765d10fc3db1bcb7595c24c9be598",
+    "src/weather_kernel.h": "a678c4616a189bd8f9d2ccc4dcb4b183be1ca92f98d69eeffef69bb23813a47f",
+    "src/weather_kernel_reference.cpp": "eb48f45cd25e884ff12e1fc8ec0562814595ac62aa29fc289d2e7c254053b349",
+    "tests/test_weather_frame.cpp": "e514cf2efd316d976caa627978c35077abe5c8aa2730b3deb61cff0ff909aa84"
+  },
+  "identity_checks": {
+    "xsa_crc": true,
+    "embedded_bit_matches": true,
+    "hwh_and_drivers_match_xsa": true,
+    "bin_matches_bit_payload": true
+  },
+  "files": {
+    "drivers/bilinear_fixed16_buffered_v1_0/data/bilinear_fixed16_buffered.mdd": {
+      "bytes": 653,
+      "sha256": "28c0d7b90943e4eaeba3244543039472268628f477b3f6cbb0aee1f459a9af2d"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/data/bilinear_fixed16_buffered.tcl": {
+      "bytes": 966,
+      "sha256": "57a8076c710addfda1fa8bc2a0f01e71453e4c59a8a3ab4297a37a47ec1b9a42"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/data/bilinear_fixed16_buffered.yaml": {
+      "bytes": 702,
+      "sha256": "7adbec8095b869cf7ec2ed6b8d14649986f33f8cce832fc6d49b8b8fbabb690e"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/CMakeLists.txt": {
+      "bytes": 1334,
+      "sha256": "9a2105e0e87218c8e29e43326a11d7763e2d8981733d99da7fdba6572095faf5"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/Makefile": {
+      "bytes": 1518,
+      "sha256": "8bd49d995e80a5d9613d31aa27ce051b9af2dbaea240f0e745a5072918a8076a"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/xbilinear_fixed16_buffered.c": {
+      "bytes": 9854,
+      "sha256": "4ccebf71305e99ef40c2f71ca145bb6c0be76c6445b6ca16fcdc0598f80cd47c"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/xbilinear_fixed16_buffered.h": {
+      "bytes": 5207,
+      "sha256": "ece35af25dd7a2f8f70a53fe9b9bad4929b24ed7baa43ea56ae83dd75cf2c479"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/xbilinear_fixed16_buffered_hw.h": {
+      "bytes": 2881,
+      "sha256": "8eee503594c8e381c1fd361e2014ddd9314d158dbb96d0e7aea2ab68ebf065a3"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/xbilinear_fixed16_buffered_linux.c": {
+      "bytes": 5058,
+      "sha256": "3c33963d5a15f9ef8c79c041a8745b93bc66f5a900af7c8c856333799eb4ed63"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/xbilinear_fixed16_buffered_sinit.c": {
+      "bytes": 2434,
+      "sha256": "1ddfb6602607d47fd22ce336c502bd84dfbfea3ab37fa02cb493ed53fa3d6479"
+    },
+    "drivers/curve_image_fixed16_v1_0/data/curve_image_fixed16.mdd": {
+      "bytes": 635,
+      "sha256": "561317d0e44a2c237610582ab50810e6f88b60d9cc17950a753aa5f0de72960f"
+    },
+    "drivers/curve_image_fixed16_v1_0/data/curve_image_fixed16.tcl": {
+      "bytes": 942,
+      "sha256": "6d29e3e1657b98bf5f162aa24beaff4c7d7a51cbf2b555f67573a4a4767d472f"
+    },
+    "drivers/curve_image_fixed16_v1_0/data/curve_image_fixed16.yaml": {
+      "bytes": 684,
+      "sha256": "b386bd49362379757e7e3764f93ffbfc7e9fb14cbd8d663311a990d300016d70"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/CMakeLists.txt": {
+      "bytes": 1280,
+      "sha256": "6c8f2118a2465b5335d609a5628850d5296954490b6ba336de2188b2570cdcb1"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/Makefile": {
+      "bytes": 1512,
+      "sha256": "d9a8021f5dd4c001d97d246f4d181acce5e97b7511275cd7e21142ea9cebc785"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/xcurve_image_fixed16.c": {
+      "bytes": 9390,
+      "sha256": "876f1ca9b7f678acddf754b83a5329c9ad530e033097e4a05098156d4a657b0a"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/xcurve_image_fixed16.h": {
+      "bytes": 4757,
+      "sha256": "751997ca65957a8895a94caa4f0dee1912f03463d0f01a10a07d408f1de7462c"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/xcurve_image_fixed16_hw.h": {
+      "bytes": 2723,
+      "sha256": "8c145a90188f440acd751744ee562d1537e609d3f03d82779c9ca721a409660c"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/xcurve_image_fixed16_linux.c": {
+      "bytes": 4968,
+      "sha256": "d013bc2f4aec8a323d103485f1961611557412680b6184c60f52cd9c283776f9"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/xcurve_image_fixed16_sinit.c": {
+      "bytes": 2284,
+      "sha256": "e93681903ac09e60b7c2a5fb52af065e9fe9159135cc9984ab0325eaae8cd075"
+    },
+    "drivers/weather_frame_top_v1_0/data/weather_frame_top.mdd": {
+      "bytes": 629,
+      "sha256": "f783f2f8cb7bd654c527bb14553aacfee4779064cd61e0a44337f3e038e6d2ad"
+    },
+    "drivers/weather_frame_top_v1_0/data/weather_frame_top.tcl": {
+      "bytes": 919,
+      "sha256": "05319e040d8c872a9368a645fed7844ffc573c88554e504a8bf81ba391c75db7"
+    },
+    "drivers/weather_frame_top_v1_0/data/weather_frame_top.yaml": {
+      "bytes": 678,
+      "sha256": "c3e334d03b25b1295fc9546c34cb3a4f647b2dcc071d13f01e1be770d9153962"
+    },
+    "drivers/weather_frame_top_v1_0/src/CMakeLists.txt": {
+      "bytes": 1262,
+      "sha256": "9c89887cd9feae81d3218097952ee839cf9d7c678240750c3e50e13a956ac33d"
+    },
+    "drivers/weather_frame_top_v1_0/src/Makefile": {
+      "bytes": 1510,
+      "sha256": "810cf81cd6d02d08b576d574aa78e61538417fa745e8132c002d6cadb0f3691b"
+    },
+    "drivers/weather_frame_top_v1_0/src/xweather_frame_top.c": {
+      "bytes": 9688,
+      "sha256": "8ec2d02cf5b7d9af5d33db1c960432baf0b13b14712062ecd3b6d1cb2502b95f"
+    },
+    "drivers/weather_frame_top_v1_0/src/xweather_frame_top.h": {
+      "bytes": 4827,
+      "sha256": "241baa49d2aab0328fd92ed96f08e77a2faf0e8e850b015759da48337997194b"
+    },
+    "drivers/weather_frame_top_v1_0/src/xweather_frame_top_hw.h": {
+      "bytes": 2928,
+      "sha256": "ff09296aca99e0b0701a343725f5a96e3fddcf61c64cb8f6cbff08a4c59a726b"
+    },
+    "drivers/weather_frame_top_v1_0/src/xweather_frame_top_linux.c": {
+      "bytes": 4926,
+      "sha256": "1f5086fd5184947d5da274587a30c0f5becbbc00886782a65827ac94785a0ef7"
+    },
+    "drivers/weather_frame_top_v1_0/src/xweather_frame_top_sinit.c": {
+      "bytes": 2231,
+      "sha256": "a3602724cf6d09b8ba21521960e49e7859939019e337383ce79df59ebc19754c"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/data/zero_dce_cnn_top.mdd": {
+      "bytes": 626,
+      "sha256": "5e5f71ed61f65cb8d507d3dfed1e732f5291417bf0a726fb4e41145cb2206b5e"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/data/zero_dce_cnn_top.tcl": {
+      "bytes": 930,
+      "sha256": "db5c551f7a775eda0668b5c1ae5ef933d66c35bc492940d3210261ad15b2ed39"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/data/zero_dce_cnn_top.yaml": {
+      "bytes": 675,
+      "sha256": "e6c724063aa95b9abbbaa8d775da33d052886c266a0f9845be203e159e9830b9"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/CMakeLists.txt": {
+      "bytes": 1253,
+      "sha256": "76c4e92a024e7660a4269f0c862beefa5b1b94a72b3784cb063b32a853e5c4dd"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/Makefile": {
+      "bytes": 1509,
+      "sha256": "8103bb303d5769fdd5f8b600976e00d504ca4dc2321d0b285936f8813466f7fa"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top.c": {
+      "bytes": 12314,
+      "sha256": "33007609f00db2be4be99fd8a41ccba2826bdfeb963680937ffbbd40da32a33f"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top.h": {
+      "bytes": 5052,
+      "sha256": "661fec8172e59a4bf07037d05d90ab13c1d4e5b6cf434c12013381191618b6c3"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top_hw.h": {
+      "bytes": 3870,
+      "sha256": "3a5b88eea559abf69c213b8456fee35945db0f21acc9d5cd1ad267638a716362"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top_linux.c": {
+      "bytes": 4923,
+      "sha256": "2ce5379ef2b7f6c932c4f19920d65cdec180a9422433ea3b705b10b133d5b2b2"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top_sinit.c": {
+      "bytes": 2209,
+      "sha256": "0b1bb99f58564b1441562173ac778aff24524c8812213afa1129c57052cbce00"
+    },
+    "fpga.bif": {
+      "bytes": 32,
+      "sha256": "4424a9dac30a7da3455123a7884cd9a352d37cd5cc4a1b1f84baa60157b85219"
+    },
+    "ps_init/psu_init.c": {
+      "bytes": 741910,
+      "sha256": "c4c3c0bdc2059446a2029acda3d15675060afb8061422c136b53ba227d4bb01f"
+    },
+    "ps_init/psu_init.h": {
+      "bytes": 1407025,
+      "sha256": "5620cf057b79a05c5f54423c27ee457638483abf3244a49360d433b562bd5106"
+    },
+    "ps_init/psu_init.html": {
+      "bytes": 51766,
+      "sha256": "7077ad5fcd6d753dad455bb1760920904c2d2363a131acf4f52ea73c35455b05"
+    },
+    "ps_init/psu_init.tcl": {
+      "bytes": 719425,
+      "sha256": "218b817b2ccb6e9399a7acedd064bbf46aef94efc6292b7b17c62beb36d34743"
+    },
+    "ps_init/psu_init_gpl.c": {
+      "bytes": 742301,
+      "sha256": "14049098b9aea8c40700bc0479f5dca543e0e0fea4819f7bd4f2472192d17a8d"
+    },
+    "ps_init/psu_init_gpl.h": {
+      "bytes": 1407643,
+      "sha256": "27b1ff4107304570d0f3fde703e3801f16a218d48ceea92cb335a1995d8a74e5"
+    },
+    "README.md": {
+      "bytes": 4082,
+      "sha256": "f3cff212eb20799e53c3923c277f05b4fbdcbcc0fa39fb9e840d450c4e0c2501"
+    },
+    "reports/bootgen_console.txt": {
+      "bytes": 261,
+      "sha256": "479d3c2ac2718b64db5e6606738ab3f58b0662d3ca6715f8568e7dba66476f51"
+    },
+    "reports/build.json": {
+      "bytes": 141180,
+      "sha256": "46ee93921e93d8ba3a9545f6235beaa16653a293bc226668bc81b75e04a8ff1f"
+    },
+    "reports/interface_final_audit.json": {
+      "bytes": 83854,
+      "sha256": "83292558b481614c2a57ee8ae039e3515041462d5721c630d55273460454208c"
+    },
+    "reports/route_status.rpt": {
+      "bytes": 651,
+      "sha256": "120495d45957503a75f80246854b5794de348855c78ae2c00fa50ba06340647b"
+    },
+    "reports/routed_drc.rpt": {
+      "bytes": 627798,
+      "sha256": "38d15d986ee4d8abbc4d3b7e7c87e97ad6ca9e8dc6318919e0b641c65fea8bf4"
+    },
+    "reports/routed_timing.rpt": {
+      "bytes": 73968,
+      "sha256": "ff53a2515171d0cd53074c59934be4e019d85b87748eb8c9b1c14eb6eb4ce8c9"
+    },
+    "reports/routed_utilization_summary.rpt": {
+      "bytes": 13226,
+      "sha256": "54493b0b081b4651f018abfb3cf273faddb85ac9e6158f3b19751c3a41826c56"
+    },
+    "reports/vivado_export_console.txt": {
+      "bytes": 26836,
+      "sha256": "f0a1c24fb57580873dc8fcf7a9604db75096029c8ac1e7b62ddcdef15a733ca7"
+    },
+    "weather_system.bit": {
+      "bytes": 7797826,
+      "sha256": "2ab43415c981ef8a3d8f46a4e211befc61fc98766614eed49bd459fd7148a4c8"
+    },
+    "weather_system.bit.bin": {
+      "bytes": 7797692,
+      "sha256": "0bb998d1765e04afb4d07323811967b23cff75a4e02681f46e712dc1423f17a2"
+    },
+    "weather_system.hwh": {
+      "bytes": 648505,
+      "sha256": "d8954742917e102cd25f831d07eba83026a5f5feebc0b457ccd67e5577675c40"
+    },
+    "weather_system.xsa": {
+      "bytes": 4581234,
+      "sha256": "3fb06674a5443ec184fd4715b818ff00be3b59e59d3e58162f0188013f0d241a"
+    }
+  }
+}

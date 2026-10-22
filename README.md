@@ -2,6 +2,8 @@
 
 当前验证结果和构建文件位置见 [流水版修正报告](docs/stream_revision_20261020.md)，更新日期为 2026-10-21。
 
+上板硬件文件已集中发布到 [K26 硬件目录](board/releases/k26_weather_v2_20261022/README.md)（2026-10-22）：包含匹配的 bit、bit.bin、XSA、HWH、PS 初始化文件、生成驱动和布线后报告。该目录是经用户授权纳入 Git 的硬件输出例外；可从仓库直接获取，尚未进行真板测试。
+
 本目录由 B 侧独立集成工作目录复制而来，已于 2026-10-21 绑定到 `https://github.com/mikosakurakaze-creator/FPGA-repo.git` 的 `weather_fpga_integration` 分支，跟踪 `origin/weather_fpga_integration`。绑定时保留了已有天气项目文件，并补齐远端基线文件；原 `competing/weather_fpga_integration` 仍独立保留。绑定操作没有暂存、提交或推送天气修改。此前报告中的 Git 状态指对应操作当时的状态，当前以 Git 记录为准，详见 [Git 绑定记录](docs/git_binding_20261021.md)。
 
 ## 当前实现
@@ -52,4 +54,4 @@ A 组交付解压目录只读保存在 `C:/Users/wzh16/Desktop/competing/weather
 
 `work/`、`build/`、日志、缓存、数据和运行输出均为本地产物。厂商工具通过 `tools/run_windows_desktop.py` 启动，每次使用新的输出目录；这些产物和数据集不自动上传。
 
-当前副本位于 `C:/Users/wzh16/Desktop/github clone/weather_fpga_integration/`，没有复制历史 `build/` 交付包。历史验证日志中的绝对路径用于记录原执行位置，重新构建应使用新输出路径。`work/` 和硬件构建结果继续由 Git 忽略。
+当前副本位于 `C:/Users/wzh16/Desktop/github clone/weather_fpga_integration/`，没有复制历史 `build/` 交付包。历史验证日志中的绝对路径用于记录原执行位置，重新构建应使用新输出路径。`work/` 和完整硬件工程、缓存继续由 Git 忽略；本次上板发布目录中的指定输出文件已明确放行。

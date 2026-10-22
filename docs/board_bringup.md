@@ -4,6 +4,8 @@
 
 最终候选目录中的 `weather_system.bit` 与 `weather_system.xsa` 必须来自同一份构建；`manifest.json` 给出文件大小和 SHA-256。XSA 内嵌的 bit 还会与外部 bit 逐字节核对。当前流水版的最终状态、时序数值与文件位置见 [修正记录](stream_revision_20261020.md)；`system_integration_20261020.md` 为旧串行版历史。
 
+已提交的硬件文件位于 [2026-10-22 上板目录](../board/releases/k26_weather_v2_20261022/README.md)，下游可直接使用其中 XSA；无需访问本机构建盘。该目录同时提供 bit、FPGA Manager BIN、HWH、PS 初始化文件和生成驱动。
+
 此系统沿用原低照度 PS 配置，增加 Weather Frame 控制口 `0xA0030000`。Weather 输入读 HP0、输出写 HP3，图像为 RGB NCHW signed16 Q14。初次联调串行运行一个模式；低照度参数图路径与天气 RGB 路径各自独立。
 
 ## 1. 准备 PS 软件
@@ -15,13 +17,13 @@
 ```powershell
 & 'D:/Dev/Miniconda3/python.exe' tools/run_windows_desktop.py -- `
   'D:/Dev/Miniconda3/python.exe' tools/run_standalone.py `
-  --xsa 'D:/weather_builds/stream_system01/weather_system.xsa' `
+  --xsa 'board/releases/k26_weather_v2_20261022/weather_system.xsa' `
   --workspace 'D:/weather_builds/stream_ps_workspace01' `
   --output 'D:/weather_builds/stream_ps_build01' `
   --vitis 'D:/vivado/2025.2/Vitis'
 ```
 
-命令以工作目录根目录为例；候选包中的对应工作目录是 `recipe/`，XSA 改为候选包内的实际绝对路径。此构建入口不会连接、复位或编程板卡。
+命令以仓库根目录为工作目录；Python、Vitis、workspace 和 output 路径应按本机安装调整，workspace/output 必须为尚不存在的目录。此构建入口不会连接、复位或编程板卡。
 
 ## 2. 启动条件
 
