@@ -1,8 +1,12 @@
 # 天气图像恢复 FPGA 集成项目
 
+> 2026-10-23：已收到 KV260 的 8×8、task=0 真板不匹配证据（171/192 标量）。`k26_weather_v2_20261022` 保留为可追溯的故障版本，当前暂停作为通过验收的上板版本使用。诊断进展见 [真板不匹配调查](docs/board_mismatch_20261023.md)。原时序和仿真通过记录不代表真板数值正确。
+
+本轮已定位并修正实现阶段的DSP截断/符号扩展变化：[2026-10-23修正候选](board/releases/k26_weather_v2_signedfix_20261023/README.md) 已重新布局布线，实际新routed网表四帧task=0、0、1、0全部逐值通过；100 MHz setup +0.638 ns、hold +0.010 ns。包含原生Vivado导出的新bit/XSA和匹配BIN，仍需真板复测。代码中未经确认的假设、已补的检查与未覆盖边界见 [代码假设自审](docs/implementation_assumptions_audit_20261023.md)。
+
 当前验证结果和构建文件位置见 [流水版修正报告](docs/stream_revision_20261020.md)，更新日期为 2026-10-21。
 
-上板硬件文件已集中发布到 [K26 硬件目录](board/releases/k26_weather_v2_20261022/README.md)（2026-10-22）：包含匹配的 bit、bit.bin、XSA、HWH、PS 初始化文件、生成驱动和布线后报告。该目录是经用户授权纳入 Git 的硬件输出例外；可从仓库直接获取，尚未进行真板测试。
+上板硬件文件已集中发布到 [K26 硬件目录](board/releases/k26_weather_v2_20261022/README.md)（2026-10-22）：包含匹配的 bit、bit.bin、XSA、HWH、PS 初始化文件、生成驱动和布线后报告。该目录是经用户授权纳入 Git 的硬件输出例外；原文件保留以供故障复现。2026-10-23 的板端最小数值测试失败，当前不能把该版本视为已通过上板验收。
 
 本目录由 B 侧独立集成工作目录复制而来，已于 2026-10-21 绑定到 `https://github.com/mikosakurakaze-creator/FPGA-repo.git` 的 `weather_fpga_integration` 分支，跟踪 `origin/weather_fpga_integration`。绑定时保留了已有天气项目文件，并补齐远端基线文件；原 `competing/weather_fpga_integration` 仍独立保留。绑定操作没有暂存、提交或推送天气修改。此前报告中的 Git 状态指对应操作当时的状态，当前以 Git 记录为准，详见 [Git 绑定记录](docs/git_binding_20261021.md)。
 
@@ -31,7 +35,7 @@
 
 更早的 `frame03/system01` 候选已因复现窄行 DDR 写回死锁而取消交付资格，详见 [故障与回归证据](docs/ddr_writeback_deadlock.md)。
 
-尚未进行真板、持续帧率、摄像头或显示测试。100 MHz 时序通过不等于已达到 720p30。A53 standalone 后端和最小测试源码已经提供，但本机只有 HLS/Vivado 环境，缺少 Embedded A53 编译器，因此尚未生成 ELF；Linux DMA 后端也未完成。
+真板 8×8、task=0 数值测试已执行且失败，定位见 [调查记录](docs/board_mismatch_20261023.md)，验证与代码假设审查见 [代码审查](docs/implementation_assumptions_audit_20261023.md)。持续帧率、摄像头和显示尚未验收。100 MHz 时序通过不等于已达到 720p30。A53 standalone 后端和最小测试源码已提供，本机尚未生成 ELF。仓库内 Linux DMA 后端未交付；本次板端驱动由下游提供，已纳入静态审查。
 
 ## 文档导航
 

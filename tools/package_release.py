@@ -9,6 +9,7 @@ from pathlib import Path
 import re
 import shutil
 import zipfile
+from implementation_gate import validate_replay, copy_replay
 
 p=argparse.ArgumentParser(description=__doc__)
 p.add_argument('--build',type=Path,required=True)
@@ -21,6 +22,7 @@ p.add_argument('--delivery',type=Path,required=True,help='read-only manifest-ver
 p.add_argument('--output',type=Path,required=True)
 p.add_argument('--experiment',choices=('onchip_frame','stream_frame'),default='onchip_frame')
 p.add_argument('--report',type=Path,help='current integration Markdown report; defaults to original system report')
+p.add_argument('--implementation-repro',type=Path,required=True,help='passed two-task numerical replay of this exact routed system export')
 a=p.parse_args();b=a.build.resolve();out=a.output.resolve()
 root=Path(__file__).resolve().parents[1]
 sha=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
@@ -32,6 +34,15 @@ for stage in ('create','synth','impl','package'):
         raise RuntimeError('build recipe differs from executed stage: '+stage)
     if sha(b/(stage+'_console.log'))!=build['stages'][stage]['console_sha256']:
         raise RuntimeError('executed build log differs: '+stage)
+    if stage=='impl':
+        for name in ('protect_weather_signed_dsp.tcl','check_weather_signed_dsp.tcl'):
+            expected=build['stages'][stage].get('support_sha256',{}).get(name)
+            if not expected or sha(b/name)!=expected or sha(root/'system'/name)!=expected:
+                raise RuntimeError('implementation protection hook absent/differs: '+name)
+        for name in ('system_routed.dcp','system_routed_funcsim.v'):
+            if sha(b/name)!=build['stages'][stage].get('output_sha256',{}).get(name):
+                raise RuntimeError('implementation output identity differs: '+name)
+implementation=validate_replay(a.implementation_repro,sha(b/'system_routed_funcsim.v'))
 for rel,expected in build['input_files'].items():
     if sha(b/rel)!=expected:raise RuntimeError('frozen system input differs: '+rel)
 for path in (a.hls/'run.json',a.sequence/'run.json',a.vendor_sequence/'run.json',
@@ -148,6 +159,7 @@ shutil.copytree(b/'ip',out/'ip_repo')
 shutil.copy2(a.hls/'run.json',out/'hls_run.json')
 shutil.copy2(a.sequence/'run.json',out/'sequence_run.json')
 verification=out/'verification';verification.mkdir()
+copy_replay(a.implementation_repro,verification/'implementation_repro')
 system_evidence=verification/'system';system_evidence.mkdir()
 for stage in ('create','synth','impl','package'):
     shutil.copy2(b/(stage+'_console.log'),system_evidence/(stage+'_console.log'))

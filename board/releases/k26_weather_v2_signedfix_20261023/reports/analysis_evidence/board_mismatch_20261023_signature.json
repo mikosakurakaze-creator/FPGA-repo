@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "classification": "COUNTERFACTUAL_SIGNATURE_NOT_CONFIRMED_ROOT_CAUSE",
+  "scope": "exact task0 8x8 fixture; exported-RTL stage5 packets; unchanged task0 integer tail",
+  "limitation": "mask is derived from final mismatch locations; no internal board observation; other fault mechanisms are possible",
+  "fixture_sha256": {
+    "input_q14_nchw_8x8.bin": "3bf4260d11a4d9d8ec7c00167a323d9793a7f74fb8e7a11c8dfc7f7822bc62f6",
+    "expected_q14_nchw_8x8.bin": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+    "weather_smoke_frame_0_q14.bin": "ca1af1cfe6eb7f46ac43abb94327ba59702dc97f911c365a05f7daa539686597"
+  },
+  "trace_sha256": "ca43a130f8fc1bd076d2e17f1a2d02be01d90bfe899abae7a28631e38e21e307",
+  "params_sha256": "d980ec138fe9fed6b08e90465199bb381369472fb652c4ec2b85c597b8e578f6",
+  "tool_sha256": "880f52b9f70b864ef1b47b66cfb9c74a1d6261eb0451525715ec35d7d79c979e",
+  "tail_weights": [
+    -38,
+    0,
+    -25,
+    6,
+    -43,
+    -25,
+    -96,
+    -4,
+    -39,
+    0,
+    -25,
+    6,
+    -43,
+    -28,
+    -90,
+    -5,
+    -39,
+    0,
+    -24,
+    5,
+    -42,
+    -33,
+    -83,
+    -6
+  ],
+  "tail_biases": [
+    -6057,
+    -4494,
+    -2690
+  ],
+  "frames": [
+    {
+      "frame": 0,
+      "unmodified_golden_mismatch": 0,
+      "unmodified_board_mismatch": 171,
+      "affected_pixels": 57,
+      "candidate_saturation_value": 32767,
+      "counterfactual_results": [
+        {
+          "feature_zero_based": 0,
+          "board_mismatch": 171,
+          "predicted_sha256": "3ab0271d8f28a4c171b9b500b11d9d7941173a233bf342129765e1428f867c65"
+        },
+        {
+          "feature_zero_based": 1,
+          "board_mismatch": 171,
+          "predicted_sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697"
+        },
+        {
+          "feature_zero_based": 2,
+          "board_mismatch": 0,
+          "predicted_sha256": "ca1af1cfe6eb7f46ac43abb94327ba59702dc97f911c365a05f7daa539686597"
+        },
+        {
+          "feature_zero_based": 3,
+          "board_mismatch": 171,
+          "predicted_sha256": "00e926ec3efd6f24e1dc874f9cd28b72e6859743c0fd98306e519864e668f4a0"
+        },
+        {
+          "feature_zero_based": 4,
+          "board_mismatch": 171,
+          "predicted_sha256": "4a6fdb9980b39e2eb1736ff6d10cd4348e428b51dafd6775d79a301ddd144cb7"
+        },
+        {
+          "feature_zero_based": 5,
+          "board_mismatch": 168,
+          "predicted_sha256": "8155ce4e59a343bffc0dbaca1804c591e503fa194212f53e0db0a8a06561c1d8"
+        },
+        {
+          "feature_zero_based": 6,
+          "board_mismatch": 171,
+          "predicted_sha256": "4a6fdb9980b39e2eb1736ff6d10cd4348e428b51dafd6775d79a301ddd144cb7"
+        },
+        {
+          "feature_zero_based": 7,
+          "board_mismatch": 171,
+          "predicted_sha256": "b658442023f53e8585da80105df435d9015b4cea1a1d2f86719abd32efa3f796"
+        }
+      ],
+      "affected_pixel_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "feature2_original_range_at_affected_pixels": [
+        0,
+        1679
+      ]
+    },
+    {
+      "frame": 1,
+      "unmodified_golden_mismatch": 0,
+      "unmodified_board_mismatch": 171,
+      "affected_pixels": 57,
+      "candidate_saturation_value": 32767,
+      "counterfactual_results": [
+        {
+          "feature_zero_based": 0,
+          "board_mismatch": 171,
+          "predicted_sha256": "3ab0271d8f28a4c171b9b500b11d9d7941173a233bf342129765e1428f867c65"
+        },
+        {
+          "feature_zero_based": 1,
+          "board_mismatch": 171,
+          "predicted_sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697"
+        },
+        {
+          "feature_zero_based": 2,
+          "board_mismatch": 0,
+          "predicted_sha256": "ca1af1cfe6eb7f46ac43abb94327ba59702dc97f911c365a05f7daa539686597"
+        },
+        {
+          "feature_zero_based": 3,
+          "board_mismatch": 171,
+          "predicted_sha256": "00e926ec3efd6f24e1dc874f9cd28b72e6859743c0fd98306e519864e668f4a0"
+        },
+        {
+          "feature_zero_based": 4,
+          "board_mismatch": 171,
+          "predicted_sha256": "4a6fdb9980b39e2eb1736ff6d10cd4348e428b51dafd6775d79a301ddd144cb7"
+        },
+        {
+          "feature_zero_based": 5,
+          "board_mismatch": 168,
+          "predicted_sha256": "8155ce4e59a343bffc0dbaca1804c591e503fa194212f53e0db0a8a06561c1d8"
+        },
+        {
+          "feature_zero_based": 6,
+          "board_mismatch": 171,
+          "predicted_sha256": "4a6fdb9980b39e2eb1736ff6d10cd4348e428b51dafd6775d79a301ddd144cb7"
+        },
+        {
+          "feature_zero_based": 7,
+          "board_mismatch": 171,
+          "predicted_sha256": "b658442023f53e8585da80105df435d9015b4cea1a1d2f86719abd32efa3f796"
+        }
+      ],
+      "affected_pixel_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "feature2_original_range_at_affected_pixels": [
+        0,
+        1679
+      ]
+    }
+  ]
+}

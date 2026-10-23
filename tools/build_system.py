@@ -64,6 +64,12 @@ def main():
     cmd = out / ('run_' + a.stage + '.cmd')
     script = out / (a.stage + '.tcl')
     shutil.copy2(source, script)
+    support_hashes = {}
+    if a.stage == 'impl':
+        for name in ('protect_weather_signed_dsp.tcl', 'check_weather_signed_dsp.tcl'):
+            dependency = source.parent / name
+            shutil.copy2(dependency, out / name)
+            support_hashes[name] = sha(out / name)
     cmd.write_text('@echo off\nsetlocal\nset "PROCESSOR_ARCHITECTURE=AMD64"\n'
         'call "' + str(a.vivado / 'settings64.bat') + '"\n'
         'call "' + str(a.vivado / 'bin/vivado.bat') + '" -mode batch -notrace -source "'
@@ -85,7 +91,11 @@ def main():
                                            'after_sha256': current}
         manifest['input_files'][rel] = current
     manifest['stages'][a.stage] = {'pass': passed, 'exit_code': result.returncode,
-        'script_sha256': sha(script), 'console_sha256': sha(out / (a.stage + '_console.log'))}
+        'script_sha256': sha(script), 'support_sha256': support_hashes,
+        'console_sha256': sha(out / (a.stage + '_console.log'))}
+    if a.stage == 'impl' and passed:
+        manifest['stages'][a.stage]['output_sha256'] = {
+            name: sha(out / name) for name in ('system_routed.dcp', 'system_routed_funcsim.v')}
     (out / 'build.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
     return 0 if passed else 1
 

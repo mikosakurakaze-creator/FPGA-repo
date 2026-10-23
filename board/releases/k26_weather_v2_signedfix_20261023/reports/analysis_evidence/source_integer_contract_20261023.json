@@ -1,0 +1,358 @@
+{
+  "pass": true,
+  "scope": "Frozen source INT8 weights, full signed INT16 node range and INT32 arithmetic bounds only; not optimized hardware equivalence",
+  "models": {
+    "derain": {
+      "header_sha256": "d980ec138fe9fed6b08e90465199bb381369472fb652c4ec2b85c597b8e578f6",
+      "layers": [
+        {
+          "layer": 0,
+          "int32_absolute_mac_bound": 48004779,
+          "right_shifts": [
+            11,
+            10,
+            10,
+            10,
+            11,
+            10,
+            10,
+            9
+          ]
+        },
+        {
+          "layer": 1,
+          "int32_absolute_mac_bound": 22405477,
+          "right_shifts": [
+            8,
+            7,
+            9,
+            8,
+            8,
+            8,
+            7,
+            7
+          ]
+        },
+        {
+          "layer": 2,
+          "int32_absolute_mac_bound": 14074852,
+          "right_shifts": [
+            6,
+            5,
+            6,
+            6,
+            7,
+            6,
+            6,
+            6
+          ]
+        },
+        {
+          "layer": 3,
+          "int32_absolute_mac_bound": 17807666,
+          "right_shifts": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            7,
+            7,
+            8
+          ]
+        },
+        {
+          "layer": 4,
+          "int32_absolute_mac_bound": 17891744,
+          "right_shifts": [
+            8,
+            8,
+            7,
+            7,
+            8,
+            7,
+            8,
+            7
+          ]
+        },
+        {
+          "layer": 5,
+          "int32_absolute_mac_bound": 19306245,
+          "right_shifts": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            7,
+            8
+          ]
+        },
+        {
+          "layer": 6,
+          "int32_absolute_mac_bound": 17424569,
+          "right_shifts": [
+            7,
+            6,
+            7,
+            6,
+            7,
+            6,
+            6,
+            6
+          ]
+        },
+        {
+          "layer": 7,
+          "int32_absolute_mac_bound": 18538654,
+          "right_shifts": [
+            8,
+            8,
+            9,
+            8,
+            9,
+            9,
+            8,
+            8
+          ]
+        },
+        {
+          "layer": 8,
+          "int32_absolute_mac_bound": 14505349,
+          "right_shifts": [
+            6,
+            6,
+            7,
+            6,
+            6,
+            6,
+            7,
+            5
+          ]
+        },
+        {
+          "layer": 9,
+          "int32_absolute_mac_bound": 20914832,
+          "right_shifts": [
+            9,
+            8,
+            8,
+            9,
+            8,
+            9,
+            9,
+            9
+          ]
+        },
+        {
+          "layer": 10,
+          "int32_absolute_mac_bound": 12714018,
+          "right_shifts": [
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            6,
+            7
+          ]
+        },
+        {
+          "layer": 11,
+          "int32_absolute_mac_bound": 7772073,
+          "right_shifts": [
+            7,
+            7,
+            7
+          ]
+        }
+      ],
+      "residual_absolute_bounds": [
+        65536,
+        65536,
+        65536,
+        65536,
+        65536
+      ],
+      "tail_absolute_bound": 65536
+    },
+    "dehaze": {
+      "header_sha256": "19841d80f598738954d1b8efaa9288c203a14460312ca51e966a017322d0f186",
+      "layers": [
+        {
+          "layer": 0,
+          "int32_absolute_mac_bound": 48034234,
+          "right_shifts": [
+            10,
+            10,
+            10,
+            11,
+            11,
+            10,
+            11,
+            11
+          ]
+        },
+        {
+          "layer": 1,
+          "int32_absolute_mac_bound": 21957976,
+          "right_shifts": [
+            6,
+            6,
+            7,
+            6,
+            6,
+            6,
+            6,
+            6
+          ]
+        },
+        {
+          "layer": 2,
+          "int32_absolute_mac_bound": 15721675,
+          "right_shifts": [
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7
+          ]
+        },
+        {
+          "layer": 3,
+          "int32_absolute_mac_bound": 14622614,
+          "right_shifts": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            7,
+            8,
+            8
+          ]
+        },
+        {
+          "layer": 4,
+          "int32_absolute_mac_bound": 16420814,
+          "right_shifts": [
+            7,
+            7,
+            6,
+            6,
+            6,
+            7,
+            7,
+            6
+          ]
+        },
+        {
+          "layer": 5,
+          "int32_absolute_mac_bound": 19010556,
+          "right_shifts": [
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "layer": 6,
+          "int32_absolute_mac_bound": 15087046,
+          "right_shifts": [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ]
+        },
+        {
+          "layer": 7,
+          "int32_absolute_mac_bound": 16647191,
+          "right_shifts": [
+            8,
+            9,
+            9,
+            9,
+            9,
+            8,
+            9,
+            9
+          ]
+        },
+        {
+          "layer": 8,
+          "int32_absolute_mac_bound": 16195214,
+          "right_shifts": [
+            5,
+            5,
+            5,
+            4,
+            5,
+            5,
+            5,
+            5
+          ]
+        },
+        {
+          "layer": 9,
+          "int32_absolute_mac_bound": 19648677,
+          "right_shifts": [
+            7,
+            7,
+            8,
+            8,
+            8,
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "layer": 10,
+          "int32_absolute_mac_bound": 15719958,
+          "right_shifts": [
+            7,
+            5,
+            5,
+            6,
+            5,
+            6,
+            5,
+            6
+          ]
+        },
+        {
+          "layer": 11,
+          "int32_absolute_mac_bound": 13621442,
+          "right_shifts": [
+            8,
+            7,
+            7
+          ]
+        }
+      ],
+      "residual_absolute_bounds": [
+        98304,
+        65536,
+        65536,
+        65536,
+        65536
+      ],
+      "tail_absolute_bound": 65536
+    }
+  }
+}

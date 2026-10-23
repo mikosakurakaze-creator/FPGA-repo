@@ -1,0 +1,48 @@
+## weather_fpga_integration...origin/weather_fpga_integration
+ M .gitattributes
+ M .gitignore
+ M README.md
+ M deployment/standalone/main.c
+ M docs/weather_frame_v2_contract.md
+ M system/impl.tcl
+ M tools/board_artifacts.py
+ M tools/build_system.py
+ M tools/package_release.py
+?? board/releases/k26_weather_v2_signedfix_20261023/
+?? docs/board_mismatch_20261023.md
+?? docs/change_review_20261023.md
+?? docs/implementation_assumptions_audit_20261023.md
+?? evidence/board_mismatch_20261023_signature.json
+?? evidence/dsp_cascade_causality_20261023.json
+?? evidence/physical_stage_comparison_20261023.json
+?? evidence/routed_dsp_opmode_20261023.json
+?? evidence/signedfix_release_gate_20261023.json
+?? evidence/signedfix_routed_dsp_opmode_20261023.json
+?? evidence/source_integer_contract_20261023.json
+?? system/check_weather_signed_dsp.tcl
+?? system/export_checkpoint_platform.tcl
+?? system/export_corrected_checkpoint.tcl
+?? system/export_diagnostic_netlist.tcl
+?? system/export_diagnostic_system.tcl
+?? system/export_linked_synthesis.tcl
+?? system/implement_protected_checkpoint.tcl
+?? system/inspect_diagnostic_boundary.tcl
+?? system/inspect_diagnostic_constants.tcl
+?? system/optimize_protected_checkpoint.tcl
+?? system/protect_weather_signed_dsp.tcl
+?? system/trace_physical_dsp_cascade.tcl
+?? system/trace_physical_quantization.tcl
+?? system/trace_physical_saturation.tcl
+?? system/trace_physical_stages.tcl
+?? system/validate_signed_checkpoint.tcl
+?? tools/analyze_board_signature.py
+?? tools/analyze_physical_stages.py
+?? tools/audit_integer_contract.py
+?? tools/audit_routed_dsp.py
+?? tools/collect_signedfix_release.py
+?? tools/diagnostic_boundary.py
+?? tools/implementation_gate.py
+?? tools/physical_system_repro.py
+?? tools/restore_diagnostic_dsp.py
+?? tools/run_board_repro.py
+?? tools/stage_native_board.py

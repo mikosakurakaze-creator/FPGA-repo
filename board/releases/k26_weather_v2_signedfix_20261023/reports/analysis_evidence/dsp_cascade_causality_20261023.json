@@ -1,0 +1,80 @@
+{
+  "scope": "exact supplied 8x8 task0; two calls; original physical parent retained; independent PS substitute; no SDF; diagnostic netlist restoration only",
+  "experiment_files": {
+    "original_physical_run": {
+      "path": "D:\\weather_builds\\board_diag_20261023_physical_path04\\run.json",
+      "sha256": "3bb60fe1c3e5111d6d0188e535768aa54a6bdda6ef5a8549c55be6e478cf49a5",
+      "result": {
+        "kind": "post_route_functional",
+        "completed": true,
+        "pass": false,
+        "frames": [
+          {
+            "seq": 0,
+            "sha256": "ca1af1cfe6eb7f46ac43abb94327ba59702dc97f911c365a05f7daa539686597",
+            "golden_mismatch": 171,
+            "board_mismatch": 0
+          },
+          {
+            "seq": 1,
+            "sha256": "ca1af1cfe6eb7f46ac43abb94327ba59702dc97f911c365a05f7daa539686597",
+            "golden_mismatch": 171,
+            "board_mismatch": 0
+          }
+        ],
+        "netlist_sha256": "31c06cd82a13d7624eacc6ee3c4e9ef51d3669a390e54376fbe63328414f3c85",
+        "testbench_sha256": "d80cdb2993e645f1cab2cc11367ca586db966ca03eeb8efa98940f070bc2ce33"
+      }
+    },
+    "single_receiver_restore_run": {
+      "path": "D:\\weather_builds\\board_diag_20261023_c_restore_repro01\\run.json",
+      "sha256": "bc66d558f4206468f978b3d91d131833a8391eedfd5104090c7e4bb890f05ce1",
+      "result": {
+        "kind": "diagnostic_modified_functional",
+        "completed": true,
+        "pass": true,
+        "frames": [
+          {
+            "seq": 0,
+            "sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+            "golden_mismatch": 0,
+            "board_mismatch": 171
+          },
+          {
+            "seq": 1,
+            "sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+            "golden_mismatch": 0,
+            "board_mismatch": 171
+          }
+        ],
+        "netlist_sha256": "962a5598bccabb6c96d9e33437e8e6bcbb4f1c9bd3e7037d4548c91085b174ea",
+        "testbench_sha256": "d80cdb2993e645f1cab2cc11367ca586db966ca03eeb8efa98940f070bc2ce33"
+      }
+    },
+    "single_receiver_patch": {
+      "path": "D:\\weather_builds\\board_diag_20261023_c_restore01\\system_c_restore_funcsim.patch.json",
+      "sha256": "64f7232110e0687b503478e08f3ef1ed5969f99dfc4866575db13d82d570d8c7",
+      "result": {
+        "kind": "diagnostic_modified_functional",
+        "changed_ports": {
+          "C": {
+            "before": "{1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}",
+            "after": "{{26{DSP_ALU_INST[21]}},DSP_ALU_INST}"
+          },
+          "PCIN": {
+            "before": "{select_ln95_34_reg_11605_reg_n_84_repN_25,select_ln95_34_reg_11605_reg_n_84_repN_24,select_ln95_34_reg_11605_reg_n_84_repN_23,select_ln95_34_reg_11605_reg_n_84_repN_22,select_ln95_34_reg_11605_reg_n_84_repN_21,select_ln95_34_reg_11605_reg_n_84_repN_20,select_ln95_34_reg_11605_reg_n_84_repN_19,select_ln95_34_reg_11605_reg_n_84_repN_18,select_ln95_34_reg_11605_reg_n_84_repN_17,select_ln95_34_reg_11605_reg_n_84_repN_16,select_ln95_34_reg_11605_reg_n_84_repN_15,select_ln95_34_reg_11605_reg_n_84_repN_14,select_ln95_34_reg_11605_reg_n_84_repN_13,select_ln95_34_reg_11605_reg_n_84_repN_12,select_ln95_34_reg_11605_reg_n_84_repN_11,select_ln95_34_reg_11605_reg_n_84_repN_10,select_ln95_34_reg_11605_reg_n_84_repN_9,select_ln95_34_reg_11605_reg_n_84_repN_8,select_ln95_34_reg_11605_reg_n_84_repN_7,select_ln95_34_reg_11605_reg_n_84_repN_6,select_ln95_34_reg_11605_reg_n_84_repN_5,select_ln95_34_reg_11605_reg_n_84_repN_4,select_ln95_34_reg_11605_reg_n_84_repN_3,select_ln95_34_reg_11605_reg_n_84_repN_2,select_ln95_34_reg_11605_reg_n_84_repN_1,select_ln95_34_reg_11605_reg_n_84_repN,DSP_ALU_INST}",
+            "after": "48'b0"
+          },
+          "OPMODE": {
+            "before": "{1'b0,1'b0,1'b0,1'b0,1'b1,1'b0,1'b1,1'b0,1'b1}",
+            "after": "9'b000110101"
+          }
+        },
+        "module": "system_weather_frame_top_0_0_weather_frame_top_mac_muladd_15ns_7s_22s_23_4_1_DSP48_0_84",
+        "source_sha256": "587cdf289bfbd886a20857f0d30e70a3da15303837414d020345e9841035cbb8",
+        "output_sha256": "1d9efaab782dec6d541f05098d7640b3b17ed4fb41e6abaf88be88eb5baee4f6"
+      }
+    }
+  },
+  "finding": "Original physical export exactly reproduces board; restoring only receiver C/PCIN/OPMODE to synthesized signed-truncation semantics restores Golden for both calls. Actual corrected checkpoint and board retest still required."
+}

@@ -8,6 +8,8 @@ import re
 import shutil
 import subprocess
 import zipfile
+from datetime import date
+from implementation_gate import validate_replay, copy_replay
 
 
 def sha(path):
@@ -39,7 +41,7 @@ def check_identity(folder):
         if archive.testzip() is not None:
             raise RuntimeError('XSA CRC failure')
         bits = [name for name in archive.namelist() if name.endswith('.bit')]
-        if bits != ['weather_system.bit'] or archive.read(bits[0]) != bit:
+        if len(bits) != 1 or archive.read(bits[0]) != bit:
             raise RuntimeError('External bit and XSA embedded bit differ')
         if archive.read('system.hwh') != (folder / 'weather_system.hwh').read_bytes():
             raise RuntimeError('External HWH and XSA HWH differ')
@@ -120,6 +122,13 @@ def collect(args):
         raise RuntimeError('Export differs from implemented bit')
     if 'WEATHER_BOARD_EXPORT_PASS' not in args.vivado_log.read_text(errors='replace'):
         raise RuntimeError('Vivado export completion marker absent')
+    numerical = validate_replay(args.implementation_repro, sha(build / 'system_routed_funcsim.v'))
+    for name in ('system_routed.dcp', 'system_routed_funcsim.v'):
+        if sha(build / name) != record['stages']['impl'].get('output_sha256', {}).get(name):
+            raise RuntimeError('Routed replay is not the recorded implementation output: ' + name)
+    for name in ('protect_weather_signed_dsp.tcl', 'check_weather_signed_dsp.tcl'):
+        if sha(build / name) != record['stages']['impl'].get('support_sha256', {}).get(name):
+            raise RuntimeError('Recorded DSP protection hook absent/differs: ' + name)
     qualification = qualify(export)
     for name in ('weather_system.bit', 'weather_system.bit.bin', 'weather_system.xsa', 'fpga.bif'):
         shutil.copy2(export / name, out / name)
@@ -131,6 +140,7 @@ def collect(args):
     shutil.copy2(build / 'build.json', reports / 'build.json')
     shutil.copy2(args.vivado_log, reports / 'vivado_export_console.txt')
     shutil.copy2(export / 'bootgen_console.txt', reports / 'bootgen_console.txt')
+    copy_replay(args.implementation_repro, reports / 'implementation_repro')
     with zipfile.ZipFile(out / 'weather_system.xsa') as archive:
         for name in archive.namelist():
             if name.endswith('/'):
@@ -153,13 +163,14 @@ def collect(args):
     for rel, expected in hls['source_sha256'].items():
         if sha(root / 'experiments/stream_frame' / rel) != expected:
             raise RuntimeError('Current weather source differs from HLS input: ' + rel)
-    manifest = {'schema_version': 1, 'release': out.name, 'export_date': '2026-10-22',
+    manifest = {'schema_version': 2, 'release': out.name, 'export_date': date.today().isoformat(),
                 'hardware_source_commit': commit, 'tool': 'Vivado/Bootgen 2025.2',
                 'part': 'xck26-sfvc784-2LV-c', 'clock_mhz': 100,
                 'method': 'Reuse completed implementation bit; reopen routed run, regenerate reports and XSA; Bootgen BIN conversion',
                 'board_tested': False, 'elf_built': False, 'boot_bin_built': False,
                 'ltx_required': False, 'linux_device_tree_built': False,
-                'qualification': qualification, 'weather_source_sha256': hls['source_sha256'],
+                'qualification': qualification, 'implementation_numerical': numerical,
+                'weather_source_sha256': hls['source_sha256'],
                 'identity_checks': {'xsa_crc': True, 'embedded_bit_matches': True,
                                     'hwh_and_drivers_match_xsa': True, 'bin_matches_bit_payload': True},
                 'files': file_records(out)}
@@ -182,6 +193,10 @@ def verify(folder):
         raise RuntimeError('SHA256SUMS mismatch')
     if qualify(folder / 'reports') != manifest['qualification']:
         raise RuntimeError('Manifest/report qualification mismatch')
+    if manifest.get('schema_version', 1) >= 2:
+        numerical = manifest['implementation_numerical']
+        if validate_replay(folder / 'reports/implementation_repro/run.json', numerical['full_system_netlist_sha256']) != numerical:
+            raise RuntimeError('Manifest/routed numerical replay mismatch')
     check_identity(folder)
     print(f"WEATHER_BOARD_RELEASE_PASS files={len(manifest['files'])} part={manifest['part']}")
 
@@ -194,6 +209,7 @@ if __name__ == '__main__':
     gather.add_argument('--export', type=Path, required=True)
     gather.add_argument('--vivado-log', type=Path, required=True)
     gather.add_argument('--release', type=Path, required=True)
+    gather.add_argument('--implementation-repro', type=Path, required=True)
     check = sub.add_parser('verify')
     check.add_argument('--release', type=Path, required=True)
     args = parser.parse_args()

@@ -1,0 +1,78 @@
+{
+  "pass": true,
+  "scope": "release-gate negative tests on private copies; no simulation or board execution",
+  "positive": {
+    "pass": true,
+    "report_sha256": "29c779c2335cc42abc0eb90e3de3500e81f2eebb9a1321c3d0cce37984edd988",
+    "full_system_netlist_sha256": "a17d8a86a49d9639485f139fe85373adc4ef2fe42805d30b8c45e5288ae9baf5",
+    "frames": [
+      {
+        "seq": 0,
+        "sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+        "golden_mismatch": 0,
+        "task": 0,
+        "board_mismatch": 171
+      },
+      {
+        "seq": 1,
+        "sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+        "golden_mismatch": 0,
+        "task": 0,
+        "board_mismatch": 171
+      },
+      {
+        "seq": 2,
+        "sha256": "174dc275ba8a7a84b3fe85e129255be096d88d83d5f6f56c690d0e7444dd25b7",
+        "golden_mismatch": 0,
+        "task": 1,
+        "board_comparison": "no_task1_board_capture_available"
+      },
+      {
+        "seq": 3,
+        "sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+        "golden_mismatch": 0,
+        "task": 0,
+        "board_mismatch": 171
+      }
+    ],
+    "cycles": [
+      2401,
+      2376,
+      2376,
+      2376
+    ],
+    "scope": "post_route_functional weather/control/reset and HP0/HP3 parent wiring; PS hard block replaced by independent memory/control stimulus; other PL masters idle; no SDF"
+  },
+  "negative_checks": [
+    {
+      "case": "wrong_netlist",
+      "rejected": true,
+      "reason": "Exact routed-system four-frame numerical replay absent/failed"
+    },
+    {
+      "case": "wrong_golden",
+      "rejected": true,
+      "reason": "Replay output/Golden bytes disagree: 0"
+    },
+    {
+      "case": "truncated_actual",
+      "rejected": true,
+      "reason": "Replay output/Golden bytes disagree: 0"
+    },
+    {
+      "case": "changed_input",
+      "rejected": true,
+      "reason": "Task0 replay differs from immutable fixture"
+    },
+    {
+      "case": "missing_source",
+      "rejected": true,
+      "reason": "[Errno 2] No such file or directory: 'D:\\\\weather_builds\\\\board_diag_20261023_release_gate_negative01\\\\missing_source\\\\executed_sources\\\\run_board_repro.py'"
+    },
+    {
+      "case": "changed_task",
+      "rejected": true,
+      "reason": "Exact routed-system four-frame numerical replay absent/failed"
+    }
+  ]
+}

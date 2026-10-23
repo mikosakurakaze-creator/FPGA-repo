@@ -1,6 +1,11 @@
 set root [file normalize [lindex $argv 0]]
 open_project [file join $root project weather_system.xpr]
 set_param general.maxThreads 2
+foreach support {protect_weather_signed_dsp.tcl check_weather_signed_dsp.tcl} {
+    if {![file isfile [file join $root $support]]} {error "Missing implementation hook: $support"}
+}
+set_property STEPS.OPT_DESIGN.TCL.PRE [file join $root protect_weather_signed_dsp.tcl] [get_runs impl_1]
+set_property STEPS.OPT_DESIGN.TCL.POST [file join $root check_weather_signed_dsp.tcl] [get_runs impl_1]
 launch_runs impl_1 -to_step route_design -jobs 1
 wait_on_run impl_1
 if {[get_property PROGRESS [get_runs impl_1]] ne {100%}} {error {Implementation failed}}
@@ -11,6 +16,7 @@ report_timing_summary -delay_type min_max -report_unconstrained -check_timing_ve
 report_route_status -file [file join $root route_status.rpt]
 report_drc -file [file join $root routed_drc.rpt]
 write_checkpoint -force [file join $root system_routed.dcp]
+write_verilog -force -mode funcsim [file join $root system_routed_funcsim.v]
 set setup [get_timing_paths -delay_type max -max_paths 1]
 set hold [get_timing_paths -delay_type min -max_paths 1]
 if {[llength $setup] == 0 || [llength $hold] == 0} {error {Timing paths absent}}

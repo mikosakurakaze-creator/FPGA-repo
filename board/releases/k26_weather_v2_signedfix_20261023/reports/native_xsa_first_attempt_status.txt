@@ -1,0 +1,4 @@
+native_export_pass=0
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-165] Too many positional options when parsing 'clone/weather_fpga_integration/.Xil/Vivado-17748-LAPTOP-FAFSANP3/xsa/weather_system.bit', please type 'write_bitstream -help' for usage info.
+
+

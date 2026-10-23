@@ -1,0 +1,403 @@
+{
+  "scope": "observed first-frame actual routed FIFO inputs; no SDF/real PS DDR",
+  "physical_frame_results": [
+    {
+      "seq": 0,
+      "sha256": "ca1af1cfe6eb7f46ac43abb94327ba59702dc97f911c365a05f7daa539686597",
+      "golden_mismatch": 171,
+      "board_mismatch": 0
+    },
+    {
+      "seq": 1,
+      "sha256": "ca1af1cfe6eb7f46ac43abb94327ba59702dc97f911c365a05f7daa539686597",
+      "golden_mismatch": 171,
+      "board_mismatch": 0
+    }
+  ],
+  "origin": {
+    "snapshot_origin": "D:\\weather_builds\\board_diag_20261023_physical_path04",
+    "snapshot_no_reelaboration": true,
+    "origin_netlist_sha256": "31c06cd82a13d7624eacc6ee3c4e9ef51d3669a390e54376fbe63328414f3c85",
+    "origin_testbench_sha256": "d80cdb2993e645f1cab2cc11367ca586db966ca03eeb8efa98940f070bc2ce33"
+  },
+  "sha256": {
+    "physical_run": "3bb60fe1c3e5111d6d0188e535768aa54a6bdda6ef5a8549c55be6e478cf49a5",
+    "origin": "4584d161158b6a879fc8ba442b4971675bc351d09bf33e372685bc5cb634ba37",
+    "physical_stage_0": "203282786ceedc0da115e7ded7262de0e8beee1e858020802d1ab08dc59da728",
+    "rtl_stage_0": "1e58aca46db861db5830f850a54b8bc727db282b54fc2ea1069d7cd1e0cfb6a3",
+    "physical_stage_1": "2b50bfa5604b635da1cfc1c6aa210f174dd7ab950f7db2dec15ca388669ce5e2",
+    "rtl_stage_1": "cffedae9104c1e438a22bd0614a3fc2829d1ba63ccaefa92e9de8744c3de9c23",
+    "physical_stage_2": "b5e32f9941a402ee32a4544046665cf9f3ad84ca713a7f74efc13500ce7b8096",
+    "rtl_stage_2": "03ae152ad03f3dd703e155f20915756017da3465b67b8bd83775a496d2a4f738",
+    "physical_stage_3": "bc8e6181a3bf6c60a59ea83a171bf89de1440b3a1b255702dd5be6b69c6bb740",
+    "rtl_stage_3": "bde8b100b15c0f247f26cfc399c3d0784ae9435dd0ca1c6598ae4ae2dbe05ad7",
+    "physical_stage_4": "394fb9272fab6bd931d165938dc93758dd264bcb4a66b7823d4a9d5f2d18efd8",
+    "rtl_stage_4": "104b6e57f9832a479ad44d2d86a1d692eb7abbef9391f418b1c677fa8c20beed",
+    "physical_stage_5": "8c5e7d3d6876b14ca55745415af485c8b944853c919012c080ea79bae4f6206c",
+    "rtl_stage_5": "ca43a130f8fc1bd076d2e17f1a2d02be01d90bfe899abae7a28631e38e21e307"
+  },
+  "stages": [
+    {
+      "stage": 0,
+      "packets": 64,
+      "packet_mismatches": 0,
+      "rgb_packet_mismatches": 0,
+      "feature_lane_mismatches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_positions_yx": [],
+      "examples": []
+    },
+    {
+      "stage": 1,
+      "packets": 64,
+      "packet_mismatches": 0,
+      "rgb_packet_mismatches": 0,
+      "feature_lane_mismatches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_positions_yx": [],
+      "examples": []
+    },
+    {
+      "stage": 2,
+      "packets": 64,
+      "packet_mismatches": 0,
+      "rgb_packet_mismatches": 0,
+      "feature_lane_mismatches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_positions_yx": [],
+      "examples": []
+    },
+    {
+      "stage": 3,
+      "packets": 64,
+      "packet_mismatches": 0,
+      "rgb_packet_mismatches": 0,
+      "feature_lane_mismatches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_positions_yx": [],
+      "examples": []
+    },
+    {
+      "stage": 4,
+      "packets": 64,
+      "packet_mismatches": 0,
+      "rgb_packet_mismatches": 0,
+      "feature_lane_mismatches": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_positions_yx": [],
+      "examples": []
+    },
+    {
+      "stage": 5,
+      "packets": 64,
+      "packet_mismatches": 57,
+      "rgb_packet_mismatches": 0,
+      "feature_lane_mismatches": [
+        0,
+        0,
+        57,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_positions_yx": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          7
+        ]
+      ],
+      "examples": [
+        {
+          "pixel": 0,
+          "sample": 1450,
+          "expected_c2": 440,
+          "actual_c2": 32767
+        },
+        {
+          "pixel": 1,
+          "sample": 1451,
+          "expected_c2": 758,
+          "actual_c2": 32767
+        },
+        {
+          "pixel": 2,
+          "sample": 1452,
+          "expected_c2": 1114,
+          "actual_c2": 32767
+        },
+        {
+          "pixel": 3,
+          "sample": 1453,
+          "expected_c2": 1002,
+          "actual_c2": 32767
+        }
+      ]
+    }
+  ]
+}

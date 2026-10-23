@@ -1,0 +1,237 @@
+{
+  "scope": "stable binary input combinations at 18 DPREG-7 cells; excludes physical transitions, SDF, and all other DRC classes",
+  "pass_no_stable_binary_p_feedback": true,
+  "sha256": {
+    "netlist": "587cdf289bfbd886a20857f0d30e70a3da15303837414d020345e9841035cbb8",
+    "drc": "38d15d986ee4d8abbc4d3b7e7c87e97ad6ca9e8dc6318919e0b641c65fea8bf4",
+    "unisim": "da2d5acbea7bb7fc4008faf5755d93964c01f081713b1640da77c8f143fd58b2",
+    "tool": "300ed0eaacf8904ed098c42b889700f1100546fe36e42903b524c14c0846e8b8"
+  },
+  "checked_cells": 18,
+  "cells": [
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_0_U0/grp_spatial_0_Pipeline_VITIS_LOOP_133_2_fu_486/mul_16s_6ns_21_1_1_U48/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST_0,1'b0,DSP_OUTPUT_INST_0}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000000000",
+        "000110101",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_0_U0/grp_spatial_0_Pipeline_VITIS_LOOP_133_2_fu_486/mul_16s_6s_21_1_1_U49/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST_0,1'b0,DSP_OUTPUT_INST_0}",
+      "inversion": "000110000",
+      "binary_modes_overapprox": [
+        "000110000",
+        "000110101",
+        "000000000",
+        "000000101"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_0_U0/grp_spatial_0_Pipeline_VITIS_LOOP_133_2_fu_486/mul_16s_7ns_22_1_1_U54/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST_0,1'b0,DSP_OUTPUT_INST_0}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000000000",
+        "000110101",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_0_U0/grp_spatial_0_Pipeline_VITIS_LOOP_133_2_fu_486/mul_16s_7s_22_1_1_U88/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST_0,1'b0,DSP_OUTPUT_INST_0}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000000000",
+        "000110101",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_0_U0/grp_spatial_0_Pipeline_VITIS_LOOP_133_2_fu_486/mul_16s_8ns_23_1_1_U94/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST_0,1'b0,DSP_OUTPUT_INST_0}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000000000",
+        "000110101",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_0_U0/grp_spatial_0_Pipeline_VITIS_LOOP_133_2_fu_486/mul_16s_8s_23_1_1_U85/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST_0,1'b0,DSP_OUTPUT_INST_0}",
+      "inversion": "000110000",
+      "binary_modes_overapprox": [
+        "000110000",
+        "000110101",
+        "000000000",
+        "000000101"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_1_U0/grp_spatial_1_Pipeline_VITIS_LOOP_133_2_fu_496/mul_15ns_5s_20_1_1_U480/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_2_U0/grp_spatial_2_Pipeline_VITIS_LOOP_133_2_fu_434/mul_16s_6s_21_1_1_U768/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,OPMODE,1'b0,OPMODE}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000000000",
+        "000110101",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_2_U0/grp_spatial_2_Pipeline_VITIS_LOOP_133_2_fu_434/mul_16s_7ns_22_1_1_U761/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,OPMODE,1'b0,OPMODE}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000000000",
+        "000110101",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_2_U0/grp_spatial_2_Pipeline_VITIS_LOOP_133_2_fu_434/mul_16s_7ns_22_1_1_U764/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,OPMODE,1'b0,OPMODE}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000000000",
+        "000110101",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_2_U0/grp_spatial_2_Pipeline_VITIS_LOOP_133_2_fu_434/mul_16s_7s_22_1_1_U767/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_3_U0/grp_spatial_3_Pipeline_VITIS_LOOP_133_2_fu_486/mul_15ns_7s_22_1_1_U1069/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,OPMODE[0],OPMODE[0],1'b0,OPMODE[1],1'b0,OPMODE[1]}",
+      "inversion": "000110000",
+      "binary_modes_overapprox": [
+        "000110000",
+        "000110101",
+        "000000000",
+        "000000101"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_3_U0/grp_spatial_3_Pipeline_VITIS_LOOP_133_2_fu_486/mul_15ns_8s_23_1_1_U1053/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,OPMODE[1],OPMODE[1],1'b0,OPMODE[0],1'b0,OPMODE[0]}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000110101",
+        "000000000",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_3_U0/grp_spatial_3_Pipeline_VITIS_LOOP_133_2_fu_486/mul_16s_7s_22_1_1_U1039/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,OPMODE,OPMODE,1'b0,OPMODE,1'b0,OPMODE}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_4_U0/grp_spatial_4_Pipeline_VITIS_LOOP_133_2_fu_486/mul_16s_7ns_22_1_1_U1358/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,DSP_OUTPUT_INST,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST,1'b0,DSP_OUTPUT_INST}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_5_U0/grp_spatial_5_Pipeline_VITIS_LOOP_133_2_fu_450/mul_16s_7ns_22_1_1_U1666/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,OPMODE[0],OPMODE[0],1'b0,OPMODE[1],1'b0,OPMODE[1]}",
+      "inversion": "000110000",
+      "binary_modes_overapprox": [
+        "000110000",
+        "000110101",
+        "000000000",
+        "000000101"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_5_U0/grp_spatial_5_Pipeline_VITIS_LOOP_133_2_fu_450/mul_16s_8ns_23_1_1_U1663/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,OPMODE[1],OPMODE[1],1'b0,OPMODE[0],1'b0,OPMODE[0]}",
+      "inversion": "000000101",
+      "binary_modes_overapprox": [
+        "000000101",
+        "000110101",
+        "000000000",
+        "000110000"
+      ],
+      "p_feedback_modes": []
+    },
+    {
+      "cell": "system_i/weather_frame_top_0/inst/grp_frame_fu_160/tail_U0/grp_tail_Pipeline_VITIS_LOOP_200_1_VITIS_LOOP_200_2_fu_110/mul_16s_7s_22_1_1_U1931/tmp_product",
+      "preg": 0,
+      "opmode_expression": "{1'b0,1'b0,1'b0,A[0],A[0],1'b0,A[0],1'b0,A[0]}",
+      "inversion": "000110000",
+      "binary_modes_overapprox": [
+        "000110000",
+        "000000101"
+      ],
+      "p_feedback_modes": []
+    }
+  ]
+}

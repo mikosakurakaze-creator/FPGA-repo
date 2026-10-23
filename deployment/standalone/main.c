@@ -45,6 +45,12 @@ int main(void) {
                        sequence, status, device.quarantined);
             stop_forever(); /* Never reuse any possibly device-owned buffer. */
         }
+        /* This is a diagnostic check for forbidden PL writes to the input.
+         * Normal READ ownership release need not invalidate input cache lines;
+         * invalidate the active region explicitly before comparing DDR bytes.
+         */
+        if (platform.sync(platform.user, &job.input, 192U * sizeof(int16_t),
+                          WEATHER_DEVICE_RW, WEATHER_CPU)) stop_forever();
         for (i = 0; i < 192; ++i) {
             if (frame_output[i] != expected[i] || frame_input[i] != input[i]) {
                 xil_printf("WEATHER_SMOKE_FAIL sequence=%u index=%u\r\n", sequence, i);

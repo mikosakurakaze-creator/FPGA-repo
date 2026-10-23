@@ -1,0 +1,295 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Fri Oct 23 19:46:19 2026
+# Process ID         : 26240
+# Current directory  : C:/Users/wzh16/Desktop/github clone/weather_fpga_integration
+# Command line       : vivado.exe -mode batch -source system/optimize_protected_checkpoint.tcl -log D:/weather_builds/board_diag_20261023_protected_opt02.log -journal D:/weather_builds/board_diag_20261023_protected_opt02.jou -tclargs D:/weather_builds/board_diag_20261023_linked_export01/system_linked_synth.dcp D:/weather_builds/board_diag_20261023_protected_opt02
+# Log file           : D:/weather_builds/board_diag_20261023_protected_opt02.log
+# Journal file       : D:/weather_builds/board_diag_20261023_protected_opt02.jou
+# Running On         : LAPTOP-FAFSANP3
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) Ultra 9 275HX
+# CPU Frequency      : 3072 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 24
+# Host memory        : 33676 MB
+# Swap memory        : 2697 MB
+# Total Virtual      : 36373 MB
+# Available Virtual  : 7439 MB
+#-----------------------------------------------------------
+source system/optimize_protected_checkpoint.tcl
+# if {$argc != 2} {error {Expected linked synthesis checkpoint and new output directory}}
+# set source [file normalize [lindex $argv 0]]
+# set output [file normalize [lindex $argv 1]]
+# if {[file exists $output]} {error {Refuse to replace diagnostic evidence}}
+# file mkdir $output
+# set_param general.maxThreads 2
+# open_checkpoint $source
+Command: open_checkpoint D:/weather_builds/board_diag_20261023_linked_export01/system_linked_synth.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 350.992 ; gain = 5.844
+INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1898.902 ; gain = 12.391
+INFO: [Netlist 29-17] Analyzing 5395 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 8 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.252 . Memory (MB): peak = 2388.527 ; gain = 41.551
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 3016.520 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1546 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 961 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 5 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 31 instances
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 507 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 18 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 8 instances
+  RAM64M8 => RAM64M8 (RAMD64E(x8)): 16 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 3016.520 ; gain = 2682.254
+# source [file join [file dirname [info script]] protect_weather_signed_dsp.tcl]
+## if {[catch {get_param logicopt.enableDSPCascadeFixing} weather_cascade_setting]} {
+##     error {Installed Vivado lacks the reviewed DSP cascade switch; no fallback}
+## }
+## set_param logicopt.enableDSPCascadeFixing false
+## if {[get_param logicopt.enableDSPCascadeFixing]} {error {DSP cascade fixing remains enabled}}
+## set weather_signed_target {system_i/weather_frame_top_0/inst/grp_frame_fu_160/spatial_5_U0/grp_spatial_5_Pipeline_VITIS_LOOP_133_2_fu_450/mac_muladd_15ns_7s_22s_23_4_1_U1742/weather_frame_top_mac_muladd_15ns_7s_22s_23_4_1_DSP48_0_U/p_reg_reg}
+## set weather_signed_cell [get_cells -quiet $weather_signed_target]
+## if {[llength $weather_signed_cell] != 1 || [get_property REF_NAME $weather_signed_cell] ne {DSP48E2}} {
+##     error {Expected weather signed DSP receiver absent; review changed synthesis}
+## }
+## set weather_signed_pin [get_pins -quiet "$weather_signed_target/C\[21\]"]
+## set weather_signed_net [get_nets -quiet -of_objects $weather_signed_pin]
+## if {[llength $weather_signed_net] != 1} {error {Cannot resolve synthesized C sign net}}
+## for {set weather_signed_bit 22} {$weather_signed_bit < 48} {incr weather_signed_bit} {
+##     set weather_signed_upper [get_nets -quiet -of_objects [get_pins -quiet "$weather_signed_target/C\[$weather_signed_bit\]"]]
+##     if {$weather_signed_upper ne $weather_signed_net} {
+##         error "Signed C boundary already changed at bit $weather_signed_bit; refusing late protection"
+##     }
+## }
+## proc weather_assert_signed_boundary {} {
+##     global weather_signed_target
+##     set c21 [get_nets -quiet -of_objects [get_pins -quiet "$weather_signed_target/C\[21\]"]]
+##     set c22 [get_nets -quiet -of_objects [get_pins -quiet "$weather_signed_target/C\[22\]"]]
+##     if {[llength $c21] != 1 || $c21 ne $c22} {
+##         error {Weather signed truncation boundary was rewritten; candidate rejected}
+##     }
+##     puts {WEATHER_SIGNED_C21_C22_BOUNDARY_PRESERVED}
+## }
+## weather_assert_signed_boundary
+WEATHER_SIGNED_C21_C22_BOUNDARY_PRESERVED
+## puts {WEATHER_DSP_CASCADE_FIXING_DISABLED process_local=true}
+WEATHER_DSP_CASCADE_FIXING_DISABLED process_local=true
+# opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xck26'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xck26'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 3046.453 ; gain = 29.934
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 1b0912816
+
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:24 . Memory (MB): peak = 3908.469 ; gain = 862.016
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1b0912816
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.262 . Memory (MB): peak = 4380.312 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1b0912816
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.371 . Memory (MB): peak = 4380.312 ; gain = 0.000
+Phase 1 Initialization | Checksum: 1b0912816
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.388 . Memory (MB): peak = 4380.312 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Detect if minReqCache needed
+Phase 2.1 Detect if minReqCache needed | Checksum: 1b0912816
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.628 . Memory (MB): peak = 4514.781 ; gain = 134.469
+
+Phase 2.2 Timer Update
+Phase 2.2 Timer Update | Checksum: 1b0912816
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 4514.781 ; gain = 134.469
+
+Phase 2.3 Timing Data Collection
+Phase 2.3 Timing Data Collection | Checksum: 1b0912816
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 4514.781 ; gain = 134.469
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1b0912816
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 4514.781 ; gain = 134.469
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 164 inverters resulting in an inversion of 841 pins
+INFO: [Opt 31-138] Pushed 302 inverter(s) to 15415 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 20788f40f
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:13 . Memory (MB): peak = 4514.781 ; gain = 134.469
+Retarget | Checksum: 20788f40f
+INFO: [Opt 31-389] Phase Retarget created 442 cells and removed 1199 cells
+INFO: [Opt 31-1021] In phase Retarget, 334 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 23295f5ab
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:14 . Memory (MB): peak = 4514.781 ; gain = 134.469
+Constant propagation | Checksum: 23295f5ab
+INFO: [Opt 31-389] Phase Constant propagation created 289 cells and removed 2740 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 334 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.403 . Memory (MB): peak = 4514.781 ; gain = 0.000
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.464 . Memory (MB): peak = 4514.781 ; gain = 0.000
+Phase 5 Sweep | Checksum: 1f1bede26
+
+Time (s): cpu = 00:00:28 ; elapsed = 00:00:22 . Memory (MB): peak = 4514.781 ; gain = 134.469
+Sweep | Checksum: 1f1bede26
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 1581 cells
+INFO: [Opt 31-1021] In phase Sweep, 429 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 6 BUFG optimization | Checksum: 1f1bede26
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:25 . Memory (MB): peak = 4514.781 ; gain = 134.469
+BUFG optimization | Checksum: 1f1bede26
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 207eeb1a3
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:25 . Memory (MB): peak = 4514.781 ; gain = 134.469
+Shift Register Optimization | Checksum: 207eeb1a3
+INFO: [Opt 31-389] Phase Shift Register Optimization created 1 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 254b1ff9a
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:26 . Memory (MB): peak = 4514.781 ; gain = 134.469
+Post Processing Netlist | Checksum: 254b1ff9a
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 359 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 14fff707c
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:29 . Memory (MB): peak = 4514.781 ; gain = 134.469
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.229 . Memory (MB): peak = 4514.781 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 14fff707c
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:29 . Memory (MB): peak = 4514.781 ; gain = 134.469
+Phase 9 Finalization | Checksum: 14fff707c
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:29 . Memory (MB): peak = 4514.781 ; gain = 134.469
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |             442  |            1199  |                                            334  |
+|  Constant propagation         |             289  |            2740  |                                            334  |
+|  Sweep                        |               0  |            1581  |                                            429  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               1  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                            359  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 14fff707c
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:29 . Memory (MB): peak = 4514.781 ; gain = 134.469
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 109 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 11 WE to EN ports
+Number of BRAM Ports augmented: 67 newly gated: 18 Total Ports: 218
+Ending PowerOpt Patch Enables Task | Checksum: 23ee8a4be
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.953 . Memory (MB): peak = 5705.555 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 23ee8a4be
+
+Time (s): cpu = 00:01:17 ; elapsed = 00:00:46 . Memory (MB): peak = 5705.555 ; gain = 1190.773
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Logic Optimization Task | Checksum: 2083edc82
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:32 . Memory (MB): peak = 5705.555 ; gain = 0.000
+Ending Final Cleanup Task | Checksum: 2083edc82
+
+Time (s): cpu = 00:00:56 ; elapsed = 00:00:35 . Memory (MB): peak = 5705.555 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 5705.555 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+33 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:03:40 ; elapsed = 00:02:18 . Memory (MB): peak = 5705.555 ; gain = 2689.035
+# weather_assert_signed_boundary
+WEATHER_SIGNED_C21_C22_BOUNDARY_PRESERVED
+# write_checkpoint [file join $output system_protected_opt.dcp]
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.229 . Memory (MB): peak = 5705.555 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/weather_builds/board_diag_20261023_protected_opt02/system_protected_opt.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 5705.555 ; gain = 0.000
+# write_verilog -mode funcsim [file join $output system_protected_opt_funcsim.v]
+write_verilog: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 5705.555 ; gain = 0.000
+# puts {WEATHER_PROTECTED_OPTIMIZATION_COMPLETED}
+WEATHER_PROTECTED_OPTIMIZATION_COMPLETED
+# close_design
+# exit
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 23 19:49:49 2026...

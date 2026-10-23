@@ -1,0 +1,5 @@
+{
+  "implement_protected_checkpoint.tcl": "cb9afc0b30ed92ffb05b15bb3ba85dcce275b637eb1d03e9868008144c117a44",
+  "optimize_protected_checkpoint.tcl": "2567687a78b321a55a845ae37b1c518da9ccc9373c08d6d3c31f9d30444a7da3",
+  "protect_weather_signed_dsp.tcl": "b66554c29da66c4c3a9cf8d12d5f6a49ea1e83b0eba4603c115b4a3e2df9835b"
+}

@@ -1,0 +1,861 @@
+{
+  "schema_version": 2,
+  "release": "k26_weather_v2_signedfix_20261023",
+  "export_date": "2026-10-23",
+  "tool": "Vivado/Bootgen 2025.2",
+  "part": "xck26-sfvc784-2LV-c",
+  "clock_mhz": 100,
+  "method": "Disable DSP cascade fixing from unchanged linked synthesis; new placement and routing; native Vivado XSA/bit; Bootgen BIN",
+  "board_tested": false,
+  "board_retest_required": true,
+  "elf_built": false,
+  "boot_bin_built": false,
+  "ltx_required": false,
+  "linux_device_tree_built": false,
+  "source_provenance": {
+    "original_build_json_sha256": "46ee93921e93d8ba3a9545f6235beaa16653a293bc226668bc81b75e04a8ff1f",
+    "linked_synthesis_checkpoint": {
+      "path": "D:\\weather_builds\\board_diag_20261023_linked_export01\\system_linked_synth.dcp",
+      "sha256": "1a20a2b08872f95caf1ab1c83bbff6c12930815315655411f5f387349471b8d9"
+    },
+    "protected_opt_checkpoint": {
+      "path": "D:\\weather_builds\\board_diag_20261023_protected_opt02\\system_protected_opt.dcp",
+      "sha256": "de0378e264780dfbce728c119f0cc13defff80bf6a807afd093b20c4734de2e2"
+    },
+    "routed_checkpoint": {
+      "path": "D:\\weather_builds\\weather_signedfix_system01\\system_routed.dcp",
+      "sha256": "caab81f03841c91631bb5903ca7f575e622388fb1d89c799dfee2c453e9a2db3"
+    },
+    "routed_netlist": {
+      "path": "D:\\weather_builds\\weather_signedfix_system01\\system_routed_funcsim.v",
+      "sha256": "a17d8a86a49d9639485f139fe85373adc4ef2fe42805d30b8c45e5288ae9baf5"
+    },
+    "source_head": "c2a90a2b1f2f15d390fb32d72eae0b59842a394e",
+    "branch": "weather_fpga_integration",
+    "source_worktree_dirty": true,
+    "current_recipe_sha256": {
+      "system/check_weather_signed_dsp.tcl": "5a97ce928c2fb78899db31e48637babf6ede6f2fbdf89707e8e4e56c1cba08e9",
+      "system/create.tcl": "8b4eeaf6d1baec29f607c640bf39ca8e6c7c694ad3fd2aadc40004097bc1f66b",
+      "system/export_board.tcl": "0019cc612951cf0c83692d97bfb44561acdb707aa273863b77663c8aec1257c8",
+      "system/export_checkpoint_platform.tcl": "d9f07d3505a1a49afbba32aacd70b4148178b56e7fbdcdd63dc584dc0f6756dd",
+      "system/export_corrected_checkpoint.tcl": "a7331f1cc0cdfec71e81ea758c23b4a1742ceb82b915a02cbb5693dec19a7196",
+      "system/export_diagnostic_netlist.tcl": "3a6b02bb2cd7f54af1f82059d02b6317783c9414fcc91baaba98d8bebfbfc9d7",
+      "system/export_diagnostic_system.tcl": "bf3f1f82a32dee3c709013c479c3a9ee406002c772dfd0aaabb304ec19ace697",
+      "system/export_linked_synthesis.tcl": "94cbf3e412d2299abc767a02edf2392ec693da8b765fc4ea4cb2e01504e3894a",
+      "system/impl.tcl": "c53f2015de9749e56e90405166089381c3cc325a7a5cd2f0734d4a6fd9d41e8b",
+      "system/implement_protected_checkpoint.tcl": "cb9afc0b30ed92ffb05b15bb3ba85dcce275b637eb1d03e9868008144c117a44",
+      "system/inspect_diagnostic_boundary.tcl": "2ea63a09c2bc2ff58aecc40d270e5e036cd0ecbaf754ea9596afdcee0bc27da3",
+      "system/inspect_diagnostic_constants.tcl": "208fe036bd878346042f90296a71c35b0f2fc8e200f12f037eba1723c8945408",
+      "system/make_rtl_vectors.cpp": "484bff3cd7335f94ca2711b0990846447e9f1eb22c936a2faebdeaa9d04cf1cd",
+      "system/optimize_protected_checkpoint.tcl": "2567687a78b321a55a845ae37b1c518da9ccc9373c08d6d3c31f9d30444a7da3",
+      "system/package.tcl": "c5d218c98ecd14138cdd2e9d2951529519f55bb61338de754dfd4d9cc4b9c13f",
+      "system/protect_weather_signed_dsp.tcl": "f31ab85a083848d8ab4b3a2b3d6208556ef31a4fc954dbd9d8418c03b5fa1de5",
+      "system/rtl_memory_test.sv": "355e0b6866ef614770881568006281689c3a522b21eca11c0e5171693a46b699",
+      "system/synth.tcl": "447fb240c08183bfb61a2f67aed35bec89facd6da96969fb44eb30aba434f815",
+      "system/tb_weather_sequence.cpp": "3028f40ea41501eb5de75b8e1dad52fe55d9acfd45e260b57912d7a4dd8c5961",
+      "system/trace_physical_dsp_cascade.tcl": "4b1ff2168bef3c689c6ac22a587ff92380f04d40f6716b1ce63a83f67ddabb0b",
+      "system/trace_physical_quantization.tcl": "0e32f042b4f24194aebd5ca9f8baedaaa00315adf7e43e24a90c51ba5ca8ec55",
+      "system/trace_physical_saturation.tcl": "f90e743ba873954fe41a6c37f154b4a2843ed9e093bb4449c56b26471e56e4f0",
+      "system/trace_physical_stages.tcl": "7fe530ccabb38ed4948f3bb9a7afff443c78b98eab7a819cc1ebae606b4b28a1",
+      "system/validate_signed_checkpoint.tcl": "80b23fc8793415d629110df71aeebd364c14cba7fd582078496d3a0d9de90633",
+      "tools/analyze_board_signature.py": "880f52b9f70b864ef1b47b66cfb9c74a1d6261eb0451525715ec35d7d79c979e",
+      "tools/analyze_physical_stages.py": "0d4986efd6640a2b1acfaba3019f676d907876c7a9f054ca1c7be034f91b220a",
+      "tools/archive_release.py": "fa1cab6cc66de11046e370c286015fa5fefd40223f9143ec7ff5c4fdff66a958",
+      "tools/audit_integer_contract.py": "17f1f1960192d8a119d73fcb4c87d8527889b871cc7de68e9b0519f14de31f39",
+      "tools/audit_routed_dsp.py": "300ed0eaacf8904ed098c42b889700f1100546fe36e42903b524c14c0846e8b8",
+      "tools/audit_system.py": "5d26c100cfb39ff468c83d53939ee90270fc54ca23e02ac61adc352b4fd1229b",
+      "tools/board_artifacts.py": "4a60dea9a157e81c443ab300b18d444c8dfb553eaaa59afe7238082e65a462c0",
+      "tools/build_standalone.py": "223deeae2a31c937c4785a5aa2591e38dc8ff0af032f584cc79b84205f815f7e",
+      "tools/build_system.py": "4ce44094bd6a40e1fc2332e60a37f0c0d0af908856eb3c8de5f7fe3d00642767",
+      "tools/collect_signedfix_release.py": "6bd8aa71f86494a6780f51733dfef2f95354fac8c5208017bb4a5ad3aac27a1f",
+      "tools/diagnostic_boundary.py": "0c1c831b5ebe1bd6bacda8b8634496d056aa07eaf7036f1d29fd95f32ba9f59d",
+      "tools/implementation_gate.py": "4c294cad8a74549cc71bd1390ddba8ed09d237835bff6a60ed373c157f322ada",
+      "tools/package_release.py": "ca1aefd91050184a2b1c71bdb8246282a946d7b370cca12499fcbb8ed8fefdc0",
+      "tools/physical_system_repro.py": "5e073c1d5c71d95532d12508ba3a97642fa7dacb6663bddcc8ec68be34f3853a",
+      "tools/prepare_smoke_vectors.py": "0daa1273e2cc5c6feea22ab208e62859952b246bf2f336c394ef552d4985a748",
+      "tools/rebuild_lowlight.py": "cc6fec62642a3bf40bf4bb3dd0f12f24cc751c36f3c2605548601a9fa682c8e7",
+      "tools/restore_diagnostic_dsp.py": "4a01b448d942bd561ed0ddba7ff7c52a9038a85ed977b0b138396ed157c92763",
+      "tools/restore_writecredit.py": "c9bb199bc4ccc9e1854553c0e110904292be061372b01d5035f1ff939977b29d",
+      "tools/run_board_repro.py": "39c14b38bfaa6dda06a8adb96d3239d76b4eba41ce82c995126e4815460d747d",
+      "tools/run_rtl_memory_test.py": "542477d20777d22c49ed19731dc12a66aabd50a2aee0a6bcfd56a67dc3351472",
+      "tools/run_sequence_cosim.py": "ee9eb2b59e6cfe6da2dd45146135c1b637ba62c4828083fb280c901051ce9b4c",
+      "tools/run_standalone.py": "791d50b1301d3015fc7734a3bb802883756ec96fc040b034678643e6d9458194",
+      "tools/run_windows_desktop.py": "56dc242227c312f6a93910d5cd4f7c3817cd5b9c63a8be69b17abcdff2d089fe",
+      "tools/stage_native_board.py": "c4be8368a3ea19d8f63ab9ff39c4cf444dba3a7c4c91f1d6e5f41f85766d1fec",
+      "tools/verify_candidate_archive.py": "7db1bc4b86ad3847c68285e14cb4ced9b0f2f437d751f316334775422e096a6b",
+      "tools/weather_budget.py": "cb5b351d29e0afdab7e94b3875e36b1e6c50ecfce13f708ec38d07f875543dab",
+      "deployment/README.md": "618e7e2dc73113383a569616bc111130c0199826a4e73f9276bbc7006300cdbe",
+      "deployment/weather_control.c": "1714234573a5c62f5f0d4a8c5334f4bd987f986bf263a088166baf8a94a403bb",
+      "deployment/weather_control.h": "15dcbb897f9edcdf751099b7c101f647e6ea00225acad52dd3cd192b79d5ef20",
+      "deployment/weather_tiled.c": "488eeed398ae5423a0e62df2e2c2c987d933c093527a1a662430dfaa2038e208",
+      "deployment/weather_xilinx_standalone.c": "ab19de5a6d1a653a3784dc42660c64add65dea93541136f7d5fcd42d06720c27",
+      "deployment/weather_xilinx_standalone.h": "c8290b8504a18b517bdc32071d862c44504312aad83664309b42fce065d615c0",
+      "deployment/standalone/main.c": "5aefe1eec763227bbb0f37bf1a91f2cb6e1fc07f6c455d7b8614f1b0133d9bbe",
+      "deployment/standalone/weather_smoke_vectors.h": "05bd3905dc1723d63c83fa1dc84f32fd16a3a522635a20acbfc5299bc704adb5",
+      "deployment/tests/test_weather_control.cpp": "78d137d5dbe2ef57440160e983ae813ec2ea2f173af14804fbdc332e544063a1",
+      "deployment/tests/verify_driver.py": "7a56ab9ac3451095cf9d724e7e692ff43c3e122780918431ee02cc3616066202"
+    },
+    "note": "Implementation executed with the earlier guard snapshot archived here; strict source/OPMODE check and numerical replay were then run on the completed design. Current hooks improve future rebuild validation without changing this checkpoint."
+  },
+  "qualification": {
+    "pass": true,
+    "setup_wns_ns": 0.638,
+    "hold_whs_ns": 0.01,
+    "pulse_width_wpws_ns": 3.5,
+    "check_timing": {
+      "no_clock": "0",
+      "constant_clock": "0",
+      "pulse_width_clock": "0",
+      "unconstrained_internal_endpoints": "0",
+      "no_input_delay": "0",
+      "no_output_delay": "0",
+      "multiple_clock": "0",
+      "generated_clocks": "0",
+      "loops": "0",
+      "partial_input_delay": "0",
+      "partial_output_delay": "0",
+      "latch_loops": "0"
+    },
+    "route": {
+      "routable nets": 166311,
+      "fully routed nets": 166311,
+      "nets with routing errors": 0
+    },
+    "drc": [
+      {
+        "rule": "DPIP-2",
+        "severity": "Warning",
+        "description": "Input pipelining",
+        "count": 533
+      },
+      {
+        "rule": "DPOP-3",
+        "severity": "Warning",
+        "description": "PREG Output pipelining",
+        "count": 211
+      },
+      {
+        "rule": "DPOP-4",
+        "severity": "Warning",
+        "description": "MREG Output pipelining",
+        "count": 250
+      },
+      {
+        "rule": "DPREG-7",
+        "severity": "Warning",
+        "description": "DSP48E2_PregDynOpmodeZmuxP:",
+        "count": 18
+      },
+      {
+        "rule": "RTSTAT-10",
+        "severity": "Warning",
+        "description": "No routable loads",
+        "count": 1
+      }
+    ],
+    "interface_checks": 35
+  },
+  "implementation_numerical": {
+    "pass": true,
+    "report_sha256": "29c779c2335cc42abc0eb90e3de3500e81f2eebb9a1321c3d0cce37984edd988",
+    "full_system_netlist_sha256": "a17d8a86a49d9639485f139fe85373adc4ef2fe42805d30b8c45e5288ae9baf5",
+    "frames": [
+      {
+        "seq": 0,
+        "sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+        "golden_mismatch": 0,
+        "task": 0,
+        "board_mismatch": 171
+      },
+      {
+        "seq": 1,
+        "sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+        "golden_mismatch": 0,
+        "task": 0,
+        "board_mismatch": 171
+      },
+      {
+        "seq": 2,
+        "sha256": "174dc275ba8a7a84b3fe85e129255be096d88d83d5f6f56c690d0e7444dd25b7",
+        "golden_mismatch": 0,
+        "task": 1,
+        "board_comparison": "no_task1_board_capture_available"
+      },
+      {
+        "seq": 3,
+        "sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+        "golden_mismatch": 0,
+        "task": 0,
+        "board_mismatch": 171
+      }
+    ],
+    "cycles": [
+      2401,
+      2376,
+      2376,
+      2376
+    ],
+    "scope": "post_route_functional weather/control/reset and HP0/HP3 parent wiring; PS hard block replaced by independent memory/control stimulus; other PL masters idle; no SDF"
+  },
+  "xsa_metadata_regenerated": true,
+  "reference_release": "k26_weather_v2_20261022",
+  "reference_release_manifest_sha256": "f17507ead9717ed929b4ec963f41d93531fa28c9cdaae03209a16c44a10e1cde",
+  "identity_checks": {
+    "xsa_crc": true,
+    "embedded_bit_matches": true,
+    "hwh_and_drivers_match_xsa": true,
+    "bin_matches_bit_payload": true,
+    "native_platform_export": true,
+    "unchanged_fixed_platform_members": 47
+  },
+  "files": {
+    "drivers/bilinear_fixed16_buffered_v1_0/data/bilinear_fixed16_buffered.mdd": {
+      "bytes": 653,
+      "sha256": "28c0d7b90943e4eaeba3244543039472268628f477b3f6cbb0aee1f459a9af2d"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/data/bilinear_fixed16_buffered.tcl": {
+      "bytes": 966,
+      "sha256": "57a8076c710addfda1fa8bc2a0f01e71453e4c59a8a3ab4297a37a47ec1b9a42"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/data/bilinear_fixed16_buffered.yaml": {
+      "bytes": 702,
+      "sha256": "7adbec8095b869cf7ec2ed6b8d14649986f33f8cce832fc6d49b8b8fbabb690e"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/CMakeLists.txt": {
+      "bytes": 1334,
+      "sha256": "9a2105e0e87218c8e29e43326a11d7763e2d8981733d99da7fdba6572095faf5"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/Makefile": {
+      "bytes": 1518,
+      "sha256": "8bd49d995e80a5d9613d31aa27ce051b9af2dbaea240f0e745a5072918a8076a"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/xbilinear_fixed16_buffered.c": {
+      "bytes": 9854,
+      "sha256": "4ccebf71305e99ef40c2f71ca145bb6c0be76c6445b6ca16fcdc0598f80cd47c"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/xbilinear_fixed16_buffered.h": {
+      "bytes": 5207,
+      "sha256": "ece35af25dd7a2f8f70a53fe9b9bad4929b24ed7baa43ea56ae83dd75cf2c479"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/xbilinear_fixed16_buffered_hw.h": {
+      "bytes": 2881,
+      "sha256": "8eee503594c8e381c1fd361e2014ddd9314d158dbb96d0e7aea2ab68ebf065a3"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/xbilinear_fixed16_buffered_linux.c": {
+      "bytes": 5058,
+      "sha256": "3c33963d5a15f9ef8c79c041a8745b93bc66f5a900af7c8c856333799eb4ed63"
+    },
+    "drivers/bilinear_fixed16_buffered_v1_0/src/xbilinear_fixed16_buffered_sinit.c": {
+      "bytes": 2434,
+      "sha256": "1ddfb6602607d47fd22ce336c502bd84dfbfea3ab37fa02cb493ed53fa3d6479"
+    },
+    "drivers/curve_image_fixed16_v1_0/data/curve_image_fixed16.mdd": {
+      "bytes": 635,
+      "sha256": "561317d0e44a2c237610582ab50810e6f88b60d9cc17950a753aa5f0de72960f"
+    },
+    "drivers/curve_image_fixed16_v1_0/data/curve_image_fixed16.tcl": {
+      "bytes": 942,
+      "sha256": "6d29e3e1657b98bf5f162aa24beaff4c7d7a51cbf2b555f67573a4a4767d472f"
+    },
+    "drivers/curve_image_fixed16_v1_0/data/curve_image_fixed16.yaml": {
+      "bytes": 684,
+      "sha256": "b386bd49362379757e7e3764f93ffbfc7e9fb14cbd8d663311a990d300016d70"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/CMakeLists.txt": {
+      "bytes": 1280,
+      "sha256": "6c8f2118a2465b5335d609a5628850d5296954490b6ba336de2188b2570cdcb1"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/Makefile": {
+      "bytes": 1512,
+      "sha256": "d9a8021f5dd4c001d97d246f4d181acce5e97b7511275cd7e21142ea9cebc785"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/xcurve_image_fixed16.c": {
+      "bytes": 9390,
+      "sha256": "876f1ca9b7f678acddf754b83a5329c9ad530e033097e4a05098156d4a657b0a"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/xcurve_image_fixed16.h": {
+      "bytes": 4757,
+      "sha256": "751997ca65957a8895a94caa4f0dee1912f03463d0f01a10a07d408f1de7462c"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/xcurve_image_fixed16_hw.h": {
+      "bytes": 2723,
+      "sha256": "8c145a90188f440acd751744ee562d1537e609d3f03d82779c9ca721a409660c"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/xcurve_image_fixed16_linux.c": {
+      "bytes": 4968,
+      "sha256": "d013bc2f4aec8a323d103485f1961611557412680b6184c60f52cd9c283776f9"
+    },
+    "drivers/curve_image_fixed16_v1_0/src/xcurve_image_fixed16_sinit.c": {
+      "bytes": 2284,
+      "sha256": "e93681903ac09e60b7c2a5fb52af065e9fe9159135cc9984ab0325eaae8cd075"
+    },
+    "drivers/weather_frame_top_v1_0/data/weather_frame_top.mdd": {
+      "bytes": 629,
+      "sha256": "f783f2f8cb7bd654c527bb14553aacfee4779064cd61e0a44337f3e038e6d2ad"
+    },
+    "drivers/weather_frame_top_v1_0/data/weather_frame_top.tcl": {
+      "bytes": 919,
+      "sha256": "05319e040d8c872a9368a645fed7844ffc573c88554e504a8bf81ba391c75db7"
+    },
+    "drivers/weather_frame_top_v1_0/data/weather_frame_top.yaml": {
+      "bytes": 678,
+      "sha256": "c3e334d03b25b1295fc9546c34cb3a4f647b2dcc071d13f01e1be770d9153962"
+    },
+    "drivers/weather_frame_top_v1_0/src/CMakeLists.txt": {
+      "bytes": 1262,
+      "sha256": "9c89887cd9feae81d3218097952ee839cf9d7c678240750c3e50e13a956ac33d"
+    },
+    "drivers/weather_frame_top_v1_0/src/Makefile": {
+      "bytes": 1510,
+      "sha256": "810cf81cd6d02d08b576d574aa78e61538417fa745e8132c002d6cadb0f3691b"
+    },
+    "drivers/weather_frame_top_v1_0/src/xweather_frame_top.c": {
+      "bytes": 9688,
+      "sha256": "8ec2d02cf5b7d9af5d33db1c960432baf0b13b14712062ecd3b6d1cb2502b95f"
+    },
+    "drivers/weather_frame_top_v1_0/src/xweather_frame_top.h": {
+      "bytes": 4827,
+      "sha256": "241baa49d2aab0328fd92ed96f08e77a2faf0e8e850b015759da48337997194b"
+    },
+    "drivers/weather_frame_top_v1_0/src/xweather_frame_top_hw.h": {
+      "bytes": 2928,
+      "sha256": "ff09296aca99e0b0701a343725f5a96e3fddcf61c64cb8f6cbff08a4c59a726b"
+    },
+    "drivers/weather_frame_top_v1_0/src/xweather_frame_top_linux.c": {
+      "bytes": 4926,
+      "sha256": "1f5086fd5184947d5da274587a30c0f5becbbc00886782a65827ac94785a0ef7"
+    },
+    "drivers/weather_frame_top_v1_0/src/xweather_frame_top_sinit.c": {
+      "bytes": 2231,
+      "sha256": "a3602724cf6d09b8ba21521960e49e7859939019e337383ce79df59ebc19754c"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/data/zero_dce_cnn_top.mdd": {
+      "bytes": 626,
+      "sha256": "5e5f71ed61f65cb8d507d3dfed1e732f5291417bf0a726fb4e41145cb2206b5e"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/data/zero_dce_cnn_top.tcl": {
+      "bytes": 930,
+      "sha256": "db5c551f7a775eda0668b5c1ae5ef933d66c35bc492940d3210261ad15b2ed39"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/data/zero_dce_cnn_top.yaml": {
+      "bytes": 675,
+      "sha256": "e6c724063aa95b9abbbaa8d775da33d052886c266a0f9845be203e159e9830b9"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/CMakeLists.txt": {
+      "bytes": 1253,
+      "sha256": "76c4e92a024e7660a4269f0c862beefa5b1b94a72b3784cb063b32a853e5c4dd"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/Makefile": {
+      "bytes": 1509,
+      "sha256": "8103bb303d5769fdd5f8b600976e00d504ca4dc2321d0b285936f8813466f7fa"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top.c": {
+      "bytes": 12314,
+      "sha256": "33007609f00db2be4be99fd8a41ccba2826bdfeb963680937ffbbd40da32a33f"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top.h": {
+      "bytes": 5052,
+      "sha256": "661fec8172e59a4bf07037d05d90ab13c1d4e5b6cf434c12013381191618b6c3"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top_hw.h": {
+      "bytes": 3870,
+      "sha256": "3a5b88eea559abf69c213b8456fee35945db0f21acc9d5cd1ad267638a716362"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top_linux.c": {
+      "bytes": 4923,
+      "sha256": "2ce5379ef2b7f6c932c4f19920d65cdec180a9422433ea3b705b10b133d5b2b2"
+    },
+    "drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top_sinit.c": {
+      "bytes": 2209,
+      "sha256": "0b1bb99f58564b1441562173ac778aff24524c8812213afa1129c57052cbce00"
+    },
+    "fpga.bif": {
+      "bytes": 36,
+      "sha256": "63ab2f573ad537fb1dcfd6729a6dd44a0d6ea0dbbcf04682447d577bc73401d7"
+    },
+    "ps_init/psu_init.c": {
+      "bytes": 741910,
+      "sha256": "c4c3c0bdc2059446a2029acda3d15675060afb8061422c136b53ba227d4bb01f"
+    },
+    "ps_init/psu_init.h": {
+      "bytes": 1407025,
+      "sha256": "5620cf057b79a05c5f54423c27ee457638483abf3244a49360d433b562bd5106"
+    },
+    "ps_init/psu_init.html": {
+      "bytes": 51766,
+      "sha256": "7077ad5fcd6d753dad455bb1760920904c2d2363a131acf4f52ea73c35455b05"
+    },
+    "ps_init/psu_init.tcl": {
+      "bytes": 719425,
+      "sha256": "218b817b2ccb6e9399a7acedd064bbf46aef94efc6292b7b17c62beb36d34743"
+    },
+    "ps_init/psu_init_gpl.c": {
+      "bytes": 742301,
+      "sha256": "14049098b9aea8c40700bc0479f5dca543e0e0fea4819f7bd4f2472192d17a8d"
+    },
+    "ps_init/psu_init_gpl.h": {
+      "bytes": 1407643,
+      "sha256": "27b1ff4107304570d0f3fde703e3801f16a218d48ceea92cb335a1995d8a74e5"
+    },
+    "README.md": {
+      "bytes": 5305,
+      "sha256": "86474c55965874008549e8c6bb75c3134d3d0c3b4e009480cd7b736a8e6a3acc"
+    },
+    "recipe/deployment/README.md": {
+      "bytes": 5917,
+      "sha256": "618e7e2dc73113383a569616bc111130c0199826a4e73f9276bbc7006300cdbe"
+    },
+    "recipe/deployment/standalone/main.c": {
+      "bytes": 3739,
+      "sha256": "5aefe1eec763227bbb0f37bf1a91f2cb6e1fc07f6c455d7b8614f1b0133d9bbe"
+    },
+    "recipe/deployment/standalone/weather_smoke_vectors.h": {
+      "bytes": 5645,
+      "sha256": "05bd3905dc1723d63c83fa1dc84f32fd16a3a522635a20acbfc5299bc704adb5"
+    },
+    "recipe/deployment/tests/test_weather_control.cpp": {
+      "bytes": 10569,
+      "sha256": "78d137d5dbe2ef57440160e983ae813ec2ea2f173af14804fbdc332e544063a1"
+    },
+    "recipe/deployment/tests/verify_driver.py": {
+      "bytes": 3342,
+      "sha256": "7a56ab9ac3451095cf9d724e7e692ff43c3e122780918431ee02cc3616066202"
+    },
+    "recipe/deployment/weather_control.c": {
+      "bytes": 6058,
+      "sha256": "1714234573a5c62f5f0d4a8c5334f4bd987f986bf263a088166baf8a94a403bb"
+    },
+    "recipe/deployment/weather_control.h": {
+      "bytes": 3445,
+      "sha256": "15dcbb897f9edcdf751099b7c101f647e6ea00225acad52dd3cd192b79d5ef20"
+    },
+    "recipe/deployment/weather_tiled.c": {
+      "bytes": 3110,
+      "sha256": "488eeed398ae5423a0e62df2e2c2c987d933c093527a1a662430dfaa2038e208"
+    },
+    "recipe/deployment/weather_xilinx_standalone.c": {
+      "bytes": 2333,
+      "sha256": "ab19de5a6d1a653a3784dc42660c64add65dea93541136f7d5fcd42d06720c27"
+    },
+    "recipe/deployment/weather_xilinx_standalone.h": {
+      "bytes": 409,
+      "sha256": "c8290b8504a18b517bdc32071d862c44504312aad83664309b42fce065d615c0"
+    },
+    "recipe/system/check_weather_signed_dsp.tcl": {
+      "bytes": 260,
+      "sha256": "5a97ce928c2fb78899db31e48637babf6ede6f2fbdf89707e8e4e56c1cba08e9"
+    },
+    "recipe/system/create.tcl": {
+      "bytes": 3464,
+      "sha256": "8b4eeaf6d1baec29f607c640bf39ca8e6c7c694ad3fd2aadc40004097bc1f66b"
+    },
+    "recipe/system/export_board.tcl": {
+      "bytes": 1834,
+      "sha256": "0019cc612951cf0c83692d97bfb44561acdb707aa273863b77663c8aec1257c8"
+    },
+    "recipe/system/export_checkpoint_platform.tcl": {
+      "bytes": 650,
+      "sha256": "d9f07d3505a1a49afbba32aacd70b4148178b56e7fbdcdd63dc584dc0f6756dd"
+    },
+    "recipe/system/export_corrected_checkpoint.tcl": {
+      "bytes": 1847,
+      "sha256": "a7331f1cc0cdfec71e81ea758c23b4a1742ceb82b915a02cbb5693dec19a7196"
+    },
+    "recipe/system/export_diagnostic_netlist.tcl": {
+      "bytes": 1118,
+      "sha256": "3a6b02bb2cd7f54af1f82059d02b6317783c9414fcc91baaba98d8bebfbfc9d7"
+    },
+    "recipe/system/export_diagnostic_system.tcl": {
+      "bytes": 469,
+      "sha256": "bf3f1f82a32dee3c709013c479c3a9ee406002c772dfd0aaabb304ec19ace697"
+    },
+    "recipe/system/export_linked_synthesis.tcl": {
+      "bytes": 1580,
+      "sha256": "94cbf3e412d2299abc767a02edf2392ec693da8b765fc4ea4cb2e01504e3894a"
+    },
+    "recipe/system/impl.tcl": {
+      "bytes": 1574,
+      "sha256": "c53f2015de9749e56e90405166089381c3cc325a7a5cd2f0734d4a6fd9d41e8b"
+    },
+    "recipe/system/implement_protected_checkpoint.tcl": {
+      "bytes": 1460,
+      "sha256": "cb9afc0b30ed92ffb05b15bb3ba85dcce275b637eb1d03e9868008144c117a44"
+    },
+    "recipe/system/inspect_diagnostic_boundary.tcl": {
+      "bytes": 1262,
+      "sha256": "2ea63a09c2bc2ff58aecc40d270e5e036cd0ecbaf754ea9596afdcee0bc27da3"
+    },
+    "recipe/system/inspect_diagnostic_constants.tcl": {
+      "bytes": 1339,
+      "sha256": "208fe036bd878346042f90296a71c35b0f2fc8e200f12f037eba1723c8945408"
+    },
+    "recipe/system/make_rtl_vectors.cpp": {
+      "bytes": 2622,
+      "sha256": "484bff3cd7335f94ca2711b0990846447e9f1eb22c936a2faebdeaa9d04cf1cd"
+    },
+    "recipe/system/optimize_protected_checkpoint.tcl": {
+      "bytes": 736,
+      "sha256": "2567687a78b321a55a845ae37b1c518da9ccc9373c08d6d3c31f9d30444a7da3"
+    },
+    "recipe/system/package.tcl": {
+      "bytes": 832,
+      "sha256": "c5d218c98ecd14138cdd2e9d2951529519f55bb61338de754dfd4d9cc4b9c13f"
+    },
+    "recipe/system/protect_weather_signed_dsp.tcl": {
+      "bytes": 3589,
+      "sha256": "f31ab85a083848d8ab4b3a2b3d6208556ef31a4fc954dbd9d8418c03b5fa1de5"
+    },
+    "recipe/system/rtl_memory_test.sv": {
+      "bytes": 10925,
+      "sha256": "355e0b6866ef614770881568006281689c3a522b21eca11c0e5171693a46b699"
+    },
+    "recipe/system/synth.tcl": {
+      "bytes": 1163,
+      "sha256": "447fb240c08183bfb61a2f67aed35bec89facd6da96969fb44eb30aba434f815"
+    },
+    "recipe/system/tb_weather_sequence.cpp": {
+      "bytes": 1924,
+      "sha256": "3028f40ea41501eb5de75b8e1dad52fe55d9acfd45e260b57912d7a4dd8c5961"
+    },
+    "recipe/system/trace_physical_dsp_cascade.tcl": {
+      "bytes": 1340,
+      "sha256": "4b1ff2168bef3c689c6ac22a587ff92380f04d40f6716b1ce63a83f67ddabb0b"
+    },
+    "recipe/system/trace_physical_quantization.tcl": {
+      "bytes": 1138,
+      "sha256": "0e32f042b4f24194aebd5ca9f8baedaaa00315adf7e43e24a90c51ba5ca8ec55"
+    },
+    "recipe/system/trace_physical_saturation.tcl": {
+      "bytes": 1054,
+      "sha256": "f90e743ba873954fe41a6c37f154b4a2843ed9e093bb4449c56b26471e56e4f0"
+    },
+    "recipe/system/trace_physical_stages.tcl": {
+      "bytes": 1518,
+      "sha256": "7fe530ccabb38ed4948f3bb9a7afff443c78b98eab7a819cc1ebae606b4b28a1"
+    },
+    "recipe/system/validate_signed_checkpoint.tcl": {
+      "bytes": 708,
+      "sha256": "80b23fc8793415d629110df71aeebd364c14cba7fd582078496d3a0d9de90633"
+    },
+    "recipe/tools/analyze_board_signature.py": {
+      "bytes": 5798,
+      "sha256": "880f52b9f70b864ef1b47b66cfb9c74a1d6261eb0451525715ec35d7d79c979e"
+    },
+    "recipe/tools/analyze_physical_stages.py": {
+      "bytes": 4302,
+      "sha256": "0d4986efd6640a2b1acfaba3019f676d907876c7a9f054ca1c7be034f91b220a"
+    },
+    "recipe/tools/archive_release.py": {
+      "bytes": 1679,
+      "sha256": "fa1cab6cc66de11046e370c286015fa5fefd40223f9143ec7ff5c4fdff66a958"
+    },
+    "recipe/tools/audit_integer_contract.py": {
+      "bytes": 3985,
+      "sha256": "17f1f1960192d8a119d73fcb4c87d8527889b871cc7de68e9b0519f14de31f39"
+    },
+    "recipe/tools/audit_routed_dsp.py": {
+      "bytes": 4683,
+      "sha256": "300ed0eaacf8904ed098c42b889700f1100546fe36e42903b524c14c0846e8b8"
+    },
+    "recipe/tools/audit_system.py": {
+      "bytes": 6166,
+      "sha256": "5d26c100cfb39ff468c83d53939ee90270fc54ca23e02ac61adc352b4fd1229b"
+    },
+    "recipe/tools/board_artifacts.py": {
+      "bytes": 11809,
+      "sha256": "4a60dea9a157e81c443ab300b18d444c8dfb553eaaa59afe7238082e65a462c0"
+    },
+    "recipe/tools/build_standalone.py": {
+      "bytes": 1931,
+      "sha256": "223deeae2a31c937c4785a5aa2591e38dc8ff0af032f584cc79b84205f815f7e"
+    },
+    "recipe/tools/build_system.py": {
+      "bytes": 5074,
+      "sha256": "4ce44094bd6a40e1fc2332e60a37f0c0d0af908856eb3c8de5f7fe3d00642767"
+    },
+    "recipe/tools/collect_signedfix_release.py": {
+      "bytes": 11290,
+      "sha256": "6bd8aa71f86494a6780f51733dfef2f95354fac8c5208017bb4a5ad3aac27a1f"
+    },
+    "recipe/tools/diagnostic_boundary.py": {
+      "bytes": 871,
+      "sha256": "0c1c831b5ebe1bd6bacda8b8634496d056aa07eaf7036f1d29fd95f32ba9f59d"
+    },
+    "recipe/tools/implementation_gate.py": {
+      "bytes": 4775,
+      "sha256": "4c294cad8a74549cc71bd1390ddba8ed09d237835bff6a60ed373c157f322ada"
+    },
+    "recipe/tools/package_release.py": {
+      "bytes": 16082,
+      "sha256": "ca1aefd91050184a2b1c71bdb8246282a946d7b370cca12499fcbb8ed8fefdc0"
+    },
+    "recipe/tools/physical_system_repro.py": {
+      "bytes": 8252,
+      "sha256": "5e073c1d5c71d95532d12508ba3a97642fa7dacb6663bddcc8ec68be34f3853a"
+    },
+    "recipe/tools/prepare_smoke_vectors.py": {
+      "bytes": 1664,
+      "sha256": "0daa1273e2cc5c6feea22ab208e62859952b246bf2f336c394ef552d4985a748"
+    },
+    "recipe/tools/rebuild_lowlight.py": {
+      "bytes": 4600,
+      "sha256": "cc6fec62642a3bf40bf4bb3dd0f12f24cc751c36f3c2605548601a9fa682c8e7"
+    },
+    "recipe/tools/restore_diagnostic_dsp.py": {
+      "bytes": 3112,
+      "sha256": "4a01b448d942bd561ed0ddba7ff7c52a9038a85ed977b0b138396ed157c92763"
+    },
+    "recipe/tools/restore_writecredit.py": {
+      "bytes": 3036,
+      "sha256": "c9bb199bc4ccc9e1854553c0e110904292be061372b01d5035f1ff939977b29d"
+    },
+    "recipe/tools/run_board_repro.py": {
+      "bytes": 19277,
+      "sha256": "39c14b38bfaa6dda06a8adb96d3239d76b4eba41ce82c995126e4815460d747d"
+    },
+    "recipe/tools/run_rtl_memory_test.py": {
+      "bytes": 5913,
+      "sha256": "542477d20777d22c49ed19731dc12a66aabd50a2aee0a6bcfd56a67dc3351472"
+    },
+    "recipe/tools/run_sequence_cosim.py": {
+      "bytes": 3564,
+      "sha256": "ee9eb2b59e6cfe6da2dd45146135c1b637ba62c4828083fb280c901051ce9b4c"
+    },
+    "recipe/tools/run_standalone.py": {
+      "bytes": 1652,
+      "sha256": "791d50b1301d3015fc7734a3bb802883756ec96fc040b034678643e6d9458194"
+    },
+    "recipe/tools/run_windows_desktop.py": {
+      "bytes": 7252,
+      "sha256": "56dc242227c312f6a93910d5cd4f7c3817cd5b9c63a8be69b17abcdff2d089fe"
+    },
+    "recipe/tools/stage_native_board.py": {
+      "bytes": 3753,
+      "sha256": "c4be8368a3ea19d8f63ab9ff39c4cf444dba3a7c4c91f1d6e5f41f85766d1fec"
+    },
+    "recipe/tools/verify_candidate_archive.py": {
+      "bytes": 3601,
+      "sha256": "7db1bc4b86ad3847c68285e14cb4ced9b0f2f437d751f316334775422e096a6b"
+    },
+    "recipe/tools/weather_budget.py": {
+      "bytes": 13353,
+      "sha256": "cb5b351d29e0afdab7e94b3875e36b1e6c50ecfce13f708ec38d07f875543dab"
+    },
+    "reports/analysis_evidence/board_mismatch_20261023_signature.json": {
+      "bytes": 6511,
+      "sha256": "8df67bbab79cedd9bb7fe99a5842e83f723b51276c56843d45150fd6c57186a7"
+    },
+    "reports/analysis_evidence/dsp_cascade_causality_20261023.json": {
+      "bytes": 4745,
+      "sha256": "aa2b24a3368f419239141bcbac70236ee4505fe71aa1089e9ca34c0eb8ff2b94"
+    },
+    "reports/analysis_evidence/physical_stage_comparison_20261023.json": {
+      "bytes": 7442,
+      "sha256": "3d899c97f8d1a92c131b89b4f97a2fc7bb8f01b0a0ef7617ee7df980d2c929a5"
+    },
+    "reports/analysis_evidence/routed_dsp_opmode_20261023.json": {
+      "bytes": 9435,
+      "sha256": "4cef7c7b9de47ee93664e4f9486b5eadce82928c308da3793a0ae2d2a9168f6f"
+    },
+    "reports/analysis_evidence/signedfix_release_gate_20261023.json": {
+      "bytes": 2483,
+      "sha256": "9b5590f91f950960f78f61f491edd46599164af4a24df75222caa40fbab336a9"
+    },
+    "reports/analysis_evidence/signedfix_routed_dsp_opmode_20261023.json": {
+      "bytes": 9435,
+      "sha256": "d69cab29cbf4fbee10bf74b5c880ea467af87f295742af73af2b0cf7d9a6f704"
+    },
+    "reports/analysis_evidence/source_integer_contract_20261023.json": {
+      "bytes": 6991,
+      "sha256": "f4304ddde59a65145870ca70a0ade440338dbbc1b7f11bc6a184907c0fdec196"
+    },
+    "reports/board_mismatch_20261023.md": {
+      "bytes": 11572,
+      "sha256": "80f16ef3278d9387a977e359bc714d670f26bc7d9fe8eb7cac9283402a252d76"
+    },
+    "reports/bootgen_console.txt": {
+      "bytes": 261,
+      "sha256": "479d3c2ac2718b64db5e6606738ab3f58b0662d3ca6715f8568e7dba66476f51"
+    },
+    "reports/change_review_20261023.md": {
+      "bytes": 8410,
+      "sha256": "024d17385dbffb646cc4da04add32361bb1bfaa58a73af05f7ed4d39b0058a72"
+    },
+    "reports/corrected_build_provenance.json": {
+      "bytes": 7779,
+      "sha256": "b01a17e15fdeb702d366a651b41c32f9ccc01dcb3bb2eba0f5f7763365ff6aaa"
+    },
+    "reports/implementation_assumptions_audit_20261023.md": {
+      "bytes": 14088,
+      "sha256": "72fd47d3ae3e8aae555d569c992639b2e10efbf02e6524b3821b39a86981b35b"
+    },
+    "reports/implementation_console.txt": {
+      "bytes": 36556,
+      "sha256": "bc1d45c69df2909ef8a078f6816a65ed5d0dee5e7fe31786f91efc77489c3718"
+    },
+    "reports/implementation_executed_sources/implement_protected_checkpoint.tcl": {
+      "bytes": 1460,
+      "sha256": "cb9afc0b30ed92ffb05b15bb3ba85dcce275b637eb1d03e9868008144c117a44"
+    },
+    "reports/implementation_executed_sources/optimize_protected_checkpoint.tcl": {
+      "bytes": 736,
+      "sha256": "2567687a78b321a55a845ae37b1c518da9ccc9373c08d6d3c31f9d30444a7da3"
+    },
+    "reports/implementation_executed_sources/protect_weather_signed_dsp.tcl": {
+      "bytes": 2203,
+      "sha256": "b66554c29da66c4c3a9cf8d12d5f6a49ea1e83b0eba4603c115b4a3e2df9835b"
+    },
+    "reports/implementation_executed_sources/SHA256.json": {
+      "bytes": 327,
+      "sha256": "31c36b0964be9f6b76a4fac49b1afdff7e61f026f0839728c81e10862f10c86e"
+    },
+    "reports/implementation_repro/actual_0.bin": {
+      "bytes": 384,
+      "sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697"
+    },
+    "reports/implementation_repro/actual_1.bin": {
+      "bytes": 384,
+      "sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697"
+    },
+    "reports/implementation_repro/actual_2.bin": {
+      "bytes": 384,
+      "sha256": "174dc275ba8a7a84b3fe85e129255be096d88d83d5f6f56c690d0e7444dd25b7"
+    },
+    "reports/implementation_repro/actual_3.bin": {
+      "bytes": 384,
+      "sha256": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697"
+    },
+    "reports/implementation_repro/ddr_transactions.txt": {
+      "bytes": 12768,
+      "sha256": "c9b14f3a984d471d60e80da35e02bbea8d4609706cd1bb76d3547f98ece16310"
+    },
+    "reports/implementation_repro/executed_sources/diagnostic_boundary.py": {
+      "bytes": 871,
+      "sha256": "0c1c831b5ebe1bd6bacda8b8634496d056aa07eaf7036f1d29fd95f32ba9f59d"
+    },
+    "reports/implementation_repro/executed_sources/physical_system_repro.py": {
+      "bytes": 8252,
+      "sha256": "5e073c1d5c71d95532d12508ba3a97642fa7dacb6663bddcc8ec68be34f3853a"
+    },
+    "reports/implementation_repro/executed_sources/rtl_memory_test.sv": {
+      "bytes": 10925,
+      "sha256": "355e0b6866ef614770881568006281689c3a522b21eca11c0e5171693a46b699"
+    },
+    "reports/implementation_repro/executed_sources/run_board_repro.py": {
+      "bytes": 19277,
+      "sha256": "39c14b38bfaa6dda06a8adb96d3239d76b4eba41ce82c995126e4815460d747d"
+    },
+    "reports/implementation_repro/golden_0.hex": {
+      "bytes": 1152,
+      "sha256": "36167b24d39ba284c8c3d2f5ed73e474f70d2a05f934d2545de343656b90557e"
+    },
+    "reports/implementation_repro/golden_1.hex": {
+      "bytes": 1152,
+      "sha256": "36167b24d39ba284c8c3d2f5ed73e474f70d2a05f934d2545de343656b90557e"
+    },
+    "reports/implementation_repro/golden_2.hex": {
+      "bytes": 1152,
+      "sha256": "1bfc9bf15033a7bf476e4e509ba5b95a39b48be0993ad12b3a9b414da2ca65ef"
+    },
+    "reports/implementation_repro/golden_3.hex": {
+      "bytes": 1152,
+      "sha256": "36167b24d39ba284c8c3d2f5ed73e474f70d2a05f934d2545de343656b90557e"
+    },
+    "reports/implementation_repro/input_0.hex": {
+      "bytes": 1152,
+      "sha256": "ee271ccf51e616961788bca884a47e862ef694e482c5f9e72df06b411fd3bee0"
+    },
+    "reports/implementation_repro/input_1.hex": {
+      "bytes": 1152,
+      "sha256": "ee271ccf51e616961788bca884a47e862ef694e482c5f9e72df06b411fd3bee0"
+    },
+    "reports/implementation_repro/input_2.hex": {
+      "bytes": 1152,
+      "sha256": "04b57c4625185d5cb13e7f56a183aa5f599c210ef1e0328289bdf3432ba73ef4"
+    },
+    "reports/implementation_repro/input_3.hex": {
+      "bytes": 1152,
+      "sha256": "ee271ccf51e616961788bca884a47e862ef694e482c5f9e72df06b411fd3bee0"
+    },
+    "reports/implementation_repro/run.json": {
+      "bytes": 72607,
+      "sha256": "29c779c2335cc42abc0eb90e3de3500e81f2eebb9a1321c3d0cce37984edd988"
+    },
+    "reports/implementation_repro/simulation.log": {
+      "bytes": 609657,
+      "sha256": "b75575602a192f0d124e5674ed819bee623718490c96929dec23e6ddcc908b60"
+    },
+    "reports/implementation_repro/weather_rtl_test.sv": {
+      "bytes": 21162,
+      "sha256": "2dce83905e21e62e24f97c9084ad4a655b5bcc6e7c214a0da6154a668ab9279d"
+    },
+    "reports/interface_final_audit.json": {
+      "bytes": 84238,
+      "sha256": "94bce198ccb6aef1b2ac2356fd9c37c0c7dc23a5cb2fbafc867c1ec43223626d"
+    },
+    "reports/native_platform_console.txt": {
+      "bytes": 11180,
+      "sha256": "6bf01075cfd0adb132d1d3680e3434b87acd618459a42f94b2983ecec9cda085"
+    },
+    "reports/native_platform_identity.json": {
+      "bytes": 11091,
+      "sha256": "31f570a12ecf7cf7d7f5f88a62486e14833c21016b666cfdc6a5775d73479a0f"
+    },
+    "reports/native_xsa_first_attempt_status.txt": {
+      "bytes": 272,
+      "sha256": "2fbdd511c29313748f74bbe2cfadce95719fc080b43b3fc3b90a5d062dd49b8d"
+    },
+    "reports/optimization_console.txt": {
+      "bytes": 16479,
+      "sha256": "d92f1aeed03aa4f91f4d72ab6c590b490756aed3504264eca1b07dcf34931365"
+    },
+    "reports/original_build.json": {
+      "bytes": 141180,
+      "sha256": "46ee93921e93d8ba3a9545f6235beaa16653a293bc226668bc81b75e04a8ff1f"
+    },
+    "reports/route_status.rpt": {
+      "bytes": 651,
+      "sha256": "cd79f0e764d96996b8cc5f180beb63f3986744322771965768717d0e5740596b"
+    },
+    "reports/routed_drc.rpt": {
+      "bytes": 745574,
+      "sha256": "5dacdada81fb3063938a1e3d1fd4ed83f73ee31a133cad5176036729deee44d6"
+    },
+    "reports/routed_timing.rpt": {
+      "bytes": 70213,
+      "sha256": "c00bba0ef0e465bef0d0bbfa7dd7ea975c3dbc4d6db0e3d5130e37a9649a770f"
+    },
+    "reports/routed_utilization_summary.rpt": {
+      "bytes": 13231,
+      "sha256": "20cb5b288993a1affce9ff80bf4c33f7d0265c70b7bcb1d5d6caecaf3979c165"
+    },
+    "reports/source_worktree_status.txt": {
+      "bytes": 1867,
+      "sha256": "81b9373fd16efbd5f3e9f7faab5cb8850931b0059718665118c372c91e525332"
+    },
+    "reports/strict_boundary_console.txt": {
+      "bytes": 5703,
+      "sha256": "e2034bd99bcdef19f7091716d33da9c2e2f87b80fb7caa32cac034bf6e24e5c7"
+    },
+    "reports/vivado_export_console.txt": {
+      "bytes": 13052,
+      "sha256": "897026a620a6b2469e66d7b708f1379e48ad99bceb92db6aa02d8d809d7562bf"
+    },
+    "weather_system.bit": {
+      "bytes": 7797826,
+      "sha256": "2b2d54452ca3ab65b40e9caa60691039b0f747c9490ae5b396696be9dfb67c2e"
+    },
+    "weather_system.bit.bin": {
+      "bytes": 7797692,
+      "sha256": "3cc937d0b921c87ef3b2101309ae2fc3261c132dfd5f95c90539087a1fe86ebd"
+    },
+    "weather_system.hwh": {
+      "bytes": 648505,
+      "sha256": "d8954742917e102cd25f831d07eba83026a5f5feebc0b457ccd67e5577675c40"
+    },
+    "weather_system.xsa": {
+      "bytes": 4579115,
+      "sha256": "74a25b0142d08a85f0d671e796583cdf3775dc05257d98f3692072c007db0694"
+    }
+  }
+}

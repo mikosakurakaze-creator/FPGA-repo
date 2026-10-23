@@ -112,3 +112,12 @@ data/
 !board/releases/k26_weather_v2_20261022/weather_system.hwh
 !board/releases/k26_weather_v2_20261022/weather_system.bit.bin
 !board/releases/k26_weather_v2_20261022/drivers/**/data/
+
+# Reviewed correction candidate; still requires explicit approval before Git upload.
+!board/releases/k26_weather_v2_signedfix_20261023/weather_system.bit
+!board/releases/k26_weather_v2_signedfix_20261023/weather_system.xsa
+!board/releases/k26_weather_v2_signedfix_20261023/weather_system.hwh
+!board/releases/k26_weather_v2_signedfix_20261023/weather_system.bit.bin
+!board/releases/k26_weather_v2_signedfix_20261023/drivers/**/data/
+!board/releases/k26_weather_v2_signedfix_20261023/reports/implementation_repro/actual_*.bin
+!board/releases/k26_weather_v2_signedfix_20261023/reports/implementation_repro/simulation.log

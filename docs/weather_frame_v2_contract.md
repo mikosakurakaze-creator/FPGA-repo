@@ -1,5 +1,7 @@
 # Weather 整帧原型接口合同（实验 ABI v2）
 
+> 2026-10-23 验收状态更新：当前发布版已在真板同组 8×8、task=0 测试中出现 171/192 标量不匹配，尚未确认根因。下述接口定义和历史离线验证范围保留；不得据此认定真板数值通过。见 [调查记录](board_mismatch_20261023.md)。
+
 更新：2026-10-21；当前实现为 `experiments/stream_frame`。主机数值验证、两任务 Vitis CSim/综合/8×8 RTL/IP 导出、五次 vendor RTL、九次独立 AXI RTL（含双任务完整 720p）与新组合系统布局布线均已通过。最终 bit/XSA 与交付状态见 [流水版修正记录](stream_revision_20261020.md)。现有 `derain_top` / `dehaze_top` 包继续使用 [ABI v1 合同](weather_ddr_contract_draft.md)。
 
 ## 函数与数据
