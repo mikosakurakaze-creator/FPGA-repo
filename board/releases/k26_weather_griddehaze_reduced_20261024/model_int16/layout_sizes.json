@@ -1,0 +1,36 @@
+{
+  "bundle_id": "5ff57bb52cff87944261aa1fc68ae556a08a65f1c3d32de702ac47a2bda13710",
+  "layouts": [
+    {
+      "height": 33,
+      "width": 47,
+      "file": "layout_33x47.bin",
+      "layout_bytes": 1344,
+      "scratch_bytes": 794240,
+      "input_bytes": 9306,
+      "output_bytes": 9306,
+      "sha256": "49ca06180ff37136cf753cb7266e5d3b5b209c824818f60e487c7ff716866b16"
+    },
+    {
+      "height": 675,
+      "width": 1280,
+      "file": "layout_675x1280.bin",
+      "layout_bytes": 1344,
+      "scratch_bytes": 442368000,
+      "input_bytes": 5184000,
+      "output_bytes": 5184000,
+      "sha256": "f1bbc4b06f75d5167af8830334a4f488dc29fa78d58654f1acd477c43a3ed802"
+    },
+    {
+      "height": 720,
+      "width": 1280,
+      "file": "layout_720x1280.bin",
+      "layout_bytes": 1344,
+      "scratch_bytes": 471859200,
+      "input_bytes": 5529600,
+      "output_bytes": 5529600,
+      "sha256": "e812d46e9d08a9e1ab7e845ca2e430539831a034ca2d64e4258a527efa892877"
+    }
+  ],
+  "addresses": "No physical addresses are embedded; caller allocates independent DMA slots"
+}

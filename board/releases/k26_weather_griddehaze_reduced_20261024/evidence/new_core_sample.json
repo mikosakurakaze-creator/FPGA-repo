@@ -1,0 +1,86 @@
+{
+  "status": "pass",
+  "kind": "post_route_functional_numerical_samples",
+  "shape": [
+    1,
+    3,
+    4,
+    4
+  ],
+  "nodes": [
+    {
+      "index": 1,
+      "id": "conv_in",
+      "op": "conv",
+      "scalars": 256,
+      "sha256": "831020e5dbb5c87e68da0bede50a24e2a2bd2c8fbace4e40e778905e5a351e23",
+      "mismatch": 0
+    },
+    {
+      "index": 2,
+      "id": "rdb_in.residual_dense_layers.0.conv",
+      "op": "conv",
+      "scalars": 256,
+      "sha256": "c73b2405b2ca5e87c11a48c264b19bc9a4bd995c1fbe47635d343c529b3feed1",
+      "mismatch": 0
+    },
+    {
+      "index": 3,
+      "id": "rdb_in.residual_dense_layers.0.conv.relu",
+      "op": "relu",
+      "scalars": 256,
+      "sha256": "a1eb9488b050a2efb33bb5ca90d6a0625526bca19e141296644f4d34785c3b2f",
+      "mismatch": 0
+    },
+    {
+      "index": 4,
+      "id": "rdb_in.residual_dense_layers.0.cat",
+      "op": "cat",
+      "scalars": 512,
+      "sha256": "8f366cf41b2fe780fa367442483eb6c3d4c66d10128c00499f5eb1573b184427",
+      "mismatch": 0
+    }
+  ],
+  "total_scalars": 1280,
+  "provenance": {
+    "scope": "post-route functional numerical samples; actual new core, reset/control SmartConnect, HP0/HP3 path, PS boundary simulated; no SDF; no full-network completion claim",
+    "source_preparation": "C:\\Users\\wzh16\\Desktop\\github clone\\weather_fpga_integration\\experiments\\griddehaze_frame\\work\\frame_routed_releasefix01",
+    "netlist_sha256": "8147303c1738c8ed82b8e628344f1b625024d919e1e1853d924461200b15d749",
+    "nodes": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "golden": "C:\\Users\\wzh16\\Desktop\\github clone\\weather_fpga_integration\\experiments\\griddehaze_frame\\a_candidate\\golden\\size_4x4",
+    "method": "Reuse exact elaborated system snapshot; Tcl only reads graph index and simulated DDR; no DUT signal forcing or arithmetic replacement",
+    "compiled_netlist_sha256": "0615182156f7eda61aa9f7f00811796378bda0d22ec7019a00cbf0d9059d3a2a",
+    "compiled_test_sha256": "ae011e046f3835fc528a6184878f547351342dbc10fffc56af330ed74b6719c6",
+    "snapshot_sha256": {
+      "xsimk.exe": "61579d6cd5da9cbeb5c3abd2698b77ac7c0ca266909fa7d655aa79c389e4189e",
+      "xsim.mem": "7f04053ed8b3be84b29ec9ce3a868978848ddca11d1dafd1cec9f3df538b5d22",
+      "xsim.reloc": "85baf820330d7f6c476592f75aa5c6cfd8645e44140b58ef27e0b1d4bc51d520"
+    },
+    "fixture_sha256": {
+      "feature.hex": "b7d16d00a0099664fb3a9f82fde36d5f51cea90ac2c76655aa89622aa4dc330d",
+      "golden.hex": "accc1fca2b069c9b9b4b09040e76c20ca42219cb0544f317591106af2426698c",
+      "layout.hex": "ca92d46f84112eb889e55ff84cda7d4a22f07e27175ce85c5fd2313b2558883a",
+      "node_at.hex": "6d5309e3f6094e4bc0a4da23c6e3d1a61fc23040367f5c7d45e48cc71b9a7a39",
+      "node_bytes.hex": "85b6403c9fca8e47f8a0bcdd6b63e6e7002dbed69579c424ec9d2998e3025577",
+      "node_start.hex": "c68711aecf285f1b26b23c583c630082e0f20de10c80a170ceb1b31d27b9aea7",
+      "parameter.hex": "b41795b6eea32436a563668672410e0223c79e8033a7c6c9df49a8e2a4fd098f"
+    },
+    "snapshot_matches_prepared_source": true
+  },
+  "simulation_log_sha256": "2b58f88f6cdeb40d378bc793e08ebb565e77fd9ca91be987117d783a9661d3de",
+  "capture_sha256": "f18118792542424aff4073d36190eadb869f268171c302ee780145ab32eb5718",
+  "tcl_sha256": "70d47b3cc678d277987680d1a8d55c1275086220fb509d093887b93ce6e821c8",
+  "golden_report_sha256": "85060e14787c322d261a3a27e2f290e8f45fe191ea1974bfc482793391ee2bb8",
+  "scope": "Actual routed new core and parent reset/control/SmartConnect/DDR boundary; simulated PS DDR; no SDF",
+  "limitations": [
+    "Only nodes 1..4: two convolutions, ReLU, concatenation",
+    "No full-network post-route completion or warm-frame claim",
+    "No deconvolution, coefficient-multiply or addition post-route numerical coverage",
+    "No physical board or DMA-driver validation"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "shape": [
+    1,
+    3,
+    8,
+    8
+  ],
+  "layout": "NCHW",
+  "channel_order": "RGB",
+  "dtype": "little-endian signed INT16",
+  "input_frac": 14,
+  "output_frac": 14,
+  "tasks": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "purpose": "Old Weather numerical regression; do not submit its vectors to the new GridDehazeNet ABI",
+  "files": {
+    "expected_0.bin": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+    "expected_1.bin": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+    "expected_2.bin": "174dc275ba8a7a84b3fe85e129255be096d88d83d5f6f56c690d0e7444dd25b7",
+    "expected_3.bin": "bbb5e6f343e1a4b6f0b05c8f18fbce48655e30ed532194e1a4e32fcf250b8697",
+    "input_0.bin": "3bf4260d11a4d9d8ec7c00167a323d9793a7f74fb8e7a11c8dfc7f7822bc62f6",
+    "input_1.bin": "3bf4260d11a4d9d8ec7c00167a323d9793a7f74fb8e7a11c8dfc7f7822bc62f6",
+    "input_2.bin": "50be8d32ad17d089bc0be1ccb69b7fae1541139ccdfa74b0cdbd566489ba52e5",
+    "input_3.bin": "3bf4260d11a4d9d8ec7c00167a323d9793a7f74fb8e7a11c8dfc7f7822bc62f6"
+  }
+}

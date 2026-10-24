@@ -1,5 +1,7 @@
 # 天气图像恢复 FPGA 集成项目
 
+2026-10-24 新增五核系统（旧 CNN/Bilinear/Curve/Weather + 新 GridDehazeNet）本地候选：[硬件、同版 INT16 参数及核查结果](board/releases/k26_weather_griddehaze_reduced_20261024/README.md)。本轮修正发布换行/哈希和完整系统 HWH，并复核 33×47 冷暖 RTL 与新系统旧 Weather 回归；新核布线后采用代表性数值检查。各阶段覆盖范围见该目录，尚未进行真板验收。
+
 > 2026-10-23：已收到 KV260 的 8×8、task=0 真板不匹配证据（171/192 标量）。`k26_weather_v2_20261022` 保留为可追溯的故障版本，当前暂停作为通过验收的上板版本使用。诊断进展见 [真板不匹配调查](docs/board_mismatch_20261023.md)。原时序和仿真通过记录不代表真板数值正确。
 
 本轮已定位并修正实现阶段的DSP截断/符号扩展变化：[2026-10-23修正候选](board/releases/k26_weather_v2_signedfix_20261023/README.md) 已重新布局布线，实际新routed网表四帧task=0、0、1、0全部逐值通过；100 MHz setup +0.638 ns、hold +0.010 ns。包含原生Vivado导出的新bit/XSA和匹配BIN，仍需真板复测。代码中未经确认的假设、已补的检查与未覆盖边界见 [代码假设自审](docs/implementation_assumptions_audit_20261023.md)。

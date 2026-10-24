@@ -1,5 +1,7 @@
 # 板端文件
 
+2026-10-24 五核系统候选（含新增 GridDehazeNet）：[硬件、同版参数和数值核查记录](releases/k26_weather_griddehaze_reduced_20261024/README.md)。本目录内最新状态以该发布 README 为准；旧版继续保留作历史诊断参考。新候选尚未通过真板验收。
+
 当前可供下游上板的 KV260/K26 硬件发布目录：
 
 [releases/k26_weather_v2_20261022](releases/k26_weather_v2_20261022/README.md)

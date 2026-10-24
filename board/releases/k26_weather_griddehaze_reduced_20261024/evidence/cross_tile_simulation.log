@@ -1,0 +1,899 @@
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.gdn_frame_axi_test -prj rtl.prj -L unisims_ver -L unimacro_ver -L secureip -L xpm -relax -mt 2 -s gdn_frame_axi_test 
+Using 2 slave threads.
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_am_addmul_16s_16s_16s_16_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_am_addmul_16s_16s_16s_16_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_am_addmul_16s_16s_16s_16_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_ama_addmuladd_16s_16s_16s_16s_16_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_ama_addmuladd_16s_16s_16s_16s_16_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_ama_addmuladd_16s_16s_16s_16s_16_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_biases_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_biases_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_control_s_axi
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_feature_mem_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_load
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_store
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_read
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_write
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_srl
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_feature_mem_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_a_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_a_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_b_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_b_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_bias_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_bias_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_channels_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_channels_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_coefficient_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_coefficient_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_frac_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_frac_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_kernel_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_kernel_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_like_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_like_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_op_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_op_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_padding_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_padding_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_shift_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_shift_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_stride_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_stride_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_gdn_model_graph_weight_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_gdn_model_graph_weight_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_conv_tile_top_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_conv_tile_top_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_conv_tile_top_1_input_cache_RAM_2P_BRAM_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_conv_tile_top_1_input_cache_RAM_2P_BRAM_1R1W
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_conv_tile_top_1_Pipeline_VITIS_LOOP_105_11_VITIS_LOOP_105_12_VITIS_LO.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_conv_tile_top_1_Pipeline_VITIS_LOOP_105_11_VITIS_LOOP_105_12_VITIS_LO
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_conv_tile_top_1_Pipeline_VITIS_LOOP_125_16_VITIS_LOOP_125_17_VITIS_LO.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_conv_tile_top_1_Pipeline_VITIS_LOOP_125_16_VITIS_LOOP_125_17_VITIS_LO
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_conv_tile_top_1_Pipeline_VITIS_LOOP_81_1_VITIS_LOOP_81_2_VITIS_LOOP_8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_conv_tile_top_1_Pipeline_VITIS_LOOP_81_1_VITIS_LOOP_81_2_VITIS_LOOP_8
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_conv_tile_top_1_Pipeline_VITIS_LOOP_92_5_VITIS_LOOP_92_6_VITIS_LOOP_9.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_conv_tile_top_1_Pipeline_VITIS_LOOP_92_5_VITIS_LOOP_92_6_VITIS_LOOP_9
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_conv_tile_top_1_result_cache_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_conv_tile_top_1_result_cache_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_conv_tile_top_1_weight_cache_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_conv_tile_top_1_weight_cache_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_elementwise_top_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_elementwise_top_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_elementwise_top_1_a_cache_RAM_2P_BRAM_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_elementwise_top_1_a_cache_RAM_2P_BRAM_1R1W
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_elementwise_top_1_coefficient_cache_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_elementwise_top_1_coefficient_cache_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_elementwise_top_1_Pipeline_VITIS_LOOP_100_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_elementwise_top_1_Pipeline_VITIS_LOOP_100_5
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_elementwise_top_1_Pipeline_VITIS_LOOP_105_6.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_elementwise_top_1_Pipeline_VITIS_LOOP_105_6
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_elementwise_top_1_Pipeline_VITIS_LOOP_120_7.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_elementwise_top_1_Pipeline_VITIS_LOOP_120_7
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_elementwise_top_1_Pipeline_VITIS_LOOP_87_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_elementwise_top_1_Pipeline_VITIS_LOOP_87_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_elementwise_top_1_Pipeline_VITIS_LOOP_95_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_elementwise_top_1_Pipeline_VITIS_LOOP_95_4
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_49_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_49_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_49_1_gdn_model_bundle_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_49_1_gdn_model_bundle_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_71_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_71_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_71_3_gdn_model_graph_last_use_ROM_AUbkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_71_3_gdn_model_graph_last_use_ROM_AUbkb
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_88_5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_88_5
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_88_5_gdn_model_shifts_ROM_AUTO_1R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_griddehaze_frame_top_Pipeline_VITIS_LOOP_88_5_gdn_model_shifts_ROM_AUTO_1R
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_heights_RAM_2P_BRAM_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_heights_RAM_2P_BRAM_1R1W
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mac_mul_sub_16s_7ns_16s_16_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_mul_sub_16s_7ns_16s_16_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_mul_sub_16s_7ns_16s_16_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mac_muladd_15ns_2ns_2ns_16_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_15ns_2ns_2ns_16_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_15ns_2ns_2ns_16_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mac_muladd_16ns_2ns_2ns_18_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_16ns_2ns_2ns_18_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_16ns_2ns_2ns_18_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mac_muladd_16ns_7ns_16ns_23_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_16ns_7ns_16ns_23_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_16ns_7ns_16ns_23_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mac_muladd_16ns_8ns_20s_25_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_16ns_8ns_20s_25_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_16ns_8ns_20s_25_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mac_muladd_16s_16s_48s_48_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_16s_16s_48s_48_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_16s_16s_48s_48_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mac_muladd_23ns_16ns_16ns_39_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_23ns_16ns_16ns_39_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_23ns_16ns_16ns_39_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mac_muladd_8ns_2ns_2ns_9_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_8ns_2ns_2ns_9_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_8ns_2ns_2ns_9_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mac_muladd_9ns_2ns_2ns_11_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_9ns_2ns_2ns_11_4_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mac_muladd_9ns_2ns_2ns_11_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_16ns_16ns_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_16ns_16ns_32_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_16ns_8ns_24_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_16ns_8ns_24_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_16s_16s_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_16s_16s_32_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_17ns_17ns_34_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_17ns_17ns_34_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_19s_8ns_27_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_19s_8ns_27_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_24ns_16ns_31_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_24ns_16ns_31_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_25s_16ns_41_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_25s_16ns_41_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_27s_19s_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_27s_19s_32_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_2ns_2ns_4_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_2ns_2ns_4_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_32s_32s_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_32s_32s_32_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_32s_8ns_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_32s_8ns_32_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_5ns_16ns_21_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_5ns_16ns_21_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_7ns_21ns_28_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_7ns_21ns_28_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_8ns_16s_16_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_8ns_16s_16_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_8ns_34ns_41_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_8ns_34ns_41_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_8ns_4ns_11_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_8ns_4ns_11_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_8ns_8ns_14_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_8ns_8ns_14_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_8ns_8ns_15_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_8ns_8ns_15_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_mul_8s_32s_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_mul_8s_32s_32_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_offsets_RAM_2P_BRAM_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_offsets_RAM_2P_BRAM_1R1W
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_p_anonymous_namespace_requantize.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_p_anonymous_namespace_requantize
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_parameter_mem_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_parameter_mem_m_axi
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_parameter_mem_m_axi_load
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_parameter_mem_m_axi_read
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_parameter_mem_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_parameter_mem_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_parameter_mem_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_parameter_mem_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_parameter_mem_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_parameter_mem_m_axi_srl
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_parameter_mem_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_scale_shifts_RAM_AUTO_1R1W.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_scale_shifts_RAM_AUTO_1R1W
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_sparsemux_17_3_16_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_sparsemux_17_3_16_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_sparsemux_7_2_16_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_sparsemux_7_2_16_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_sparsemux_7_2_18_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_sparsemux_7_2_18_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/griddehaze_frame_top_sparsemux_7_2_48_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module griddehaze_frame_top_sparsemux_7_2_48_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/axi_bounded_memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module gdn_axi_bounded_memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/frame_axi_test.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module gdn_frame_axi_test
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_gdn_model_g...
+Compiling module xil_defaultlib.griddehaze_frame_top_offsets_RAM...
+Compiling module xil_defaultlib.griddehaze_frame_top_heights_RAM...
+Compiling module xil_defaultlib.griddehaze_frame_top_biases_RAM_...
+Compiling module xil_defaultlib.griddehaze_frame_top_scale_shift...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_flow_contro...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_8ns_16s...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_25s_16n...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_am_addmul_1...
+Compiling module xil_defaultlib.griddehaze_frame_top_am_addmul_1...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_8ns_8ns...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_sparsemux_7...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_mul_sub...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_mul_sub...
+Compiling module xil_defaultlib.griddehaze_frame_top_ama_addmula...
+Compiling module xil_defaultlib.griddehaze_frame_top_ama_addmula...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_p_anonymous...
+Compiling module xil_defaultlib.griddehaze_frame_top_sparsemux_1...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mac_muladd_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_8ns_34n...
+Compiling module xil_defaultlib.griddehaze_frame_top_sparsemux_7...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_19s_8ns...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_27s_19s...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_17ns_17...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_2ns_2ns...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_8ns_4ns...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_8ns_8ns...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_5ns_16n...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_7ns_21n...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_sparsemux_7...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_16s_16s...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_8s_32s_...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_32s_8ns...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_16ns_16...
+Compiling module xil_defaultlib.griddehaze_frame_top_griddehaze_...
+Compiling module xil_defaultlib.griddehaze_frame_top_control_s_a...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_feature_mem...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_parameter_m...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_32s_32s...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_16ns_8n...
+Compiling module xil_defaultlib.griddehaze_frame_top_mul_24ns_16...
+Compiling module xil_defaultlib.griddehaze_frame_top
+Compiling module xil_defaultlib.gdn_axi_bounded_memory(BASE=64'b...
+Compiling module xil_defaultlib.gdn_axi_bounded_memory(BASE=64'b...
+Compiling module xil_defaultlib.gdn_frame_axi_test
+Built simulation snapshot gdn_frame_axi_test
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Sat Oct 24 15:36:33 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/gdn_frame_axi_test/xsim_script.tcl
+# xsim {gdn_frame_axi_test} -autoloadwcfg -tclbatch {run.tcl}
+Time resolution is 1 ps
+source run.tcl
+## run all
+GDN_RTL_BAD_MODEL_PASS
+GDN_AXI_PROGRESS cycle=1000000 feature_reads=25194 parameter_reads=7809 writes=28912
+GDN_AXI_PROGRESS cycle=2000000 feature_reads=71706 parameter_reads=25089 writes=49512
+GDN_AXI_PROGRESS cycle=3000000 feature_reads=120299 parameter_reads=25089 writes=98214
+GDN_AXI_PROGRESS cycle=4000000 feature_reads=177135 parameter_reads=32065 writes=130096
+GDN_AXI_PROGRESS cycle=5000000 feature_reads=244003 parameter_reads=52801 writes=142504
+GDN_AXI_PROGRESS cycle=6000000 feature_reads=291994 parameter_reads=66625 writes=173927
+GDN_AXI_PROGRESS cycle=7000000 feature_reads=340843 parameter_reads=66625 writes=222589
+GDN_AXI_PROGRESS cycle=8000000 feature_reads=407802 parameter_reads=74091 writes=252256
+GDN_AXI_PROGRESS cycle=9000000 feature_reads=470634 parameter_reads=101249 writes=260568
+GDN_AXI_PROGRESS cycle=10000000 feature_reads=542442 parameter_reads=118529 writes=270680
+GDN_AXI_PROGRESS cycle=11000000 feature_reads=585842 parameter_reads=128897 writes=311224
+GDN_AXI_PROGRESS cycle=12000000 feature_reads=634450 parameter_reads=128897 writes=359958
+GDN_AXI_PROGRESS cycle=13000000 feature_reads=689914 parameter_reads=133569 writes=397147
+GDN_AXI_PROGRESS cycle=14000000 feature_reads=767226 parameter_reads=152001 writes=405120
+GDN_AXI_PROGRESS cycle=15000000 feature_reads=830266 parameter_reads=179649 writes=412522
+GDN_AXI_PROGRESS cycle=16000000 feature_reads=906426 parameter_reads=198081 writes=419576
+GDN_AXI_PROGRESS cycle=17000000 feature_reads=952753 parameter_reads=211905 writes=461515
+GDN_AXI_PROGRESS cycle=18000000 feature_reads=1001346 parameter_reads=211905 writes=510254
+GDN_AXI_PROGRESS cycle=19000000 feature_reads=1050210 parameter_reads=211905 writes=558924
+GDN_AXI_PROGRESS cycle=20000000 feature_reads=1182170 parameter_reads=215809 writes=580880
+GDN_AXI_PROGRESS cycle=21000000 feature_reads=1319828 parameter_reads=223489 writes=600281
+GDN_AXI_PROGRESS cycle=22000000 feature_reads=1388202 parameter_reads=230465 writes=630512
+GDN_AXI_PROGRESS cycle=23000000 feature_reads=1434497 parameter_reads=244289 writes=659677
+GDN_AXI_PROGRESS cycle=24000000 feature_reads=1483346 parameter_reads=244289 writes=708353
+GDN_AXI_PROGRESS cycle=25000000 feature_reads=1542378 parameter_reads=255873 writes=729579
+GDN_AXI_PROGRESS cycle=26000000 feature_reads=1608362 parameter_reads=276609 writes=742184
+GDN_AXI_PROGRESS cycle=27000000 feature_reads=1655041 parameter_reads=285825 writes=784060
+GDN_AXI_PROGRESS cycle=28000000 feature_reads=1703634 parameter_reads=285825 writes=832796
+GDN_AXI_PROGRESS cycle=29000000 feature_reads=1770810 parameter_reads=299713 writes=849760
+GDN_AXI_PROGRESS cycle=30000000 feature_reads=1834553 parameter_reads=323905 writes=860248
+GDN_AXI_PROGRESS cycle=31000000 feature_reads=1900040 parameter_reads=348097 writes=872690
+GDN_AXI_PROGRESS cycle=32000000 feature_reads=1948648 parameter_reads=348097 writes=921421
+GDN_AXI_PROGRESS cycle=33000000 feature_reads=1997343 parameter_reads=348097 writes=970143
+GDN_AXI_PROGRESS cycle=34000000 feature_reads=2057818 parameter_reads=357377 writes=996422
+GDN_AXI_PROGRESS cycle=35000000 feature_reads=2133978 parameter_reads=375809 writes=1002752
+GDN_AXI_PROGRESS cycle=36000000 feature_reads=2204265 parameter_reads=403457 writes=1011064
+GDN_AXI_PROGRESS cycle=37000000 feature_reads=2266951 parameter_reads=431105 writes=1022983
+GDN_AXI_PROGRESS cycle=38000000 feature_reads=2315544 parameter_reads=431105 writes=1071717
+GDN_AXI_PROGRESS cycle=39000000 feature_reads=2364408 parameter_reads=431105 writes=1120387
+GDN_AXI_PROGRESS cycle=40000000 feature_reads=2426356 parameter_reads=431169 writes=1166352
+GDN_AXI_PROGRESS cycle=41000000 feature_reads=2575210 parameter_reads=438209 writes=1180808
+GDN_AXI_PROGRESS cycle=42000000 feature_reads=2692964 parameter_reads=442689 writes=1208308
+GDN_AXI_PROGRESS cycle=43000000 feature_reads=2750586 parameter_reads=455425 writes=1232488
+GDN_RTL_PROGRESS pass=0 nodes=32 cycles=43913310
+GDN_AXI_PROGRESS cycle=44000000 feature_reads=2797544 parameter_reads=463489 writes=1269795
+GDN_AXI_PROGRESS cycle=45000000 feature_reads=2852042 parameter_reads=465857 writes=1315248
+GDN_AXI_PROGRESS cycle=46000000 feature_reads=2912426 parameter_reads=486593 writes=1327656
+GDN_AXI_PROGRESS cycle=47000000 feature_reads=2969239 parameter_reads=505025 writes=1345506
+GDN_AXI_PROGRESS cycle=48000000 feature_reads=3017832 parameter_reads=505025 writes=1394242
+GDN_AXI_PROGRESS cycle=49000000 feature_reads=3076698 parameter_reads=508545 writes=1439328
+GDN_AXI_PROGRESS cycle=50000000 feature_reads=3139281 parameter_reads=522369 writes=1449440
+GDN_AXI_PROGRESS cycle=51000000 feature_reads=3209706 parameter_reads=550017 writes=1457752
+GDN_AXI_PROGRESS cycle=52000000 feature_reads=3262846 parameter_reads=567297 writes=1482884
+GDN_AXI_PROGRESS cycle=53000000 feature_reads=3311547 parameter_reads=567297 writes=1531605
+GDN_AXI_PROGRESS cycle=54000000 feature_reads=3360288 parameter_reads=567297 writes=1580296
+GDN_AXI_PROGRESS cycle=55000000 feature_reads=3435059 parameter_reads=581185 writes=1594240
+GDN_AXI_PROGRESS cycle=56000000 feature_reads=3507322 parameter_reads=613441 writes=1600632
+GDN_AXI_PROGRESS cycle=57000000 feature_reads=3579986 parameter_reads=627265 writes=1608696
+GDN_AXI_PROGRESS cycle=58000000 feature_reads=3629742 parameter_reads=650305 writes=1633187
+GDN_AXI_PROGRESS cycle=59000000 feature_reads=3678606 parameter_reads=650305 writes=1681850
+GDN_AXI_PROGRESS cycle=60000000 feature_reads=3727199 parameter_reads=650305 writes=1730584
+GDN_AXI_PROGRESS cycle=61000000 feature_reads=3818650 parameter_reads=652289 writes=1766032
+GDN_AXI_PROGRESS cycle=62000000 feature_reads=3964885 parameter_reads=658689 writes=1782408
+GDN_AXI_PROGRESS cycle=63000000 feature_reads=4072666 parameter_reads=663105 writes=1812151
+GDN_AXI_PROGRESS cycle=64000000 feature_reads=4142187 parameter_reads=685121 writes=1834416
+GDN_AXI_PROGRESS cycle=65000000 feature_reads=4222298 parameter_reads=703175 writes=1858512
+GDN_AXI_PROGRESS cycle=66000000 feature_reads=4275002 parameter_reads=729345 writes=1874736
+GDN_AXI_PROGRESS cycle=67000000 feature_reads=4328890 parameter_reads=743233 writes=1906185
+GDN_AXI_PROGRESS cycle=68000000 feature_reads=4382434 parameter_reads=763969 writes=1937861
+GDN_AXI_PROGRESS cycle=69000000 feature_reads=4447642 parameter_reads=791681 writes=1949316
+GDN_AXI_PROGRESS cycle=70000000 feature_reads=4513258 parameter_reads=806721 writes=1988976
+GDN_AXI_PROGRESS cycle=71000000 feature_reads=4567738 parameter_reads=841281 writes=1995312
+GDN_RTL_PROGRESS pass=0 nodes=64 cycles=71977710
+GDN_AXI_PROGRESS cycle=72000000 feature_reads=4620999 parameter_reads=847169 writes=2041200
+GDN_AXI_PROGRESS cycle=73000000 feature_reads=4773065 parameter_reads=859457 writes=2054920
+GDN_AXI_PROGRESS cycle=74000000 feature_reads=4862306 parameter_reads=870017 writes=2082416
+GDN_AXI_PROGRESS cycle=75000000 feature_reads=4909090 parameter_reads=887329 writes=2114342
+GDN_AXI_PROGRESS cycle=76000000 feature_reads=4978362 parameter_reads=898332 writes=2148912
+GDN_AXI_PROGRESS cycle=77000000 feature_reads=5030064 parameter_reads=909377 writes=2180336
+GDN_AXI_PROGRESS cycle=78000000 feature_reads=5081970 parameter_reads=933569 writes=2208158
+GDN_AXI_PROGRESS cycle=79000000 feature_reads=5151002 parameter_reads=961281 writes=2222768
+GDN_AXI_PROGRESS cycle=80000000 feature_reads=5206558 parameter_reads=970561 writes=2263152
+GDN_AXI_PROGRESS cycle=81000000 feature_reads=5268378 parameter_reads=1005121 writes=2268464
+GDN_AXI_PROGRESS cycle=82000000 feature_reads=5315634 parameter_reads=1016641 writes=2312554
+GDN_AXI_PROGRESS cycle=83000000 feature_reads=5470426 parameter_reads=1026753 writes=2327216
+GDN_AXI_PROGRESS cycle=84000000 feature_reads=5564394 parameter_reads=1039617 writes=2354544
+GDN_AXI_PROGRESS cycle=85000000 feature_reads=5608522 parameter_reads=1056929 writes=2384684
+GDN_AXI_PROGRESS cycle=86000000 feature_reads=5670490 parameter_reads=1066241 writes=2420812
+GDN_RTL_PROGRESS pass=0 nodes=96 cycles=86047604
+GDN_AXI_PROGRESS cycle=87000000 feature_reads=5730970 parameter_reads=1088563 writes=2446608
+GDN_AXI_PROGRESS cycle=88000000 feature_reads=5778274 parameter_reads=1107905 writes=2472287
+GDN_AXI_PROGRESS cycle=89000000 feature_reads=5919184 parameter_reads=1116481 writes=2492400
+GDN_AXI_PROGRESS cycle=90000000 feature_reads=5992282 parameter_reads=1144385 writes=2505923
+GDN_AXI_PROGRESS cycle=91000000 feature_reads=6048118 parameter_reads=1153793 writes=2543015
+GDN_AXI_PROGRESS cycle=92000000 feature_reads=6103306 parameter_reads=1179265 writes=2563638
+GDN_AXI_PROGRESS cycle=93000000 feature_reads=6164319 parameter_reads=1195713 writes=2592624
+GDN_RTL_PROGRESS pass=0 nodes=128 cycles=93628584
+GDN_AXI_PROGRESS cycle=94000000 feature_reads=6305242 parameter_reads=1208641 writes=2607883
+GDN_AXI_PROGRESS cycle=95000000 feature_reads=6370234 parameter_reads=1232001 writes=2628008
+GDN_AXI_PROGRESS cycle=96000000 feature_reads=6429850 parameter_reads=1247169 writes=2660016
+GDN_AXI_PROGRESS cycle=97000000 feature_reads=6481474 parameter_reads=1266817 writes=2685662
+GDN_AXI_PROGRESS cycle=98000000 feature_reads=6562034 parameter_reads=1285313 writes=2708400
+GDN_AXI_PROGRESS cycle=99000000 feature_reads=6669178 parameter_reads=1300737 writes=2728245
+GDN_AXI_PROGRESS cycle=100000000 feature_reads=6724366 parameter_reads=1326209 writes=2748876
+GDN_RTL_PROGRESS pass=0 nodes=160 cycles=100671620
+GDN_AXI_PROGRESS cycle=101000000 feature_reads=6778527 parameter_reads=1342657 writes=2779248
+GDN_AXI_PROGRESS cycle=102000000 feature_reads=6915418 parameter_reads=1360129 writes=2793936
+GDN_AXI_PROGRESS cycle=103000000 feature_reads=6965530 parameter_reads=1378689 writes=2819543
+GDN_AXI_PROGRESS cycle=104000000 feature_reads=7020457 parameter_reads=1401793 writes=2842752
+GDN_AXI_PROGRESS cycle=105000000 feature_reads=7152370 parameter_reads=1410241 writes=2864814
+GDN_AXI_PROGRESS cycle=106000000 feature_reads=7206970 parameter_reads=1428737 writes=2893392
+GDN_AXI_PROGRESS cycle=107000000 feature_reads=7266378 parameter_reads=1456449 writes=2912085
+GDN_AXI_PROGRESS cycle=108000000 feature_reads=7323290 parameter_reads=1474945 writes=2940720
+GDN_AXI_PROGRESS cycle=109000000 feature_reads=7380458 parameter_reads=1493377 writes=2969299
+GDN_AXI_PROGRESS cycle=110000000 feature_reads=7456714 parameter_reads=1522241 writes=2986416
+GDN_AXI_PROGRESS cycle=111000000 feature_reads=7500042 parameter_reads=1539521 writes=3016484
+GDN_AXI_PROGRESS cycle=112000000 feature_reads=7621722 parameter_reads=1546561 writes=3041904
+GDN_RTL_PROGRESS pass=0 nodes=192 cycles=112707753
+GDN_AXI_PROGRESS cycle=113000000 feature_reads=7709658 parameter_reads=1561409 writes=3063536
+GDN_AXI_PROGRESS cycle=114000000 feature_reads=7736346 parameter_reads=1612097 writes=3071280
+GDN_AXI_PROGRESS cycle=115000000 feature_reads=7758938 parameter_reads=1653569 writes=3079856
+GDN_AXI_PROGRESS cycle=116000000 feature_reads=7785186 parameter_reads=1699649 writes=3092130
+GDN_AXI_PROGRESS cycle=117000000 feature_reads=7856666 parameter_reads=1721572 writes=3116976
+GDN_AXI_PROGRESS cycle=118000000 feature_reads=7919898 parameter_reads=1759681 writes=3123504
+GDN_AXI_PROGRESS cycle=119000000 feature_reads=7964282 parameter_reads=1773569 writes=3157961
+GDN_AXI_PROGRESS cycle=120000000 feature_reads=8026858 parameter_reads=1780545 writes=3189104
+GDN_AXI_PROGRESS cycle=121000000 feature_reads=8073409 parameter_reads=1794369 writes=3218477
+GDN_AXI_PROGRESS cycle=122000000 feature_reads=8122258 parameter_reads=1794369 writes=3267141
+GDN_AXI_PROGRESS cycle=123000000 feature_reads=8181382 parameter_reads=1805953 writes=3288368
+GDN_AXI_PROGRESS cycle=124000000 feature_reads=8248250 parameter_reads=1826689 writes=3300776
+GDN_AXI_PROGRESS cycle=125000000 feature_reads=8293925 parameter_reads=1835905 writes=3342871
+GDN_AXI_PROGRESS cycle=126000000 feature_reads=8342561 parameter_reads=1835905 writes=3391586
+GDN_AXI_PROGRESS cycle=127000000 feature_reads=8409466 parameter_reads=1849793 writes=3408352
+GDN_AXI_PROGRESS cycle=128000000 feature_reads=8474417 parameter_reads=1873985 writes=3418840
+GDN_AXI_PROGRESS cycle=129000000 feature_reads=8538772 parameter_reads=1898177 writes=3431534
+GDN_AXI_PROGRESS cycle=130000000 feature_reads=8587560 parameter_reads=1898177 writes=3480209
+GDN_AXI_PROGRESS cycle=131000000 feature_reads=8636153 parameter_reads=1898177 writes=3528956
+GDN_AXI_PROGRESS cycle=132000000 feature_reads=8696474 parameter_reads=1907457 writes=3555290
+GDN_AXI_PROGRESS cycle=133000000 feature_reads=8772634 parameter_reads=1925889 writes=3561344
+GDN_AXI_PROGRESS cycle=134000000 feature_reads=8844175 parameter_reads=1953537 writes=3569656
+GDN_AXI_PROGRESS cycle=135000000 feature_reads=8905863 parameter_reads=1981185 writes=3581781
+GDN_AXI_PROGRESS cycle=136000000 feature_reads=8954471 parameter_reads=1981185 writes=3630522
+GDN_AXI_PROGRESS cycle=137000000 feature_reads=9003320 parameter_reads=1981185 writes=3679184
+GDN_AXI_PROGRESS cycle=138000000 feature_reads=9066362 parameter_reads=1981249 writes=3724944
+GDN_AXI_PROGRESS cycle=139000000 feature_reads=9213866 parameter_reads=1988289 writes=3739656
+GDN_AXI_PROGRESS cycle=140000000 feature_reads=9332132 parameter_reads=1992769 writes=3767077
+GDN_AXI_PROGRESS cycle=141000000 feature_reads=9365434 parameter_reads=2013107 writes=3786864
+GDN_AXI_PROGRESS cycle=142000000 feature_reads=9389722 parameter_reads=2038977 writes=3801440
+GDN_AXI_PROGRESS cycle=143000000 feature_reads=9411130 parameter_reads=2062017 writes=3815896
+GDN_AXI_PROGRESS cycle=144000000 feature_reads=9446561 parameter_reads=2075841 writes=3848753
+GDN_AXI_PROGRESS cycle=145000000 feature_reads=9507185 parameter_reads=2082817 writes=3879856
+GDN_AXI_PROGRESS cycle=146000000 feature_reads=9569434 parameter_reads=2105857 writes=3892264
+GDN_AXI_PROGRESS cycle=147000000 feature_reads=9618122 parameter_reads=2117393 writes=3924491
+GDN_AXI_PROGRESS cycle=148000000 feature_reads=9667227 parameter_reads=2117409 writes=3973104
+GDN_AXI_PROGRESS cycle=149000000 feature_reads=9741418 parameter_reads=2128993 writes=4001798
+GDN_AXI_PROGRESS cycle=150000000 feature_reads=9795306 parameter_reads=2142881 writes=4033482
+GDN_RTL_PROGRESS pass=0 nodes=224 cycles=150426675
+GDN_AXI_PROGRESS cycle=151000000 feature_reads=9849514 parameter_reads=2163617 writes=4064962
+GDN_AXI_PROGRESS cycle=152000000 feature_reads=9916167 parameter_reads=2191329 writes=4076064
+GDN_AXI_PROGRESS cycle=153000000 feature_reads=9979674 parameter_reads=2206369 writes=4115424
+GDN_AXI_PROGRESS cycle=154000000 feature_reads=10035594 parameter_reads=2241468 writes=4121888
+GDN_AXI_PROGRESS cycle=155000000 feature_reads=10091282 parameter_reads=2246817 writes=4167648
+GDN_AXI_PROGRESS cycle=156000000 feature_reads=10240598 parameter_reads=2259105 writes=4181928
+GDN_AXI_PROGRESS cycle=157000000 feature_reads=10281994 parameter_reads=2287009 writes=4199072
+GDN_AXI_PROGRESS cycle=158000000 feature_reads=10308682 parameter_reads=2337697 writes=4206816
+GDN_AXI_PROGRESS cycle=159000000 feature_reads=10331274 parameter_reads=2379169 writes=4215392
+GDN_AXI_PROGRESS cycle=160000000 feature_reads=10368218 parameter_reads=2406817 writes=4245025
+GDN_AXI_PROGRESS cycle=161000000 feature_reads=10438547 parameter_reads=2443809 writes=4252512
+GDN_AXI_PROGRESS cycle=162000000 feature_reads=10498762 parameter_reads=2480673 writes=4262161
+GDN_AXI_PROGRESS cycle=163000000 feature_reads=10556394 parameter_reads=2480737 writes=4308941
+GDN_AXI_PROGRESS cycle=164000000 feature_reads=10611978 parameter_reads=2499233 writes=4337331
+GDN_AXI_PROGRESS cycle=165000000 feature_reads=10671533 parameter_reads=2526945 writes=4355992
+GDN_AXI_PROGRESS cycle=166000000 feature_reads=10729034 parameter_reads=2540833 writes=4386144
+GDN_AXI_PROGRESS cycle=167000000 feature_reads=10785466 parameter_reads=2563873 writes=4413249
+GDN_AXI_PROGRESS cycle=168000000 feature_reads=10863610 parameter_reads=2591431 writes=4432032
+GDN_AXI_PROGRESS cycle=169000000 feature_reads=10905154 parameter_reads=2610017 writes=4460396
+GDN_AXI_PROGRESS cycle=170000000 feature_reads=11025148 parameter_reads=2616289 writes=4487520
+GDN_AXI_PROGRESS cycle=171000000 feature_reads=11116554 parameter_reads=2631905 writes=4509152
+GDN_AXI_PROGRESS cycle=172000000 feature_reads=11143242 parameter_reads=2682593 writes=4516896
+GDN_AXI_PROGRESS cycle=173000000 feature_reads=11165834 parameter_reads=2724065 writes=4525472
+GDN_RTL_PROGRESS pass=0 nodes=256 cycles=173941260
+GDN_AXI_PROGRESS cycle=174000000 feature_reads=11190209 parameter_reads=2770145 writes=4536072
+GDN_AXI_PROGRESS cycle=175000000 feature_reads=11256990 parameter_reads=2788705 writes=4562592
+GDN_AXI_PROGRESS cycle=176000000 feature_reads=11326794 parameter_reads=2830177 writes=4569120
+GDN_AXI_PROGRESS cycle=177000000 feature_reads=11369546 parameter_reads=2844065 writes=4601836
+GDN_AXI_PROGRESS cycle=178000000 feature_reads=11429724 parameter_reads=2849889 writes=4634720
+GDN_AXI_PROGRESS cycle=179000000 feature_reads=11478754 parameter_reads=2864865 writes=4662348
+GDN_AXI_PROGRESS cycle=180000000 feature_reads=11527347 parameter_reads=2864865 writes=4711096
+GDN_AXI_PROGRESS cycle=181000000 feature_reads=11587930 parameter_reads=2876449 writes=4731936
+GDN_AXI_PROGRESS cycle=182000000 feature_reads=11648314 parameter_reads=2897185 writes=4745707
+GDN_AXI_PROGRESS cycle=183000000 feature_reads=11699042 parameter_reads=2906401 writes=4786802
+GDN_AXI_PROGRESS cycle=184000000 feature_reads=11747650 parameter_reads=2906401 writes=4835540
+GDN_AXI_PROGRESS cycle=185000000 feature_reads=11816362 parameter_reads=2920289 writes=4853968
+GDN_AXI_PROGRESS cycle=186000000 feature_reads=11879194 parameter_reads=2944481 writes=4862744
+GDN_AXI_PROGRESS cycle=187000000 feature_reads=11944041 parameter_reads=2968673 writes=4875427
+GDN_AXI_PROGRESS cycle=188000000 feature_reads=11992649 parameter_reads=2968673 writes=4924162
+GDN_AXI_PROGRESS cycle=189000000 feature_reads=12041498 parameter_reads=2968673 writes=4972836
+GDN_AXI_PROGRESS cycle=190000000 feature_reads=12103370 parameter_reads=2977953 writes=4998896
+GDN_AXI_PROGRESS cycle=191000000 feature_reads=12179530 parameter_reads=2996385 writes=5006960
+GDN_AXI_PROGRESS cycle=192000000 feature_reads=12241546 parameter_reads=3024033 writes=5015182
+GDN_AXI_PROGRESS cycle=193000000 feature_reads=12310952 parameter_reads=3051681 writes=5025729
+GDN_AXI_PROGRESS cycle=194000000 feature_reads=12359803 parameter_reads=3051681 writes=5074398
+GDN_AXI_PROGRESS cycle=195000000 feature_reads=12408409 parameter_reads=3051681 writes=5123128
+GDN_AXI_PROGRESS cycle=196000000 feature_reads=12463220 parameter_reads=3051745 writes=5170560
+GDN_AXI_PROGRESS cycle=197000000 feature_reads=12620486 parameter_reads=3058145 writes=5185016
+GDN_AXI_PROGRESS cycle=198000000 feature_reads=12735926 parameter_reads=3063265 writes=5211267
+GDN_AXI_PROGRESS cycle=199000000 feature_reads=12771114 parameter_reads=3078893 writes=5232224
+GDN_AXI_PROGRESS cycle=200000000 feature_reads=12793738 parameter_reads=3107169 writes=5246794
+GDN_AXI_PROGRESS cycle=201000000 feature_reads=12818026 parameter_reads=3132513 writes=5261512
+GDN_AXI_PROGRESS cycle=202000000 feature_reads=12851772 parameter_reads=3146337 writes=5292622
+GDN_AXI_PROGRESS cycle=203000000 feature_reads=12906154 parameter_reads=3153313 writes=5324982
+GDN_AXI_PROGRESS cycle=204000000 feature_reads=12970786 parameter_reads=3174049 writes=5337880
+GDN_AXI_PROGRESS cycle=205000000 feature_reads=13023467 parameter_reads=3187873 writes=5368321
+GDN_AXI_PROGRESS cycle=206000000 feature_reads=13072060 parameter_reads=3187905 writes=5417048
+GDN_AXI_PROGRESS cycle=207000000 feature_reads=13142026 parameter_reads=3192577 writes=5450508
+GDN_AXI_PROGRESS cycle=208000000 feature_reads=13190870 parameter_reads=3208705 writes=5475549
+GDN_AXI_PROGRESS cycle=209000000 feature_reads=13239734 parameter_reads=3208705 writes=5524201
+GDN_AXI_PROGRESS cycle=210000000 feature_reads=13297238 parameter_reads=3217985 writes=5550864
+GDN_AXI_PROGRESS cycle=211000000 feature_reads=13364109 parameter_reads=3238721 writes=5563272
+GDN_RTL_PROGRESS pass=0 nodes=288 cycles=211845218
+GDN_AXI_PROGRESS cycle=212000000 feature_reads=13411414 parameter_reads=3250241 writes=5599916
+GDN_AXI_PROGRESS cycle=213000000 feature_reads=13460022 parameter_reads=3250241 writes=5648654
+GDN_AXI_PROGRESS cycle=214000000 feature_reads=13519738 parameter_reads=3260673 writes=5672824
+GDN_AXI_PROGRESS cycle=215000000 feature_reads=13597258 parameter_reads=3288321 writes=5681336
+GDN_AXI_PROGRESS cycle=216000000 feature_reads=13656010 parameter_reads=3305601 writes=5691320
+GDN_AXI_PROGRESS cycle=217000000 feature_reads=13705021 parameter_reads=3312513 writes=5737297
+GDN_AXI_PROGRESS cycle=218000000 feature_reads=13753667 parameter_reads=3312513 writes=5786036
+GDN_AXI_PROGRESS cycle=219000000 feature_reads=13821434 parameter_reads=3321793 writes=5817824
+GDN_AXI_PROGRESS cycle=220000000 feature_reads=13891654 parameter_reads=3335617 writes=5825888
+GDN_AXI_PROGRESS cycle=221000000 feature_reads=13959610 parameter_reads=3367873 writes=5832280
+GDN_AXI_PROGRESS cycle=222000000 feature_reads=14023103 parameter_reads=3390913 writes=5840472
+GDN_AXI_PROGRESS cycle=223000000 feature_reads=14071932 parameter_reads=3395521 writes=5887594
+GDN_AXI_PROGRESS cycle=224000000 feature_reads=14120781 parameter_reads=3395521 writes=5936258
+GDN_AXI_PROGRESS cycle=225000000 feature_reads=14169389 parameter_reads=3395521 writes=5984997
+GDN_AXI_PROGRESS cycle=226000000 feature_reads=14318346 parameter_reads=3401985 writes=6001896
+GDN_AXI_PROGRESS cycle=227000000 feature_reads=14444172 parameter_reads=3407105 writes=6025274
+GDN_AXI_PROGRESS cycle=228000000 feature_reads=14488602 parameter_reads=3419957 writes=6049232
+GDN_AXI_PROGRESS cycle=229000000 feature_reads=14511570 parameter_reads=3448705 writes=6063936
+GDN_AXI_PROGRESS cycle=230000000 feature_reads=14533498 parameter_reads=3474049 writes=6078392
+GDN_AXI_PROGRESS cycle=231000000 feature_reads=14563993 parameter_reads=3490177 writes=6105813
+GDN_AXI_PROGRESS cycle=232000000 feature_reads=14621021 parameter_reads=3494849 writes=6142480
+GDN_AXI_PROGRESS cycle=233000000 feature_reads=14684602 parameter_reads=3517889 writes=6154888
+GDN_AXI_PROGRESS cycle=234000000 feature_reads=14735593 parameter_reads=3531713 writes=6181541
+GDN_AXI_PROGRESS cycle=235000000 feature_reads=14784447 parameter_reads=3531745 writes=6230180
+GDN_AXI_PROGRESS cycle=236000000 feature_reads=14855194 parameter_reads=3535265 writes=6266560
+GDN_AXI_PROGRESS cycle=237000000 feature_reads=14903242 parameter_reads=3552545 writes=6288697
+GDN_AXI_PROGRESS cycle=238000000 feature_reads=14951861 parameter_reads=3552545 writes=6337424
+GDN_AXI_PROGRESS cycle=239000000 feature_reads=15013690 parameter_reads=3561825 writes=6367744
+GDN_AXI_PROGRESS cycle=240000000 feature_reads=15074074 parameter_reads=3582561 writes=6380152
+GDN_AXI_PROGRESS cycle=241000000 feature_reads=15123545 parameter_reads=3594081 writes=6413141
+GDN_AXI_PROGRESS cycle=242000000 feature_reads=15172394 parameter_reads=3594081 writes=6461803
+GDN_AXI_PROGRESS cycle=243000000 feature_reads=15237802 parameter_reads=3604513 writes=6489904
+GDN_AXI_PROGRESS cycle=244000000 feature_reads=15300634 parameter_reads=3628705 writes=6498216
+GDN_AXI_PROGRESS cycle=245000000 feature_reads=15372442 parameter_reads=3645985 writes=6508328
+GDN_AXI_PROGRESS cycle=246000000 feature_reads=15417393 parameter_reads=3656353 writes=6550447
+GDN_AXI_PROGRESS cycle=247000000 feature_reads=15466001 parameter_reads=3656353 writes=6599192
+GDN_AXI_PROGRESS cycle=248000000 feature_reads=15520246 parameter_reads=3661025 writes=6636752
+GDN_AXI_PROGRESS cycle=249000000 feature_reads=15597226 parameter_reads=3679457 writes=6642768
+GDN_AXI_PROGRESS cycle=250000000 feature_reads=15664694 parameter_reads=3707105 writes=6651208
+GDN_AXI_PROGRESS cycle=251000000 feature_reads=15736426 parameter_reads=3725537 writes=6657224
+GDN_AXI_PROGRESS cycle=252000000 feature_reads=15784304 parameter_reads=3739361 writes=6700746
+GDN_AXI_PROGRESS cycle=253000000 feature_reads=15832927 parameter_reads=3739361 writes=6749478
+GDN_AXI_PROGRESS cycle=254000000 feature_reads=15881761 parameter_reads=3739361 writes=6798144
+GDN_AXI_PROGRESS cycle=255000000 feature_reads=16012170 parameter_reads=3743265 writes=6820443
+GDN_AXI_PROGRESS cycle=256000000 feature_reads=16152388 parameter_reads=3750945 writes=6839308
+GDN_AXI_PROGRESS cycle=257000000 feature_reads=16224472 parameter_reads=3754845 writes=6867262
+GDN_RTL_PROGRESS pass=0 nodes=320 cycles=257001576
+GDN_RTL_FRAME_PASS pass=0 completed_csr=320 cycles=257001499 read_beats=16224487 parameter_beats=3754845 writes=6867354
+GDN_AXI_PROGRESS cycle=258000000 feature_reads=16249681 parameter_reads=3762654 writes=6896266
+GDN_AXI_PROGRESS cycle=259000000 feature_reads=16296193 parameter_reads=3779934 writes=6916866
+GDN_AXI_PROGRESS cycle=260000000 feature_reads=16344786 parameter_reads=3779934 writes=6965464
+GDN_AXI_PROGRESS cycle=261000000 feature_reads=16401152 parameter_reads=3786910 writes=6997450
+GDN_AXI_PROGRESS cycle=262000000 feature_reads=16468017 parameter_reads=3807646 writes=7009858
+GDN_AXI_PROGRESS cycle=263000000 feature_reads=16516481 parameter_reads=3821470 writes=7041170
+GDN_AXI_PROGRESS cycle=264000000 feature_reads=16565078 parameter_reads=3821470 writes=7089915
+GDN_AXI_PROGRESS cycle=265000000 feature_reads=16632289 parameter_reads=3828464 writes=7119610
+GDN_AXI_PROGRESS cycle=266000000 feature_reads=16695121 parameter_reads=3856094 writes=7127922
+GDN_AXI_PROGRESS cycle=267000000 feature_reads=16766929 parameter_reads=3873374 writes=7138034
+GDN_AXI_PROGRESS cycle=268000000 feature_reads=16810073 parameter_reads=3883742 writes=7178558
+GDN_AXI_PROGRESS cycle=269000000 feature_reads=16858937 parameter_reads=3883742 writes=7227229
+GDN_AXI_PROGRESS cycle=270000000 feature_reads=16914401 parameter_reads=3888414 writes=7264410
+GDN_AXI_PROGRESS cycle=271000000 feature_reads=16991713 parameter_reads=3906846 writes=7272474
+GDN_AXI_PROGRESS cycle=272000000 feature_reads=17054753 parameter_reads=3934494 writes=7279790
+GDN_AXI_PROGRESS cycle=273000000 feature_reads=17130913 parameter_reads=3952926 writes=7286930
+GDN_AXI_PROGRESS cycle=274000000 feature_reads=17177240 parameter_reads=3966750 writes=7328779
+GDN_AXI_PROGRESS cycle=275000000 feature_reads=17225833 parameter_reads=3966750 writes=7377517
+GDN_AXI_PROGRESS cycle=276000000 feature_reads=17274571 parameter_reads=3966750 writes=7426226
+GDN_AXI_PROGRESS cycle=277000000 feature_reads=17406657 parameter_reads=3970654 writes=7448234
+GDN_AXI_PROGRESS cycle=278000000 feature_reads=17544196 parameter_reads=3978334 writes=7467591
+GDN_AXI_PROGRESS cycle=279000000 feature_reads=17612689 parameter_reads=3985310 writes=7497866
+GDN_AXI_PROGRESS cycle=280000000 feature_reads=17658984 parameter_reads=3999134 writes=7526918
+GDN_AXI_PROGRESS cycle=281000000 feature_reads=17707657 parameter_reads=3999134 writes=7575634
+GDN_AXI_PROGRESS cycle=282000000 feature_reads=17766865 parameter_reads=4010718 writes=7596809
+GDN_AXI_PROGRESS cycle=283000000 feature_reads=17832265 parameter_reads=4031454 writes=7609538
+GDN_AXI_PROGRESS cycle=284000000 feature_reads=17879272 parameter_reads=4040670 writes=7651358
+GDN_AXI_PROGRESS cycle=285000000 feature_reads=17928121 parameter_reads=4040670 writes=7700031
+GDN_AXI_PROGRESS cycle=286000000 feature_reads=17995297 parameter_reads=4054558 writes=7717114
+GDN_AXI_PROGRESS cycle=287000000 feature_reads=18058516 parameter_reads=4078750 writes=7727602
+GDN_AXI_PROGRESS cycle=288000000 feature_reads=18124271 parameter_reads=4102942 writes=7739996
+GDN_AXI_PROGRESS cycle=289000000 feature_reads=18173135 parameter_reads=4102942 writes=7788657
+GDN_AXI_PROGRESS cycle=290000000 feature_reads=18221728 parameter_reads=4102942 writes=7837394
+GDN_AXI_PROGRESS cycle=291000000 feature_reads=18282305 parameter_reads=4112222 writes=7863652
+GDN_AXI_PROGRESS cycle=292000000 feature_reads=18358465 parameter_reads=4130654 writes=7870106
+GDN_AXI_PROGRESS cycle=293000000 feature_reads=18428182 parameter_reads=4158302 writes=7878418
+GDN_AXI_PROGRESS cycle=294000000 feature_reads=18491413 parameter_reads=4185950 writes=7890231
+GDN_AXI_PROGRESS cycle=295000000 feature_reads=18540031 parameter_reads=4185950 writes=7938956
+GDN_AXI_PROGRESS cycle=296000000 feature_reads=18588639 parameter_reads=4185950 writes=7987685
+GDN_AXI_PROGRESS cycle=297000000 feature_reads=18650314 parameter_reads=4186014 writes=8033706
+GDN_AXI_PROGRESS cycle=298000000 feature_reads=18799697 parameter_reads=4193054 writes=8048162
+GDN_AXI_PROGRESS cycle=299000000 feature_reads=18917390 parameter_reads=4197534 writes=8075583
+GDN_AXI_PROGRESS cycle=300000000 feature_reads=18974604 parameter_reads=4210270 writes=8099842
+GDN_RTL_PROGRESS pass=1 nodes=32 cycles=300914984
+GDN_AXI_PROGRESS cycle=301000000 feature_reads=19021860 parameter_reads=4218334 writes=8137096
+GDN_AXI_PROGRESS cycle=302000000 feature_reads=19076529 parameter_reads=4220702 writes=8182602
+GDN_AXI_PROGRESS cycle=303000000 feature_reads=19136913 parameter_reads=4241438 writes=8195010
+GDN_AXI_PROGRESS cycle=304000000 feature_reads=19193470 parameter_reads=4259870 writes=8212830
+GDN_AXI_PROGRESS cycle=305000000 feature_reads=19242319 parameter_reads=4259870 writes=8261494
+GDN_AXI_PROGRESS cycle=306000000 feature_reads=19301185 parameter_reads=4263390 writes=8306682
+GDN_AXI_PROGRESS cycle=307000000 feature_reads=19363283 parameter_reads=4277214 writes=8316794
+GDN_AXI_PROGRESS cycle=308000000 feature_reads=19434193 parameter_reads=4304862 writes=8325106
+GDN_AXI_PROGRESS cycle=309000000 feature_reads=19487333 parameter_reads=4322142 writes=8350125
+GDN_AXI_PROGRESS cycle=310000000 feature_reads=19535926 parameter_reads=4322142 writes=8398857
+GDN_AXI_PROGRESS cycle=311000000 feature_reads=19584774 parameter_reads=4322142 writes=8447552
+GDN_AXI_PROGRESS cycle=312000000 feature_reads=19659018 parameter_reads=4336030 writes=8461594
+GDN_AXI_PROGRESS cycle=313000000 feature_reads=19731809 parameter_reads=4368286 writes=8467986
+GDN_AXI_PROGRESS cycle=314000000 feature_reads=19803946 parameter_reads=4382110 writes=8476050
+GDN_AXI_PROGRESS cycle=315000000 feature_reads=19854229 parameter_reads=4405150 writes=8500419
+GDN_AXI_PROGRESS cycle=316000000 feature_reads=19902837 parameter_reads=4405150 writes=8549148
+GDN_AXI_PROGRESS cycle=317000000 feature_reads=19951686 parameter_reads=4405150 writes=8597819
+GDN_AXI_PROGRESS cycle=318000000 feature_reads=20043137 parameter_reads=4407134 writes=8633386
+GDN_AXI_PROGRESS cycle=319000000 feature_reads=20188788 parameter_reads=4413534 writes=8649762
+GDN_AXI_PROGRESS cycle=320000000 feature_reads=20297153 parameter_reads=4417950 writes=8679392
+GDN_AXI_PROGRESS cycle=321000000 feature_reads=20366180 parameter_reads=4439966 writes=8701770
+GDN_AXI_PROGRESS cycle=322000000 feature_reads=20446785 parameter_reads=4457496 writes=8725866
+GDN_AXI_PROGRESS cycle=323000000 feature_reads=20499489 parameter_reads=4484190 writes=8742090
+GDN_AXI_PROGRESS cycle=324000000 feature_reads=20553377 parameter_reads=4498078 writes=8773514
+GDN_AXI_PROGRESS cycle=325000000 feature_reads=20606769 parameter_reads=4518814 writes=8805133
+GDN_AXI_PROGRESS cycle=326000000 feature_reads=20672129 parameter_reads=4546526 writes=8816545
+GDN_AXI_PROGRESS cycle=327000000 feature_reads=20737745 parameter_reads=4561566 writes=8856330
+GDN_AXI_PROGRESS cycle=328000000 feature_reads=20792225 parameter_reads=4596126 writes=8862666
+GDN_RTL_PROGRESS pass=1 nodes=64 cycles=328979657
+GDN_AXI_PROGRESS cycle=329000000 feature_reads=20844929 parameter_reads=4602014 writes=8908554
+GDN_AXI_PROGRESS cycle=330000000 feature_reads=20997361 parameter_reads=4614302 writes=8922194
+GDN_AXI_PROGRESS cycle=331000000 feature_reads=21086259 parameter_reads=4624862 writes=8949770
+GDN_AXI_PROGRESS cycle=332000000 feature_reads=21133577 parameter_reads=4642174 writes=8981586
+GDN_AXI_PROGRESS cycle=333000000 feature_reads=21202849 parameter_reads=4652638 writes=9016266
+GDN_AXI_PROGRESS cycle=334000000 feature_reads=21253983 parameter_reads=4664222 writes=9047690
+GDN_AXI_PROGRESS cycle=335000000 feature_reads=21306375 parameter_reads=4688414 writes=9075426
+GDN_AXI_PROGRESS cycle=336000000 feature_reads=21375489 parameter_reads=4716126 writes=9090122
+GDN_AXI_PROGRESS cycle=337000000 feature_reads=21430504 parameter_reads=4725406 writes=9130506
+GDN_AXI_PROGRESS cycle=338000000 feature_reads=21492865 parameter_reads=4759966 writes=9135818
+GDN_AXI_PROGRESS cycle=339000000 feature_reads=21539865 parameter_reads=4771486 writes=9179860
+GDN_AXI_PROGRESS cycle=340000000 feature_reads=21694356 parameter_reads=4781598 writes=9194570
+GDN_AXI_PROGRESS cycle=341000000 feature_reads=21788881 parameter_reads=4794462 writes=9221898
+GDN_AXI_PROGRESS cycle=342000000 feature_reads=21832938 parameter_reads=4811774 writes=9251938
+GDN_AXI_PROGRESS cycle=343000000 feature_reads=21894977 parameter_reads=4821086 writes=9288042
+GDN_RTL_PROGRESS pass=1 nodes=96 cycles=343049570
+GDN_AXI_PROGRESS cycle=344000000 feature_reads=21955457 parameter_reads=4842803 writes=9313962
+GDN_AXI_PROGRESS cycle=345000000 feature_reads=22002653 parameter_reads=4862750 writes=9339550
+GDN_AXI_PROGRESS cycle=346000000 feature_reads=22143131 parameter_reads=4871326 writes=9359754
+GDN_AXI_PROGRESS cycle=347000000 feature_reads=22216769 parameter_reads=4899230 writes=9373159
+GDN_AXI_PROGRESS cycle=348000000 feature_reads=22272497 parameter_reads=4908638 writes=9410284
+GDN_AXI_PROGRESS cycle=349000000 feature_reads=22327685 parameter_reads=4934110 writes=9430918
+GDN_AXI_PROGRESS cycle=350000000 feature_reads=22388280 parameter_reads=4950558 writes=9459978
+GDN_RTL_PROGRESS pass=1 nodes=128 cycles=350630426
+GDN_AXI_PROGRESS cycle=351000000 feature_reads=22529729 parameter_reads=4963486 writes=9475128
+GDN_AXI_PROGRESS cycle=352000000 feature_reads=22594613 parameter_reads=4986846 writes=9495283
+GDN_AXI_PROGRESS cycle=353000000 feature_reads=22654337 parameter_reads=5002014 writes=9527370
+GDN_AXI_PROGRESS cycle=354000000 feature_reads=22705853 parameter_reads=5021662 writes=9552946
+GDN_AXI_PROGRESS cycle=355000000 feature_reads=22785995 parameter_reads=5040158 writes=9575754
+GDN_AXI_PROGRESS cycle=356000000 feature_reads=22893564 parameter_reads=5055582 writes=9595518
+GDN_AXI_PROGRESS cycle=357000000 feature_reads=22948780 parameter_reads=5081054 writes=9616146
+GDN_RTL_PROGRESS pass=1 nodes=160 cycles=357673380
+GDN_AXI_PROGRESS cycle=358000000 feature_reads=23002524 parameter_reads=5097502 writes=9646602
+GDN_AXI_PROGRESS cycle=359000000 feature_reads=23139905 parameter_reads=5114974 writes=9661290
+GDN_AXI_PROGRESS cycle=360000000 feature_reads=23190017 parameter_reads=5133534 writes=9686804
+GDN_AXI_PROGRESS cycle=361000000 feature_reads=23244881 parameter_reads=5156638 writes=9710003
+GDN_AXI_PROGRESS cycle=362000000 feature_reads=23376641 parameter_reads=5165086 writes=9732111
+GDN_AXI_PROGRESS cycle=363000000 feature_reads=23431201 parameter_reads=5183582 writes=9760699
+GDN_AXI_PROGRESS cycle=364000000 feature_reads=23490723 parameter_reads=5211294 writes=9779362
+GDN_AXI_PROGRESS cycle=365000000 feature_reads=23547777 parameter_reads=5229790 writes=9808010
+GDN_AXI_PROGRESS cycle=366000000 feature_reads=23604689 parameter_reads=5248222 writes=9836612
+GDN_AXI_PROGRESS cycle=367000000 feature_reads=23681201 parameter_reads=5277086 writes=9853770
+GDN_AXI_PROGRESS cycle=368000000 feature_reads=23724377 parameter_reads=5294366 writes=9883757
+GDN_AXI_PROGRESS cycle=369000000 feature_reads=23846209 parameter_reads=5301406 writes=9909258
+GDN_RTL_PROGRESS pass=1 nodes=192 cycles=369709681
+GDN_AXI_PROGRESS cycle=370000000 feature_reads=23934145 parameter_reads=5316254 writes=9930890
+GDN_AXI_PROGRESS cycle=371000000 feature_reads=23960833 parameter_reads=5366942 writes=9938634
+GDN_AXI_PROGRESS cycle=372000000 feature_reads=23983425 parameter_reads=5408414 writes=9947210
+GDN_AXI_PROGRESS cycle=373000000 feature_reads=24009417 parameter_reads=5454494 writes=9959440
+GDN_AXI_PROGRESS cycle=374000000 feature_reads=24081153 parameter_reads=5475863 writes=9984330
+GDN_AXI_PROGRESS cycle=375000000 feature_reads=24144385 parameter_reads=5514526 writes=9990858
+GDN_AXI_PROGRESS cycle=376000000 feature_reads=24188769 parameter_reads=5528414 writes=10025204
+GDN_AXI_PROGRESS cycle=377000000 feature_reads=24251345 parameter_reads=5535390 writes=10056458
+GDN_AXI_PROGRESS cycle=378000000 feature_reads=24297896 parameter_reads=5549214 writes=10085726
+GDN_AXI_PROGRESS cycle=379000000 feature_reads=24346489 parameter_reads=5549214 writes=10134469
+GDN_AXI_PROGRESS cycle=380000000 feature_reads=24405521 parameter_reads=5560798 writes=10155693
+GDN_AXI_PROGRESS cycle=381000000 feature_reads=24472241 parameter_reads=5581534 writes=10168130
+GDN_AXI_PROGRESS cycle=382000000 feature_reads=24518184 parameter_reads=5590750 writes=10210171
+GDN_AXI_PROGRESS cycle=383000000 feature_reads=24567048 parameter_reads=5590750 writes=10258833
+GDN_AXI_PROGRESS cycle=384000000 feature_reads=24633953 parameter_reads=5604638 writes=10275706
+GDN_AXI_PROGRESS cycle=385000000 feature_reads=24698457 parameter_reads=5628830 writes=10286194
+GDN_AXI_PROGRESS cycle=386000000 feature_reads=24763183 parameter_reads=5653022 writes=10298808
+GDN_AXI_PROGRESS cycle=387000000 feature_reads=24811963 parameter_reads=5653022 writes=10347496
+GDN_AXI_PROGRESS cycle=388000000 feature_reads=24860640 parameter_reads=5653022 writes=10396212
+GDN_AXI_PROGRESS cycle=389000000 feature_reads=24920961 parameter_reads=5662302 writes=10422530
+GDN_AXI_PROGRESS cycle=390000000 feature_reads=24997121 parameter_reads=5680734 writes=10428698
+GDN_AXI_PROGRESS cycle=391000000 feature_reads=25068154 parameter_reads=5708382 writes=10437010
+GDN_AXI_PROGRESS cycle=392000000 feature_reads=25130153 parameter_reads=5736030 writes=10449079
+GDN_AXI_PROGRESS cycle=393000000 feature_reads=25178958 parameter_reads=5736030 writes=10497750
+GDN_AXI_PROGRESS cycle=394000000 feature_reads=25227551 parameter_reads=5736030 writes=10546496
+GDN_AXI_PROGRESS cycle=395000000 feature_reads=25290270 parameter_reads=5736094 writes=10592298
+GDN_AXI_PROGRESS cycle=396000000 feature_reads=25438353 parameter_reads=5743134 writes=10606886
+GDN_AXI_PROGRESS cycle=397000000 feature_reads=25556107 parameter_reads=5747614 writes=10634431
+GDN_AXI_PROGRESS cycle=398000000 feature_reads=25589921 parameter_reads=5767421 writes=10654218
+GDN_AXI_PROGRESS cycle=399000000 feature_reads=25614209 parameter_reads=5793822 writes=10668794
+GDN_AXI_PROGRESS cycle=400000000 feature_reads=25635617 parameter_reads=5816862 writes=10683250
+GDN_AXI_PROGRESS cycle=401000000 feature_reads=25670914 parameter_reads=5830686 writes=10716022
+GDN_AXI_PROGRESS cycle=402000000 feature_reads=25731117 parameter_reads=5837662 writes=10747210
+GDN_AXI_PROGRESS cycle=403000000 feature_reads=25793921 parameter_reads=5860702 writes=10759618
+GDN_AXI_PROGRESS cycle=404000000 feature_reads=25842609 parameter_reads=5872238 writes=10791723
+GDN_AXI_PROGRESS cycle=405000000 feature_reads=25891217 parameter_reads=5872254 writes=10840455
+GDN_AXI_PROGRESS cycle=406000000 feature_reads=25965905 parameter_reads=5883838 writes=10869044
+GDN_AXI_PROGRESS cycle=407000000 feature_reads=26019793 parameter_reads=5897726 writes=10900718
+GDN_RTL_PROGRESS pass=1 nodes=224 cycles=407428563
+GDN_AXI_PROGRESS cycle=408000000 feature_reads=26074001 parameter_reads=5918462 writes=10932206
+GDN_AXI_PROGRESS cycle=409000000 feature_reads=26140232 parameter_reads=5946174 writes=10943418
+GDN_AXI_PROGRESS cycle=410000000 feature_reads=26204161 parameter_reads=5961214 writes=10982778
+GDN_AXI_PROGRESS cycle=411000000 feature_reads=26260081 parameter_reads=5995809 writes=10989242
+GDN_AXI_PROGRESS cycle=412000000 feature_reads=26315291 parameter_reads=6001662 writes=11035002
+GDN_AXI_PROGRESS cycle=413000000 feature_reads=26464897 parameter_reads=6013950 writes=11049222
+GDN_AXI_PROGRESS cycle=414000000 feature_reads=26506481 parameter_reads=6041854 writes=11066426
+GDN_AXI_PROGRESS cycle=415000000 feature_reads=26533169 parameter_reads=6092542 writes=11074170
+GDN_AXI_PROGRESS cycle=416000000 feature_reads=26555761 parameter_reads=6134014 writes=11082746
+GDN_AXI_PROGRESS cycle=417000000 feature_reads=26592553 parameter_reads=6161662 writes=11112316
+GDN_AXI_PROGRESS cycle=418000000 feature_reads=26662533 parameter_reads=6198654 writes=11119866
+GDN_AXI_PROGRESS cycle=419000000 feature_reads=26723097 parameter_reads=6235518 writes=11129450
+GDN_AXI_PROGRESS cycle=420000000 feature_reads=26780881 parameter_reads=6235582 writes=11176200
+GDN_AXI_PROGRESS cycle=421000000 feature_reads=26836465 parameter_reads=6254078 writes=11204596
+GDN_AXI_PROGRESS cycle=422000000 feature_reads=26895977 parameter_reads=6281790 writes=11223270
+GDN_AXI_PROGRESS cycle=423000000 feature_reads=26953521 parameter_reads=6295678 writes=11253498
+GDN_AXI_PROGRESS cycle=424000000 feature_reads=27009953 parameter_reads=6318718 writes=11280522
+GDN_AXI_PROGRESS cycle=425000000 feature_reads=27088097 parameter_reads=6345899 writes=11299386
+GDN_AXI_PROGRESS cycle=426000000 feature_reads=27129641 parameter_reads=6364862 writes=11327667
+GDN_AXI_PROGRESS cycle=427000000 feature_reads=27249246 parameter_reads=6371134 writes=11354874
+GDN_AXI_PROGRESS cycle=428000000 feature_reads=27341041 parameter_reads=6386750 writes=11376506
+GDN_AXI_PROGRESS cycle=429000000 feature_reads=27367729 parameter_reads=6437438 writes=11384250
+GDN_AXI_PROGRESS cycle=430000000 feature_reads=27390321 parameter_reads=6478910 writes=11392826
+GDN_RTL_PROGRESS pass=1 nodes=256 cycles=430942641
+GDN_AXI_PROGRESS cycle=431000000 feature_reads=27414681 parameter_reads=6524990 writes=11403341
+GDN_AXI_PROGRESS cycle=432000000 feature_reads=27481107 parameter_reads=6543550 writes=11429946
+GDN_AXI_PROGRESS cycle=433000000 feature_reads=27551281 parameter_reads=6585022 writes=11436474
+GDN_AXI_PROGRESS cycle=434000000 feature_reads=27594033 parameter_reads=6598910 writes=11469114
+GDN_AXI_PROGRESS cycle=435000000 feature_reads=27653803 parameter_reads=6604734 writes=11502074
+GDN_AXI_PROGRESS cycle=436000000 feature_reads=27702985 parameter_reads=6619710 writes=11529679
+GDN_AXI_PROGRESS cycle=437000000 feature_reads=27751834 parameter_reads=6619710 writes=11578349
+GDN_AXI_PROGRESS cycle=438000000 feature_reads=27812417 parameter_reads=6631294 writes=11599290
+GDN_AXI_PROGRESS cycle=439000000 feature_reads=27872801 parameter_reads=6652030 writes=11612949
+GDN_AXI_PROGRESS cycle=440000000 feature_reads=27923529 parameter_reads=6661246 writes=11654034
+GDN_AXI_PROGRESS cycle=441000000 feature_reads=27972122 parameter_reads=6661246 writes=11702776
+GDN_AXI_PROGRESS cycle=442000000 feature_reads=28040849 parameter_reads=6675134 writes=11721322
+GDN_AXI_PROGRESS cycle=443000000 feature_reads=28103681 parameter_reads=6699326 writes=11729982
+GDN_AXI_PROGRESS cycle=444000000 feature_reads=28168491 parameter_reads=6723518 writes=11742697
+GDN_AXI_PROGRESS cycle=445000000 feature_reads=28217136 parameter_reads=6723518 writes=11791402
+GDN_AXI_PROGRESS cycle=446000000 feature_reads=28265729 parameter_reads=6723518 writes=11840142
+GDN_AXI_PROGRESS cycle=447000000 feature_reads=28327857 parameter_reads=6732798 writes=11866250
+GDN_AXI_PROGRESS cycle=448000000 feature_reads=28404017 parameter_reads=6751230 writes=11874314
+GDN_AXI_PROGRESS cycle=449000000 feature_reads=28466033 parameter_reads=6778878 writes=11882410
+GDN_AXI_PROGRESS cycle=450000000 feature_reads=28535439 parameter_reads=6806526 writes=11892959
+GDN_AXI_PROGRESS cycle=451000000 feature_reads=28584032 parameter_reads=6806526 writes=11941701
+GDN_AXI_PROGRESS cycle=452000000 feature_reads=28632896 parameter_reads=6806526 writes=11990357
+GDN_AXI_PROGRESS cycle=453000000 feature_reads=28687187 parameter_reads=6806590 writes=12037914
+GDN_AXI_PROGRESS cycle=454000000 feature_reads=28844442 parameter_reads=6812990 writes=12052370
+GDN_AXI_PROGRESS cycle=455000000 feature_reads=28960413 parameter_reads=6818110 writes=12078509
+GDN_AXI_PROGRESS cycle=456000000 feature_reads=28995601 parameter_reads=6833278 writes=12099578
+GDN_AXI_PROGRESS cycle=457000000 feature_reads=29018225 parameter_reads=6862014 writes=12114041
+GDN_AXI_PROGRESS cycle=458000000 feature_reads=29042513 parameter_reads=6887358 writes=12128866
+GDN_AXI_PROGRESS cycle=459000000 feature_reads=29076174 parameter_reads=6901182 writes=12159916
+GDN_AXI_PROGRESS cycle=460000000 feature_reads=29130641 parameter_reads=6908158 writes=12192247
+GDN_AXI_PROGRESS cycle=461000000 feature_reads=29194870 parameter_reads=6928894 writes=12205234
+GDN_AXI_PROGRESS cycle=462000000 feature_reads=29247729 parameter_reads=6942718 writes=12235659
+GDN_AXI_PROGRESS cycle=463000000 feature_reads=29296547 parameter_reads=6942750 writes=12284319
+GDN_AXI_PROGRESS cycle=464000000 feature_reads=29366513 parameter_reads=6947422 writes=12317772
+GDN_AXI_PROGRESS cycle=465000000 feature_reads=29415357 parameter_reads=6963550 writes=12342825
+GDN_AXI_PROGRESS cycle=466000000 feature_reads=29464054 parameter_reads=6963550 writes=12391542
+GDN_AXI_PROGRESS cycle=467000000 feature_reads=29521414 parameter_reads=6972830 writes=12418218
+GDN_AXI_PROGRESS cycle=468000000 feature_reads=29588275 parameter_reads=6993566 writes=12430626
+GDN_RTL_PROGRESS pass=1 nodes=288 cycles=468846248
+GDN_AXI_PROGRESS cycle=469000000 feature_reads=29635685 parameter_reads=7005086 writes=12467270
+GDN_AXI_PROGRESS cycle=470000000 feature_reads=29684509 parameter_reads=7005086 writes=12515937
+GDN_AXI_PROGRESS cycle=471000000 feature_reads=29744225 parameter_reads=7015518 writes=12540100
+GDN_AXI_PROGRESS cycle=472000000 feature_reads=29821745 parameter_reads=7043166 writes=12548690
+GDN_AXI_PROGRESS cycle=473000000 feature_reads=29880497 parameter_reads=7060446 writes=12558674
+GDN_AXI_PROGRESS cycle=474000000 feature_reads=29929508 parameter_reads=7067358 writes=12604564
+GDN_AXI_PROGRESS cycle=475000000 feature_reads=29978101 parameter_reads=7067358 writes=12653311
+GDN_AXI_PROGRESS cycle=476000000 feature_reads=30045921 parameter_reads=7076638 writes=12685178
+GDN_AXI_PROGRESS cycle=477000000 feature_reads=30115735 parameter_reads=7090462 writes=12693242
+GDN_AXI_PROGRESS cycle=478000000 feature_reads=30184097 parameter_reads=7122718 writes=12699634
+GDN_AXI_PROGRESS cycle=479000000 feature_reads=30247329 parameter_reads=7145758 writes=12707800
+GDN_AXI_PROGRESS cycle=480000000 feature_reads=30296419 parameter_reads=7150366 writes=12754856
+GDN_AXI_PROGRESS cycle=481000000 feature_reads=30345097 parameter_reads=7150366 writes=12803581
+GDN_AXI_PROGRESS cycle=482000000 feature_reads=30393876 parameter_reads=7150366 writes=12852258
+GDN_AXI_PROGRESS cycle=483000000 feature_reads=30542833 parameter_reads=7156830 writes=12869250
+GDN_AXI_PROGRESS cycle=484000000 feature_reads=30668659 parameter_reads=7161950 writes=12892533
+GDN_AXI_PROGRESS cycle=485000000 feature_reads=30713089 parameter_reads=7174356 writes=12916586
+GDN_AXI_PROGRESS cycle=486000000 feature_reads=30735637 parameter_reads=7203550 writes=12931290
+GDN_AXI_PROGRESS cycle=487000000 feature_reads=30757985 parameter_reads=7228894 writes=12945746
+GDN_AXI_PROGRESS cycle=488000000 feature_reads=30788375 parameter_reads=7245022 writes=12973087
+GDN_AXI_PROGRESS cycle=489000000 feature_reads=30845080 parameter_reads=7249694 writes=13009834
+GDN_AXI_PROGRESS cycle=490000000 feature_reads=30909089 parameter_reads=7272734 writes=13022242
+GDN_AXI_PROGRESS cycle=491000000 feature_reads=30960070 parameter_reads=7286558 writes=13048798
+GDN_AXI_PROGRESS cycle=492000000 feature_reads=31008758 parameter_reads=7286590 writes=13097503
+GDN_AXI_PROGRESS cycle=493000000 feature_reads=31079681 parameter_reads=7290110 writes=13133914
+GDN_AXI_PROGRESS cycle=494000000 feature_reads=31127729 parameter_reads=7307390 writes=13155957
+GDN_AXI_PROGRESS cycle=495000000 feature_reads=31176337 parameter_reads=7307390 writes=13204699
+GDN_AXI_PROGRESS cycle=496000000 feature_reads=31238177 parameter_reads=7316509 writes=13235098
+GDN_AXI_PROGRESS cycle=497000000 feature_reads=31298561 parameter_reads=7337406 writes=13247506
+GDN_AXI_PROGRESS cycle=498000000 feature_reads=31348032 parameter_reads=7348926 writes=13280403
+GDN_AXI_PROGRESS cycle=499000000 feature_reads=31396751 parameter_reads=7348926 writes=13329114
+GDN_AXI_PROGRESS cycle=500000000 feature_reads=31462289 parameter_reads=7359358 writes=13357258
+GDN_AXI_PROGRESS cycle=501000000 feature_reads=31525121 parameter_reads=7383550 writes=13365570
+GDN_AXI_PROGRESS cycle=502000000 feature_reads=31596929 parameter_reads=7400830 writes=13375682
+GDN_AXI_PROGRESS cycle=503000000 feature_reads=31641624 parameter_reads=7411198 writes=13417777
+GDN_AXI_PROGRESS cycle=504000000 feature_reads=31690488 parameter_reads=7411198 writes=13466442
+GDN_AXI_PROGRESS cycle=505000000 feature_reads=31744401 parameter_reads=7415870 writes=13504075
+GDN_AXI_PROGRESS cycle=506000000 feature_reads=31821713 parameter_reads=7434302 writes=13510122
+GDN_AXI_PROGRESS cycle=507000000 feature_reads=31888702 parameter_reads=7461950 writes=13518562
+GDN_AXI_PROGRESS cycle=508000000 feature_reads=31960913 parameter_reads=7480382 writes=13524578
+GDN_AXI_PROGRESS cycle=509000000 feature_reads=32008791 parameter_reads=7494206 writes=13567988
+GDN_AXI_PROGRESS cycle=510000000 feature_reads=32057384 parameter_reads=7494206 writes=13616730
+GDN_AXI_PROGRESS cycle=511000000 feature_reads=32106189 parameter_reads=7494206 writes=13665425
+GDN_AXI_PROGRESS cycle=512000000 feature_reads=32236657 parameter_reads=7498110 writes=13687700
+GDN_AXI_PROGRESS cycle=513000000 feature_reads=32376875 parameter_reads=7505790 writes=13706564
+GDN_AXI_PROGRESS cycle=514000000 feature_reads=32448959 parameter_reads=7509690 writes=13734520
+GDN_RTL_PROGRESS pass=1 nodes=320 cycles=514003100
+GDN_RTL_FRAME_PASS pass=1 completed_csr=320 cycles=257001499 read_beats=32448974 parameter_beats=7509690 writes=13734708
+GDN_RTL_SEQUENCE_PASS frames=2 scope=all_320_nodes bad_model=1
+$finish called at time : 5140031525 ns : File "C:/Users/wzh16/Desktop/competing/griddehaze_fpga/work/frame_rtl_33x47_02/frame_axi_test.sv" Line 358
+run: Time (s): cpu = 00:00:00 ; elapsed = 01:45:10 . Memory (MB): peak = 224.633 ; gain = 0.000
+## quit
+INFO: xsimkernel Simulation Memory Usage: 346136 KB (Peak: 346136 KB), Simulation CPU Usage: 6267250 ms
+INFO: [Common 17-206] Exiting xsim at Sat Oct 24 17:21:45 2026...

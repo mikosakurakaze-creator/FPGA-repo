@@ -26,9 +26,14 @@ with zipfile.ZipFile(b/'griddehaze_system.xsa') as z:
     bits=[n for n in z.namelist() if n.endswith('.bit')]
     if len(bits)!=1 or z.read(bits[0])!=(b/'griddehaze_system.bit').read_bytes():
         raise RuntimeError('XSA embedded bit differs from external bit')
-    if not any(n.endswith('.hwh') for n in z.namelist()):raise RuntimeError('XSA lacks HWH')
+    # An XSA can contain many SmartConnect subdesign HWH files. Only the root
+    # system.hwh describes all cores, addresses and PS interfaces.
+    if 'system.hwh' not in z.namelist():raise RuntimeError('XSA lacks complete system.hwh')
+    system_hwh=z.read('system.hwh')
 out=a.out.resolve();out.mkdir(parents=True,exist_ok=False)
 files={}
+(out/'griddehaze_system.hwh').write_bytes(system_hwh)
+files['griddehaze_system.hwh']=dict(bytes=len(system_hwh),sha256=sha(out/'griddehaze_system.hwh'))
 for name in ['griddehaze_system.bit','griddehaze_system.xsa','build.json','compiled_sources_audit.json',
              'new_core_routed_test.json','legacy_routed_test.json','routed_timing.rpt',
              'routed_utilization_summary.rpt','route_status.rpt','routed_drc.rpt']:
@@ -43,6 +48,7 @@ readme='''# GridDehazeNet K26 上板候选
 
 - `griddehaze_system.bit`：五核系统配置文件；保留低照度和旧 weather，增加 GridDehazeNet。
 - `griddehaze_system.xsa`：同版硬件平台，内嵌 bit 已与外部 bit 逐字节比较。
+- `griddehaze_system.hwh`：从该 XSA 的 `system.hwh` 提取的完整系统描述，不使用 SmartConnect 子设计的 HWH。
 - `frame_interface.md`、实际寄存器头文件：新核控制和 DDR 合同，base=0xA0040000。
 - `build.json`、综合源码核查、时序/资源/DRC：实际构建与验证身份；SHA256.json 为本目录清单。
 

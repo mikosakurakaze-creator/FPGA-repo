@@ -2,3 +2,4 @@
 # including vendor report formatting and generated driver whitespace.
 board/releases/k26_weather_v2_20261022/** -text -whitespace
 board/releases/k26_weather_v2_signedfix_20261023/** -text -whitespace
+board/releases/k26_weather_griddehaze_reduced_20261024/** -text -whitespace

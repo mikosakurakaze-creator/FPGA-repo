@@ -1,0 +1,102 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Oct 24 20:50:24 2026
+# Process ID         : 6384
+# Current directory  : C:/Users/wzh16/Desktop/github clone/weather_fpga_integration/experiments/griddehaze_frame/work/frame_routed_sample_releasefix01
+# Command line       : xsim.exe -log sample.log -mode tcl -source {xsim.dir/gdn_frame_axi_test/xsim_script.tcl}
+# Log file           : C:/Users/wzh16/Desktop/github clone/weather_fpga_integration/experiments/griddehaze_frame/work/frame_routed_sample_releasefix01/sample.log
+# Journal file       : C:/Users/wzh16/Desktop/github clone/weather_fpga_integration/experiments/griddehaze_frame/work/frame_routed_sample_releasefix01\xsim.jou
+# Running On         : LAPTOP-FAFSANP3
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) Ultra 9 275HX
+# CPU Frequency      : 3072 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 24
+# Host memory        : 33676 MB
+# Swap memory        : 2697 MB
+# Total Virtual      : 36373 MB
+# Available Virtual  : 7396 MB
+#-----------------------------------------------------------
+source xsim.dir/gdn_frame_axi_test/xsim_script.tcl
+# xsim {gdn_frame_axi_test} -autoloadwcfg -tclbatch {sample.tcl}
+Time resolution is 1 ps
+source sample.tcl
+## set core /gdn_frame_axi_test/dut/griddehaze_frame_top_0/inst
+## set samples [open sample_words.txt w]
+## run 1000ns
+## set loops 0
+## while {1} {
+##   set n [get_value -radix unsigned ${core}/i_2_fu_352]
+##   if {[string is integer -strict $n] && $n >= 3} {break}
+##   run 1000ns
+##   incr loops
+##   if {$loops > 4000} {error "sample watchdog: no expected graph progress"}
+## }
+GDN_RTL_BAD_MODEL_PASS
+GDN_AXI_PROGRESS cycle=10000 feature_reads=0 parameter_reads=83 writes=0
+GDN_AXI_PROGRESS cycle=20000 feature_reads=0 parameter_reads=118 writes=0
+GDN_AXI_PROGRESS cycle=30000 feature_reads=0 parameter_reads=145 writes=0
+GDN_AXI_PROGRESS cycle=40000 feature_reads=0 parameter_reads=167 writes=0
+GDN_AXI_PROGRESS cycle=50000 feature_reads=0 parameter_reads=186 writes=0
+GDN_AXI_PROGRESS cycle=60000 feature_reads=0 parameter_reads=204 writes=0
+GDN_AXI_PROGRESS cycle=70000 feature_reads=0 parameter_reads=220 writes=0
+GDN_AXI_PROGRESS cycle=80000 feature_reads=0 parameter_reads=235 writes=0
+GDN_AXI_PROGRESS cycle=90000 feature_reads=0 parameter_reads=249 writes=0
+GDN_AXI_PROGRESS cycle=100000 feature_reads=0 parameter_reads=262 writes=0
+GDN_AXI_PROGRESS cycle=110000 feature_reads=0 parameter_reads=275 writes=0
+GDN_AXI_PROGRESS cycle=120000 feature_reads=0 parameter_reads=287 writes=0
+GDN_AXI_PROGRESS cycle=130000 feature_reads=0 parameter_reads=299 writes=0
+GDN_AXI_PROGRESS cycle=140000 feature_reads=0 parameter_reads=310 writes=0
+GDN_AXI_PROGRESS cycle=150000 feature_reads=0 parameter_reads=321 writes=0
+GDN_AXI_PROGRESS cycle=160000 feature_reads=0 parameter_reads=331 writes=0
+GDN_AXI_PROGRESS cycle=170000 feature_reads=48 parameter_reads=617 writes=49
+GDN_AXI_PROGRESS cycle=180000 feature_reads=352 parameter_reads=969 writes=256
+GDN_AXI_PROGRESS cycle=190000 feature_reads=352 parameter_reads=2049 writes=256
+GDN_AXI_PROGRESS cycle=200000 feature_reads=608 parameter_reads=2769 writes=384
+## puts $samples "NODE 1"
+## for {set i 3072} {$i < 3200} {incr i} {
+##   puts $samples [get_value -radix hex /gdn_frame_axi_test/feature/mem[$i]]
+## }
+## flush $samples
+## puts "GDN_ROUTED_SAMPLE_CAPTURE node=1 words=128 graph_node=$n"
+GDN_ROUTED_SAMPLE_CAPTURE node=1 words=128 graph_node=3
+## puts $samples "NODE 2"
+## for {set i 3200} {$i < 3328} {incr i} {
+##   puts $samples [get_value -radix hex /gdn_frame_axi_test/feature/mem[$i]]
+## }
+## flush $samples
+## puts "GDN_ROUTED_SAMPLE_CAPTURE node=2 words=128 graph_node=$n"
+GDN_ROUTED_SAMPLE_CAPTURE node=2 words=128 graph_node=3
+## while {1} {
+##   set n [get_value -radix unsigned ${core}/i_2_fu_352]
+##   if {[string is integer -strict $n] && $n >= 5} {break}
+##   run 1000ns
+##   incr loops
+##   if {$loops > 4000} {error "sample watchdog: no expected graph progress"}
+## }
+GDN_AXI_PROGRESS cycle=210000 feature_reads=688 parameter_reads=3201 writes=581
+GDN_AXI_PROGRESS cycle=220000 feature_reads=1040 parameter_reads=3201 writes=937
+## puts $samples "NODE 3"
+## for {set i 3328} {$i < 3456} {incr i} {
+##   puts $samples [get_value -radix hex /gdn_frame_axi_test/feature/mem[$i]]
+## }
+## flush $samples
+## puts "GDN_ROUTED_SAMPLE_CAPTURE node=3 words=128 graph_node=$n"
+GDN_ROUTED_SAMPLE_CAPTURE node=3 words=128 graph_node=5
+## puts $samples "NODE 4"
+## for {set i 3456} {$i < 3712} {incr i} {
+##   puts $samples [get_value -radix hex /gdn_frame_axi_test/feature/mem[$i]]
+## }
+## flush $samples
+## puts "GDN_ROUTED_SAMPLE_CAPTURE node=4 words=256 graph_node=$n"
+GDN_ROUTED_SAMPLE_CAPTURE node=4 words=256 graph_node=5
+## close $samples
+## puts "GDN_ROUTED_SAMPLE_SEQUENCE_DONE nodes=1,2,3,4"
+GDN_ROUTED_SAMPLE_SEQUENCE_DONE nodes=1,2,3,4
+## quit
+INFO: xsimkernel Simulation Memory Usage: 497280 KB (Peak: 497280 KB), Simulation CPU Usage: 1312343 ms
+INFO: [Common 17-206] Exiting xsim at Sat Oct 24 21:12:38 2026...

@@ -34,7 +34,7 @@ Set-Location $project
 
 默认 seed 是 `stream_system01`，构建前必须与旧 signed-fix 的实际回归身份匹配。安装目录不需要改动，A 原始源码、数值格式和参数也不需要重新训练或导出。
 
-## 长流程继续执行
+## 完整扩展验证（本轮不强制重跑）
 
 在同一新构建目录中，只启动一次下面的串行工作流。若综合已经在运行，可加 `--wait-for-synth`；不重复启动综合。
 
@@ -65,3 +65,19 @@ Set-Location $project
 ## 板端边界
 
 B 交付本地 FPGA 候选及接口文档，不执行 Git、板端配置、Linux 驱动、设备树部署或 HDMI。上板后仍需软件侧按实际接口申请互不重叠的低 DDR，校验冻结参数并完成一致性处理。当前共享复位、无独立 AXI 中止/排空、无 AXI 错误诊断等限制见 `frame_interface.md`，不得报告为已实现独立故障恢复。
+
+## 本轮必要回归的快速入口
+
+本轮按用户要求复用已核实的 33×47 导出 RTL 双帧和已有综合/实现结果。发布文件校验从仓库根运行 `experiments/griddehaze_frame/tools/verify_board_release.py --release board/releases/k26_weather_griddehaze_reduced_20261024`。
+
+新核布线后有限数值样本可复用已编译的真实全系统快照，无需重新 xelab。下面命令从仓库根运行，`--out` 必须选择新的目录；这不是完整整网回归，也不生成 bit/XSA：
+
+```powershell
+python -B tools/run_windows_desktop.py -- python -B experiments/griddehaze_frame/tools/routed_sample_trial.py `
+  --prepared experiments/griddehaze_frame/work/frame_routed_releasefix01 `
+  --netlist D:/weather_builds/grid_system02/system_routed_funcsim.v `
+  --golden experiments/griddehaze_frame/a_candidate/golden/size_4x4 `
+  --out experiments/griddehaze_frame/work/frame_routed_sample_new
+```
+
+工具保留实际 routed 逻辑和父层连接，只读图索引和仿真 DDR，采集节点 1..4 与 Golden 比较。成功必须有 `sample_result.json` 中 `status=pass`；仅有总线活动日志不算数值通过。完整整网 gate-level 冷暖帧仍可另行执行，但不作为本轮快速交付的隐含前提。实际范围详见 `release_review_20261024.md`。

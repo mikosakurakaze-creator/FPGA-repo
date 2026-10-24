@@ -9,7 +9,9 @@
 - 新旧核系统已完成 Vivado 综合与布局布线。当前 routed 报告：100 MHz，WNS `+0.729 ns`、WHS `+0.010 ns`、WPWS `+3.500 ns`；191,089/191,089 个 routable nets 完成。
 - Routed DRC 有 1,102 条普通 Warning（含 19 条 DPREG-7），无 Error/Critical Warning。已对实际 routed 网表的 19 个 DPREG-7 单元做 OPMODE 稳定组合审计，未发现稳定 P 反馈选择；审计范围和限制见 `docs/dpreg_opmode_audit_20261024.md`。
 - `test_frame.exe` 已按用户授权重新运行：8 组、共 2,560 个节点逐位匹配，11 项错误描述符检查通过，进程退出码 0。该证据只属于本机 C++ 整图验证。
-- 33×47 导出 RTL 冷暖帧回归曾按严格门禁启动，随后为尽快交付按用户要求停止；它没有被记录为通过，routed 新核/旧核数值回归也暂缓。
+- 33×47 导出 RTL 冷暖双帧：原始已执行的 `frame_rtl_33x47_02` 复核通过，两帧各 320 节点逐值一致；原始 raw、日志、Golden 和 95 个 RTL/ROM 文件已核对到本次实现所用 IP。复用真实结果，停止重复长跑。
+- 本次 routed 系统的旧 Weather 核完成 8×8 四帧 task=0、0、1、0 回归，全部 Golden mismatch=0；CNN/Bilinear/Curve 保持空闲，未逐核重跑。
+- 新核布线后完成必要的 4×4 代表性算子数值回归：两次卷积、ReLU、拼接，共 1,280 个标量与 Golden 零差异；实际 routed 父层/DDR 路径保留。完整布线后整网冷暖仿真不作为本轮必跑项。覆盖限制见发布目录 `evidence/new_core_sample.json` 和 README。
 - reduced gate 已完成 bitstream/XSA 导出，发布文件位于 `../../board/releases/k26_weather_griddehaze_reduced_20261024/`；该目录的 README 列出真实完成项和延期项。
 
 ## 本轮主机验证记录
@@ -41,5 +43,5 @@ python -B tools/frame_trial.py --stage native --out work/native_local01
 
 ## 数据与交付边界
 
-仿真 DDR 地址只用于无重叠地址空间检查，不能证明真板连续 DMA 内存可分配。450 MiB 是当前 720p 逻辑 scratch 容量，不是已测 CMA 结果。100 MHz 是实现约束和 routed timing 报告，不代表实测板端吞吐。当前 bit/XSA 是 reduced-gate 本地硬件候选；完整数值回归和真板验证仍由后续联调完成。
+仿真 DDR 地址只用于无重叠地址空间检查，不能证明真板连续 DMA 内存可分配。450 MiB 是当前 720p 逻辑 scratch 容量，不是已测 CMA 结果。100 MHz 是实现约束和 routed timing 报告，不代表实测板端吞吐。当前 bit/XSA 保留原同版实现身份，发布 HWH 已纠正为 XSA 内的完整 `system.hwh`。同版参数、layout 及小型核查向量已加入发布目录。验证覆盖范围分开记录；完整布线后整网和真板验证仍未完成。
 

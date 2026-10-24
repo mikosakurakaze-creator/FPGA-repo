@@ -2,7 +2,7 @@
   "release": "k26_weather_griddehaze_reduced_20261024",
   "source_build": "D:\\weather_builds\\grid_system02",
   "vivado": "2025.2",
-  "scope": "reduced_gate",
+  "scope": "necessary_functional_regressions",
   "timing": {
     "wns_ns": 0.729,
     "whs_ns": 0.01,
@@ -12,14 +12,70 @@
   },
   "drc_errors": 0,
   "deferred": [
-    "33x47 cold/warm cross-tile RTL regression",
-    "post-route new-core numerical regression",
-    "post-route legacy numerical regression",
-    "physical board acceptance"
+    "Full-network post-route cold/warm numerical regression",
+    "CNN/Bilinear/Curve individual numerical rerun (held idle in path regression)",
+    "Physical board acceptance, coherent DMA/driver and HDMI validation"
   ],
   "files": {
     "bit": "07f23b4d67f60270d3c35725df32289468438c90bef9c05170e98d538012a2ac",
     "xsa": "7dc76f78e2c363afd55ee773bdf854cf3eef5bf54d453093a1a281cb4dc61d64",
-    "hwh": "0570906159c90b0a51f8b254b80075a589f32720f08aa4587f8d61e6c9563481"
+    "hwh": "25cd124529ca6af00b9976c041e48994e0a6b428fc6812ea8666dcda8d621edb"
+  },
+  "xsa_members": {
+    "bit": "griddehaze_system.bit",
+    "hwh": "system.hwh"
+  },
+  "model": {
+    "directory": "model_int16",
+    "bundle_id": "5ff57bb52cff87944261aa1fc68ae556a08a65f1c3d32de702ac47a2bda13710",
+    "manifest_sha256": "7a45b152864fbb692f966a276806022ed88ef446c95c54a4444c546aedbb26c2",
+    "parameters_sha256": "5f49d702fedb6745a44fba401ae48438780abd6a65b5e2985ae3a70c16c16cac",
+    "parameters_bytes": 1933120,
+    "source_byte_preservation": "All four A-group package files unchanged; frozen scale_config.json retains original CRLF protected by Git -text"
+  },
+  "regressions": {
+    "cross_tile_33x47": {
+      "status": "pass",
+      "method": "existing actual cold/warm RTL run reviewed against this implemented IP",
+      "nodes_per_frame": 320,
+      "review": "evidence/cross_tile_review.json"
+    },
+    "legacy_weather_post_route": {
+      "status": "pass",
+      "tasks": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "review": "evidence/legacy_review.json",
+      "scope": "Old Weather task 0/1 only; CNN/Bilinear/Curve idle"
+    },
+    "new_core_post_route": {
+      "status": "pass",
+      "kind": "post_route_functional_numerical_samples",
+      "shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "nodes": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "operators": [
+        "conv",
+        "conv",
+        "relu",
+        "cat"
+      ],
+      "scalars_exact": 1280,
+      "mismatch": 0,
+      "review": "evidence/new_core_sample.json",
+      "scope": "Actual routed core and parent control/reset/SmartConnect/DDR boundary, PS replaced; no SDF; no full-network completion claim"
+    }
   }
 }
