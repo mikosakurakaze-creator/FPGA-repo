@@ -121,3 +121,7 @@ data/
 !board/releases/k26_weather_v2_signedfix_20261023/drivers/**/data/
 !board/releases/k26_weather_v2_signedfix_20261023/reports/implementation_repro/actual_*.bin
 !board/releases/k26_weather_v2_signedfix_20261023/reports/implementation_repro/simulation.log
+
+# User-requested reduced GridDehazeNet local hardware release.
+!board/releases/k26_weather_griddehaze_reduced_20261024/
+!board/releases/k26_weather_griddehaze_reduced_20261024/**

@@ -1,0 +1,25 @@
+{
+  "release": "k26_weather_griddehaze_reduced_20261024",
+  "source_build": "D:\\weather_builds\\grid_system02",
+  "vivado": "2025.2",
+  "scope": "reduced_gate",
+  "timing": {
+    "wns_ns": 0.729,
+    "whs_ns": 0.01,
+    "wpws_ns": 3.5,
+    "routable_nets": 191089,
+    "fully_routed_nets": 191089
+  },
+  "drc_errors": 0,
+  "deferred": [
+    "33x47 cold/warm cross-tile RTL regression",
+    "post-route new-core numerical regression",
+    "post-route legacy numerical regression",
+    "physical board acceptance"
+  ],
+  "files": {
+    "bit": "07f23b4d67f60270d3c35725df32289468438c90bef9c05170e98d538012a2ac",
+    "xsa": "7dc76f78e2c363afd55ee773bdf854cf3eef5bf54d453093a1a281cb4dc61d64",
+    "hwh": "0570906159c90b0a51f8b254b80075a589f32720f08aa4587f8d61e6c9563481"
+  }
+}

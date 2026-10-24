@@ -1,0 +1,98 @@
+{
+  "pass_result": true,
+  "kind": "native_host_frame_test",
+  "bundle_id": "5ff57bb52cff87944261aa1fc68ae556a08a65f1c3d32de702ac47a2bda13710",
+  "executable_sha256": "a229361c2682c652c34d7dae7055bd86f768097f118165666c59205491bded3b",
+  "cases": [
+    {
+      "case": 0,
+      "shape": [
+        33,
+        47
+      ],
+      "nodes": 320,
+      "node_hashes_match": true,
+      "final_output_matches": true
+    },
+    {
+      "case": 1,
+      "shape": [
+        33,
+        47
+      ],
+      "nodes": 320,
+      "node_hashes_match": true,
+      "final_output_matches": true
+    },
+    {
+      "case": 2,
+      "shape": [
+        33,
+        47
+      ],
+      "nodes": 320,
+      "node_hashes_match": true,
+      "final_output_matches": true
+    },
+    {
+      "case": 3,
+      "shape": [
+        33,
+        47
+      ],
+      "nodes": 320,
+      "node_hashes_match": true,
+      "final_output_matches": true
+    },
+    {
+      "case": 4,
+      "shape": [
+        33,
+        47
+      ],
+      "nodes": 320,
+      "node_hashes_match": true,
+      "final_output_matches": true
+    },
+    {
+      "case": 5,
+      "shape": [
+        4,
+        4
+      ],
+      "nodes": 320,
+      "node_hashes_match": true,
+      "final_output_matches": true
+    },
+    {
+      "case": 6,
+      "shape": [
+        32,
+        48
+      ],
+      "nodes": 320,
+      "node_hashes_match": true,
+      "final_output_matches": true
+    },
+    {
+      "case": 7,
+      "shape": [
+        34,
+        46
+      ],
+      "nodes": 320,
+      "node_hashes_match": true,
+      "final_output_matches": true
+    }
+  ],
+  "matched_node_files": 2560,
+  "negative_tests": 11,
+  "execution_result": "test_frame.exe exited 0; ALL_FRAME_CASES_PASS",
+  "limitation": "Native C++ only; not HLS, RTL, routed-system, DMA, or board evidence.",
+  "compiled_executable": "D:\\weather_builds\\grid_native_local01\\test_frame.exe",
+  "compile_exit_code": 0,
+  "launch_command": "D:\\Dev\\Miniconda3\\python.exe -B C:\\Users\\wzh16\\Desktop\\github clone\\weather_fpga_integration\\tools\\run_windows_desktop.py -- D:\\weather_builds\\grid_native_local01\\test_frame.exe D:\\weather_builds\\grid_native_retry02\\cases.txt",
+  "direct_launch_attempt": "Windows returned WinError 5 before process start; retry via repository run_windows_desktop.py succeeded.",
+  "source_review": "Static search of hls/, src/, tools/ found no process-spawn, network, registry-write, dynamic-library-load, or delete-file calls. tb_frame.cpp reads only supplied local fixtures and writes node/output dumps under case prefixes.",
+  "golden_identity": "The copied candidate bundle was independently preflighted; parameter and Golden bytes match the source package. Golden files are local A-group test fixtures."
+}

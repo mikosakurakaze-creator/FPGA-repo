@@ -1,0 +1,778 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Sat Oct 24 15:55:37 2026
+| Host              : LAPTOP-FAFSANP3 running 64-bit major release  (build 9200)
+| Command           : report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -file D:/weather_builds/grid_system02/routed_timing.rpt
+| Design            : system_wrapper
+| Device            : xck26-sfvc784
+| Speed File        : -2LV  PRODUCTION 1.30 05-15-2022
+| Design State      : Routed
+| Temperature Grade : C
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule      Severity  Description                                  Violations  
+--------  --------  -------------------------------------------  ----------  
+ULMTCS-1  Warning   Control Sets use limits recommend reduction  1           
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (0)
+6. checking no_output_delay (0)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (0)
+------------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (0)
+-------------------------------
+ There are 0 ports with no output delay specified.
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      0.729        0.000                      0               416334        0.010        0.000                      0               416334        3.500        0.000                       0                110483  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock     Waveform(ns)       Period(ns)      Frequency(MHz)
+-----     ------------       ----------      --------------
+clk_pl_0  {0.000 5.000}      10.000          100.000         
+clk_pl_1  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_pl_0            0.729        0.000                      0               416334        0.010        0.000                      0               416334        3.500        0.000                       0                110483  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                      clk_pl_0      
+(none)        clk_pl_0      clk_pl_0      
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                      clk_pl_0      
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_pl_0
+  To Clock:  clk_pl_0
+
+Setup :            0  Failing Endpoints,  Worst Slack        0.729ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.010ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        3.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.729ns  (required time - arrival time)
+  Source:                 system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/point_inputs_1_U/gen_buffer[1].zero_dce_cnn_top_p_anonymous_namespace_group_rowstream_block_point_inputs_RAM_2P_BRAM_1R1W_memcore_U/ram_reg_bram_0/CLKBWRCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/partial_3_reg_4630_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk_pl_0 rise@10.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        8.817ns  (logic 4.866ns (55.191%)  route 3.951ns (44.809%))
+  Logic Levels:           15  (CARRY8=5 DSP_A_B_DATA=1 DSP_ALU=1 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=1 DSP_PREADD_DATA=1 LUT2=1 LUT3=1 LUT5=1 LUT6=1)
+  Clock Path Skew:        -0.338ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.906ns = ( 12.906 - 10.000 ) 
+    Source Clock Delay      (SCD):    3.482ns
+    Clock Pessimism Removal (CPR):    0.237ns
+  Clock Uncertainty:      0.160ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.215ns (routing 1.584ns, distribution 1.631ns)
+  Clock Net Delay (Destination): 2.690ns (routing 1.450ns, distribution 1.240ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      3.215     3.482    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/point_inputs_1_U/gen_buffer[1].zero_dce_cnn_top_p_anonymous_namespace_group_rowstream_block_point_inputs_RAM_2P_BRAM_1R1W_memcore_U/ap_clk
+    RAMB18_X1Y88         RAMB18E2                                     r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/point_inputs_1_U/gen_buffer[1].zero_dce_cnn_top_p_anonymous_namespace_group_rowstream_block_point_inputs_RAM_2P_BRAM_1R1W_memcore_U/ram_reg_bram_0/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X1Y88         RAMB18E2 (Prop_RAMB18E2_L_RAMB180_CLKBWRCLK_DOUTBDOUT[7])
+                                                      1.266     4.748 f  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/point_inputs_1_U/gen_buffer[1].zero_dce_cnn_top_p_anonymous_namespace_group_rowstream_block_point_inputs_RAM_2P_BRAM_1R1W_memcore_U/ram_reg_bram_0/DOUTBDOUT[7]
+                         net (fo=2, routed)           1.040     5.788    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/point_inputs_1_U/gen_buffer[1].zero_dce_cnn_top_p_anonymous_namespace_group_rowstream_block_point_inputs_RAM_2P_BRAM_1R1W_memcore_U/buf_q0[1]__0[7]
+    SLICE_X48Y221        LUT5 (Prop_A5LUT_SLICEL_I1_O)
+                                                      0.224     6.012 f  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/point_inputs_1_U/gen_buffer[1].zero_dce_cnn_top_p_anonymous_namespace_group_rowstream_block_point_inputs_RAM_2P_BRAM_1R1W_memcore_U/tmp_product_i_9__0/O
+                         net (fo=4, routed)           0.767     6.779    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/A[7]
+    DSP48E2_X11Y90       DSP_A_B_DATA (Prop_DSP_A_B_DATA_DSP48E2_A[7]_A2_DATA[7])
+                                                      0.258     7.037 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/DSP_A_B_DATA_INST/A2_DATA[7]
+                         net (fo=1, routed)           0.000     7.037    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/DSP_A_B_DATA.A2_DATA<7>
+    DSP48E2_X11Y90       DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_DSP48E2_A2_DATA[7]_A2A1[7])
+                                                      0.114     7.151 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/DSP_PREADD_DATA_INST/A2A1[7]
+                         net (fo=1, routed)           0.000     7.151    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/DSP_PREADD_DATA.A2A1<7>
+    DSP48E2_X11Y90       DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_DSP48E2_A2A1[7]_U[9])
+                                                      0.700     7.851 f  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/DSP_MULTIPLIER_INST/U[9]
+                         net (fo=1, routed)           0.000     7.851    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/DSP_MULTIPLIER.U<9>
+    DSP48E2_X11Y90       DSP_M_DATA (Prop_DSP_M_DATA_DSP48E2_U[9]_U_DATA[9])
+                                                      0.067     7.918 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/DSP_M_DATA_INST/U_DATA[9]
+                         net (fo=1, routed)           0.000     7.918    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/DSP_M_DATA.U_DATA<9>
+    DSP48E2_X11Y90       DSP_ALU (Prop_DSP_ALU_DSP48E2_U_DATA[9]_ALU_OUT[9])
+                                                      0.727     8.645 f  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/DSP_ALU_INST/ALU_OUT[9]
+                         net (fo=1, routed)           0.000     8.645    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/DSP_ALU.ALU_OUT<9>
+    DSP48E2_X11Y90       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_ALU_OUT[9]_P[9])
+                                                      0.146     8.791 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U718/tmp_product/DSP_OUTPUT_INST/P[9]
+                         net (fo=3, routed)           0.659     9.450    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U717/partial_3_reg_4630_reg[26]_i_11_0[9]
+    SLICE_X38Y226        LUT6 (Prop_B6LUT_SLICEM_I3_O)
+                                                      0.152     9.602 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U717/partial_3_reg_4630[23]_i_43/O
+                         net (fo=1, routed)           0.022     9.624    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U717/partial_3_reg_4630[23]_i_43_n_0
+    SLICE_X38Y226        CARRY8 (Prop_CARRY8_SLICEM_S[1]_O[5])
+                                                      0.333     9.957 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U717/partial_3_reg_4630_reg[23]_i_27/O[5]
+                         net (fo=3, routed)           0.549    10.506    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U720/sext_ln304_13_fu_2385_p1[13]
+    SLICE_X39Y206        LUT3 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.138    10.644 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U720/partial_3_reg_4630[15]_i_12/O
+                         net (fo=1, routed)           0.316    10.960    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U720/partial_3_reg_4630[15]_i_12_n_0
+    SLICE_X38Y206        CARRY8 (Prop_CARRY8_SLICEM_DI[6]_CO[7])
+                                                      0.092    11.052 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U720/partial_3_reg_4630_reg[15]_i_2/CO[7]
+                         net (fo=1, routed)           0.030    11.082    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U720/partial_3_reg_4630_reg[15]_i_2_n_0
+    SLICE_X38Y207        CARRY8 (Prop_CARRY8_SLICEM_CI_O[5])
+                                                      0.161    11.243 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U720/partial_3_reg_4630_reg[23]_i_2/O[5]
+                         net (fo=2, routed)           0.489    11.733    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U720/sext_ln304_14_fu_2417_p1[21]
+    SLICE_X39Y197        LUT2 (Prop_F6LUT_SLICEL_I0_O)
+                                                      0.150    11.883 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U720/partial_3_reg_4630[23]_i_5/O
+                         net (fo=1, routed)           0.015    11.898    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U720/partial_3_reg_4630[23]_i_5_n_0
+    SLICE_X39Y197        CARRY8 (Prop_CARRY8_SLICEL_S[5]_CO[7])
+                                                      0.232    12.130 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U720/partial_3_reg_4630_reg[23]_i_1/CO[7]
+                         net (fo=1, routed)           0.030    12.160    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U722/partial_3_reg_4630_reg[26]_0[0]
+    SLICE_X39Y198        CARRY8 (Prop_CARRY8_SLICEL_CI_O[1])
+                                                      0.106    12.266 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U722/partial_3_reg_4630_reg[26]_i_1/O[1]
+                         net (fo=1, routed)           0.033    12.299    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/partial_3_fu_2421_p2[25]
+    SLICE_X39Y198        FDRE                                         r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/partial_3_reg_4630_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                     10.000    10.000 r  
+    PS8_X0Y0             PS8                          0.000    10.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181    10.181    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035    10.216 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      2.690    12.906    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/ap_clk
+    SLICE_X39Y198        FDRE                                         r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/partial_3_reg_4630_reg[25]/C
+                         clock pessimism              0.237    13.143    
+                         clock uncertainty           -0.160    12.983    
+    SLICE_X39Y198        FDRE (Setup_BFF_SLICEL_C_D)
+                                                      0.044    13.027    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/partial_3_reg_4630_reg[25]
+  -------------------------------------------------------------------
+                         required time                         13.027    
+                         arrival time                         -12.299    
+  -------------------------------------------------------------------
+                         slack                                  0.729    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_pack_actor_U0/p_anonymous_namespace_kZeroDceLayers_output_channels_U/q0_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_pack_actor_U0/channels_reg_406_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk_pl_0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (clk_pl_0 rise@0.000ns - clk_pl_0 rise@0.000ns)
+  Data Path Delay:        0.202ns  (logic 0.112ns (55.446%)  route 0.090ns (44.554%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.090ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.394ns
+    Source Clock Delay      (SCD):    3.059ns
+    Clock Pessimism Removal (CPR):    0.244ns
+  Clock Net Delay (Source):      2.843ns (routing 1.450ns, distribution 1.393ns)
+  Clock Net Delay (Destination): 3.127ns (routing 1.584ns, distribution 1.543ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      2.843     3.059    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_pack_actor_U0/p_anonymous_namespace_kZeroDceLayers_output_channels_U/ap_clk
+    SLICE_X59Y125        FDRE                                         r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_pack_actor_U0/p_anonymous_namespace_kZeroDceLayers_output_channels_U/q0_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X59Y125        FDRE (Prop_GFF_SLICEL_C_Q)
+                                                      0.112     3.171 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_pack_actor_U0/p_anonymous_namespace_kZeroDceLayers_output_channels_U/q0_reg[1]/Q
+                         net (fo=1, routed)           0.090     3.261    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_pack_actor_U0/q0[1]
+    SLICE_X60Y125        FDRE                                         r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_pack_actor_U0/channels_reg_406_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      3.127     3.394    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_pack_actor_U0/ap_clk
+    SLICE_X60Y125        FDRE                                         r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_pack_actor_U0/channels_reg_406_reg[1]/C
+                         clock pessimism             -0.244     3.150    
+    SLICE_X60Y125        FDRE (Hold_DFF2_SLICEL_C_D)
+                                                      0.102     3.252    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_pack_actor_U0/channels_reg_406_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -3.252    
+                         arrival time                           3.261    
+  -------------------------------------------------------------------
+                         slack                                  0.010    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_pl_0
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0] }
+
+Check Type        Corner  Lib Pin          Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     PS8/MAXIGP0ACLK  n/a            3.000         10.000      7.000      PS8_X0Y0  system_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP0ACLK
+Low Pulse Width   Slow    PS8/MAXIGP0ACLK  n/a            1.500         5.000       3.500      PS8_X0Y0  system_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP0ACLK
+High Pulse Width  Slow    PS8/MAXIGP0ACLK  n/a            1.500         5.000       3.500      PS8_X0Y0  system_i/zynq_ultra_ps_e_0/inst/PS8_i/MAXIGP0ACLK
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  clk_pl_0
+
+Max Delay             1 Endpoint
+Min Delay             1 Endpoint
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 system_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                            (internal pin)
+  Destination:            system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        0.931ns  (logic 0.187ns (20.086%)  route 0.744ns (79.914%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Uncertainty:      0.158ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.893ns (routing 1.450ns, distribution 1.443ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8                          0.000     0.000 f  system_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                         net (fo=1, routed)           0.447     0.447    system_i/rst_ps_100m/U0/EXT_LPF/ext_reset_in
+    SLICE_X5Y239         LUT1 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.187     0.634 r  system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT_i_1/O
+                         net (fo=1, routed)           0.297     0.931    system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/src_in
+    SLICE_X5Y239         FDRE                                         r  system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      2.893     3.109    system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/dest_clk
+    SLICE_X5Y239         FDRE                                         r  system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 system_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                            (internal pin)
+  Destination:            system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.361ns  (logic 0.089ns (24.654%)  route 0.272ns (75.346%))
+  Logic Levels:           1  (LUT1=1)
+  Clock Uncertainty:      0.158ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.937ns (routing 0.971ns, distribution 0.966ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS8_X0Y0             PS8                          0.000     0.000 f  system_i/zynq_ultra_ps_e_0/inst/PS8_i/EMIOGPIOO[95]
+                         net (fo=1, routed)           0.179     0.179    system_i/rst_ps_100m/U0/EXT_LPF/ext_reset_in
+    SLICE_X5Y239         LUT1 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.089     0.268 r  system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT_i_1/O
+                         net (fo=1, routed)           0.093     0.361    system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/src_in
+    SLICE_X5Y239         FDRE                                         r  system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.164     0.164    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.023     0.187 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      1.937     2.124    system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/dest_clk
+    SLICE_X5Y239         FDRE                                         r  system_i/rst_ps_100m/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/syncstages_ff_reg[0]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  clk_pl_0
+  To Clock:  clk_pl_0
+
+Max Delay           452 Endpoints
+Min Delay           452 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 system_i/axi_control/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            system_i/axi_control/inst/m04_nodes/m04_r_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/CLR
+                            (recovery check against rising-edge clock clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Recovery (Max at Slow Process Corner)
+  Data Path Delay:        4.331ns  (logic 0.115ns (2.655%)  route 4.216ns (97.345%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.637ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.830ns
+    Source Clock Delay      (SCD):    3.468ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.160ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.201ns (routing 1.584ns, distribution 1.617ns)
+  Clock Net Delay (Destination): 2.614ns (routing 1.450ns, distribution 1.164ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.229     0.229    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.038     0.267 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      3.201     3.468    system_i/axi_control/inst/clk_map/psr_aclk/U0/aclk
+    SLICE_X3Y229         FDRE                                         r  system_i/axi_control/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y229         FDRE (Prop_HFF2_SLICEL_C_Q)
+                                                      0.115     3.583 r  system_i/axi_control/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/Q
+                         net (fo=129, routed)         4.216     7.799    system_i/axi_control/inst/m04_nodes/m04_r_node/inst/s_sc_xpm_cdc_async_rst_inst/src_arst
+    SLICE_X24Y94         FDCE                                         f  system_i/axi_control/inst/m04_nodes/m04_r_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/CLR  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      2.614     2.830    system_i/axi_control/inst/m04_nodes/m04_r_node/inst/s_sc_xpm_cdc_async_rst_inst/dest_clk
+    SLICE_X24Y94         FDCE                                         r  system_i/axi_control/inst/m04_nodes/m04_r_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 system_i/bilinear_ddr_sc/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/C
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            system_i/bilinear_ddr_sc/inst/m00_nodes/m00_b_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/CLR
+                            (removal check against rising-edge clock clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Removal (Min at Fast Process Corner)
+  Data Path Delay:        0.182ns  (logic 0.084ns (46.248%)  route 0.098ns (53.752%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.198ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.114ns
+    Source Clock Delay      (SCD):    1.917ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.160ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.766ns (routing 0.886ns, distribution 0.880ns)
+  Clock Net Delay (Destination): 1.927ns (routing 0.971ns, distribution 0.956ns)
+  Timing Exception:       False Path
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.129     0.129    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.022     0.151 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      1.766     1.917    system_i/bilinear_ddr_sc/inst/clk_map/psr_aclk/U0/aclk
+    SLICE_X0Y235         FDRE                                         r  system_i/bilinear_ddr_sc/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y235         FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.084     2.001 r  system_i/bilinear_ddr_sc/inst/clk_map/psr_aclk/U0/ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N/Q
+                         net (fo=51, routed)          0.098     2.098    system_i/bilinear_ddr_sc/inst/m00_nodes/m00_b_node/inst/s_sc_xpm_cdc_async_rst_inst/src_arst
+    SLICE_X1Y235         FDCE                                         f  system_i/bilinear_ddr_sc/inst/m00_nodes/m00_b_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/CLR  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.164     0.164    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.023     0.187 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      1.927     2.114    system_i/bilinear_ddr_sc/inst/m00_nodes/m00_b_node/inst/s_sc_xpm_cdc_async_rst_inst/dest_clk
+    SLICE_X1Y235         FDCE                                         r  system_i/bilinear_ddr_sc/inst/m00_nodes/m00_b_node/inst/s_sc_xpm_cdc_async_rst_inst/arststages_ff_reg[0]/C
+
+
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  clk_pl_0
+
+Max Delay           950 Endpoints
+Min Delay           950 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_A_B_DATA_INST/B2_DATA[17]
+                            (internal pin)
+  Destination:            system_i/bilinear_fixed16_buffered_0/inst/add_ln56_reg_1344_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        6.903ns  (logic 4.677ns (67.749%)  route 2.226ns (32.251%))
+  Logic Levels:           23  (CARRY8=11 DSP_ALU=2 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=2 DSP_PREADD_DATA=1 LUT2=1 LUT4=1 LUT5=1 LUT6=2)
+  Clock Uncertainty:      0.158ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 2.831ns (routing 1.450ns, distribution 1.381ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X0Y6         DSP_A_B_DATA                 0.000     0.000 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_A_B_DATA_INST/B2_DATA[17]
+                         net (fo=1, routed)           0.000     0.000    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_A_B_DATA.B2_DATA<17>
+    DSP48E2_X0Y6         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_DSP48E2_B2_DATA[17]_B2B1[17])
+                                                      0.097     0.097 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_PREADD_DATA_INST/B2B1[17]
+                         net (fo=1, routed)           0.000     0.097    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_PREADD_DATA.B2B1<17>
+    DSP48E2_X0Y6         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_DSP48E2_B2B1[17]_U[43])
+                                                      0.773     0.870 f  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_MULTIPLIER_INST/U[43]
+                         net (fo=1, routed)           0.000     0.870    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_MULTIPLIER.U<43>
+    DSP48E2_X0Y6         DSP_M_DATA (Prop_DSP_M_DATA_DSP48E2_U[43]_U_DATA[43])
+                                                      0.067     0.937 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_M_DATA_INST/U_DATA[43]
+                         net (fo=1, routed)           0.000     0.937    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_M_DATA.U_DATA<43>
+    DSP48E2_X0Y6         DSP_ALU (Prop_DSP_ALU_DSP48E2_U_DATA[43]_ALU_OUT[47])
+                                                      0.727     1.664 f  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_ALU_INST/ALU_OUT[47]
+                         net (fo=1, routed)           0.000     1.664    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_ALU.ALU_OUT<47>
+    DSP48E2_X0Y6         DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_ALU_OUT[47]_PCOUT[47])
+                                                      0.167     1.831 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__1/DSP_OUTPUT_INST/PCOUT[47]
+                         net (fo=1, routed)           0.014     1.845    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__2/PCIN[47]
+    DSP48E2_X0Y7         DSP_ALU (Prop_DSP_ALU_DSP48E2_PCIN[47]_ALU_OUT[4])
+                                                      0.739     2.584 f  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__2/DSP_ALU_INST/ALU_OUT[4]
+                         net (fo=1, routed)           0.000     2.584    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__2/DSP_ALU.ALU_OUT<4>
+    DSP48E2_X0Y7         DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_ALU_OUT[4]_P[4])
+                                                      0.146     2.730 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__2/DSP_OUTPUT_INST/P[4]
+                         net (fo=2, routed)           0.380     3.110    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__2_n_101
+    SLICE_X1Y17          LUT2 (Prop_F6LUT_SLICEM_I0_O)
+                                                      0.056     3.166 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry_i_3/O
+                         net (fo=1, routed)           0.029     3.195    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry_i_3_n_0
+    SLICE_X1Y17          CARRY8 (Prop_CARRY8_SLICEM_S[5]_CO[7])
+                                                      0.238     3.433 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry/CO[7]
+                         net (fo=1, routed)           0.030     3.463    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry_n_0
+    SLICE_X1Y18          CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.065     3.528 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry__0/CO[7]
+                         net (fo=1, routed)           0.030     3.558    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry__0_n_0
+    SLICE_X1Y19          CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.065     3.623 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry__1/CO[7]
+                         net (fo=1, routed)           0.030     3.653    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry__1_n_0
+    SLICE_X1Y20          CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.065     3.718 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry__2/CO[7]
+                         net (fo=1, routed)           0.030     3.748    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry__2_n_0
+    SLICE_X1Y21          CARRY8 (Prop_CARRY8_SLICEM_CI_CO[7])
+                                                      0.065     3.813 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry__3/CO[7]
+                         net (fo=1, routed)           0.030     3.843    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry__3_n_0
+    SLICE_X1Y22          CARRY8 (Prop_CARRY8_SLICEM_CI_O[5])
+                                                      0.161     4.004 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_carry__4/O[5]
+                         net (fo=1, routed)           0.182     4.186    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product__19[61]
+    SLICE_X0Y22          LUT6 (Prop_F6LUT_SLICEL_I4_O)
+                                                      0.224     4.410 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344[0]_i_26/O
+                         net (fo=1, routed)           0.160     4.570    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344[0]_i_26_n_0
+    SLICE_X1Y23          LUT6 (Prop_H6LUT_SLICEM_I0_O)
+                                                      0.084     4.654 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344[0]_i_4/O
+                         net (fo=112, routed)         0.421     5.075    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344[0]_i_4_n_0
+    SLICE_X0Y15          LUT4 (Prop_A6LUT_SLICEL_I2_O)
+                                                      0.082     5.157 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344[0]_i_69/O
+                         net (fo=1, routed)           0.014     5.171    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344[0]_i_69_n_0
+    SLICE_X0Y15          CARRY8 (Prop_CARRY8_SLICEL_S[0]_CO[7])
+                                                      0.278     5.449 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344_reg[0]_i_29/CO[7]
+                         net (fo=1, routed)           0.030     5.479    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344_reg[0]_i_29_n_0
+    SLICE_X0Y16          CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.065     5.544 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344_reg[0]_i_5/CO[7]
+                         net (fo=1, routed)           0.030     5.574    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344_reg[0]_i_5_n_0
+    SLICE_X0Y17          CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.073     5.647 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344_reg[0]_i_2/CO[7]
+                         net (fo=64, routed)          0.430     6.077    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/icmp_ln53_1_fu_854_p2[0]
+    SLICE_X2Y19          LUT5 (Prop_C6LUT_SLICEM_I3_O)
+                                                      0.056     6.133 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/tmp_product_i_16__3/O
+                         net (fo=4, routed)           0.323     6.456    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/A[0]
+    SLICE_X0Y20          CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.223     6.679 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344_reg[8]_i_1/CO[7]
+                         net (fo=1, routed)           0.030     6.709    system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344_reg[8]_i_1_n_0
+    SLICE_X0Y21          CARRY8 (Prop_CARRY8_SLICEL_CI_O[5])
+                                                      0.161     6.870 r  system_i/bilinear_fixed16_buffered_0/inst/mul_32ns_33ns_65_1_1_U42/add_ln56_reg_1344_reg[16]_i_1/O[5]
+                         net (fo=1, routed)           0.033     6.903    system_i/bilinear_fixed16_buffered_0/inst/add_ln56_fu_884_p2[14]
+    SLICE_X0Y21          FDRE                                         r  system_i/bilinear_fixed16_buffered_0/inst/add_ln56_reg_1344_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.181     0.181    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.035     0.216 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      2.831     3.047    system_i/bilinear_fixed16_buffered_0/inst/ap_clk
+    SLICE_X0Y21          FDRE                                         r  system_i/bilinear_fixed16_buffered_0/inst/add_ln56_reg_1344_reg[14]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U708/tmp_product/DSP_C_DATA_INST/C_DATA[1]
+                            (internal pin)
+  Destination:            system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/partial_1_reg_4610_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pl_0  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.262ns  (logic 0.188ns (71.756%)  route 0.074ns (28.244%))
+  Logic Levels:           4  (CARRY8=1 DSP_ALU=1 DSP_OUTPUT=1 LUT2=1)
+  Clock Uncertainty:      0.158ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.312ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.806ns (routing 0.971ns, distribution 0.835ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X10Y79       DSP_C_DATA                   0.000     0.000 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U708/tmp_product/DSP_C_DATA_INST/C_DATA[1]
+                         net (fo=2, routed)           0.000     0.000    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U708/tmp_product/DSP_C_DATA.C_DATA<1>
+    DSP48E2_X10Y79       DSP_ALU (Prop_DSP_ALU_DSP48E2_C_DATA[1]_ALU_OUT[1])
+                                                      0.114     0.114 f  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U708/tmp_product/DSP_ALU_INST/ALU_OUT[1]
+                         net (fo=1, routed)           0.000     0.114    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U708/tmp_product/DSP_ALU.ALU_OUT<1>
+    DSP48E2_X10Y79       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_ALU_OUT[1]_P[1])
+                                                      0.033     0.147 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U708/tmp_product/DSP_OUTPUT_INST/P[1]
+                         net (fo=1, routed)           0.058     0.205    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U704/partial_1_reg_4610_reg[23]_0[1]
+    SLICE_X36Y195        LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.022     0.227 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U704/partial_1_reg_4610[7]_i_9/O
+                         net (fo=1, routed)           0.008     0.235    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U704/partial_1_reg_4610[7]_i_9_n_0
+    SLICE_X36Y195        CARRY8 (Prop_CARRY8_SLICEL_S[1]_O[1])
+                                                      0.019     0.254 r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/mul_16s_8s_24_1_1_U704/partial_1_reg_4610_reg[7]_i_1/O[1]
+                         net (fo=1, routed)           0.008     0.262    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/partial_1_fu_2045_p2[1]
+    SLICE_X36Y195        FDRE                                         r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/partial_1_reg_4610_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pl_0 rise edge)
+                                                      0.000     0.000 r  
+    PS8_X0Y0             PS8                          0.000     0.000 r  system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]
+                         net (fo=1, routed)           0.164     0.164    system_i/zynq_ultra_ps_e_0/inst/pl_clk_unbuffered[0]
+    BUFG_PS_X0Y80        BUFG_PS (Prop_BUFG_PS_I_O)
+                                                      0.023     0.187 r  system_i/zynq_ultra_ps_e_0/inst/buffer_pl_clk_0.PL_CLK_0_BUFG/O
+    X1Y1 (CLOCK_ROOT)    net (fo=114841, routed)      1.806     1.993    system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/ap_clk
+    SLICE_X36Y195        FDRE                                         r  system_i/zero_dce_cnn_top_0/inst/grp_p_anonymous_namespace_group_rowstream_block_fu_420/p_anonymous_namespace_point_tile_compute_actor_U0/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_2_fu_550/grp_p_anonymous_namespace_compute_point_tile30313233343536373839404142434445464748495_1_fu_857/partial_1_reg_4610_reg[1]/C
+
+
+
+
+

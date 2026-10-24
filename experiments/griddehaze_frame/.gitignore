@@ -1,0 +1,6 @@
+# Local A-group weights and Golden vectors, plus generated tool outputs.
+a_candidate/
+work/
+__pycache__/
+*.py[cod]
+
