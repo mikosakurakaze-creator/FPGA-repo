@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "scope": "FP32 standalone delivery parity with selected D; NOT integer or FPGA verification",
+  "checks": [
+    {
+      "shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "cpu_equal": true
+    },
+    {
+      "shape": [
+        1,
+        3,
+        33,
+        47
+      ],
+      "cpu_equal": true
+    },
+    {
+      "filename": "foggy-001.jpg",
+      "display_rgb8_equal_to_selected_gallery": true
+    },
+    {
+      "filename": "rain_storm-062.jpg",
+      "display_rgb8_equal_to_selected_gallery": true
+    },
+    {
+      "filename": "mist-971.jpg",
+      "display_rgb8_equal_to_selected_gallery": true
+    }
+  ],
+  "reference_cases": 2,
+  "reference_nodes_per_case": 22,
+  "weight_tensor_count": 16,
+  "torch": "2.7.1+cu126"
+}

@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+# Explicitly authorized frozen D handoff, overriding repository-wide weight/bin ignores.
+!weights/
+weights/*
+!weights/d_best_fp32.pth
+!reference_fp32/weights_fp32.bin
+!reference_fp32/random_8x8/input_rgb_nchw_u8.bin
+!reference_fp32/random_33x47/input_rgb_nchw_u8.bin

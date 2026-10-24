@@ -1,0 +1,1524 @@
+{
+  "seed": 20261024,
+  "sets": {
+    "train": [
+      {
+        "label": "fog",
+        "size": [
+          2157,
+          1080
+        ],
+        "sha256": "4a545e1188b7159815064f341b0b2ca347914b97b32113d36f0a43eb99bd474f",
+        "filename": "foggy-039.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          717
+        ],
+        "sha256": "08d853c17ce42c88d55a051c3b4a5c5a7af50d8a14f7ae53d955c5dc685008d2",
+        "filename": "foggy-105.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          853
+        ],
+        "sha256": "4cc2e4f302a8ea280891c7ae71cf3e440756d51ae810f8fe53563626139c3fc5",
+        "filename": "foggy-016.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          856
+        ],
+        "sha256": "33617bbbf10cce587129dacf41568a7d4fd13d2282fc1ec1afd8b792586d9e44",
+        "filename": "foggy-114.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "1381cd7e00152fc51f592029080720840dab701692b746011f201f10d159c6cb",
+        "filename": "foggy-095.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          640,
+          320
+        ],
+        "sha256": "47d5142ea6a019eee73ed3753b03942ae67e46c97654eafbd9fdfcfc354a1cab",
+        "filename": "mist-137.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          600,
+          315
+        ],
+        "sha256": "8631d5b2176323e4c9f6b75c7b65bbad2a5997d8bba80394792375b484b37f4f",
+        "filename": "mist-015.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          721
+        ],
+        "sha256": "30049d13f8889183e1da868bb099ff4d76b3984a61ba0cf56ad1deb66649de23",
+        "filename": "foggy-031.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          620,
+          330
+        ],
+        "sha256": "93a5447a4b1f62743128192e8e4b2e22714ab1c8b3696983ffb14157b2da9b29",
+        "filename": "mist-138.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          615,
+          409
+        ],
+        "sha256": "c3f8ee16e8089fc050fcc26cc1cc4ec75a1cfa67d96cd3eceafac3c581985953",
+        "filename": "mist-003.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          960
+        ],
+        "sha256": "6806e4ead56343be9eb2051c12d0549e805692c6c06032138eaca58f906fc09d",
+        "filename": "foggy-060.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          853
+        ],
+        "sha256": "14c24532e3ea9e8bbf5d0a9e3e08f25d066b57394e7b4e1b43762303439bc1af",
+        "filename": "foggy-042.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          721
+        ],
+        "sha256": "4752a4bf44ecd4192f159e8ab0d2a6f4418c77ecfe80b8808d861066019b5212",
+        "filename": "foggy-066.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          957
+        ],
+        "sha256": "d012122ae9c649f285ed200557d1a7ef0e1297ba7c4ecc69cbfd7c35688641c0",
+        "filename": "haze-063.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1200,
+          800
+        ],
+        "sha256": "e89b29eab6089faf5fea49a5fd9488475d14e6b9d4edf756585556c6ab0ee655",
+        "filename": "mist-064.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          850
+        ],
+        "sha256": "abf4464041ce93158bdf479d91aed35663736ae3d3625d8849d3cd2d0d952826",
+        "filename": "foggy-048.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          853
+        ],
+        "sha256": "871c1f721746d20aa261053b29345792499afb6d36a4ecbc79f4a6c8ddb6df0c",
+        "filename": "foggy-102.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          808
+        ],
+        "sha256": "369463760a23810bebee6d1ef5e4f64a33b1acdf0f18038d37de57fb229e509b",
+        "filename": "haze-019.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          589
+        ],
+        "sha256": "697146691b6cc09b4bef09daebc84290cb42db95b0529b5f69bd210580c74a26",
+        "filename": "foggy-092.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "c629237f102f004647b5f6c697b653588f1f0b745f8e85778f112de53eaf9793",
+        "filename": "foggy-084.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          853
+        ],
+        "sha256": "9118c9292ad433324cfb04ca835d687724b2f5ffbb55bef0fc8eb7b05ba28b40",
+        "filename": "foggy-089.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          960
+        ],
+        "sha256": "d11e0fd7000866c3b69162b1043e31fe5a20f73fbd916ed8934130a5df498f57",
+        "filename": "haze-110.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          420,
+          240
+        ],
+        "sha256": "3440aa3d70621d10a62fd8e6846fd8c655deee0a5ce4ba9be67137e0a6887940",
+        "filename": "mist-034.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          833
+        ],
+        "sha256": "b678ebec1e2b9ada759d2e17cc1af17891664a334fd490e1ecff2a4b0d45cf10",
+        "filename": "haze-032.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          920,
+          613
+        ],
+        "sha256": "84566cdab3e6c26699a27b570cebfa3aab386ebfdf6548b705a3b5552bc177dc",
+        "filename": "mist-024.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          650,
+          377
+        ],
+        "sha256": "4598d14a3d49b8c0768bae53b9d3c3e43d8b7923ed2caa1afdc2ecccb60314b6",
+        "filename": "mist-063.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          720,
+          442
+        ],
+        "sha256": "4b3068b66772933cc2f7527b43b0f3a2979d1622106e5d83d428fc332ceef11d",
+        "filename": "mist-111.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          780
+        ],
+        "sha256": "ed03307d4902e50d465e054436993922ade9b9473e9e52137e68633a2df575ad",
+        "filename": "haze-020.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          2047,
+          845
+        ],
+        "sha256": "280de02dd1ca65a275e27fea651a582b3bebc9d5b6d23ddff4dfd1a15a47f01a",
+        "filename": "mist-119.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          801
+        ],
+        "sha256": "70a7688e7dbb88abbd29877e8b3c1a078e855f3ec3dd5d98614acb97b6d4a28d",
+        "filename": "foggy-091.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          590,
+          300
+        ],
+        "sha256": "a632442006d1f86d10986a0eb50b5b6a64ec1ec954837bcbddaeaf66d52fff5c",
+        "filename": "mist-080.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1300,
+          866
+        ],
+        "sha256": "a5c82f99448940593c22383ef69290e61d72f0077987100fb967897c44b424b7",
+        "filename": "mist-955.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1200,
+          630
+        ],
+        "sha256": "81e470e7d28cccb4017986cbb3dd1cde8712822907e1f7b9d12dfe9354f03ff0",
+        "filename": "mist-027.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          1704
+        ],
+        "sha256": "d33b4b86fb73ef80de44dd816ae38eb2e5d38f6a6f79a018c016d4595b1b67c2",
+        "filename": "foggy-077.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          620,
+          387
+        ],
+        "sha256": "496e1406c7349bec11c283e6e04be4e2835076c141d26c60ee0d9e4bb6fac4a7",
+        "filename": "mist-150.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "67829d70e3df693a555f94cfc12328d82670b9f6f5f193cebf47ca2342c93e68",
+        "filename": "haze-135.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          851
+        ],
+        "sha256": "a8db447a6f53ed6257e93100a0a94582fb3d45565f9567f7d6bd00e43a86b28d",
+        "filename": "haze-021.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          781
+        ],
+        "sha256": "987212682fb5972134687a9760b67112e4e9955ccb55e522c593f6fd1e681af5",
+        "filename": "haze-016.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1998,
+          1950
+        ],
+        "sha256": "baa23067417a7db2c4ac7ece8f10e9d287c87e058e09d81226d6cd78c13c8546",
+        "filename": "mist-168.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          767
+        ],
+        "sha256": "3f94c06eb0028e4f22a493e4d9a227fdc2926c9019c31b928bc7e59bd8b2f605",
+        "filename": "foggy-067.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          512,
+          355
+        ],
+        "sha256": "11780bde47149ef71e6c38725e5ca3e333ebd6b6746172b40d2d58ad1e053f20",
+        "filename": "mist-158.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          843
+        ],
+        "sha256": "a3d8956d5d7b5ba7964234cdc22f43f21abf050e05883eb40b7de0515371657b",
+        "filename": "haze-111.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          617
+        ],
+        "sha256": "8bf5dd5b3f73c51e8671696361edd705d690ed6b61008b3ad96547e185480980",
+        "filename": "foggy-041.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          854
+        ],
+        "sha256": "0f508c37839e7c49fc53412b70cbd8d811747885e4ec4817eeeb35a905295805",
+        "filename": "foggy-043.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          512,
+          302
+        ],
+        "sha256": "b0338fc0b231bf27b5b58161dcd3fb0816e65ff3304f00c031e1bf337b5ebda1",
+        "filename": "mist-084.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "4bbf15f1981815dc88baad92bbd4360279e3655df187f1df7a2753f0c0d01289",
+        "filename": "haze-072.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1213,
+          837
+        ],
+        "sha256": "57ca2452e1a3697c105dfc9b8c672123a1c57f2550703ce868ec0db86c8a20d5",
+        "filename": "mist-922.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          647
+        ],
+        "sha256": "f462cc7acd12299cb98eb05dbfdc1ff22c2aad951de2c27dcdde39cda44b48f2",
+        "filename": "haze-023.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          960
+        ],
+        "sha256": "eddffcb5d752b5cb79b6c9891a82e19a794f476c64830a74c17cc042eba8b756",
+        "filename": "foggy-023.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1548,
+          969
+        ],
+        "sha256": "59061114f46c8f3ae8b28fd86b70b0481252b97a12732aa884f172948acd9c16",
+        "filename": "foggy-030.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          805
+        ],
+        "sha256": "e1504924d2e3dce87f64a3d6be3e31d9e3b9d3222d3beb9fb2d5a25a4db1334b",
+        "filename": "foggy-044.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          600,
+          415
+        ],
+        "sha256": "67850faaec45f13d87a2452a7b5e099fa690b6b89187edc6c89be39dbae65c7f",
+        "filename": "mist-023.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          793
+        ],
+        "sha256": "e13812e323d82c84449702f1d7367f298997b46ed46417bafae25e20dc005971",
+        "filename": "haze-006.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          1164
+        ],
+        "sha256": "d1afe984d54104f42d9cb87e9858f413dcb12fe16570f9b0bbfb6d69d7c82d60",
+        "filename": "haze-058.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1024,
+          686
+        ],
+        "sha256": "71cd91ab5df761300d7f7cb4ec6c505daa71ade4cbe6261f742606d93e5eaf75",
+        "filename": "haze-065.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          857
+        ],
+        "sha256": "09b02a1ca5de7a5c444712fc3b58bf05aac995d18ec21633e5db724f14cd6ffe",
+        "filename": "haze-120.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          512
+        ],
+        "sha256": "76e2398ed06ce2cb091782c9f4d1260c92d0311a74f907da25466a4343b80157",
+        "filename": "foggy-068.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          789
+        ],
+        "sha256": "cfd8200519575d3fc561da75b2852b632621b3639bb74dc17477ef2a7c8dd601",
+        "filename": "haze-053.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          833
+        ],
+        "sha256": "7dbe07c9f8a39283c45d0d5e4bf731b8629a092a916d66b3f50945ebde407b17",
+        "filename": "haze-086.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "da48666c4f12942fe12ba24fd7a2daf12905908c5292476425b4dc7aa3c0e02c",
+        "filename": "mist-143.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1233,
+          1307
+        ],
+        "sha256": "e04366d550851058d83483a05fc27236ad4b534da9b7b09a6a35cf20ae68491a",
+        "filename": "mist-121.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          853
+        ],
+        "sha256": "af560a4437ae29d9c89634e65c34bd1d6f2d27d371b0cdfee3665ec763eb591f",
+        "filename": "foggy-053.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1228,
+          1245
+        ],
+        "sha256": "00b1fb3fd8e9ab14fd4d92d196ad4f69c05b49d29b8be60c6da3646d27c9f22c",
+        "filename": "mist-117.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          721
+        ],
+        "sha256": "8b88483d4e6740eee3c93a5211f350cfe1d75c676ee3a08a7e794319038be1d3",
+        "filename": "foggy-011.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          721
+        ],
+        "sha256": "9cf5fb6bdcec74eb3b093869699a0d9409dc862c83a126471f2c93be530545ed",
+        "filename": "foggy-017.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          735,
+          320
+        ],
+        "sha256": "b3c8b7ffc38fb44e47143618a5d09227080f5223eba69391f47b9e0a9dd96e25",
+        "filename": "mist-149.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          960
+        ],
+        "sha256": "d4cc5317ce2ac167e81c9b76ccc27be9713b4ebe149649d2c04dd485ac00a191",
+        "filename": "mist-098.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1600,
+          800
+        ],
+        "sha256": "b9b38ca94bd95dc0eb48aff52d058577e3f22b3838d11d6da444ae3687ecfc4f",
+        "filename": "mist-124.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          854
+        ],
+        "sha256": "55c8e1c4845a6055fa148acd87e79bc4ce1af7354f5aa1f6bbac7d559721d984",
+        "filename": "foggy-047.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "6e27505c49dcec2f23b4b9d7530ab2f08edbe1e91c17988327dd2af0caf8ea15",
+        "filename": "haze-082.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          827
+        ],
+        "sha256": "b33f94eec1913ea5765b183cd5a3f7bde1686ec20de38eb156c3e46349b0224f",
+        "filename": "foggy-055.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          787
+        ],
+        "sha256": "af9dcb94e23fe14b85a99288e39d5f777f7dba377359c693c66ab7497d37da39",
+        "filename": "foggy-069.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          853
+        ],
+        "sha256": "dccf0e8aa29655a0a93232aee7433453860ceda31f642a48b9f0b620a51aeaee",
+        "filename": "foggy-099.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          769
+        ],
+        "sha256": "687aa3cfcd48956780c17b04e4f82000945368dfe4ede4d0a42772b5097001a6",
+        "filename": "haze-080.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          847
+        ],
+        "sha256": "6f63e60c915175138506b2df80d45b2392287319a85b6672dfd767e232e27279",
+        "filename": "foggy-059.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "52aa0695b6f3973e0c322da33c3fd7df83eff804e864f375a9a0696df180a304",
+        "filename": "foggy-098.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          826
+        ],
+        "sha256": "f97ecd378c40def23d935ac49f729608799ded2e3132f30ca927dd454fa87847",
+        "filename": "haze-054.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          780
+        ],
+        "sha256": "67cd4a2af0bdf699453dea88c3eeada69d04ce23478f434b1c3da1ce9a5bf31f",
+        "filename": "haze-057.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          891
+        ],
+        "sha256": "ac6a3494b2dd36eabc2eb9687a00d34406203b09fe5548fa26b0229fd3c78f67",
+        "filename": "haze-038.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          960
+        ],
+        "sha256": "ad04b37424ab6b6354aa839c8c39c3fa73dbb23689516b4099ee342ce8c73b34",
+        "filename": "foggy-027.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          721
+        ],
+        "sha256": "9697bd7e3e7f3c75eea9dd38504e673f4f2d2ba7eab807a5f80bd1bd52aa8467",
+        "filename": "haze-088.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          911
+        ],
+        "sha256": "9a0a49b2417e1f1a8ffe0317e6d0c667729df7a04ada8cb0a6594a87a321867e",
+        "filename": "haze-033.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          768
+        ],
+        "sha256": "2b1a6b85611f7e8ac695139e1e314c7561570c4dc0f8ab0fe474730794bcdcfb",
+        "filename": "haze-097.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          714
+        ],
+        "sha256": "60fc219644712c6e8db7aebba6e78efde4ea0f198ad89c5080a89ff39213e322",
+        "filename": "foggy-097.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          854
+        ],
+        "sha256": "69fdd77be19b3e471f1a278f604710122bcf9b911f77c4c720f3b94b54156cb9",
+        "filename": "haze-119.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          721
+        ],
+        "sha256": "86d128b39b9b3b2778ad0884aa84b422ed4656b376f7ff57e0b3d9ecbc2daa4a",
+        "filename": "haze-071.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          822
+        ],
+        "sha256": "7bb697664819038c65a76eef16514e7f2f8d17a63e097bf8274f869bd0f9a8b3",
+        "filename": "haze-085.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          620,
+          400
+        ],
+        "sha256": "9c586513e275fc13650172109900c5152361d91ab9e90e90db6e855f3b710e20",
+        "filename": "mist-190.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          361,
+          358
+        ],
+        "sha256": "36301abcfdef0632d90e84ee2a07b06b90da054983ef4f05d7991e3656d657bd",
+        "filename": "mist-021.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1279,
+          1862
+        ],
+        "sha256": "2f73503dc4a741c731a5f5c114838fe3cb113f0065297e9941c83760a362d53b",
+        "filename": "haze-091.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          796
+        ],
+        "sha256": "038b57eaeb27f658c8f72fec8ac864f5f54aba1f32f5d6e2bdaedb8eb78a316c",
+        "filename": "haze-046.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          679
+        ],
+        "sha256": "055408d6def33393760cefbbaea938df4e4ab613aaa27e7ce081c1afed29d232",
+        "filename": "foggy-108.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          721
+        ],
+        "sha256": "4120e8f570f412307b9c384fff5214de9294fd2255a54247b1d401ecd28bdbb3",
+        "filename": "haze-036.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          600,
+          338
+        ],
+        "sha256": "01feb168fe99cc5ea1316bf8645fa525e4908eef80ee23c4d44c5ec13fbdbbf4",
+        "filename": "mist-088.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          940,
+          626
+        ],
+        "sha256": "f1ce11d3e1697a9efcf327c9c08adaae2bd853172c365f65f869979cf03bd883",
+        "filename": "mist-042.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          909
+        ],
+        "sha256": "dd6b1c9b884f647a0dbc4f9283c57675638cb06dad002aea0b29eb54a6a050e5",
+        "filename": "foggy-002.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1256,
+          721
+        ],
+        "sha256": "cb39ca5ee211f8164b95a3a5a2d5cda7510ead10baea73a8432af50ab84ba851",
+        "filename": "rain_storm-078.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          856
+        ],
+        "sha256": "d5abb426450a1e467afcdbcb12a4ad63b9a0db0fc230f8140f1a3527ccad971d",
+        "filename": "rain_storm-339.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          504
+        ],
+        "sha256": "e01d152b6de39d5a9fa097030ec8242a60416e14d5918eacc3bb2f12b4cf37a3",
+        "filename": "rain_storm-481.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          723
+        ],
+        "sha256": "b8cdecd202c9522c64e34ee07a2109f55374396554bb6b80a42705703f7683bc",
+        "filename": "rain_storm-527.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          775
+        ],
+        "sha256": "b6bc652b7c25d30b35215395feab6d7f2c8dd6c188a90b3ff13892a1ce707de8",
+        "filename": "rain_storm-050.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          960
+        ],
+        "sha256": "84b9aae830e3e31d86854dc4cd5a171f2c14d635774d944498919d0dd40a1b61",
+        "filename": "rain_storm-662.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          1056
+        ],
+        "sha256": "85fb9b2c4c21a26ea421dabc5287cf946a62c224b570fb75a77abf8396adc11c",
+        "filename": "rain_storm-010.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          778
+        ],
+        "sha256": "13b7d79d67bc19319b748f975519744b76b2b93d51f59e3d2cac0aea9c654e89",
+        "filename": "rain_storm-058.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "833e7d8a75c5bbc7e6b789bff5c4e74975cf121245dd19bb129c26dd14c64caa",
+        "filename": "rain_storm-851.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          793
+        ],
+        "sha256": "643f613a3cde1fb7a187e9219fbadd30a646b2100a349f94287cc44fce285fb1",
+        "filename": "rain_storm-681.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "db244c9d2758d19272c3911ca8920ea43fe4e96dbc641b1e8dedfdd3487bec30",
+        "filename": "rain_storm-748.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "1a95cc15031faf0a2d121d50b2d33864cd5bf8041abbc927252162548fa3e1d2",
+        "filename": "rain_storm-650.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          640,
+          790
+        ],
+        "sha256": "34b3b93e95e4b13c3105553a1b0bc040b02972d15c15c0ef291a99b0437aa4b1",
+        "filename": "rain_storm-981.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          851
+        ],
+        "sha256": "42b619b7c1d16b89de76a20e69fb2a823e14875f83b9e338dabf6e37bd9b7eaf",
+        "filename": "rain_storm-199.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          835
+        ],
+        "sha256": "0add0f1f1687ea95f59c524e0134967214cd5b087647d80f25f7207485dd307a",
+        "filename": "rain_storm-172.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          744
+        ],
+        "sha256": "3fd0397e45fe946440e018cfd357925f041278ecec565d8be45cb72e1a5422c1",
+        "filename": "rain_storm-391.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          722
+        ],
+        "sha256": "3f125f61263f0fa62bdec4e39c92164b5efb5915feca1afeb8afca046c5812cc",
+        "filename": "rain_storm-740.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          733
+        ],
+        "sha256": "16954ae4bbd31665705902215ffa536e7f4b2f1c7fa244cf943fd4390a4a82c5",
+        "filename": "rain_storm-403.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          879
+        ],
+        "sha256": "6c76c2fb0f538da39eb3337457c3db64d2b342e923ec18a9be88ed38d2fc54cf",
+        "filename": "rain_storm-090.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "f0bbe1f9987dec0dcc3d4ba5d74697bc6ed987937711a1415bac0e52ea57f14a",
+        "filename": "rain_storm-732.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          832
+        ],
+        "sha256": "d7abb4e581225c9aebbcc78cff377f43362ae40ca01af48b764969b13e2e031b",
+        "filename": "rain_storm-241.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          817
+        ],
+        "sha256": "048d90e3779935974fd2cb73a4311b8e1f702741c4da087aaa07660b57344847",
+        "filename": "rain_storm-002.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "8d9a3a7cd8890270a11c74b49329d9f498924bfc275053d5577cdc8d40c1c7e4",
+        "filename": "rain_storm-618.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          862
+        ],
+        "sha256": "b8f9d1cbb4fd338d9ba7e62a24d47bc163ede01c48c4088e9e47bed82bbe06b1",
+        "filename": "rain_storm-001.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          853
+        ],
+        "sha256": "d837dd2d55a62229522ca16b24a818dd09d3c1be28617a95644d77ad138c8523",
+        "filename": "rain_storm-447.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          985
+        ],
+        "sha256": "8763bf293694f43024c948a6013fb7cb065fb2cc840d674423100b96a2f3d08a",
+        "filename": "rain_storm-859.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          960
+        ],
+        "sha256": "68843561e28e48fc1a04b9fb63cc683a237a1928f0a0b582564e54b03a721c6a",
+        "filename": "rain_storm-497.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "8094b0de34c512dc15631a45f8dc103c810311846d187e067622f60bda7bdc4a",
+        "filename": "rain_storm-219.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          960
+        ],
+        "sha256": "5108d6966942c38aeb3fc2f9fc01ccd3073ced90c616581788b90b4c1a46b696",
+        "filename": "rain_storm-443.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          672
+        ],
+        "sha256": "aad57df8f14239b6f1a6a02471e23ddcc9885e9a46b0bd0576c8aeec8bf9ff8d",
+        "filename": "rain_storm-843.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          960
+        ],
+        "sha256": "055c2c9ac31abb204ba9110471c1e3d34fba1a8c59bf281d57262f0bc0566d4f",
+        "filename": "rain_storm-835.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          722
+        ],
+        "sha256": "79ddcdc7a02ad3700bca3c7a0d667ea3f7adce1890df2f057a08b71050462a2e",
+        "filename": "rain_storm-712.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          850
+        ],
+        "sha256": "1872d9f5466129be8354ae80b653ea468343645e3d7b979090cbbadcc67df2df",
+        "filename": "rain_storm-034.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          960
+        ],
+        "sha256": "c35e7cbd1ff5b8ff5ef618bfabd035ca42ab72909c1f95e839e62811f4cb17cd",
+        "filename": "rain_storm-775.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          799
+        ],
+        "sha256": "8e50ce3b13833944de5bd4b38fc9909b43429f13f2699d5d7624ca49666fa2f2",
+        "filename": "rain_storm-855.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "f30d3350d9460ed61000f3d519c9ed0a728e9203ae6201fe52705c6e345c7ab4",
+        "filename": "rain_storm-283.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "7ad704eef60a137fd00611fcccd549434a3b6dee43ec3420dba5d97cdce2db86",
+        "filename": "rain_storm-626.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1257,
+          721
+        ],
+        "sha256": "24b4a634710b5d7aa56e8f86435a5a3845fcc0a40c491290fb843008d5b3cbba",
+        "filename": "rain_storm-009.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "8ba4ec4cc8849880c8eda8a583622657d4d2a20dc865defab8872434d2a1d2b9",
+        "filename": "rain_storm-568.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          770
+        ],
+        "sha256": "9f402b93853a85482d4f48a34cda549314a33cf4f1b35e2dd06273c1980e132b",
+        "filename": "rain_storm-030.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          856
+        ],
+        "sha256": "cedf64e7dcb87da0ac163369959bc596602dda039f57a8d7cb65be902ae4ee17",
+        "filename": "rain_storm-399.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          682
+        ],
+        "sha256": "0d874f201eae279e9f20b3d7837112189a8a05ec552d5ec42d4cab408f931e8f",
+        "filename": "rain_storm-811.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          853
+        ],
+        "sha256": "a495793e3465bf8596158093dabf3189c25dfac055ea0550687751c540e62d03",
+        "filename": "rain_storm-427.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          833
+        ],
+        "sha256": "447da5cabbd9cd348ca91356237ad93268c3648498dcc34289ddbb0101184daf",
+        "filename": "rain_storm-646.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          805
+        ],
+        "sha256": "fdbb324d80b67028f8625cb95899d062d3d82d4df1e26ff351f0599e8369b943",
+        "filename": "rain_storm-736.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          852
+        ],
+        "sha256": "0e97b69e0d17b954b85127e38d178a172a6996fcfc9c3e223e40b7cd7a588baa",
+        "filename": "rain_storm-142.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          759
+        ],
+        "sha256": "0ad669083af2c95888782040c59fd84705c53517c9cecdcff9edb9888ab44d5c",
+        "filename": "rain_storm-439.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          853
+        ],
+        "sha256": "acac896d5a749f6964c2d520589a685a2c8f799ea532c8b0d4abef325461ba56",
+        "filename": "rain_storm-757.jpg"
+      }
+    ],
+    "validation": [
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          800
+        ],
+        "sha256": "2e2d9a5cf288036092dc71eef5ab95abce08cc6e814bc07dba1ed86322df7bda",
+        "filename": "foggy-085.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          836
+        ],
+        "sha256": "e8bd1114cace7eefeb2e3699e3a52e2669acd049af98ab5de13cf5a32608b0ce",
+        "filename": "haze-099.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          852
+        ],
+        "sha256": "fcf4622de4bb7218cc4af8a007f5e039bbcc99ee4248589f1752556c8a515dc4",
+        "filename": "haze-040.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          590,
+          393
+        ],
+        "sha256": "83bbc4d4d3f16c37c651dce208744cc37fcc733c0d9d9ceb18de9187e4885911",
+        "filename": "mist-020.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1230,
+          1313
+        ],
+        "sha256": "f0698c41775e1f1240a30ba91570f042e228cb3e8c3a492ea5b1f281af478edc",
+        "filename": "mist-115.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          2430,
+          1585
+        ],
+        "sha256": "464c6166ed7f71c596fa2098a4ecf371c3b49cf05cdfd2c88535e00ebdb732c7",
+        "filename": "foggy-040.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "d78eb7e7a3bbb92b6fee718275ea3d0112e860d9769df355433808aa879c00ee",
+        "filename": "foggy-072.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          785
+        ],
+        "sha256": "db1a3056b61ad33136c75c24cc4dcfd705857dbf1ed4b56e4cdb167e46901147",
+        "filename": "foggy-078.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1600,
+          878
+        ],
+        "sha256": "8907d06a8dd5a7cdf590ed7df514b2da244dff8177cd4519b20d51292ccfee54",
+        "filename": "rain_storm-105.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          731
+        ],
+        "sha256": "e5757bf1f5a74887fc57271f69bcaca589a8ef74e30d56f9ad53ca056c23d13a",
+        "filename": "rain_storm-253.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          851
+        ],
+        "sha256": "30772310f11efda4e9d97179a956a996e22032afa4aec9239147506cf8fdab76",
+        "filename": "rain_storm-327.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          961
+        ],
+        "sha256": "801c359b8b7eae03101705a753bb0b1508729d6d95fbffa0eefa576c1286a10a",
+        "filename": "rain_storm-114.jpg"
+      }
+    ],
+    "holdout": [
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          720
+        ],
+        "sha256": "8ed14c66a31df00f7ccebd4fc05e852e400c9f51d8f4c5e28947e8a9af734bb3",
+        "filename": "mist-971.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          675
+        ],
+        "sha256": "b5b478d560049abd3e2dab5cd271278d0b341a7cb8ce0b4f94ca6ede17ec9cf2",
+        "filename": "foggy-001.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          480,
+          270
+        ],
+        "sha256": "4d760a3e964d8d3a0f3490ed242f37e3c1ce41af4e3a4828d5cfcd8f1751ba87",
+        "filename": "mist-052.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          922
+        ],
+        "sha256": "8b43cda4685798a57d0f981dce615990dbf1e41c944d3235860b90dbef59362d",
+        "filename": "foggy-080.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          852
+        ],
+        "sha256": "d2947f2e44b1ff38969c302889ae398428de3943ed52b84955ce77fd0362fe3b",
+        "filename": "haze-121.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          721
+        ],
+        "sha256": "2548a0c8a28867c3e899d3be93b420e20822dbd9e8cf220bdc9e3f3de5f6f692",
+        "filename": "haze-044.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          739
+        ],
+        "sha256": "86e46d2ab5b91efa5134e29d039d95fe591a2b8f6a5a6fd9f91a95298c9e0db5",
+        "filename": "foggy-051.jpg"
+      },
+      {
+        "label": "fog",
+        "size": [
+          1280,
+          768
+        ],
+        "sha256": "f9a5acd2924d4e7816a3516d206c79ac34d6390ba8a45ccb55701c9e0dff9353",
+        "filename": "haze-013.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          827
+        ],
+        "sha256": "43ce9195ea090cbd6a722004f8b1993bcb96701281d01a5638e0fbaa1ee23d0a",
+        "filename": "rain_storm-062.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          682
+        ],
+        "sha256": "acd837d2911515c17c536abee66bbdc5e80c792d08c5bbf75a66805b3c81f6b0",
+        "filename": "rain_storm-154.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          853
+        ],
+        "sha256": "27d04b2ac802b2bfe63af268056cc58de1bd0e09b25ba6871a22ef14f5ce3afd",
+        "filename": "rain_storm-863.jpg"
+      },
+      {
+        "label": "rain",
+        "size": [
+          1280,
+          853
+        ],
+        "sha256": "b87aee6ae535620eb2fdbf39970448eb2fd47d0d6b131ae426393dcff1ade03d",
+        "filename": "rain_storm-563.jpg"
+      }
+    ]
+  },
+  "limitations": "Exact duplicate bytes grouped; near-duplicate/camera separation not established. No paired clean restoration ground truth."
+}

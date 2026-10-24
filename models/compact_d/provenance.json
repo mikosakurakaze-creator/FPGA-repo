@@ -1,0 +1,19 @@
+{
+  "name": "D / compact_residual_trial",
+  "config": {
+    "channels": 8,
+    "blocks": 3
+  },
+  "parameters": 3947,
+  "selected_step": 600,
+  "checkpoint_sha256": "0d2678ba533a83c797d5b7a2a922461440fa47f93043525a9165f0a1f9fc28fc",
+  "teacher": "GridDehazeNet outdoor",
+  "teacher_sha256": "80a8f3aad5fd0ed744f39bd60bda802087fbb48b2fa2ce86261ac443a4dba396",
+  "scope": "Selected FP32 student checkpoint, no quantization or FPGA deployment",
+  "source_sha256": {
+    "compression_models.py": "c07fedd5419728876b5c937db5685e0956f4f59e92653bf035d7ef722e5bf07b",
+    "train_compression.py": "018f02032e3e2e0ed6b9a3e63a7733a5b2518e4d61e1b4b40cd8c619892fe1f0",
+    "distill_small.py": "f746e7fe743f2afad9f1d27ce1a905c88d76b46189226ff9318dba61e2219435",
+    "inference.py": "7293f3498a644930ec158c7b0f7cbbc7cb8737f406fcf07a2d78b41aeeb39726"
+  }
+}

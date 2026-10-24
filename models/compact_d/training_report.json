@@ -1,0 +1,188 @@
+{
+  "name": "compact_residual_trial",
+  "spec": {
+    "title": "D 路 鏋佺畝骞抽潰娈嬪樊缃戠粶",
+    "kind": "compact",
+    "config": {
+      "channels": 8,
+      "blocks": 3
+    }
+  },
+  "profile": {
+    "parameters": 3947,
+    "conv_gmac_720p_estimate": 3.5831808,
+    "operator_types": [
+      "Conv2d",
+      "ReLU"
+    ],
+    "FPGA_deployed": false,
+    "limits": "ConvTranspose counts include padded positions; MAC estimate excludes non-convolution operations, memory traffic and scheduling."
+  },
+  "steps": 1200,
+  "best_step": 600,
+  "elapsed_training_and_validation_seconds": 57.16422569999122,
+  "holdout": {
+    "mean_teacher_mae": 0.04998904746025801,
+    "mean_teacher_psnr_db": 24.521461031120026,
+    "images": [
+      {
+        "id": "mist-971.jpg",
+        "sha256": "8ed14c66a31df00f7ccebd4fc05e852e400c9f51d8f4c5e28947e8a9af734bb3",
+        "teacher_mae": 0.030083293095231056,
+        "teacher_psnr_db": 27.970713346332875
+      },
+      {
+        "id": "foggy-001.jpg",
+        "sha256": "b5b478d560049abd3e2dab5cd271278d0b341a7cb8ce0b4f94ca6ede17ec9cf2",
+        "teacher_mae": 0.04084702208638191,
+        "teacher_psnr_db": 25.365294350770387
+      },
+      {
+        "id": "mist-052.jpg",
+        "sha256": "4d760a3e964d8d3a0f3490ed242f37e3c1ce41af4e3a4828d5cfcd8f1751ba87",
+        "teacher_mae": 0.04412943869829178,
+        "teacher_psnr_db": 25.648335056336933
+      },
+      {
+        "id": "foggy-080.jpg",
+        "sha256": "8b43cda4685798a57d0f981dce615990dbf1e41c944d3235860b90dbef59362d",
+        "teacher_mae": 0.05341191962361336,
+        "teacher_psnr_db": 23.059211352392097
+      },
+      {
+        "id": "haze-121.jpg",
+        "sha256": "d2947f2e44b1ff38969c302889ae398428de3943ed52b84955ce77fd0362fe3b",
+        "teacher_mae": 0.11782507598400116,
+        "teacher_psnr_db": 17.57690140216588
+      },
+      {
+        "id": "haze-044.jpg",
+        "sha256": "2548a0c8a28867c3e899d3be93b420e20822dbd9e8cf220bdc9e3f3de5f6f692",
+        "teacher_mae": 0.04992016404867172,
+        "teacher_psnr_db": 24.38254887894091
+      },
+      {
+        "id": "foggy-051.jpg",
+        "sha256": "86e46d2ab5b91efa5134e29d039d95fe591a2b8f6a5a6fd9f91a95298c9e0db5",
+        "teacher_mae": 0.055099401623010635,
+        "teacher_psnr_db": 23.558405414735756
+      },
+      {
+        "id": "haze-013.jpg",
+        "sha256": "f9a5acd2924d4e7816a3516d206c79ac34d6390ba8a45ccb55701c9e0dff9353",
+        "teacher_mae": 0.04710977524518967,
+        "teacher_psnr_db": 24.8302951955171
+      },
+      {
+        "id": "rain_storm-062.jpg",
+        "sha256": "43ce9195ea090cbd6a722004f8b1993bcb96701281d01a5638e0fbaa1ee23d0a",
+        "teacher_mae": 0.037610411643981934,
+        "teacher_psnr_db": 26.526367756369716
+      },
+      {
+        "id": "rain_storm-154.jpg",
+        "sha256": "acd837d2911515c17c536abee66bbdc5e80c792d08c5bbf75a66805b3c81f6b0",
+        "teacher_mae": 0.06157843396067619,
+        "teacher_psnr_db": 22.27928465946464
+      },
+      {
+        "id": "rain_storm-863.jpg",
+        "sha256": "27d04b2ac802b2bfe63af268056cc58de1bd0e09b25ba6871a22ef14f5ce3afd",
+        "teacher_mae": 0.03422527760267258,
+        "teacher_psnr_db": 25.289352534305706
+      },
+      {
+        "id": "rain_storm-563.jpg",
+        "sha256": "b87aee6ae535620eb2fdbf39970448eb2fd47d0d6b131ae426393dcff1ade03d",
+        "teacher_mae": 0.028028355911374092,
+        "teacher_psnr_db": 27.77082242610828
+      }
+    ]
+  },
+  "best_validation": {
+    "mean_teacher_mae": 0.07140829716809094,
+    "mean_teacher_psnr_db": 22.50443567830682,
+    "images": [
+      {
+        "id": "foggy-085.jpg",
+        "sha256": "2e2d9a5cf288036092dc71eef5ab95abce08cc6e814bc07dba1ed86322df7bda",
+        "teacher_mae": 0.08789695054292679,
+        "teacher_psnr_db": 19.897798888527518
+      },
+      {
+        "id": "haze-099.jpg",
+        "sha256": "e8bd1114cace7eefeb2e3699e3a52e2669acd049af98ab5de13cf5a32608b0ce",
+        "teacher_mae": 0.010770886205136776,
+        "teacher_psnr_db": 36.85474061457279
+      },
+      {
+        "id": "haze-040.jpg",
+        "sha256": "fcf4622de4bb7218cc4af8a007f5e039bbcc99ee4248589f1752556c8a515dc4",
+        "teacher_mae": 0.11782507598400116,
+        "teacher_psnr_db": 17.57690140216588
+      },
+      {
+        "id": "mist-020.jpg",
+        "sha256": "83bbc4d4d3f16c37c651dce208744cc37fcc733c0d9d9ceb18de9187e4885911",
+        "teacher_mae": 0.053087688982486725,
+        "teacher_psnr_db": 22.59441410563939
+      },
+      {
+        "id": "mist-115.jpg",
+        "sha256": "f0698c41775e1f1240a30ba91570f042e228cb3e8c3a492ea5b1f281af478edc",
+        "teacher_mae": 0.036409419029951096,
+        "teacher_psnr_db": 23.962669466868427
+      },
+      {
+        "id": "foggy-040.jpg",
+        "sha256": "464c6166ed7f71c596fa2098a4ecf371c3b49cf05cdfd2c88535e00ebdb732c7",
+        "teacher_mae": 0.07978933304548264,
+        "teacher_psnr_db": 20.132655740202857
+      },
+      {
+        "id": "foggy-072.jpg",
+        "sha256": "d78eb7e7a3bbb92b6fee718275ea3d0112e860d9769df355433808aa879c00ee",
+        "teacher_mae": 0.13802817463874817,
+        "teacher_psnr_db": 16.114487906105026
+      },
+      {
+        "id": "foggy-078.jpg",
+        "sha256": "db1a3056b61ad33136c75c24cc4dcfd705857dbf1ed4b56e4cdb167e46901147",
+        "teacher_mae": 0.1391635239124298,
+        "teacher_psnr_db": 15.421624751196122
+      },
+      {
+        "id": "rain_storm-105.jpg",
+        "sha256": "8907d06a8dd5a7cdf590ed7df514b2da244dff8177cd4519b20d51292ccfee54",
+        "teacher_mae": 0.06963097304105759,
+        "teacher_psnr_db": 21.04659216559501
+      },
+      {
+        "id": "rain_storm-253.jpg",
+        "sha256": "e5757bf1f5a74887fc57271f69bcaca589a8ef74e30d56f9ad53ca056c23d13a",
+        "teacher_mae": 0.029129397124052048,
+        "teacher_psnr_db": 28.55744799973865
+      },
+      {
+        "id": "rain_storm-327.jpg",
+        "sha256": "30772310f11efda4e9d97179a956a996e22032afa4aec9239147506cf8fdab76",
+        "teacher_mae": 0.05209965258836746,
+        "teacher_psnr_db": 23.63745515390562
+      },
+      {
+        "id": "rain_storm-114.jpg",
+        "sha256": "801c359b8b7eae03101705a753bb0b1508729d6d95fbffa0eefa576c1286a10a",
+        "teacher_mae": 0.04306849092245102,
+        "teacher_psnr_db": 24.25643994516454
+      }
+    ]
+  },
+  "checkpoint_sha256": "0d2678ba533a83c797d5b7a2a922461440fa47f93043525a9165f0a1f9fc28fc",
+  "scope": "PC FP32 bounded distillation; teacher agreement is NOT clean ground truth quality",
+  "limitations": [
+    "No INT16/INT8, HLS or FPGA deployment",
+    "Same 144 train / 12 validation / 12 holdout images as earlier trial",
+    "Exact duplicates separated; near-duplicate/camera separation not established",
+    "128x128 crops versus full-image FP16 cached teacher; not full training or paired restoration evaluation"
+  ]
+}
