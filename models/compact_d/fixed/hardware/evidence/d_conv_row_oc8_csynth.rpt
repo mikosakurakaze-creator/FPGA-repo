@@ -1,0 +1,230 @@
+
+
+================================================================
+== Vitis HLS Report for 'd_conv_row_oc8'
+================================================================
+* Date:           Sun Oct 25 01:05:31 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        row_oc8_hls
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.922 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     7781|     7781|  77.810 us|  77.810 us|  7782|  7782|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------------------------------------------+---------------------------------------------------------+---------+---------+----------+----------+-----+-----+-------------------+
+        |                                                                    |                                                         |  Latency (cycles) |  Latency (absolute) |  Interval |      Pipeline     |
+        |                              Instance                              |                          Module                         |   min   |   max   |    min   |    max   | min | max |        Type       |
+        +--------------------------------------------------------------------+---------------------------------------------------------+---------+---------+----------+----------+-----+-----+-------------------+
+        |grp_d_conv_row_oc8_Pipeline_LOAD_WEIGHT_VITIS_LOOP_59_1_fu_215      |d_conv_row_oc8_Pipeline_LOAD_WEIGHT_VITIS_LOOP_59_1      |      578|      578|  5.780 us|  5.780 us|    0|    0|  loop pipeline stp|
+        |grp_d_conv_row_oc8_Pipeline_VITIS_LOOP_67_2_VITIS_LOOP_68_3_fu_257  |d_conv_row_oc8_Pipeline_VITIS_LOOP_67_2_VITIS_LOOP_68_3  |       66|       66|  0.660 us|  0.660 us|    0|    0|  loop pipeline stp|
+        |grp_d_conv_row_oc8_Pipeline_LOAD_ROW_VITIS_LOOP_76_5_fu_265         |d_conv_row_oc8_Pipeline_LOAD_ROW_VITIS_LOOP_76_5         |       66|       66|  0.660 us|  0.660 us|    0|    0|  loop pipeline stp|
+        |grp_d_conv_row_oc8_Pipeline_ROW_MAC_fu_275                          |d_conv_row_oc8_Pipeline_ROW_MAC                          |       89|       89|  0.890 us|  0.890 us|    0|    0|  loop pipeline stp|
+        |grp_d_conv_row_oc8_Pipeline_VITIS_LOOP_100_9_fu_306                 |d_conv_row_oc8_Pipeline_VITIS_LOOP_100_9                 |       10|       10|  0.100 us|  0.100 us|    0|    0|  loop pipeline stp|
+        +--------------------------------------------------------------------+---------------------------------------------------------+---------+---------+----------+----------+-----+-----+-------------------+
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_74_4   |     7200|     7200|       900|          -|          -|     8|        no|
+        | + VITIS_LOOP_82_6  |      824|      824|       103|          -|          -|     8|        no|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      62|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     8|    2270|    3458|    -|
+|Memory           |        9|     -|       0|       0|    0|
+|Multiplexer      |        -|     -|       0|     509|    -|
+|Register         |        -|     -|      46|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        9|     8|    2316|    4029|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |      288|  1248|  234240|  117120|   64|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        3|    ~0|      ~0|       3|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------------------------------------------+---------------------------------------------------------+---------+----+------+------+-----+
+    |                              Instance                              |                          Module                         | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +--------------------------------------------------------------------+---------------------------------------------------------+---------+----+------+------+-----+
+    |grp_d_conv_row_oc8_Pipeline_LOAD_ROW_VITIS_LOOP_76_5_fu_265         |d_conv_row_oc8_Pipeline_LOAD_ROW_VITIS_LOOP_76_5         |        0|   0|    26|   208|    0|
+    |grp_d_conv_row_oc8_Pipeline_LOAD_WEIGHT_VITIS_LOOP_59_1_fu_215      |d_conv_row_oc8_Pipeline_LOAD_WEIGHT_VITIS_LOOP_59_1      |        0|   0|  1188|   926|    0|
+    |grp_d_conv_row_oc8_Pipeline_ROW_MAC_fu_275                          |d_conv_row_oc8_Pipeline_ROW_MAC                          |        0|   8|   897|  1077|    0|
+    |grp_d_conv_row_oc8_Pipeline_VITIS_LOOP_100_9_fu_306                 |d_conv_row_oc8_Pipeline_VITIS_LOOP_100_9                 |        0|   0|    75|  1024|    0|
+    |grp_d_conv_row_oc8_Pipeline_VITIS_LOOP_67_2_VITIS_LOOP_68_3_fu_257  |d_conv_row_oc8_Pipeline_VITIS_LOOP_67_2_VITIS_LOOP_68_3  |        0|   0|    26|   200|    0|
+    |urem_4ns_3ns_2_8_seq_1_U98                                          |urem_4ns_3ns_2_8_seq_1                                   |        0|   0|    58|    23|    0|
+    +--------------------------------------------------------------------+---------------------------------------------------------+---------+----+------+------+-----+
+    |Total                                                               |                                                         |        0|   8|  2270|  3458|    0|
+    +--------------------------------------------------------------------+---------------------------------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +-------------------+-----------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |       Memory      |            Module           | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +-------------------+-----------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |cached_weight_U    |cached_weight_RAM_AUTO_1R1W  |        1|  0|   0|    0|    72|   16|     1|         1152|
+    |cached_weight_1_U  |cached_weight_RAM_AUTO_1R1W  |        1|  0|   0|    0|    72|   16|     1|         1152|
+    |cached_weight_2_U  |cached_weight_RAM_AUTO_1R1W  |        1|  0|   0|    0|    72|   16|     1|         1152|
+    |cached_weight_3_U  |cached_weight_RAM_AUTO_1R1W  |        1|  0|   0|    0|    72|   16|     1|         1152|
+    |cached_weight_4_U  |cached_weight_RAM_AUTO_1R1W  |        1|  0|   0|    0|    72|   16|     1|         1152|
+    |cached_weight_5_U  |cached_weight_RAM_AUTO_1R1W  |        1|  0|   0|    0|    72|   16|     1|         1152|
+    |cached_weight_6_U  |cached_weight_RAM_AUTO_1R1W  |        1|  0|   0|    0|    72|   16|     1|         1152|
+    |cached_weight_7_U  |cached_weight_RAM_AUTO_1R1W  |        1|  0|   0|    0|    72|   16|     1|         1152|
+    |rows_U             |rows_RAM_AUTO_1R1W           |        1|  0|   0|    0|   192|   16|     1|         3072|
+    +-------------------+-----------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total              |                             |        9|  0|   0|    0|   768|  144|     9|        12288|
+    +-------------------+-----------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------------+----------+----+---+----+------------+------------+
+    |          Variable Name          | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------------+----------+----+---+----+------------+------------+
+    |add_ln78_fu_392_p2               |         +|   0|  0|  12|           4|           1|
+    |add_ln82_fu_445_p2               |         +|   0|  0|  12|           4|           1|
+    |grp_fu_412_p0                    |         +|   0|  0|  12|           4|           2|
+    |icmp_ln78_fu_386_p2              |      icmp|   0|  0|  12|           4|           5|
+    |icmp_ln82_fu_439_p2              |      icmp|   0|  0|  12|           4|           5|
+    |ap_block_state2_on_subcall_done  |        or|   0|  0|   2|           1|           1|
+    +---------------------------------+----------+----+---+----+------------+------------+
+    |Total                            |          |   0|  0|  62|          21|          15|
+    +---------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------+----+-----------+-----+-----------+
+    |           Name           | LUT| Input Size| Bits| Total Bits|
+    +--------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                 |  81|         17|    1|         17|
+    |cached_weight_1_address0  |  14|          3|    7|         21|
+    |cached_weight_1_ce0       |  14|          3|    1|          3|
+    |cached_weight_1_we0       |   9|          2|    1|          2|
+    |cached_weight_2_address0  |  14|          3|    7|         21|
+    |cached_weight_2_ce0       |  14|          3|    1|          3|
+    |cached_weight_2_we0       |   9|          2|    1|          2|
+    |cached_weight_3_address0  |  14|          3|    7|         21|
+    |cached_weight_3_ce0       |  14|          3|    1|          3|
+    |cached_weight_3_we0       |   9|          2|    1|          2|
+    |cached_weight_4_address0  |  14|          3|    7|         21|
+    |cached_weight_4_ce0       |  14|          3|    1|          3|
+    |cached_weight_4_we0       |   9|          2|    1|          2|
+    |cached_weight_5_address0  |  14|          3|    7|         21|
+    |cached_weight_5_ce0       |  14|          3|    1|          3|
+    |cached_weight_5_we0       |   9|          2|    1|          2|
+    |cached_weight_6_address0  |  14|          3|    7|         21|
+    |cached_weight_6_ce0       |  14|          3|    1|          3|
+    |cached_weight_6_we0       |   9|          2|    1|          2|
+    |cached_weight_7_address0  |  14|          3|    7|         21|
+    |cached_weight_7_ce0       |  14|          3|    1|          3|
+    |cached_weight_7_we0       |   9|          2|    1|          2|
+    |cached_weight_address0    |  14|          3|    7|         21|
+    |cached_weight_ce0         |  14|          3|    1|          3|
+    |cached_weight_we0         |   9|          2|    1|          2|
+    |input_r_address0          |  14|          3|    9|         27|
+    |input_r_ce0               |  14|          3|    1|          3|
+    |rows_address0             |  20|          4|    8|         32|
+    |rows_ce0                  |  20|          4|    1|          4|
+    |rows_ce1                  |   9|          2|    1|          2|
+    |rows_d0                   |  14|          3|   16|         48|
+    |rows_we0                  |  14|          3|    1|          3|
+    |rows_we1                  |   9|          2|    1|          2|
+    |x_reg_204                 |   9|          2|    4|          8|
+    |y_fu_68                   |   9|          2|    4|          8|
+    +--------------------------+----+-----------+-----+-----------+
+    |Total                     | 509|        109|  119|        362|
+    +--------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------------------------------------------------+----+----+-----+-----------+
+    |                                       Name                                      | FF | LUT| Bits| Const Bits|
+    +---------------------------------------------------------------------------------+----+----+-----+-----------+
+    |add_ln78_reg_694                                                                 |   4|   0|    4|          0|
+    |add_ln82_reg_725                                                                 |   4|   0|    4|          0|
+    |ap_CS_fsm                                                                        |  16|   0|   16|          0|
+    |grp_d_conv_row_oc8_Pipeline_LOAD_ROW_VITIS_LOOP_76_5_fu_265_ap_start_reg         |   1|   0|    1|          0|
+    |grp_d_conv_row_oc8_Pipeline_LOAD_WEIGHT_VITIS_LOOP_59_1_fu_215_ap_start_reg      |   1|   0|    1|          0|
+    |grp_d_conv_row_oc8_Pipeline_ROW_MAC_fu_275_ap_start_reg                          |   1|   0|    1|          0|
+    |grp_d_conv_row_oc8_Pipeline_VITIS_LOOP_100_9_fu_306_ap_start_reg                 |   1|   0|    1|          0|
+    |grp_d_conv_row_oc8_Pipeline_VITIS_LOOP_67_2_VITIS_LOOP_68_3_fu_257_ap_start_reg  |   1|   0|    1|          0|
+    |tmp_2_reg_717                                                                    |   2|   0|    5|          3|
+    |tmp_reg_712                                                                      |   1|   0|    1|          0|
+    |trunc_ln78_reg_700                                                               |   3|   0|    3|          0|
+    |trunc_ln82_reg_730                                                               |   3|   0|    3|          0|
+    |x_reg_204                                                                        |   4|   0|    4|          0|
+    |y_fu_68                                                                          |   4|   0|    4|          0|
+    +---------------------------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                                            |  46|   0|   49|          3|
+    +---------------------------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+----------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |  Source Object |    C Type    |
++-------------------+-----+-----+------------+----------------+--------------+
+|ap_clk             |   in|    1|  ap_ctrl_hs|  d_conv_row_oc8|  return value|
+|ap_rst             |   in|    1|  ap_ctrl_hs|  d_conv_row_oc8|  return value|
+|ap_start           |   in|    1|  ap_ctrl_hs|  d_conv_row_oc8|  return value|
+|ap_done            |  out|    1|  ap_ctrl_hs|  d_conv_row_oc8|  return value|
+|ap_idle            |  out|    1|  ap_ctrl_hs|  d_conv_row_oc8|  return value|
+|ap_ready           |  out|    1|  ap_ctrl_hs|  d_conv_row_oc8|  return value|
+|input_r_address0   |  out|    9|   ap_memory|         input_r|         array|
+|input_r_ce0        |  out|    1|   ap_memory|         input_r|         array|
+|input_r_q0         |   in|   16|   ap_memory|         input_r|         array|
+|weight_address0    |  out|   10|   ap_memory|          weight|         array|
+|weight_ce0         |  out|    1|   ap_memory|          weight|         array|
+|weight_q0          |   in|   16|   ap_memory|          weight|         array|
+|bias_address0      |  out|    3|   ap_memory|            bias|         array|
+|bias_ce0           |  out|    1|   ap_memory|            bias|         array|
+|bias_q0            |   in|   64|   ap_memory|            bias|         array|
+|shift_address0     |  out|    3|   ap_memory|           shift|         array|
+|shift_ce0          |  out|    1|   ap_memory|           shift|         array|
+|shift_q0           |   in|    8|   ap_memory|           shift|         array|
+|output_r_address0  |  out|    9|   ap_memory|        output_r|         array|
+|output_r_ce0       |  out|    1|   ap_memory|        output_r|         array|
+|output_r_we0       |  out|    1|   ap_memory|        output_r|         array|
+|output_r_d0        |  out|   16|   ap_memory|        output_r|         array|
++-------------------+-----+-----+------------+----------------+--------------+
+

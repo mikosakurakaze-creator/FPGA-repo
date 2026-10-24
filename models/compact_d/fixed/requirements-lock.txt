@@ -1,0 +1,6 @@
+# Actual direct dependencies validated on Windows x64 / Python3.12.10.
+# Install with --extra-index-url https://download.pytorch.org/whl/cpu
+numpy==2.2.6
+scipy==1.15.3
+Pillow==11.3.0
+torch==2.8.0+cpu

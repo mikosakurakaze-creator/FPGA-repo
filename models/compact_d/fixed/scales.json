@@ -1,0 +1,29 @@
+{
+  "calibration_report_sha256": "69ce42bb4a680a3103a52ad382f453d5c8880d242b3f0b882c790ef367dd3926",
+  "format": "compact-d-scales-v1",
+  "node_fracs": {
+    "block0.add": 13,
+    "block0.conv0": 13,
+    "block0.conv1": 13,
+    "block0.relu0": 13,
+    "block0.relu1": 13,
+    "block1.add": 13,
+    "block1.conv0": 13,
+    "block1.conv1": 13,
+    "block1.relu0": 13,
+    "block1.relu1": 13,
+    "block2.add": 13,
+    "block2.conv0": 13,
+    "block2.conv1": 13,
+    "block2.relu0": 13,
+    "block2.relu1": 13,
+    "head.conv": 14,
+    "input": 14,
+    "input.affine": 14,
+    "output.add": 14,
+    "output.relu": 14,
+    "stem.conv": 13,
+    "stem.relu": 13
+  },
+  "reason": "F13 uniform hidden, input/head/base/output F14; residual align free; saturation still defined for all legal input"
+}

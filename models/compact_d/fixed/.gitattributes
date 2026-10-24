@@ -1,0 +1,11 @@
+# Keep fingerprinted source bytes identical on Windows and Linux checkouts.
+.gitattributes text eol=lf
+*.py text eol=lf
+*.cpp text eol=lf
+*.hpp text eol=lf
+
+# Frozen scale bytes and original HLS reports are SHA-certified artifacts.
+scales.json -text whitespace=cr-at-eol
+hardware/evidence/* -text whitespace=cr-at-eol
+# Preserve tool-generated whitespace in raw reports without rewriting evidence.
+hardware/evidence/*.rpt whitespace=cr-at-eol,-trailing-space,-blank-at-eof

@@ -5,7 +5,7 @@
 **本轮以 [D 模型交接与两位队友分工](2.1.0_D模型交接与分工.md) 为准。**
 模型结构、选定权重和独立推理入口见 [models/compact_d](../models/compact_d/README.md)。
 A负责D定点化和整数Golden，B（wzh）负责D精简硬件及镜像，软件侧负责上传和HDMI适配。
-D尚未定点化或上板；下方完整Grid说明是此前阶段记录，不能作为D的最新部署状态。
+A组新增[D INT16/Golden及硬件优化交付](../models/compact_d/fixed/README.md)，经Master授权发布至`feat/software`，含冻结数值合同、独立整数参考、复现脚本与小型综合证据；参数包、Golden和图片运行输出保留本地，可按文档重建。D正式硬件及上板未完成；下方完整Grid说明是此前阶段记录，不能作为D的最新部署状态。
 完整Grid已有板端Golden通过，但720p核心耗时2199.447545216秒，故转向D。
 
 ---
