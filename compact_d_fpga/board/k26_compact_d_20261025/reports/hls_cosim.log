@@ -1,0 +1,1210 @@
+
+****** vitis-run v2025.2 (64-bit)
+  **** SW Build 6295257 on 2025-11-13-08:29:27
+  **** Start of session at: Sun Oct 25 12:23:22 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+  **** HLS Build v2025.2 6295257
+INFO: [HLS 200-2005] Using work_dir D:/weather_builds/compact_d_cosim01/component 
+INFO: [HLS 200-2176] Writing Vitis IDE component file D:/weather_builds/compact_d_cosim01/component/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'D:/weather_builds/compact_d_cosim01/component'.
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=D:/weather_builds/compact_d_cosim01/compact_d.cpp' from hls_config.cfg(6)
+INFO: [HLS 200-10] Adding design file 'D:/weather_builds/compact_d_cosim01/compact_d.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file_cflags=D:/weather_builds/compact_d_cosim01/compact_d.cpp,-std=c++11' from hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying config ini 'tb.file=D:/weather_builds/compact_d_cosim01/test_compact_d.cpp' from hls_config.cfg(8)
+INFO: [HLS 200-10] Adding test bench file 'D:/weather_builds/compact_d_cosim01/test_compact_d.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file_cflags=D:/weather_builds/compact_d_cosim01/test_compact_d.cpp,-std=c++11 -DCOMPACT_D_RTL_TEST' from hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying config ini 'syn.top=compact_d_top' from hls_config.cfg(5)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from hls_config.cfg(3)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xck26-sfvc784-2LV-c' from hls_config.cfg(1)
+INFO: [HLS 200-1465] Applying config ini 'clock=5' from hls_config.cfg(4)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-1465] Applying config ini 'cosim.argv=D:/weather_builds/compact_d_cosim01/cases.txt' from hls_config.cfg(13)
+INFO: [HLS 200-1465] Applying config ini 'cosim.tool=xsim' from hls_config.cfg(14)
+INFO: [HLS 200-1465] Applying config ini 'cosim.trace_level=none' from hls_config.cfg(15)
+INFO: [HLS 200-1465] Applying config ini 'csim.argv=D:/weather_builds/compact_d_cosim01/cases.txt' from hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from hls_config.cfg(12)
+INFO: [HLS 200-1465] Applying config ini 'syn.interface.m_axi_max_widen_bitwidth=128' from hls_config.cfg(11)
+INFO: [HLS 200-2176] Writing Vitis IDE component file D:/weather_builds/compact_d_cosim01/component/vitis-comp.json
+WARNING: [COSIM 212-384] This design has internal non-blocking FIFO/Stream accesses, which may result in mismatches or simulation hanging.
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "D:/vivado/2025.2/Vitis/win64/tools/clang-16/bin/clang++"
+   Compiling apatb_compact_d_top.cpp
+   Compiling compact_d.cpp_pre.cpp.tb.cpp
+   Compiling test_compact_d.cpp_pre.cpp.tb.cpp
+   Compiling apatb_compact_d_top_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+D_FRAME_PASS seq=0 h=8 w=8 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=1 h=8 w=8 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=2 h=33 w=47 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=3 h=1 w=1 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=4 h=1 w=7 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=5 h=7 w=1 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=6 h=2 w=3 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=7 h=33 w=47 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=8 h=33 w=47 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=9 h=33 w=47 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=10 h=33 w=47 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=11 h=33 w=47 scope=rtl_final_output_status_bounds
+D_ALL_CASES_PASS frames=12 invalid=3
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 1551
+INFO: [COSIM 212-333] Generating C post check test bench ...
+This_is_a_noneblocking_read_case
+INFO: [COSIM 212-12] Generating RTL test bench ...
+find not read role field
+find not read role field
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+
+D:\weather_builds\compact_d_cosim01\component\hls\sim\verilog>set PATH= 
+
+D:\weather_builds\compact_d_cosim01\component\hls\sim\verilog>call D:/vivado/2025.2/Vivado/bin/xelab xil_defaultlib.apatb_compact_d_top_top xil_defaultlib.glbl -Oenable_linking_all_libraries -prj compact_d_top.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm  -L floating_point_v7_1_21 -L floating_point_v7_0_26 --lib "ieee_proposed=./ieee_proposed" -L uvm -relax -i ./svr -i ./axivip -i ./svtb -i ./file_agent -i ./compact_d_top_subsystem  -s compact_d_top  
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/vivado/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_compact_d_top_top xil_defaultlib.glbl -Oenable_linking_all_libraries -prj compact_d_top.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_1_21 -L floating_point_v7_0_26 --lib ieee_proposed=./ieee_proposed -L uvm -relax -i ./svr -i ./axivip -i ./svtb -i ./file_agent -i ./compact_d_top_subsystem -s compact_d_top 
+Multi-threading is on. Using 22 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/AESL_deadlock_detection_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detect_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/AESL_deadlock_detector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detector
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/AESL_deadlock_report_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_report_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_compact_d_top_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_add_relu_0_Pipeline_VITIS_LOOP_194_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_add_relu_0_Pipeline_VITIS_LOOP_194_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_add_relu_0_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_add_relu_0_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_add_relu_1_Pipeline_VITIS_LOOP_194_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_add_relu_1_Pipeline_VITIS_LOOP_194_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_add_relu_1_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_add_relu_1_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_add_relu_2_Pipeline_VITIS_LOOP_194_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_add_relu_2_Pipeline_VITIS_LOOP_194_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_add_relu_2_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_add_relu_2_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_0_3_8_Outline_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_0_3_8_Outline_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_0_3_8_Pipeline_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_0_3_8_Pipeline_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_0_3_8_Pipeline_CONV_PHASE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_0_3_8_Pipeline_CONV_PHASE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_0_3_8_Pipeline_CONV_PHASE_void_convolution_stream_ap_uint_0_streabkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_0_3_8_Pipeline_CONV_PHASE_void_convolution_stream_ap_uint_0_streabkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_0_3_8_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_0_3_8_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_1_8_8_Outline_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_1_8_8_Outline_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_1_8_8_Pipeline_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_1_8_8_Pipeline_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_1_8_8_Pipeline_CONV_PHASE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_1_8_8_Pipeline_CONV_PHASE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_1_8_8_Pipeline_CONV_PHASE_void_convolution_stream_ap_uint_0_streadEe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_1_8_8_Pipeline_CONV_PHASE_void_convolution_stream_ap_uint_0_streadEe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_1_8_8_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_1_8_8_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_2_8_8_Outline_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_2_8_8_Outline_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_2_8_8_Pipeline_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_2_8_8_Pipeline_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_2_8_8_Pipeline_CONV_PHASE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_2_8_8_Pipeline_CONV_PHASE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_2_8_8_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_2_8_8_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_3_8_8_Outline_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_3_8_8_Outline_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_3_8_8_Pipeline_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_3_8_8_Pipeline_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_3_8_8_Pipeline_CONV_PHASE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_3_8_8_Pipeline_CONV_PHASE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_3_8_8_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_3_8_8_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_4_8_8_Outline_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_4_8_8_Outline_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_4_8_8_Pipeline_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_4_8_8_Pipeline_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_4_8_8_Pipeline_CONV_PHASE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_4_8_8_Pipeline_CONV_PHASE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_4_8_8_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_4_8_8_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_5_8_8_Outline_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_5_8_8_Outline_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_5_8_8_Pipeline_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_5_8_8_Pipeline_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_5_8_8_Pipeline_CONV_PHASE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_5_8_8_Pipeline_CONV_PHASE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_5_8_8_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_5_8_8_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_6_8_8_Outline_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_6_8_8_Outline_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_6_8_8_Pipeline_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_6_8_8_Pipeline_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_6_8_8_Pipeline_CONV_PHASE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_6_8_8_Pipeline_CONV_PHASE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_6_8_8_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_6_8_8_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_7_8_3_Outline_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_7_8_3_Outline_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_7_8_3_Pipeline_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_7_8_3_Pipeline_2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_7_8_3_Pipeline_CONV_PHASE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_7_8_3_Pipeline_CONV_PHASE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_convolution_7_8_3_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_convolution_7_8_3_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w128_d32_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d32_A
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d32_A_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w128_d32_A_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d32_A_x
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d32_A_x_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w128_d32_A_x0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d32_A_x0
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d32_A_x0_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w128_d32_A_x1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d32_A_x1
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d32_A_x1_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w128_d4096_U.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d4096_U
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d4096_U_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w128_d4096_U_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d4096_U_x
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d4096_U_x_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w128_d4096_U_x0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d4096_U_x0
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w128_d4096_U_x0_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w16_d2048_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w16_d2048_A
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w16_d2048_A_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w1_d2_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w1_d2_S
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w1_d2_S_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w32_d2_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w32_d2_S
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w32_d2_S_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w32_d2_S_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w32_d2_S_x
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w32_d2_S_x_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w32_d2_S_x0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w32_d2_S_x0
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w32_d2_S_x0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w48_d16384_U.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w48_d16384_U
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w48_d16384_U_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fifo_w48_d32_A.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w48_d32_A
+INFO: [VRFC 10-311] analyzing module compact_d_top_fifo_w48_d32_A_ram
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_finish_Pipeline_VITIS_LOOP_228_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_finish_Pipeline_VITIS_LOOP_228_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_finish_r.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_finish_r
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_flow_control_loop_pipe.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_flow_control_loop_pipe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_flow_control_loop_pipe_sequential_init.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_flow_control_loop_pipe_sequential_init
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fork_0_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fork_0_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fork_1_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fork_1_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_fork_2_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_fork_2_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_frame.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_frame
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_gmem_in_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_in_m_axi
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_in_m_axi_load
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_in_m_axi_read
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_in_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_in_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_in_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_in_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_in_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_in_m_axi_srl
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_in_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_gmem_out_m_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_out_m_axi
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_out_m_axi_store
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_out_m_axi_write
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_out_m_axi_burst_converter
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_out_m_axi_burst_interleave
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_out_m_axi_burst_sequential
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_out_m_axi_throttle
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_out_m_axi_reg_slice
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_out_m_axi_fifo
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_out_m_axi_srl
+INFO: [VRFC 10-311] analyzing module compact_d_top_gmem_out_m_axi_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_14ns_30s_31_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_14ns_30s_31_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_14ns_30s_31_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_14ns_31s_31_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_14ns_31s_31_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_14ns_31s_31_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_14s_30s_30_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_14s_30s_30_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_14s_30s_30_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_14s_30s_31_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_14s_30s_31_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_14s_30s_31_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_14s_31s_31_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_14s_31s_31_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_14s_31s_31_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_15ns_32s_32_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_15ns_32s_32_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_15ns_32s_32_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_15s_30s_31_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_15s_30s_31_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_15s_30s_31_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_15s_31s_31_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_15s_31s_31_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_15s_31s_31_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_15s_31s_32_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_15s_31s_32_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_15s_31s_32_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_15s_32s_32_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_15s_32s_32_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_15s_32s_32_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_16s_31s_32_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_16s_31s_32_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_16s_31s_32_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_16s_32s_32_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_16s_32s_32_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_16s_32s_32_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_16s_32s_33_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_16s_32s_33_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_16s_32s_33_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_16s_33s_33_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_16s_33s_33_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_16s_33s_33_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mac_muladd_16s_16s_37s_37_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_16s_37s_37_3_1_DSP48_0
+INFO: [VRFC 10-311] analyzing module compact_d_top_mac_muladd_16s_16s_37s_37_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_monitor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mul_16s_14ns_30_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mul_16s_14ns_30_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mul_16s_14s_30_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mul_16s_14s_30_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mul_16s_15ns_31_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mul_16s_15ns_31_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mul_16s_15s_31_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mul_16s_15s_31_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mul_16s_16s_32_3_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mul_16s_16s_32_3_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_mul_32s_32s_32_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_mul_32s_32s_32_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_pack_input.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_pack_input
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_pack_input_Pipeline_VITIS_LOOP_83_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_pack_input_Pipeline_VITIS_LOOP_83_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_partselect_16ns_128ns_7ns_16_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_partselect_16ns_128ns_7ns_16_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_read_nchw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_read_nchw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_read_plane.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_read_plane
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_read_plane_Pipeline_READ_PLANE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_read_plane_Pipeline_READ_PLANE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_relu_14_Pipeline_VITIS_LOOP_172_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_relu_14_Pipeline_VITIS_LOOP_172_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_relu_14_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_relu_14_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_relu_2_Pipeline_VITIS_LOOP_172_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_relu_2_Pipeline_VITIS_LOOP_172_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_relu_2_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_relu_2_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_relu_4_Pipeline_VITIS_LOOP_172_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_relu_4_Pipeline_VITIS_LOOP_172_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_relu_4_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_relu_4_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_relu_9_Pipeline_VITIS_LOOP_172_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_relu_9_Pipeline_VITIS_LOOP_172_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_relu_9_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_relu_9_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_residual_block_0_Block_entry_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_residual_block_0_Block_entry_proc
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_residual_block_0_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_residual_block_0_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_residual_block_1_Block_entry_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_residual_block_1_Block_entry_proc
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_residual_block_1_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_residual_block_1_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_residual_block_2_Block_entry_proc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_residual_block_2_Block_entry_proc
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_residual_block_2_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_residual_block_2_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_128_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_128_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_12_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_12_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_12_1_1_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_12_1_1_x
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_12_1_1_x0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_12_1_1_x0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_13_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_13_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_13_1_1_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_13_1_1_x
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_13_1_1_x0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_13_1_1_x0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_14_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_14_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_14_1_1_x.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_14_1_1_x
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_15_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_15_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_16_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_16_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_sparsemux_7_2_48_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_sparsemux_7_2_48_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_add_relu_0_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_add_relu_0_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_add_relu_0_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_add_relu_1_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_add_relu_1_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_add_relu_1_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_add_relu_2_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_add_relu_2_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_add_relu_2_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_convolution_0_3_8_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_0_3_8_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_0_3_8_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_convolution_1_8_8_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_1_8_8_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_1_8_8_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_convolution_2_8_8_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_2_8_8_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_2_8_8_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_convolution_3_8_8_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_3_8_8_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_3_8_8_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_convolution_4_8_8_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_4_8_8_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_4_8_8_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_convolution_5_8_8_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_5_8_8_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_5_8_8_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_convolution_6_8_8_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_6_8_8_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_6_8_8_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_convolution_7_8_3_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_7_8_3_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_convolution_7_8_3_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_finish_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_finish_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_finish_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_monitor_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_monitor_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_monitor_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_pack_input_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_pack_input_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_pack_input_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_relu_14_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_relu_14_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_relu_14_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_relu_2_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_relu_2_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_relu_2_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_relu_4_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_relu_4_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_relu_4_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_relu_9_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_relu_9_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_relu_9_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_residual_block_0_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_residual_block_0_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_residual_block_0_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_residual_block_1_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_residual_block_1_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_residual_block_1_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_residual_block_2_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_residual_block_2_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_residual_block_2_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_start_for_write_nchw_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_write_nchw_U0
+INFO: [VRFC 10-311] analyzing module compact_d_top_start_for_write_nchw_U0_ShiftReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_write_nchw.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_write_nchw
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_write_plane.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_write_plane
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_write_plane_Pipeline_WRITE_PLANE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module compact_d_top_write_plane_Pipeline_WRITE_PLANE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/file_agent/file_agent_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/axivip/axi_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/axivip/axi_if.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/compact_d_top_subsystem/compact_d_top_subsystem_pkg.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/svtb/misc_interface.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/weather_builds/compact_d_cosim01/component/hls/sim/verilog/svtb/sv_module_top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sv_module_top
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/proj/primebuilds/9999.0_PRIME_0428_0031/installs/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 4356. Module uvm_pkg doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_sv_module_top_sv
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling package xil_defaultlib.axi_pkg
+Compiling package xil_defaultlib.compact_d_top_subsystem_pkg
+Compiling package xil_defaultlib.file_agent_pkg
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.compact_d_top_flow_control_loop_...
+Compiling module xil_defaultlib.compact_d_top_read_plane_Pipelin...
+Compiling module xil_defaultlib.compact_d_top_read_plane
+Compiling module xil_defaultlib.compact_d_top_mul_32s_32s_32_1_1...
+Compiling module xil_defaultlib.compact_d_top_read_nchw
+Compiling module xil_defaultlib.compact_d_top_pack_input_Pipelin...
+Compiling module xil_defaultlib.compact_d_top_pack_input
+Compiling module xil_defaultlib.compact_d_top_convolution_0_3_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_0_3_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_0_3_8_...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_48_1...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_16_1...
+Compiling module xil_defaultlib.compact_d_top_mul_16s_16s_32_3_1...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_15_1...
+Compiling module xil_defaultlib.compact_d_top_mul_16s_15s_31_3_1...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_14_1...
+Compiling module xil_defaultlib.compact_d_top_mul_16s_15ns_31_3_...
+Compiling module xil_defaultlib.compact_d_top_mul_16s_14s_30_3_1...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_16s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_16s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_15s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_15s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_14n...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_14n...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_15s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_15s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_15s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_15s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_15n...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_15n...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_14s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_14s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_14s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_14s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_16s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_16s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_15s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_15s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_16s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_16s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_16s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_16s...
+Compiling module xil_defaultlib.compact_d_top_convolution_0_3_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_0_3_8_...
+Compiling module xil_defaultlib.compact_d_top_relu_2_Pipeline_VI...
+Compiling module xil_defaultlib.compact_d_top_relu_2_s
+Compiling module xil_defaultlib.compact_d_top_residual_block_0_B...
+Compiling module xil_defaultlib.compact_d_top_flow_control_loop_...
+Compiling module xil_defaultlib.compact_d_top_fork_0_s
+Compiling module xil_defaultlib.compact_d_top_convolution_1_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_1_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_1_8_8_...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_128_...
+Compiling module xil_defaultlib.compact_d_top_partselect_16ns_12...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_14_1...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_13_1...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_12_1...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_16s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_16s...
+Compiling module xil_defaultlib.compact_d_top_convolution_1_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_1_8_8_...
+Compiling module xil_defaultlib.compact_d_top_relu_4_Pipeline_VI...
+Compiling module xil_defaultlib.compact_d_top_relu_4_s
+Compiling module xil_defaultlib.compact_d_top_convolution_2_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_2_8_8_...
+Compiling module xil_defaultlib.compact_d_top_mul_16s_14ns_30_3_...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_12_1...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_13_1...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_14n...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_14n...
+Compiling module xil_defaultlib.compact_d_top_convolution_2_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_2_8_8_...
+Compiling module xil_defaultlib.compact_d_top_add_relu_0_Pipelin...
+Compiling module xil_defaultlib.compact_d_top_add_relu_0_s
+Compiling module xil_defaultlib.compact_d_top_fifo_w32_d2_S_Shif...
+Compiling module xil_defaultlib.compact_d_top_fifo_w32_d2_S_defa...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d32_A_ra...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d32_A_de...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d4096_U_...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d4096_U_...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_add_relu...
+Compiling module xil_defaultlib.compact_d_top_start_for_add_relu...
+Compiling module xil_defaultlib.compact_d_top_start_for_relu_4_U...
+Compiling module xil_defaultlib.compact_d_top_start_for_relu_4_U...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_residual_block_0_s
+Compiling module xil_defaultlib.compact_d_top_residual_block_1_B...
+Compiling module xil_defaultlib.compact_d_top_fork_1_s
+Compiling module xil_defaultlib.compact_d_top_convolution_3_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_3_8_8_...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_13_1...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_14s...
+Compiling module xil_defaultlib.compact_d_top_mac_muladd_16s_14s...
+Compiling module xil_defaultlib.compact_d_top_convolution_3_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_3_8_8_...
+Compiling module xil_defaultlib.compact_d_top_relu_9_Pipeline_VI...
+Compiling module xil_defaultlib.compact_d_top_relu_9_s
+Compiling module xil_defaultlib.compact_d_top_convolution_4_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_4_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_4_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_4_8_8_...
+Compiling module xil_defaultlib.compact_d_top_add_relu_1_Pipelin...
+Compiling module xil_defaultlib.compact_d_top_add_relu_1_s
+Compiling module xil_defaultlib.compact_d_top_fifo_w32_d2_S_x_Sh...
+Compiling module xil_defaultlib.compact_d_top_fifo_w32_d2_S_x_de...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d32_A_x_...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d32_A_x_...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d4096_U_...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d4096_U_...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_add_relu...
+Compiling module xil_defaultlib.compact_d_top_start_for_add_relu...
+Compiling module xil_defaultlib.compact_d_top_start_for_relu_9_U...
+Compiling module xil_defaultlib.compact_d_top_start_for_relu_9_U...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_residual_block_1_s
+Compiling module xil_defaultlib.compact_d_top_residual_block_2_B...
+Compiling module xil_defaultlib.compact_d_top_fork_2_s
+Compiling module xil_defaultlib.compact_d_top_convolution_5_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_5_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_5_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_5_8_8_...
+Compiling module xil_defaultlib.compact_d_top_relu_14_Pipeline_V...
+Compiling module xil_defaultlib.compact_d_top_relu_14_s
+Compiling module xil_defaultlib.compact_d_top_convolution_6_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_6_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_6_8_8_...
+Compiling module xil_defaultlib.compact_d_top_convolution_6_8_8_...
+Compiling module xil_defaultlib.compact_d_top_add_relu_2_Pipelin...
+Compiling module xil_defaultlib.compact_d_top_add_relu_2_s
+Compiling module xil_defaultlib.compact_d_top_fifo_w32_d2_S_x0_S...
+Compiling module xil_defaultlib.compact_d_top_fifo_w32_d2_S_x0_d...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d32_A_x0...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d32_A_x0...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d4096_U_...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d4096_U_...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_add_relu...
+Compiling module xil_defaultlib.compact_d_top_start_for_add_relu...
+Compiling module xil_defaultlib.compact_d_top_start_for_relu_14_...
+Compiling module xil_defaultlib.compact_d_top_start_for_relu_14_...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_residual_block_2_s
+Compiling module xil_defaultlib.compact_d_top_convolution_7_8_3_...
+Compiling module xil_defaultlib.compact_d_top_convolution_7_8_3_...
+Compiling module xil_defaultlib.compact_d_top_sparsemux_7_2_12_1...
+Compiling module xil_defaultlib.compact_d_top_convolution_7_8_3_...
+Compiling module xil_defaultlib.compact_d_top_convolution_7_8_3_...
+Compiling module xil_defaultlib.compact_d_top_finish_Pipeline_VI...
+Compiling module xil_defaultlib.compact_d_top_finish_r
+Compiling module xil_defaultlib.compact_d_top_write_plane_Pipeli...
+Compiling module xil_defaultlib.compact_d_top_write_plane
+Compiling module xil_defaultlib.compact_d_top_write_nchw
+Compiling module xil_defaultlib.compact_d_top_monitor
+Compiling module xil_defaultlib.compact_d_top_fifo_w16_d2048_A_r...
+Compiling module xil_defaultlib.compact_d_top_fifo_w16_d2048_A_d...
+Compiling module xil_defaultlib.compact_d_top_fifo_w1_d2_S_Shift...
+Compiling module xil_defaultlib.compact_d_top_fifo_w1_d2_S_defau...
+Compiling module xil_defaultlib.compact_d_top_fifo_w48_d32_A_ram...
+Compiling module xil_defaultlib.compact_d_top_fifo_w48_d32_A_def...
+Compiling module xil_defaultlib.compact_d_top_fifo_w48_d16384_U_...
+Compiling module xil_defaultlib.compact_d_top_fifo_w48_d16384_U_...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d32_A_x1...
+Compiling module xil_defaultlib.compact_d_top_fifo_w128_d32_A_x1...
+Compiling module xil_defaultlib.compact_d_top_start_for_pack_inp...
+Compiling module xil_defaultlib.compact_d_top_start_for_pack_inp...
+Compiling module xil_defaultlib.compact_d_top_start_for_monitor_...
+Compiling module xil_defaultlib.compact_d_top_start_for_monitor_...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_finish_U...
+Compiling module xil_defaultlib.compact_d_top_start_for_finish_U...
+Compiling module xil_defaultlib.compact_d_top_start_for_relu_2_U...
+Compiling module xil_defaultlib.compact_d_top_start_for_relu_2_U...
+Compiling module xil_defaultlib.compact_d_top_start_for_residual...
+Compiling module xil_defaultlib.compact_d_top_start_for_residual...
+Compiling module xil_defaultlib.compact_d_top_start_for_residual...
+Compiling module xil_defaultlib.compact_d_top_start_for_residual...
+Compiling module xil_defaultlib.compact_d_top_start_for_residual...
+Compiling module xil_defaultlib.compact_d_top_start_for_residual...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_convolut...
+Compiling module xil_defaultlib.compact_d_top_start_for_write_nc...
+Compiling module xil_defaultlib.compact_d_top_start_for_write_nc...
+Compiling module xil_defaultlib.compact_d_top_frame
+Compiling module xil_defaultlib.compact_d_top_control_s_axi
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_srl(...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_fifo...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_mem(...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_fifo...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_srl(...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_fifo...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_reg_...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_load...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_reg_...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_burs...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_reg_...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_srl(...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_fifo...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi_read...
+Compiling module xil_defaultlib.compact_d_top_gmem_in_m_axi(C_M_...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_srl...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_fif...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_srl...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_fif...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_mem...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_fif...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_srl...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_fif...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_srl...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_fif...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_srl...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_fif...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_sto...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_reg...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_bur...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_reg...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_srl...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_fif...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_reg...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_thr...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_reg...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi_wri...
+Compiling module xil_defaultlib.compact_d_top_gmem_out_m_axi(C_M...
+Compiling module xil_defaultlib.compact_d_top
+Compiling module xil_defaultlib.misc_interface_default
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=64,STRB_WIDTH=...
+Compiling module xil_defaultlib.axi_if(ADDR_WIDTH=7,STRB_WIDTH=4...
+Compiling module xil_defaultlib.sv_module_top
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_report_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detector_1
+Compiling module xil_defaultlib.df_fifo_intf_default
+Compiling module xil_defaultlib.df_process_intf_default
+Compiling module xil_defaultlib.nodf_module_intf_default
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=7)
+Compiling module xil_defaultlib.seq_loop_intf(FSM_WIDTH=3)
+Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_compact_d_top_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot compact_d_top
+
+****** xsim v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Sun Oct 25 12:25:08 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/compact_d_top/xsim_script.tcl
+# xsim {compact_d_top} -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=compact_d_top_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -autoloadwcfg -tclbatch {compact_d_top.tcl}
+Time resolution is 1 ps
+source compact_d_top.tcl
+## run all
+UVM_INFO D:ivaÿÿ‚5.2Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO D:ivaÿÿ‚5.2Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO D:ivaÿÿ‚5.2Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18752) @ 0: reporter [UVMTOP] UVM testbench topology:
+-----------------------------------------------------------------------------------------
+Name                           Type                               Size  Value            
+-----------------------------------------------------------------------------------------
+uvm_test_top                   compact_d_top_test_lib             -     @369             
+  top_env                      compact_d_top_env                  -     @380             
+    axi_lite_control           uvm_env                            -     @465             
+      item_rtr_port            uvm_analysis_port                  -     @484             
+      item_wtr_port            uvm_analysis_port                  -     @474             
+      master                   uvm_agent                          -     @897             
+        ardrv                  uvm_driver #(REQ,RSP)              -     @1572            
+          item_read_imp        uvm_analysis_port                  -     @1601            
+          rsp_port             uvm_analysis_port                  -     @1591            
+          seq_item_port        uvm_seq_item_pull_port             -     @1581            
+          m_num_sent           integral                           32    'h0              
+        arsqr                  axi_sequencer                      -     @1611            
+          rsp_export           uvm_analysis_export                -     @1620            
+          seq_item_export      uvm_seq_item_pull_imp              -     @1738            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        awdrv                  uvm_driver #(REQ,RSP)              -     @1044            
+          item_read_imp        uvm_analysis_port                  -     @1073            
+          rsp_port             uvm_analysis_port                  -     @1063            
+          seq_item_port        uvm_seq_item_pull_port             -     @1053            
+          m_num_sent           integral                           32    'h0              
+        awsqr                  axi_sequencer                      -     @1083            
+          rsp_export           uvm_analysis_export                -     @1092            
+          seq_item_export      uvm_seq_item_pull_imp              -     @1210            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        bdrv                   uvm_driver #(REQ,RSP)              -     @1396            
+          item_read_imp        uvm_analysis_port                  -     @1425            
+          rsp_port             uvm_analysis_port                  -     @1415            
+          seq_item_port        uvm_seq_item_pull_port             -     @1405            
+          m_num_sent           integral                           32    'h0              
+        bsqr                   axi_sequencer                      -     @1435            
+          rsp_export           uvm_analysis_export                -     @1444            
+          seq_item_export      uvm_seq_item_pull_imp              -     @1562            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        rdrv                   uvm_driver #(REQ,RSP)              -     @1748            
+          item_read_imp        uvm_analysis_port                  -     @1777            
+          rsp_port             uvm_analysis_port                  -     @1767            
+          seq_item_port        uvm_seq_item_pull_port             -     @1757            
+          m_num_sent           integral                           32    'h0              
+        rsqr                   axi_sequencer                      -     @1787            
+          rsp_export           uvm_analysis_export                -     @1796            
+          seq_item_export      uvm_seq_item_pull_imp              -     @1914            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        wdrv                   uvm_driver #(REQ,RSP)              -     @1220            
+          item_read_imp        uvm_analysis_port                  -     @1249            
+          rsp_port             uvm_analysis_port                  -     @1239            
+          seq_item_port        uvm_seq_item_pull_port             -     @1229            
+          m_num_sent           integral                           32    'h0              
+        wsqr                   axi_sequencer                      -     @1259            
+          rsp_export           uvm_analysis_export                -     @1268            
+          seq_item_export      uvm_seq_item_pull_imp              -     @1386            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+      monitor                  uvm_monitor                        -     @719             
+        item_ar2r_port         uvm_analysis_port                  -     @788             
+        item_ar_port           uvm_analysis_port                  -     @758             
+        item_aw2b_port         uvm_analysis_port                  -     @778             
+        item_aw_port           uvm_analysis_port                  -     @728             
+        item_b_port            uvm_analysis_port                  -     @748             
+        item_r_port            uvm_analysis_port                  -     @768             
+        item_w_port            uvm_analysis_port                  -     @738             
+        checks_enable          integral                           1     'h1              
+        coverage_enable        integral                           1     'h1              
+      state                    axi_state                          -     @798             
+        ar2r_imp               uvm_analysis_imp_ar2r              -     @867             
+        ar_imp                 uvm_analysis_imp_ar                -     @837             
+        aw2b_imp               uvm_analysis_imp_aw2b              -     @857             
+        aw_imp                 uvm_analysis_imp_aw                -     @807             
+        b_imp                  uvm_analysis_imp_b                 -     @827             
+        item_rtr_port          uvm_analysis_port                  -     @887             
+        item_wtr_port          uvm_analysis_port                  -     @877             
+        r_imp                  uvm_analysis_imp_r                 -     @847             
+        w_imp                  uvm_analysis_imp_w                 -     @817             
+        avg_rate               integral                           32    'h0              
+        exp_rate               integral                           32    'h0              
+        win_size               integral                           32    'h0              
+        bqnum_for_slaseq       integral                           32    'h0              
+        rq_from_model_num      integral                           32    'h0              
+      vsqr                     axi_virtual_sequencer              -     @906             
+        rsp_export             uvm_analysis_export                -     @915             
+        seq_item_export        uvm_seq_item_pull_imp              -     @1033            
+        arbitration_queue      array                              0     -                
+        lock_queue             array                              0     -                
+        num_last_reqs          integral                           32    'd1              
+        num_last_rsps          integral                           32    'd1              
+      cfg                      axi_cfg                            -     @397             
+        has_checker            integral                           1     'h1              
+        has_coverage           integral                           1     'h1              
+        id_num                 integral                           32    'h1              
+        reset_level            reset_level_enum                   32    RESET_LEVEL_LOW  
+        drv_type               drv_type_enum                      32    MASTER           
+        write_latency_mode     latency_mode_enum                  32    CHANNEL_FIRST    
+        read_latency_mode      latency_mode_enum                  32    CHANNEL_FIRST    
+        clatency               axi_latency                        -     @463             
+          wr_latency           integral                           32    'h0              
+          rd_latency           integral                           32    'h0              
+    axi_master_gmem_in         uvm_env                            -     @403             
+      item_rtr_port            uvm_analysis_port                  -     @422             
+      item_wtr_port            uvm_analysis_port                  -     @412             
+      monitor                  uvm_monitor                        -     @1997            
+        item_ar2r_port         uvm_analysis_port                  -     @2066            
+        item_ar_port           uvm_analysis_port                  -     @2036            
+        item_aw2b_port         uvm_analysis_port                  -     @2056            
+        item_aw_port           uvm_analysis_port                  -     @2006            
+        item_b_port            uvm_analysis_port                  -     @2026            
+        item_r_port            uvm_analysis_port                  -     @2046            
+        item_w_port            uvm_analysis_port                  -     @2016            
+        checks_enable          integral                           1     'h1              
+        coverage_enable        integral                           1     'h1              
+      slave                    uvm_agent                          -     @2175            
+        ardrv                  uvm_driver #(REQ,RSP)              -     @2852            
+          item_read_imp        uvm_analysis_port                  -     @2881            
+          rsp_port             uvm_analysis_port                  -     @2871            
+          seq_item_port        uvm_seq_item_pull_port             -     @2861            
+          m_num_sent           integral                           32    'h0              
+        arsqr                  axi_sequencer                      -     @2891            
+          rsp_export           uvm_analysis_export                -     @2900            
+          seq_item_export      uvm_seq_item_pull_imp              -     @3018            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        awdrv                  uvm_driver #(REQ,RSP)              -     @2324            
+          item_read_imp        uvm_analysis_port                  -     @2353            
+          rsp_port             uvm_analysis_port                  -     @2343            
+          seq_item_port        uvm_seq_item_pull_port             -     @2333            
+          m_num_sent           integral                           32    'h0              
+        awsqr                  axi_sequencer                      -     @2363            
+          rsp_export           uvm_analysis_export                -     @2372            
+          seq_item_export      uvm_seq_item_pull_imp              -     @2490            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        bdrv                   uvm_driver #(REQ,RSP)              -     @2676            
+          item_read_imp        uvm_analysis_port                  -     @2705            
+          rsp_port             uvm_analysis_port                  -     @2695            
+          seq_item_port        uvm_seq_item_pull_port             -     @2685            
+          m_num_sent           integral                           32    'h0              
+        bsqr                   axi_sequencer                      -     @2715            
+          rsp_export           uvm_analysis_export                -     @2724            
+          seq_item_export      uvm_seq_item_pull_imp              -     @2842            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        rdrv                   uvm_driver #(REQ,RSP)              -     @3028            
+          item_read_imp        uvm_analysis_port                  -     @3057            
+          rsp_port             uvm_analysis_port                  -     @3047            
+          seq_item_port        uvm_seq_item_pull_port             -     @3037            
+          m_num_sent           integral                           32    'h0              
+        rsqr                   axi_sequencer                      -     @3067            
+          rsp_export           uvm_analysis_export                -     @3076            
+          seq_item_export      uvm_seq_item_pull_imp              -     @3194            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        wdrv                   uvm_driver #(REQ,RSP)              -     @2500            
+          item_read_imp        uvm_analysis_port                  -     @2529            
+          rsp_port             uvm_analysis_port                  -     @2519            
+          seq_item_port        uvm_seq_item_pull_port             -     @2509            
+          m_num_sent           integral                           32    'h0              
+        wsqr                   axi_sequencer                      -     @2539            
+          rsp_export           uvm_analysis_export                -     @2548            
+          seq_item_export      uvm_seq_item_pull_imp              -     @2666            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+      state                    axi_state                          -     @2076            
+        ar2r_imp               uvm_analysis_imp_ar2r              -     @2145            
+        ar_imp                 uvm_analysis_imp_ar                -     @2115            
+        aw2b_imp               uvm_analysis_imp_aw2b              -     @2135            
+        aw_imp                 uvm_analysis_imp_aw                -     @2085            
+        b_imp                  uvm_analysis_imp_b                 -     @2105            
+        item_rtr_port          uvm_analysis_port                  -     @2165            
+        item_wtr_port          uvm_analysis_port                  -     @2155            
+        r_imp                  uvm_analysis_imp_r                 -     @2125            
+        w_imp                  uvm_analysis_imp_w                 -     @2095            
+        avg_rate               integral                           32    'h0              
+        exp_rate               integral                           32    'h0              
+        win_size               integral                           32    'h0              
+        bqnum_for_slaseq       integral                           32    'h0              
+        rq_from_model_num      integral                           32    'h0              
+      vsqr                     axi_virtual_sequencer              -     @2184            
+        rsp_export             uvm_analysis_export                -     @2193            
+        seq_item_export        uvm_seq_item_pull_imp              -     @2311            
+        arbitration_queue      array                              0     -                
+        lock_queue             array                              0     -                
+        num_last_reqs          integral                           32    'd1              
+        num_last_rsps          integral                           32    'd1              
+      cfg                      axi_cfg                            -     @395             
+        has_checker            integral                           1     'h1              
+        has_coverage           integral                           1     'h1              
+        id_num                 integral                           32    'h1              
+        reset_level            reset_level_enum                   32    RESET_LEVEL_LOW  
+        drv_type               drv_type_enum                      32    SLAVE            
+        write_latency_mode     latency_mode_enum                  32    TRANSACTION_FIRST
+        read_latency_mode      latency_mode_enum                  32    TRANSACTION_FIRST
+        clatency               axi_latency                        -     @398             
+          wr_latency           integral                           32    'h0              
+          rd_latency           integral                           32    'h0              
+    axi_master_gmem_out        uvm_env                            -     @434             
+      item_rtr_port            uvm_analysis_port                  -     @453             
+      item_wtr_port            uvm_analysis_port                  -     @443             
+      monitor                  uvm_monitor                        -     @3275            
+        item_ar2r_port         uvm_analysis_port                  -     @3344            
+        item_ar_port           uvm_analysis_port                  -     @3314            
+        item_aw2b_port         uvm_analysis_port                  -     @3334            
+        item_aw_port           uvm_analysis_port                  -     @3284            
+        item_b_port            uvm_analysis_port                  -     @3304            
+        item_r_port            uvm_analysis_port                  -     @3324            
+        item_w_port            uvm_analysis_port                  -     @3294            
+        checks_enable          integral                           1     'h1              
+        coverage_enable        integral                           1     'h1              
+      slave                    uvm_agent                          -     @3453            
+        ardrv                  uvm_driver #(REQ,RSP)              -     @4130            
+          item_read_imp        uvm_analysis_port                  -     @4159            
+          rsp_port             uvm_analysis_port                  -     @4149            
+          seq_item_port        uvm_seq_item_pull_port             -     @4139            
+          m_num_sent           integral                           32    'h0              
+        arsqr                  axi_sequencer                      -     @4169            
+          rsp_export           uvm_analysis_export                -     @4178            
+          seq_item_export      uvm_seq_item_pull_imp              -     @4296            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        awdrv                  uvm_driver #(REQ,RSP)              -     @3602            
+          item_read_imp        uvm_analysis_port                  -     @3631            
+          rsp_port             uvm_analysis_port                  -     @3621            
+          seq_item_port        uvm_seq_item_pull_port             -     @3611            
+          m_num_sent           integral                           32    'h0              
+        awsqr                  axi_sequencer                      -     @3641            
+          rsp_export           uvm_analysis_export                -     @3650            
+          seq_item_export      uvm_seq_item_pull_imp              -     @3768            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        bdrv                   uvm_driver #(REQ,RSP)              -     @3954            
+          item_read_imp        uvm_analysis_port                  -     @3983            
+          rsp_port             uvm_analysis_port                  -     @3973            
+          seq_item_port        uvm_seq_item_pull_port             -     @3963            
+          m_num_sent           integral                           32    'h0              
+        bsqr                   axi_sequencer                      -     @3993            
+          rsp_export           uvm_analysis_export                -     @4002            
+          seq_item_export      uvm_seq_item_pull_imp              -     @4120            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        rdrv                   uvm_driver #(REQ,RSP)              -     @4306            
+          item_read_imp        uvm_analysis_port                  -     @4335            
+          rsp_port             uvm_analysis_port                  -     @4325            
+          seq_item_port        uvm_seq_item_pull_port             -     @4315            
+          m_num_sent           integral                           32    'h0              
+        rsqr                   axi_sequencer                      -     @4345            
+          rsp_export           uvm_analysis_export                -     @4354            
+          seq_item_export      uvm_seq_item_pull_imp              -     @4472            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+        wdrv                   uvm_driver #(REQ,RSP)              -     @3778            
+          item_read_imp        uvm_analysis_port                  -     @3807            
+          rsp_port             uvm_analysis_port                  -     @3797            
+          seq_item_port        uvm_seq_item_pull_port             -     @3787            
+          m_num_sent           integral                           32    'h0              
+        wsqr                   axi_sequencer                      -     @3817            
+          rsp_export           uvm_analysis_export                -     @3826            
+          seq_item_export      uvm_seq_item_pull_imp              -     @3944            
+          arbitration_queue    array                              0     -                
+          lock_queue           array                              0     -                
+          num_last_reqs        integral                           32    'd1              
+          num_last_rsps        integral                           32    'd1              
+      state                    axi_state                          -     @3354            
+        ar2r_imp               uvm_analysis_imp_ar2r              -     @3423            
+        ar_imp                 uvm_analysis_imp_ar                -     @3393            
+        aw2b_imp               uvm_analysis_imp_aw2b              -     @3413            
+        aw_imp                 uvm_analysis_imp_aw                -     @3363            
+        b_imp                  uvm_analysis_imp_b                 -     @3383            
+        item_rtr_port          uvm_analysis_port                  -     @3443            
+        item_wtr_port          uvm_analysis_port                  -     @3433            
+        r_imp                  uvm_analysis_imp_r                 -     @3403            
+        w_imp                  uvm_analysis_imp_w                 -     @3373            
+        avg_rate               integral                           32    'h0              
+        exp_rate               integral                           32    'h0              
+        win_size               integral                           32    'h0              
+        bqnum_for_slaseq       integral                           32    'h0              
+        rq_from_model_num      integral                           32    'h0              
+      vsqr                     axi_virtual_sequencer              -     @3462            
+        rsp_export             uvm_analysis_export                -     @3471            
+        seq_item_export        uvm_seq_item_pull_imp              -     @3589            
+        arbitration_queue      array                              0     -                
+        lock_queue             array                              0     -                
+        num_last_reqs          integral                           32    'd1              
+        num_last_rsps          integral                           32    'd1              
+      cfg                      axi_cfg                            -     @396             
+        has_checker            integral                           1     'h1              
+        has_coverage           integral                           1     'h1              
+        id_num                 integral                           32    'h1              
+        reset_level            reset_level_enum                   32    RESET_LEVEL_LOW  
+        drv_type               drv_type_enum                      32    SLAVE            
+        write_latency_mode     latency_mode_enum                  32    TRANSACTION_FIRST
+        read_latency_mode      latency_mode_enum                  32    TRANSACTION_FIRST
+        clatency               axi_latency                        -     @432             
+          wr_latency           integral                           32    'h0              
+          rd_latency           integral                           32    'h0              
+    compact_d_top_virtual_sqr  compact_d_top_virtual_sequencer    -     @576             
+      rsp_export               uvm_analysis_export                -     @585             
+      seq_item_export          uvm_seq_item_pull_imp              -     @703             
+      arbitration_queue        array                              0     -                
+      lock_queue               array                              0     -                
+      num_last_reqs            integral                           32    'd1              
+      num_last_rsps            integral                           32    'd1              
+    refm                       compact_d_top_reference_model      -     @494             
+      trans_num_idx            integral                           32    'h0              
+    subsys_mon                 compact_d_top_subsystem_monitor    -     @507             
+      control_rtr_imp          uvm_analysis_imp_axi_rtr_control   -     @566             
+      control_wtr_imp          uvm_analysis_imp_axi_wtr_control   -     @556             
+      gmem_in_rtr_imp          uvm_analysis_imp_axi_rtr_gmem_in   -     @526             
+      gmem_in_wtr_imp          uvm_analysis_imp_axi_wtr_gmem_in   -     @516             
+      gmem_out_rtr_imp         uvm_analysis_imp_axi_rtr_gmem_out  -     @546             
+      gmem_out_wtr_imp         uvm_analysis_imp_axi_wtr_gmem_out  -     @536             
+      scbd                     compact_d_top_scoreboard           -     @4559            
+        refm                   compact_d_top_reference_model      -     @494             
+          trans_num_idx        integral                           32    'h0              
+    refm                       compact_d_top_reference_model      -     @494             
+    compact_d_top_virtual_sqr  compact_d_top_virtual_sequencer    -     @576             
+    compact_d_top_cfg          compact_d_top_config               -     @394             
+      gmem_in_cfg              axi_cfg                            -     @395             
+        has_checker            integral                           1     'h1              
+        has_coverage           integral                           1     'h1              
+        id_num                 integral                           32    'h1              
+        reset_level            reset_level_enum                   32    RESET_LEVEL_LOW  
+        drv_type               drv_type_enum                      32    SLAVE            
+        write_latency_mode     latency_mode_enum                  32    TRANSACTION_FIRST
+        read_latency_mode      latency_mode_enum                  32    TRANSACTION_FIRST
+        clatency               axi_latency                        -     @398             
+          wr_latency           integral                           32    'h0              
+          rd_latency           integral                           32    'h0              
+      gmem_out_cfg             axi_cfg                            -     @396             
+        has_checker            integral                           1     'h1              
+        has_coverage           integral                           1     'h1              
+        id_num                 integral                           32    'h1              
+        reset_level            reset_level_enum                   32    RESET_LEVEL_LOW  
+        drv_type               drv_type_enum                      32    SLAVE            
+        write_latency_mode     latency_mode_enum                  32    TRANSACTION_FIRST
+        read_latency_mode      latency_mode_enum                  32    TRANSACTION_FIRST
+        clatency               axi_latency                        -     @432             
+          wr_latency           integral                           32    'h0              
+          rd_latency           integral                           32    'h0              
+      control_cfg              axi_cfg                            -     @397             
+        has_checker            integral                           1     'h1              
+        has_coverage           integral                           1     'h1              
+        id_num                 integral                           32    'h1              
+        reset_level            reset_level_enum                   32    RESET_LEVEL_LOW  
+        drv_type               drv_type_enum                      32    MASTER           
+        write_latency_mode     latency_mode_enum                  32    CHANNEL_FIRST    
+        read_latency_mode      latency_mode_enum                  32    CHANNEL_FIRST    
+        clatency               axi_latency                        -     @463             
+          wr_latency           integral                           32    'h0              
+          rd_latency           integral                           32    'h0              
+      check_ena                integral                           32    'h0              
+      cover_ena                integral                           32    'h0              
+-----------------------------------------------------------------------------------------
+
+UVM_INFO D:ivaÿÿ‚5.2Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 15 [n/a] @ "113000"
+// RTL Simulation : 1 / 15 [n/a] @ "8683000"
+// RTL Simulation : 2 / 15 [n/a] @ "17243000"
+// RTL Simulation : 3 / 15 [n/a] @ "80393000"
+// RTL Simulation : 4 / 15 [n/a] @ "82748000"
+// RTL Simulation : 5 / 15 [n/a] @ "86933000"
+// RTL Simulation : 6 / 15 [n/a] @ "92843000"
+// RTL Simulation : 7 / 15 [n/a] @ "96923000"
+// RTL Simulation : 8 / 15 [n/a] @ "160073000"
+// RTL Simulation : 9 / 15 [n/a] @ "223193000"
+// RTL Simulation : 10 / 15 [n/a] @ "286313000"
+// RTL Simulation : 11 / 15 [n/a] @ "349433000"
+// RTL Simulation : 12 / 15 [n/a] @ "412553000"
+// RTL Simulation : 13 / 15 [n/a] @ "412738000"
+// RTL Simulation : 14 / 15 [n/a] @ "412913000"
+// RTL Simulation : 15 / 15 [n/a] @ "413088000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 413192500 ps : File "D:\vivado\2025.2\Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:03:38 . Memory (MB): peak = 257.223 ; gain = 0.000
+## quit
+INFO: xsimkernel Simulation Memory Usage: 2020296 KB (Peak: 2020296 KB), Simulation CPU Usage: 216140 ms
+INFO: [Common 17-206] Exiting xsim at Sun Oct 25 12:28:49 2026...
+INFO: [COSIM 212-316] Starting C post checking ...
+D_FRAME_PASS seq=0 h=8 w=8 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=1 h=8 w=8 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=2 h=33 w=47 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=3 h=1 w=1 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=4 h=1 w=7 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=5 h=7 w=1 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=6 h=2 w=3 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=7 h=33 w=47 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=8 h=33 w=47 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=9 h=33 w=47 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=10 h=33 w=47 scope=rtl_final_output_status_bounds
+D_FRAME_PASS seq=11 h=33 w=47 scope=rtl_final_output_status_bounds
+D_ALL_CASES_PASS frames=12 invalid=3
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [HLS 200-112] Total CPU user time: 10 seconds. Total CPU system time: 2 seconds. Total elapsed time: 325.463 seconds; peak allocated memory: 253.727 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 5m 29s

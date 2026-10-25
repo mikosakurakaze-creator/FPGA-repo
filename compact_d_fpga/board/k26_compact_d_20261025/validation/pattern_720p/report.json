@@ -1,0 +1,388 @@
+{
+  "bundle_id": "2fa5547661b6ebd18a8a103835ecf44fa132300a1d2e4cfca8af587473c7067a",
+  "shape": [
+    1,
+    3,
+    720,
+    1280
+  ],
+  "nodes": [
+    {
+      "index": 0,
+      "id": "input",
+      "file": "00_input.i16",
+      "shape": [
+        1,
+        3,
+        720,
+        1280
+      ],
+      "bytes": 5529600,
+      "sha256": "dd82498b9436f5d9a82594cd388ec541c47231424ba5e4440fe1b31493e79067",
+      "min": -16384,
+      "max": 16384,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 1,
+      "id": "stem.conv",
+      "file": "01_stem.conv.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "2494f34654addf2dbb26677b81885685062c815bc41a6918663651c360ff97fc",
+      "min": -12466,
+      "max": 13098,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 2,
+      "id": "stem.relu",
+      "file": "02_stem.relu.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "489c24d9cf7477236396054ce1289050df8a30c666fa9c99ab33f49a14ce55ef",
+      "min": 0,
+      "max": 13098,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 3,
+      "id": "block0.conv0",
+      "file": "03_block0.conv0.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "414d56f21b3b2ba76296e3376ad756d913d7e4c082fd9f558fb8dfd21cec549a",
+      "min": -11458,
+      "max": 6966,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 4,
+      "id": "block0.relu0",
+      "file": "04_block0.relu0.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "2b6bea1be8242fcb77975d0801fb5fb28fe065dc42187a24e342ae8ae0290bf4",
+      "min": 0,
+      "max": 6966,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 5,
+      "id": "block0.conv1",
+      "file": "05_block0.conv1.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "353e6fff4867453a6fb49a36808da3827f19a20ce420a7e559734dcb983bd48c",
+      "min": -4079,
+      "max": 2538,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 6,
+      "id": "block0.add",
+      "file": "06_block0.add.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "3d0eef0b31e2466ee13dece2c5ccea3711687fae44bbe2598cb8e1635fe10f5b",
+      "min": -3388,
+      "max": 13031,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 7,
+      "id": "block0.relu1",
+      "file": "07_block0.relu1.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "2ee0ac238ab2f4bba2ba2f6556f0978c62f850fb02b75b18744e38d530bed3f0",
+      "min": 0,
+      "max": 13031,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 8,
+      "id": "block1.conv0",
+      "file": "08_block1.conv0.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "f382025c03f069967a9ecbdffef46480f14abdf2570a3a5e911924cad9e00a17",
+      "min": -8524,
+      "max": 6018,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 9,
+      "id": "block1.relu0",
+      "file": "09_block1.relu0.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "371a24e5f73579789763281da8596babdb40445f8ebd52c0b3310d4b882012f6",
+      "min": 0,
+      "max": 6018,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 10,
+      "id": "block1.conv1",
+      "file": "10_block1.conv1.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "0a9a4c37dedeb5f424b035fc28138741e6a589586f456d340299896cf58f0647",
+      "min": -5361,
+      "max": 4775,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 11,
+      "id": "block1.add",
+      "file": "11_block1.add.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "0d2b58dff96e234e798bfadd988a18b7aceef51adb2398be1650e044c5d61cbf",
+      "min": -4714,
+      "max": 14383,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 12,
+      "id": "block1.relu1",
+      "file": "12_block1.relu1.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "b38af7fc0e83420e137e0be276f40df2cf5028b8ea4cc650c76336f8c045dcae",
+      "min": 0,
+      "max": 14383,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 13,
+      "id": "block2.conv0",
+      "file": "13_block2.conv0.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "466ebcd089548afc72672d6c36b243b0d1aedfc405b9e5905ef44e0a9e10ca4f",
+      "min": -4529,
+      "max": 5081,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 14,
+      "id": "block2.relu0",
+      "file": "14_block2.relu0.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "4d72f790017bc9af7c3b9c6c1634fd7423f9ba6a245fb97526db81d8174fee41",
+      "min": 0,
+      "max": 5081,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 15,
+      "id": "block2.conv1",
+      "file": "15_block2.conv1.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "ca5ce3e4304da4efa45a4be6be7615afb6a4058f31a857a50b7e32fce450e4a8",
+      "min": -4485,
+      "max": 1823,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 16,
+      "id": "block2.add",
+      "file": "16_block2.add.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "a59cb8a01118a6868292e694ae6ad8759b9cb5b4bfc981ae3e7f681c9fa175c3",
+      "min": -4485,
+      "max": 14714,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 17,
+      "id": "block2.relu1",
+      "file": "17_block2.relu1.i16",
+      "shape": [
+        1,
+        8,
+        720,
+        1280
+      ],
+      "bytes": 14745600,
+      "sha256": "bd8d506abe37c41d78b08b37998b0848f410d3fdc50b0fd2f9e3c12d18f74571",
+      "min": 0,
+      "max": 14714,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 18,
+      "id": "head.conv",
+      "file": "18_head.conv.i16",
+      "shape": [
+        1,
+        3,
+        720,
+        1280
+      ],
+      "bytes": 5529600,
+      "sha256": "7350d2e956c2ac14734bc27f43be527174cd3d37fe0aa43249d21aaef8e60837",
+      "min": -2631,
+      "max": 795,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 19,
+      "id": "input.affine",
+      "file": "19_input.affine.i16",
+      "shape": [
+        1,
+        3,
+        720,
+        1280
+      ],
+      "bytes": 5529600,
+      "sha256": "33cc9b2ced579cafab1eddbf5c1c013e594ab2495b6e9300972d5fa4f6062737",
+      "min": 0,
+      "max": 16384,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 20,
+      "id": "output.add",
+      "file": "20_output.add.i16",
+      "shape": [
+        1,
+        3,
+        720,
+        1280
+      ],
+      "bytes": 5529600,
+      "sha256": "25e81a0f167337a71a7b85f5d11549e10b53524a528c24e8d3a977f6707827c4",
+      "min": -2420,
+      "max": 16970,
+      "saturated_low": 0,
+      "saturated_high": 0
+    },
+    {
+      "index": 21,
+      "id": "output.relu",
+      "file": "21_output.relu.i16",
+      "shape": [
+        1,
+        3,
+        720,
+        1280
+      ],
+      "bytes": 5529600,
+      "sha256": "9fb174f8e230b1e3bb42779882b6138129566247a2595d52b869c04b3e5b473d",
+      "min": 0,
+      "max": 16970,
+      "saturated_low": 0,
+      "saturated_high": 0
+    }
+  ],
+  "input_i16_sha256": "dd82498b9436f5d9a82594cd388ec541c47231424ba5e4440fe1b31493e79067",
+  "scope": "A integer reference; generated integration vector, not FPGA result",
+  "seconds": 8.930577400024049
+}

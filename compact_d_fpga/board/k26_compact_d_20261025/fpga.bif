@@ -1,0 +1,4 @@
+all:
+{
+  compact_d_system.bit
+}

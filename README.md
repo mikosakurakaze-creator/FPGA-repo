@@ -1,5 +1,9 @@
 # 天气图像恢复 FPGA 集成项目
 
+2026-10-25 新增 [D 模型独立 FPGA 镜像](compact_d_fpga/README.md)：八卷积引擎与片上行缓存，200 MHz 布线后 setup +0.328 ns、hold +0.010 ns。[上板目录](compact_d_fpga/board/k26_compact_d_20261025/README.md)包含同版 bit、BIN、XSA、完整 HWH、参数、Golden 与报告，已核对 SHA 及文件对应关系。真板数值、720p 连续帧及 30 FPS 实测尚待下游验收。该镜像只包含 PS、D 及互连；此前 Weather/Grid/低照度工程和文件继续保留。
+
+以下为此前 Weather/Grid 系统的说明与历史验证记录。
+
 2026-10-24 新增五核系统（旧 CNN/Bilinear/Curve/Weather + 新 GridDehazeNet）本地候选：[硬件、同版 INT16 参数及核查结果](board/releases/k26_weather_griddehaze_reduced_20261024/README.md)。本轮修正发布换行/哈希和完整系统 HWH，并复核 33×47 冷暖 RTL 与新系统旧 Weather 回归；新核布线后采用代表性数值检查。各阶段覆盖范围见该目录，尚未进行真板验收。
 
 > 2026-10-23：已收到 KV260 的 8×8、task=0 真板不匹配证据（171/192 标量）。`k26_weather_v2_20261022` 保留为可追溯的故障版本，当前暂停作为通过验收的上板版本使用。诊断进展见 [真板不匹配调查](docs/board_mismatch_20261023.md)。原时序和仿真通过记录不代表真板数值正确。

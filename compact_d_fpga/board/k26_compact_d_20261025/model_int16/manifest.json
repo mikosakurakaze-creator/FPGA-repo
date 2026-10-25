@@ -1,0 +1,407 @@
+{
+  "bundle_id": "2fa5547661b6ebd18a8a103835ecf44fa132300a1d2e4cfca8af587473c7067a",
+  "checkpoint_sha256": "0d2678ba533a83c797d5b7a2a922461440fa47f93043525a9165f0a1f9fc28fc",
+  "files": {
+    "graph.json": "d3d6d02ac55867c154353b23fb57f880e10df89f22106dc818c84accec760a42",
+    "oracle.txt": "fb144cb469485270a0092fabd81b21b3b1f78c833e308ca45393cdd860240dd2",
+    "overflow_proof.json": "2ce1aca912212bc008493f68f346c99289c3823e16b3c64af47efa77dd177041",
+    "parameters.bin": "b30ccd73ad10a685db4c591d3c4a31286178bc80be8e65ff3801364458706e57",
+    "scales.json": "c9500b73fd65d303b473d4dfb3e2f341d07f4d00e186b033ab1f5956975b39f3"
+  },
+  "format": "compact-d-int16-v1",
+  "node_order": [
+    "input",
+    "stem.conv",
+    "stem.relu",
+    "block0.conv0",
+    "block0.relu0",
+    "block0.conv1",
+    "block0.add",
+    "block0.relu1",
+    "block1.conv0",
+    "block1.relu0",
+    "block1.conv1",
+    "block1.add",
+    "block1.relu1",
+    "block2.conv0",
+    "block2.relu0",
+    "block2.conv1",
+    "block2.add",
+    "block2.relu1",
+    "head.conv",
+    "input.affine",
+    "output.add",
+    "output.relu"
+  ],
+  "parameter_bytes": 8280,
+  "parameter_count": 3947,
+  "parameters": [
+    {
+      "bytes": 432,
+      "dtype": "<i2",
+      "frac": [
+        17,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17
+      ],
+      "layout": "OIHW",
+      "name": "stem.weight",
+      "offset": 0,
+      "sha256": "9775422d95611bcc74dc0236c79fe32471fe098b7feb293a9e4b8320c571d57e",
+      "shape": [
+        8,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "bytes": 64,
+      "dtype": "<i8",
+      "frac": [
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31,
+        31
+      ],
+      "layout": "O",
+      "name": "stem.bias",
+      "offset": 448,
+      "sha256": "ca677a8777c6ac45508f84e54cce6ae0c7dfeaa24c560374e54585380ece2fe0",
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 1152,
+      "dtype": "<i2",
+      "frac": [
+        17,
+        18,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17
+      ],
+      "layout": "OIHW",
+      "name": "blocks.0.0.weight",
+      "offset": 512,
+      "sha256": "6859deacaba425efed2f1965bd330e3369f4774a3ca5303a535ed45da8a52ed6",
+      "shape": [
+        8,
+        8,
+        3,
+        3
+      ]
+    },
+    {
+      "bytes": 64,
+      "dtype": "<i8",
+      "frac": [
+        30,
+        31,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30
+      ],
+      "layout": "O",
+      "name": "blocks.0.0.bias",
+      "offset": 1664,
+      "sha256": "0a9c65f264bfd9e3eb33c3ae1c4f63375cf28b7301bdc22f3aeebbd8ad9ea8cf",
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 1152,
+      "dtype": "<i2",
+      "frac": [
+        17,
+        17,
+        17,
+        18,
+        17,
+        17,
+        17,
+        17
+      ],
+      "layout": "OIHW",
+      "name": "blocks.0.2.weight",
+      "offset": 1728,
+      "sha256": "26339133dd60c0721190cd0565889662fe5c7d6a45ae62aba659bc9d3c25ea50",
+      "shape": [
+        8,
+        8,
+        3,
+        3
+      ]
+    },
+    {
+      "bytes": 64,
+      "dtype": "<i8",
+      "frac": [
+        30,
+        30,
+        30,
+        31,
+        30,
+        30,
+        30,
+        30
+      ],
+      "layout": "O",
+      "name": "blocks.0.2.bias",
+      "offset": 2880,
+      "sha256": "1dd111c1a93f8d48af09c33d3859c75f2d12df9232a79baf9d428145713943d1",
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 1152,
+      "dtype": "<i2",
+      "frac": [
+        17,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17
+      ],
+      "layout": "OIHW",
+      "name": "blocks.1.0.weight",
+      "offset": 2944,
+      "sha256": "fd8ac3f9fe4eca0ae049a2d06b6d958eb72ba04e2327bab8f9e840f347f9d50c",
+      "shape": [
+        8,
+        8,
+        3,
+        3
+      ]
+    },
+    {
+      "bytes": 64,
+      "dtype": "<i8",
+      "frac": [
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30
+      ],
+      "layout": "O",
+      "name": "blocks.1.0.bias",
+      "offset": 4096,
+      "sha256": "4d6aedaed5ce8074111026201239e5ae97d4ddd0876925c3508f404ed96726fa",
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 1152,
+      "dtype": "<i2",
+      "frac": [
+        17,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17
+      ],
+      "layout": "OIHW",
+      "name": "blocks.1.2.weight",
+      "offset": 4160,
+      "sha256": "c842ec31caa388b4b3434f867c5df48a572170938cde1a44382aa2e6cb040979",
+      "shape": [
+        8,
+        8,
+        3,
+        3
+      ]
+    },
+    {
+      "bytes": 64,
+      "dtype": "<i8",
+      "frac": [
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30
+      ],
+      "layout": "O",
+      "name": "blocks.1.2.bias",
+      "offset": 5312,
+      "sha256": "6b4e8e35e9966ac4759cfaf5e4b3b8a0e5eff818f8dc557746453ee01373497d",
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 1152,
+      "dtype": "<i2",
+      "frac": [
+        17,
+        17,
+        17,
+        17,
+        17,
+        18,
+        17,
+        17
+      ],
+      "layout": "OIHW",
+      "name": "blocks.2.0.weight",
+      "offset": 5376,
+      "sha256": "e4a7912cf6fc8a60ee475626e7e5793ec2317254c16667b519b9ae8d32bfbfd5",
+      "shape": [
+        8,
+        8,
+        3,
+        3
+      ]
+    },
+    {
+      "bytes": 64,
+      "dtype": "<i8",
+      "frac": [
+        30,
+        30,
+        30,
+        30,
+        30,
+        31,
+        30,
+        30
+      ],
+      "layout": "O",
+      "name": "blocks.2.0.bias",
+      "offset": 6528,
+      "sha256": "bbdb171e17a65cf17c75df6861026ea0a6024125fd7aac79bb2a058d0f1e60ca",
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 1152,
+      "dtype": "<i2",
+      "frac": [
+        17,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17,
+        17
+      ],
+      "layout": "OIHW",
+      "name": "blocks.2.2.weight",
+      "offset": 6592,
+      "sha256": "6530ff7690c005e31d32d83e99cd9302fbf61a7c3e6c06bad6da87373dcad09a",
+      "shape": [
+        8,
+        8,
+        3,
+        3
+      ]
+    },
+    {
+      "bytes": 64,
+      "dtype": "<i8",
+      "frac": [
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30
+      ],
+      "layout": "O",
+      "name": "blocks.2.2.bias",
+      "offset": 7744,
+      "sha256": "0a192c3bb3ef756a75d9a3c5dd8a94ff2df1cb96869c15e8957be229b444d14a",
+      "shape": [
+        8
+      ]
+    },
+    {
+      "bytes": 432,
+      "dtype": "<i2",
+      "frac": [
+        20,
+        20,
+        20
+      ],
+      "layout": "OIHW",
+      "name": "head.weight",
+      "offset": 7808,
+      "sha256": "51b986fcd227d22c2c507f5851fc18ebbc3ac3581eb57f716f6d9892f3affdd6",
+      "shape": [
+        3,
+        8,
+        3,
+        3
+      ]
+    },
+    {
+      "bytes": 24,
+      "dtype": "<i8",
+      "frac": [
+        33,
+        33,
+        33
+      ],
+      "layout": "O",
+      "name": "head.bias",
+      "offset": 8256,
+      "sha256": "761788999dbeade554d7668469ec1d2cbcfab7b838cdef1a1a03b72d0b2be784",
+      "shape": [
+        3
+      ]
+    }
+  ],
+  "producer_hashes": {
+    "griddehaze_fixed/integer.py": "3d17073e9d8f488dd0f13fb87a2d0809e5b592b2a1aff45e8aad88ed378537e4",
+    "griddehaze_fixed/io.py": "09ff7cf27792ccd8cf7c01d3cb9adb2f881f3945833a1958e7a936f7d32337dd",
+    "models/compact_d/fixed/export.py": "1b55f64fafa66dbba9c567f6767c7adc4ba6897966ef038c5643ea518dc8936d",
+    "models/compact_d/fixed/numeric.py": "c09dc24393b4b890d6d8d411fe483dd41fa95facd57646849991a8b3dbe711c3",
+    "models/compact_d/model.py": "98007b6ed180a96be3b75ab67b262f41e2d2fad6b9e3c482723870dc85d1a9a8",
+    "models/compact_d/reference_fp32/manifest.json": "6338f56a56c739891dcf52c1358c4e5a482eb83026082a0eb795298193f2cbed"
+  },
+  "quantization": {
+    "accumulator": "int64 reference; certified narrower hardware width in overflow_proof",
+    "activations": "signed int16; real=q*2^-F",
+    "bias": "signed int64 at Fin+Fw",
+    "display": "clamp [0,1], multiply255, nearest ties even",
+    "rounding": "nearest_ties_away_from_zero",
+    "saturation": "clamp signed int16 at each conv/affine/add, before ReLU",
+    "weights": "per-output-channel signed int16"
+  }
+}

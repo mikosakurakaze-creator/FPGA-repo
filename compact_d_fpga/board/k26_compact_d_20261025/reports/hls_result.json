@@ -1,0 +1,188 @@
+{
+  "pass_result": true,
+  "stage": "cosim",
+  "clock_ns": 5.0,
+  "steps": {
+    "synth": {
+      "command": [
+        "C:\\WINDOWS\\system32\\cmd.exe",
+        "/d",
+        "/c",
+        "D:\\weather_builds\\compact_d_cosim01\\synth.cmd"
+      ],
+      "exit_code": 0,
+      "seconds": 153.48343539994676,
+      "log_sha256": "d4ce6314f921c91e166b7ac6e3d0b73dcbb61aa0384db58beca1a74fc1b405fd"
+    },
+    "cosim": {
+      "command": [
+        "C:\\WINDOWS\\system32\\cmd.exe",
+        "/d",
+        "/c",
+        "D:\\weather_builds\\compact_d_cosim01\\cosim.cmd"
+      ],
+      "exit_code": 0,
+      "seconds": 333.7362628999399,
+      "log_sha256": "8fae2ffabf1045f6be0ee2fb3c6c67614a2970f469b2f15a01558509783b8f3c"
+    }
+  },
+  "scope": "D only; no board measurement",
+  "parameters": {
+    "bundle_id": "2fa5547661b6ebd18a8a103835ecf44fa132300a1d2e4cfca8af587473c7067a",
+    "parameters_sha256": "b30ccd73ad10a685db4c591d3c4a31286178bc80be8e65ff3801364458706e57",
+    "layers": [
+      {
+        "layer": 0,
+        "node": "stem.conv",
+        "trace_index": 1,
+        "cin": 3,
+        "cout": 8
+      },
+      {
+        "layer": 1,
+        "node": "block0.conv0",
+        "trace_index": 3,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 2,
+        "node": "block0.conv1",
+        "trace_index": 5,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 3,
+        "node": "block1.conv0",
+        "trace_index": 8,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 4,
+        "node": "block1.conv1",
+        "trace_index": 10,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 5,
+        "node": "block2.conv0",
+        "trace_index": 13,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 6,
+        "node": "block2.conv1",
+        "trace_index": 15,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 7,
+        "node": "head.conv",
+        "trace_index": 18,
+        "cin": 8,
+        "cout": 3
+      }
+    ],
+    "generated_sha256": "e3e2e0b0468d6c4fc1cbfa890ece6519be9077edc3f729d1c8717edc9d3191e0"
+  },
+  "source_sha256": {
+    "compact_d.cpp": "554c121ab7ad8fd3d2e2252ce8ba6479868684bca40adfa1cb602fc7b461dab9",
+    "compact_d.hpp": "b3ef4193ce9fe3039a1785fca3c953cd77e4533ab61fff5125209e84a0289a80",
+    "generated_parameters.hpp": "e3e2e0b0468d6c4fc1cbfa890ece6519be9077edc3f729d1c8717edc9d3191e0",
+    "test_compact_d.cpp": "8450a700ff31385afb6253cdd8511800fc23dd95512993f6ae6d4a62b7f643c9"
+  },
+  "fixtures": {
+    "random_8x8": {
+      "report_sha256": "5cc0fa5c76dea52ce39a151afc8fa9cda7fc22b6a8c1baaafd6ef4c4044b0483",
+      "input_sha256": "19d1b13e4df5acda92dc939729ef92e3ba6eb3ba1cddb900063fcfbf2495e073",
+      "output_sha256": "9cf5695ae61735d55f5611f2e1083ca184e4da8a38e07c790684cd84a3a47389"
+    },
+    "random_33x47": {
+      "report_sha256": "268d67a256e2b5782d5e1d36cca19177de2ce39b27fce3b72e4f9885fdac1bdd",
+      "input_sha256": "6a4653d5957c4303da4f0982bcf7ea18a9a28cc355be65b1273bf1af54791abc",
+      "output_sha256": "4f5714a6147d6c5a65c8ec41b48cda736fb23491bc3f6efae2c6ca8ccf97620e"
+    },
+    "random_1x1": {
+      "report_sha256": "8556eaed2bb753f31af0da81a9ce9c4dc82f9c9af9916e169cb02bf862904d30",
+      "input_sha256": "817281158a5ced225f74deae53671887d3f0d109156fe12bc869b4d80396ac57",
+      "output_sha256": "b4cfd8b87289ac4ead3b27c2d792116925cce81f4db4d85bf7bf909ea88edf0d"
+    },
+    "random_1x7": {
+      "report_sha256": "39ce05002381791c04331f31181f2e8eb1fec6a4f34f02fbfee9ba55ef5cfc9d",
+      "input_sha256": "a3cfd34838b185999d9cd13c01608ed06ebc654ba90292c63eb2858d352ff783",
+      "output_sha256": "f6342517a2445966775b08e828e38f9278ad89ec2443c02366a7a51b6696adf6"
+    },
+    "random_7x1": {
+      "report_sha256": "18910d459dcc137ea9faf216ea6af33eee7147fcb1a8158728eddb4efe7cee59",
+      "input_sha256": "e36b0df09ec3cf73cf180bb786b53b41c0f12dc7219bf12d9992e50c933c5c9e",
+      "output_sha256": "baf9c123ece4489836b7023c013937909ba9508046a8f72b8c1f849bcb158505"
+    },
+    "random_2x3": {
+      "report_sha256": "0348d03725bdf750c9077b48ac902be5d4635fb060423dabdbaca488645a5441",
+      "input_sha256": "879444a1787d050db92d30ab5fc7070d352ecd696aafa56dfac1778f69fb9c0b",
+      "output_sha256": "c940aff3fb1de49751d2303367e486b7591ecbcf4eac0db876dc1440916152a1"
+    },
+    "black": {
+      "report_sha256": "dbfcfbc6a535d3c537302ccd2eab858364022fd7878729ab605b225a3da363e8",
+      "input_sha256": "a75e40c5abb0c639d827a0ab63017a0568c0f1bfe1d66b01936654bf85bb8a2c",
+      "output_sha256": "bb7361529af04202b9e32ef4bbd68380a1009d07d10e0955d51d536424f3da34"
+    },
+    "white": {
+      "report_sha256": "386d744abf9fc5d22601c40b4891c5b057305b61a9638a8a3c9b556dc691d319",
+      "input_sha256": "51a418ccc9b96bc96d22d2947e8375ea5729534979f933c1e5b7095d5d161c6f",
+      "output_sha256": "020ee4899d8d537e231fdeb45cdd8280b389fbc009e14ce8072d2ef22234e1de"
+    },
+    "red": {
+      "report_sha256": "4d17ac5aaa853b8c1172bfa2e691ca993e339c05b43260e092418835c1360e22",
+      "input_sha256": "6b0e0d276dfe760b32c774377b611ad17206ce4cd505dbce10d5d8aae8f29368",
+      "output_sha256": "a6daa1ceb8a3e11879f6ea5ff841a8329d4aa1c1d9825ecf86d7433ff1a18fb7"
+    },
+    "green": {
+      "report_sha256": "1dcc21be72924421cba87908deaf08898087e788490d72546bd15860a3e72de9",
+      "input_sha256": "14e2324d3c4d902fc988d31db5af14408fc81f4c50900a927c14ef7565275580",
+      "output_sha256": "ad7d630aefd563e2295bf534b62b930e495f2a8242b825c354a19d0574d04d11"
+    },
+    "blue": {
+      "report_sha256": "a9ad043f72d41ffed22de5ffc148fb7e9087d2ebbbc9ff713c377eed46dbf885",
+      "input_sha256": "4c14ef7dfd6edbc6c7d876946105716e3db12ba0b1e1e0b4f6134a6bfbaac907",
+      "output_sha256": "872f9871d4bc5946bd0b431af06001148ba9a9c51ef438e73fa9e50cb6d63522"
+    }
+  },
+  "hls_estimate": {
+    "resources": {
+      "BRAM_18K": "157",
+      "DSP": "750",
+      "FF": "51091",
+      "LUT": "80145",
+      "URAM": "40"
+    },
+    "timing": {
+      "unit": "ns",
+      "EstimatedClockPeriod": "3.650"
+    },
+    "latency": {
+      "unit": "clock cycles",
+      "Best-caseLatency": "undef",
+      "Average-caseLatency": "undef",
+      "Worst-caseLatency": "undef",
+      "Best-caseRealTimeLatency": "undef",
+      "Average-caseRealTimeLatency": "undef",
+      "Worst-caseRealTimeLatency": "undef",
+      "Interval-min": "undef",
+      "Interval-max": "undef",
+      "PerformancePragma": "-"
+    },
+    "report_sha256": "8438b7a1f56f5eb07edb5217f82101446cff7cabc1d2241303431c1db0363510"
+  },
+  "verification": "rtl_final_output_status_bounds",
+  "rtl_reports": {
+    "component/reports/hls_cosim.rpt": "d8a959a3dc2fbfeced829e990b13b819349ff7eec8062206b151c642abcc708e",
+    "component/hls/sim/report/compact_d_top_cosim.rpt": "d8a959a3dc2fbfeced829e990b13b819349ff7eec8062206b151c642abcc708e"
+  },
+  "frames": 12
+}

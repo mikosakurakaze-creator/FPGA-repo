@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.exe
+build/
+
+# User-authorized D board release, including its exact verification evidence.
+!board/k26_compact_d_20261025/
+!board/k26_compact_d_20261025/**

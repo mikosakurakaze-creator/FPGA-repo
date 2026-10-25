@@ -1,0 +1,7 @@
+* text=auto eol=lf
+board/** -text -whitespace
+*.zip -text
+*.i16 -text
+*.bin -text
+*.bit -text
+*.xsa -text
