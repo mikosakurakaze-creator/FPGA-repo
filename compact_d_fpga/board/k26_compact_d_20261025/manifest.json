@@ -105,6 +105,46 @@
       "bytes": 1490,
       "sha256": "c4ced49419717a98d29870183e9f017005d48cc68503926693732a335a5f41e1"
     },
+    "driver/compact_d_top_v1_0/data/compact_d_top.mdd": {
+      "bytes": 617,
+      "sha256": "eaf72bfb3048fef160534fce950fd46615f0e49e4ef31c6b1a45a538e3f3b63d"
+    },
+    "driver/compact_d_top_v1_0/data/compact_d_top.tcl": {
+      "bytes": 918,
+      "sha256": "0e5a97f37ff265f82a564358a55a327d0f0e670681190e2512eed3599235107e"
+    },
+    "driver/compact_d_top_v1_0/data/compact_d_top.yaml": {
+      "bytes": 666,
+      "sha256": "cbb33d0903d97f542df215b7b0d64337fef9fe594604ad5435ef5a911f92f834"
+    },
+    "driver/compact_d_top_v1_0/src/CMakeLists.txt": {
+      "bytes": 1226,
+      "sha256": "770b6afec9d94bcfb03baf2ac6fbb4c55bbb431bfe9dd5adf187dba1f48697a4"
+    },
+    "driver/compact_d_top_v1_0/src/Makefile": {
+      "bytes": 1506,
+      "sha256": "5ff43b46772574a73f42eca5c2757d49918a4c8c5d4b4bb2d5933a2a3119967a"
+    },
+    "driver/compact_d_top_v1_0/src/xcompact_d_top.c": {
+      "bytes": 11097,
+      "sha256": "ae27c016cd9c7a2569987689a8fc6c8c9e747669d73ef6da021a2f7e5fd2aa87"
+    },
+    "driver/compact_d_top_v1_0/src/xcompact_d_top.h": {
+      "bytes": 4827,
+      "sha256": "b2e6ab31c1029a71aa4bc1f9ff473a162aeed6eb2383a65f79e1fb441c55761c"
+    },
+    "driver/compact_d_top_v1_0/src/xcompact_d_top_hw.h": {
+      "bytes": 3931,
+      "sha256": "1afc234f8a64dc915bff56ae391043d68b5a30c023cb7f9205d8484f15450046"
+    },
+    "driver/compact_d_top_v1_0/src/xcompact_d_top_linux.c": {
+      "bytes": 4878,
+      "sha256": "4ae64431128ed9a8bf63fc8c982620f270de9128a0c7d1cdf1a8ac9e46b59650"
+    },
+    "driver/compact_d_top_v1_0/src/xcompact_d_top_sinit.c": {
+      "bytes": 2134,
+      "sha256": "5f14cb493d6ebe53928b0fab2b00d37c66b42aa0908c312348f643c3c220f787"
+    },
     "fpga.bif": {
       "bytes": 32,
       "sha256": "1a6df5b1d402ed35314def41d259cf01dd965975fc184fcff4b25a505ed7738f"
@@ -162,12 +202,12 @@
       "sha256": "ea797156f9623a289ab7af8604e373af078afd613c4c8ec025a2870af5578552"
     },
     "README.md": {
-      "bytes": 2428,
-      "sha256": "8313f6e5308ffd75c355efc7d9a127b8953c17ab0863b2527e1b84fe1443e56b"
+      "bytes": 2849,
+      "sha256": "ca438bd3ad6c00731d26dc9a8b397db5f9a69eb00a2ce8e2009c91419654ffa9"
     },
     "RELEASE_SUMMARY.md": {
-      "bytes": 2775,
-      "sha256": "352b719efe293111b86ddd10e0787b826aa3c5b171fc301749c11086cd895c23"
+      "bytes": 4797,
+      "sha256": "a67a14907fe4db7409be5aeb3772c53e13929f04c788e62bc0c31cb15f2fa1cf"
     },
     "reports/build.json": {
       "bytes": 48318,
@@ -305,13 +345,13 @@
       "bytes": 15523,
       "sha256": "5cc0fa5c76dea52ce39a151afc8fa9cda7fc22b6a8c1baaafd6ef4c4044b0483"
     },
-    "validation/sources/test_compact_d_report_8450a700.cpp": {
+    "validation/sources/test_compact_d.cpp": {
       "bytes": 5008,
       "sha256": "8450a700ff31385afb6253cdd8511800fc23dd95512993f6ae6d4a62b7f643c9"
     },
     "validation/sources/TESTBENCH_IDENTITY.md": {
-      "bytes": 1046,
-      "sha256": "991702f4eae4c5419e03960c1130d8856365fdac5b05f5a5adc52a7671b7268d"
+      "bytes": 1013,
+      "sha256": "644de25aabdaea629f032850c86ea4b6316ee96e5769dd0c3e7cc5551aa8f61d"
     },
     "validation/width_1280_rtl/actual_0.i16": {
       "bytes": 130560,
@@ -333,9 +373,16 @@
   "release_summary": "RELEASE_SUMMARY.md",
   "simulation_testbench": {
     "report_sha256": "8450a700ff31385afb6253cdd8511800fc23dd95512993f6ae6d4a62b7f643c9",
-    "report_source": "validation/sources/test_compact_d_report_8450a700.cpp",
+    "report_source": "validation/sources/test_compact_d.cpp",
     "github_sha256": "ce650312c6473622f2418d5281e32122d54e7d9b505f2668b273661926524303",
     "github_source": "../../hls/test_compact_d.cpp",
     "difference": "github source additionally prints work_cycles and input_cycles in D_FRAME_PASS; numerical checks and outputs are unchanged"
+  },
+  "driver": {
+    "kind": "Vitis HLS-generated AXI-Lite control driver",
+    "source_record": "reports/build.json:ip_files",
+    "scope": "bare-metal API and Linux UIO register mapping",
+    "target_board_compile_or_run_verified": false,
+    "limitations": "does not allocate DMA buffers, manage cache coherency, provide device-tree configuration, or implement video application flow"
   }
 }

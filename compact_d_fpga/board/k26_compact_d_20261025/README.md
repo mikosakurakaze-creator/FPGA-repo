@@ -9,6 +9,7 @@
 - `compact_d_system.xsa`：包含同版 bit 的硬件平台。
 - `compact_d_system.hwh`：完整系统 HWH，与 XSA 内文件一致。
 - `INTERFACE.md`、`xcompact_d_top_hw.h`：DDR、寄存器和数值合同。
+- `driver/compact_d_top_v1_0/`：随此 HLS IP 导出的裸机寄存器 API 和 Linux UIO 控制 API。
 - `model_int16/`：与镜像绑定的 A 参数及清单；运行时无需 DMA 上传权重。
 - `validation/`：8×8、33×47、17×1280、720p 输入及整数 Golden，以及最大宽度 RTL 输出证据。
 - `validation/sources/`：与 `reports/build.json` 中 SHA 完全匹配的实际仿真测试台源码及身份说明。
@@ -17,6 +18,8 @@
 - `ps_init/`：XSA 中导出的 PS 初始化文件，由下游按现有启动流程使用。
 
 控制基址 `0xA0050000`，cookie `0x44433031`，PL 时钟 200 MHz。输入、输出分别经 HP0、HP3 访问低 2 GiB DDR。调用侧须提供两个不重叠、物理连续且 cache 一致的缓冲区；720p 共需约 10.55 MiB。详细布局和启动顺序见接口合同。
+
+目录中的驱动是与本版 IP 同源的 HLS 生成驱动，提供 AXI-Lite 控制寄存器 API；Linux 文件使用 UIO 映射控制寄存器。它不分配 DMA 缓冲区，也不负责 cache 一致性、设备树配置或视频应用流程。具体驱动文件哈希见 `SHA256SUMS` 和 `RELEASE_SUMMARY.md`。
 
 ## 已有证据
 
