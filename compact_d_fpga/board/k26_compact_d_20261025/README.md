@@ -11,6 +11,8 @@
 - `INTERFACE.md`、`xcompact_d_top_hw.h`：DDR、寄存器和数值合同。
 - `model_int16/`：与镜像绑定的 A 参数及清单；运行时无需 DMA 上传权重。
 - `validation/`：8×8、33×47、17×1280、720p 输入及整数 Golden，以及最大宽度 RTL 输出证据。
+- `validation/sources/`：与 `reports/build.json` 中 SHA 完全匹配的实际仿真测试台源码及身份说明。
+- `RELEASE_SUMMARY.md`：bit、bit.bin、XSA、HWH、寄存器、时钟/复位和 SHA-256 的交付摘要。
 - `reports/`：实际综合、RTL、布线、时序和构建记录。
 - `ps_init/`：XSA 中导出的 PS 初始化文件，由下游按现有启动流程使用。
 

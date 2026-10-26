@@ -162,8 +162,12 @@
       "sha256": "ea797156f9623a289ab7af8604e373af078afd613c4c8ec025a2870af5578552"
     },
     "README.md": {
-      "bytes": 2199,
-      "sha256": "d36e9a012405e4703ade57041427160691ff582867c3d5115ae4a379cca38578"
+      "bytes": 2428,
+      "sha256": "8313f6e5308ffd75c355efc7d9a127b8953c17ab0863b2527e1b84fe1443e56b"
+    },
+    "RELEASE_SUMMARY.md": {
+      "bytes": 2775,
+      "sha256": "352b719efe293111b86ddd10e0787b826aa3c5b171fc301749c11086cd895c23"
     },
     "reports/build.json": {
       "bytes": 48318,
@@ -301,6 +305,14 @@
       "bytes": 15523,
       "sha256": "5cc0fa5c76dea52ce39a151afc8fa9cda7fc22b6a8c1baaafd6ef4c4044b0483"
     },
+    "validation/sources/test_compact_d_report_8450a700.cpp": {
+      "bytes": 5008,
+      "sha256": "8450a700ff31385afb6253cdd8511800fc23dd95512993f6ae6d4a62b7f643c9"
+    },
+    "validation/sources/TESTBENCH_IDENTITY.md": {
+      "bytes": 1046,
+      "sha256": "991702f4eae4c5419e03960c1130d8856365fdac5b05f5a5adc52a7671b7268d"
+    },
     "validation/width_1280_rtl/actual_0.i16": {
       "bytes": 130560,
       "sha256": "4a5509ab09ebce73659b118f44c8069a837a923e83ab6880e6a7837bb7a5a5ce"
@@ -317,5 +329,13 @@
       "bytes": 3931,
       "sha256": "1afc234f8a64dc915bff56ae391043d68b5a30c023cb7f9205d8484f15450046"
     }
+  },
+  "release_summary": "RELEASE_SUMMARY.md",
+  "simulation_testbench": {
+    "report_sha256": "8450a700ff31385afb6253cdd8511800fc23dd95512993f6ae6d4a62b7f643c9",
+    "report_source": "validation/sources/test_compact_d_report_8450a700.cpp",
+    "github_sha256": "ce650312c6473622f2418d5281e32122d54e7d9b505f2668b273661926524303",
+    "github_source": "../../hls/test_compact_d.cpp",
+    "difference": "github source additionally prints work_cycles and input_cycles in D_FRAME_PASS; numerical checks and outputs are unchanged"
   }
 }
