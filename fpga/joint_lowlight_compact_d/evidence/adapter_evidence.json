@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "verification_scope": "Full-frame adapters: Host + HLS CSim, HLS synthesis/export, actual ABI; no RTL/board result",
+  "compared_scalars_per_numeric_run": 13756680,
+  "mismatches": 0,
+  "source_sha256": {
+    "joint_adapters.cpp": "56a665f17a6826bccf2c22c804873e5706379e99c23a5e568695e22d330a50cc",
+    "joint_adapters.hpp": "6200ba7a2da8713486cea62219db211b5ee1bef0ca766dc54c4eea009e10b3ab",
+    "test_adapters.cpp": "a4e132d19254841e15c930464ebc500833cdcd679b907d2ffb4bff64bb448f71"
+  },
+  "results": {
+    "native": {
+      "path": "E:\\HLS\\joint_lowlight_compact_d_20261028\\adapters\\native_result.json",
+      "sha256": "f46975542691e61beb50ac797f315bb8e4e81a5f1163805ce521c1365dbc6678"
+    },
+    "csim": {
+      "path": "E:\\HLS\\joint_lowlight_compact_d_20261028\\adapters\\csim_result.json",
+      "sha256": "ddc1df727bf8fa1491526e16082cb8864f53e385fba0f54047b641eccb03959a"
+    },
+    "synth": {
+      "path": "E:\\HLS\\joint_lowlight_compact_d_20261028\\adapters\\synth_result.json",
+      "sha256": "fe67c9791bde8f105a3c0df5f135ce24f91eeda858ba203ae5f2dcf4ed3253f3"
+    }
+  },
+  "ips": {
+    "joint_rgb8_prepare": {
+      "driver_sha256": "8d7a7fc50171de1a4ff162e30e367bbc7d49eb580ed210c26dbdf74cdf76b52a",
+      "component_sha256": "e5e614fcee71e585a864a7099f6116928b77fb58fdb751a55bfbcb075c12569a",
+      "package_path": "E:\\HLS\\joint_lowlight_compact_d_20261028\\adapters\\joint_rgb8_prepare\\hls\\impl\\ip\\xilinx_com_hls_joint_rgb8_prepare_1_0.zip",
+      "package_sha256": "e14c5b6ae496abec1f6ed1a43df5eb78664fcb9074a9c218140962eb15d83dd8",
+      "abi_verified": {
+        "AP_RETURN": {
+          "offset": "0x10",
+          "bits": 32
+        },
+        "RGB_DATA": {
+          "offset": "0x18",
+          "bits": 64
+        },
+        "ORIGINAL_Q14_DATA": {
+          "offset": "0x24",
+          "bits": 64
+        },
+        "D_INPUT_Q14_DATA": {
+          "offset": "0x30",
+          "bits": 64
+        },
+        "CNN_INPUT_Q14_DATA": {
+          "offset": "0x3c",
+          "bits": 64
+        },
+        "ABI_COOKIE_DATA": {
+          "offset": "0x48",
+          "bits": 32
+        }
+      }
+    },
+    "joint_q14_copy": {
+      "driver_sha256": "7a79800be7c5b66e30ec6fcdb65f538c2b4be36ad44e2561642c422991a2b687",
+      "component_sha256": "9cc5b211abe8f1ff3a7d80f0fcb026d2ed7b336a1b314c8d3cd0bd59b9424502",
+      "package_path": "E:\\HLS\\joint_lowlight_compact_d_20261028\\adapters\\joint_q14_copy\\hls\\impl\\ip\\xilinx_com_hls_joint_q14_copy_1_0.zip",
+      "package_sha256": "41d092aa5219b4c24de8c283f3de1281ec95228cbea510393d3f0ad8c50c4692",
+      "abi_verified": {
+        "AP_RETURN": {
+          "offset": "0x10",
+          "bits": 32
+        },
+        "SOURCE_DATA": {
+          "offset": "0x18",
+          "bits": 64
+        },
+        "DESTINATION_DATA": {
+          "offset": "0x24",
+          "bits": 64
+        },
+        "ABI_COOKIE_DATA": {
+          "offset": "0x30",
+          "bits": 32
+        }
+      }
+    }
+  },
+  "limitations": [
+    "No adapter RTL co-simulation",
+    "No 1272-wide D model Golden or combined model RTL run",
+    "Archived 1280-wide D values only test raw-copy adaptation",
+    "No bitstream/route/board/performance measurement"
+  ]
+}

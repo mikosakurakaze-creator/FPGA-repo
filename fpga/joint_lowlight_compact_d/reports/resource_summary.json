@@ -1,0 +1,203 @@
+{
+  "status": "synthesis_completed",
+  "device": "xck26-sfvc784-2LV-c",
+  "scope": "Frozen lowlight three cores plus frozen Compact D and shared AXI/DDR CDC fabric",
+  "excluded": [
+    "encoding adapters",
+    "three-way fusion",
+    "implementation",
+    "board run"
+  ],
+  "build_directory": "E:\\HLS\\joint_lowlight_compact_d_20261028",
+  "resources": {
+    "CLB LUTs": {
+      "used": 72262.0,
+      "available": 117120.0,
+      "remaining": 44858.0,
+      "percent": 61.7
+    },
+    "CLB Registers": {
+      "used": 83644.0,
+      "available": 234240.0,
+      "remaining": 150596.0,
+      "percent": 35.71
+    },
+    "Block RAM Tile": {
+      "used": 72.0,
+      "available": 144.0,
+      "remaining": 72.0,
+      "percent": 50.0
+    },
+    "URAM": {
+      "used": 58.0,
+      "available": 64.0,
+      "remaining": 6.0,
+      "percent": 90.63
+    },
+    "DSPs": {
+      "used": 904.0,
+      "available": 1248.0,
+      "remaining": 344.0,
+      "percent": 72.44
+    }
+  },
+  "retained_core_resources": {
+    "zero_dce_cnn_top_0": {
+      "CLB LUTs": {
+        "used": 20035.0,
+        "available": 117120.0,
+        "remaining": 97085.0,
+        "percent": 17.11
+      },
+      "CLB Registers": {
+        "used": 15528.0,
+        "available": 234240.0,
+        "remaining": 218712.0,
+        "percent": 6.63
+      },
+      "Block RAM Tile": {
+        "used": 62.5,
+        "available": 144.0,
+        "remaining": 81.5,
+        "percent": 43.4
+      },
+      "URAM": {
+        "used": 18.0,
+        "available": 64.0,
+        "remaining": 46.0,
+        "percent": 28.13
+      },
+      "DSPs": {
+        "used": 89.0,
+        "available": 1248.0,
+        "remaining": 1159.0,
+        "percent": 7.13
+      }
+    },
+    "bilinear_fixed16_buffered_0": {
+      "CLB LUTs": {
+        "used": 4173.0,
+        "available": 117120.0,
+        "remaining": 112947.0,
+        "percent": 3.56
+      },
+      "CLB Registers": {
+        "used": 4912.0,
+        "available": 234240.0,
+        "remaining": 229328.0,
+        "percent": 2.1
+      },
+      "Block RAM Tile": {
+        "used": 1.5,
+        "available": 144.0,
+        "remaining": 142.5,
+        "percent": 1.04
+      },
+      "URAM": {
+        "used": 0.0,
+        "available": 64.0,
+        "remaining": 64.0,
+        "percent": 0.0
+      },
+      "DSPs": {
+        "used": 33.0,
+        "available": 1248.0,
+        "remaining": 1215.0,
+        "percent": 2.64
+      }
+    },
+    "curve_image_fixed16_0": {
+      "CLB LUTs": {
+        "used": 3207.0,
+        "available": 117120.0,
+        "remaining": 113913.0,
+        "percent": 2.74
+      },
+      "CLB Registers": {
+        "used": 4641.0,
+        "available": 234240.0,
+        "remaining": 229599.0,
+        "percent": 1.98
+      },
+      "Block RAM Tile": {
+        "used": 1.0,
+        "available": 144.0,
+        "remaining": 143.0,
+        "percent": 0.69
+      },
+      "URAM": {
+        "used": 0.0,
+        "available": 64.0,
+        "remaining": 64.0,
+        "percent": 0.0
+      },
+      "DSPs": {
+        "used": 24.0,
+        "available": 1248.0,
+        "remaining": 1224.0,
+        "percent": 1.92
+      }
+    },
+    "compact_d_top_0": {
+      "CLB LUTs": {
+        "used": 29279.0,
+        "available": 117120.0,
+        "remaining": 87841.0,
+        "percent": 25.0
+      },
+      "CLB Registers": {
+        "used": 31895.0,
+        "available": 234240.0,
+        "remaining": 202345.0,
+        "percent": 13.62
+      },
+      "Block RAM Tile": {
+        "used": 7.0,
+        "available": 144.0,
+        "remaining": 137.0,
+        "percent": 4.86
+      },
+      "URAM": {
+        "used": 40.0,
+        "available": 64.0,
+        "remaining": 24.0,
+        "percent": 62.5
+      },
+      "DSPs": {
+        "used": 758.0,
+        "available": 1248.0,
+        "remaining": 490.0,
+        "percent": 60.74
+      }
+    }
+  },
+  "post_synthesis_validation": {
+    "fully_linked_open_run": true,
+    "four_unique_retained_core_hierarchies": true,
+    "each_retained_core_has_nonzero_luts": true,
+    "unresolved_blackbox_count": 0,
+    "basis": "Actual per-core reports and terminal PASS after Tcl hierarchy/blackbox gates"
+  },
+  "input_reverification": {
+    "copied_files_unchanged": 716,
+    "original_lowlight_files_unchanged": 406,
+    "original_lowlight_seed_unchanged": true,
+    "original_compact_d_zip_unchanged": true
+  },
+  "checkpoint_sha256": "8feac7e65b7c50c6b1ae3bd6006656c60ebe0b1a3549845d48c9962344b89bfe",
+  "evidence_sha256": {
+    "resource_joint_utilization.rpt": "a43d17aad55140d1970c1562b3a1273236508de60b4ad6e0ea72531c364385c5",
+    "resource_joint_utilization_hierarchical.rpt": "1ae45dd45daae3ecf5a04d36440fae2d4e94e559a9ce8d1397461afd8403854f",
+    "resource_joint_synthesis_timing.rpt": "c50db65b5288721a3e29e6e0a75b2f3a5ad30208cfd6e407b0702899efd9a84e",
+    "resource_joint_clocks.rpt": "3fccdbcffa0a92366d90f1a52030a1ee9a33c3d3aa6f643ed5fdb2d809325794",
+    "resource_joint_synthesis_drc.rpt": "312db9ac2b0d109bbda1a4b93ac558b95f6cc756a8bfda31240d8aa3c18b147a",
+    "resource_joint_system_recreate.tcl": "cffba2356018ec87801c9f44f32b8752a4b7a4fe9d8d4a9ca897ae658f02d40b",
+    "resource_ip_status.rpt": "d77f5d1489c8fb8798640b97c4165b067c182f0f7287ac554e0aab8be84786de",
+    "resource_synth.log": "2ccc4fa81be5ae0c00f7fed45c120c3c5b0bbc972cec83ebfc6e100005ac21bf",
+    "resource_frozen_inputs.json": "cb05a1eb1ff7c9f18502587ff233b0a9fe8efb9d293fd3db0716bf9fd3300632",
+    "resource_core_bilinear_fixed16_buffered_0_utilization.rpt": "f1204cde8ef3687eb8cf8b5070909b98b0289fc238e11705289c1e6f831ec3f0",
+    "resource_core_compact_d_top_0_utilization.rpt": "3cf891838f2936a4a770a2bcb82050d269e2503f06e4eff77bcbe8d8410eb359",
+    "resource_core_curve_image_fixed16_0_utilization.rpt": "dd2b5f6f3648d231cd0ba88cc8bf2a91945ce3302840306551f0f32ffbfdd6bf",
+    "resource_core_zero_dce_cnn_top_0_utilization.rpt": "6e72d1c5d86b1ff1e722ab2e609dda3be72323e85c51962c3deb77c017e4fd76"
+  }
+}

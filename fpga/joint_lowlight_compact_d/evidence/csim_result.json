@@ -1,0 +1,27 @@
+{
+  "stage": "csim",
+  "passed": true,
+  "steps": {
+    "csim_joint_rgb8_prepare": {
+      "exit_code": 0,
+      "seconds": 17.227545599918813,
+      "log_sha256": "0047f414987f9dfd0d380807f04a324a8c49ac0c66276a8f7c333db96b0048f5"
+    },
+    "csim_joint_q14_copy": {
+      "exit_code": 0,
+      "seconds": 18.033258800045587,
+      "log_sha256": "1689000a5e2d1f5afc82a4354733364b95fbae99e83f88946388e383091d8aa9"
+    }
+  },
+  "scope": "adapters only, no board measurement",
+  "source_sha256": {
+    "joint_adapters.cpp": "56a665f17a6826bccf2c22c804873e5706379e99c23a5e568695e22d330a50cc",
+    "joint_adapters.hpp": "6200ba7a2da8713486cea62219db211b5ee1bef0ca766dc54c4eea009e10b3ab",
+    "test_adapters.cpp": "a4e132d19254841e15c930464ebc500833cdcd679b907d2ffb4bff64bb448f71"
+  },
+  "ips": {},
+  "elementwise_mismatches": 0,
+  "compared_scalars": 13756680,
+  "invalid_cookie_tests": 2,
+  "golden_manifest_sha256": "c25f5e5e51013e30f0e0f6484e8f7ac64c0c71b8d3bb751d4a2425a2d6f6d099"
+}

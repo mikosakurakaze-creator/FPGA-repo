@@ -1,0 +1,47 @@
+{
+  "shape": [
+    1,
+    3,
+    720,
+    1272
+  ],
+  "lowlight_source": "E:\\HLS\\kv260_three_module_v1_2_phase4\\data\\expected_enhanced_q14.bin",
+  "lowlight_sha256": "869e62a41010e047c3760aa6a614f0ff883566d52c3fbee273cf2a865f7eb951",
+  "d_source_commit": "8c202508d267151c4ae034975b17947818be7865",
+  "d_source_path": "compact_d_fpga/board/k26_compact_d_20261025/validation/pattern_720p/21_output.relu.i16",
+  "d_source_sha256": "9fb174f8e230b1e3bb42779882b6138129566247a2595d52b869c04b3e5b473d",
+  "d_copy_scope": "1280-wide archived output row-repacked to 1272; adapter only, not D inference",
+  "rgb8_values_tested": 256,
+  "signed_values_tested": 65536,
+  "d_double_quantization_differences": 128,
+  "files": {
+    "cnn_input.i16": {
+      "bytes": 38160,
+      "sha256": "e4f4b060467af8c7967f0989173b12485aa7a56730a81f5d55542ac9a2ef8109"
+    },
+    "d_input.i16": {
+      "bytes": 5495040,
+      "sha256": "46beea735782369522443c10c477153e6d955513e6d36c53df8e0f4b22568dd7"
+    },
+    "d_output.i16": {
+      "bytes": 5495040,
+      "sha256": "7bb2a1735a96947faad0fdaac909ac656a3496a83b96f1118e99d3abd52ea353"
+    },
+    "lowlight.i16": {
+      "bytes": 5495040,
+      "sha256": "869e62a41010e047c3760aa6a614f0ff883566d52c3fbee273cf2a865f7eb951"
+    },
+    "original.i16": {
+      "bytes": 5495040,
+      "sha256": "74a32d120dd433339eadf79dc0efac738ac9f296461166ff3b9df4fcfefed4ad"
+    },
+    "rgb.u8": {
+      "bytes": 2747520,
+      "sha256": "827b314e0ae399332acd3af036a9bb06a11c6a267114ec51c21900cfd070b0ba"
+    },
+    "signed_boundaries.i16": {
+      "bytes": 5495040,
+      "sha256": "e6f8f0236a3c3b056419ad76fc3cecaa7aec0747e9fb59062a8ecb0d3055f8a2"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "stage": "synth",
+  "passed": true,
+  "steps": {
+    "synth_joint_rgb8_prepare": {
+      "exit_code": 0,
+      "seconds": 62.711046999902464,
+      "log_sha256": "32d32a23d28ef92847961b040256c7f155831f843c008dcfdb106b59926a1620"
+    },
+    "export_joint_rgb8_prepare": {
+      "exit_code": 0,
+      "seconds": 35.96204599994235,
+      "log_sha256": "5225be900b701ca03a11be297ba8a89dea10040e0666465445ad2b97a0700db6"
+    },
+    "synth_joint_q14_copy": {
+      "exit_code": 0,
+      "seconds": 56.68242500000633,
+      "log_sha256": "60a9517cb03208372a4684f8f7e4b72bf308e89a52781e3ffa91f60637169be5"
+    },
+    "export_joint_q14_copy": {
+      "exit_code": 0,
+      "seconds": 42.13302220008336,
+      "log_sha256": "5a4d6b637464d1fcbe5fc1b1768eb5cc20b8946efb1ccad5b70e05c77c1fd0cf"
+    }
+  },
+  "scope": "adapters only, no board measurement",
+  "source_sha256": {
+    "joint_adapters.cpp": "56a665f17a6826bccf2c22c804873e5706379e99c23a5e568695e22d330a50cc",
+    "joint_adapters.hpp": "6200ba7a2da8713486cea62219db211b5ee1bef0ca766dc54c4eea009e10b3ab",
+    "test_adapters.cpp": "a4e132d19254841e15c930464ebc500833cdcd679b907d2ffb4bff64bb448f71"
+  },
+  "ips": {
+    "joint_rgb8_prepare": {
+      "resources": {
+        "BRAM_18K": "2",
+        "DSP": "10",
+        "FF": "4005",
+        "LUT": "5889",
+        "URAM": "0"
+      },
+      "timing": {
+        "unit": "ns",
+        "EstimatedClockPeriod": "7.300"
+      },
+      "report_sha256": "0ea57aa1d2a3ec446c393c2548e3407853e5e18c92ea7c34c51e8adf88ca2a62",
+      "packages": {
+        "E:\\HLS\\joint_lowlight_compact_d_20261028\\adapters\\joint_rgb8_prepare\\hls\\impl\\ip\\xilinx_com_hls_joint_rgb8_prepare_1_0.zip": "e14c5b6ae496abec1f6ed1a43df5eb78664fcb9074a9c218140962eb15d83dd8"
+      }
+    },
+    "joint_q14_copy": {
+      "resources": {
+        "BRAM_18K": "2",
+        "FF": "1766",
+        "LUT": "2296",
+        "URAM": "0",
+        "DSP": "0"
+      },
+      "timing": {
+        "unit": "ns",
+        "EstimatedClockPeriod": "7.300"
+      },
+      "report_sha256": "98f90dfa3f6d71b7d730fae6c363216d5b5cb95d9471df8f55a6dbb96ed169a1",
+      "packages": {
+        "E:\\HLS\\joint_lowlight_compact_d_20261028\\adapters\\joint_q14_copy\\hls\\impl\\ip\\xilinx_com_hls_joint_q14_copy_1_0.zip": "41d092aa5219b4c24de8c283f3de1281ec95228cbea510393d3f0ad8c50c4692"
+      }
+    }
+  },
+  "golden_manifest_sha256": "c25f5e5e51013e30f0e0f6484e8f7ac64c0c71b8d3bb751d4a2425a2d6f6d099"
+}

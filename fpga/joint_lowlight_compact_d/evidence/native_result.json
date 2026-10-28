@@ -1,0 +1,26 @@
+{
+  "stage": "native",
+  "passed": true,
+  "steps": {
+    "compile": {
+      "exit_code": 0,
+      "seconds": 3.6020024000899866,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "native": {
+      "exit_code": 0,
+      "seconds": 0.2903320000041276,
+      "log_sha256": "e9bca7e3589d2dc4a2c4309070692feebcc3a4ea3483f04e16952ffde8998130"
+    }
+  },
+  "scope": "adapters only, no board measurement",
+  "source_sha256": {
+    "joint_adapters.cpp": "56a665f17a6826bccf2c22c804873e5706379e99c23a5e568695e22d330a50cc",
+    "joint_adapters.hpp": "6200ba7a2da8713486cea62219db211b5ee1bef0ca766dc54c4eea009e10b3ab",
+    "test_adapters.cpp": "a4e132d19254841e15c930464ebc500833cdcd679b907d2ffb4bff64bb448f71"
+  },
+  "elementwise_mismatches": 0,
+  "compared_scalars": 13756680,
+  "invalid_cookie_tests": 2,
+  "golden_manifest_sha256": "c25f5e5e51013e30f0e0f6484e8f7ac64c0c71b8d3bb751d4a2425a2d6f6d099"
+}
