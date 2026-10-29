@@ -1,0 +1,126 @@
+{
+  "cores": {
+    "bilinear": {
+      "cell": "bilinear_fixed16_buffered_0",
+      "base": "0xA0000000",
+      "range": 65536,
+      "vlnv": "xilinx.com:hls:bilinear_fixed16_buffered:1.0",
+      "revision": 2114800369,
+      "ddr_low_masters": [
+        "m_axi_gmem_input",
+        "m_axi_gmem_output"
+      ],
+      "clock_hz": 99999001,
+      "clock_net": "zynq_ultra_ps_e_0_pl_clk0",
+      "active_low_reset_net": "rst_ps_100m_peripheral_aresetn"
+    },
+    "curve": {
+      "cell": "curve_image_fixed16_0",
+      "base": "0xA0010000",
+      "range": 65536,
+      "vlnv": "xilinx.com:hls:curve_image_fixed16:1.0",
+      "revision": 2114799122,
+      "ddr_low_masters": [
+        "m_axi_gmem_input",
+        "m_axi_gmem_output",
+        "m_axi_gmem_parameter"
+      ],
+      "clock_hz": 99999001,
+      "clock_net": "zynq_ultra_ps_e_0_pl_clk0",
+      "active_low_reset_net": "rst_ps_100m_peripheral_aresetn"
+    },
+    "cnn": {
+      "cell": "zero_dce_cnn_top_0",
+      "base": "0xA0020000",
+      "range": 65536,
+      "vlnv": "xilinx.com:hls:zero_dce_cnn_top:1.0",
+      "revision": 2114810448,
+      "ddr_low_masters": [
+        "m_axi_gmem32",
+        "m_axi_gmem8",
+        "m_axi_gmem_input",
+        "m_axi_gmem_lut",
+        "m_axi_gmem_output",
+        "m_axi_gmem_workspace"
+      ],
+      "clock_hz": 99999001,
+      "clock_net": "zynq_ultra_ps_e_0_pl_clk0",
+      "active_low_reset_net": "rst_ps_100m_peripheral_aresetn"
+    },
+    "prepare": {
+      "cell": "joint_rgb8_prepare_0",
+      "base": "0xA0030000",
+      "range": 65536,
+      "vlnv": "xilinx.com:hls:joint_rgb8_prepare:1.0",
+      "revision": 2114850112,
+      "ddr_low_masters": [
+        "m_axi_gmem_cnn",
+        "m_axi_gmem_d",
+        "m_axi_gmem_i",
+        "m_axi_gmem_rgb"
+      ],
+      "clock_hz": 99999001,
+      "clock_net": "zynq_ultra_ps_e_0_pl_clk0",
+      "active_low_reset_net": "rst_ps_100m_peripheral_aresetn"
+    },
+    "fusion": {
+      "cell": "joint_fusion_0",
+      "base": "0xA0040000",
+      "range": 65536,
+      "vlnv": "joint.local:rtl:joint_fusion:1.0",
+      "revision": 2,
+      "ddr_low_masters": [
+        "m_axi_gmem"
+      ],
+      "clock_hz": 99999001,
+      "clock_net": "zynq_ultra_ps_e_0_pl_clk0",
+      "active_low_reset_net": "rst_ps_100m_peripheral_aresetn"
+    },
+    "d": {
+      "cell": "compact_d_top_0",
+      "base": "0xA0050000",
+      "range": 65536,
+      "vlnv": "xilinx.com:hls:compact_d_top:1.0",
+      "revision": 2114844623,
+      "ddr_low_masters": [
+        "m_axi_gmem_in",
+        "m_axi_gmem_out"
+      ],
+      "clock_hz": 199998001,
+      "clock_net": "zynq_ultra_ps_e_0_pl_clk1",
+      "active_low_reset_net": "rst_ps_d_peripheral_aresetn"
+    }
+  },
+  "buffer_bytes": {
+    "rgb": 2747520,
+    "original": 5495040,
+    "d_input": 5495040,
+    "cnn_input": 38160,
+    "a_low": 38160,
+    "a_full": 5495040,
+    "lowlight": 5495040,
+    "d_output": 5495040,
+    "fused": 5495040,
+    "workspace": 2442240,
+    "weights": 10075,
+    "bias": 1944,
+    "weight_frac": 486,
+    "lut": 8194
+  },
+  "frame_shape_nchw": [
+    1,
+    3,
+    720,
+    1272
+  ],
+  "ddr_low_aperture_end_exclusive": "0x80000000",
+  "usable_allocation_end_exclusive": "0x7FF00000",
+  "reset": {
+    "source": "PS/pl_resetn0",
+    "active_low": true,
+    "separate_synchronizers": [
+      "rst_ps_100m",
+      "rst_ps_d"
+    ]
+  }
+}

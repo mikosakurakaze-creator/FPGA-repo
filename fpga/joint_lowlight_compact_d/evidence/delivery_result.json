@@ -1,0 +1,61 @@
+{
+  "pass": true,
+  "package": "D:/weather_builds/kv260_joint_delivery_20261029",
+  "zip": "D:/weather_builds/kv260_joint_delivery_20261029.zip",
+  "zip_sha256": "01f0ac7214f1ed8fad6df4adb2b453a31fe751e8ebd38b8462fd91a6ea39a047",
+  "zip_bytes": 204274955,
+  "manifest_sha256": "0029a24d4a161c2ab68998482048a0ca1bb7e4e355d8711024db64527cfdad43",
+  "build_id": "ddc052ce9f6385f3ac7d",
+  "timing": {
+    "WNS_ns": 0.032,
+    "WHS_ns": 0.01,
+    "WPWS_ns": 1.7,
+    "coverage": {
+      "no_clock": 0,
+      "constant_clock": 0,
+      "unconstrained_internal_endpoints": 0,
+      "multiple_clock": 0,
+      "active_unclocked_pins": 0,
+      "classified_unused_ps_no_clock_outputs": 0,
+      "verified_unloaded_ps_clock_outputs": 8
+    }
+  },
+  "route": {
+    "routable nets": 183014,
+    "fully routed nets": 183014,
+    "nets with routing errors": 0
+  },
+  "bus_skew": {
+    "constraints": 17,
+    "worst_slack_ns": 3.898,
+    "violations": 0
+  },
+  "resources": {
+    "LUT": {
+      "used": 78753.0,
+      "available": 117120.0,
+      "percent": 67.24
+    },
+    "FF": {
+      "used": 92793.0,
+      "available": 234240.0,
+      "percent": 39.61
+    },
+    "BRAM_tiles": {
+      "used": 72.5,
+      "available": 144.0,
+      "percent": 50.35
+    },
+    "URAM": {
+      "used": 58.0,
+      "available": 64.0,
+      "percent": 90.63
+    },
+    "DSP": {
+      "used": 922.0,
+      "available": 1248.0,
+      "percent": 73.88
+    }
+  },
+  "board_operations": 0
+}

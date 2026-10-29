@@ -1,0 +1,32 @@
+test_accepts_actual_whitespace_cdc_info_and_warning (test_acceptance.AcceptanceTests.test_accepts_actual_whitespace_cdc_info_and_warning) ... ok
+test_accepts_bus_skew_constraints (test_acceptance.AcceptanceTests.test_accepts_bus_skew_constraints) ... ok
+test_accepts_covered_positive_setup_and_hold (test_acceptance.AcceptanceTests.test_accepts_covered_positive_setup_and_hold) ... ok
+test_accepts_only_proven_unloaded_ps_outputs (test_acceptance.AcceptanceTests.test_accepts_only_proven_unloaded_ps_outputs) ... ok
+test_preserves_raw_zero_with_separate_eight_pin_audit (test_acceptance.AcceptanceTests.test_preserves_raw_zero_with_separate_eight_pin_audit) ... ok
+test_rejects_actual_whitespace_cdc_critical_detail (test_acceptance.AcceptanceTests.test_rejects_actual_whitespace_cdc_critical_detail) ... ok
+test_rejects_actual_whitespace_cdc_critical_summary (test_acceptance.AcceptanceTests.test_rejects_actual_whitespace_cdc_critical_summary) ... ok
+test_rejects_bus_skew_violation (test_acceptance.AcceptanceTests.test_rejects_bus_skew_violation) ... ok
+test_rejects_critical_cdc_but_allows_zero_summary (test_acceptance.AcceptanceTests.test_rejects_critical_cdc_but_allows_zero_summary) ... ok
+test_rejects_drc_error (test_acceptance.AcceptanceTests.test_rejects_drc_error) ... ok
+test_rejects_incomplete_bus_skew_coverage (test_acceptance.AcceptanceTests.test_rejects_incomplete_bus_skew_coverage) ... ok
+test_rejects_incomplete_unused_ps_proof (test_acceptance.AcceptanceTests.test_rejects_incomplete_unused_ps_proof) ... ok
+test_rejects_missing_bus_skew_summary (test_acceptance.AcceptanceTests.test_rejects_missing_bus_skew_summary) ... ok
+test_rejects_missing_coverage (test_acceptance.AcceptanceTests.test_rejects_missing_coverage) ... ok
+test_rejects_negative_hold_or_setup (test_acceptance.AcceptanceTests.test_rejects_negative_hold_or_setup) ... ok
+test_rejects_ps_outputs_with_loads_or_top_ports (test_acceptance.AcceptanceTests.test_rejects_ps_outputs_with_loads_or_top_ports) ... ok
+test_rejects_unclocked_registers (test_acceptance.AcceptanceTests.test_rejects_unclocked_registers) ... ok
+test_rejects_unknown_unclocked_pin (test_acceptance.AcceptanceTests.test_rejects_unknown_unclocked_pin) ... ok
+test_requires_all_nets_routed (test_acceptance.AcceptanceTests.test_requires_all_nets_routed) ... ok
+test_bad_buffer_range_or_overlap (test_controller.ControllerTest.test_bad_buffer_range_or_overlap) ... ok
+test_either_path_may_complete_first (test_controller.ControllerTest.test_either_path_may_complete_first) ... ok
+test_fusion_failure_never_exposes_output (test_controller.ControllerTest.test_fusion_failure_never_exposes_output) ... ok
+test_invalid_weights_never_start (test_controller.ControllerTest.test_invalid_weights_never_start) ... ok
+test_ip_failure_blocks_fusion_and_reuse (test_controller.ControllerTest.test_ip_failure_blocks_fusion_and_reuse) ... ok
+test_timeout_poisoning (test_controller.ControllerTest.test_timeout_poisoning) ... ok
+test_wrong_frame_never_exposes_output (test_controller.ControllerTest.test_wrong_frame_never_exposes_output) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.003s
+
+OK
+

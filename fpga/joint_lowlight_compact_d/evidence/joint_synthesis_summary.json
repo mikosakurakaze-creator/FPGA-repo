@@ -1,0 +1,38 @@
+{
+  "status": "SYNTHESIS_PASS_IMPLEMENTATION_PENDING",
+  "board_operations": 0,
+  "resources": {
+    "LUT": {
+      "used": 83919.0,
+      "available": 117120.0,
+      "percent": 71.65
+    },
+    "FF": {
+      "used": 97338.0,
+      "available": 234240.0,
+      "percent": 41.55
+    },
+    "BRAM_tiles": {
+      "used": 72.5,
+      "available": 144.0,
+      "percent": 50.35
+    },
+    "URAM": {
+      "used": 58.0,
+      "available": 64.0,
+      "percent": 90.63
+    },
+    "DSP": {
+      "used": 922.0,
+      "available": 1248.0,
+      "percent": 73.88
+    }
+  },
+  "synthesis_estimate": {
+    "WNS_ns": 0.672,
+    "WHS_ns": -0.093,
+    "no_clock": 8,
+    "route_signoff": false
+  },
+  "source_result": "D:/weather_builds/joint_system05_20261029/synth_result.json"
+}

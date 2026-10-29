@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-29",
+  "pass": true,
+  "tests": 25,
+  "steps": [
+    {
+      "command": [
+        "D:\\Dev\\Miniconda3\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "fpga\\joint_lowlight_compact_d\\tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "D:\\Dev\\Miniconda3\\python.exe",
+        "-m",
+        "compileall",
+        "-q",
+        "fpga\\joint_lowlight_compact_d"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "log_sha256": "67b205964390acfe58101a90f11e86482594c14e83e419fed3bc71b7c3b65d01",
+  "sources": {
+    "fpga/joint_lowlight_compact_d/runtime/controller.py": "e1b931680eda440a23dbb5ebf07fe99aae896edda20814ed8336c9f83ea887d0",
+    "fpga/joint_lowlight_compact_d/runtime/run_pynq.py": "be094a5bc4242604947c328ac820bacc33ca5a56c281e7c01a2f32748b3e924b",
+    "fpga/joint_lowlight_compact_d/scripts/accept_system.py": "c09269efaf4c828d5d6552d92fefb50e48c1aafcf1a51e4e2486bbfb501897ef",
+    "fpga/joint_lowlight_compact_d/scripts/build_system.py": "61d8e2865a3baea2890c3e49398e920518ac6e21ebb4a2d5418bd0e077260e71",
+    "fpga/joint_lowlight_compact_d/scripts/check_dependencies.py": "7f6ea2b81dcf2fa8e69f89f90114871b89b3c475341779ffce9d177d175a0271",
+    "fpga/joint_lowlight_compact_d/scripts/collect_delivery.py": "3ea9074af1ce490f1dca0176e9dad4b8ad2553bd4218c61bebec42f62a2901ee",
+    "fpga/joint_lowlight_compact_d/scripts/collect_review.py": "fae825076616b44ff900cd01cf26b23df8aec1f332f3f100e0edee9a24c519e9",
+    "fpga/joint_lowlight_compact_d/scripts/make_joint_golden.py": "17665706629c5fef5a33b26c877b014e75b711f3e5922ec891b69372845b10e8",
+    "fpga/joint_lowlight_compact_d/scripts/run_checks.py": "e733d1f2a016de985336b94193b30815da54dbbd5c962c37ae0c2efe75035bf9",
+    "fpga/joint_lowlight_compact_d/scripts/verify_joint_models.py": "2e366d0876ef825baf2ea201e799bcde717151bb9b5fd99f222782131a69ff6c",
+    "fpga/joint_lowlight_compact_d/tests/test_acceptance.py": "bdde1a5fbc786099a9295e1ae188bc3108e8170c2dde4faf0d396d70dc508918",
+    "fpga/joint_lowlight_compact_d/tests/test_controller.py": "53b21125e6d718603c5a51744b46b824c19dbebccaf9bf266533d09c8603b5bd"
+  }
+}

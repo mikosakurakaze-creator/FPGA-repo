@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-29",
+  "pass": true,
+  "status": "HARDWARE_PACKAGE_READY_BOARD_NOT_TESTED",
+  "build_id": "ddc052ce9f6385f3ac7d",
+  "payload_manifest_files": 111,
+  "checksum_entries": 112,
+  "actual_files": 113,
+  "canonical_bit_matches_xsa": true,
+  "canonical_hwh_matches_system_hwh": true,
+  "zip_sha256": "01f0ac7214f1ed8fad6df4adb2b453a31fe751e8ebd38b8462fd91a6ea39a047",
+  "board_operations": 0
+}

@@ -1,0 +1,13 @@
+{
+  "stage": "adapter",
+  "pass": true,
+  "board_operations": 0,
+  "baseline": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+  "verification": "Reuse of successfully rebuilt locked-source IP; no new synthesis claim",
+  "source_result": "D:/weather_builds/joint_system03_20261029/adapter_result.json",
+  "source_result_sha256": "30cd58a0098c6bc8e8e1bc3acd5dfb79481bc58dfbcc35fd02d343645d1cfbff",
+  "component_sha256": "0b715a7c0ccaf1bb470979b854fbf62d4d1ba3d09e7a1d5c19f4401e609b3bf3",
+  "ip_zips": {
+    "xilinx_com_hls_joint_rgb8_prepare_1_0.zip": "6da5be0a58369c1c4066228bb9ac9410fc09b747f37ca49fa94f3012d2526c02"
+  }
+}

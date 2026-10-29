@@ -1,0 +1,37 @@
+{
+  "stage": "implement",
+  "pass": false,
+  "board_operations": 0,
+  "baseline": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+  "steps": [
+    {
+      "command": [
+        "D:\\Dev\\Miniconda3\\python.exe",
+        "-E",
+        "D:\\weather_builds\\joint_system05_20261029\\run_windows_desktop.py",
+        "--",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt2_runtime/vendor_runtime/vivado.exe",
+        "-mode",
+        "batch",
+        "-log",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt2_vivado.log",
+        "-journal",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt2_vivado.jou",
+        "-source",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt2_build.tcl",
+        "-tclargs",
+        "D:/weather_builds/joint_system05_20261029",
+        "implement",
+        "D:/weather_builds/joint_system05_20261029/project/joint_system.xpr"
+      ],
+      "exit_code": 1,
+      "seconds": 3186.130105199991,
+      "log_sha256": "d576f15ae499fee3242df36e180024dec03fc278e8e62b1f9d62dc0ff1b7725b"
+    }
+  ],
+  "runner_sha256": "cba68d78a177f3f5a9b3b23be764e2d0f9729fc856ab765964210bc6e122a235",
+  "inputs_sha256": "8df61c7598645100001b0c67643bb47798ec967b268bd7d37d6bdfc53054d1df",
+  "project": "D:/weather_builds/joint_system05_20261029/project/joint_system.xpr",
+  "script_sha256": "e8f8ec121e01d8167d2701cf584316e2667521be2630b5dac243bf5e0394b3df",
+  "error": "implement_attempt2_console failed: skew -warn_on_violation -file system_wrapper_bus_skew_routed.rpt -pb system_wrapper_bus_skew_routed.pb -rpx system_wrapper_bus_skew_routed.rpx\nINFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2LV, Temperature grade: C, Delay Type: min_max.\nINFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs\ngenerate_parallel_reports: Time (s): cpu = 00:05:11 ; elapsed = 00:03:25 . Memory (MB): peak = 7720.902 ; gain = 0.000\nINFO: [Timing 38-480] Writing timing data to binary archive.\nWrite ShapeDB Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.682 . Memory (MB): peak = 7720.902 ; gain = 0.000\nWrote PlaceDB: Time (s): cpu = 00:00:30 ; elapsed = 00:00:10 . Memory (MB): peak = 7720.902 ; gain = 0.000\nWrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 7720.902 ; gain = 0.000\nWriting XDEF routing.\nWriting XDEF routing logical nets.\nWriting XDEF routing special nets.\nWrote RouteStorage: Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 7720.902 ; gain = 0.000\nWrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.375 . Memory (MB): peak = 7720.902 ; gain = 0.000\nWrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 7720.902 ; gain = 0.000\nWrite Physdb Complete: Time (s): cpu = 00:00:35 ; elapsed = 00:00:14 . Memory (MB): peak = 7720.902 ; gain = 0.000\nINFO: [Common 17-1381] The checkpoint 'D:/weather_builds/joint_system05_20261029/project/joint_system.runs/impl_1/system_wrapper_routed.dcp' has been generated.\nwrite_checkpoint: Time (s): cpu = 00:00:44 ; elapsed = 00:00:24 . Memory (MB): peak = 7720.902 ; gain = 0.000\nINFO: [Common 17-206] Exiting Vivado at Thu Oct 29 09:35:43 2026...\n[Thu Oct 29 09:35:50 2026] impl_1 finished\nwait_on_runs: Time (s): cpu = 00:00:12 ; elapsed = 00:52:20 . Memory (MB): peak = 769.059 ; gain = 0.000\nJoint implementation failed\n    while executing\n\"error {Joint implementation failed}\"\n    invoked from within\n\"if {[get_property PROGRESS [get_runs impl_1]] ne {100%} ||\n        [string first {Complete} [get_property STATUS [get_runs impl_1]]] < 0} {error {Join...\"\n    invoked from within\n\"if {$stage eq {create}} {\n    create_project joint_system [file dirname $project] -part xck26-sfvc784-2LV-c\n    set_property board_part xilinx.com:kv2...\"\n    (file \"D:/weather_builds/joint_system05_20261029/implement_attempt2_build.tcl\" line 10)\nINFO: [Common 17-206] Exiting Vivado at Thu Oct 29 09:35:50 2026...\n"
+}

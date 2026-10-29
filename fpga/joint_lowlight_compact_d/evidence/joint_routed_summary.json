@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-29",
+  "status": "ROUTED_HARDWARE_AND_NUMERICAL_GATES_PASS_BOARD_NOT_TESTED",
+  "checkpoint_sha256": "a189968e406be1ec94bd0355f97bd63758813ef75101b50eb26b7f064ad85b2a",
+  "timing": {
+    "WNS_ns": 0.032,
+    "WHS_ns": 0.01,
+    "WPWS_ns": 1.7,
+    "coverage": {
+      "no_clock": 0,
+      "constant_clock": 0,
+      "unconstrained_internal_endpoints": 0,
+      "multiple_clock": 0,
+      "active_unclocked_pins": 0,
+      "classified_unused_ps_no_clock_outputs": 0,
+      "verified_unloaded_ps_clock_outputs": 8
+    }
+  },
+  "route": {
+    "routable nets": 183014,
+    "fully routed nets": 183014,
+    "nets with routing errors": 0
+  },
+  "bus_skew": {
+    "constraints": 17,
+    "worst_slack_ns": 3.898,
+    "violations": 0
+  },
+  "resources": {
+    "LUT": {
+      "used": 78753.0,
+      "available": 117120.0,
+      "percent": 67.24
+    },
+    "FF": {
+      "used": 92793.0,
+      "available": 234240.0,
+      "percent": 39.61
+    },
+    "BRAM_tiles": {
+      "used": 72.5,
+      "available": 144.0,
+      "percent": 50.35
+    },
+    "URAM": {
+      "used": 58.0,
+      "available": 64.0,
+      "percent": 90.63
+    },
+    "DSP": {
+      "used": 922.0,
+      "available": 1248.0,
+      "percent": 73.88
+    }
+  },
+  "board_operations": 0,
+  "critical_cdc_rows": [],
+  "drc_error_or_critical_warning_rows": [],
+  "retained_advisories": {
+    "CDC-15": {
+      "count": 471,
+      "all_in_xpm_memory_fifo": true,
+      "root_instances": [
+        "cnn_data_sc",
+        "curve_ddr_sc"
+      ]
+    },
+    "DPIP-2": 447,
+    "DPOP-3": 202,
+    "DPOP-4": 384,
+    "RTSTAT-10": {
+      "checks": 1,
+      "unloaded_nets": 35
+    }
+  },
+  "reports": {
+    "address_clock_audit.txt": "f3f024312cb7dd4a0eb97f3d8647590df3db9100d8185f2ccb99a0ddbc23b157",
+    "implementation_run_properties.rpt": "f0cfde8ddb87f1ef8d77fc2fed7bae8b28fc2bbdf665ff8976617a27842096ee",
+    "ip_status.rpt": "8b0d7f44ce61acbd53a78fb412d4a4ed76c42a3c90a796d009062216b3a88608",
+    "route_status.rpt": "f911a44a1a24cc070d8e77543e193144382551f14e5337a1e89a3b3c3b3866de",
+    "routed_bus_skew.rpt": "90ad238d67e90e9108264a8edc544c2ce1a64925409ce6350930f6f64ce37d64",
+    "routed_cdc.rpt": "0acb36704efcfdababdef7305b2b43c4b309cf28b3704a0925b162ccf5518c86",
+    "routed_clock_check.rpt": "4b63687a58afac17afce466fd54e226b77cc9b65090a92e291402a398bba1dfe",
+    "routed_clock_interaction.rpt": "5540b20ca4160c16041c8b6bdaae3c1feea1d8efabf8660dcc211322b5671666",
+    "routed_drc.rpt": "807e8258f89ec5e612c0f417fc6e231a762b9c660740dd2675596ce69971a5b6",
+    "routed_timing.rpt": "de4f97fbf10befb8866a237933d7c9f68efec24e49a4155a9b19fce7c7bb243f",
+    "routed_unused_ps_clocks.txt": "46acb71bfccabbbe7502e998e379eecafef44831b771e2630afff51f7872f966",
+    "routed_utilization.rpt": "c6b86b7a9b027b0cbae1136e6ed52fc37c7bcdb2322df6374a6cf2ee24fbb651",
+    "six_core_recreate.tcl": "843f521f7785b72d2b3596467b710836b967ea27b7c8681f6607bd62c7c5dae7",
+    "synthesis_clocks.rpt": "6b77f0c09becb166a3bf92c44c1bd34c77b9a530f380c3f774d8a472156a2357",
+    "synthesis_drc.rpt": "728bad60b67e419fd836afa33811c718d77853b34349c5712736ec2d11a459a1",
+    "synthesis_hierarchical.rpt": "462e7e7e7720794b59c80de5c19fa2df4d1700b8cc032c72cd5354e33d422cf3",
+    "synthesis_timing.rpt": "43bd942549239c56b112a1a6085c399ee339dda9cd58879f5a8f5ac3e4365c14",
+    "synthesis_utilization.rpt": "697dda6ea0bc621226835d95047075828a2833a3937b79bdfa9b3b347ff2e7e7"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "stage": "rtl",
+  "pass": true,
+  "board_operations": 0,
+  "steps": [
+    {
+      "name": "compile",
+      "command": [
+        "D:\\weather_builds\\joint_fusion_rtl_20261029\\ivl_runtime\\iverilog.exe",
+        "-BD:\\weather_builds\\joint_fusion_rtl_20261029\\ivl_runtime",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_joint_fusion",
+        "-Ptb_joint_fusion.N=65536",
+        "-o",
+        "D:\\weather_builds\\joint_fusion_rtl_20261029\\fusion.vvp",
+        "C:\\Users\\wzh16\\Desktop\\github clone\\feat-software\\fpga\\joint_lowlight_compact_d\\rtl\\joint_fusion.v",
+        "C:\\Users\\wzh16\\Desktop\\github clone\\feat-software\\fpga\\joint_lowlight_compact_d\\tests\\tb_joint_fusion.sv"
+      ],
+      "return_code": 0,
+      "seconds": 5.086162299965508,
+      "log_sha256": "c2902a004870b48429549caedcad51b58fd26b02321b8da5735e6e932bee4aa1"
+    },
+    {
+      "name": "simulate",
+      "command": [
+        "D:\\weather_builds\\joint_fusion_rtl_20261029\\ivl_runtime\\vvp.exe",
+        "D:\\weather_builds\\joint_fusion_rtl_20261029\\fusion.vvp"
+      ],
+      "return_code": 0,
+      "seconds": 76.94514159997925,
+      "log_sha256": "1cb025e05d05332a9765c4c7054b3b4994a4bf6468c7b9b2d5ee21ee9a1d0613"
+    }
+  ],
+  "source_sha256": {
+    "rtl/joint_fusion.v": "a094d234fbd385302aaae3a40e4971b06135ccb329ff91a33f5423a93b257560",
+    "tests/tb_joint_fusion.sv": "3d3b046112e679b853114e42ba16ecdb2b8266f80bacb70453d75f7ffe7e82c0",
+    "scripts/run_checks.py": "e1b50faed1c1ffb397274b501f5d1d63a6868c96af27464703ffeb869a8e0963"
+  },
+  "verification": "AXI RTL versus independent signed-floor integer Golden",
+  "success_line": "FUSION_RTL_PASS frames=10 invalid=9 scalars=655360 reads=983044 writes=327681"
+}

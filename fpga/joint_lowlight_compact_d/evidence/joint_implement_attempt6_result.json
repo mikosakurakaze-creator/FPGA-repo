@@ -1,0 +1,53 @@
+{
+  "stage": "implement",
+  "pass": true,
+  "board_operations": 0,
+  "baseline": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+  "steps": [
+    {
+      "command": [
+        "D:\\Dev\\Miniconda3\\python.exe",
+        "-E",
+        "D:\\weather_builds\\joint_system05_20261029\\run_windows_desktop.py",
+        "--",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt6_runtime/vendor_runtime/vivado.exe",
+        "-mode",
+        "batch",
+        "-log",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt6_vivado.log",
+        "-journal",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt6_vivado.jou",
+        "-source",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt6_build.tcl",
+        "-tclargs",
+        "D:/weather_builds/joint_system05_20261029",
+        "implement",
+        "D:/weather_builds/joint_system05_20261029/project/joint_system.xpr"
+      ],
+      "exit_code": 0,
+      "seconds": 371.06237699999474,
+      "log_sha256": "2cd2f2806f7d9f0dc0ff757d4e8d56e98dc26f4da8ca41931fb9861f9bb54642"
+    }
+  ],
+  "runner_sha256": "61d8e2865a3baea2890c3e49398e920518ac6e21ebb4a2d5418bd0e077260e71",
+  "inputs_sha256": "8df61c7598645100001b0c67643bb47798ec967b268bd7d37d6bdfc53054d1df",
+  "project": "D:/weather_builds/joint_system05_20261029/project/joint_system.xpr",
+  "script_sha256": "036aba3137888f376c031a0add46231144d7ccac86ab432ade755373ce13a28d",
+  "reports": {
+    "address_clock_audit.txt": "f3f024312cb7dd4a0eb97f3d8647590df3db9100d8185f2ccb99a0ddbc23b157",
+    "implementation_run_properties.rpt": "f0cfde8ddb87f1ef8d77fc2fed7bae8b28fc2bbdf665ff8976617a27842096ee",
+    "ip_status.rpt": "8b0d7f44ce61acbd53a78fb412d4a4ed76c42a3c90a796d009062216b3a88608",
+    "routed_cdc.rpt": "0acb36704efcfdababdef7305b2b43c4b309cf28b3704a0925b162ccf5518c86",
+    "routed_clock_interaction.rpt": "5540b20ca4160c16041c8b6bdaae3c1feea1d8efabf8660dcc211322b5671666",
+    "routed_drc.rpt": "807e8258f89ec5e612c0f417fc6e231a762b9c660740dd2675596ce69971a5b6",
+    "routed_timing.rpt": "de4f97fbf10befb8866a237933d7c9f68efec24e49a4155a9b19fce7c7bb243f",
+    "routed_utilization.rpt": "c6b86b7a9b027b0cbae1136e6ed52fc37c7bcdb2322df6374a6cf2ee24fbb651",
+    "route_status.rpt": "f911a44a1a24cc070d8e77543e193144382551f14e5337a1e89a3b3c3b3866de",
+    "six_core_recreate.tcl": "843f521f7785b72d2b3596467b710836b967ea27b7c8681f6607bd62c7c5dae7",
+    "synthesis_clocks.rpt": "6b77f0c09becb166a3bf92c44c1bd34c77b9a530f380c3f774d8a472156a2357",
+    "synthesis_drc.rpt": "728bad60b67e419fd836afa33811c718d77853b34349c5712736ec2d11a459a1",
+    "synthesis_hierarchical.rpt": "462e7e7e7720794b59c80de5c19fa2df4d1700b8cc032c72cd5354e33d422cf3",
+    "synthesis_timing.rpt": "43bd942549239c56b112a1a6085c399ee339dda9cd58879f5a8f5ac3e4365c14",
+    "synthesis_utilization.rpt": "697dda6ea0bc621226835d95047075828a2833a3937b79bdfa9b3b347ff2e7e7"
+  }
+}

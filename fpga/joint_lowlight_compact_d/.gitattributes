@@ -1,0 +1,2 @@
+# Preserve the exact reviewed source/evidence bytes across checkouts.
+* -text

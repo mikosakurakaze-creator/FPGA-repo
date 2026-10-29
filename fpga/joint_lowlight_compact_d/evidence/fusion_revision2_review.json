@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-29",
+  "board_operations": 0,
+  "standalone_checks": {
+    "rtl": {
+      "result_path": "D:\\weather_builds\\joint_fusion_rtl_20261029\\result.json",
+      "result_sha256": "60eccc683568e897b2022e95527d1be4ea3faad6e70e23c98c6af02159b9ffcf",
+      "pass": true
+    },
+    "full": {
+      "result_path": "D:\\weather_builds\\joint_fusion_full_20261029\\result.json",
+      "result_sha256": "8cbc73452fbb60604038f2e270dcc772c331e0126284037dd198602c9611259c",
+      "pass": true
+    },
+    "package": {
+      "result_path": "D:\\weather_builds\\joint_fusion_package08_20261029\\result.json",
+      "result_sha256": "354d70315924cf7d87237e170443adf04f40d6dde9ba4a7806aa40a64fa0bda8",
+      "pass": true
+    },
+    "ooc": {
+      "result_path": "D:\\weather_builds\\joint_fusion_ooc06_20261029\\result.json",
+      "result_sha256": "686e2654f149d399516faa27436b43ae433dd6f9e824f757ef1d8161deeb0475",
+      "pass": false
+    },
+    "verify": {
+      "result_path": "D:\\weather_builds\\joint_fusion_verify_20261029\\result.json",
+      "result_sha256": "bf462807a05ee55fcea9204149fac48ab441f362b90cd8b71e0327c8279dfc26",
+      "pass": true
+    }
+  },
+  "scope": "Independent fusion core only; joint-system status is recorded separately",
+  "frozen_dependencies_available": true,
+  "ooc_artifact_verification": {
+    "checkpoint_sha256": "58769097128af60021070a642ef1e24db43c51feec52e7859a3a5bf5e18eb49c",
+    "independent_reopen_pass": true,
+    "synthesis_process_pass": false,
+    "note": "Synthesis wrote a checkpoint and reports, then failed during process shutdown; the failure is retained. A separate successful Vivado process reopened this exact checkpoint and regenerated the reports."
+  },
+  "ip_package": {
+    "path": "D:\\weather_builds\\joint_fusion_package08_20261029\\package\\joint_fusion_ip.zip",
+    "sha256": "7ece7f03c2d9aca56e5a9284dea1f507832e52ac51daa603d5c6ce3eac65dedc",
+    "register_abi": {
+      "AP_CTRL": 0,
+      "GIE": 4,
+      "IER": 8,
+      "ISR": 12,
+      "AP_RETURN": 16,
+      "I_LOW": 24,
+      "I_HIGH": 28,
+      "L_LOW": 36,
+      "L_HIGH": 40,
+      "D_LOW": 48,
+      "D_HIGH": 52,
+      "O_LOW": 60,
+      "O_HIGH": 64,
+      "W_I": 72,
+      "W_L": 80,
+      "W_D": 88,
+      "COOKIE": 96,
+      "FRAME_ID": 104,
+      "COMPLETED_FRAME": 112,
+      "ACTIVE_FRAME": 116
+    },
+    "all_registers_bits": 32,
+    "packaged_rtl_matches_simulated_rtl": true
+  },
+  "ooc_resources": {
+    "CLB LUTs": "1836",
+    "CLB Registers": "926",
+    "Block RAM Tile": "0",
+    "URAM": "0",
+    "DSPs": "6"
+  },
+  "ooc_timing_estimate": {
+    "WNS_ns": 2.023,
+    "WHS_ns": 0.109,
+    "system_route_signoff": false
+  },
+  "scheduler_tests": {
+    "pass": true,
+    "output": "test_accepts_covered_positive_setup_and_hold (test_acceptance.AcceptanceTests.test_accepts_covered_positive_setup_and_hold) ... ok\ntest_rejects_critical_cdc_but_allows_zero_summary (test_acceptance.AcceptanceTests.test_rejects_critical_cdc_but_allows_zero_summary) ... ok\ntest_rejects_drc_error (test_acceptance.AcceptanceTests.test_rejects_drc_error) ... ok\ntest_rejects_missing_coverage (test_acceptance.AcceptanceTests.test_rejects_missing_coverage) ... ok\ntest_rejects_negative_hold_or_setup (test_acceptance.AcceptanceTests.test_rejects_negative_hold_or_setup) ... ok\ntest_rejects_unclocked_registers (test_acceptance.AcceptanceTests.test_rejects_unclocked_registers) ... ok\ntest_requires_all_nets_routed (test_acceptance.AcceptanceTests.test_requires_all_nets_routed) ... ok\ntest_bad_buffer_range_or_overlap (test_controller.ControllerTest.test_bad_buffer_range_or_overlap) ... ok\ntest_either_path_may_complete_first (test_controller.ControllerTest.test_either_path_may_complete_first) ... ok\ntest_fusion_failure_never_exposes_output (test_controller.ControllerTest.test_fusion_failure_never_exposes_output) ... ok\ntest_invalid_weights_never_start (test_controller.ControllerTest.test_invalid_weights_never_start) ... ok\ntest_ip_failure_blocks_fusion_and_reuse (test_controller.ControllerTest.test_ip_failure_blocks_fusion_and_reuse) ... ok\ntest_timeout_poisoning (test_controller.ControllerTest.test_timeout_poisoning) ... ok\ntest_wrong_frame_never_exposes_output (test_controller.ControllerTest.test_wrong_frame_never_exposes_output) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.002s\n\nOK\n",
+    "controller_sha256": "e1b931680eda440a23dbb5ebf07fe99aae896edda20814ed8336c9f83ea887d0",
+    "tests_sha256": "53b21125e6d718603c5a51744b46b824c19dbebccaf9bf266533d09c8603b5bd",
+    "real_mmio_or_board_test": false
+  }
+}

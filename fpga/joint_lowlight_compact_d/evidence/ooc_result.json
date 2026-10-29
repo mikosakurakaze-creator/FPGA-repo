@@ -1,0 +1,33 @@
+{
+  "stage": "ooc",
+  "pass": false,
+  "board_operations": 0,
+  "steps": [
+    {
+      "name": "vendor_console",
+      "command": [
+        "D:/weather_builds/joint_fusion_ooc06_20261029/vendor_runtime/vivado.exe",
+        "-mode",
+        "batch",
+        "-log",
+        "D:/weather_builds/joint_fusion_ooc06_20261029/vivado.log",
+        "-journal",
+        "D:/weather_builds/joint_fusion_ooc06_20261029/vivado.jou",
+        "-source",
+        "D:/weather_builds/joint_fusion_ooc06_20261029/fusion_ooc.tcl",
+        "-tclargs",
+        "D:/weather_builds/joint_fusion_ooc06_20261029/joint_fusion.v",
+        "D:/weather_builds/joint_fusion_ooc06_20261029/ooc"
+      ],
+      "return_code": 3221225477,
+      "seconds": 208.94018010003492,
+      "log_sha256": "06df58e9d29a5b0cda0eea40b6612494f378f9495783369c804593cec4c2b057"
+    }
+  ],
+  "source_sha256": {
+    "rtl/joint_fusion.v": "a094d234fbd385302aaae3a40e4971b06135ccb329ff91a33f5423a93b257560",
+    "tests/tb_joint_fusion.sv": "3d3b046112e679b853114e42ba16ecdb2b8266f80bacb70453d75f7ffe7e82c0",
+    "scripts/run_checks.py": "ee48fefe6146af6e78c9577abdef0b42ecacce89affec29b154c2c93f315f2c7"
+  },
+  "error": "vendor_console failed: 0.002 . Memory (MB): peak = 2651.801 ; gain = 0.000\nINFO: [Project 1-111] Unisim Transformation Summary:\n  A total of 6 instances were transformed.\n  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 6 instances\n\nSynth Design complete | Checksum: fe5ddede\nINFO: [Common 17-83] Releasing license: Synthesis\n18 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.\nsynth_design completed successfully\nsynth_design: Time (s): cpu = 00:02:08 ; elapsed = 00:02:25 . Memory (MB): peak = 2651.801 ; gain = 2135.859\n# if {[llength [get_clocks ap_clk -quiet]] != 1} {read_xdc $xdc}\n# if {[llength [get_cells -hier -filter {IS_BLACKBOX == 1}]]} {error {Unresolved blackbox}}\nWARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {IS_BLACKBOX == 1}'.\n# report_utilization -file [file join $root utilization.rpt]\n# report_timing_summary -delay_type min_max -file [file join $root timing.rpt]\nINFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2LV, Temperature grade: C, Delay Type: min_max.\nINFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs\nWARNING: [Timing 38-242] The property HD.CLK_SRC of clock port \"ap_clk\" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew\nResolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design\nreport_timing_summary: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2910.918 ; gain = 259.117\n# report_drc -file [file join $root drc.rpt]\nCommand: report_drc -file D:/weather_builds/joint_fusion_ooc06_20261029/ooc/drc.rpt\nINFO: [IP_Flow 19-234] Refreshing IP repositories\nINFO: [IP_Flow 19-1704] No user IP repositories specified\nINFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/vivado/2025.2/Vivado/data/ip'.\nINFO: [DRC 23-27] Running DRC with 2 threads\nWARNING: [DRC 23-814] Not all possible (connectivity based) DRCs may have been run because this design is seen as Out of Context.\nINFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/weather_builds/joint_fusion_ooc06_20261029/ooc/drc.rpt.\nreport_drc completed successfully\nreport_drc: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2910.918 ; gain = 0.000\n# write_checkpoint [file join $root fusion_ooc.dcp]\nINFO: [Timing 38-480] Writing timing data to binary archive.\nWrite ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2910.918 ; gain = 0.000\nINFO: [Common 17-1381] The checkpoint 'D:/weather_builds/joint_fusion_ooc06_20261029/ooc/fusion_ooc.dcp' has been generated.\n# puts {FUSION_OOC_SYNTHESIS_PASS}\nFUSION_OOC_SYNTHESIS_PASS\n# close_project\n# exit\nINFO: [Common 17-206] Exiting Vivado at Thu Oct 29 01:21:30 2026...\nAbnormal program termination (EXCEPTION_ACCESS_VIOLATION)\nPlease check 'D:/weather_builds/joint_fusion_ooc06_20261029/hs_err_pid50460.log' for details\n"
+}

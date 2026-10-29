@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-29",
+  "baseline": "23b56b5458f54eb8c1d67f4f71a742f6a348268d",
+  "frozen_manifest_sha256": "cb05a1eb1ff7c9f18502587ff233b0a9fe8efb9d293fd3db0716bf9fd3300632",
+  "packages": {
+    "cnn": {
+      "root": "D:\\weather_builds\\lowlight01\\cnn_writecredit",
+      "frozen_file_count": 308,
+      "matching_files": 303,
+      "hdl_driver_constraints_xgui_match": true,
+      "matching_payload_files": 300,
+      "changed": [
+        "component.xml",
+        "dfx_runtime.txt"
+      ],
+      "missing": [
+        "abi_fileset_audit.json",
+        "build_manifest.json",
+        "source_manifest.json"
+      ],
+      "exact_identity": false,
+      "expected_component_sha256": "7e046bd557997e8a8b55b466ee9a76b8c3c321f1435df2879a8bf92a45f54ecd"
+    },
+    "bilinear": {
+      "root": "D:\\weather_builds\\lowlight01\\bilinear\\component\\hls\\impl\\ip",
+      "frozen_file_count": 60,
+      "matching_files": 53,
+      "hdl_driver_constraints_xgui_match": true,
+      "matching_payload_files": 50,
+      "changed": [
+        "component.xml",
+        "dfx_runtime.txt",
+        "pack.bat",
+        "run_ippack.tcl",
+        "vivado.jou",
+        "vivado.log",
+        "xilinx_com_hls_bilinear_fixed16_buffered_1_0.zip"
+      ],
+      "missing": [],
+      "exact_identity": false,
+      "expected_component_sha256": "1c7ab9696185d78baad702d28d8c7c8ba1671b79c4dd5665f306a57d591b2597"
+    },
+    "curve": {
+      "root": "D:\\weather_builds\\lowlight01\\curve\\component\\hls\\impl\\ip",
+      "frozen_file_count": 38,
+      "matching_files": 31,
+      "hdl_driver_constraints_xgui_match": true,
+      "matching_payload_files": 28,
+      "changed": [
+        "component.xml",
+        "dfx_runtime.txt",
+        "pack.bat",
+        "run_ippack.tcl",
+        "vivado.jou",
+        "vivado.log",
+        "xilinx_com_hls_curve_image_fixed16_1_0.zip"
+      ],
+      "missing": [],
+      "exact_identity": false,
+      "expected_component_sha256": "72a3f2345b988f321fd3f0f20e4a8a8fc0996fcb00e8c001fc157e3b3e88a518"
+    }
+  },
+  "exact_frozen_packages": false,
+  "board_operations": 0,
+  "compact_d": {
+    "ref": "d8880cce7241628f5472a36802b1791e85935e27",
+    "path": "compact_d_fpga/board/k26_compact_d_20261025/compact_d_ip.zip",
+    "bytes": 1311113,
+    "sha256": "7d276942544f3785bde9267484da6d08bbae819cd46b8bb8e7214ea8a5603bc4"
+  },
+  "can_build_frozen_system": false
+}

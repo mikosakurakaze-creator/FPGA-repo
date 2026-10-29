@@ -1,0 +1,37 @@
+{
+  "stage": "implement",
+  "pass": false,
+  "board_operations": 0,
+  "baseline": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+  "steps": [
+    {
+      "command": [
+        "D:\\Dev\\Miniconda3\\python.exe",
+        "-E",
+        "D:\\weather_builds\\joint_system05_20261029\\run_windows_desktop.py",
+        "--",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt3_runtime/vendor_runtime/vivado.exe",
+        "-mode",
+        "batch",
+        "-log",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt3_vivado.log",
+        "-journal",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt3_vivado.jou",
+        "-source",
+        "D:/weather_builds/joint_system05_20261029/implement_attempt3_build.tcl",
+        "-tclargs",
+        "D:/weather_builds/joint_system05_20261029",
+        "implement",
+        "D:/weather_builds/joint_system05_20261029/project/joint_system.xpr"
+      ],
+      "exit_code": 1,
+      "seconds": 44.34746770001948,
+      "log_sha256": "3aa80ac6faa9a7692a96b1cf6e053cb8e981f6e43a4a7c9756b4c15863aeb372"
+    }
+  ],
+  "runner_sha256": "61d8e2865a3baea2890c3e49398e920518ac6e21ebb4a2d5418bd0e077260e71",
+  "inputs_sha256": "8df61c7598645100001b0c67643bb47798ec967b268bd7d37d6bdfc53054d1df",
+  "project": "D:/weather_builds/joint_system05_20261029/project/joint_system.xpr",
+  "script_sha256": "62bff5f3274ac9049a64f08472f219b99d6508d40a15d5831620cbc7d6df3bfc",
+  "error": "implement_attempt3_console failed: r invalid or not available\nWARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/vivado/2025.2/data/xhub/boards\\XilinxBoardStore\\boards\\Xilinx\\zcu216ld\\production\\2.0\\board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available\nWARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at D:/vivado/2025.2/data/xhub/boards\\XilinxBoardStore\\boards\\Xilinx\\zcu670\\2.0\\board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available\nWARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at D:/vivado/2025.2/data/xhub/boards\\XilinxBoardStore\\boards\\Xilinx\\zcu670ld\\1.0\\board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available\nINFO: [IP_Flow 19-234] Refreshing IP repositories\nINFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/weather_builds/joint_system05_20261029/ip/cnn'.\nINFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/weather_builds/joint_system05_20261029/ip/bilinear'.\nINFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/weather_builds/joint_system05_20261029/ip/curve'.\nINFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/weather_builds/joint_system05_20261029/ip/compact_d'.\nINFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/weather_builds/joint_system05_20261029/ip/fusion'.\nINFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/weather_builds/joint_system05_20261029/prepare/hls/impl/ip'.\nINFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/vivado/2025.2/Vivado/data/ip'.\nINFO: [Project 1-5698] Found the below utility IPs instantiated in block design D:/weather_builds/joint_system05_20261029/project/joint_system.srcs/sources_1/bd/system/system.bd which have equivalent inline hdl with improved performance and reduced diskspace.\nIt is recommended to migrate these utility IPs to inline hdl  using the command upgrade_project -migrate_to_inline_hdl.  The utility IPs may be deprecated in future releases.\nMore information on inline hdl is available in UG994.\nUtility IP Component Instances:\n system_const_locked_0\nopen_project: Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 740.734 ; gain = 403.516\nIMPLEMENT_RUN_BEFORE STATUS=Not started phys_opt_design (Post-Route) PROGRESS=83.33%\nERROR: [Vivado 12-978] Step 'route_design' is already run and up to date.\nINFO: [Common 17-206] Exiting Vivado at Thu Oct 29 09:37:22 2026...\n"
+}

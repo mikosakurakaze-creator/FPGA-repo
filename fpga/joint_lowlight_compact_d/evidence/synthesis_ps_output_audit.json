@@ -1,0 +1,23 @@
+{
+  "stage": "unused_ps_output_fanout_audit",
+  "pass": true,
+  "exit_code": 0,
+  "seconds": 118.52830870007165,
+  "command": [
+    "D:\\Dev\\Miniconda3\\python.exe",
+    "-E",
+    "D:/weather_builds/joint_system05_20261029/run_windows_desktop.py",
+    "--",
+    "D:\\weather_builds\\joint_clock_audit02_20261029\\vendor_runtime\\vivado.exe",
+    "-mode",
+    "batch",
+    "-log",
+    "D:\\weather_builds\\joint_clock_audit02_20261029\\vivado.log",
+    "-journal",
+    "D:\\weather_builds\\joint_clock_audit02_20261029\\vivado.jou",
+    "-source",
+    "D:\\weather_builds\\joint_clock_audit02_20261029\\audit.tcl"
+  ],
+  "checkpoint_sha256": "f595e389cfbd940e8fc438102f82a9bcc575caf75973deb6b6faf105019e1e6d",
+  "board_operations": 0
+}

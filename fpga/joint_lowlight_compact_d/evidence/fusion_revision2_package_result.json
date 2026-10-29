@@ -1,0 +1,36 @@
+{
+  "stage": "package",
+  "pass": true,
+  "board_operations": 0,
+  "steps": [
+    {
+      "name": "vendor_console",
+      "command": [
+        "D:/weather_builds/joint_fusion_package08_20261029/vendor_runtime/vivado.exe",
+        "-mode",
+        "batch",
+        "-log",
+        "D:/weather_builds/joint_fusion_package08_20261029/vivado.log",
+        "-journal",
+        "D:/weather_builds/joint_fusion_package08_20261029/vivado.jou",
+        "-source",
+        "D:/weather_builds/joint_fusion_package08_20261029/fusion_package.tcl",
+        "-tclargs",
+        "D:/weather_builds/joint_fusion_package08_20261029/joint_fusion.v",
+        "D:/weather_builds/joint_fusion_package08_20261029/package"
+      ],
+      "return_code": 0,
+      "seconds": 15.029163199942559,
+      "log_sha256": "8367c4a4ad1a5ecce2dc8eb463683aede7fc981232604e7422b41bc9d8ecc569"
+    }
+  ],
+  "source_sha256": {
+    "rtl/joint_fusion.v": "a094d234fbd385302aaae3a40e4971b06135ccb329ff91a33f5423a93b257560",
+    "tests/tb_joint_fusion.sv": "3d3b046112e679b853114e42ba16ecdb2b8266f80bacb70453d75f7ffe7e82c0",
+    "scripts/run_checks.py": "e733d1f2a016de985336b94193b30815da54dbbd5c962c37ae0c2efe75035bf9"
+  },
+  "reports": {},
+  "ip_zip_sha256": "7ece7f03c2d9aca56e5a9284dea1f507832e52ac51daa603d5c6ce3eac65dedc",
+  "component_sha256": "d480650b42c6aa9922e74643f1b3736c2af8ce555cc7cd495e580ed37a41d9fc",
+  "verification": "Vivado IP packaging/integrity; no complete-system claim"
+}

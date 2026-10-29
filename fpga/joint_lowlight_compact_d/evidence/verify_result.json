@@ -1,0 +1,39 @@
+{
+  "stage": "verify",
+  "pass": true,
+  "board_operations": 0,
+  "steps": [
+    {
+      "name": "vendor_console",
+      "command": [
+        "D:/weather_builds/joint_fusion_verify_20261029/vendor_runtime/vivado.exe",
+        "-mode",
+        "batch",
+        "-log",
+        "D:/weather_builds/joint_fusion_verify_20261029/vivado.log",
+        "-journal",
+        "D:/weather_builds/joint_fusion_verify_20261029/vivado.jou",
+        "-source",
+        "D:/weather_builds/joint_fusion_verify_20261029/fusion_verify.tcl",
+        "-tclargs",
+        "D:/weather_builds/joint_fusion_ooc06_20261029/ooc/fusion_ooc.dcp",
+        "D:/weather_builds/joint_fusion_verify_20261029/verify"
+      ],
+      "return_code": 0,
+      "seconds": 85.94584559998475,
+      "log_sha256": "72367b2c92e83d2514da41229a23636f8e3e49532ee2a9f3b20f53ef49399b54"
+    }
+  ],
+  "source_sha256": {
+    "rtl/joint_fusion.v": "a094d234fbd385302aaae3a40e4971b06135ccb329ff91a33f5423a93b257560",
+    "tests/tb_joint_fusion.sv": "3d3b046112e679b853114e42ba16ecdb2b8266f80bacb70453d75f7ffe7e82c0",
+    "scripts/run_checks.py": "e733d1f2a016de985336b94193b30815da54dbbd5c962c37ae0c2efe75035bf9"
+  },
+  "checkpoint_sha256": "58769097128af60021070a642ef1e24db43c51feec52e7859a3a5bf5e18eb49c",
+  "reports": {
+    "verify/drc.rpt": "6fb612a96d41ae5742ad1b0806fdde1e819b10b610fff8224e4a531f329003c1",
+    "verify/timing.rpt": "dbcfa4310631983dff0a2df94c30d1522d47fb7bd86db62bd4836a336e1832a9",
+    "verify/utilization.rpt": "c0502f6791a366e10d7aaec5b125d23d38a0a6f62f6057674ea5d580aad3320e"
+  },
+  "verification": "Independent reopening of actual OOC checkpoint; not complete-system signoff"
+}
