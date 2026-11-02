@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "evidence_level": "synthetic-host-only",
+  "board": "example-board-replace-before-use",
+  "pynq_version": "record-actual-version-before-use",
+  "ip": {"name": "stream_copy_0", "vlnv": "example.org:rtl:stream_copy:1.0", "addressable": false, "addr_range": 0},
+  "transport": {
+    "kind": "axi-stream-dma", "dma_ip": "axi_dma_0",
+    "send_buffer": "input", "recv_buffer": "output",
+    "max_transfer_bytes": 16383, "address_alignment_bytes": 4,
+    "tlast_policy": "one TLAST on the final valid output beat; verify actual stream design"
+  },
+  "control": {"kind": "free-running", "timeout_s": 1.0},
+  "buffers": [
+    {"name": "input", "role": "input", "shape": [8], "dtype": "<u4", "layout": "C", "nbytes": 32, "alignment_bytes": 4, "guard_bytes": 64, "cache_policy": "explicit-sync"},
+    {"name": "output", "role": "output", "shape": [8], "dtype": "<u4", "layout": "C", "nbytes": 32, "alignment_bytes": 4, "guard_bytes": 64, "cache_policy": "explicit-sync"}
+  ]
+}

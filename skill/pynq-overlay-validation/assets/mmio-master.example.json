@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "evidence_level": "synthetic-host-only",
+  "board": "example-board-replace-before-use",
+  "pynq_version": "record-actual-version-before-use",
+  "ip": {"name": "vector_copy_0", "vlnv": "example.org:hls:vector_copy:1.0", "addr_range": 256},
+  "transport": {
+    "kind": "mmio-master", "address_bits": 32,
+    "pointer_registers": {"input": {"low": 16}, "output": {"low": 24}}
+  },
+  "control": {
+    "kind": "register", "start": {"offset": 0, "mask": 1},
+    "done": {"offset": 0, "mask": 2}, "timeout_s": 1.0,
+    "completion_semantics": "Driver must distinguish a fresh completion from stale done; replace with IP-specific semantics."
+  },
+  "buffers": [
+    {"name": "input", "role": "input", "shape": [8], "dtype": "<u4", "layout": "C", "nbytes": 32, "alignment_bytes": 4, "guard_bytes": 64, "cache_policy": "explicit-sync"},
+    {"name": "output", "role": "output", "shape": [8], "dtype": "<u4", "layout": "C", "nbytes": 32, "alignment_bytes": 4, "guard_bytes": 64, "cache_policy": "explicit-sync"}
+  ]
+}

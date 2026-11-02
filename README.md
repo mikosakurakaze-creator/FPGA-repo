@@ -23,7 +23,26 @@ board/          PS 端控制与板端运行
 evaluation/     功能、性能及 Base 对比
 configs/        可版本管理的实验与部署配置
 docs/           项目范围、接口、路线图和协作规范
+skill/          可独立复用的技能包与使用说明
 ```
+
+## 竞赛目录对照与技能包
+
+竞赛指南 3.3.5.4 的技能包位置采用根目录 [skill/](skill/README.md)，其中提供 [PYNQ Overlay 联调与校验](skill/pynq-overlay-validation/README.md)及[证据驱动 FPGA 排错](skill/evidence-driven-fpga-debug/README.md)。各技能包含独立 README、使用入口、经验来源和实际验证范围，可按其说明单独复制复用。
+
+工程其余部分保留已有组织方式，对照如下；此表说明目录用途，不代表对应流程已全部完成。
+
+| 推荐目录 | 本仓库对应位置 |
+| --- | --- |
+| `src/` 设计源码 | `model/`、`models/`、`deployment/`、`fpga/hls/`、`weather_restore_lab/` |
+| `sim/` 仿真或验证 | `evaluation/`、各模型的验证脚本及报告 |
+| `build/` 构建与实现 | `fpga/vivado/`、各工程附带的构建配置与脚本 |
+| `board/` 板端程序与说明 | `board/`、各模型的板端交接说明 |
+| `data/` 测试数据与参考结果 | `data/`、经审核的参考数据；其余运行输出按 `.gitignore` 留在本地 |
+| `skill/` 技能包 | [skill/](skill/README.md) |
+| `report/` 设计与协作材料 | `docs/`、`doc/` 及各技能的来源与验证说明 |
+
+本次技能发布不改变上述源码、模型或板端实现。PYNQ 技能中的 Host PASS 不是 PYNQ 真板 PASS，排错案例中的历史状态也不覆盖团队后续版本。
 
 ## 参与开发
 
