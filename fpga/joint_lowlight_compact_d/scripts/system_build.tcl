@@ -4,7 +4,7 @@ set root [file normalize [lindex $argv 0]]
 set stage [lindex $argv 1]
 set reports [file join $root reports]
 set project [file normalize [lindex $argv 2]]
-set_param general.maxThreads 2
+set_param general.maxThreads [expr {$stage eq {implement} ? 8 : 2}]
 set_param logicopt.enableDSPCascadeFixing false
 
 # These hard-PS peripheral clock outputs exist in PS8 even when no PL logic or
@@ -90,6 +90,27 @@ if {$stage eq {create}} {
             [get_bd_addr_spaces zynq_ultra_ps_e_0/Data] [get_bd_addr_segs $cell/s_axi_control/Reg]
     }
     validate_bd_design
+    # The 30-FPS fusion transport must retain its 128-bit path to PS HP3.
+    set transport [open [file join $reports fusion_transport_audit.txt] w]
+    foreach pin {joint_fusion_0/m_axi_gmem curve_ddr_sc/S05_AXI curve_ddr_sc/M00_AXI zynq_ultra_ps_e_0/S_AXI_HP3_FPD} {
+        set intf [get_bd_intf_pins $pin]
+        set width [get_property CONFIG.DATA_WIDTH $intf]
+        puts $transport "$pin DATA_WIDTH=$width"
+        if {$width ne {128}} {error "Fusion transport narrowed at $pin: $width"}
+    }
+    close $transport
+    set transport [open [file join $reports prepare_transport_audit.txt] w]
+    foreach pin {
+        joint_rgb8_prepare_0/m_axi_gmem_rgb cnn_data_sc/S04_AXI cnn_data_sc/M00_AXI zynq_ultra_ps_e_0/S_AXI_HP0_FPD
+        joint_rgb8_prepare_0/m_axi_gmem_cnn cnn_data_sc/S05_AXI
+        joint_rgb8_prepare_0/m_axi_gmem_d bilinear_ddr_sc/S02_AXI bilinear_ddr_sc/M00_AXI zynq_ultra_ps_e_0/S_AXI_HP2_FPD
+        joint_rgb8_prepare_0/m_axi_gmem_i curve_ddr_sc/S04_AXI curve_ddr_sc/M00_AXI zynq_ultra_ps_e_0/S_AXI_HP3_FPD
+    } {
+        set width [get_property CONFIG.DATA_WIDTH [get_bd_intf_pins $pin]]
+        puts $transport "$pin DATA_WIDTH=$width"
+        if {$width ne {128}} {error "Prepare transport narrowed at $pin: $width"}
+    }
+    close $transport
     foreach cell {rst_ps_100m rst_ps_d} {
         if {[get_property CONFIG.C_EXT_RESET_HIGH [get_bd_cells $cell]] != 0} {error "Incorrect external reset polarity: $cell"}
     }
@@ -114,17 +135,28 @@ if {$stage eq {create}} {
     close $audit
     set bd [get_files */system.bd]
     generate_target all $bd
+    if {[file exists [file join $root fifo_output_policy.tcl]]} {
+        source [file join $root fifo_output_policy.tcl]
+        apply_fifo_output_policy $root
+    }
     set wrapper [make_wrapper -files $bd -top]
     add_files -norecurse $wrapper
     set_property top system_wrapper [current_fileset]
     update_compile_order -fileset sources_1
 } elseif {$stage eq {synth}} {
     open_project $project
+    if {[file exists [file join $root fifo_output_policy.tcl]]} {
+        source [file join $root fifo_output_policy.tcl]
+        verify_fifo_output_policy $root
+    }
     launch_runs synth_1 -jobs 2
     wait_on_run synth_1
     if {[get_property PROGRESS [get_runs synth_1]] ne {100%} ||
         [string first {Complete} [get_property STATUS [get_runs synth_1]]] < 0} {error {Joint synthesis failed}}
     open_run synth_1
+    if {[file exists [file join $root fifo_output_policy.tcl]]} {
+        verify_fifo_output_policy $root
+    }
     if {[llength [get_cells -hierarchical -filter {IS_BLACKBOX == 1}]]} {error {Unresolved black boxes}}
     report_utilization -file [file join $reports synthesis_utilization.rpt]
     report_utilization -hierarchical -file [file join $reports synthesis_hierarchical.rpt]
@@ -136,6 +168,12 @@ if {$stage eq {create}} {
 } elseif {$stage eq {implement}} {
     open_project $project
     set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_1]
+    if {[info exists ::env(JOINT_INCREMENTAL_DCP)]} {
+        set reference [file normalize $::env(JOINT_INCREMENTAL_DCP)]
+        if {![file exists $reference]} {error {Incremental reference missing}}
+        set_property incremental_checkpoint $reference [get_runs impl_1]
+        puts "INCREMENTAL_REFERENCE=$reference"
+    }
     puts "IMPLEMENT_RUN_BEFORE STATUS=[get_property STATUS [get_runs impl_1]] PROGRESS=[get_property PROGRESS [get_runs impl_1]]"
     # A run stopped at route_design need not report 100% of the complete
     # implementation/bitstream flow. Require the actual route step to complete.

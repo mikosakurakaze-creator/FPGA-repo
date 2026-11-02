@@ -1,4 +1,4 @@
-"""Build the locked six-core KV260 design in a new external ASCII directory.
+"""Build the six-core KV260 design with locked models and the burst prepare IP.
 
 No Git mutations and no board operations. Every tool invocation has its own
 immutable log/result; implementation and export require successful prior gates.
@@ -23,7 +23,7 @@ BASE = "3c9e41a35fc08d44ba0552ce6916a421f98f94d7"
 D_REF = "d8880cce7241628f5472a36802b1791e85935e27"
 D_FILE = "compact_d_fpga/board/k26_compact_d_20261025/compact_d_ip.zip"
 D_SHA = "7d276942544f3785bde9267484da6d08bbae819cd46b8bb8e7214ea8a5603bc4"
-FUSION_SHA = "7ece7f03c2d9aca56e5a9284dea1f507832e52ac51daa603d5c6ce3eac65dedc"
+FUSION_SHA = "c4d6d7892685d973e02f6368ee2d80fa76482e07a9357c536229eda96a226b54"
 
 
 def sha(path):
@@ -55,7 +55,10 @@ def main():
     p.add_argument("--stage", required=True, choices=["prepare", "adapter", "create", "synth", "implement", "coverage", "export"])
     p.add_argument("--attempt", type=int, default=1)
     p.add_argument("--reuse-adapter", type=Path, help="Reuse an independently recorded successful export, checking all identities")
-    p.add_argument("--fusion", type=Path, default=Path("D:/weather_builds/joint_fusion_package08_20261029/package/joint_fusion_ip.zip"))
+    p.add_argument("--prepare-source", type=Path, default=ROOT/"hls", help="Reviewed prepare source; model IPs remain frozen")
+    p.add_argument("--reuse-prepare-export",type=Path,help="Reuse a completed synthesis/export while independent RTL validation is pending; final acceptance still requires it")
+    p.add_argument("--incremental-checkpoint",type=Path,help="Prior routed design used only as an implementation reference")
+    p.add_argument("--fusion", type=Path, default=Path("D:/weather_builds/fusion_pipeline_20261101/package01/package/joint_fusion_ip.zip"))
     p.add_argument("--vivado", type=Path, default=Path("D:/vivado/2025.2/Vivado"))
     p.add_argument("--vitis", type=Path, default=Path("D:/vivado/2025.2/Vitis"))
     a = p.parse_args()
@@ -116,36 +119,67 @@ def main():
             shutil.copy2(a.fusion, out/"joint_fusion_ip.zip")
             unpack(out/"joint_fusion_ip.zip", out/"ip/fusion")
             for name in ("joint_adapters.cpp", "joint_adapters.hpp"):
-                (out/"source"/name).write_bytes(locked(BASE, relative+"hls/"+name))
+                shutil.copy2(a.prepare_source/name, out/"source"/name)
             (out/"four_core_seed.tcl").write_bytes(locked(BASE, relative+"reports/resource_joint_system_recreate.tcl"))
             (out/"run_windows_desktop.py").write_bytes(locked(D_REF, "tools/run_windows_desktop.py"))
             shutil.copy2(ROOT/"scripts/system_build.tcl", out/"system_build.tcl")
+            if a.reuse_prepare_export:
+                folder=a.reuse_prepare_export
+                receipt_path=folder/"result.json"
+                receipt=json.loads(receipt_path.read_text())
+                step=next(s for s in receipt["steps"] if s["name"]=="synth")
+                if step["exit_code"] or sha(folder/"synth.log")!=step["log_sha256"]:
+                    raise ValueError("Prepare synthesis/export did not complete")
+                for name in ("joint_adapters.cpp","joint_adapters.hpp"):
+                    if sha(folder/name)!=receipt["source_sha256"][name] or sha(folder/name)!=sha(out/"source"/name):
+                        raise ValueError("Reused synthesis source differs")
+                ip=folder/"prepare/hls/impl/ip"
+                if not (ip/"component.xml").is_file() or not list(ip.glob("*.zip")):
+                    raise ValueError("Prepare export missing")
+                shutil.copytree(ip,out/"prepare/hls/impl/ip")
+                reused={"stage":"adapter","pass":True,"board_operations":0,"baseline":BASE,
+                    "verification":"Successful HLS synthesis/export only; separate prepare_pipeline_acceptance.json is mandatory before bitstream export",
+                    "independent_rtl_validation_required":True,"source_result":receipt_path.as_posix(),
+                    "source_result_sha256":sha(receipt_path),"synthesis_log_sha256":sha(folder/"synth.log"),
+                    "component_sha256":sha(ip/"component.xml"),"ip_zips":{f.name:sha(f) for f in ip.glob("*.zip")}}
+                save(out/"adapter_result.json",reused)
+                save(out/"gates.json",{"adapter":"adapter_result.json"})
             if a.reuse_adapter:
                 receipt_path = a.reuse_adapter/"adapter_result.json"
+                source_root = a.reuse_adapter/"source"
+                if not receipt_path.exists():
+                    receipt_path = a.reuse_adapter/"result.json"
+                    source_root = a.reuse_adapter
                 receipt = json.loads(receipt_path.read_text())
                 old_ip = a.reuse_adapter/"prepare/hls/impl/ip"
                 if not receipt["pass"] or receipt["baseline"] != BASE or sha(old_ip/"component.xml") != receipt["component_sha256"]:
                     raise ValueError("Reused adapter receipt/component mismatch")
+                if receipt_path.name == "result.json" and receipt["stage"] != "cosim":
+                    raise ValueError("Changed prepare requires successful RTL validation")
                 for name, digest in receipt["ip_zips"].items():
                     if sha(old_ip/name) != digest:
                         raise ValueError("Reused adapter ZIP mismatch")
                 for name in ("joint_adapters.cpp", "joint_adapters.hpp"):
-                    if sha(a.reuse_adapter/"source"/name) != sha(out/"source"/name):
+                    if sha(source_root/name) != sha(out/"source"/name):
                         raise ValueError("Reused adapter source mismatch")
+                    if "source_sha256" in receipt and sha(source_root/name) != receipt["source_sha256"][name]:
+                        raise ValueError("Tested prepare source changed")
                 shutil.copytree(old_ip, out/"prepare/hls/impl/ip")
                 reused = {"stage": "adapter", "pass": True, "board_operations": 0, "baseline": BASE,
-                          "verification": "Reuse of successfully rebuilt locked-source IP; no new synthesis claim",
+                          "verification": "Reuse of source-matched successfully exported IP; changed prepare validated by RTL cosimulation",
                           "source_result": receipt_path.as_posix(), "source_result_sha256": sha(receipt_path),
                           "component_sha256": receipt["component_sha256"], "ip_zips": receipt["ip_zips"]}
                 save(out/"adapter_result.json", reused)
                 save(out/"gates.json", {"adapter": "adapter_result.json"})
-            manifest = {"baseline": BASE, "d_ref": D_REF, "lowlight_files": len(expected),
+            manifest = {"baseline": BASE, "d_ref": D_REF, "prepare_source": a.prepare_source.resolve().as_posix(), "lowlight_files": len(expected),
                         "source_files": {f.relative_to(out).as_posix(): sha(f)
                                          for f in out.rglob("*") if f.is_file() and f.name != "gates.json"}}
             save(out/"inputs.json", manifest)
             result["lowlight_exact_files"] = len(expected)
         else:
             inputs = json.loads((out/"inputs.json").read_text(encoding="utf-8"))
+            if a.stage == "export" and inputs.get("rtl_timing_variant", {}).get("export_allowed") is False:
+                raise ValueError("Experimental timing RTL is explicitly blocked from export pending review")
             for name, digest in inputs["source_files"].items():
                 if sha(out/name) != digest:
                     raise ValueError("Build input changed: "+name)
@@ -195,6 +229,11 @@ def main():
                 runtime_parent = out/(tag+"_runtime")
                 runtime_parent.mkdir()
                 exe, env = vendor_runtime(runtime_parent, a.vivado)
+                reference=a.incremental_checkpoint or (out/"incremental_reference.dcp" if (out/"incremental_reference.dcp").is_file() else None)
+                if a.stage == "implement" and reference:
+                    reference=reference.resolve()
+                    result["incremental_reference"]={"path":reference.as_posix(),"sha256":sha(reference)}
+                    env["JOINT_INCREMENTAL_DCP"]=reference.as_posix()
                 log = execute(tag+"_console", [exe, "-mode", "batch", "-log", out/(tag+"_vivado.log"),
                     "-journal", out/(tag+"_vivado.jou"), "-source", stage_script,
                     "-tclargs", out, a.stage, project], env, desktop=True)

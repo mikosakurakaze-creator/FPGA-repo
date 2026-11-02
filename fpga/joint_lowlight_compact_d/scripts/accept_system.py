@@ -123,6 +123,23 @@ def main():
         for stage in ("prepare","adapter","create","synth","implement","coverage"):
             record=json.loads(bind(a.build/gates[stage]))
             if not record["pass"]:raise ValueError("Required hardware stage failed: "+stage)
+        # A modified fusion requires proof bound to the exact integrated RTL.
+        pipeline=json.loads(bind(a.build/"fusion_pipeline_acceptance.json"))
+        if not pipeline["pass"] or not pipeline["simulation_only_fusion_budget_pass"]:
+            raise ValueError("Fusion throughput/transport gate failed")
+        for path,digest in pipeline["bound_files"].items():
+            if sha(Path(path))!=digest:raise ValueError("Pipeline evidence changed: "+path)
+            result["bound_files"][path]=digest
+        prepare=json.loads(bind(a.build/"prepare_pipeline_acceptance.json"))
+        if not prepare["pass"] or not prepare["simulation_only_prepare_budget_pass"]:
+            raise ValueError("Prepare numeric/RTL/transport gate failed")
+        if sha(a.build/"source/joint_adapters.cpp")!=prepare["source_sha256"]:
+            raise ValueError("Integrated prepare source changed")
+        for path,digest in prepare["bound_files"].items():
+            if sha(Path(path))!=digest:raise ValueError("Prepare evidence changed: "+path)
+            result["bound_files"][path]=digest
+        if sha(a.fusion/"joint_fusion.v")!=pipeline["rtl_sha256"]:
+            raise ValueError("Numerical RTL differs from integrated pipeline RTL")
         result["checkpoint_sha256"]=sha(a.build/"joint_routed.dcp")
         if record["checkpoint_sha256"]!=result["checkpoint_sha256"]:raise ValueError("Clock proof checkpoint changed")
         result["unused_ps_clock_proof"]=ps_clock_proof(bind(a.build/"reports/routed_unused_ps_clocks.txt"),

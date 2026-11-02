@@ -2,6 +2,8 @@
 
 交付边界为硬件包。包内结果若标记 `HARDWARE_PACKAGE_READY_BOARD_NOT_TESTED`，表示联合布局布线和报告门禁通过；不表示已经上板或达到某一帧率。新同图验证包括冻结 HLS C 模型的全帧逐元素比较，以及真实融合 AXI RTL 的全帧比较；不冒充完整六核系统 RTL 仿真。
 
+连续帧及30 FPS验收使用 `runtime/run_pipeline_pynq.py`；`runtime/run_pynq.py` 用于单帧Golden核对。两者使用同一流水/burst融合硬件，但持续视频必须采用多帧调度入口。
+
 ## 1. 加载前
 
 1. 在 KV260 的 Linux/aarch64 环境准备匹配的 PYNQ 与 Vivado 2025.2 导出物支持。必须独占整片 PL，并具备安全重新配置/复位的权限。
@@ -28,7 +30,7 @@ PS 分频器实际元数据为 99,999,001 / 199,998,001 Hz；融合 IP 的时钟
 
 综合阶段的原始 `check_timing` 报告出现 PS8 的 8 个未用 EMIO 时钟输出。最终 routed/export 的原始计数按各自报告保留；若仍出现这 8 项，必须由同一 checkpoint 的 `*_unused_ps_clocks.txt` 证明精确这组引脚零 PL 输入负载、零顶层端口，且没有其他无钟项。有效 PL 无钟引脚和未约束内部端点必须为 0。跨时钟总线的全部 bus-skew 约束也须通过。详见 `clock_coverage.md`；不改写报告计数。
 
-本轮 routed 实测 WNS +0.032ns、WHS +0.010ns、WPWS +1.700ns；原始 no_clock 和未约束内部端点均为 0。183,014/183,014 routable nets 完整布线；17 项 bus-skew 全部通过，最差 slack +3.898ns。URAM 58/64（90.63%）为主要容量瓶颈，setup 余量只有 0.032ns；修改 IP、器件、时钟或集成后必须重新实现验收。包中同时保留原始 CDC/DRC Warning，未将完整系统 RTL 或板端运行计入已验证范围。
+本次资源、setup/hold、路由和 bus-skew 数字以随包 `manifest.json`、`clock_reset.md` 及 `reports/` 原始报告为准。历史串行融合镜像的时序不能用于新流水融合镜像。包中同时保留原始 CDC/DRC Warning；完整系统 RTL 仿真及板端运行均不在已验证范围内。
 
 ## 3. 单帧顺序
 
@@ -41,7 +43,7 @@ PS 分频器实际元数据为 99,999,001 / 199,998,001 Hz；融合 IP 的时钟
 7. 等待融合 done、idle、`ap_return=0`，核对 `completed_frame==frame_id`；再 invalidation/sync_from_device，把融合输出交给 CPU。输出为 little-endian RGB NCHW INT16 Q14，5,495,040 字节。
 8. 任何错误/超时都禁止启动后续融合、读出无效结果或复用相关缓冲。需要对整个 PL 复位/重新配置并确认 outstanding AXI 已静止后恢复。仅新建 Python controller 对象不构成硬件恢复。
 
-## 4. 可运行的板端入口
+## 4. 单帧Golden核对入口
 
 在目标机编译 fence 库并确认独占 PL 后：
 
@@ -52,3 +54,19 @@ cmp result.i16 golden/fused.i16
 ```
 
 入口检查包哈希和 HWH 地址，使用 PYNQ MMIO/allocate、cache ownership 与 ARM `dsb sy`，调用经过 host 测试的单帧调度器。120 秒仅为调用超时设置，不是测量耗时。发生 PL 错误后该进程保留 DMA 分配并等待人工恢复，不能在未复位/静止前强行退出或释放内存。本轮未连接目标板，以上命令尚未上板执行。
+
+
+## 5. 连续帧流水入口
+
+原 `JointController.run()` 是单帧调用；持续视频使用新增 `JointPipelineController.run_pipeline()`，以至少两组、建议三组互不重叠的帧缓冲让 prepare、CNN、Bilinear、Curve、D、Fusion 处理不同帧。输入装载在槽位释放后进行，输出回调消费后才复用；每一帧内部的完成依赖保持。不要在同一套 IP 上并发创建两个 controller。示例与性能边界见 `fusion_pipeline_30fps.md`。该参考尚未在板端执行，不能替代 DMA/cache 验证和持续 FPS 实测。
+
+包内另提供实际 PYNQ 调用入口 `run_pipeline_pynq.py`，按物理地址区分环形槽位中同名缓冲，四组只读模型数组共享。三槽净 payload 为 114,729,659 字节，另需 CMA 与对齐余量。在目标板显式执行：
+
+```sh
+python3 runtime/run_pipeline_pynq.py --package "$PWD" --rgb golden/rgb.u8 \
+  --frames 30 --slots 3 --weights 10923 10923 10922 \
+  --output pipeline_last.i16 --metrics pipeline_metrics.json
+cmp pipeline_last.i16 golden/fused.i16
+```
+
+该命令重复使用同一张原图验证连续帧调用；计时包括输入复制/cache、MMIO 轮询与每帧输出复制/哈希，不含镜像加载、分配和最后写盘。分别报告整批 FPS、首末输出间隔 FPS、最大输出间隔及逐帧哈希，不能只看流水填满后的间隔而省略批次时间。本轮仅完成主机调度/缓冲查找测试，未执行该板端命令。

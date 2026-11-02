@@ -10,9 +10,9 @@ ipx::package_project -root_dir [file join $root ip] -vendor joint.local -library
 set core [ipx::current_core]
 set_property name joint_fusion $core
 set_property version 1.0 $core
-set_property core_revision 2 $core
+set_property core_revision 3 $core
 set_property display_name {Joint RGB Q14 three-way fusion} $core
-set_property description {Fixed 1272x720 RGB NCHW signed Q14 fusion; full 32-bit Q15 weight validation, start snapshots, i64 RNE and final clamp. Production SCALAR_COUNT must be 2747520.} $core
+set_property description {128-bit burst/FIFO/eight-lane pipelined fixed 1272x720 RGB NCHW signed Q14 fusion; full 32-bit Q15 weight validation, start snapshots, i64 RNE and final clamp. Production SCALAR_COUNT must be 2747520.} $core
 puts "INFERRED_BUSES [get_property NAME [ipx::get_bus_interfaces -of_objects $core]]"
 foreach name {s_axi_control m_axi_gmem ap_clk ap_rst_n} {
     if {[llength [ipx::get_bus_interfaces $name -of_objects $core]] != 1} {error "Missing inferred interface $name"}
@@ -54,7 +54,7 @@ foreach {name offset access} {
     set_property access $access $reg
 }
 set master [ipx::get_bus_interfaces m_axi_gmem -of_objects $core]
-foreach {name value} {PROTOCOL AXI4 DATA_WIDTH 32 ADDR_WIDTH 64 MAX_BURST_LENGTH 1 NUM_READ_OUTSTANDING 1 NUM_WRITE_OUTSTANDING 1} {
+foreach {name value} {PROTOCOL AXI4 DATA_WIDTH 128 ADDR_WIDTH 64 MAX_BURST_LENGTH 64 NUM_READ_OUTSTANDING 1 NUM_WRITE_OUTSTANDING 1} {
     set p [ipx::add_bus_parameter $name $master];set_property value $value $p
 }
 set space [ipx::get_address_spaces m_axi_gmem -of_objects $core]

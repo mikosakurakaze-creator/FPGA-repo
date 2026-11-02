@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "tests": 18,
+  "scope": "Existing compiled/routed constraint-contract positive and negative regressions; no synthesis or board run",
+  "command": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "fpga/joint_lowlight_compact_d/scripts",
+    "-p",
+    "test_*constraint*.py",
+    "-v"
+  ],
+  "log_sha256": "bea7fa059214031d16f607c67b08b1d72d94ae9949a94c334e475039f44ba0ad",
+  "board_operations": 0
+}

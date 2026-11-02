@@ -3,9 +3,11 @@ import argparse
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 import time
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -64,6 +66,9 @@ def main():
     p=argparse.ArgumentParser(__doc__)
     p.add_argument("--out",required=True,type=Path)
     p.add_argument("--stage",choices=("rtl","full","ooc","package","verify"),required=True)
+    p.add_argument("--read-div",type=int,default=1,help="Memory-model R bandwidth divider")
+    p.add_argument("--scalars",type=int,help="Regression frame size, a multiple of 32; production is 2747520")
+    p.add_argument("--desktop-helper",type=Path,help="Existing Windows desktop process-launch helper")
     p.add_argument("--checkpoint",type=Path)
     p.add_argument("--iverilog",type=Path,default=Path("D:/iverilog/install"))
     p.add_argument("--compiler-bin",type=Path,default=Path("D:/m/mingw64/bin"))
@@ -88,14 +93,19 @@ def main():
     try:
         if a.stage in ("rtl","full"):
             runtime=ivl_runtime(out,a.iverilog,a.compiler_bin)
-            n=2747520 if a.stage=="full" else 65536
+            n=a.scalars or (2747520 if a.stage=="full" else 65536)
+            if a.read_div<1:raise ValueError("Invalid read divider")
+            if n<=0 or n%32:raise ValueError("Scalar count must be a positive multiple of 32")
             execute("compile",[runtime/"iverilog.exe","-B"+str(runtime),"-g2012","-Wall",
-                    "-s","tb_joint_fusion","-Ptb_joint_fusion.N="+str(n),"-o",out/"fusion.vvp",
-                    ROOT/"rtl/joint_fusion.v",ROOT/"tests/tb_joint_fusion.sv"])
+                    "-s","tb_joint_fusion","-Ptb_joint_fusion.N="+str(n),"-Ptb_joint_fusion.READ_DIV="+str(a.read_div),"-o",out/"fusion.vvp",
+                    out/"joint_fusion.v",out/"tb_joint_fusion.sv"])
             log=execute("simulate",[runtime/"vvp.exe",out/"fusion.vvp"])
-            marker="FUSION_FULL_FRAME_PASS scalars=2747520" if a.stage=="full" else "FUSION_RTL_PASS frames=10 invalid=9 scalars=655360"
+            marker="FUSION_FULL_FRAME_PASS scalars=2747520" if n==2747520 else f"FUSION_RTL_PASS frames=10 invalid=9 scalars={10*n}"
             if not any(line.startswith(marker) for line in log.splitlines()):raise RuntimeError("Missing full RTL success marker")
-            result["verification"]="AXI RTL versus independent signed-floor integer Golden"
+            result["frame_metrics"]=[dict((k,int(v)) for k,v in re.findall(r"(\w+)=(\d+)",line)) for line in log.splitlines() if line.startswith("FUSION_FRAME_METRICS ")]
+            result["read_div"]=a.read_div
+            result["memory_model"]="128-bit AXI, one read plus one write burst outstanding; 6-10-cycle AR latency, periodic R/AW/W stalls and delayed B; no PS/DDR contention claim"
+            result["verification"]="Burst/pipelined AXI RTL versus independent signed-floor integer Golden"
             result["success_line"]=next(line for line in log.splitlines() if line.startswith(marker))
         else:
             exe,env=vendor_runtime(out,a.vivado)
@@ -105,7 +115,13 @@ def main():
                 result["checkpoint_sha256"]=sha(a.checkpoint)
             shutil.copy2(ROOT/"rtl/joint_fusion.v",out/"joint_fusion.v")
             shutil.copy2(ROOT/"scripts"/script,out/script)
-            log=execute("vendor_console",[exe,"-mode","batch","-log",out/"vivado.log","-journal",out/"vivado.jou",
+            prefix=[]
+            if a.desktop_helper:
+                helper=out/"run_windows_desktop.py"
+                shutil.copy2(a.desktop_helper,helper)
+                result["desktop_helper_sha256"]=sha(helper)
+                prefix=[sys.executable,"-E",helper,"--"]
+            log=execute("vendor_console",[*prefix,exe,"-mode","batch","-log",out/"vivado.log","-journal",out/"vivado.jou",
                     "-source",out/script,"-tclargs",a.checkpoint if a.stage=="verify" else out/"joint_fusion.v",out/a.stage],env)
             marker={"package":"FUSION_IP_PACKAGE_PASS","ooc":"FUSION_OOC_SYNTHESIS_PASS","verify":"FUSION_CHECKPOINT_VERIFICATION_PASS"}[a.stage]
             if marker not in log.splitlines():raise RuntimeError("Missing vendor success marker")

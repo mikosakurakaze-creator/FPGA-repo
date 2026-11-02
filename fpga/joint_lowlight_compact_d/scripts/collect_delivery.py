@@ -1,5 +1,6 @@
 """Assemble a fresh local hardware package only after actual route/export gates."""
 import argparse
+from datetime import date
 import hashlib
 import json
 from pathlib import Path
@@ -59,6 +60,8 @@ def main():
     p.add_argument("--golden",required=True,type=Path)
     p.add_argument("--host",required=True,type=Path)
     p.add_argument("--fusion",required=True,type=Path)
+    p.add_argument("--controller-tests",type=Path,help="Frozen host test suite; defaults to the previous pipeline suite")
+    p.add_argument("--vivado",type=Path,default=Path("D:/vivado/2025.2/Vivado"))
     p.add_argument("--out",required=True,type=Path)
     a=p.parse_args()
     out=a.out.resolve()
@@ -119,7 +122,7 @@ def main():
     hwh=ET.parse(out/"joint_system.hwh").getroot()
     modules={m.get("INSTANCE"):m for m in hwh.iter("MODULE")}
     address={}
-    revisions={"cnn":2114810448,"bilinear":2114800369,"curve":2114799122,"d":2114844623,"fusion":2}
+    revisions={"cnn":2114810448,"bilinear":2114800369,"curve":2114799122,"d":2114844623,"fusion":3}
     expected_masters={
         "cnn":{"m_axi_gmem_input","m_axi_gmem8","m_axi_gmem32","m_axi_gmem_lut","m_axi_gmem_output","m_axi_gmem_workspace"},
         "bilinear":{"m_axi_gmem_input","m_axi_gmem_output"},
@@ -166,10 +169,56 @@ def main():
         "reset":{"source":"PS/pl_resetn0","active_low":True,"separate_synchronizers":["rst_ps_100m","rst_ps_d"]}})
     for file in (ROOT/"runtime").iterdir():
         if file.is_file() and file.suffix in (".py",".c"):copy(file,"runtime/"+file.name)
-    for name in ("loading_order.md","fusion_contract.md","clock_coverage.md"):
+    for name in ("loading_order.md","fusion_contract.md","clock_coverage.md","fusion_pipeline_30fps.md","prepare_pipeline.md"):
         copy(ROOT/"docs"/name,"docs/"+name)
+    copy(ROOT/"PIPELINE_CHANGE_REVIEW_20261101.md","docs/PIPELINE_CHANGE_REVIEW_20261101.md")
+    copy(ROOT/"PREPARE_CHANGE_REVIEW_20261101.md","docs/PREPARE_CHANGE_REVIEW_20261101.md")
     for file in (a.build/"reports").iterdir():
         if file.is_file():copy(file,"reports/"+file.name)
+    implementation=a.build/"project/joint_system.runs/impl_1"
+    lineage_path=a.build/"timing_lineage.json"
+    if lineage_path.exists():
+        lineage=json.loads(lineage_path.read_text())
+        margin=json.loads((a.build/"timing_margin_audit.json").read_text())
+        if (not lineage["pass"] or not margin["pass"] or
+                lineage["checkpoint_sha256"]!=acceptance["checkpoint_sha256"] or
+                margin["checkpoint_sha256"]!=acceptance["checkpoint_sha256"] or
+                sha(a.build/"timing_margin_audit.json")!=lineage["margin_audit_sha256"]):
+            raise ValueError("Physical optimization lineage mismatch")
+        for name,digest in margin["bound_files"].items():
+            if sha(Path(name))!=digest:raise ValueError("Physical optimization evidence changed: "+name)
+        implementation=(None if lineage.get("kind")=="targeted_fifo_rebuild" else
+                        Path(lineage["parent_build"])/"project/joint_system.runs/impl_1")
+        copy(lineage_path,"evidence/timing_lineage.json")
+        copy(a.build/"timing_margin_audit.json","evidence/timing_margin_audit.json")
+        for folder in ("physical_optimization","inherited_baseline"):
+            for file in (a.build/folder).rglob("*"):
+                if file.is_file():copy(file,"evidence/"+folder+"/"+file.relative_to(a.build/folder).as_posix())
+        copy(ROOT/"docs/timing_margin_20261102.md","docs/timing_margin_20261102.md")
+    if implementation is not None:
+        copy(implementation/"runme.log","reports/implementation_runme.log")
+        for name in ("system_wrapper_timing_summary_routed.rpt", "system_wrapper_route_status.rpt",
+                     "system_wrapper_drc_routed.rpt", "system_wrapper_bus_skew_routed.rpt"):
+            copy(implementation/name,"reports/pre_postroute_opt_"+name)
+        for file in implementation.glob("*incremental_reuse*.rpt*"):
+            if file.is_file():copy(file,"reports/"+file.name)
+    else:
+        copy(a.build/"release_approval.json","evidence/release_approval.json")
+        copy(a.build/"accepted_original_inputs.json","evidence/accepted_original_inputs.json")
+        original_inputs=json.loads((a.build/"accepted_original_inputs.json").read_text())
+        implemented={}
+        for relative,digest in original_inputs["source_files"].items():
+            file=a.build/relative
+            if sha(file)!=digest:raise ValueError("Implemented release source changed: "+relative)
+            if file.suffix.lower() in (".v",".sv",".vh",".vhd",".tcl",".py",".xml",".cpp",".hpp",".json"):
+                copy(file,"source/implemented_inputs/"+relative)
+                implemented[relative]=digest
+        generated=json.loads((Path(lineage["parent_build"])/"targeted_generated_sources.json").read_text())
+        for row in generated:
+            file=Path(lineage["parent_build"])/row["path"]
+            if sha(file)!=row["after"]:raise ValueError("Implemented generated wrapper changed")
+            copy(file,"source/generated_smartconnect/"+row["path"])
+        save(out/"evidence/implemented_source_manifest.json",{"files":implemented,"generated_smartconnect":generated})
     for stage,name in gates.items():
         copy(a.build/name,"evidence/"+stage+"_result.json")
         record=json.loads((a.build/name).read_text());tag=name.removesuffix("_result.json")
@@ -183,6 +232,8 @@ def main():
             if sha(script)!=record["script_sha256"]:raise ValueError("Stage script identity mismatch: "+stage)
             copy(script,"evidence/"+script.name)
     copy(a.build/"acceptance.json","evidence/acceptance.json")
+    copy(a.build/"fusion_pipeline_acceptance.json","evidence/fusion_pipeline_acceptance.json")
+    copy(a.build/"prepare_pipeline_acceptance.json","evidence/prepare_pipeline_acceptance.json")
     copy(a.build/"inputs.json","evidence/inputs.json")
     copy(a.host/"result.json","evidence/same_image_hls_host.json")
     copy(a.host/"simulate_host.log","evidence/same_image_hls_host.log")
@@ -198,16 +249,76 @@ def main():
     for src,name in (("lowlight_frozen_ip.zip","lowlight_frozen_ip.zip"),("compact_d_ip.zip","compact_d_ip.zip"),
                      ("joint_fusion_ip.zip","joint_fusion_ip.zip"),
                      ("prepare/hls/impl/ip/xilinx_com_hls_joint_rgb8_prepare_1_0.zip","joint_rgb8_prepare_ip.zip")):
-        copy(a.build/src,"ip/"+name)
+        folder="reference_ip/" if implementation is None and name in ("lowlight_frozen_ip.zip","compact_d_ip.zip") else "ip/"
+        copy(a.build/src,folder+name)
+    # Include new source and all pipeline gates before hashing/final packaging.
+    pipeline=json.loads((a.build/"fusion_pipeline_acceptance.json").read_text())
+    for path in pipeline["bound_files"]:
+        file=Path(path)
+        if "fusion_pipeline_20261101" in file.parts:
+            suite_root=next(parent for parent in file.parents if parent.name=="fusion_pipeline_20261101")
+            relative=file.relative_to(suite_root)
+            copy(file,"evidence/pipeline/"+relative.as_posix())
+    prepare=json.loads((a.build/"prepare_pipeline_acceptance.json").read_text())
+    for path,digest in prepare["bound_files"].items():
+        file=Path(path)
+        if sha(file)!=digest:raise ValueError("Prepare delivery evidence changed")
+        if "prepare_pipeline_20261101" in file.parts:
+            suite=next(parent for parent in file.parents if parent.name=="prepare_pipeline_20261101")
+            copy(file,"evidence/prepare/"+file.relative_to(suite).as_posix())
+    prepare_suite=next(parent for parent in Path(prepare["cosim_report"]).parents if parent.name=="prepare_pipeline_20261101")
+    for name in ("cosim01","cosim02","cosim03"):
+        folder=prepare_suite/name
+        record=json.loads((folder/"result.json").read_text())
+        if record["pass"]:raise ValueError("Expected preserved prepare failure changed")
+        for file in [folder/"result.json",*folder.glob("*.log")]:
+            copy(file,"evidence/prepare/"+file.relative_to(prepare_suite).as_posix())
+    for file in (a.build/"source").iterdir():
+        if file.suffix in (".cpp",".hpp"):copy(file,"source/hls/"+file.name)
+    for folder in ("rtl","scripts"):
+        for file in (ROOT/folder).iterdir():
+            if file.is_file() and file.suffix in (".v",".py",".tcl"):
+                copy(file,"source/"+folder+"/"+file.name)
+    for file in (ROOT/"tests").iterdir():
+        if file.is_file() and file.suffix in (".sv", ".py", ".cpp"):
+            copy(file,"source/tests/"+file.name)
+    suite_root=a.fusion.parent
+    audit_path=suite_root/"source_evidence_audit01.json"
+    audit=json.loads(audit_path.read_text(encoding="utf-8"))
+    if not audit["pass"]:raise ValueError("Pipeline source/evidence audit failed")
+    for path,digest in audit["bound_files"].items():
+        file=Path(path)
+        if sha(file)!=digest:raise ValueError("Pipeline audited evidence changed: "+path)
+        if suite_root in file.parents:
+            copy(file,"evidence/pipeline/"+file.relative_to(suite_root).as_posix())
+    copy(audit_path,"evidence/pipeline/"+audit_path.name)
+    host_suite=a.controller_tests or suite_root/"controller_tests02"
+    host_record=json.loads((host_suite/"result.json").read_text(encoding="utf-8"))
+    if not host_record["pass"] or host_record["exit_code"]!=0:
+        raise ValueError("Pipeline entry host tests failed")
+    if sha(host_suite/"tests.log")!=host_record["log_sha256"]:
+        raise ValueError("Pipeline entry test log changed")
+    for relative,digest in host_record["source_sha256"].items():
+        file=host_suite/"source"/relative
+        if sha(file)!=digest or sha(ROOT/relative)!=digest:
+            raise ValueError("Pipeline entry tested source changed: "+relative)
+        copy(file,"evidence/pipeline/controller_tests02/source/"+relative)
+    for name in ("result.json","tests.log"):
+        copy(host_suite/name,"evidence/pipeline/controller_tests02/"+name)
+    from delivery_supplement import add_supplements
+    add_supplements(out,a.build,embedded_payload,a.vivado)
+    if implementation is None:
+        with (out/"README.md").open("a",encoding="utf-8") as stream:
+            stream.write("\n本包采用 2026-11-02 接受的六 FIFO 定向改进版；原约束 setup 0.391 ns、hold 0.100 ns。导出阶段没有重新综合、布局或优化。完整来源、实际 RTL 输入和 132 份 SmartConnect wrapper 分别见 evidence/timing_lineage.json、source/implemented_inputs/ 和 source/generated_smartconnect/。reference_ip/ 是算法版本来源的历史原包，不能代替已修改的实现输入；ip/ 中的 Prepare、融合包继续与实现一致。历史审核失败记录保留，最终独立审核为 evidence/timing_margin_audit.json。\n")
     build_id=hashlib.sha256((sha(a.build/"inputs.json")+acceptance["checkpoint_sha256"]).encode()).hexdigest()[:20]
     files={f.relative_to(out).as_posix():{"bytes":f.stat().st_size,"sha256":sha(f)}
            for f in sorted(out.rglob("*")) if f.is_file()}
     manifest={"status":"HARDWARE_PACKAGE_READY_BOARD_NOT_TESTED","build_id":build_id,
-        "date":"2026-10-29","part":"xck26-sfvc784-2LV-c","board":"xilinx.com:kv260_som:part0:1.4",
+        "date":date.today().isoformat(),"part":"xck26-sfvc784-2LV-c","board":"xilinx.com:kv260_som:part0:1.4",
         "vivado":"2025.2","timing":timing,"route":route,"bus_skew":bus_skew,"resources":resources,
         "resource_bottleneck":max(resources,key=lambda k:resources[k]["percent"]),"board_operations":0,"fps_claim":False,
         "embedded_bit_matches_external":True,"checkpoint_sha256":acceptance["checkpoint_sha256"],
-        "validation_scope":"same-image locked HLS C models and fusion AXI RTL; no full six-core RTL or board numerical claim",
+        "validation_scope":"same-image locked model/fusion Golden plus full-frame burst prepare C/RTL comparison; no full six-core RTL or board numerical claim",
         "files":files}
     save(out/"manifest.json",manifest)
     checksums={f.relative_to(out).as_posix():sha(f) for f in sorted(out.rglob("*")) if f.is_file()}
@@ -220,6 +331,7 @@ def main():
         if z.testzip() is not None:raise ValueError("Delivery ZIP CRC failure")
         for name,digest in checksums.items():
             if hashlib.sha256(z.read(name)).hexdigest()!=digest:raise ValueError("Delivery ZIP payload mismatch")
+    archive.with_suffix(".zip.sha256").write_text(sha(archive)+"  "+archive.name+"\n",encoding="ascii")
     result={"pass":True,"package":out.as_posix(),"zip":archive.as_posix(),"zip_sha256":sha(archive),
             "zip_bytes":archive.stat().st_size,"manifest_sha256":sha(out/"manifest.json"),"build_id":build_id,
             "timing":timing,"route":route,"bus_skew":bus_skew,"resources":resources,"board_operations":0}

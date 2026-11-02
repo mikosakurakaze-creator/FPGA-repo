@@ -84,29 +84,17 @@ def main():
                 raise ValueError("Missing full HLS Host success marker")
             result["verification"]="locked HLS C models versus independent same-image integer Golden; no joint RTL claim"
         else:
-            tb=(ROOT/"tests/tb_joint_fusion.sv").read_text()
-            marker="    function automatic signed [15:0] sample(input integer branch,input integer index);"
-            if tb.count(marker)!=1:raise ValueError("Testbench anchor changed")
-            arrays="    reg [15:0] frame_i[0:N-1],frame_l[0:N-1],frame_d[0:N-1],frame_o[0:N-1];\n"
-            tb=tb.replace(marker,arrays+marker)
-            pattern="            sample=$signed(v);"
-            tb=tb.replace(pattern,"            sample=branch==0?$signed(frame_i[index]):branch==1?$signed(frame_l[index]):$signed(frame_d[index]);")
-            tb=tb.replace("        repeat(6)@(negedge clk);rst=1;", """        $readmemh("original.hex",frame_i);$readmemh("lowlight.hex",frame_l);
-        $readmemh("d_output.hex",frame_d);$readmemh("fused.hex",frame_o);
-        repeat(6)@(negedge clk);rst=1;""")
-            tb=tb.replace("                if(saved_w!=={expected(index+1),expected(index)})", """                if({expected(index+1),expected(index)}!=={frame_o[index+1],frame_o[index]})
-                    $fatal(1,"Independent software versus testbench Golden mismatch index=%0d",index);
-                if(saved_w!=={frame_o[index+1],frame_o[index]})""")
-            tb=tb.replace("FUSION_FULL_FRAME_PASS", "FUSION_SAME_IMAGE_PASS")
-            (out/"tb_joint_fusion.sv").write_text(tb,encoding="ascii",newline="\n")
+            # The shared bench has an explicit external-Golden mode; no textual
+            # surgery of the DUT/scoreboard or arithmetic is permitted.
+            shutil.copy2(ROOT/"tests/tb_joint_fusion.sv",out/"tb_joint_fusion.sv")
             shutil.copy2(ROOT/"rtl/joint_fusion.v",out/"joint_fusion.v")
             for name in ("original","lowlight","d_output","fused"):
                 shutil.copy2(a.golden/(name+".hex"),out/(name+".hex"))
             runtime=ivl_runtime(out,Path("D:/iverilog/install"),Path("D:/m/mingw64/bin"))
             execute("compile",[runtime/"iverilog.exe","-B"+str(runtime),"-g2012","-Wall","-s","tb_joint_fusion",
-                "-Ptb_joint_fusion.N=2747520","-o",out/"fusion.vvp",out/"joint_fusion.v",out/"tb_joint_fusion.sv"])
+                "-Ptb_joint_fusion.N=2747520","-Ptb_joint_fusion.EXTERNAL_GOLDEN=1","-o",out/"fusion.vvp",out/"joint_fusion.v",out/"tb_joint_fusion.sv"])
             text=execute("simulate_rtl",[runtime/"vvp.exe",out/"fusion.vvp"])
-            if "FUSION_SAME_IMAGE_PASS scalars=2747520 reads=4121280 writes=1373760" not in text.splitlines():
+            if "FUSION_SAME_IMAGE_PASS scalars=2747520 reads=1030320 writes=343440" not in text.splitlines():
                 raise ValueError("Missing full same-image fusion RTL success marker")
             result["verification"]="actual fusion AXI RTL versus same-image I/L/D model outputs and separate software Golden"
         result["sources"]={f.relative_to(out).as_posix():sha(f) for f in out.rglob("*")

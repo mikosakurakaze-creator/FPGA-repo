@@ -1,2 +1,4 @@
 # Preserve the exact reviewed source/evidence bytes across checkouts.
 * -text
+# Vendor reports retain the exact formatting covered by the evidence hashes.
+evidence/release_20261102/*.rpt -whitespace

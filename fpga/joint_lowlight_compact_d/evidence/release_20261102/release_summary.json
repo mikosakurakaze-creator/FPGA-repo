@@ -1,0 +1,71 @@
+{
+  "status": "HARDWARE_PACKAGE_READY_BOARD_NOT_TESTED",
+  "build_id": "c6496c6dc89aa54c4500",
+  "date": "2026-11-02",
+  "part": "xck26-sfvc784-2LV-c",
+  "board": "xilinx.com:kv260_som:part0:1.4",
+  "vivado": "2025.2",
+  "timing": {
+    "WNS_ns": 0.391,
+    "WHS_ns": 0.1,
+    "WPWS_ns": 1.7,
+    "coverage": {
+      "no_clock": 0,
+      "constant_clock": 0,
+      "unconstrained_internal_endpoints": 0,
+      "multiple_clock": 0,
+      "active_unclocked_pins": 0,
+      "classified_unused_ps_no_clock_outputs": 0,
+      "verified_unloaded_ps_clock_outputs": 8
+    }
+  },
+  "route": {
+    "routable nets": 198851,
+    "fully routed nets": 198851,
+    "nets with routing errors": 0
+  },
+  "bus_skew": {
+    "constraints": 17,
+    "worst_slack_ns": 3.488,
+    "violations": 0
+  },
+  "resources": {
+    "LUT": {
+      "used": 90753.0,
+      "available": 117120.0,
+      "percent": 77.49
+    },
+    "FF": {
+      "used": 90929.0,
+      "available": 234240.0,
+      "percent": 38.82
+    },
+    "BRAM_tiles": {
+      "used": 112.0,
+      "available": 144.0,
+      "percent": 77.78
+    },
+    "URAM": {
+      "used": 58.0,
+      "available": 64.0,
+      "percent": 90.63
+    },
+    "DSP": {
+      "used": 945.0,
+      "available": 1248.0,
+      "percent": 75.72
+    }
+  },
+  "checkpoint_sha256": "d582ed0005dbc85563fb2eb0713e74a95f8efafdafe91af1a5a3ecf3ae028f66",
+  "board_operations": 0,
+  "fps_claim": false,
+  "validation_scope": "same-image locked model/fusion Golden plus full-frame burst prepare C/RTL comparison; no full six-core RTL or board numerical claim",
+  "local_zip": {
+    "name": "kv260_joint_fifo_hold_release_20261102_final.zip",
+    "bytes": 215709996,
+    "files": 1354,
+    "sha256": "a7cccfafeb963c990fc3aab90c4451df750776abc3763fbb00438d4ded51625e",
+    "uploaded_to_git": false
+  },
+  "evidence_note": "Small copies of historical execution evidence; absolute paths identify the original local runs. Full raw logs, generated IP and all bound inputs are in the local ZIP."
+}
