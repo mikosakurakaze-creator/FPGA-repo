@@ -1,9 +1,0 @@
-{
-  "pass": true,
-  "stage": "prepare",
-  "board_operations": 0,
-  "kind": "Copy of audited synthesized source; no source generation repeated",
-  "source_build": "D:/weather_builds/timing_margin_20261102/fifo_targeted04",
-  "source_inputs_sha256": "ab9005cdfe793e6b6fe3660e70d8e9ff796d2917d47e0b041350f458ef2c0860",
-  "release_approval_sha256": "3f607525752e16a83e0fcd90d6042be90aabfce743b401002c151dd9f56e4d88"
-}

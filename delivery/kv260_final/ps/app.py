@@ -14,7 +14,7 @@ class App(Gtk.Window):
   self.device=Gtk.Label();root.pack_start(self.device,False,False,0);tabs=Gtk.Notebook();root.pack_start(tabs,True,True,0)
   page=Gtk.Box(spacing=12);tabs.append_page(page,Gtk.Label(label='处理工作台'))
   side=Gtk.Box(orientation=Gtk.Orientation.VERTICAL,spacing=5);side.set_size_request(205,-1);side.set_hexpand(False);side.get_style_context().add_class('panel');page.pack_start(side,False,False,0);self.controls=[]
-  for label,cb in [('打开图片 / 视频',self.choose),('展示1：夜间雨路',lambda b:self.showcase('rain_rain_storm-351')),('展示2：雨中车辆',lambda b:self.showcase('rain_rain_storm-058'))]:
+  for label,cb in [('打开图片 / 视频',self.choose)]:
    b=Gtk.Button(label=label);b.connect('clicked',cb);side.pack_start(b,False,False,0);self.controls.append(b)
   videos=Gtk.Box(spacing=4);self.video_choice=Gtk.ComboBoxText();self.video_choice.set_hexpand(False)
   self.video_gallery=json.loads((BASE/'video_gallery.json').read_text()) if (BASE/'video_gallery.json').exists() else []
@@ -69,19 +69,7 @@ class App(Gtk.Window):
   d.add_filter(f)
   if d.run()==Gtk.ResponseType.OK:self.set_input(d.get_filename())
   d.destroy()
- def showcase(self,sid):
-  sample=BASE/'samples'/sid
-  if (sample/'original.png').is_file():
-   self.compare.overlays=[];self.compare.live=False;self.input=sample/'original.png';self.filename.set_text(self.input.name);self.branch.set_active_id('fused');self.paths=[sample/'original.png',sample/'detected.png'];self.compare.ratio=.5;self.render();self.status.set_text('图片对比 · 拖动中间分隔线');self.stats.set_text('左右拖动查看细节');return
-  self.compare.overlays=[]
-  self.compare.live=False
-  for path in sorted(OUTPUT.glob('*/job.json'),reverse=True):
-   try:
-    j=json.loads(path.read_text())
-    if j.get('showcase_id')!=sid:continue
-    self.input=Path(j['input']);self.filename.set_text(self.input.name);self.branch.set_active_id('fused');self.paths=[path.parent/'original.png',path.parent/'detected.png'];self.compare.ratio=.5;self.render();self.status.set_text('图片对比 · 拖动中间分隔线');self.stats.set_text('左右拖动查看细节');return
-   except Exception:continue
-  self.status.set_text('展示样例尚在准备，请稍后再试')
+
  def play_video(self,b):
   if self.busy:return
   if not self.video_gallery:self.status.set_text('展示视频正在准备');return

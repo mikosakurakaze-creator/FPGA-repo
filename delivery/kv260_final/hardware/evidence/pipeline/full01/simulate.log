@@ -1,3 +1,0 @@
-FUSION_FRAME_METRICS frame=1 scalars=2747520 cycles=1383169 read_beats=1030320 write_beats=343440 read_bursts=16102 write_bursts=5368 overlap=251688
-FUSION_FULL_FRAME_PASS scalars=2747520 reads=1030320 writes=343440
-D:/weather_builds/fusion_pipeline_20261101/full01/tb_joint_fusion.sv:221: $finish called at 13832590000 (1ps)

@@ -1,10 +1,8 @@
-# KV260 最终工程交付
+# KV260 工程交付
 
-最终可复现工程入口：[delivery/kv260_final](delivery/kv260_final/README.md)。
+最终工程入口：[delivery/kv260_final](delivery/kv260_final/README.md)。
 
-包含冻结六核硬件（Build ID c6496c6dc89aa54c4500）、RTL/HLS、PS 端软件与驱动、离线运行依赖、构建脚本、综合实现报告及板端 Golden 验证证据。前端不显示 FPS。该目录不含技能包和作品报告正文。
-
-历史开发资料保留如下，复现最终版本请使用上述入口。
+包含RTL/HLS、PS软件、上板文件、构建运行脚本、综合实现报告及最小功能验证数据。
 
 ---
 

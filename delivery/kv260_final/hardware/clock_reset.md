@@ -15,4 +15,4 @@ PS HPM 控制侧及 HP0–HP3 数据侧工作于约 100 MHz。D 的约 200 MHz �
 
 PS/pl_resetn0 低有效复位送入两组 proc_sys_reset，各自在所属时钟域同步释放。超时或 AXI 失败后作废输出，停止新启动，待所有 outstanding 静止或完成全 PL 恢复后才复用缓冲。
 
-本次 routed WNS=0.391 ns，WHS=0.1 ns；完整覆盖、CDC、DRC、bus-skew 及 route 见 reports/。这是新流水融合的联合实现结果；未做真板时钟/FPS 测量。
+本次 routed WNS=0.391 ns，WHS=0.1 ns；完整覆盖、CDC、DRC、bus-skew 及 route 见 reports/。这是新流水融合的联合实现结果。

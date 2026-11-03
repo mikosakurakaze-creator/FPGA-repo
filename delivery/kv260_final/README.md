@@ -1,30 +1,31 @@
-# KV260 最终可复现工程包
+# KV260 工程文件与源码
 
-整理日期：2026-11-03。最终 PL Build ID：`c6496c6dc89aa54c4500`。硬件算法与镜像不变；PS 软件为六槽不同输入批处理版，界面不显示 FPS。
+版本：2026-11-03。PL Build ID：`c6496c6dc89aa54c4500`。
 
-本目录是最终交付入口。仓库其他目录保留历史开发记录，不作为本版本启动入口。包内不包含技能包、作品报告、论文、PPT、完整数据集、虚拟环境或工具链安装程序；`hardware/reports` 是交付要求中的综合/实现工具报告，`validation` 是原始验证证据。
+## 工程组成
 
-## 交付内容
-
-| 交付要求 | 对应目录 |
+| 内容 | 目录 |
 |---|---|
-| RTL、HLS 与 PS 源码 | `hardware/source/rtl`、`hardware/source/hls`、`hardware/source/implemented_inputs`、`source_models`、`ps` |
-| 仿真、功能验证 | `hardware/evidence`、`hardware/source/tests`、`validation/host`、`validation/board` |
-| 综合与实现、资源、时钟、时序 | `hardware/reports`、`hardware/manifest.json`、`hardware/clock_reset.md` |
-| 上板产物、实测记录及 Golden | `hardware/joint_system.*`、`hardware/golden`、`validation/fifo_hardware`、`validation/package_board` |
-| 可复现构建与运行 | `scripts`、`ps/launch.sh`，具体步骤见下文 |
+| RTL、HLS、IP与集成工程 | `hardware/source`、`hardware/ip`、`source_models` |
+| PS应用与Linux驱动 | `ps`、`ps/driver` |
+| 仿真与功能验证 | `hardware/source/tests`、`hardware/evidence`、`validation/host` |
+| 综合、实现、资源及时序报告 | `hardware/reports`、`hardware/manifest.json`、`hardware/clock_reset.md` |
+| 上板镜像及参考数据 | `hardware/joint_system.*`、`hardware/golden`、`hardware/model` |
+| 实际输出与参考比对 | `validation/package_board` |
+| 构建与运行脚本 | `scripts`、`ps/launch.sh` |
+| 离线运行依赖 | `runtime_assets` |
 
-## 环境
+## 运行环境
 
-- 板卡：KV260 / K26，Ubuntu 22.04 aarch64，Python 3.10。
-- 已验证内核：`5.15.0-1027-xilinx-zynqmp`，需安装对应 headers，驱动须在目标板编译。
-- 系统依赖：`build-essential device-tree-compiler python3-pip python3-gi python3-gi-cairo python3-numpy python3-pil gir1.2-gtk-3.0 gir1.2-gstreamer-1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good`。
-- `runtime_assets` 提供 ONNX Runtime 1.23.2 的 Python 3.10 ARM64 wheel、其纯 Python 依赖、SSD 模型与 FFmpeg 7.0.2 ARM64 静态发行包；不包含误下载的 Windows protobuf wheel。NumPy 与 Pillow 使用板端系统包。
-- 硬件重新构建：Vivado 2025.2，安装 Zynq UltraScale+ 器件与 KV260 board files；如重新执行 HLS 则另需 Vitis HLS 2025.2。工具链不随包分发。
+KV260，Ubuntu 22.04 aarch64，Python 3.10；内核 `5.15.0-1027-xilinx-zynqmp`，安装对应内核头文件。
 
-## 最短复现流程
+系统软件包：`build-essential device-tree-compiler python3-pip python3-gi python3-gi-cairo python3-numpy python3-pil gir1.2-gtk-3.0 gir1.2-gstreamer-1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good`。
 
-将本目录完整复制到板端任意普通用户可写目录，先进入该目录。应用不依赖 `/home/ubuntu/traffic_hdmi` 等历史路径。
+硬件工具：Vivado 2025.2及KV260器件/板卡支持；HLS源码开发使用Vitis HLS 2025.2。
+
+## 上板运行
+
+将完整目录复制到板端，进入该目录执行：
 
 ```sh
 python3 scripts/verify_package.py
@@ -33,61 +34,53 @@ sh scripts/build_driver.sh
 python3 scripts/load_board.py
 ```
 
-首次启动应从正常重启后的官方 base 镜像开始；关闭旧硬件任务。加载程序默认只做检查，以下命令才实际加载本包镜像：
+在正常重启后的官方base镜像状态加载工程并启动服务：
 
 ```sh
 sudo python3 scripts/load_board.py --execute
 sudo sh scripts/start_service.sh
 ```
 
-硬件服务在前台保持运行。另开普通用户终端，在板端桌面会话中启动：
+另开普通用户终端，在板端桌面会话中启动界面：
 
 ```sh
 sh ps/launch.sh
 ```
 
-SSH 启动图形界面时需使用实际桌面 `DISPLAY` 与 `XAUTHORITY`；已验证系统为 `DISPLAY=:0 XAUTHORITY=/run/user/1000/gdm/Xauthority`。图像由 PS Linux/GTK/Cairo 绘制，经系统显示链路输出至外接显示器，PL 不直接绘制界面。
+SSH启动图形界面时使用实际桌面环境变量，例如 `DISPLAY=:0 XAUTHORITY=/run/user/1000/gdm/Xauthority`。
 
-界面支持本地图片/视频、原图与增强滑动对比、检测框开关、视频暂停/继续及任务记录。两个静态展示样例随包提供，可通过“开始处理”再次调用硬件。演示视频未随包附带，可打开用户自己的视频文件。原图/低照度/去雨雾/最终融合可分别选择；当前融合权重冻结为 `[10923,10923,10922]`，并非界面可调参数。
+界面支持图片与视频输入、处理通路选择、检测阈值设置、原图与增强滑动对比、检测框显示、视频暂停/继续及结果保存。结果目录为 `ps/results`。融合权重为 `[10923,10923,10922]`。
 
-当前界面只显示状态、帧号及目标数量。结果写入 `ps/results/<任务标识>/`，包含 `job.json`、`frames.jsonl` 和图像，视频任务另存 `annotated.avi`。板端 SSD 检测器与离线检测评估所用 Faster R-CNN 不同，不能混用其 AP 结果。
+## 功能验证
 
-## 实际输出核对
+主机回归覆盖控制器执行顺序、帧号关联、缓冲复用和异常处理：
 
-保持硬件服务运行，普通用户执行：
+```sh
+python3 scripts/run_host_tests.py --out validation_new/host
+```
+
+保持硬件服务运行，执行三分支输出比对：
 
 ```sh
 python3 scripts/smoke_golden.py --frames 1 --out validation_new/single.json
 python3 scripts/smoke_golden.py --frames 6 --out validation_new/batch6.json
 ```
 
-脚本分别调用低照度、去雨雾与融合分支，按驱动相同的 Q14→RGB8 舍入/饱和规则转换 Golden，逐字节核对全部输出，并保存实际 RGB 文件及 SHA256。每次使用新输出文件名，以保留前次证据。
+脚本将低照度、去雨雾、融合三分支的实际RGB输出与参考Q14数据按相同转换规则逐字节比较。随包 `validation/package_board/single.json` 及三个 `.rgb` 文件给出单帧功能验证结果，三分支不匹配字节数均为0。仿真结果见 `hardware/evidence`，主机回归结果见 `validation/host`。
 
-硬件服务独占驱动，禁止同时运行其他 MMIO/PYNQ/benchmark 入口。发生超时或硬件错误时不自动重试、卸载驱动或释放潜在在途 DMA；保留现场并正常重启恢复。默认服务不自动重启。
+硬件服务独占驱动；出现硬件错误时停止提交任务，正常重启后重新加载工程。
 
-## 从源码重新构建硬件
+## 硬件构建
 
-```sh
-python3 scripts/build_hardware.py --stage prepare --out /absolute/ascii/path/new_build
-python3 scripts/build_hardware.py --stage create --out /absolute/ascii/path/new_build --vivado /path/to/vivado
-python3 scripts/build_hardware.py --stage synth --out /absolute/ascii/path/new_build --vivado /path/to/vivado
-python3 scripts/build_hardware.py --stage implement --out /absolute/ascii/path/new_build --vivado /path/to/vivado
-python3 scripts/build_hardware.py --stage coverage --out /absolute/ascii/path/new_build --vivado /path/to/vivado
-python3 scripts/build_hardware.py --stage export --out /absolute/ascii/path/new_build --vivado /path/to/vivado
-```
-
-入口使用冻结的已实现 IP、BD seed 和全部 132 份 SmartConnect sim/synth wrapper，替换原开发电脑绝对路径及父构建依赖。Prepare 与各模型的生成 RTL 随包提供；对应 HLS 原始源码另放 `source_models` 和 `hardware/source/hls`。原交付中的历史构建脚本原样保留供追溯，默认使用上述可移植入口。
-
-新布局布线不保证逐字节生成同一 bitstream，必须重新检查 setup/hold、DRC、CDC、路由、未约束时钟与板端 Golden，不能沿用旧镜像验收结论。本次整理验证了 prepare 阶段、源码恢复与主机回归，未重新执行耗时的综合/布局布线；交付镜像及其原始通过证据保持不变。
+下列入口使用随包IP、BD重建脚本与SmartConnect源码，输出至新建的ASCII路径：
 
 ```sh
-python3 scripts/run_host_tests.py --out validation_new/host
+python3 scripts/build_hardware.py --stage prepare --out /absolute/path/new_build
+python3 scripts/build_hardware.py --stage create --out /absolute/path/new_build --vivado /path/to/vivado
+python3 scripts/build_hardware.py --stage synth --out /absolute/path/new_build --vivado /path/to/vivado
+python3 scripts/build_hardware.py --stage implement --out /absolute/path/new_build --vivado /path/to/vivado
+python3 scripts/build_hardware.py --stage coverage --out /absolute/path/new_build --vivado /path/to/vivado
+python3 scripts/build_hardware.py --stage export --out /absolute/path/new_build --vivado /path/to/vivado
 ```
 
-## 证据与边界
-
-原硬件 `manifest.json` 的 `HARDWARE_PACKAGE_READY_BOARD_NOT_TESTED` 是交付生成时状态，未作改写；后续板端通过记录另见 `validation/fifo_hardware/result.json`。该记录包含 43 项、1800 帧；逐帧 Golden/CRC 的覆盖范围以每个 case 的 `golden_check` 和原日志为准，不能把所有帧都称为完整 Golden 校验。
-
-GUI 处理速度与已解码同图重复 benchmark 口径不同。`validation/board/fast_ui_validation.json` 记录了完整软件路径约 3.79 帧/s 的无检测视频测试；硬件 benchmark 不包含压缩解码、显示、保存与检测。包内不包含先前为作品表格临时编写的 CLAHE/Restormer 占位性能数据。
-
-更多目录对应关系与实测统计见 `docs/ENGINEERING_INDEX.md`、`docs/VALIDATION.md`；第三方来源见 `docs/THIRD_PARTY.md`。
+构建后检查生成的资源、时序、DRC、CDC与路由报告，再运行输出比对。地址接口见 `hardware/register_map.*`、`hardware/address_map.json`，时钟复位见 `hardware/clock_reset.md`。第三方依赖说明见 `docs/THIRD_PARTY.md`。
