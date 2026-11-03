@@ -1,0 +1,5 @@
+system_i/cnn_data_sc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_send/gen_AB_reg_slice.payld_o[4]_i_2
+system_i/cnn_data_sc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_send/gen_AB_reg_slice.state[1]_i_1
+system_i/cnn_data_sc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_send/gen_AB_reg_slice.valid_payld_o_i_1
+->system_i/cnn_data_sc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_send/gen_AB_reg_slice.valid_payld_o_i_1
+->system_i/cnn_data_sc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_send/gen_xpm_fifo_sync.inst_xpm_fifo_sync_i_2

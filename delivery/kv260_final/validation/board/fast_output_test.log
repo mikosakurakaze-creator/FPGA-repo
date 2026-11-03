@@ -1,0 +1,3 @@
+ALL_192_FRAMES_PIXEL_MATCH
+[0;93m2023-11-22 16:04:54.716356117 [W:onnxruntime:Default, device_discovery.cc:164 DiscoverDevicesForPlatform] GPU device discovery failed: device_discovery.cc:89 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+DETECTOR_PASS 33.64078974099539 [0.5965865070029395, 0.5627425579878036, 0.5162325229903217]

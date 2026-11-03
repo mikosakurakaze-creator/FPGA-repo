@@ -1,0 +1,476 @@
+{
+  "formula": "B=32768*sum(abs(qweight))+abs(qbias); every partial sum <= B",
+  "layers": [
+    {
+      "channels": [
+        {
+          "abs_bias": 299186368,
+          "absolute_bound": 13069498560,
+          "channel": 0,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 389719
+        },
+        {
+          "abs_bias": 122794528,
+          "absolute_bound": 9572463136,
+          "channel": 1,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 288381
+        },
+        {
+          "abs_bias": 166966720,
+          "absolute_bound": 11410224576,
+          "channel": 2,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 343117
+        },
+        {
+          "abs_bias": 287391968,
+          "absolute_bound": 10122903776,
+          "channel": 3,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 300156
+        },
+        {
+          "abs_bias": 230973520,
+          "absolute_bound": 11740602448,
+          "channel": 4,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 351246
+        },
+        {
+          "abs_bias": 345048448,
+          "absolute_bound": 12830672256,
+          "channel": 5,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 381031
+        },
+        {
+          "abs_bias": 120601272,
+          "absolute_bound": 9344498360,
+          "channel": 6,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 281491
+        },
+        {
+          "abs_bias": 189436768,
+          "absolute_bound": 9188512608,
+          "channel": 7,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 274630
+        }
+      ],
+      "input_abs_bound": 32768,
+      "max_signed_bits": 35,
+      "node": "stem.conv"
+    },
+    {
+      "channels": [
+        {
+          "abs_bias": 81231480,
+          "absolute_bound": 23994596984,
+          "channel": 0,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 729778
+        },
+        {
+          "abs_bias": 202161824,
+          "absolute_bound": 36692344480,
+          "channel": 1,
+          "signed_bits_sufficient": 37,
+          "sum_abs_weight": 1113592
+        },
+        {
+          "abs_bias": 52973100,
+          "absolute_bound": 20121996844,
+          "channel": 2,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 612458
+        },
+        {
+          "abs_bias": 12332084,
+          "absolute_bound": 20584246324,
+          "channel": 3,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 627805
+        },
+        {
+          "abs_bias": 71480208,
+          "absolute_bound": 22537909136,
+          "channel": 4,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 685621
+        },
+        {
+          "abs_bias": 9569486,
+          "absolute_bound": 17097950414,
+          "channel": 5,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 521496
+        },
+        {
+          "abs_bias": 40231484,
+          "absolute_bound": 18363802172,
+          "channel": 6,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 559191
+        },
+        {
+          "abs_bias": 11790275,
+          "absolute_bound": 15420286915,
+          "channel": 7,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 470230
+        }
+      ],
+      "input_abs_bound": 32768,
+      "max_signed_bits": 37,
+      "node": "block0.conv0"
+    },
+    {
+      "channels": [
+        {
+          "abs_bias": 5208574,
+          "absolute_bound": 18633488894,
+          "channel": 0,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 568490
+        },
+        {
+          "abs_bias": 118599264,
+          "absolute_bound": 19230371424,
+          "channel": 1,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 583245
+        },
+        {
+          "abs_bias": 33823312,
+          "absolute_bound": 17954118224,
+          "channel": 2,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 546884
+        },
+        {
+          "abs_bias": 256478560,
+          "absolute_bound": 35334229344,
+          "channel": 3,
+          "signed_bits_sufficient": 37,
+          "sum_abs_weight": 1070488
+        },
+        {
+          "abs_bias": 16313545,
+          "absolute_bound": 18804010185,
+          "channel": 4,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 573355
+        },
+        {
+          "abs_bias": 60787500,
+          "absolute_bound": 18513693484,
+          "channel": 5,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 563138
+        },
+        {
+          "abs_bias": 51166332,
+          "absolute_bound": 19246431356,
+          "channel": 6,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 585793
+        },
+        {
+          "abs_bias": 97627432,
+          "absolute_bound": 17038617896,
+          "channel": 7,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 516998
+        }
+      ],
+      "input_abs_bound": 32768,
+      "max_signed_bits": 37,
+      "node": "block0.conv1"
+    },
+    {
+      "channels": [
+        {
+          "abs_bias": 112402952,
+          "absolute_bound": 17498448392,
+          "channel": 0,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 530580
+        },
+        {
+          "abs_bias": 1734077,
+          "absolute_bound": 20712322493,
+          "channel": 1,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 632037
+        },
+        {
+          "abs_bias": 131643192,
+          "absolute_bound": 19577714488,
+          "channel": 2,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 593447
+        },
+        {
+          "abs_bias": 66246744,
+          "absolute_bound": 18987210840,
+          "channel": 3,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 577422
+        },
+        {
+          "abs_bias": 119787672,
+          "absolute_bound": 19032527000,
+          "channel": 4,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 577171
+        },
+        {
+          "abs_bias": 90158824,
+          "absolute_bound": 19031013096,
+          "channel": 5,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 578029
+        },
+        {
+          "abs_bias": 74634840,
+          "absolute_bound": 20772968024,
+          "channel": 6,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 631663
+        },
+        {
+          "abs_bias": 80142144,
+          "absolute_bound": 17888599872,
+          "channel": 7,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 543471
+        }
+      ],
+      "input_abs_bound": 32768,
+      "max_signed_bits": 36,
+      "node": "block1.conv0"
+    },
+    {
+      "channels": [
+        {
+          "abs_bias": 29395872,
+          "absolute_bound": 20636306336,
+          "channel": 0,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 628873
+        },
+        {
+          "abs_bias": 120152352,
+          "absolute_bound": 19791470880,
+          "channel": 1,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 600321
+        },
+        {
+          "abs_bias": 73884960,
+          "absolute_bound": 19897574688,
+          "channel": 2,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 604971
+        },
+        {
+          "abs_bias": 43929900,
+          "absolute_bound": 21461160236,
+          "channel": 3,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 653602
+        },
+        {
+          "abs_bias": 10019391,
+          "absolute_bound": 17750811199,
+          "channel": 4,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 541406
+        },
+        {
+          "abs_bias": 92677504,
+          "absolute_bound": 18770863488,
+          "channel": 5,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 570013
+        },
+        {
+          "abs_bias": 18409300,
+          "absolute_bound": 18520434516,
+          "channel": 6,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 564637
+        },
+        {
+          "abs_bias": 42362580,
+          "absolute_bound": 18043037396,
+          "channel": 7,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 549337
+        }
+      ],
+      "input_abs_bound": 32768,
+      "max_signed_bits": 36,
+      "node": "block1.conv1"
+    },
+    {
+      "channels": [
+        {
+          "abs_bias": 99091600,
+          "absolute_bound": 19381519504,
+          "channel": 0,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 588453
+        },
+        {
+          "abs_bias": 17969602,
+          "absolute_bound": 18924908994,
+          "channel": 1,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 576994
+        },
+        {
+          "abs_bias": 17565662,
+          "absolute_bound": 17257007070,
+          "channel": 2,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 526106
+        },
+        {
+          "abs_bias": 103597488,
+          "absolute_bound": 17759356336,
+          "channel": 3,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 538811
+        },
+        {
+          "abs_bias": 105173488,
+          "absolute_bound": 18295509488,
+          "channel": 4,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 555125
+        },
+        {
+          "abs_bias": 63425684,
+          "absolute_bound": 38311644308,
+          "channel": 5,
+          "signed_bits_sufficient": 37,
+          "sum_abs_weight": 1167243
+        },
+        {
+          "abs_bias": 32284348,
+          "absolute_bound": 17537736380,
+          "channel": 6,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 534224
+        },
+        {
+          "abs_bias": 102047624,
+          "absolute_bound": 17080852360,
+          "channel": 7,
+          "signed_bits_sufficient": 35,
+          "sum_abs_weight": 518152
+        }
+      ],
+      "input_abs_bound": 32768,
+      "max_signed_bits": 37,
+      "node": "block2.conv0"
+    },
+    {
+      "channels": [
+        {
+          "abs_bias": 48330652,
+          "absolute_bound": 19500660636,
+          "channel": 0,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 593638
+        },
+        {
+          "abs_bias": 121152808,
+          "absolute_bound": 19714647336,
+          "channel": 1,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 597946
+        },
+        {
+          "abs_bias": 116835496,
+          "absolute_bound": 20344718504,
+          "channel": 2,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 617306
+        },
+        {
+          "abs_bias": 110714576,
+          "absolute_bound": 19103440592,
+          "channel": 3,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 579612
+        },
+        {
+          "abs_bias": 73717792,
+          "absolute_bound": 20262279200,
+          "channel": 4,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 616106
+        },
+        {
+          "abs_bias": 42175536,
+          "absolute_bound": 19211783216,
+          "channel": 5,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 585010
+        },
+        {
+          "abs_bias": 95336120,
+          "absolute_bound": 19041760952,
+          "channel": 6,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 578199
+        },
+        {
+          "abs_bias": 33569060,
+          "absolute_bound": 19674380580,
+          "channel": 7,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 599390
+        }
+      ],
+      "input_abs_bound": 32768,
+      "max_signed_bits": 36,
+      "node": "block2.conv1"
+    },
+    {
+      "channels": [
+        {
+          "abs_bias": 126312440,
+          "absolute_bound": 25623650296,
+          "channel": 0,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 778117
+        },
+        {
+          "abs_bias": 137567792,
+          "absolute_bound": 26082516528,
+          "channel": 1,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 791777
+        },
+        {
+          "abs_bias": 152689280,
+          "absolute_bound": 26367023744,
+          "channel": 2,
+          "signed_bits_sufficient": 36,
+          "sum_abs_weight": 799998
+        }
+      ],
+      "input_abs_bound": 32768,
+      "max_signed_bits": 36,
+      "node": "head.conv"
+    }
+  ],
+  "max_signed_accumulator_bits": 37,
+  "scope": "All signed INT16 inputs to each certified convolution; activation saturation is explicit, not assumed absent"
+}

@@ -1,0 +1,92 @@
+﻿core,instance,base,offset,absolute_address,register,width_bits,access,reset_value,description
+bilinear,bilinear_fixed16_buffered_0,0xA0000000,0x00,0xA0000000,CTRL,32,read-write,0,Control signals
+bilinear,bilinear_fixed16_buffered_0,0xA0000000,0x04,0xA0000004,GIER,32,read-write,0,Global Interrupt Enable Register
+bilinear,bilinear_fixed16_buffered_0,0xA0000000,0x08,0xA0000008,IP_IER,32,read-write,0,IP Interrupt Enable Register
+bilinear,bilinear_fixed16_buffered_0,0xA0000000,0x0C,0xA000000C,IP_ISR,32,read-write,0,IP Interrupt Status Register
+bilinear,bilinear_fixed16_buffered_0,0xA0000000,0x10,0xA0000010,parameters_lowres_1,32,write-only,0,Data signal of parameters_lowres
+bilinear,bilinear_fixed16_buffered_0,0xA0000000,0x14,0xA0000014,parameters_lowres_2,32,write-only,0,Data signal of parameters_lowres
+bilinear,bilinear_fixed16_buffered_0,0xA0000000,0x1C,0xA000001C,parameters_fullres_1,32,write-only,0,Data signal of parameters_fullres
+bilinear,bilinear_fixed16_buffered_0,0xA0000000,0x20,0xA0000020,parameters_fullres_2,32,write-only,0,Data signal of parameters_fullres
+bilinear,bilinear_fixed16_buffered_0,0xA0000000,0x28,0xA0000028,input_height,32,write-only,0,Data signal of input_height
+bilinear,bilinear_fixed16_buffered_0,0xA0000000,0x30,0xA0000030,input_width,32,write-only,0,Data signal of input_width
+curve,curve_image_fixed16_0,0xA0010000,0x00,0xA0010000,CTRL,32,read-write,0,Control signals
+curve,curve_image_fixed16_0,0xA0010000,0x04,0xA0010004,GIER,32,read-write,0,Global Interrupt Enable Register
+curve,curve_image_fixed16_0,0xA0010000,0x08,0xA0010008,IP_IER,32,read-write,0,IP Interrupt Enable Register
+curve,curve_image_fixed16_0,0xA0010000,0x0C,0xA001000C,IP_ISR,32,read-write,0,IP Interrupt Status Register
+curve,curve_image_fixed16_0,0xA0010000,0x10,0xA0010010,input_r_1,32,write-only,0,Data signal of input_r
+curve,curve_image_fixed16_0,0xA0010000,0x14,0xA0010014,input_r_2,32,write-only,0,Data signal of input_r
+curve,curve_image_fixed16_0,0xA0010000,0x1C,0xA001001C,parameter_r_1,32,write-only,0,Data signal of parameter_r
+curve,curve_image_fixed16_0,0xA0010000,0x20,0xA0010020,parameter_r_2,32,write-only,0,Data signal of parameter_r
+curve,curve_image_fixed16_0,0xA0010000,0x28,0xA0010028,output_r_1,32,write-only,0,Data signal of output_r
+curve,curve_image_fixed16_0,0xA0010000,0x2C,0xA001002C,output_r_2,32,write-only,0,Data signal of output_r
+curve,curve_image_fixed16_0,0xA0010000,0x34,0xA0010034,count,32,write-only,0,Data signal of count
+cnn,zero_dce_cnn_top_0,0xA0020000,0x00,0xA0020000,CTRL,32,read-write,0,Control signals
+cnn,zero_dce_cnn_top_0,0xA0020000,0x04,0xA0020004,GIER,32,read-write,0,Global Interrupt Enable Register
+cnn,zero_dce_cnn_top_0,0xA0020000,0x08,0xA0020008,IP_IER,32,read-write,0,IP Interrupt Enable Register
+cnn,zero_dce_cnn_top_0,0xA0020000,0x0C,0xA002000C,IP_ISR,32,read-write,0,IP Interrupt Status Register
+cnn,zero_dce_cnn_top_0,0xA0020000,0x10,0xA0020010,input_q14_1,32,write-only,0,Data signal of input_q14
+cnn,zero_dce_cnn_top_0,0xA0020000,0x14,0xA0020014,input_q14_2,32,write-only,0,Data signal of input_q14
+cnn,zero_dce_cnn_top_0,0xA0020000,0x1C,0xA002001C,weights_int8_1,32,write-only,0,Data signal of weights_int8
+cnn,zero_dce_cnn_top_0,0xA0020000,0x20,0xA0020020,weights_int8_2,32,write-only,0,Data signal of weights_int8
+cnn,zero_dce_cnn_top_0,0xA0020000,0x28,0xA0020028,bias_int32_1,32,write-only,0,Data signal of bias_int32
+cnn,zero_dce_cnn_top_0,0xA0020000,0x2C,0xA002002C,bias_int32_2,32,write-only,0,Data signal of bias_int32
+cnn,zero_dce_cnn_top_0,0xA0020000,0x34,0xA0020034,weight_frac_1,32,write-only,0,Data signal of weight_frac
+cnn,zero_dce_cnn_top_0,0xA0020000,0x38,0xA0020038,weight_frac_2,32,write-only,0,Data signal of weight_frac
+cnn,zero_dce_cnn_top_0,0xA0020000,0x40,0xA0020040,tanh_lut_q15_1,32,write-only,0,Data signal of tanh_lut_q15
+cnn,zero_dce_cnn_top_0,0xA0020000,0x44,0xA0020044,tanh_lut_q15_2,32,write-only,0,Data signal of tanh_lut_q15
+cnn,zero_dce_cnn_top_0,0xA0020000,0x4C,0xA002004C,a_low_q14_1,32,write-only,0,Data signal of a_low_q14
+cnn,zero_dce_cnn_top_0,0xA0020000,0x50,0xA0020050,a_low_q14_2,32,write-only,0,Data signal of a_low_q14
+cnn,zero_dce_cnn_top_0,0xA0020000,0x58,0xA0020058,workspace_int16_1,32,write-only,0,Data signal of workspace_int16
+cnn,zero_dce_cnn_top_0,0xA0020000,0x5C,0xA002005C,workspace_int16_2,32,write-only,0,Data signal of workspace_int16
+prepare,joint_rgb8_prepare_0,0xA0030000,0x00,0xA0030000,CTRL,32,read-write,0,Control signals
+prepare,joint_rgb8_prepare_0,0xA0030000,0x04,0xA0030004,GIER,32,read-write,0,Global Interrupt Enable Register
+prepare,joint_rgb8_prepare_0,0xA0030000,0x08,0xA0030008,IP_IER,32,read-write,0,IP Interrupt Enable Register
+prepare,joint_rgb8_prepare_0,0xA0030000,0x0C,0xA003000C,IP_ISR,32,read-write,0,IP Interrupt Status Register
+prepare,joint_rgb8_prepare_0,0xA0030000,0x10,0xA0030010,ap_return,32,read-only,0,Data signal of ap_return
+prepare,joint_rgb8_prepare_0,0xA0030000,0x18,0xA0030018,rgb_1,32,write-only,0,Data signal of rgb
+prepare,joint_rgb8_prepare_0,0xA0030000,0x1C,0xA003001C,rgb_2,32,write-only,0,Data signal of rgb
+prepare,joint_rgb8_prepare_0,0xA0030000,0x24,0xA0030024,original_q14_1,32,write-only,0,Data signal of original_q14
+prepare,joint_rgb8_prepare_0,0xA0030000,0x28,0xA0030028,original_q14_2,32,write-only,0,Data signal of original_q14
+prepare,joint_rgb8_prepare_0,0xA0030000,0x30,0xA0030030,d_input_q14_1,32,write-only,0,Data signal of d_input_q14
+prepare,joint_rgb8_prepare_0,0xA0030000,0x34,0xA0030034,d_input_q14_2,32,write-only,0,Data signal of d_input_q14
+prepare,joint_rgb8_prepare_0,0xA0030000,0x3C,0xA003003C,cnn_input_q14_1,32,write-only,0,Data signal of cnn_input_q14
+prepare,joint_rgb8_prepare_0,0xA0030000,0x40,0xA0030040,cnn_input_q14_2,32,write-only,0,Data signal of cnn_input_q14
+prepare,joint_rgb8_prepare_0,0xA0030000,0x48,0xA0030048,abi_cookie,32,write-only,0,Data signal of abi_cookie
+fusion,joint_fusion_0,0xA0040000,0x00,0xA0040000,AP_CTRL,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x04,0xA0040004,GIE,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x08,0xA0040008,IER,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x0C,0xA004000C,ISR,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x10,0xA0040010,AP_RETURN,32,read-only,,
+fusion,joint_fusion_0,0xA0040000,0x18,0xA0040018,I_LOW,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x1C,0xA004001C,I_HIGH,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x24,0xA0040024,L_LOW,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x28,0xA0040028,L_HIGH,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x30,0xA0040030,D_LOW,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x34,0xA0040034,D_HIGH,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x3C,0xA004003C,O_LOW,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x40,0xA0040040,O_HIGH,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x48,0xA0040048,W_I,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x50,0xA0040050,W_L,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x58,0xA0040058,W_D,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x60,0xA0040060,COOKIE,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x68,0xA0040068,FRAME_ID,32,read-write,,
+fusion,joint_fusion_0,0xA0040000,0x70,0xA0040070,COMPLETED_FRAME,32,read-only,,
+fusion,joint_fusion_0,0xA0040000,0x74,0xA0040074,ACTIVE_FRAME,32,read-only,,
+d,compact_d_top_0,0xA0050000,0x00,0xA0050000,CTRL,32,read-write,0,Control signals
+d,compact_d_top_0,0xA0050000,0x04,0xA0050004,GIER,32,read-write,0,Global Interrupt Enable Register
+d,compact_d_top_0,0xA0050000,0x08,0xA0050008,IP_IER,32,read-write,0,IP Interrupt Enable Register
+d,compact_d_top_0,0xA0050000,0x0C,0xA005000C,IP_ISR,32,read-write,0,IP Interrupt Status Register
+d,compact_d_top_0,0xA0050000,0x10,0xA0050010,ap_return,32,read-only,0,Data signal of ap_return
+d,compact_d_top_0,0xA0050000,0x18,0xA0050018,input_r_1,32,write-only,0,Data signal of input_r
+d,compact_d_top_0,0xA0050000,0x1C,0xA005001C,input_r_2,32,write-only,0,Data signal of input_r
+d,compact_d_top_0,0xA0050000,0x24,0xA0050024,output_r_1,32,write-only,0,Data signal of output_r
+d,compact_d_top_0,0xA0050000,0x28,0xA0050028,output_r_2,32,write-only,0,Data signal of output_r
+d,compact_d_top_0,0xA0050000,0x30,0xA0050030,height,32,write-only,0,Data signal of height
+d,compact_d_top_0,0xA0050000,0x38,0xA0050038,width,32,write-only,0,Data signal of width
+d,compact_d_top_0,0xA0050000,0x40,0xA0050040,abi_cookie,32,write-only,0,Data signal of abi_cookie
+d,compact_d_top_0,0xA0050000,0x48,0xA0050048,work_cycles_1,32,read-only,0,Data signal of work_cycles
+d,compact_d_top_0,0xA0050000,0x4C,0xA005004C,work_cycles_2,32,read-only,0,Data signal of work_cycles
+d,compact_d_top_0,0xA0050000,0x50,0xA0050050,work_cycles_ctrl,32,read-only,0,Control signal of work_cycles
+d,compact_d_top_0,0xA0050000,0x58,0xA0050058,input_cycles_1,32,read-only,0,Data signal of input_cycles
+d,compact_d_top_0,0xA0050000,0x5C,0xA005005C,input_cycles_2,32,read-only,0,Data signal of input_cycles
+d,compact_d_top_0,0xA0050000,0x60,0xA0050060,input_cycles_ctrl,32,read-only,0,Control signal of input_cycles

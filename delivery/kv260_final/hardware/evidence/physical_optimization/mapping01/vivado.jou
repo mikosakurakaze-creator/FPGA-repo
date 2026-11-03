@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Mon Nov  2 20:04:48 2026
+# Process ID         : 39808
+# Current directory  : D:/weather_builds/timing_margin_20261102/fifo_targeted04_continue01/mapping01
+# Command line       : vivado.exe -mode batch -log D:\weather_builds\timing_margin_20261102\fifo_targeted04_continue01\mapping01\vivado.log -journal D:\weather_builds\timing_margin_20261102\fifo_targeted04_continue01\mapping01\vivado.jou -source D:\weather_builds\timing_margin_20261102\fifo_targeted04_continue01\mapping01\timing_margin.tcl -tclargs D:\weather_builds\timing_margin_20261102\fifo_targeted04\joint_synth.dcp D:\weather_builds\timing_margin_20261102\fifo_targeted04_continue01\mapping01 inspect 0.2 0.05 reroute 
+# Log file           : D:/weather_builds/timing_margin_20261102/fifo_targeted04_continue01/mapping01/vivado.log
+# Journal file       : D:\weather_builds\timing_margin_20261102\fifo_targeted04_continue01\mapping01\vivado.jou
+# Running On         : LAPTOP-FAFSANP3
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) Ultra 9 275HX
+# CPU Frequency      : 3072 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 24
+# Host memory        : 33676 MB
+# Swap memory        : 5939 MB
+# Total Virtual      : 39615 MB
+# Available Virtual  : 10635 MB
+#-----------------------------------------------------------
+source {D:\weather_builds\timing_margin_20261102\fifo_targeted04_continue01\mapping01\timing_margin.tcl}

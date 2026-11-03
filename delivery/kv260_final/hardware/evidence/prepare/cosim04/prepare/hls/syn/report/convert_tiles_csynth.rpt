@@ -1,0 +1,263 @@
+
+
+================================================================
+== Vitis HLS Report for 'convert_tiles'
+================================================================
+* Date:           Sun Nov  1 22:21:10 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 12 2025)
+* Project:        prepare
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.571 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |      Interval     | Pipeline|
+    |   min   |   max   |    min    |    max    |   min   |   max   |   Type  |
+    +---------+---------+-----------+-----------+---------+---------+---------+
+    |  1903234|  1903234|  19.032 ms|  19.032 ms|  1903234|  1903234|       no|
+    +---------+---------+-----------+-----------+---------+---------+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------------------------------+-------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+-------------------+
+        |                                                                  |                                                       |  Latency (cycles) |   Latency (absolute)  |  Interval |      Pipeline     |
+        |                             Instance                             |                         Module                        |   min   |   max   |    min    |    max    | min | max |        Type       |
+        +------------------------------------------------------------------+-------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+-------------------+
+        |grp_convert_tiles_Pipeline_emit_small_channels_emit_small_fu_196  |convert_tiles_Pipeline_emit_small_channels_emit_small  |     2387|     2387|  23.870 us|  23.870 us|    0|    0|  loop pipeline stp|
+        |grp_convert_tiles_Pipeline_load_group_fu_205                      |convert_tiles_Pipeline_load_group                      |        5|        5|  50.000 ns|  50.000 ns|    0|    0|  loop pipeline stp|
+        |grp_convert_tiles_Pipeline_emit_channels_emit_tile_fu_212         |convert_tiles_Pipeline_emit_channels_emit_tile         |      146|      146|   1.460 us|   1.460 us|    0|    0|  loop pipeline stp|
+        |grp_convert_tiles_Pipeline_pixels_in_group_fu_226                 |convert_tiles_Pipeline_pixels_in_group                 |       18|       18|   0.180 us|   0.180 us|    0|    0|  loop pipeline stp|
+        +------------------------------------------------------------------+-------------------------------------------------------+---------+---------+-----------+-----------+-----+-----+-------------------+
+
+        * Loop: 
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+        |           |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- tiles    |  1900845|  1900845|       797|          -|          -|  2385|        no|
+        | + groups  |      648|      648|        27|          -|          -|    24|        no|
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      64|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|    18|    1148|    3045|    -|
+|Memory           |       24|     -|    1536|     576|    -|
+|Multiplexer      |        -|     -|       0|     454|    -|
+|Register         |        -|     -|    1533|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |       24|    18|    4217|    4139|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |      288|  1248|  234240|  117120|   64|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        8|     1|       1|       3|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------------------------------+-------------------------------------------------------+---------+----+-----+------+-----+
+    |                             Instance                             |                         Module                        | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +------------------------------------------------------------------+-------------------------------------------------------+---------+----+-----+------+-----+
+    |grp_convert_tiles_Pipeline_emit_channels_emit_tile_fu_212         |convert_tiles_Pipeline_emit_channels_emit_tile         |        0|   0|   20|   178|    0|
+    |grp_convert_tiles_Pipeline_emit_small_channels_emit_small_fu_196  |convert_tiles_Pipeline_emit_small_channels_emit_small  |        0|   0|   28|   178|    0|
+    |grp_convert_tiles_Pipeline_load_group_fu_205                      |convert_tiles_Pipeline_load_group                      |        0|   0|  391|   636|    0|
+    |grp_convert_tiles_Pipeline_pixels_in_group_fu_226                 |convert_tiles_Pipeline_pixels_in_group                 |        0|  18|  709|  2053|    0|
+    +------------------------------------------------------------------+-------------------------------------------------------+---------+----+-----+------+-----+
+    |Total                                                             |                                                       |        0|  18| 1148|  3045|    0|
+    +------------------------------------------------------------------+-------------------------------------------------------+---------+----+-----+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +-------------------+------------------------------------------------+---------+-----+----+-----+------+-----+------+-------------+
+    |       Memory      |                     Module                     | BRAM_18K|  FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +-------------------+------------------------------------------------+---------+-----+----+-----+------+-----+------+-------------+
+    |original_tile_U    |convert_tiles_original_tile_RAM_2P_LUTRAM_1R1W  |        0|  256|  96|    0|    48|  128|     1|         6144|
+    |original_tile_1_U  |convert_tiles_original_tile_RAM_2P_LUTRAM_1R1W  |        0|  256|  96|    0|    48|  128|     1|         6144|
+    |original_tile_2_U  |convert_tiles_original_tile_RAM_2P_LUTRAM_1R1W  |        0|  256|  96|    0|    48|  128|     1|         6144|
+    |d_tile_U           |convert_tiles_original_tile_RAM_2P_LUTRAM_1R1W  |        0|  256|  96|    0|    48|  128|     1|         6144|
+    |d_tile_1_U         |convert_tiles_original_tile_RAM_2P_LUTRAM_1R1W  |        0|  256|  96|    0|    48|  128|     1|         6144|
+    |d_tile_2_U         |convert_tiles_original_tile_RAM_2P_LUTRAM_1R1W  |        0|  256|  96|    0|    48|  128|     1|         6144|
+    |small_image_U      |convert_tiles_small_image_RAM_2P_BRAM_1R1W      |        8|    0|   0|    0|   795|  127|     1|       100965|
+    |small_image_1_U    |convert_tiles_small_image_RAM_2P_BRAM_1R1W      |        8|    0|   0|    0|   795|  127|     1|       100965|
+    |small_image_2_U    |convert_tiles_small_image_RAM_2P_BRAM_1R1W      |        8|    0|   0|    0|   795|  127|     1|       100965|
+    +-------------------+------------------------------------------------+---------+-----+----+-----+------+-----+------+-------------+
+    |Total              |                                                |       24| 1536| 576|    0|  2673| 1149|     9|       339759|
+    +-------------------+------------------------------------------------+---------+-----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |group_1_fu_375_p2    |         +|   0|  0|  12|           5|           1|
+    |tile_2_fu_347_p2     |         +|   0|  0|  19|          12|           1|
+    |icmp_ln53_fu_341_p2  |      icmp|   0|  0|  19|          12|          12|
+    |icmp_ln55_fu_369_p2  |      icmp|   0|  0|  12|           5|           5|
+    |ap_block_state1      |        or|   0|  0|   2|           1|           1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  64|          35|          20|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------+----+-----------+-----+-----------+
+    |           Name           | LUT| Input Size| Bits| Total Bits|
+    +--------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                 |  49|          9|    1|          9|
+    |ap_done                   |   9|          2|    1|          2|
+    |d_tile_1_ce0              |   9|          2|    1|          2|
+    |d_tile_1_ce1              |   9|          2|    1|          2|
+    |d_tile_1_we1              |   9|          2|    1|          2|
+    |d_tile_2_ce0              |   9|          2|    1|          2|
+    |d_tile_2_ce1              |   9|          2|    1|          2|
+    |d_tile_2_we1              |   9|          2|    1|          2|
+    |d_tile_ce0                |   9|          2|    1|          2|
+    |d_tile_ce1                |   9|          2|    1|          2|
+    |d_tile_we1                |   9|          2|    1|          2|
+    |group_reg_184             |   9|          2|    5|         10|
+    |low_x_fu_80               |   9|          2|   32|         64|
+    |original_tile_1_ce0       |   9|          2|    1|          2|
+    |original_tile_1_ce1       |   9|          2|    1|          2|
+    |original_tile_1_we1       |   9|          2|    1|          2|
+    |original_tile_2_ce0       |   9|          2|    1|          2|
+    |original_tile_2_ce1       |   9|          2|    1|          2|
+    |original_tile_2_we1       |   9|          2|    1|          2|
+    |original_tile_ce0         |   9|          2|    1|          2|
+    |original_tile_ce1         |   9|          2|    1|          2|
+    |original_tile_we1         |   9|          2|    1|          2|
+    |p_lcssa44_lcssa83_fu_96   |   9|          2|  128|        256|
+    |p_lcssa45_lcssa84_fu_100  |   9|          2|  128|        256|
+    |p_lcssa48_lcssa86_fu_108  |   9|          2|  128|        256|
+    |p_lcssa49_lcssa87_fu_112  |   9|          2|  128|        256|
+    |p_lcssa50_lcssa88_fu_116  |   9|          2|  128|        256|
+    |p_lcssa53_lcssa90_fu_124  |   9|          2|  128|        256|
+    |p_lcssa54_lcssa91_fu_128  |   9|          2|  128|        256|
+    |p_lcssa55_lcssa92_fu_132  |   9|          2|  128|        256|
+    |p_lcssa58_lcssa94_fu_140  |   9|          2|  128|        256|
+    |real_start                |   9|          2|    1|          2|
+    |small_image_1_ce0         |   9|          2|    1|          2|
+    |small_image_1_ce1         |   9|          2|    1|          2|
+    |small_image_1_we1         |   9|          2|    1|          2|
+    |small_image_2_ce0         |   9|          2|    1|          2|
+    |small_image_2_ce1         |   9|          2|    1|          2|
+    |small_image_2_we1         |   9|          2|    1|          2|
+    |small_image_ce0           |   9|          2|    1|          2|
+    |small_image_ce1           |   9|          2|    1|          2|
+    |small_image_we1           |   9|          2|    1|          2|
+    |small_index_fu_76         |   9|          2|   32|         64|
+    |tile_fu_72                |   9|          2|   12|         24|
+    |x12_fu_88                 |   9|          2|   32|         64|
+    |x_fu_92                   |   9|          2|   32|         64|
+    |y12_fu_84                 |   9|          2|   32|         64|
+    +--------------------------+----+-----------+-----+-----------+
+    |Total                     | 454|         99| 1359|       2725|
+    +--------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------------------------------------------+-----+----+-----+-----------+
+    |                                      Name                                     |  FF | LUT| Bits| Const Bits|
+    +-------------------------------------------------------------------------------+-----+----+-----+-----------+
+    |ap_CS_fsm                                                                      |    8|   0|    8|          0|
+    |ap_done_reg                                                                    |    1|   0|    1|          0|
+    |conv2_i_i11847_lcssa_lcssa85_fu_104                                            |   15|   0|   15|          0|
+    |conv2_i_i118_152_lcssa_lcssa89_fu_120                                          |   15|   0|   15|          0|
+    |conv2_i_i118_257_lcssa_lcssa93_fu_136                                          |   15|   0|   15|          0|
+    |group_1_reg_542                                                                |    5|   0|    5|          0|
+    |group_reg_184                                                                  |    5|   0|    5|          0|
+    |grp_convert_tiles_Pipeline_emit_channels_emit_tile_fu_212_ap_start_reg         |    1|   0|    1|          0|
+    |grp_convert_tiles_Pipeline_emit_small_channels_emit_small_fu_196_ap_start_reg  |    1|   0|    1|          0|
+    |grp_convert_tiles_Pipeline_load_group_fu_205_ap_start_reg                      |    1|   0|    1|          0|
+    |grp_convert_tiles_Pipeline_pixels_in_group_fu_226_ap_start_reg                 |    1|   0|    1|          0|
+    |low_x_fu_80                                                                    |   32|   0|   32|          0|
+    |p_lcssa44_lcssa83_fu_96                                                        |  128|   0|  128|          0|
+    |p_lcssa45_lcssa84_fu_100                                                       |  128|   0|  128|          0|
+    |p_lcssa48_lcssa86_fu_108                                                       |  128|   0|  128|          0|
+    |p_lcssa49_lcssa87_fu_112                                                       |  128|   0|  128|          0|
+    |p_lcssa50_lcssa88_fu_116                                                       |  128|   0|  128|          0|
+    |p_lcssa53_lcssa90_fu_124                                                       |  128|   0|  128|          0|
+    |p_lcssa54_lcssa91_fu_128                                                       |  128|   0|  128|          0|
+    |p_lcssa55_lcssa92_fu_132                                                       |  128|   0|  128|          0|
+    |p_lcssa58_lcssa94_fu_140                                                       |  128|   0|  128|          0|
+    |small_index_fu_76                                                              |   32|   0|   32|          0|
+    |small_index_load_reg_547                                                       |   32|   0|   32|          0|
+    |start_once_reg                                                                 |    1|   0|    1|          0|
+    |tile_2_reg_534                                                                 |   12|   0|   12|          0|
+    |tile_fu_72                                                                     |   12|   0|   12|          0|
+    |x12_fu_88                                                                      |   32|   0|   32|          0|
+    |x12_load_reg_557                                                               |   32|   0|   32|          0|
+    |x_fu_92                                                                        |   32|   0|   32|          0|
+    |x_load_reg_562                                                                 |   32|   0|   32|          0|
+    |y12_fu_84                                                                      |   32|   0|   32|          0|
+    |y12_load_reg_552                                                               |   32|   0|   32|          0|
+    +-------------------------------------------------------------------------------+-----+----+-----+-----------+
+    |Total                                                                          | 1533|   0| 1533|          0|
+    +-------------------------------------------------------------------------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+---------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  | Source Object |    C Type    |
++---------------------------+-----+-----+------------+---------------+--------------+
+|ap_clk                     |   in|    1|  ap_ctrl_hs|  convert_tiles|  return value|
+|ap_rst                     |   in|    1|  ap_ctrl_hs|  convert_tiles|  return value|
+|ap_start                   |   in|    1|  ap_ctrl_hs|  convert_tiles|  return value|
+|start_full_n               |   in|    1|  ap_ctrl_hs|  convert_tiles|  return value|
+|ap_done                    |  out|    1|  ap_ctrl_hs|  convert_tiles|  return value|
+|ap_continue                |   in|    1|  ap_ctrl_hs|  convert_tiles|  return value|
+|ap_idle                    |  out|    1|  ap_ctrl_hs|  convert_tiles|  return value|
+|ap_ready                   |  out|    1|  ap_ctrl_hs|  convert_tiles|  return value|
+|start_out                  |  out|    1|  ap_ctrl_hs|  convert_tiles|  return value|
+|start_write                |  out|    1|  ap_ctrl_hs|  convert_tiles|  return value|
+|pixels_dout                |   in|  128|     ap_fifo|         pixels|       pointer|
+|pixels_empty_n             |   in|    1|     ap_fifo|         pixels|       pointer|
+|pixels_read                |  out|    1|     ap_fifo|         pixels|       pointer|
+|pixels_num_data_valid      |   in|    9|     ap_fifo|         pixels|       pointer|
+|pixels_fifo_cap            |   in|    9|     ap_fifo|         pixels|       pointer|
+|original_din               |  out|  128|     ap_fifo|       original|       pointer|
+|original_full_n            |   in|    1|     ap_fifo|       original|       pointer|
+|original_write             |  out|    1|     ap_fifo|       original|       pointer|
+|original_num_data_valid    |   in|   32|     ap_fifo|       original|       pointer|
+|original_fifo_cap          |   in|   32|     ap_fifo|       original|       pointer|
+|normalized_din             |  out|  128|     ap_fifo|     normalized|       pointer|
+|normalized_full_n          |   in|    1|     ap_fifo|     normalized|       pointer|
+|normalized_write           |  out|    1|     ap_fifo|     normalized|       pointer|
+|normalized_num_data_valid  |   in|   32|     ap_fifo|     normalized|       pointer|
+|normalized_fifo_cap        |   in|   32|     ap_fifo|     normalized|       pointer|
+|small_r_din                |  out|  128|     ap_fifo|        small_r|       pointer|
+|small_r_full_n             |   in|    1|     ap_fifo|        small_r|       pointer|
+|small_r_write              |  out|    1|     ap_fifo|        small_r|       pointer|
+|small_r_num_data_valid     |   in|   32|     ap_fifo|        small_r|       pointer|
+|small_r_fifo_cap           |   in|   32|     ap_fifo|        small_r|       pointer|
++---------------------------+-----+-----+------------+---------------+--------------+
+

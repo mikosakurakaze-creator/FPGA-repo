@@ -1,0 +1,20 @@
+{
+  "command": [
+    "D:\\competing\\outputs\\kv260_joint_fifo_hold_release_20261102_final_bootgen_runtime\\vendor_runtime\\bootgen.exe",
+    "-arch",
+    "zynqmp",
+    "-image",
+    "evidence/bootgen_joint.bif",
+    "-process_bitstream",
+    "bin",
+    "-w",
+    "on"
+  ],
+  "exit_code": 0,
+  "log_sha256": "479d3c2ac2718b64db5e6606738ab3f58b0662d3ca6715f8568e7dba66476f51",
+  "board_operations": 0,
+  "bin_sha256": "ef5b66b534c993b235dd5f5f45309cf872dc004a7a2781112bb705a23f6961ee",
+  "bit_sha256": "996a76fc600136ec22fd7940cbd2998b1ea3ac3d02f0f4afec1239d26a225033",
+  "configuration_bytes": 7797692,
+  "word_swapped_payload_matches": true
+}

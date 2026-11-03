@@ -1,0 +1,12 @@
+FUSION_FRAME_METRICS frame=1 scalars=65536 cycles=33139 read_beats=24576 write_beats=8192 read_bursts=387 write_bursts=129 overlap=5958 read_div=1
+FUSION_FRAME_METRICS frame=2 scalars=65536 cycles=33147 read_beats=24576 write_beats=8192 read_bursts=387 write_bursts=129 overlap=11923 read_div=1
+FUSION_FRAME_METRICS frame=3 scalars=65536 cycles=33147 read_beats=24576 write_beats=8192 read_bursts=387 write_bursts=129 overlap=17891 read_div=1
+FUSION_FRAME_METRICS frame=4 scalars=65536 cycles=33147 read_beats=24576 write_beats=8192 read_bursts=387 write_bursts=129 overlap=23841 read_div=1
+FUSION_FRAME_METRICS frame=5 scalars=65536 cycles=33147 read_beats=24576 write_beats=8192 read_bursts=387 write_bursts=129 overlap=29791 read_div=1
+FUSION_FRAME_METRICS frame=6 scalars=65536 cycles=33147 read_beats=24576 write_beats=8192 read_bursts=387 write_bursts=129 overlap=35741 read_div=1
+FUSION_FRAME_METRICS frame=7 scalars=65536 cycles=33147 read_beats=24576 write_beats=8192 read_bursts=387 write_bursts=129 overlap=41691 read_div=1
+FUSION_FRAME_METRICS frame=8 scalars=65536 cycles=33147 read_beats=24576 write_beats=8192 read_bursts=387 write_bursts=129 overlap=47642 read_div=1
+FUSION_FRAME_METRICS frame=9 scalars=65536 cycles=33147 read_beats=24576 write_beats=8192 read_bursts=387 write_bursts=129 overlap=53605 read_div=1
+FUSION_FRAME_METRICS frame=10 scalars=65536 cycles=36117 read_beats=24576 write_beats=8192 read_bursts=387 write_bursts=129 overlap=59711 read_div=1
+FUSION_RTL_PASS frames=10 invalid=9 scalars=655360 reads=246867 writes=82124 overlap=59711 full_cycles=3960
+D:/weather_builds/fusion_pipeline_20261101/rtl03/tb_joint_fusion.sv:249: $finish called at 3370760000 (1ps)

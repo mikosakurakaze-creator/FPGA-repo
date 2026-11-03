@@ -1,0 +1,55 @@
+{
+  "pass_all": true,
+  "build_id": "c6496c6dc89aa54c4500",
+  "scope": "RGB8 outputs versus Q14 Goldens after exact driver conversion",
+  "cases": [
+    {
+      "branch": "lowlight",
+      "frames": 6,
+      "mismatched_bytes": 0,
+      "output_sha256": "7a40be6eef68b606a8dbcfba1b234617115c9833cb2e732a77c1288da3d3d5c8",
+      "metadata": {
+        "ok": true,
+        "hardware_ms": 347.346854,
+        "total_ms": 420.42785498779267,
+        "count": 6,
+        "bytes": 16485120,
+        "build": "c6496c6dc89aa54c4500",
+        "mode": "six-slot-distinct-input",
+        "completed_total": 545
+      }
+    },
+    {
+      "branch": "derain_dehaze",
+      "frames": 6,
+      "mismatched_bytes": 0,
+      "output_sha256": "c0f9842dfc2adfa6f7e3a2bc1bf7d230a030dac857000cf70cc4c80e03156616",
+      "metadata": {
+        "ok": true,
+        "hardware_ms": 347.94357,
+        "total_ms": 415.2316029940266,
+        "count": 6,
+        "bytes": 16485120,
+        "build": "c6496c6dc89aa54c4500",
+        "mode": "six-slot-distinct-input",
+        "completed_total": 551
+      }
+    },
+    {
+      "branch": "fused",
+      "frames": 6,
+      "mismatched_bytes": 0,
+      "output_sha256": "a628437d7f4b0c00e8bfe6204ca73c116645f8e72a214186513dda21e990dcc4",
+      "metadata": {
+        "ok": true,
+        "hardware_ms": 343.02051,
+        "total_ms": 430.0874320033472,
+        "count": 6,
+        "bytes": 16485120,
+        "build": "c6496c6dc89aa54c4500",
+        "mode": "six-slot-distinct-input",
+        "completed_total": 557
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "D:\github clone\feat-software\fpga\joint_lowlight_compact_d\scripts\collect_delivery.py", line 342, in <module>
+    if __name__=="__main__":main()
+                            ^^^^^^
+  File "D:\github clone\feat-software\fpga\joint_lowlight_compact_d\scripts\collect_delivery.py", line 304, in main
+    raise ValueError("Pipeline entry tested source changed: "+relative)
+ValueError: Pipeline entry tested source changed: scripts/accept_system.py

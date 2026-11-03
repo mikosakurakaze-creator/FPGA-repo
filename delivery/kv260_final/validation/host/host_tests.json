@@ -1,0 +1,4 @@
+{
+  "exit_code": 0,
+  "scope": "controller and report parser host regressions; no hardware access"
+}

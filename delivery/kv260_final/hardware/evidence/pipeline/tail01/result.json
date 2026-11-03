@@ -1,0 +1,146 @@
+{
+  "stage": "rtl",
+  "pass": true,
+  "board_operations": 0,
+  "steps": [
+    {
+      "name": "compile",
+      "command": [
+        "D:/weather_builds/fusion_pipeline_20261101/tail01/ivl_runtime/iverilog.exe",
+        "-BD:\\weather_builds\\fusion_pipeline_20261101\\tail01\\ivl_runtime",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_joint_fusion",
+        "-Ptb_joint_fusion.N=65568",
+        "-o",
+        "D:/weather_builds/fusion_pipeline_20261101/tail01/fusion.vvp",
+        "D:/weather_builds/fusion_pipeline_20261101/tail01/joint_fusion.v",
+        "D:/weather_builds/fusion_pipeline_20261101/tail01/tb_joint_fusion.sv"
+      ],
+      "return_code": 0,
+      "seconds": 3.7720211999985622,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "simulate",
+      "command": [
+        "D:/weather_builds/fusion_pipeline_20261101/tail01/ivl_runtime/vvp.exe",
+        "D:/weather_builds/fusion_pipeline_20261101/tail01/fusion.vvp"
+      ],
+      "return_code": 0,
+      "seconds": 33.44939069999964,
+      "log_sha256": "c921b3042ea9c797edb81a746cfe9ffb64f41b559671087f63f13b40456ca5c2"
+    }
+  ],
+  "source_sha256": {
+    "rtl/joint_fusion.v": "cfb43e59d050c65ed5f1a685ab7092dfb13bb4859f981b9514bd464c8c15c7ea",
+    "tests/tb_joint_fusion.sv": "409e7de32faabdb80e9533781354ad6c34fc3f780a6f7b0044901905ebed5eb6",
+    "scripts/run_checks.py": "2437828ab09618b3481b9d628f691e2cfb03681ca6b2adb448858d45a07fb125"
+  },
+  "frame_metrics": [
+    {
+      "frame": 1,
+      "scalars": 65568,
+      "cycles": 33161,
+      "read_beats": 24588,
+      "write_beats": 8196,
+      "read_bursts": 387,
+      "write_bursts": 129,
+      "overlap": 5961
+    },
+    {
+      "frame": 2,
+      "scalars": 65568,
+      "cycles": 33169,
+      "read_beats": 24588,
+      "write_beats": 8196,
+      "read_bursts": 387,
+      "write_bursts": 129,
+      "overlap": 11921
+    },
+    {
+      "frame": 3,
+      "scalars": 65568,
+      "cycles": 33169,
+      "read_beats": 24588,
+      "write_beats": 8196,
+      "read_bursts": 387,
+      "write_bursts": 129,
+      "overlap": 17889
+    },
+    {
+      "frame": 4,
+      "scalars": 65568,
+      "cycles": 33169,
+      "read_beats": 24588,
+      "write_beats": 8196,
+      "read_bursts": 387,
+      "write_bursts": 129,
+      "overlap": 23856
+    },
+    {
+      "frame": 5,
+      "scalars": 65568,
+      "cycles": 33169,
+      "read_beats": 24588,
+      "write_beats": 8196,
+      "read_bursts": 387,
+      "write_bursts": 129,
+      "overlap": 29812
+    },
+    {
+      "frame": 6,
+      "scalars": 65568,
+      "cycles": 33169,
+      "read_beats": 24588,
+      "write_beats": 8196,
+      "read_bursts": 387,
+      "write_bursts": 129,
+      "overlap": 35764
+    },
+    {
+      "frame": 7,
+      "scalars": 65568,
+      "cycles": 33169,
+      "read_beats": 24588,
+      "write_beats": 8196,
+      "read_bursts": 387,
+      "write_bursts": 129,
+      "overlap": 41726
+    },
+    {
+      "frame": 8,
+      "scalars": 65568,
+      "cycles": 33169,
+      "read_beats": 24588,
+      "write_beats": 8196,
+      "read_bursts": 387,
+      "write_bursts": 129,
+      "overlap": 47683
+    },
+    {
+      "frame": 9,
+      "scalars": 65568,
+      "cycles": 33169,
+      "read_beats": 24588,
+      "write_beats": 8196,
+      "read_bursts": 387,
+      "write_bursts": 129,
+      "overlap": 53651
+    },
+    {
+      "frame": 10,
+      "scalars": 65568,
+      "cycles": 36139,
+      "read_beats": 24588,
+      "write_beats": 8196,
+      "read_bursts": 387,
+      "write_bursts": 129,
+      "overlap": 59739
+    }
+  ],
+  "memory_model": "128-bit AXI, one read plus one write burst outstanding; 6-10-cycle AR latency, periodic R/AW/W stalls and delayed B; no PS/DDR contention claim",
+  "verification": "Burst/pipelined AXI RTL versus independent signed-floor integer Golden",
+  "success_line": "FUSION_RTL_PASS frames=10 invalid=9 scalars=655680 reads=246855 writes=82160 overlap=59739 full_cycles=3952"
+}

@@ -1,0 +1,33 @@
+{
+  "determinism": "identity excludes timestamp and absolute output/work paths; component and source manifests are byte-stable",
+  "execution": {
+    "input_lock_path": "E:/github/-/fpga/ip/cnn_v1_2_writecredit/input_lock.json",
+    "package_work_path": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/ip_primary_05_build",
+    "vivado_path": "E:/Xilinx/2025.2/Vivado/bin/vivado.bat"
+  },
+  "generated_ip_path": "E:/HLS/kv260_three_module_v1_2_phase4/phase4g/ip_primary_05",
+  "identity": {
+    "abi_sha256": "95077dfd344f411d4bbf8004acee92e369f2e2bf46ae942ba391b41e6ff71598",
+    "base_r4_sha256": "1f5dfe5abc335c678198982c0cbb86c2031962ebb6f57570453176da27362c30",
+    "build_recipe_sha256": "7c22e0a24bd5495cd36ed06cc1b275e03e583e436e12c8fb1dd8a43afb5cdab9",
+    "component_xml_sha256": "7e046bd557997e8a8b55b466ee9a76b8c3c321f1435df2879a8bf92a45f54ecd",
+    "core_revision": 2114810448,
+    "driver_header_sha256": "3a5b88eea559abf69c213b8456fee35945db0f21acc9d5cd1ad267638a716362",
+    "final_payload_sha256": "6d68c3f31fd94ac08706044cd5726a19fd8113df04bf1695b6ae0bfaf29b06f2",
+    "generator_sha256": "520ee47f783c78fe4918f961266c793a2c0a6901539ae62734f595f4575e5823",
+    "input_lock_file_sha256": "2f9557b96753204ac71cf56fd4df711161c6d95a07d1467a43e064c4c94675bf",
+    "overlay_manifest_sha256": "0d98d61cd09b4a216f891ae0115919d414dfaa59b662d8c0fff4865ace451c85",
+    "patched_rtl": {
+      "hdl/verilog/zero_dce_cnn_top_p_anonymous_namespace_output_writer.v": "ed13125479a3892cfbfc2df20f5b4c010c6d2198503231afe7fbfca4ef543dc5",
+      "hdl/verilog/zero_dce_cnn_top_row_axi_writer.v": "4535bf94f686dc5e71f9a55dda9792c03aa8b57d998b902b1e596979dcb08611",
+      "hdl/verilog/zero_dce_cnn_top_row_axi_writer_2.v": "5fb901f88917777169a6327bb27eed4e2171df4e2e17d3b3cb435e17fc4ebf0d"
+    },
+    "source_manifest_file_sha256": "8bb4fc1ee4786b4e89f4ff37b867b529dcfd97ff10970ac405ffecafe4cead3c",
+    "source_manifest_sha256": "834264165a18af1aee973d02dcd2cc5b3a2c28fe33a2731e40ffccbb8568cdcb",
+    "tool_version": "Vivado v2025.2 (64-bit)"
+  },
+  "identity_sha256": "a64d16faa3c102790eae873031da99cd775b6858f673ff8d4d8f7c92d17572e9",
+  "schema": 1,
+  "status": "PACKAGED_IP_GATE_PASS",
+  "timestamp": "2026-10-02T17:31:06.582256+00:00"
+}

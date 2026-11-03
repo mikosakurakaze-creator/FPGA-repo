@@ -1,0 +1,139 @@
+﻿core,register,register_offset,field,bit_offset,bit_width,access,read_action,modified_read_values,description
+bilinear,CTRL,0x00,AP_START,0,1,read-write,,modify,Control signal Register for 'ap_start'.
+bilinear,CTRL,0x00,AP_DONE,1,1,read-only,modify,,Control signal Register for 'ap_done'.
+bilinear,CTRL,0x00,AP_IDLE,2,1,read-only,modify,,Control signal Register for 'ap_idle'.
+bilinear,CTRL,0x00,AP_READY,3,1,read-only,modify,,Control signal Register for 'ap_ready'.
+bilinear,CTRL,0x00,RESERVED_1,4,3,read-only,modify,,Reserved.  0s on read.
+bilinear,CTRL,0x00,AUTO_RESTART,7,1,read-write,,modify,Control signal Register for 'auto_restart'.
+bilinear,CTRL,0x00,RESERVED_2,8,1,read-only,modify,,Reserved.  0s on read.
+bilinear,CTRL,0x00,INTERRUPT,9,1,read-only,modify,,Control signal Register for 'interrupt'.
+bilinear,CTRL,0x00,RESERVED_3,10,22,read-only,modify,,Reserved.  0s on read.
+bilinear,GIER,0x04,Enable,0,1,read-write,,modify,"Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"
+bilinear,GIER,0x04,RESERVED,1,31,read-only,modify,,Reserved.  0s on read.
+bilinear,IP_IER,0x08,CHAN0_INT_EN,0,1,read-write,,modify,"Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."
+bilinear,IP_IER,0x08,CHAN1_INT_EN,1,1,read-write,,modify,"Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."
+bilinear,IP_IER,0x08,RESERVED_0,2,30,read-only,modify,,Reserved.  0s on read.
+bilinear,IP_ISR,0x0C,CHAN0_INT_ST,0,1,read-only,modify,oneToToggle,"Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt."
+bilinear,IP_ISR,0x0C,CHAN1_INT_ST,1,1,read-only,modify,oneToToggle,"Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt."
+bilinear,IP_ISR,0x0C,RESERVED_0,2,30,read-only,modify,,Reserved.  0s on read.
+bilinear,parameters_lowres_1,0x10,parameters_lowres,0,32,write-only,,,Bit 31 to 0 of parameters_lowres
+bilinear,parameters_lowres_2,0x14,parameters_lowres,0,32,write-only,,,Bit 63 to 32 of parameters_lowres
+bilinear,parameters_fullres_1,0x1C,parameters_fullres,0,32,write-only,,,Bit 31 to 0 of parameters_fullres
+bilinear,parameters_fullres_2,0x20,parameters_fullres,0,32,write-only,,,Bit 63 to 32 of parameters_fullres
+bilinear,input_height,0x28,input_height,0,32,write-only,,,Bit 31 to 0 of input_height
+bilinear,input_width,0x30,input_width,0,32,write-only,,,Bit 31 to 0 of input_width
+curve,CTRL,0x00,AP_START,0,1,read-write,,modify,Control signal Register for 'ap_start'.
+curve,CTRL,0x00,AP_DONE,1,1,read-only,modify,,Control signal Register for 'ap_done'.
+curve,CTRL,0x00,AP_IDLE,2,1,read-only,modify,,Control signal Register for 'ap_idle'.
+curve,CTRL,0x00,AP_READY,3,1,read-only,modify,,Control signal Register for 'ap_ready'.
+curve,CTRL,0x00,RESERVED_1,4,3,read-only,modify,,Reserved.  0s on read.
+curve,CTRL,0x00,AUTO_RESTART,7,1,read-write,,modify,Control signal Register for 'auto_restart'.
+curve,CTRL,0x00,RESERVED_2,8,1,read-only,modify,,Reserved.  0s on read.
+curve,CTRL,0x00,INTERRUPT,9,1,read-only,modify,,Control signal Register for 'interrupt'.
+curve,CTRL,0x00,RESERVED_3,10,22,read-only,modify,,Reserved.  0s on read.
+curve,GIER,0x04,Enable,0,1,read-write,,modify,"Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"
+curve,GIER,0x04,RESERVED,1,31,read-only,modify,,Reserved.  0s on read.
+curve,IP_IER,0x08,CHAN0_INT_EN,0,1,read-write,,modify,"Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."
+curve,IP_IER,0x08,CHAN1_INT_EN,1,1,read-write,,modify,"Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."
+curve,IP_IER,0x08,RESERVED_0,2,30,read-only,modify,,Reserved.  0s on read.
+curve,IP_ISR,0x0C,CHAN0_INT_ST,0,1,read-only,modify,oneToToggle,"Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt."
+curve,IP_ISR,0x0C,CHAN1_INT_ST,1,1,read-only,modify,oneToToggle,"Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt."
+curve,IP_ISR,0x0C,RESERVED_0,2,30,read-only,modify,,Reserved.  0s on read.
+curve,input_r_1,0x10,input_r,0,32,write-only,,,Bit 31 to 0 of input_r
+curve,input_r_2,0x14,input_r,0,32,write-only,,,Bit 63 to 32 of input_r
+curve,parameter_r_1,0x1C,parameter_r,0,32,write-only,,,Bit 31 to 0 of parameter_r
+curve,parameter_r_2,0x20,parameter_r,0,32,write-only,,,Bit 63 to 32 of parameter_r
+curve,output_r_1,0x28,output_r,0,32,write-only,,,Bit 31 to 0 of output_r
+curve,output_r_2,0x2C,output_r,0,32,write-only,,,Bit 63 to 32 of output_r
+curve,count,0x34,count,0,32,write-only,,,Bit 31 to 0 of count
+cnn,CTRL,0x00,AP_START,0,1,read-write,,modify,Control signal Register for 'ap_start'.
+cnn,CTRL,0x00,AP_DONE,1,1,read-only,modify,,Control signal Register for 'ap_done'.
+cnn,CTRL,0x00,AP_IDLE,2,1,read-only,modify,,Control signal Register for 'ap_idle'.
+cnn,CTRL,0x00,AP_READY,3,1,read-only,modify,,Control signal Register for 'ap_ready'.
+cnn,CTRL,0x00,RESERVED_1,4,3,read-only,modify,,Reserved.  0s on read.
+cnn,CTRL,0x00,AUTO_RESTART,7,1,read-write,,modify,Control signal Register for 'auto_restart'.
+cnn,CTRL,0x00,RESERVED_2,8,1,read-only,modify,,Reserved.  0s on read.
+cnn,CTRL,0x00,INTERRUPT,9,1,read-only,modify,,Control signal Register for 'interrupt'.
+cnn,CTRL,0x00,RESERVED_3,10,22,read-only,modify,,Reserved.  0s on read.
+cnn,GIER,0x04,Enable,0,1,read-write,,modify,"Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"
+cnn,GIER,0x04,RESERVED,1,31,read-only,modify,,Reserved.  0s on read.
+cnn,IP_IER,0x08,CHAN0_INT_EN,0,1,read-write,,modify,"Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."
+cnn,IP_IER,0x08,CHAN1_INT_EN,1,1,read-write,,modify,"Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."
+cnn,IP_IER,0x08,RESERVED_0,2,30,read-only,modify,,Reserved.  0s on read.
+cnn,IP_ISR,0x0C,CHAN0_INT_ST,0,1,read-only,modify,oneToToggle,"Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt."
+cnn,IP_ISR,0x0C,CHAN1_INT_ST,1,1,read-only,modify,oneToToggle,"Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt."
+cnn,IP_ISR,0x0C,RESERVED_0,2,30,read-only,modify,,Reserved.  0s on read.
+cnn,input_q14_1,0x10,input_q14,0,32,write-only,,,Bit 31 to 0 of input_q14
+cnn,input_q14_2,0x14,input_q14,0,32,write-only,,,Bit 63 to 32 of input_q14
+cnn,weights_int8_1,0x1C,weights_int8,0,32,write-only,,,Bit 31 to 0 of weights_int8
+cnn,weights_int8_2,0x20,weights_int8,0,32,write-only,,,Bit 63 to 32 of weights_int8
+cnn,bias_int32_1,0x28,bias_int32,0,32,write-only,,,Bit 31 to 0 of bias_int32
+cnn,bias_int32_2,0x2C,bias_int32,0,32,write-only,,,Bit 63 to 32 of bias_int32
+cnn,weight_frac_1,0x34,weight_frac,0,32,write-only,,,Bit 31 to 0 of weight_frac
+cnn,weight_frac_2,0x38,weight_frac,0,32,write-only,,,Bit 63 to 32 of weight_frac
+cnn,tanh_lut_q15_1,0x40,tanh_lut_q15,0,32,write-only,,,Bit 31 to 0 of tanh_lut_q15
+cnn,tanh_lut_q15_2,0x44,tanh_lut_q15,0,32,write-only,,,Bit 63 to 32 of tanh_lut_q15
+cnn,a_low_q14_1,0x4C,a_low_q14,0,32,write-only,,,Bit 31 to 0 of a_low_q14
+cnn,a_low_q14_2,0x50,a_low_q14,0,32,write-only,,,Bit 63 to 32 of a_low_q14
+cnn,workspace_int16_1,0x58,workspace_int16,0,32,write-only,,,Bit 31 to 0 of workspace_int16
+cnn,workspace_int16_2,0x5C,workspace_int16,0,32,write-only,,,Bit 63 to 32 of workspace_int16
+prepare,CTRL,0x00,AP_START,0,1,read-write,,modify,Control signal Register for 'ap_start'.
+prepare,CTRL,0x00,AP_DONE,1,1,read-only,modify,,Control signal Register for 'ap_done'.
+prepare,CTRL,0x00,AP_IDLE,2,1,read-only,modify,,Control signal Register for 'ap_idle'.
+prepare,CTRL,0x00,AP_READY,3,1,read-only,modify,,Control signal Register for 'ap_ready'.
+prepare,CTRL,0x00,RESERVED_1,4,3,read-only,modify,,Reserved.  0s on read.
+prepare,CTRL,0x00,AUTO_RESTART,7,1,read-write,,modify,Control signal Register for 'auto_restart'.
+prepare,CTRL,0x00,RESERVED_2,8,1,read-only,modify,,Reserved.  0s on read.
+prepare,CTRL,0x00,INTERRUPT,9,1,read-only,modify,,Control signal Register for 'interrupt'.
+prepare,CTRL,0x00,RESERVED_3,10,22,read-only,modify,,Reserved.  0s on read.
+prepare,GIER,0x04,Enable,0,1,read-write,,modify,"Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"
+prepare,GIER,0x04,RESERVED,1,31,read-only,modify,,Reserved.  0s on read.
+prepare,IP_IER,0x08,CHAN0_INT_EN,0,1,read-write,,modify,"Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."
+prepare,IP_IER,0x08,CHAN1_INT_EN,1,1,read-write,,modify,"Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."
+prepare,IP_IER,0x08,RESERVED_0,2,30,read-only,modify,,Reserved.  0s on read.
+prepare,IP_ISR,0x0C,CHAN0_INT_ST,0,1,read-only,modify,oneToToggle,"Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt."
+prepare,IP_ISR,0x0C,CHAN1_INT_ST,1,1,read-only,modify,oneToToggle,"Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt."
+prepare,IP_ISR,0x0C,RESERVED_0,2,30,read-only,modify,,Reserved.  0s on read.
+prepare,ap_return,0x10,ap_return,0,32,read-only,modify,,Bit 31 to 0 of ap_return
+prepare,rgb_1,0x18,rgb,0,32,write-only,,,Bit 31 to 0 of rgb
+prepare,rgb_2,0x1C,rgb,0,32,write-only,,,Bit 63 to 32 of rgb
+prepare,original_q14_1,0x24,original_q14,0,32,write-only,,,Bit 31 to 0 of original_q14
+prepare,original_q14_2,0x28,original_q14,0,32,write-only,,,Bit 63 to 32 of original_q14
+prepare,d_input_q14_1,0x30,d_input_q14,0,32,write-only,,,Bit 31 to 0 of d_input_q14
+prepare,d_input_q14_2,0x34,d_input_q14,0,32,write-only,,,Bit 63 to 32 of d_input_q14
+prepare,cnn_input_q14_1,0x3C,cnn_input_q14,0,32,write-only,,,Bit 31 to 0 of cnn_input_q14
+prepare,cnn_input_q14_2,0x40,cnn_input_q14,0,32,write-only,,,Bit 63 to 32 of cnn_input_q14
+prepare,abi_cookie,0x48,abi_cookie,0,32,write-only,,,Bit 31 to 0 of abi_cookie
+d,CTRL,0x00,AP_START,0,1,read-write,,modify,Control signal Register for 'ap_start'.
+d,CTRL,0x00,AP_DONE,1,1,read-only,modify,,Control signal Register for 'ap_done'.
+d,CTRL,0x00,AP_IDLE,2,1,read-only,modify,,Control signal Register for 'ap_idle'.
+d,CTRL,0x00,AP_READY,3,1,read-only,modify,,Control signal Register for 'ap_ready'.
+d,CTRL,0x00,RESERVED_1,4,3,read-only,modify,,Reserved.  0s on read.
+d,CTRL,0x00,AUTO_RESTART,7,1,read-write,,modify,Control signal Register for 'auto_restart'.
+d,CTRL,0x00,RESERVED_2,8,1,read-only,modify,,Reserved.  0s on read.
+d,CTRL,0x00,INTERRUPT,9,1,read-only,modify,,Control signal Register for 'interrupt'.
+d,CTRL,0x00,RESERVED_3,10,22,read-only,modify,,Reserved.  0s on read.
+d,GIER,0x04,Enable,0,1,read-write,,modify,"Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"
+d,GIER,0x04,RESERVED,1,31,read-only,modify,,Reserved.  0s on read.
+d,IP_IER,0x08,CHAN0_INT_EN,0,1,read-write,,modify,"Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."
+d,IP_IER,0x08,CHAN1_INT_EN,1,1,read-write,,modify,"Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."
+d,IP_IER,0x08,RESERVED_0,2,30,read-only,modify,,Reserved.  0s on read.
+d,IP_ISR,0x0C,CHAN0_INT_ST,0,1,read-only,modify,oneToToggle,"Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt."
+d,IP_ISR,0x0C,CHAN1_INT_ST,1,1,read-only,modify,oneToToggle,"Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt."
+d,IP_ISR,0x0C,RESERVED_0,2,30,read-only,modify,,Reserved.  0s on read.
+d,ap_return,0x10,ap_return,0,32,read-only,modify,,Bit 31 to 0 of ap_return
+d,input_r_1,0x18,input_r,0,32,write-only,,,Bit 31 to 0 of input_r
+d,input_r_2,0x1C,input_r,0,32,write-only,,,Bit 63 to 32 of input_r
+d,output_r_1,0x24,output_r,0,32,write-only,,,Bit 31 to 0 of output_r
+d,output_r_2,0x28,output_r,0,32,write-only,,,Bit 63 to 32 of output_r
+d,height,0x30,height,0,32,write-only,,,Bit 31 to 0 of height
+d,width,0x38,width,0,32,write-only,,,Bit 31 to 0 of width
+d,abi_cookie,0x40,abi_cookie,0,32,write-only,,,Bit 31 to 0 of abi_cookie
+d,work_cycles_1,0x48,work_cycles,0,32,read-only,modify,,Bit 31 to 0 of work_cycles
+d,work_cycles_2,0x4C,work_cycles,0,32,read-only,modify,,Bit 63 to 32 of work_cycles
+d,work_cycles_ctrl,0x50,work_cycles_ap_vld,0,1,read-only,modify,,Control signal work_cycles_ap_vld
+d,work_cycles_ctrl,0x50,RESERVED,1,31,read-only,modify,,Reserved.  0s on read.
+d,input_cycles_1,0x58,input_cycles,0,32,read-only,modify,,Bit 31 to 0 of input_cycles
+d,input_cycles_2,0x5C,input_cycles,0,32,read-only,modify,,Bit 63 to 32 of input_cycles
+d,input_cycles_ctrl,0x60,input_cycles_ap_vld,0,1,read-only,modify,,Control signal input_cycles_ap_vld
+d,input_cycles_ctrl,0x60,RESERVED,1,31,read-only,modify,,Reserved.  0s on read.

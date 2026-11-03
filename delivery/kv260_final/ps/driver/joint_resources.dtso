@@ -1,0 +1,15 @@
+/dts-v1/;
+/plugin/;
+/ { fragment@0 { target-path = "/"; __overlay__ {
+    #address-cells = <2>; #size-cells = <2>;
+    joint-once@a0000000 {
+        compatible = "fpga-joint,kv260-once-v1";
+        reg = <0 0xa0000000 0 0x10000>, <0 0xa0010000 0 0x10000>, <0 0xa0020000 0 0x10000>, <0 0xa0030000 0 0x10000>, <0 0xa0040000 0 0x10000>, <0 0xa0050000 0 0x10000>, <0 0xfd800000 0 0x1000>, <0 0xfd380000 0 0x1000>, <0 0xfd390000 0 0x1000>, <0 0xfd3a0000 0 0x1000>, <0 0xfd3b0000 0 0x1000>;
+        clocks = <&zynqmp_clk 71>, <&zynqmp_clk 72>;
+        clock-names = "pl0", "pl1";
+        assigned-clocks = <&zynqmp_clk 71>, <&zynqmp_clk 72>;
+        assigned-clock-rates = <100000000>, <200000000>;
+        resets = <&zynqmp_reset 116>; reset-names = "pl0";
+        status = "okay";
+    };
+}; }; };

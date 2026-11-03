@@ -1,0 +1,29 @@
+{
+  "standalone_source": "D:/weather_builds/timing_margin_20261102/accepted_fifo04_delivery01/export/joint_system.bit",
+  "standalone_sha256": "32f8a26d0d9a29a850d9d07beea13480222d6adc2e1e4abca83f9bdc183e58f9",
+  "standalone_header": {
+    "a": "system_wrapper;UserID=0XFFFFFFFF;Version=2025.2;SW_CRC=8cb12394",
+    "b": "xck26-sfvc784-2LV-c",
+    "c": "2026/11/02",
+    "d": "20:48:01"
+  },
+  "embedded_header": {
+    "a": "system_wrapper;UserID=0XFFFFFFFF;Version=2025.2;SW_CRC=8cb12394",
+    "b": "xck26-sfvc784-2LV-c",
+    "c": "2026/11/02",
+    "d": "20:49:11"
+  },
+  "canonical_bit_source": "joint_system.bit",
+  "canonical_bit_sha256": "996a76fc600136ec22fd7940cbd2998b1ea3ac3d02f0f4afec1239d26a225033",
+  "configuration_bytes_equal": true,
+  "configuration_bytes": 7797692,
+  "configuration_sha256": "105ec23d74c6a9409d98927772a7ea82ce39a988b6adb81dfcc565958346d6bb",
+  "canonical_hwh_source": "system.hwh",
+  "other_hwh_members": [
+    "system_axi_control_0.hwh",
+    "system_bilinear_ddr_sc_0.hwh",
+    "system_cnn_data_sc_0.hwh",
+    "system_cnn_model_sc_0.hwh",
+    "system_curve_ddr_sc_0.hwh"
+  ]
+}

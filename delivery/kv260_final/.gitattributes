@@ -1,0 +1,6 @@
+# All delivery files are hash-bound. Preserve exact bytes on every platform.
+* -text
+*.hex -diff
+*.i16 -diff
+*.u8 -diff
+*.rgb -diff

@@ -1,0 +1,13 @@
+{
+  "stage": "adapter",
+  "pass": true,
+  "board_operations": 0,
+  "baseline": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+  "verification": "Reuse of source-matched successfully exported IP; changed prepare validated by RTL cosimulation",
+  "source_result": "D:/weather_builds/joint_prepare_pipeline01_20261101/adapter_result.json",
+  "source_result_sha256": "df7116a985d2734cfd736c40f5f7a8e755bbc7d26f0dd98335a9fd14c3112f69",
+  "component_sha256": "9c9278b988edbecd7b9cadca78ee474d62f0f59b237d0712add821d6253fa0d9",
+  "ip_zips": {
+    "xilinx_com_hls_joint_rgb8_prepare_1_0.zip": "054a54897fe971fd20fd86f4bb22b45e3507504ea32e90bb2fdbd07072285944"
+  }
+}

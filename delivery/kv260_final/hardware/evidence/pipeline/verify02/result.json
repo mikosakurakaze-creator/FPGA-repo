@@ -1,0 +1,44 @@
+{
+  "stage": "verify",
+  "pass": true,
+  "board_operations": 0,
+  "steps": [
+    {
+      "name": "vendor_console",
+      "command": [
+        "C:\\Users\\wzh16\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-E",
+        "D:/weather_builds/fusion_pipeline_20261101/verify02/run_windows_desktop.py",
+        "--",
+        "D:/weather_builds/fusion_pipeline_20261101/verify02/vendor_runtime/vivado.exe",
+        "-mode",
+        "batch",
+        "-log",
+        "D:/weather_builds/fusion_pipeline_20261101/verify02/vivado.log",
+        "-journal",
+        "D:/weather_builds/fusion_pipeline_20261101/verify02/vivado.jou",
+        "-source",
+        "D:/weather_builds/fusion_pipeline_20261101/verify02/fusion_verify.tcl",
+        "-tclargs",
+        "D:/weather_builds/fusion_pipeline_20261101/ooc01/ooc/fusion_ooc.dcp",
+        "D:/weather_builds/fusion_pipeline_20261101/verify02/verify"
+      ],
+      "return_code": 0,
+      "seconds": 44.9649700000009,
+      "log_sha256": "67ed167ebebd498eda676e3a58c7e370c557d2e461c8a584b85df3f19fd2bdba"
+    }
+  ],
+  "source_sha256": {
+    "rtl/joint_fusion.v": "cfb43e59d050c65ed5f1a685ab7092dfb13bb4859f981b9514bd464c8c15c7ea",
+    "tests/tb_joint_fusion.sv": "951ad3b696cc00583d6c149832ef90f1bbabf3b67b0014d8df91777e135592a2",
+    "scripts/run_checks.py": "1b9f29b2021659d989d3b8393a8f0752f1b065c459470c410bc2c253790d49dc"
+  },
+  "checkpoint_sha256": "fceb5be0d6152359385f859020866582ce65becfbf79f280d555e0dcbb2e2761",
+  "desktop_helper_sha256": "56dc242227c312f6a93910d5cd4f7c3817cd5b9c63a8be69b17abcdff2d089fe",
+  "reports": {
+    "verify/drc.rpt": "6e40b654a05656a666357eb036f39543b33b58a00d9cfd9d1cb544a83406b9c7",
+    "verify/timing.rpt": "51adbcf1e1635113c8246154eea2916c283b55349eee9101542b7307b66bd552",
+    "verify/utilization.rpt": "99130f3a619c7b655bb6e6870b081b45680991ac83aa47319647539bcf1fe4ca"
+  },
+  "verification": "Independent reopening of actual OOC checkpoint; not complete-system signoff"
+}

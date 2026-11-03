@@ -1,0 +1,44 @@
+{
+  "pass": false,
+  "stage": "cosim",
+  "board_operations": 0,
+  "steps": [
+    {
+      "name": "cosim",
+      "command": [
+        "C:\\Users\\wzh16\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-E",
+        "D:\\weather_builds\\prepare_pipeline_20261101\\cosim03\\run_windows_desktop.py",
+        "--",
+        "C:\\WINDOWS\\system32\\cmd.exe",
+        "/d",
+        "/c",
+        "D:\\weather_builds\\prepare_pipeline_20261101\\cosim03\\cosim.cmd"
+      ],
+      "exit_code": 0,
+      "seconds": 320.1201652000018,
+      "log_sha256": "d44a2e1005c7f786a1e08a52e2f1dd47c8ad85f5ad38a103fe56b3d1f7e104c1"
+    }
+  ],
+  "baseline": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+  "source_sha256": {
+    "check_prepare.py": "04f2ae2d345397087cc05bbac639717cc677ec8f876c1731020a3bfb47618755",
+    "joint_adapters.cpp": "8149493dfca9725907e909f5b698e8e95cb438f234d0c7d6c9046442bd449358",
+    "joint_adapters.hpp": "bf9d02534a7f0e83f849995452ce210820574f53270331c95f28b4718f16eb95",
+    "run_windows_desktop.py": "56dc242227c312f6a93910d5cd4f7c3817cd5b9c63a8be69b17abcdff2d089fe",
+    "tb_prepare.cpp": "c060ccb48e8643275ecc1a3e767941400a1b7e47344cb3b75ed25aa392bbfb04",
+    "frozen/joint_adapters.cpp": "56a665f17a6826bccf2c22c804873e5706379e99c23a5e568695e22d330a50cc",
+    "frozen/joint_adapters.hpp": "6200ba7a2da8713486cea62219db211b5ee1bef0ca766dc54c4eea009e10b3ab"
+  },
+  "reused_synthesis": {
+    "result": "D:\\weather_builds\\prepare_pipeline_20261101\\cosim01\\result.json",
+    "result_sha256": "af543503fa722af51ea1a090671a149906c4cd1e872c6a81af15a3f589cd4931",
+    "log_sha256": "806ea4a4dd96a14d8917f183ea38a6df673d8aecd3545137b58cafada68f416f"
+  },
+  "component_sha256": "9c9278b988edbecd7b9cadca78ee474d62f0f59b237d0712add821d6253fa0d9",
+  "ip_zips": {
+    "xilinx_com_hls_joint_rgb8_prepare_1_0.zip": "054a54897fe971fd20fd86f4bb22b45e3507504ea32e90bb2fdbd07072285944"
+  },
+  "null_artifact_sha256": "38df48e64225f17ac3a6ae060eed2e9b99e2d9ece5b3e974f1a5d6e0ac2cb9d5",
+  "error": "cosim failed:    32    'h1              \n\n        reset_level                 reset_level_enum                      32    RESET_LEVEL_LOW  \n\n        drv_type                    drv_type_enum                         32    MASTER           \n\n        write_latency_mode          latency_mode_enum                     32    CHANNEL_FIRST    \n\n        read_latency_mode           latency_mode_enum                     32    CHANNEL_FIRST    \n\n        clatency                    axi_latency                           -     @529             \n\n          wr_latency                integral                              32    'h0              \n\n          rd_latency                integral                              32    'h0              \n\n      check_ena                     integral                              32    'h0              \n\n      cover_ena                     integral                              32    'h0              \n\n-------------------------------------------------------------------------------------------------\n\n\n\nUVM_INFO D:\u000biva\ufffd\ufffd\ufffd5.2Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled\n\n////////////////////////////////////////////////////////////////////////////////////\n\n// Inter-Transaction Progress: Completed Transaction / Total Transaction\n\n// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%\n\n//\n\n// RTL Simulation : \"Inter-Transaction Progress\" [\"Intra-Transaction Progress\"] @ \"Simulation Time\"\n\n////////////////////////////////////////////////////////////////////////////////////\n\n// RTL Simulation : 0 / 3 [0.00%] @ \"125000\"\n\n// RTL Simulation : 1 / 3 [100.00%] @ \"485000\"\n\n// RTL Simulation : 2 / 3 [100.00%] @ \"17269065000\"\n\n\n\n\n\n\n\nOut of memory on request for a fresh 8388608 bytes\n\n\nTotal memory consumed so far :689557088 bytes\n\n\nCommand failed: Simulator command interrupted.\n\n\n\nSimulation engine not responding\n\nThe simulator has terminated in an unexpected manner.  Please review the simulation log (xsim.log) for details.\n\nrun: Time (s): cpu = 00:00:00 ; elapsed = 00:04:10 . Memory (MB): peak = 226.512 ; gain = 0.000\n\n## quit\n\nINFO: [Common 17-206] Exiting xsim at Sun Nov  1 22:33:43 2026...\n\nERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***\n\nERROR: \n\nINFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 2 seconds. Total elapsed time: 309.831 seconds; peak allocated memory: 241.012 MB.\n\n"
+}

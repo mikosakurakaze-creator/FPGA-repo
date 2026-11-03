@@ -1,0 +1,90 @@
+{
+  "pass": false,
+  "board_operations": 0,
+  "optimization_stages": 0,
+  "steps": [
+    {
+      "stage": "coverage",
+      "command": [
+        "C:\\Users\\wzh16\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\github clone\\feat-software\\fpga\\joint_lowlight_compact_d\\scripts\\build_system.py",
+        "--out",
+        "D:\\weather_builds\\timing_margin_20261102\\accepted_fifo04_delivery01",
+        "--stage",
+        "coverage"
+      ],
+      "exit_code": 0,
+      "seconds": 138.0674994000001,
+      "log_sha256": "0319fa4c922dd0f561556a2bfb4bdd7807dbd906f42d63d3b01064d37540eed9"
+    },
+    {
+      "stage": "accept",
+      "command": [
+        "C:\\Users\\wzh16\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\github clone\\feat-software\\fpga\\joint_lowlight_compact_d\\scripts\\accept_system.py",
+        "--build",
+        "D:\\weather_builds\\timing_margin_20261102\\accepted_fifo04_delivery01",
+        "--host",
+        "D:\\weather_builds\\joint_model_host02_20261029",
+        "--fusion",
+        "D:\\weather_builds\\fusion_pipeline_20261101\\same_image01",
+        "--golden",
+        "D:\\weather_builds\\joint_golden01_20261029"
+      ],
+      "exit_code": 0,
+      "seconds": 0.637752000009641,
+      "log_sha256": "1c03da41d3b0b1be4d4676859c0b0e46e3e13dddcf5d2aba9ad3b4e57f1df384"
+    },
+    {
+      "stage": "export",
+      "command": [
+        "C:\\Users\\wzh16\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\github clone\\feat-software\\fpga\\joint_lowlight_compact_d\\scripts\\build_system.py",
+        "--out",
+        "D:\\weather_builds\\timing_margin_20261102\\accepted_fifo04_delivery01",
+        "--stage",
+        "export"
+      ],
+      "exit_code": 0,
+      "seconds": 289.56679339997936,
+      "log_sha256": "5df99b8b70f2687543fce14764080d8a8b347576f467189888d002ac28414ace"
+    },
+    {
+      "stage": "collect",
+      "command": [
+        "C:\\Users\\wzh16\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "D:\\github clone\\feat-software\\fpga\\joint_lowlight_compact_d\\scripts\\collect_delivery.py",
+        "--build",
+        "D:\\weather_builds\\timing_margin_20261102\\accepted_fifo04_delivery01",
+        "--host",
+        "D:\\weather_builds\\joint_model_host02_20261029",
+        "--fusion",
+        "D:\\weather_builds\\fusion_pipeline_20261101\\same_image01",
+        "--golden",
+        "D:\\weather_builds\\joint_golden01_20261029",
+        "--controller-tests",
+        "D:\\weather_builds\\fusion_pipeline_20261101\\controller_tests02",
+        "--out",
+        "D:\\competing\\outputs\\kv260_joint_fifo_hold_release_20261102"
+      ],
+      "exit_code": 1,
+      "seconds": 2.4876858000061475,
+      "log_sha256": "e6c925aa4a7fb7d9903ab4514ea241bceeec254d090d04f891fd08950fc03d7c"
+    }
+  ],
+  "started_at": "2026-11-02T20:42:16+08:00",
+  "error": "collect failed; preserve D:\\weather_builds\\timing_margin_20261102\\accepted_fifo04_packaging01\\collect.log",
+  "finished_at": "2026-11-02T20:49:28+08:00"
+}

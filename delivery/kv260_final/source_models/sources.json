@@ -1,0 +1,113 @@
+{
+  "lowlight": [
+    {
+      "path": "fpga/hls/zero_dce_cnn_v1_2_30fps/candidate_b_rowstream_r4/zero_dce_cnn_top.cpp",
+      "commit": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+      "sha256": "277da2ec0c922f33b654942f61cc22ddc45060e5ac242c23df4e68fd7f74f11a"
+    },
+    {
+      "path": "fpga/hls/zero_dce_cnn_v1_2_30fps/candidate_b_rowstream_r4/zero_dce_cnn_top.h",
+      "commit": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+      "sha256": "bdb1228c76d941b695d703154a9f2f24a0c3007a18edbc028be74b57d22c9f33"
+    },
+    {
+      "path": "fpga/perf/cnn_v1_2_phase3b_r4/row_transfer.hpp",
+      "commit": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+      "sha256": "3affa40171ccec7318c0f07f7dce2c2b0c55be8dcaf0b4d946c1680ba724ab86"
+    },
+    {
+      "path": "fpga/perf/cnn_v1_2_phase3b_r4/rowstream_arch.inc",
+      "commit": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+      "sha256": "1551c6e4aeb0943049b91f68ecf525d1ef5d6eb160fc9f7e18a3c3e8e52fcb8c"
+    },
+    {
+      "path": "fpga/perf/cnn_v1_2_phase3b_r4/rowstream_group_arch.inc",
+      "commit": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+      "sha256": "044ea01147aabc1c50d94726b9c925a7802480c3a67afd3423f01a24e7f1ca82"
+    },
+    {
+      "path": "fpga/hls/bilinear_fixed16_buffered/bilinear_fixed16_buffered.cpp",
+      "commit": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+      "sha256": "b39e3be1f9b46103bf04c6fa099c71f70fb4f0a2f5bfa8492fcdac6a66d78392"
+    },
+    {
+      "path": "fpga/hls/bilinear_fixed16_buffered/bilinear_fixed16_buffered.hpp",
+      "commit": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+      "sha256": "b5c8cd99ffdecd305244f55cf6f34459914dc0ca573d663c328a36672b73cb65"
+    },
+    {
+      "path": "fpga/hls/curve_image_fixed16/curve_image_fixed16.cpp",
+      "commit": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+      "sha256": "2ce63b73f284c120f9416a069d6bb762d411b6a9069c7423ea68bc339ea93cdc"
+    },
+    {
+      "path": "fpga/hls/curve_image_fixed16/curve_image_fixed16.hpp",
+      "commit": "3c9e41a35fc08d44ba0552ce6916a421f98f94d7",
+      "sha256": "9856b3a09302f580023e4e213796415c56f6790887dedac31750b8fb7313ba5a"
+    }
+  ],
+  "compact_d": {
+    "bundle_id": "2fa5547661b6ebd18a8a103835ecf44fa132300a1d2e4cfca8af587473c7067a",
+    "parameters_sha256": "b30ccd73ad10a685db4c591d3c4a31286178bc80be8e65ff3801364458706e57",
+    "layers": [
+      {
+        "layer": 0,
+        "node": "stem.conv",
+        "trace_index": 1,
+        "cin": 3,
+        "cout": 8
+      },
+      {
+        "layer": 1,
+        "node": "block0.conv0",
+        "trace_index": 3,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 2,
+        "node": "block0.conv1",
+        "trace_index": 5,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 3,
+        "node": "block1.conv0",
+        "trace_index": 8,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 4,
+        "node": "block1.conv1",
+        "trace_index": 10,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 5,
+        "node": "block2.conv0",
+        "trace_index": 13,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 6,
+        "node": "block2.conv1",
+        "trace_index": 15,
+        "cin": 8,
+        "cout": 8
+      },
+      {
+        "layer": 7,
+        "node": "head.conv",
+        "trace_index": 18,
+        "cin": 8,
+        "cout": 3
+      }
+    ],
+    "generated_sha256": "e3e2e0b0468d6c4fc1cbfa890ece6519be9077edc3f729d1c8717edc9d3191e0"
+  },
+  "prepare_and_fusion": "See hardware/source/hls and hardware/source/rtl; implemented generated RTL in hardware/source/implemented_inputs"
+}

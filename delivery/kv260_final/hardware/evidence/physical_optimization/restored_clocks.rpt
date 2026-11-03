@@ -1,0 +1,50 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date              : Mon Nov  2 20:31:14 2026
+| Host              : LAPTOP-FAFSANP3 running 64-bit major release  (build 9200)
+| Command           : report_clocks -file D:/weather_builds/timing_margin_20261102/fifo_targeted04_continue01/implement01/restored_clocks.rpt
+| Design            : system_wrapper
+| Device            : xck26-sfvc784
+| Speed File        : -2LV  PRODUCTION 1.30 05-15-2022
+| Design State      : Routed
+| Temperature Grade : C
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Report
+
+
+Attributes
+  P: Propagated
+  G: Generated
+  A: Auto-derived
+  R: Renamed
+  V: Virtual
+  I: Inverted
+  S: Pin phase-shifted with Latency mode
+
+Clock     Period(ns)  Waveform(ns)   Attributes  Sources
+clk_pl_0  10.000      {0.000 5.000}  P           {system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[0]}
+clk_pl_1  5.000       {0.000 2.500}  P           {system_i/zynq_ultra_ps_e_0/inst/PS8_i/PLCLK[1]}
+
+
+====================================================
+Generated Clocks
+====================================================
+
+
+
+====================================================
+User Uncertainty
+====================================================
+
+From Clock  To Clock  Setup(ns)  Hold(ns)  Edges
+clk_pl_0    clk_pl_0  0.000      0.000     rf -> rf
+clk_pl_1    clk_pl_1  0.000      0.000     rf -> rf
+
+
+====================================================
+User Jitter
+====================================================
+
+

@@ -1,0 +1,3803 @@
+{
+  "source_hwh_sha256": "0c1e0652a1814b067b2aee9dd79be165dd4b26113e1671e325bb96de4836d10a",
+  "cores": {
+    "bilinear": {
+      "instance": "bilinear_fixed16_buffered_0",
+      "base": "0xA0000000",
+      "range_bytes": 65536,
+      "registers": [
+        {
+          "core": "bilinear",
+          "instance": "bilinear_fixed16_buffered_0",
+          "base": "0xA0000000",
+          "offset": "0x00",
+          "absolute_address": "0xA0000000",
+          "register": "CTRL",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "Control signals",
+          "properties": {
+            "DESCRIPTION": "Control signals",
+            "ADDRESS_OFFSET": "0",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "AP_START",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_start'.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_DONE",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_done'.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_IDLE",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_idle'.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_READY",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_ready'.",
+                "ADDRESS_OFFSET": "3",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "3",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_1",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "4",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "4",
+                "BIT_WIDTH": "3"
+              }
+            },
+            {
+              "name": "AUTO_RESTART",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'auto_restart'.",
+                "ADDRESS_OFFSET": "7",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "7",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_2",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "8",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "8",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "INTERRUPT",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'interrupt'.",
+                "ADDRESS_OFFSET": "9",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "9",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_3",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "10",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "10",
+                "BIT_WIDTH": "22"
+              }
+            }
+          ]
+        },
+        {
+          "core": "bilinear",
+          "instance": "bilinear_fixed16_buffered_0",
+          "base": "0xA0000000",
+          "offset": "0x04",
+          "absolute_address": "0xA0000004",
+          "register": "GIER",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "Global Interrupt Enable Register",
+          "properties": {
+            "DESCRIPTION": "Global Interrupt Enable Register",
+            "ADDRESS_OFFSET": "4",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "Enable",
+              "properties": {
+                "DESCRIPTION": "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "31"
+              }
+            }
+          ]
+        },
+        {
+          "core": "bilinear",
+          "instance": "bilinear_fixed16_buffered_0",
+          "base": "0xA0000000",
+          "offset": "0x08",
+          "absolute_address": "0xA0000008",
+          "register": "IP_IER",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "IP Interrupt Enable Register",
+          "properties": {
+            "DESCRIPTION": "IP Interrupt Enable Register",
+            "ADDRESS_OFFSET": "8",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "CHAN0_INT_EN",
+              "properties": {
+                "DESCRIPTION": "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "CHAN1_INT_EN",
+              "properties": {
+                "DESCRIPTION": "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_0",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "30"
+              }
+            }
+          ]
+        },
+        {
+          "core": "bilinear",
+          "instance": "bilinear_fixed16_buffered_0",
+          "base": "0xA0000000",
+          "offset": "0x0C",
+          "absolute_address": "0xA000000C",
+          "register": "IP_ISR",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "IP Interrupt Status Register",
+          "properties": {
+            "DESCRIPTION": "IP Interrupt Status Register",
+            "ADDRESS_OFFSET": "12",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "CHAN0_INT_ST",
+              "properties": {
+                "DESCRIPTION": "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "oneToToggle",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "CHAN1_INT_ST",
+              "properties": {
+                "DESCRIPTION": "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "oneToToggle",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_0",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "30"
+              }
+            }
+          ]
+        },
+        {
+          "core": "bilinear",
+          "instance": "bilinear_fixed16_buffered_0",
+          "base": "0xA0000000",
+          "offset": "0x10",
+          "absolute_address": "0xA0000010",
+          "register": "parameters_lowres_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of parameters_lowres",
+          "properties": {
+            "DESCRIPTION": "Data signal of parameters_lowres",
+            "ADDRESS_OFFSET": "16",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "parameters_lowres",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of parameters_lowres",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "bilinear",
+          "instance": "bilinear_fixed16_buffered_0",
+          "base": "0xA0000000",
+          "offset": "0x14",
+          "absolute_address": "0xA0000014",
+          "register": "parameters_lowres_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of parameters_lowres",
+          "properties": {
+            "DESCRIPTION": "Data signal of parameters_lowres",
+            "ADDRESS_OFFSET": "20",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "parameters_lowres",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of parameters_lowres",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "bilinear",
+          "instance": "bilinear_fixed16_buffered_0",
+          "base": "0xA0000000",
+          "offset": "0x1C",
+          "absolute_address": "0xA000001C",
+          "register": "parameters_fullres_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of parameters_fullres",
+          "properties": {
+            "DESCRIPTION": "Data signal of parameters_fullres",
+            "ADDRESS_OFFSET": "28",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "parameters_fullres",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of parameters_fullres",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "bilinear",
+          "instance": "bilinear_fixed16_buffered_0",
+          "base": "0xA0000000",
+          "offset": "0x20",
+          "absolute_address": "0xA0000020",
+          "register": "parameters_fullres_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of parameters_fullres",
+          "properties": {
+            "DESCRIPTION": "Data signal of parameters_fullres",
+            "ADDRESS_OFFSET": "32",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "parameters_fullres",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of parameters_fullres",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "bilinear",
+          "instance": "bilinear_fixed16_buffered_0",
+          "base": "0xA0000000",
+          "offset": "0x28",
+          "absolute_address": "0xA0000028",
+          "register": "input_height",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of input_height",
+          "properties": {
+            "DESCRIPTION": "Data signal of input_height",
+            "ADDRESS_OFFSET": "40",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "input_height",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of input_height",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "bilinear",
+          "instance": "bilinear_fixed16_buffered_0",
+          "base": "0xA0000000",
+          "offset": "0x30",
+          "absolute_address": "0xA0000030",
+          "register": "input_width",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of input_width",
+          "properties": {
+            "DESCRIPTION": "Data signal of input_width",
+            "ADDRESS_OFFSET": "48",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "input_width",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of input_width",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "curve": {
+      "instance": "curve_image_fixed16_0",
+      "base": "0xA0010000",
+      "range_bytes": 65536,
+      "registers": [
+        {
+          "core": "curve",
+          "instance": "curve_image_fixed16_0",
+          "base": "0xA0010000",
+          "offset": "0x00",
+          "absolute_address": "0xA0010000",
+          "register": "CTRL",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "Control signals",
+          "properties": {
+            "DESCRIPTION": "Control signals",
+            "ADDRESS_OFFSET": "0",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "AP_START",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_start'.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_DONE",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_done'.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_IDLE",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_idle'.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_READY",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_ready'.",
+                "ADDRESS_OFFSET": "3",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "3",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_1",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "4",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "4",
+                "BIT_WIDTH": "3"
+              }
+            },
+            {
+              "name": "AUTO_RESTART",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'auto_restart'.",
+                "ADDRESS_OFFSET": "7",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "7",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_2",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "8",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "8",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "INTERRUPT",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'interrupt'.",
+                "ADDRESS_OFFSET": "9",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "9",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_3",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "10",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "10",
+                "BIT_WIDTH": "22"
+              }
+            }
+          ]
+        },
+        {
+          "core": "curve",
+          "instance": "curve_image_fixed16_0",
+          "base": "0xA0010000",
+          "offset": "0x04",
+          "absolute_address": "0xA0010004",
+          "register": "GIER",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "Global Interrupt Enable Register",
+          "properties": {
+            "DESCRIPTION": "Global Interrupt Enable Register",
+            "ADDRESS_OFFSET": "4",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "Enable",
+              "properties": {
+                "DESCRIPTION": "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "31"
+              }
+            }
+          ]
+        },
+        {
+          "core": "curve",
+          "instance": "curve_image_fixed16_0",
+          "base": "0xA0010000",
+          "offset": "0x08",
+          "absolute_address": "0xA0010008",
+          "register": "IP_IER",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "IP Interrupt Enable Register",
+          "properties": {
+            "DESCRIPTION": "IP Interrupt Enable Register",
+            "ADDRESS_OFFSET": "8",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "CHAN0_INT_EN",
+              "properties": {
+                "DESCRIPTION": "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "CHAN1_INT_EN",
+              "properties": {
+                "DESCRIPTION": "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_0",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "30"
+              }
+            }
+          ]
+        },
+        {
+          "core": "curve",
+          "instance": "curve_image_fixed16_0",
+          "base": "0xA0010000",
+          "offset": "0x0C",
+          "absolute_address": "0xA001000C",
+          "register": "IP_ISR",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "IP Interrupt Status Register",
+          "properties": {
+            "DESCRIPTION": "IP Interrupt Status Register",
+            "ADDRESS_OFFSET": "12",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "CHAN0_INT_ST",
+              "properties": {
+                "DESCRIPTION": "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "oneToToggle",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "CHAN1_INT_ST",
+              "properties": {
+                "DESCRIPTION": "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "oneToToggle",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_0",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "30"
+              }
+            }
+          ]
+        },
+        {
+          "core": "curve",
+          "instance": "curve_image_fixed16_0",
+          "base": "0xA0010000",
+          "offset": "0x10",
+          "absolute_address": "0xA0010010",
+          "register": "input_r_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of input_r",
+          "properties": {
+            "DESCRIPTION": "Data signal of input_r",
+            "ADDRESS_OFFSET": "16",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "input_r",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of input_r",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "curve",
+          "instance": "curve_image_fixed16_0",
+          "base": "0xA0010000",
+          "offset": "0x14",
+          "absolute_address": "0xA0010014",
+          "register": "input_r_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of input_r",
+          "properties": {
+            "DESCRIPTION": "Data signal of input_r",
+            "ADDRESS_OFFSET": "20",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "input_r",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of input_r",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "curve",
+          "instance": "curve_image_fixed16_0",
+          "base": "0xA0010000",
+          "offset": "0x1C",
+          "absolute_address": "0xA001001C",
+          "register": "parameter_r_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of parameter_r",
+          "properties": {
+            "DESCRIPTION": "Data signal of parameter_r",
+            "ADDRESS_OFFSET": "28",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "parameter_r",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of parameter_r",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "curve",
+          "instance": "curve_image_fixed16_0",
+          "base": "0xA0010000",
+          "offset": "0x20",
+          "absolute_address": "0xA0010020",
+          "register": "parameter_r_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of parameter_r",
+          "properties": {
+            "DESCRIPTION": "Data signal of parameter_r",
+            "ADDRESS_OFFSET": "32",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "parameter_r",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of parameter_r",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "curve",
+          "instance": "curve_image_fixed16_0",
+          "base": "0xA0010000",
+          "offset": "0x28",
+          "absolute_address": "0xA0010028",
+          "register": "output_r_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of output_r",
+          "properties": {
+            "DESCRIPTION": "Data signal of output_r",
+            "ADDRESS_OFFSET": "40",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "output_r",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of output_r",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "curve",
+          "instance": "curve_image_fixed16_0",
+          "base": "0xA0010000",
+          "offset": "0x2C",
+          "absolute_address": "0xA001002C",
+          "register": "output_r_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of output_r",
+          "properties": {
+            "DESCRIPTION": "Data signal of output_r",
+            "ADDRESS_OFFSET": "44",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "output_r",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of output_r",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "curve",
+          "instance": "curve_image_fixed16_0",
+          "base": "0xA0010000",
+          "offset": "0x34",
+          "absolute_address": "0xA0010034",
+          "register": "count",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of count",
+          "properties": {
+            "DESCRIPTION": "Data signal of count",
+            "ADDRESS_OFFSET": "52",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "count",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of count",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "cnn": {
+      "instance": "zero_dce_cnn_top_0",
+      "base": "0xA0020000",
+      "range_bytes": 65536,
+      "registers": [
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x00",
+          "absolute_address": "0xA0020000",
+          "register": "CTRL",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "Control signals",
+          "properties": {
+            "DESCRIPTION": "Control signals",
+            "ADDRESS_OFFSET": "0",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "AP_START",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_start'.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_DONE",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_done'.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_IDLE",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_idle'.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_READY",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_ready'.",
+                "ADDRESS_OFFSET": "3",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "3",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_1",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "4",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "4",
+                "BIT_WIDTH": "3"
+              }
+            },
+            {
+              "name": "AUTO_RESTART",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'auto_restart'.",
+                "ADDRESS_OFFSET": "7",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "7",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_2",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "8",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "8",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "INTERRUPT",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'interrupt'.",
+                "ADDRESS_OFFSET": "9",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "9",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_3",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "10",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "10",
+                "BIT_WIDTH": "22"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x04",
+          "absolute_address": "0xA0020004",
+          "register": "GIER",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "Global Interrupt Enable Register",
+          "properties": {
+            "DESCRIPTION": "Global Interrupt Enable Register",
+            "ADDRESS_OFFSET": "4",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "Enable",
+              "properties": {
+                "DESCRIPTION": "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "31"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x08",
+          "absolute_address": "0xA0020008",
+          "register": "IP_IER",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "IP Interrupt Enable Register",
+          "properties": {
+            "DESCRIPTION": "IP Interrupt Enable Register",
+            "ADDRESS_OFFSET": "8",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "CHAN0_INT_EN",
+              "properties": {
+                "DESCRIPTION": "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "CHAN1_INT_EN",
+              "properties": {
+                "DESCRIPTION": "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_0",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "30"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x0C",
+          "absolute_address": "0xA002000C",
+          "register": "IP_ISR",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "IP Interrupt Status Register",
+          "properties": {
+            "DESCRIPTION": "IP Interrupt Status Register",
+            "ADDRESS_OFFSET": "12",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "CHAN0_INT_ST",
+              "properties": {
+                "DESCRIPTION": "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "oneToToggle",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "CHAN1_INT_ST",
+              "properties": {
+                "DESCRIPTION": "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "oneToToggle",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_0",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "30"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x10",
+          "absolute_address": "0xA0020010",
+          "register": "input_q14_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of input_q14",
+          "properties": {
+            "DESCRIPTION": "Data signal of input_q14",
+            "ADDRESS_OFFSET": "16",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "input_q14",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of input_q14",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x14",
+          "absolute_address": "0xA0020014",
+          "register": "input_q14_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of input_q14",
+          "properties": {
+            "DESCRIPTION": "Data signal of input_q14",
+            "ADDRESS_OFFSET": "20",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "input_q14",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of input_q14",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x1C",
+          "absolute_address": "0xA002001C",
+          "register": "weights_int8_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of weights_int8",
+          "properties": {
+            "DESCRIPTION": "Data signal of weights_int8",
+            "ADDRESS_OFFSET": "28",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "weights_int8",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of weights_int8",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x20",
+          "absolute_address": "0xA0020020",
+          "register": "weights_int8_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of weights_int8",
+          "properties": {
+            "DESCRIPTION": "Data signal of weights_int8",
+            "ADDRESS_OFFSET": "32",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "weights_int8",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of weights_int8",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x28",
+          "absolute_address": "0xA0020028",
+          "register": "bias_int32_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of bias_int32",
+          "properties": {
+            "DESCRIPTION": "Data signal of bias_int32",
+            "ADDRESS_OFFSET": "40",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "bias_int32",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of bias_int32",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x2C",
+          "absolute_address": "0xA002002C",
+          "register": "bias_int32_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of bias_int32",
+          "properties": {
+            "DESCRIPTION": "Data signal of bias_int32",
+            "ADDRESS_OFFSET": "44",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "bias_int32",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of bias_int32",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x34",
+          "absolute_address": "0xA0020034",
+          "register": "weight_frac_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of weight_frac",
+          "properties": {
+            "DESCRIPTION": "Data signal of weight_frac",
+            "ADDRESS_OFFSET": "52",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "weight_frac",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of weight_frac",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x38",
+          "absolute_address": "0xA0020038",
+          "register": "weight_frac_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of weight_frac",
+          "properties": {
+            "DESCRIPTION": "Data signal of weight_frac",
+            "ADDRESS_OFFSET": "56",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "weight_frac",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of weight_frac",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x40",
+          "absolute_address": "0xA0020040",
+          "register": "tanh_lut_q15_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of tanh_lut_q15",
+          "properties": {
+            "DESCRIPTION": "Data signal of tanh_lut_q15",
+            "ADDRESS_OFFSET": "64",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "tanh_lut_q15",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of tanh_lut_q15",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x44",
+          "absolute_address": "0xA0020044",
+          "register": "tanh_lut_q15_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of tanh_lut_q15",
+          "properties": {
+            "DESCRIPTION": "Data signal of tanh_lut_q15",
+            "ADDRESS_OFFSET": "68",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "tanh_lut_q15",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of tanh_lut_q15",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x4C",
+          "absolute_address": "0xA002004C",
+          "register": "a_low_q14_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of a_low_q14",
+          "properties": {
+            "DESCRIPTION": "Data signal of a_low_q14",
+            "ADDRESS_OFFSET": "76",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "a_low_q14",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of a_low_q14",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x50",
+          "absolute_address": "0xA0020050",
+          "register": "a_low_q14_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of a_low_q14",
+          "properties": {
+            "DESCRIPTION": "Data signal of a_low_q14",
+            "ADDRESS_OFFSET": "80",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "a_low_q14",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of a_low_q14",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x58",
+          "absolute_address": "0xA0020058",
+          "register": "workspace_int16_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of workspace_int16",
+          "properties": {
+            "DESCRIPTION": "Data signal of workspace_int16",
+            "ADDRESS_OFFSET": "88",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "workspace_int16",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of workspace_int16",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "cnn",
+          "instance": "zero_dce_cnn_top_0",
+          "base": "0xA0020000",
+          "offset": "0x5C",
+          "absolute_address": "0xA002005C",
+          "register": "workspace_int16_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of workspace_int16",
+          "properties": {
+            "DESCRIPTION": "Data signal of workspace_int16",
+            "ADDRESS_OFFSET": "92",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "workspace_int16",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of workspace_int16",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prepare": {
+      "instance": "joint_rgb8_prepare_0",
+      "base": "0xA0030000",
+      "range_bytes": 65536,
+      "registers": [
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x00",
+          "absolute_address": "0xA0030000",
+          "register": "CTRL",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "Control signals",
+          "properties": {
+            "DESCRIPTION": "Control signals",
+            "ADDRESS_OFFSET": "0",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "AP_START",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_start'.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_DONE",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_done'.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_IDLE",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_idle'.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_READY",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_ready'.",
+                "ADDRESS_OFFSET": "3",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "3",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_1",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "4",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "4",
+                "BIT_WIDTH": "3"
+              }
+            },
+            {
+              "name": "AUTO_RESTART",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'auto_restart'.",
+                "ADDRESS_OFFSET": "7",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "7",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_2",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "8",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "8",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "INTERRUPT",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'interrupt'.",
+                "ADDRESS_OFFSET": "9",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "9",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_3",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "10",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "10",
+                "BIT_WIDTH": "22"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x04",
+          "absolute_address": "0xA0030004",
+          "register": "GIER",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "Global Interrupt Enable Register",
+          "properties": {
+            "DESCRIPTION": "Global Interrupt Enable Register",
+            "ADDRESS_OFFSET": "4",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "Enable",
+              "properties": {
+                "DESCRIPTION": "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "31"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x08",
+          "absolute_address": "0xA0030008",
+          "register": "IP_IER",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "IP Interrupt Enable Register",
+          "properties": {
+            "DESCRIPTION": "IP Interrupt Enable Register",
+            "ADDRESS_OFFSET": "8",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "CHAN0_INT_EN",
+              "properties": {
+                "DESCRIPTION": "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "CHAN1_INT_EN",
+              "properties": {
+                "DESCRIPTION": "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_0",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "30"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x0C",
+          "absolute_address": "0xA003000C",
+          "register": "IP_ISR",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "IP Interrupt Status Register",
+          "properties": {
+            "DESCRIPTION": "IP Interrupt Status Register",
+            "ADDRESS_OFFSET": "12",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "CHAN0_INT_ST",
+              "properties": {
+                "DESCRIPTION": "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "oneToToggle",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "CHAN1_INT_ST",
+              "properties": {
+                "DESCRIPTION": "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "oneToToggle",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_0",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "30"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x10",
+          "absolute_address": "0xA0030010",
+          "register": "ap_return",
+          "width_bits": 32,
+          "access": "read-only",
+          "reset_value": "0",
+          "description": "Data signal of ap_return",
+          "properties": {
+            "DESCRIPTION": "Data signal of ap_return",
+            "ADDRESS_OFFSET": "16",
+            "SIZE": "32",
+            "ACCESS": "read-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "ap_return",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of ap_return",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x18",
+          "absolute_address": "0xA0030018",
+          "register": "rgb_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of rgb",
+          "properties": {
+            "DESCRIPTION": "Data signal of rgb",
+            "ADDRESS_OFFSET": "24",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "rgb",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of rgb",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x1C",
+          "absolute_address": "0xA003001C",
+          "register": "rgb_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of rgb",
+          "properties": {
+            "DESCRIPTION": "Data signal of rgb",
+            "ADDRESS_OFFSET": "28",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "rgb",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of rgb",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x24",
+          "absolute_address": "0xA0030024",
+          "register": "original_q14_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of original_q14",
+          "properties": {
+            "DESCRIPTION": "Data signal of original_q14",
+            "ADDRESS_OFFSET": "36",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "original_q14",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of original_q14",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x28",
+          "absolute_address": "0xA0030028",
+          "register": "original_q14_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of original_q14",
+          "properties": {
+            "DESCRIPTION": "Data signal of original_q14",
+            "ADDRESS_OFFSET": "40",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "original_q14",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of original_q14",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x30",
+          "absolute_address": "0xA0030030",
+          "register": "d_input_q14_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of d_input_q14",
+          "properties": {
+            "DESCRIPTION": "Data signal of d_input_q14",
+            "ADDRESS_OFFSET": "48",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "d_input_q14",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of d_input_q14",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x34",
+          "absolute_address": "0xA0030034",
+          "register": "d_input_q14_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of d_input_q14",
+          "properties": {
+            "DESCRIPTION": "Data signal of d_input_q14",
+            "ADDRESS_OFFSET": "52",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "d_input_q14",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of d_input_q14",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x3C",
+          "absolute_address": "0xA003003C",
+          "register": "cnn_input_q14_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of cnn_input_q14",
+          "properties": {
+            "DESCRIPTION": "Data signal of cnn_input_q14",
+            "ADDRESS_OFFSET": "60",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "cnn_input_q14",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of cnn_input_q14",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x40",
+          "absolute_address": "0xA0030040",
+          "register": "cnn_input_q14_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of cnn_input_q14",
+          "properties": {
+            "DESCRIPTION": "Data signal of cnn_input_q14",
+            "ADDRESS_OFFSET": "64",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "cnn_input_q14",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of cnn_input_q14",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "prepare",
+          "instance": "joint_rgb8_prepare_0",
+          "base": "0xA0030000",
+          "offset": "0x48",
+          "absolute_address": "0xA0030048",
+          "register": "abi_cookie",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of abi_cookie",
+          "properties": {
+            "DESCRIPTION": "Data signal of abi_cookie",
+            "ADDRESS_OFFSET": "72",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "abi_cookie",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of abi_cookie",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "fusion": {
+      "instance": "joint_fusion_0",
+      "base": "0xA0040000",
+      "range_bytes": 65536,
+      "registers": [
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x00",
+          "absolute_address": "0xA0040000",
+          "register": "AP_CTRL",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "0",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x04",
+          "absolute_address": "0xA0040004",
+          "register": "GIE",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "4",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x08",
+          "absolute_address": "0xA0040008",
+          "register": "IER",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "8",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x0C",
+          "absolute_address": "0xA004000C",
+          "register": "ISR",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "12",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x10",
+          "absolute_address": "0xA0040010",
+          "register": "AP_RETURN",
+          "width_bits": 32,
+          "access": "read-only",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "16",
+            "SIZE": "32",
+            "ACCESS": "read-only",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x18",
+          "absolute_address": "0xA0040018",
+          "register": "I_LOW",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "24",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x1C",
+          "absolute_address": "0xA004001C",
+          "register": "I_HIGH",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "28",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x24",
+          "absolute_address": "0xA0040024",
+          "register": "L_LOW",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "36",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x28",
+          "absolute_address": "0xA0040028",
+          "register": "L_HIGH",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "40",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x30",
+          "absolute_address": "0xA0040030",
+          "register": "D_LOW",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "48",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x34",
+          "absolute_address": "0xA0040034",
+          "register": "D_HIGH",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "52",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x3C",
+          "absolute_address": "0xA004003C",
+          "register": "O_LOW",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "60",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x40",
+          "absolute_address": "0xA0040040",
+          "register": "O_HIGH",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "64",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x48",
+          "absolute_address": "0xA0040048",
+          "register": "W_I",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "72",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x50",
+          "absolute_address": "0xA0040050",
+          "register": "W_L",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "80",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x58",
+          "absolute_address": "0xA0040058",
+          "register": "W_D",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "88",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x60",
+          "absolute_address": "0xA0040060",
+          "register": "COOKIE",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "96",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x68",
+          "absolute_address": "0xA0040068",
+          "register": "FRAME_ID",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "104",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x70",
+          "absolute_address": "0xA0040070",
+          "register": "COMPLETED_FRAME",
+          "width_bits": 32,
+          "access": "read-only",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "112",
+            "SIZE": "32",
+            "ACCESS": "read-only",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        },
+        {
+          "core": "fusion",
+          "instance": "joint_fusion_0",
+          "base": "0xA0040000",
+          "offset": "0x74",
+          "absolute_address": "0xA0040074",
+          "register": "ACTIVE_FRAME",
+          "width_bits": 32,
+          "access": "read-only",
+          "reset_value": "",
+          "description": "",
+          "properties": {
+            "DESCRIPTION": "",
+            "ADDRESS_OFFSET": "116",
+            "SIZE": "32",
+            "ACCESS": "read-only",
+            "IS_ENABLED": "true"
+          },
+          "fields": []
+        }
+      ]
+    },
+    "d": {
+      "instance": "compact_d_top_0",
+      "base": "0xA0050000",
+      "range_bytes": 65536,
+      "registers": [
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x00",
+          "absolute_address": "0xA0050000",
+          "register": "CTRL",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "Control signals",
+          "properties": {
+            "DESCRIPTION": "Control signals",
+            "ADDRESS_OFFSET": "0",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "AP_START",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_start'.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_DONE",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_done'.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_IDLE",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_idle'.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "AP_READY",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'ap_ready'.",
+                "ADDRESS_OFFSET": "3",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "3",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_1",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "4",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "4",
+                "BIT_WIDTH": "3"
+              }
+            },
+            {
+              "name": "AUTO_RESTART",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'auto_restart'.",
+                "ADDRESS_OFFSET": "7",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "7",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_2",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "8",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "8",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "INTERRUPT",
+              "properties": {
+                "DESCRIPTION": "Control signal Register for 'interrupt'.",
+                "ADDRESS_OFFSET": "9",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "9",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_3",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "10",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "10",
+                "BIT_WIDTH": "22"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x04",
+          "absolute_address": "0xA0050004",
+          "register": "GIER",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "Global Interrupt Enable Register",
+          "properties": {
+            "DESCRIPTION": "Global Interrupt Enable Register",
+            "ADDRESS_OFFSET": "4",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "Enable",
+              "properties": {
+                "DESCRIPTION": "Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "31"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x08",
+          "absolute_address": "0xA0050008",
+          "register": "IP_IER",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "IP Interrupt Enable Register",
+          "properties": {
+            "DESCRIPTION": "IP Interrupt Enable Register",
+            "ADDRESS_OFFSET": "8",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "CHAN0_INT_EN",
+              "properties": {
+                "DESCRIPTION": "Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "CHAN1_INT_EN",
+              "properties": {
+                "DESCRIPTION": "Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-write",
+                "MODIFIED_READ_VALUES": "modify",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_0",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "30"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x0C",
+          "absolute_address": "0xA005000C",
+          "register": "IP_ISR",
+          "width_bits": 32,
+          "access": "read-write",
+          "reset_value": "0",
+          "description": "IP Interrupt Status Register",
+          "properties": {
+            "DESCRIPTION": "IP Interrupt Status Register",
+            "ADDRESS_OFFSET": "12",
+            "SIZE": "32",
+            "ACCESS": "read-write",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "CHAN0_INT_ST",
+              "properties": {
+                "DESCRIPTION": "Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt.",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "oneToToggle",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "CHAN1_INT_ST",
+              "properties": {
+                "DESCRIPTION": "Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "oneToToggle",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED_0",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "2",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "2",
+                "BIT_WIDTH": "30"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x10",
+          "absolute_address": "0xA0050010",
+          "register": "ap_return",
+          "width_bits": 32,
+          "access": "read-only",
+          "reset_value": "0",
+          "description": "Data signal of ap_return",
+          "properties": {
+            "DESCRIPTION": "Data signal of ap_return",
+            "ADDRESS_OFFSET": "16",
+            "SIZE": "32",
+            "ACCESS": "read-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "ap_return",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of ap_return",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x18",
+          "absolute_address": "0xA0050018",
+          "register": "input_r_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of input_r",
+          "properties": {
+            "DESCRIPTION": "Data signal of input_r",
+            "ADDRESS_OFFSET": "24",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "input_r",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of input_r",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x1C",
+          "absolute_address": "0xA005001C",
+          "register": "input_r_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of input_r",
+          "properties": {
+            "DESCRIPTION": "Data signal of input_r",
+            "ADDRESS_OFFSET": "28",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "input_r",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of input_r",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x24",
+          "absolute_address": "0xA0050024",
+          "register": "output_r_1",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of output_r",
+          "properties": {
+            "DESCRIPTION": "Data signal of output_r",
+            "ADDRESS_OFFSET": "36",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "output_r",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of output_r",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x28",
+          "absolute_address": "0xA0050028",
+          "register": "output_r_2",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of output_r",
+          "properties": {
+            "DESCRIPTION": "Data signal of output_r",
+            "ADDRESS_OFFSET": "40",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "output_r",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of output_r",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x30",
+          "absolute_address": "0xA0050030",
+          "register": "height",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of height",
+          "properties": {
+            "DESCRIPTION": "Data signal of height",
+            "ADDRESS_OFFSET": "48",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "height",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of height",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x38",
+          "absolute_address": "0xA0050038",
+          "register": "width",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of width",
+          "properties": {
+            "DESCRIPTION": "Data signal of width",
+            "ADDRESS_OFFSET": "56",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "width",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of width",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x40",
+          "absolute_address": "0xA0050040",
+          "register": "abi_cookie",
+          "width_bits": 32,
+          "access": "write-only",
+          "reset_value": "0",
+          "description": "Data signal of abi_cookie",
+          "properties": {
+            "DESCRIPTION": "Data signal of abi_cookie",
+            "ADDRESS_OFFSET": "64",
+            "SIZE": "32",
+            "ACCESS": "write-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "abi_cookie",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of abi_cookie",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "write-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x48",
+          "absolute_address": "0xA0050048",
+          "register": "work_cycles_1",
+          "width_bits": 32,
+          "access": "read-only",
+          "reset_value": "0",
+          "description": "Data signal of work_cycles",
+          "properties": {
+            "DESCRIPTION": "Data signal of work_cycles",
+            "ADDRESS_OFFSET": "72",
+            "SIZE": "32",
+            "ACCESS": "read-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "work_cycles",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of work_cycles",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x4C",
+          "absolute_address": "0xA005004C",
+          "register": "work_cycles_2",
+          "width_bits": 32,
+          "access": "read-only",
+          "reset_value": "0",
+          "description": "Data signal of work_cycles",
+          "properties": {
+            "DESCRIPTION": "Data signal of work_cycles",
+            "ADDRESS_OFFSET": "76",
+            "SIZE": "32",
+            "ACCESS": "read-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "work_cycles",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of work_cycles",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x50",
+          "absolute_address": "0xA0050050",
+          "register": "work_cycles_ctrl",
+          "width_bits": 32,
+          "access": "read-only",
+          "reset_value": "0",
+          "description": "Control signal of work_cycles",
+          "properties": {
+            "DESCRIPTION": "Control signal of work_cycles",
+            "ADDRESS_OFFSET": "80",
+            "SIZE": "32",
+            "ACCESS": "read-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "work_cycles_ap_vld",
+              "properties": {
+                "DESCRIPTION": "Control signal work_cycles_ap_vld",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "31"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x58",
+          "absolute_address": "0xA0050058",
+          "register": "input_cycles_1",
+          "width_bits": 32,
+          "access": "read-only",
+          "reset_value": "0",
+          "description": "Data signal of input_cycles",
+          "properties": {
+            "DESCRIPTION": "Data signal of input_cycles",
+            "ADDRESS_OFFSET": "88",
+            "SIZE": "32",
+            "ACCESS": "read-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "input_cycles",
+              "properties": {
+                "DESCRIPTION": "Bit 31 to 0 of input_cycles",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x5C",
+          "absolute_address": "0xA005005C",
+          "register": "input_cycles_2",
+          "width_bits": 32,
+          "access": "read-only",
+          "reset_value": "0",
+          "description": "Data signal of input_cycles",
+          "properties": {
+            "DESCRIPTION": "Data signal of input_cycles",
+            "ADDRESS_OFFSET": "92",
+            "SIZE": "32",
+            "ACCESS": "read-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "input_cycles",
+              "properties": {
+                "DESCRIPTION": "Bit 63 to 32 of input_cycles",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "32"
+              }
+            }
+          ]
+        },
+        {
+          "core": "d",
+          "instance": "compact_d_top_0",
+          "base": "0xA0050000",
+          "offset": "0x60",
+          "absolute_address": "0xA0050060",
+          "register": "input_cycles_ctrl",
+          "width_bits": 32,
+          "access": "read-only",
+          "reset_value": "0",
+          "description": "Control signal of input_cycles",
+          "properties": {
+            "DESCRIPTION": "Control signal of input_cycles",
+            "ADDRESS_OFFSET": "96",
+            "SIZE": "32",
+            "ACCESS": "read-only",
+            "IS_ENABLED": "true",
+            "RESET_VALUE": "0"
+          },
+          "fields": [
+            {
+              "name": "input_cycles_ap_vld",
+              "properties": {
+                "DESCRIPTION": "Control signal input_cycles_ap_vld",
+                "ADDRESS_OFFSET": "0",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "0",
+                "BIT_WIDTH": "1"
+              }
+            },
+            {
+              "name": "RESERVED",
+              "properties": {
+                "DESCRIPTION": "Reserved.  0s on read.",
+                "ADDRESS_OFFSET": "1",
+                "ACCESS": "read-only",
+                "MODIFIED_READ_VALUES": "",
+                "WRITE_CONSTRAINT": "0",
+                "READ_ACTION": "modify",
+                "BIT_OFFSET": "1",
+                "BIT_WIDTH": "31"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

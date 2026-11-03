@@ -1,0 +1,6 @@
+Desktop tool launch: leaving inherited package identity OpenAI.Codex_26.1013.4894.0_x64__2p2nqsd0c76g0
+PREPARE_FRAME_PASS frame=0 original=2747520 d=2747520 cnn=19080
+PREPARE_FRAME_PASS frame=1 original=2747520 d=2747520 cnn=19080
+PREPARE_FRAME_PASS frame=2 original=2747520 d=2747520 cnn=19080
+PREPARE_ALL_PASS frames=3 invalid=1
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 343440

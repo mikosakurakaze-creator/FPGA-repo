@@ -1,0 +1,7 @@
+key	bram36	bram18	identity_luts
+bilinear_ddr_sc/m00_r_node	2	2	0
+bilinear_ddr_sc/s00_ar_node	0	0	344
+cnn_data_sc/m00_r_node	2	2	0
+cnn_model_sc/m00_r_node	2	2	0
+curve_ddr_sc/m00_b_node	0	0	24
+curve_ddr_sc/m00_r_node	2	2	0

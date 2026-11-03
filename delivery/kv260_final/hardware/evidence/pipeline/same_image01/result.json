@@ -1,0 +1,41 @@
+{
+  "stage": "fusion",
+  "pass": true,
+  "board_operations": 0,
+  "steps": [
+    {
+      "command": [
+        "D:/weather_builds/fusion_pipeline_20261101/same_image01/ivl_runtime/iverilog.exe",
+        "-BD:\\weather_builds\\fusion_pipeline_20261101\\same_image01\\ivl_runtime",
+        "-g2012",
+        "-Wall",
+        "-s",
+        "tb_joint_fusion",
+        "-Ptb_joint_fusion.N=2747520",
+        "-Ptb_joint_fusion.EXTERNAL_GOLDEN=1",
+        "-o",
+        "D:/weather_builds/fusion_pipeline_20261101/same_image01/fusion.vvp",
+        "D:/weather_builds/fusion_pipeline_20261101/same_image01/joint_fusion.v",
+        "D:/weather_builds/fusion_pipeline_20261101/same_image01/tb_joint_fusion.sv"
+      ],
+      "exit_code": 0,
+      "seconds": 4.691270000002987,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "D:/weather_builds/fusion_pipeline_20261101/same_image01/ivl_runtime/vvp.exe",
+        "D:/weather_builds/fusion_pipeline_20261101/same_image01/fusion.vvp"
+      ],
+      "exit_code": 0,
+      "seconds": 147.6916052000015,
+      "log_sha256": "fba8826b003094ac72f389947d9b873dbeb21d3072fdb16683e9f5d0d123b3db"
+    }
+  ],
+  "golden_result_sha256": "08375b6e4a41b7e33c461d569aacd595457c82537ab3f57d51d56449fb21f57d",
+  "verification": "actual fusion AXI RTL versus same-image I/L/D model outputs and separate software Golden",
+  "sources": {
+    "joint_fusion.v": "cfb43e59d050c65ed5f1a685ab7092dfb13bb4859f981b9514bd464c8c15c7ea",
+    "tb_joint_fusion.sv": "409e7de32faabdb80e9533781354ad6c34fc3f780a6f7b0044901905ebed5eb6"
+  }
+}

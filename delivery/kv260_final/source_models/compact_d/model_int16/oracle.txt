@@ -1,0 +1,32 @@
+D_INT16_V1
+22
+input input 14 0
+stem.conv conv 13 1 input
+8 3 0 448 18 18 18 18 18 18 18 18
+stem.relu relu 13 1 stem.conv
+block0.conv0 conv 13 1 stem.relu
+8 8 512 1664 17 18 17 17 17 17 17 17
+block0.relu0 relu 13 1 block0.conv0
+block0.conv1 conv 13 1 block0.relu0
+8 8 1728 2880 17 17 17 18 17 17 17 17
+block0.add add 13 2 stem.relu block0.conv1
+block0.relu1 relu 13 1 block0.add
+block1.conv0 conv 13 1 block0.relu1
+8 8 2944 4096 17 17 17 17 17 17 17 17
+block1.relu0 relu 13 1 block1.conv0
+block1.conv1 conv 13 1 block1.relu0
+8 8 4160 5312 17 17 17 17 17 17 17 17
+block1.add add 13 2 block0.relu1 block1.conv1
+block1.relu1 relu 13 1 block1.add
+block2.conv0 conv 13 1 block1.relu1
+8 8 5376 6528 17 17 17 17 17 18 17 17
+block2.relu0 relu 13 1 block2.conv0
+block2.conv1 conv 13 1 block2.relu0
+8 8 6592 7744 17 17 17 17 17 17 17 17
+block2.add add 13 2 block1.relu1 block2.conv1
+block2.relu1 relu 13 1 block2.add
+head.conv conv 14 1 block2.relu1
+3 8 7808 8256 19 19 19
+input.affine affine 14 1 input
+output.add add 14 2 input.affine head.conv
+output.relu relu 14 1 output.add

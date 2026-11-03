@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "kind": "targeted_fifo_rebuild",
+  "parent_build": "D:/weather_builds/timing_margin_20261102/fifo_targeted04",
+  "experiment": "D:/weather_builds/timing_margin_20261102/fifo_targeted04_continue01/implement01",
+  "checkpoint_sha256": "d582ed0005dbc85563fb2eb0713e74a95f8efafdafe91af1a5a3ecf3ae028f66",
+  "margin_audit_sha256": "95de89175178f1f48c04fe974629dc0292a85b9a772b2721e52e8fb0c635729c",
+  "source_inputs_sha256": "ab9005cdfe793e6b6fe3660e70d8e9ff796d2917d47e0b041350f458ef2c0860",
+  "release_approval_sha256": "3f607525752e16a83e0fcd90d6042be90aabfce743b401002c151dd9f56e4d88",
+  "board_operations": 0,
+  "note": "No optimization during release. Historical no-export/failed records are preserved."
+}

@@ -1,0 +1,32 @@
+{
+  "pass": true,
+  "board_operations": 0,
+  "bound_files": {
+    "D:/weather_builds/timing_margin_20261102/fifo_targeted04_continue01/check_compiled_constraints01.py": "04d593441ccf1c25fcd19b76808e53771b2d684269ed266665ac0391a06a352a",
+    "D:/github clone/feat-software/fpga/joint_lowlight_compact_d/scripts/targeted_fifo_constraint_contract.py": "fb83c178e62d069dcd23c4a2b1256dca3910b744a36e7b333c4d66bf22806882",
+    "D:/github clone/feat-software/fpga/joint_lowlight_compact_d/scripts/test_targeted_fifo_constraints.py": "8be9454104c7c62f83a5a9e693f9452c1751ddd5ad5e1063fac32a16e22df40e",
+    "D:/github clone/feat-software/fpga/joint_lowlight_compact_d/scripts/audit_fifo_storage_timing.py": "841d9e318d80f83b43815b74ebe900955788cdda21c929858b3ccee09f94ac90",
+    "D:/github clone/feat-software/fpga/joint_lowlight_compact_d/scripts/audit_timing_variant.py": "2c65c4ef623af05bf2b61e1fac8399e1baaa7a187cc716aae5b72c1d1c570fcb",
+    "D:/weather_builds/timing_margin_20261102/fifo_targeted04/targeted_fifo_plan.json": "612af69e90ece059b6e2f3d901ee4d5286e5c3b1d417325fadf4c6d060780813",
+    "D:/weather_builds/timing_margin_20261102/fifo_storage02/joint_synth.dcp": "931dc54eaed26ad3dd1426597ea14ba7f8f3d6f79d97f2179a768ef2cbd5d786",
+    "D:/weather_builds/timing_margin_20261102/fifo_targeted04/joint_synth.dcp": "e95ea9b059a415e5605abd20aab7406066fc7d4f12d140efb4dc1b885efde538",
+    "D:/vivado/2025.2/data/ip/xpm/xpm_memory/tcl/xpm_memory_xdc.tcl": "98b4fef69706ae1849a1640292cd982b101f1b8f76f2f41abfab88b942dec873",
+    "D:/vivado/2025.2/data/ip/xpm/xpm_fifo/tcl/xpm_fifo_rst.tcl": "592b354daac50355319dcd2d92dcc4b34a26e3460b4bd866bd7adeb1cf37e52b"
+  },
+  "contracts": {
+    "system_wrapper_board.xdc": {
+      "identical": true,
+      "provenance_substitutions": 0
+    },
+    "system_wrapper_early.xdc": {
+      "identical": true,
+      "provenance_substitutions": 0
+    },
+    "system_wrapper_late.xdc": {
+      "identical": false,
+      "actual_timing_commands_unchanged": true,
+      "provenance_substitutions": 8,
+      "provenance_line_substitutions": 392
+    }
+  }
+}

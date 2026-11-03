@@ -1,0 +1,60 @@
+{
+  "abi_equal": true,
+  "abi_sha256": "95077dfd344f411d4bbf8004acee92e369f2e2bf46ae942ba391b41e6ff71598",
+  "active_vhdl_views": 0,
+  "archival_vhdl_files": 138,
+  "base_payload_sha256": "1f5dfe5abc335c678198982c0cbb86c2031962ebb6f57570453176da27362c30",
+  "bus_interfaces": [
+    "s_axi_control",
+    "ap_clk",
+    "ap_rst_n",
+    "interrupt",
+    "m_axi_gmem_input",
+    "m_axi_gmem8",
+    "m_axi_gmem32",
+    "m_axi_gmem_lut",
+    "m_axi_gmem_output",
+    "m_axi_gmem_workspace"
+  ],
+  "component_xml_sha256": "7e046bd557997e8a8b55b466ee9a76b8c3c321f1435df2879a8bf92a45f54ecd",
+  "driver_header": "drivers/zero_dce_cnn_top_v1_0/src/xzero_dce_cnn_top_hw.h",
+  "driver_header_sha256": "3a5b88eea559abf69c213b8456fee35945db0f21acc9d5cd1ad267638a716362",
+  "patched_rtl": {
+    "hdl/verilog/zero_dce_cnn_top_p_anonymous_namespace_output_writer.v": "ed13125479a3892cfbfc2df20f5b4c010c6d2198503231afe7fbfca4ef543dc5",
+    "hdl/verilog/zero_dce_cnn_top_row_axi_writer.v": "4535bf94f686dc5e71f9a55dda9792c03aa8b57d998b902b1e596979dcb08611",
+    "hdl/verilog/zero_dce_cnn_top_row_axi_writer_2.v": "5fb901f88917777169a6327bb27eed4e2171df4e2e17d3b3cb435e17fc4ebf0d"
+  },
+  "pointer_names": [
+    "input_q14",
+    "weights_int8",
+    "bias_int32",
+    "weight_frac",
+    "tanh_lut_q15",
+    "a_low_q14",
+    "workspace_int16"
+  ],
+  "register_offsets": {
+    "XZERO_DCE_CNN_TOP_CONTROL_ADDR_AP_CTRL": "0x00",
+    "XZERO_DCE_CNN_TOP_CONTROL_ADDR_A_LOW_Q14_DATA": "0x4c",
+    "XZERO_DCE_CNN_TOP_CONTROL_ADDR_BIAS_INT32_DATA": "0x28",
+    "XZERO_DCE_CNN_TOP_CONTROL_ADDR_GIE": "0x04",
+    "XZERO_DCE_CNN_TOP_CONTROL_ADDR_IER": "0x08",
+    "XZERO_DCE_CNN_TOP_CONTROL_ADDR_INPUT_Q14_DATA": "0x10",
+    "XZERO_DCE_CNN_TOP_CONTROL_ADDR_ISR": "0x0c",
+    "XZERO_DCE_CNN_TOP_CONTROL_ADDR_TANH_LUT_Q15_DATA": "0x40",
+    "XZERO_DCE_CNN_TOP_CONTROL_ADDR_WEIGHTS_INT8_DATA": "0x1c",
+    "XZERO_DCE_CNN_TOP_CONTROL_ADDR_WEIGHT_FRAC_DATA": "0x34",
+    "XZERO_DCE_CNN_TOP_CONTROL_ADDR_WORKSPACE_INT16_DATA": "0x58"
+  },
+  "rtl_changed": [
+    "hdl/verilog/zero_dce_cnn_top_p_anonymous_namespace_output_writer.v",
+    "hdl/verilog/zero_dce_cnn_top_row_axi_writer.v",
+    "hdl/verilog/zero_dce_cnn_top_row_axi_writer_2.v"
+  ],
+  "shadow_copy_audit": "PASS: no old writer in any active model view/fileset/Verilog search path",
+  "shared_hdl_files": 150,
+  "source_manifest_sha256": "834264165a18af1aee973d02dcd2cc5b3a2c28fe33a2731e40ffccbb8568cdcb",
+  "status": "PASS",
+  "synthesis_simulation_equal": true,
+  "unchanged_payload_files": 301
+}

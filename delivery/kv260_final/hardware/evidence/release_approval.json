@@ -1,0 +1,23 @@
+{
+  "scope": "Export and ZIP this accepted candidate only; stop optimization; no Git or board operations",
+  "user_instruction": "可以，这个结果能接受，不用优化了生成压缩包吧",
+  "checkpoint_sha256": "d582ed0005dbc85563fb2eb0713e74a95f8efafdafe91af1a5a3ecf3ae028f66",
+  "audit_sha256": "95de89175178f1f48c04fe974629dc0292a85b9a772b2721e52e8fb0c635729c",
+  "source_inputs_sha256": "ab9005cdfe793e6b6fe3660e70d8e9ff796d2917d47e0b041350f458ef2c0860",
+  "timing": {
+    "WNS_ns": 0.391,
+    "WHS_ns": 0.1,
+    "WPWS_ns": 1.7,
+    "coverage": {
+      "no_clock": 0,
+      "constant_clock": 0,
+      "unconstrained_internal_endpoints": 0,
+      "multiple_clock": 0,
+      "active_unclocked_pins": 0,
+      "classified_unused_ps_no_clock_outputs": 0,
+      "verified_unloaded_ps_clock_outputs": 8
+    }
+  },
+  "export_allowed": true,
+  "board_operations": 0
+}

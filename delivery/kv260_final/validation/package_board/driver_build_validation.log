@@ -1,0 +1,16 @@
+make: Entering directory '/usr/src/linux-headers-5.15.0-1027-xilinx-zynqmp'
+make: Warning: File 'scripts/Makefile.extrawarn' has modification time 7806116 s in the future
+make[1]: Warning: File 'scripts/Makefile.lib' has modification time 7806116 s in the future
+  CC [M]  /home/ubuntu/kv260_repro_test_20261103/ps/driver/kv260_joint_once.o
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: Warning: File 'scripts/Makefile.lib' has modification time 7806103 s in the future
+  MODPOST /home/ubuntu/kv260_repro_test_20261103/ps/driver/Module.symvers
+make[2]: Warning: File 'scripts/Makefile.lib' has modification time 7806103 s in the future
+  CC [M]  /home/ubuntu/kv260_repro_test_20261103/ps/driver/kv260_joint_once.mod.o
+  LD [M]  /home/ubuntu/kv260_repro_test_20261103/ps/driver/kv260_joint_once.ko
+  BTF [M] /home/ubuntu/kv260_repro_test_20261103/ps/driver/kv260_joint_once.ko
+Skipping BTF generation for /home/ubuntu/kv260_repro_test_20261103/ps/driver/kv260_joint_once.ko due to unavailability of vmlinux
+make[2]: warning:  Clock skew detected.  Your build may be incomplete.
+make[1]: warning:  Clock skew detected.  Your build may be incomplete.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Leaving directory '/usr/src/linux-headers-5.15.0-1027-xilinx-zynqmp'

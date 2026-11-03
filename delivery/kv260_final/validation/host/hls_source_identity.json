@@ -1,0 +1,47 @@
+[
+  {
+    "file": "source_models\\fpga\\hls\\bilinear_fixed16_buffered\\bilinear_fixed16_buffered.cpp",
+    "sha256": "b39e3be1f9b46103bf04c6fa099c71f70fb4f0a2f5bfa8492fcdac6a66d78392",
+    "matches_historical_hls_proof": true
+  },
+  {
+    "file": "source_models\\fpga\\hls\\bilinear_fixed16_buffered\\bilinear_fixed16_buffered.hpp",
+    "sha256": "b5c8cd99ffdecd305244f55cf6f34459914dc0ca573d663c328a36672b73cb65",
+    "matches_historical_hls_proof": true
+  },
+  {
+    "file": "source_models\\fpga\\hls\\curve_image_fixed16\\curve_image_fixed16.cpp",
+    "sha256": "2ce63b73f284c120f9416a069d6bb762d411b6a9069c7423ea68bc339ea93cdc",
+    "matches_historical_hls_proof": true
+  },
+  {
+    "file": "source_models\\fpga\\hls\\curve_image_fixed16\\curve_image_fixed16.hpp",
+    "sha256": "9856b3a09302f580023e4e213796415c56f6790887dedac31750b8fb7313ba5a",
+    "matches_historical_hls_proof": true
+  },
+  {
+    "file": "source_models\\fpga\\hls\\zero_dce_cnn_v1_2_30fps\\candidate_b_rowstream_r4\\zero_dce_cnn_top.cpp",
+    "sha256": "277da2ec0c922f33b654942f61cc22ddc45060e5ac242c23df4e68fd7f74f11a",
+    "matches_historical_hls_proof": true
+  },
+  {
+    "file": "source_models\\fpga\\hls\\zero_dce_cnn_v1_2_30fps\\candidate_b_rowstream_r4\\zero_dce_cnn_top.h",
+    "sha256": "bdb1228c76d941b695d703154a9f2f24a0c3007a18edbc028be74b57d22c9f33",
+    "matches_historical_hls_proof": true
+  },
+  {
+    "file": "source_models\\fpga\\perf\\cnn_v1_2_phase3b_r4\\rowstream_arch.inc",
+    "sha256": "1551c6e4aeb0943049b91f68ecf525d1ef5d6eb160fc9f7e18a3c3e8e52fcb8c",
+    "matches_historical_hls_proof": true
+  },
+  {
+    "file": "source_models\\fpga\\perf\\cnn_v1_2_phase3b_r4\\rowstream_group_arch.inc",
+    "sha256": "044ea01147aabc1c50d94726b9c925a7802480c3a67afd3423f01a24e7f1ca82",
+    "matches_historical_hls_proof": true
+  },
+  {
+    "file": "source_models\\fpga\\perf\\cnn_v1_2_phase3b_r4\\row_transfer.hpp",
+    "sha256": "3affa40171ccec7318c0f07f7dce2c2b0c55be8dcaf0b4d946c1680ba724ab86",
+    "matches_historical_hls_proof": true
+  }
+]

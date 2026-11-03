@@ -1,0 +1,18 @@
+{
+  "parent_build": "D:/weather_builds/timing_margin_20261102/fifo_storage02",
+  "parent_audit": "D:/weather_builds/timing_margin_20261102/fifo_storage02_flow01/audit03.json",
+  "parent_audit_sha256": "690fa1c6e516eb07cddc270410e55e7d2a7236740196dda3020c9d15e614e2ed",
+  "parent_checkpoint": "D:/weather_builds/timing_margin_20261102/fifo_storage02_flow01/implement02/optimized_routed.dcp",
+  "parent_checkpoint_sha256": "e39904f0a7f2066ce23e9c9d74213321aa976221331557dea779e1b833e0746e",
+  "targets": {
+    "bilinear_ddr_sc/m00_r_node": "bram",
+    "bilinear_ddr_sc/s00_ar_node": "buffer",
+    "cnn_data_sc/m00_r_node": "bram",
+    "cnn_model_sc/m00_r_node": "bram",
+    "curve_ddr_sc/m00_b_node": "buffer",
+    "curve_ddr_sc/m00_r_node": "bram"
+  },
+  "prepared_nodes_sha256": "366ec4193b3071c365437925e5f8a1b6fc5ae66d3edc2335b787df8bdc2a0fd0",
+  "algorithm_weights_clocks_addresses_unchanged": true,
+  "export_allowed": false
+}

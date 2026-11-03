@@ -1,0 +1,9 @@
+JOINT_MODEL_MATCH prepare original scalars=2747520
+JOINT_MODEL_MATCH prepare D input scalars=2747520
+JOINT_MODEL_MATCH prepare CNN input scalars=19080
+JOINT_MODEL_MATCH CNN scalars=19080
+JOINT_MODEL_MATCH Bilinear scalars=2747520
+JOINT_MODEL_MATCH Curve scalars=2747520
+JOINT_MODEL_MATCH Compact D 720x1272 scalars=2747520
+JOINT_HLS_HOST_PASS scalars=13775760
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 915840

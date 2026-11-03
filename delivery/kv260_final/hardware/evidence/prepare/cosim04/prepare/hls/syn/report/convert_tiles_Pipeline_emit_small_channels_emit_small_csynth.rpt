@@ -1,0 +1,168 @@
+
+
+================================================================
+== Vitis HLS Report for 'convert_tiles_Pipeline_emit_small_channels_emit_small'
+================================================================
+* Date:           Sun Nov  1 22:21:10 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 12 2025)
+* Project:        prepare
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.221 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+-------------------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval |      Pipeline     |
+    |   min   |   max   |    min    |    max    | min | max |        Type       |
+    +---------+---------+-----------+-----------+-----+-----+-------------------+
+    |     2387|     2387|  23.870 us|  23.870 us|    0|    0|  loop pipeline stp|
+    +---------+---------+-----------+-----------+-----+-----+-------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                  |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name            |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- emit_small_channels_emit_small  |     2385|     2385|         2|          1|          1|  2385|       yes|
+        +----------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|      97|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        -|     -|       0|       9|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       0|      72|    -|
+|Register         |        -|     -|      28|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|     0|      28|     178|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |      288|  1248|  234240|  117120|   64|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     0|      ~0|      ~0|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+-----------------------+---------+----+---+----+-----+
+    |          Instance         |         Module        | BRAM_18K| DSP| FF| LUT| URAM|
+    +---------------------------+-----------------------+---------+----+---+----+-----+
+    |sparsemux_7_2_127_1_1_U63  |sparsemux_7_2_127_1_1  |        0|   0|  0|   9|    0|
+    +---------------------------+-----------------------+---------+----+---+----+-----+
+    |Total                      |                       |        0|   0|  0|   9|    0|
+    +---------------------------+-----------------------+---------+----+---+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln119_1_fu_199_p2      |         +|   0|  0|   9|           2|           1|
+    |add_ln119_fu_150_p2        |         +|   0|  0|  19|          12|           1|
+    |add_ln121_fu_180_p2        |         +|   0|  0|  17|          10|           1|
+    |ap_block_pp0_stage0_01001  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln119_fu_144_p2       |      icmp|   0|  0|  19|          12|          12|
+    |icmp_ln121_fu_159_p2       |      icmp|   0|  0|  17|          10|           9|
+    |select_ln119_1_fu_205_p3   |    select|   0|  0|   2|           1|           2|
+    |select_ln119_fu_165_p3     |    select|   0|  0|  10|           1|           1|
+    |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0|  97|          50|          30|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------+----+-----------+-----+-----------+
+    |                  Name                 | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |ap_done_int                            |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1                |   9|          2|    1|          2|
+    |ap_sig_allocacmp_indvar_flatten6_load  |   9|          2|   12|         24|
+    |ap_sig_allocacmp_w_load                |   9|          2|   10|         20|
+    |c_fu_72                                |   9|          2|    2|          4|
+    |indvar_flatten6_fu_76                  |   9|          2|   12|         24|
+    |small_r_blk_n                          |   9|          2|    1|          2|
+    |w_fu_68                                |   9|          2|   10|         20|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |Total                                  |  72|         16|   49|         98|
+    +---------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |c_fu_72                  |   2|   0|    2|          0|
+    |icmp_ln121_reg_266       |   1|   0|    1|          0|
+    |indvar_flatten6_fu_76    |  12|   0|   12|          0|
+    |w_fu_68                  |  10|   0|   10|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    |  28|   0|   28|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+-------------------------------------------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |                     Source Object                     |    C Type    |
++------------------------+-----+-----+------------+-------------------------------------------------------+--------------+
+|ap_clk                  |   in|    1|  ap_ctrl_hs|  convert_tiles_Pipeline_emit_small_channels_emit_small|  return value|
+|ap_rst                  |   in|    1|  ap_ctrl_hs|  convert_tiles_Pipeline_emit_small_channels_emit_small|  return value|
+|ap_start                |   in|    1|  ap_ctrl_hs|  convert_tiles_Pipeline_emit_small_channels_emit_small|  return value|
+|ap_done                 |  out|    1|  ap_ctrl_hs|  convert_tiles_Pipeline_emit_small_channels_emit_small|  return value|
+|ap_idle                 |  out|    1|  ap_ctrl_hs|  convert_tiles_Pipeline_emit_small_channels_emit_small|  return value|
+|ap_ready                |  out|    1|  ap_ctrl_hs|  convert_tiles_Pipeline_emit_small_channels_emit_small|  return value|
+|small_r_din             |  out|  128|     ap_fifo|                                                small_r|       pointer|
+|small_r_full_n          |   in|    1|     ap_fifo|                                                small_r|       pointer|
+|small_r_write           |  out|    1|     ap_fifo|                                                small_r|       pointer|
+|small_r_num_data_valid  |   in|   32|     ap_fifo|                                                small_r|       pointer|
+|small_r_fifo_cap        |   in|   32|     ap_fifo|                                                small_r|       pointer|
+|small_image_address0    |  out|   10|   ap_memory|                                            small_image|         array|
+|small_image_ce0         |  out|    1|   ap_memory|                                            small_image|         array|
+|small_image_q0          |   in|  127|   ap_memory|                                            small_image|         array|
+|small_image_1_address0  |  out|   10|   ap_memory|                                          small_image_1|         array|
+|small_image_1_ce0       |  out|    1|   ap_memory|                                          small_image_1|         array|
+|small_image_1_q0        |   in|  127|   ap_memory|                                          small_image_1|         array|
+|small_image_2_address0  |  out|   10|   ap_memory|                                          small_image_2|         array|
+|small_image_2_ce0       |  out|    1|   ap_memory|                                          small_image_2|         array|
+|small_image_2_q0        |   in|  127|   ap_memory|                                          small_image_2|         array|
++------------------------+-----+-----+------------+-------------------------------------------------------+--------------+
+
